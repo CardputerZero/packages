@@ -1,0 +1,19 @@
+{
+  "name": "zeroSDR",
+  "version": "0.2.0",
+  "description": "Lightweight SDR Receiver with FM/NFM/AM demodulation",
+  "author": "Weiming Feng",
+  "icon": "share/images/zerosdr.png",
+  "store": {
+    "summary": "Real-time SDR spectrum analyzer and audio demodulator for RTL-SDR devices",
+    "description": "zeroSDR is a lightweight Software Defined Radio (SDR) receiver optimized for embedded Linux systems with small displays. Features real-time spectrum and waterfall visualization, FM/NFM/AM audio demodulation with AGC and squelch, and direct framebuffer rendering for minimal overhead. Designed for Raspberry Pi Zero 2W and Pi 5 with RTL-SDR dongles.",
+    "categories": ["hamradio", "utility", "multimedia"],
+    "icon": "share/images/zerosdr.png",
+    "screenshots": [
+      "store/screenshots/screenshot1.png",
+      "store/screenshots/screenshot2.png",
+      "store/screenshots/screenshot3.png",
+      "store/screenshots/screenshot4.png"
+    ]
+  }
+}
