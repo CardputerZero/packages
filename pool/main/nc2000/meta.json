@@ -1,27 +1,26 @@
 {
-  "uuid": "2000e000-0000-4000-8000-000000000007",
-  "share_code": "nc20",
   "title": "NC2000",
-  "summary": "WenQuXing NC2000/NC1020 emulator for CardputerZero",
-  "description": "A WenQuXing (文曲星) NC2000 / NC1020 handheld computer emulator tuned for M5CardputerZero's 320x170 LCD.",
+  "summary": "WenQuXing NC2000/NC1020 emulator for CardputerZero 320x170 display",
+  "categories": [
+    "Emulators",
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/main.png"
+  ],
   "locales": {
     "zh-CN": {
       "title": "NC2000 文曲星模拟器",
-      "summary": "适配 320x170 CardputerZero 屏幕的文曲星 NC2000/NC1020 模拟器"
+      "summary": "适配 CardputerZero 320x170 屏幕的文曲星 NC2000/NC1020 模拟器"
     },
     "zh-TW": {
       "title": "NC2000 文曲星模擬器",
-      "summary": "適配 320x170 CardputerZero 螢幕的文曲星 NC2000/NC1020 模擬器"
+      "summary": "適配 CardputerZero 320x170 螢幕的文曲星 NC2000/NC1020 模擬器"
     }
-  },
-  "categories": ["Emulators", "Games"],
-  "author": {
-    "github": "eggfly",
-    "display_name": "eggfly"
   },
   "license": "MIT",
   "source_repo": "https://github.com/eggfly/CardputerZero-NC2000",
-  "icon": "nc2000_icon.png",
+  "icon": "icon.png",
   "permissions": {
     "audio_output": true,
     "keyboard_input": true,
