@@ -1,0 +1,45 @@
+{
+  "title": "XiaoZhi",
+  "summary": "Voice-first AI assistant for CardputerZero with activation, chat, and continuous listening.",
+  "description": "XiaoZhi brings the xiaozhi.me voice assistant experience to CardputerZero with activation-code pairing, push-to-talk wake, bidirectional voice chat, server-side VAD, and continuous conversation flow. The package is tuned for the 320 x 170 framebuffer UI and ships as an APPLaunch-ready Debian package.",
+  "locales": {
+    "zh-CN": {
+      "title": "小智语音助手",
+      "summary": "面向 CardputerZero 的语音 AI 助手，支持激活、对话和连续聆听。",
+      "description": "XiaoZhi 将小智语音助手移植到 CardputerZero，提供激活码绑定、按键唤醒、双向语音对话、服务端 VAD 和连续对话体验。应用面向 320 x 170 framebuffer 屏幕优化，内置中文与 emoji 字体打包策略，并通过 APPLaunch 入口集成到设备主界面。"
+    },
+    "en": {
+      "title": "XiaoZhi Voice Assistant",
+      "summary": "Voice-first AI assistant for CardputerZero with activation, chat, and continuous listening.",
+      "description": "XiaoZhi brings the xiaozhi.me voice assistant experience to CardputerZero with activation-code pairing, push-to-talk wake, bidirectional voice chat, server-side VAD, and continuous conversation flow. The package is tuned for the 320 x 170 framebuffer UI and ships as an APPLaunch-ready Debian package."
+    },
+    "ja": {
+      "title": "XiaoZhi 音声アシスタント",
+      "summary": "CardputerZero 向けの音声 AI アシスタント。認証、会話、連続リスニングに対応。",
+      "description": "XiaoZhi は xiaozhi.me の音声アシスタント体験を CardputerZero に移植したアプリです。アクティベーションコード連携、プッシュトゥトーク、双方向音声会話、サーバー側 VAD、連続会話フローを提供し、320 x 170 の framebuffer UI に最適化されています。"
+    }
+  },
+  "categories": [
+    "AI",
+    "Communication",
+    "Utilities"
+  ],
+  "license": "MIT",
+  "source_repo": "https://github.com/JdaieLin/cardputer-xiaozhi",
+  "icon": "xiaozhi.png",
+  "screenshots": [
+    "screenshots/01-binding.png",
+    "screenshots/02-idle.png",
+    "screenshots/03-listening.png",
+    "screenshots/04-speaking.png"
+  ],
+  "permissions": {
+    "microphone": true,
+    "audio_output": true,
+    "network": true,
+    "filesystem": "app-data-only",
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": false
+  }
+}
