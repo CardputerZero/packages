@@ -1,0 +1,25 @@
+{
+  "title": "Void Room",
+  "summary": "Distraction-free offline writing room tuned for Cardputer Zero.",
+  "categories": [
+    "Utilities",
+    "Productivity"
+  ],
+  "screenshots": [
+    "packaging/cardputer-store/screenshots/home-320x170.png",
+    "packaging/cardputer-store/screenshots/room-320x170.png"
+  ],
+  "description": "Void Room is a quiet offline writing space for timed focus sessions, with no-exit and no-backspace modes, local session archive, and optional ambient sound.",
+  "license": "Proprietary",
+  "source_repo": "https://github.com/NoirSonance/void-room-cardputerzero",
+  "icon": "packaging/cardputer-store/icon.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": true,
+    "network": false,
+    "filesystem": "app-data-only",
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": false
+  }
+}
