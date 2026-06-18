@@ -1,0 +1,25 @@
+{
+  "title": "Void Notes",
+  "summary": "Offline Markdown vault for tiny Cardputer screens.",
+  "categories": [
+    "Productivity",
+    "Utilities"
+  ],
+  "screenshots": [
+    "packaging/store/screenshots/vault.png",
+    "packaging/store/screenshots/editor.png"
+  ],
+  "description": "Void Notes provides plain-file Markdown notes, search, daily notes, tags, wiki links, and an autosaving keyboard editor for Cardputer Zero.",
+  "license": "Proprietary",
+  "source_repo": "https://github.com/NoirSonance/void-notes-cardputerzero",
+  "icon": "packaging/icon.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": false,
+    "network": false,
+    "filesystem": "app-data-only",
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": false
+  }
+}
