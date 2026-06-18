@@ -1,0 +1,24 @@
+{
+  "title": "Control Center",
+  "summary": "Privacy-safe local dashboard for Cardputer Zero.",
+  "categories": [
+    "Utilities"
+  ],
+  "screenshots": [
+    "packaging/store/screenshots/dashboard.png",
+    "packaging/store/screenshots/privacy.png"
+  ],
+  "description": "Control Center provides local device health, configurable checks, safe actions, and a privacy status page without bundling personal infrastructure data.",
+  "license": "Proprietary",
+  "source_repo": "https://github.com/NoirSonance/control-center-cardputerzero",
+  "icon": "packaging/icon.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": false,
+    "network": false,
+    "filesystem": "app-data-only",
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": false
+  }
+}
