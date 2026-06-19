@@ -1,0 +1,59 @@
+{
+  "title": "ESP Flasher",
+  "summary": "ESP Flasher for Cardputer Zero, flash any M5Stack device with M5Burner firmware",
+  "categories": [
+    "Utilities"
+  ],
+  "author": {
+    "github": "bmorcelli",
+    "display_name": "ESP Flasher"
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/bmorcelli/LauncherESPFlasher",
+  "icon": "Launcher_128x128.png",
+  "permissions": {
+    "network": true,
+    "keyboard_input": true,
+    "filesystem": true,
+    "external_hardware": true
+  },
+  "screenshots": [
+    "screenshots/00 bootscreen.png",
+    "screenshots/00 bootscreen_guide1.png",
+    "screenshots/00 bootscreen_guide2.png",
+    "screenshots/00 bootscreen_guide3.png",
+    "screenshots/01 main_name.png",
+    "screenshots/02 main_cnt.png",
+    "screenshots/03 main_dev_m5stack.png",
+    "screenshots/04 main_dev_xcyd.png",
+    "screenshots/05 main_filter.png",
+    "screenshots/06 main_info.png",
+    "screenshots/06 main_reload.png",
+    "screenshots/07 main_info_detail.png",
+    "screenshots/08 main_file.png",
+    "screenshots/09 main_online.png",
+    "screenshots/10 main_offline.png",
+    "screenshots/11 file_esp_detection.png",
+    "screenshots/12 file_esp_detected.png",
+    "screenshots/13 file_firmware_pick.png",
+    "screenshots/14 file_install_merged.png",
+    "screenshots/15 file_install_multipart.png",
+    "screenshots/16 file_install_multipart_detail.png",
+    "screenshots/17 firmware_DL.png",
+    "screenshots/18 firmware_DATE.png",
+    "screenshots/19 firmware_NAME.png",
+    "screenshots/20 firmware_filter.png",
+    "screenshots/21 firmware_detail.png",
+    "screenshots/22 firmware_detail_cover.png",
+    "screenshots/23 firmware_detail_coverimg.png",
+    "screenshots/24 firmware_detail_version.png",
+    "screenshots/25 firmware_detail_version_pick.png",
+    "screenshots/26 firmware_detail_downloaded.png",
+    "screenshots/27 firmware_detail_flash.png",
+    "screenshots/28 firmware_flash_progress.png",
+    "screenshots/28 firmware_flash_progress2.png",
+    "screenshots/29 firmware_flash_done.png",
+    "screenshots/30 firmware_detail_multipart.png",
+    "screenshots/31 firmware_detail_multipart_info.png"
+  ]
+}
