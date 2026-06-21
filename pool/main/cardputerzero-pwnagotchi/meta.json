@@ -1,0 +1,35 @@
+{
+  "title": "Pwnagotchi",
+  "summary": "Pwnagotchi status, control, and handshake dashboard for CardputerZero with an external monitor-mode USB Wi-Fi adapter.",
+  "categories": [
+    "Security",
+    "Networking",
+    "Utilities"
+  ],
+  "screenshots": [
+    "store/screenshots/01-home.png"
+  ],
+  "locales": {
+    "zh-CN": {
+      "title": "Pwnagotchi",
+      "summary": "CardputerZero 上的 Pwnagotchi 状态、控制与握手仪表盘，需要外接支持 monitor mode 的 USB Wi-Fi 网卡。",
+      "description": "Pwnagotchi 将本地 pwnagotchi 与 bettercap 状态集成到 CardputerZero APPLaunch，提供 Home、Stats、Control 三个页面，以及 Start、Stop、Restart、Manual、Auto 控制。硬件限制：CM0 板载 Wi-Fi 不支持 monitor mode，不能用于抓包；本应用必须配合支持 monitor mode 的外接 USB Wi-Fi 网卡使用。实际测试通过的网卡为 TP-Link TL-WN722N v1.0 USB Wi-Fi adapter（Atheros AR9271 芯片）。"
+    },
+    "en": {
+      "title": "Pwnagotchi",
+      "summary": "Pwnagotchi status, control, and handshake dashboard for CardputerZero with an external monitor-mode USB Wi-Fi adapter.",
+      "description": "Pwnagotchi integrates local pwnagotchi and bettercap status into CardputerZero APPLaunch with Home, Stats, and Control pages plus Start, Stop, Restart, Manual, and Auto actions. Hardware limitation: the CM0 onboard Wi-Fi does not support monitor mode and cannot be used for packet capture. This app requires an external monitor-mode capable USB Wi-Fi adapter. Tested hardware: TP-Link TL-WN722N v1.0 USB Wi-Fi adapter (Atheros AR9271 chipset)."
+    }
+  },
+  "license": "MIT",
+  "icon": "tools/assets/pwnagotchi.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": false,
+    "network": true,
+    "filesystem": "app-data-and-handshakes",
+    "keyboard_input": true,
+    "background_service": true,
+    "external_hardware": true
+  }
+}
