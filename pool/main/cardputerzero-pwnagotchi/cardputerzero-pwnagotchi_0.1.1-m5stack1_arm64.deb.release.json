@@ -1,0 +1,9 @@
+{
+  "filename": "cardputerzero-pwnagotchi_0.1.1-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/cardputerzero-pwnagotchi_0.1.1-m5stack1_arm64.deb",
+  "sha256": "0d4b2b0d2afe8fd048dc4058103f0ff4a2b3a364f5e968f6368a40f250b0a73e",
+  "size": 32801896,
+  "package": "cardputerzero-pwnagotchi",
+  "version": "0.1.1-m5stack1",
+  "architecture": "arm64"
+}

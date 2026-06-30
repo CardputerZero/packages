@@ -21,13 +21,21 @@ on:
         default: 'packages'
 
 permissions:
-  contents: read
+  contents: write      # promote .deb assets into the apt-pool release
   pages: write
   id-token: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
+
+env:
+  # Long-lived "pool" release that stores every .deb as an asset.
+  # .deb files are NOT kept in git; they live here and are distributed via the
+  # Releases CDN (unlimited bandwidth). Each package directory in git carries a
+  # <pkg>_<ver>_<arch>.deb.release.json manifest describing where the binary
+  # was first uploaded (a contributor fork release) so CI can promote it here.
+  POOL_TAG: apt-pool
 
 jobs:
   build-and-deploy:
@@ -37,22 +45,70 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - name: Checkout with LFS
+      - name: Checkout
         uses: actions/checkout@v4
-        with:
-          lfs: true
 
       - name: Install tools
-        run: sudo apt-get update && sudo apt-get install -y dpkg-dev
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev rsync jq
 
-      - name: Build APT repository
+      - name: Promote pending .deb manifests into the apt-pool release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+          # Existing assets in the pool release (by name).
+          gh release view "$POOL_TAG" --json assets --jq '.assets[].name' 2>/dev/null | sort > /tmp/pool-assets.txt || : > /tmp/pool-assets.txt
+
+          # Each manifest declares the canonical filename + source URL + sha256.
+          shopt -s nullglob globstar
+          for manifest in pool/main/**/*.deb.release.json; do
+            name=$(jq -r '.filename' "$manifest")
+            url=$(jq -r '.url' "$manifest")
+            want_sha=$(jq -r '.sha256' "$manifest")
+            if [ -z "$name" ] || [ "$name" = "null" ]; then
+              echo "::error::manifest $manifest missing .filename"; exit 1
+            fi
+            if grep -qxF "$name" /tmp/pool-assets.txt; then
+              echo "already in pool: $name"
+              continue
+            fi
+            echo "promoting $name from $url"
+            tmp="/tmp/promote-$name"
+            curl -fL --retry 3 --max-time 600 -o "$tmp" "$url"
+            got_sha=$(sha256sum "$tmp" | awk '{print $1}')
+            if [ -n "$want_sha" ] && [ "$want_sha" != "null" ] && [ "$got_sha" != "$want_sha" ]; then
+              echo "::error::sha256 mismatch for $name (want $want_sha got $got_sha)"; exit 1
+            fi
+            gh release upload "$POOL_TAG" "$tmp" --clobber
+            rm -f "$tmp"
+          done
+
+      - name: Download .deb assets from the apt-pool release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p release-debs
+          gh release download "$POOL_TAG" -D release-debs --pattern '*.deb' --clobber
+
+      - name: Build APT repository (Pages metadata only; .deb served from Releases)
+        run: |
+          set -euo pipefail
+          REL_BASE="${{ github.server_url }}/${{ github.repository }}/releases/download/${POOL_TAG}"
           mkdir -p public/dists/stable/main/binary-arm64
-          cp -a pool public/
-          cd public
-          dpkg-scanpackages --multiversion pool/ > dists/stable/main/binary-arm64/Packages
-          gzip -k -f dists/stable/main/binary-arm64/Packages
-          cd dists/stable
+
+          # Pages serves metadata + screenshots + meta.json, but NOT the .deb files.
+          rsync -a --exclude='*.deb' pool/ public/pool/
+
+          # Scan the .deb downloaded from the release; rewrite Filename to the
+          # release asset download URL (flat asset name == basename).
+          ( cd release-debs && dpkg-scanpackages --multiversion . /dev/null ) 2>/dev/null \
+            | awk -v base="$REL_BASE" '
+                /^Filename:/ { n = split($2, a, "/"); print "Filename: " base "/" a[n]; next }
+                { print }
+              ' > public/dists/stable/main/binary-arm64/Packages
+          gzip -k -f public/dists/stable/main/binary-arm64/Packages
+
+          cd public/dists/stable
           printf '%s\n' \
             "Origin: CardputerZero" \
             "Label: CardputerZero AppStore" \
@@ -74,6 +130,25 @@ jobs:
             printf " %s %s %s\n" "$hash" "$size" "$f" >> Release
           done
 
+      - name: Stage OSS tree (China mirror serves .deb locally with relative paths)
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
+        run: |
+          set -euo pipefail
+          # OSS hosts the full repo: copy metadata, drop the .deb into pool/ by
+          # package name (filename is <package>_<version>_<arch>.deb), and
+          # regenerate Packages with RELATIVE Filename so apt/registry resolve
+          # the binaries from OSS itself.
+          rsync -a public/ oss-public/
+          for deb in release-debs/*.deb; do
+            base=$(basename "$deb")
+            pkg=${base%%_*}
+            mkdir -p "oss-public/pool/main/$pkg"
+            cp -f "$deb" "oss-public/pool/main/$pkg/$base"
+          done
+          ( cd oss-public && dpkg-scanpackages --multiversion pool/ /dev/null ) 2>/dev/null \
+            > oss-public/dists/stable/main/binary-arm64/Packages
+          gzip -k -f oss-public/dists/stable/main/binary-arm64/Packages
+
       - name: Setup ossutil
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
         uses: manyuanrong/setup-ossutil@v3.0
@@ -86,7 +161,7 @@ jobs:
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
         env:
           OSS_SYNC_ENABLED: 'true'
-          OSS_PUBLIC_DIR: public
+          OSS_PUBLIC_DIR: oss-public
           OSS_ENDPOINT: ${{ vars.PACKAGES_OSS_ENDPOINT || 'oss-cn-shenzhen.aliyuncs.com' }}
           OSS_BUCKET: ${{ vars.PACKAGES_OSS_BUCKET || 'cardputer-zero-repo' }}
           OSS_PREFIX: ${{ inputs.oss_prefix || vars.PACKAGES_OSS_PREFIX || 'packages' }}

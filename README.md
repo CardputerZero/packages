@@ -2,13 +2,14 @@
 
 APT repository for CardputerZero applications.
 
-- `.deb` files stored in git via LFS
-- CI auto-generates APT index and deploys to GitHub Pages
-- Optional Aliyun OSS mirror lives under `oss/` and is disabled by default
-- CN AppStore registry is generated at the OSS mirror when OSS sync is enabled
-- Users download via Pages CDN (100GB/month bandwidth)
+`.deb` binaries are **not** stored in git. They live in a long-lived GitHub
+Release (`apt-pool`) and are mirrored to Aliyun OSS for China. Git only holds
+small metadata: `meta.json`, screenshots, and one
+`<pkg>_<ver>_<arch>.deb.release.json` manifest per package.
 
 ## Usage on device
+
+Global (GitHub Pages, `.deb` served from the Releases CDN):
 
 ```bash
 echo "deb [trusted=yes] https://cardputerzero.github.io/packages stable main" | sudo tee /etc/apt/sources.list.d/cardputerzero.list
@@ -16,17 +17,75 @@ sudo apt update
 sudo apt install nc2000 lofibox
 ```
 
-## Adding a package
+China (Aliyun OSS mirror, `.deb` served from OSS):
 
-1. Place the `.deb` file in `pool/main/<package-name>/`
-2. Push to `main` branch
-3. CI will auto-regenerate APT index and deploy to Pages
+```bash
+echo "deb [trusted=yes] https://cardputer-zero-repo.oss-cn-shenzhen.aliyuncs.com/packages stable main" | sudo tee /etc/apt/sources.list.d/cardputerzero.list
+sudo apt update
+```
 
-## Structure
+## Architecture
 
 ```
-pool/main/<pkg>/<pkg>_<ver>_<arch>.deb   ← LFS-tracked binaries (source of truth)
-public/                                  ← built by CI, deployed to GitHub Pages
-  ├── pool/...                           ← deb files served via CDN
-  └── dists/stable/main/binary-arm64/    ← APT metadata
+Storage:   .deb  →  GitHub Release "apt-pool"  (unlimited bandwidth, no LFS)
+                 →  Aliyun OSS mirror           (China, relative paths)
+Metadata:  git   →  meta.json / screenshots / *.deb.release.json manifests
+Index:     CI    →  Pages: dists/ + pool/(metadata only), Filename → release URL
+                 →  OSS:   full tree with .deb, relative Filename + CN registry
 ```
+
+- **Global / Pages**: `dists/.../Packages` `Filename` points at the `apt-pool`
+  release asset URL. Pages serves only metadata, so it never approaches the
+  1 GB site limit.
+- **China / OSS**: CI downloads the `.deb` from the release, uploads them to
+  OSS, and regenerates `Packages` with **relative** `Filename` so apt and the
+  AppStore registry resolve binaries from OSS directly.
+
+## Publishing a package (third-party developers)
+
+Use `czdev publish` (from `m5stack/CardputerZero-AppBuilder`). With only a
+normal GitHub login it will:
+
+1. Upload your `.deb` as an asset on a Release **in your own fork** of this repo
+   (your free quota, unlimited download bandwidth — costs the project nothing).
+2. Open a PR here containing only `meta.json`, screenshots/icon, and a
+   `<pkg>_<ver>_<arch>.deb.release.json` manifest with the fork release URL +
+   sha256. No `.deb` enters git.
+
+CI then:
+
+1. **Validate** (`validate-pr.yml`, untrusted `pull_request` stage): downloads
+   the `.deb` from the manifest URL, verifies sha256, runs `dpkg-deb` checks,
+   maintainer/ownership and version checks; results are posted by the privileged
+   `validate-pr-comment.yml` (`workflow_run`) stage.
+2. **Promote on merge** (`update-index.yml`): pulls the approved `.deb` from the
+   manifest URL into the official `apt-pool` release, rebuilds the index, deploys
+   Pages, and syncs OSS.
+
+If a PR is rejected, the project stored nothing — the binary only ever lived in
+the contributor's own fork release.
+
+## Manifest format
+
+`pool/main/<pkg>/<pkg>_<ver>_<arch>.deb.release.json`:
+
+```json
+{
+  "filename": "nc2000_1.0.3_arm64.deb",
+  "url": "https://github.com/<owner>/<repo>/releases/download/<tag>/nc2000_1.0.3_arm64.deb",
+  "sha256": "…",
+  "size": 20560444,
+  "package": "nc2000",
+  "version": "1.0.3",
+  "architecture": "arm64"
+}
+```
+
+Note: GitHub sanitizes `~` to `.` in release asset names, so `filename` may use
+`.` where the Debian version uses `~` (e.g. `lofibox_0.2.0-1.lofibox23_arm64.deb`).
+
+## OSS mirror
+
+See `oss/README.md`. Enable by setting repo variable
+`PACKAGES_OSS_SYNC_ENABLED=true` and the `OSS_ACCESS_KEY_ID` /
+`OSS_ACCESS_KEY_SECRET` secrets.

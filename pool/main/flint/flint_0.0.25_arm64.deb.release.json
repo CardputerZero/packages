@@ -1,0 +1,9 @@
+{
+  "filename": "flint_0.0.25_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/flint_0.0.25_arm64.deb",
+  "sha256": "fcfb04c52e2c06f4023f0453bfd88e052c314465b3283715c5e514a6d3af4e38",
+  "size": 3374248,
+  "package": "flint",
+  "version": "0.0.25",
+  "architecture": "arm64"
+}

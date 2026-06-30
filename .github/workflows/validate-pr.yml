@@ -1,160 +1,153 @@
 name: Validate Package PR
 
+# Stage 1 of 2 (untrusted): runs in the fork/PR context with a READ-ONLY token
+# and NO secrets. It downloads the .deb declared by each *.deb.release.json
+# manifest, verifies it, and writes the outcome to an artifact. A separate
+# privileged workflow (validate-pr-comment.yml, workflow_run) posts the comment.
+# This avoids the pull_request_target + checkout-PR-head footgun.
+
 on:
-  pull_request_target:
+  pull_request:
     branches: [main]
-    paths: ['pool/**/*.deb']
+    paths:
+      - 'pool/**/*.deb.release.json'
+      - 'pool/**/*.deb'
+
+permissions:
+  contents: read
 
 jobs:
   validate:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pull-requests: write
-
     steps:
-      - name: Checkout PR branch with LFS
+      - name: Checkout PR code (untrusted, data only)
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          lfs: true
           fetch-depth: 0
 
-      - name: Get changed files
-        id: changes
-        run: |
-          git diff --name-only --diff-filter=A ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} \
-            | grep '\.deb$' > added_debs.txt || true
-          git diff --name-only --diff-filter=D ${{ github.event.pull_request.base.sha }}..${{ github.event.pull_request.head.sha }} \
-            | grep '\.deb$' > deleted_debs.txt || true
-          echo "added=$(wc -l < added_debs.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
-          echo "deleted=$(wc -l < deleted_debs.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev jq
 
-      - name: Validate added packages
-        if: steps.changes.outputs.added != '0'
-        id: validate-added
+      - name: Validate manifests and packages
+        id: validate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
         run: |
+          set -uo pipefail
           ERRORS=""
-          while IFS= read -r deb; do
-            echo "=== Validating: $deb ==="
+          mkdir -p /tmp/out
+          echo "${{ github.event.pull_request.number }}" > /tmp/out/pr-number.txt
 
-            # 1. Path must be under pool/main/
-            if [[ "$deb" != pool/main/* ]]; then
-              ERRORS="${ERRORS}❌ \`$deb\` is outside pool/main/\n"
-              continue
+          # Reject raw .deb committed to git (must use the release-manifest flow).
+          if git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep -q '\.deb$'; then
+            ERRORS="${ERRORS}- ❌ Raw \`.deb\` files must not be committed to git. Upload the binary to a Release in your fork and submit a \`*.deb.release.json\` manifest (use \`czdev publish\`).\n"
+          fi
+
+          ADDED_MANIFESTS=$(git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+
+          AUTHOR_EMAIL=$(gh api "users/$PR_AUTHOR" --jq '.email // empty' 2>/dev/null || true)
+          NOREPLY="${PR_AUTHOR}@users.noreply.github.com"
+
+          for manifest in $ADDED_MANIFESTS; do
+            echo "=== $manifest ==="
+            if [[ "$manifest" != pool/main/* ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` is outside \`pool/main/\`\n"; continue
+            fi
+            url=$(jq -r '.url // empty' "$manifest")
+            sha=$(jq -r '.sha256 // empty' "$manifest")
+            fname=$(jq -r '.filename // empty' "$manifest")
+            dir_pkg=$(echo "$manifest" | cut -d/ -f3)
+            if [[ -z "$url" || -z "$sha" || -z "$fname" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` must contain \`url\`, \`sha256\`, \`filename\`\n"; continue
             fi
 
-            # 2. Directory name must match Package field
-            DIR_PKG=$(echo "$deb" | cut -d/ -f3)
-            CTRL_PKG=$(dpkg-deb -f "$deb" Package)
-            if [[ "$DIR_PKG" != "$CTRL_PKG" ]]; then
-              ERRORS="${ERRORS}❌ Directory name '$DIR_PKG' != Package field '$CTRL_PKG'\n"
+            deb="/tmp/$fname"
+            if ! curl -fL --retry 3 --max-time 600 -o "$deb" "$url"; then
+              ERRORS="${ERRORS}- ❌ Could not download \`$fname\` from \`$url\`\n"; continue
+            fi
+            got=$(sha256sum "$deb" | awk '{print $1}')
+            if [[ "$got" != "$sha" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` sha256 mismatch (manifest \`$sha\`, downloaded \`$got\`)\n"; continue
             fi
 
-            # 3. Must contain .desktop file
+            ctrl_pkg=$(dpkg-deb -f "$deb" Package 2>/dev/null || echo "")
+            new_ver=$(dpkg-deb -f "$deb" Version 2>/dev/null || echo "")
+            if [[ -z "$ctrl_pkg" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` is not a valid .deb\n"; continue
+            fi
+            if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
+              ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
+            fi
             if ! dpkg-deb -c "$deb" | grep -q '\.desktop$'; then
-              ERRORS="${ERRORS}❌ \`$deb\` has no .desktop file. All apps must include one.\n"
+              ERRORS="${ERRORS}- ❌ \`$fname\` has no .desktop file. All apps must include one.\n"
+            fi
+            if ! echo "$ctrl_pkg" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$'; then
+              ERRORS="${ERRORS}- ❌ Invalid package name: '$ctrl_pkg'\n"
+            fi
+            expected_name="${ctrl_pkg}_${new_ver}_$(dpkg-deb -f "$deb" Architecture).deb"
+            # GitHub release assets sanitize '~' to '.'; allow either form.
+            if [[ "$fname" != "$expected_name" && "$fname" != "${expected_name//\~/.}" ]]; then
+              ERRORS="${ERRORS}- ❌ filename '$fname' should be '$expected_name'\n"
             fi
 
-            # 4. Valid package name
-            if ! echo "$CTRL_PKG" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$'; then
-              ERRORS="${ERRORS}❌ Invalid package name: '$CTRL_PKG'\n"
+            maintainer=$(dpkg-deb -f "$deb" Maintainer 2>/dev/null || echo "")
+            maint_email=$(echo "$maintainer" | grep -oP '<\K[^>]+' || echo "$maintainer")
+            if [[ "$maint_email" != "$NOREPLY" && "$maint_email" != "$AUTHOR_EMAIL" ]]; then
+              ERRORS="${ERRORS}- ❌ Maintainer '${maint_email}' does not match PR author '${PR_AUTHOR}' (expected ${NOREPLY} or your verified email)\n"
             fi
 
-            # 5. Maintainer email vs PR author
-            MAINTAINER=$(dpkg-deb -f "$deb" Maintainer)
-            MAINT_EMAIL=$(echo "$MAINTAINER" | grep -oP '<\K[^>]+' || echo "$MAINTAINER")
-            PR_AUTHOR="${{ github.event.pull_request.user.login }}"
-            NOREPLY="${PR_AUTHOR}@users.noreply.github.com"
-
-            AUTHOR_EMAIL=$(gh api "users/$PR_AUTHOR" --jq '.email // empty' 2>/dev/null || true)
-
-            if [[ "$MAINT_EMAIL" != "$NOREPLY" ]] && [[ "$MAINT_EMAIL" != "$AUTHOR_EMAIL" ]]; then
-              ERRORS="${ERRORS}❌ Maintainer email '${MAINT_EMAIL}' does not match PR author '${PR_AUTHOR}' (expected ${NOREPLY} or ${AUTHOR_EMAIL})\n"
+            # Version must be newer than existing manifests for this package on base.
+            existing_ver=""
+            for ex in $(git ls-tree -r "$BASE_SHA" --name-only | grep "^pool/main/${dir_pkg}/.*\.deb\.release\.json$" || true); do
+              v=$(git show "$BASE_SHA:$ex" | jq -r '.version // empty' 2>/dev/null || true)
+              if [[ -n "$v" ]]; then
+                if [[ -z "$existing_ver" ]] || dpkg --compare-versions "$v" gt "$existing_ver" 2>/dev/null; then
+                  existing_ver="$v"
+                fi
+              fi
+            done
+            if [[ -n "$existing_ver" ]] && dpkg --compare-versions "$new_ver" le "$existing_ver" 2>/dev/null; then
+              ERRORS="${ERRORS}- ❌ Version $new_ver is not newer than existing $existing_ver\n"
             fi
 
-            # 6. Version must be newer than existing
-            EXISTING_PKG=$(find pool/main/"$DIR_PKG"/ -name "${CTRL_PKG}_*_*.deb" 2>/dev/null | grep -v "$deb" | sort -V | tail -1 || true)
-            if [[ -n "$EXISTING_PKG" ]]; then
-              EXISTING_VER=$(dpkg-deb -f "$EXISTING_PKG" Version)
-              NEW_VER=$(dpkg-deb -f "$deb" Version)
-              if dpkg --compare-versions "$NEW_VER" le "$EXISTING_VER" 2>/dev/null; then
-                ERRORS="${ERRORS}❌ Version $NEW_VER is not newer than existing $EXISTING_VER\n"
+            if [[ -z "$ERRORS" ]]; then echo "✓ $fname passed"; fi
+          done
+
+          # Ownership check for deleted manifests.
+          DELETED=$(git diff --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+          for manifest in $DELETED; do
+            dir_pkg=$(echo "$manifest" | cut -d/ -f3)
+            url=$(git show "$BASE_SHA:$manifest" | jq -r '.url // empty' 2>/dev/null || true)
+            [[ -z "$url" ]] && continue
+            deb="/tmp/del-$(basename "$manifest").deb"
+            if curl -fsL --max-time 600 -o "$deb" "$url" 2>/dev/null; then
+              maintainer=$(dpkg-deb -f "$deb" Maintainer 2>/dev/null || echo "")
+              maint_email=$(echo "$maintainer" | grep -oP '<\K[^>]+' || echo "$maintainer")
+              if [[ "$maint_email" != "$NOREPLY" && "$maint_email" != "$AUTHOR_EMAIL" ]]; then
+                ERRORS="${ERRORS}- ❌ Cannot delete \`$manifest\`: maintainer '${maint_email}' != PR author '${PR_AUTHOR}'\n"
               fi
             fi
-
-            if [[ -z "$ERRORS" ]]; then
-              echo "✓ $deb passed all checks"
-            fi
-          done < added_debs.txt
+          done
 
           if [[ -n "$ERRORS" ]]; then
-            echo "VALIDATION_ERRORS<<EOF" >> "$GITHUB_ENV"
-            echo -e "$ERRORS" >> "$GITHUB_ENV"
-            echo "EOF" >> "$GITHUB_ENV"
-            echo -e "$ERRORS"
-            exit 1
+            { echo "## ❌ Package Validation Failed"; echo; echo -e "$ERRORS"; echo; echo "---"; echo "*If you believe this is an error, contact a maintainer.*"; } > /tmp/out/result.md
+            echo "status=failure" >> "$GITHUB_OUTPUT"
+          else
+            { echo "## ✅ Package Validation Passed"; echo; echo "All checks passed. Ready for maintainer review."; } > /tmp/out/result.md
+            echo "status=success" >> "$GITHUB_OUTPUT"
           fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          cat /tmp/out/result.md
 
-      - name: Validate deleted packages (ownership check)
-        if: steps.changes.outputs.deleted != '0'
-        id: validate-deleted
-        run: |
-          ERRORS=""
-          PR_AUTHOR="${{ github.event.pull_request.user.login }}"
-          NOREPLY="${PR_AUTHOR}@users.noreply.github.com"
-          AUTHOR_EMAIL=$(gh api "users/$PR_AUTHOR" --jq '.email // empty' 2>/dev/null || true)
-
-          # Checkout base to inspect deleted files
-          git checkout ${{ github.event.pull_request.base.sha }} -- $(cat deleted_debs.txt) 2>/dev/null || true
-
-          while IFS= read -r deb; do
-            if [[ ! -f "$deb" ]]; then
-              continue
-            fi
-            MAINTAINER=$(dpkg-deb -f "$deb" Maintainer)
-            MAINT_EMAIL=$(echo "$MAINTAINER" | grep -oP '<\K[^>]+' || echo "$MAINTAINER")
-
-            if [[ "$MAINT_EMAIL" != "$NOREPLY" ]] && [[ "$MAINT_EMAIL" != "$AUTHOR_EMAIL" ]]; then
-              ERRORS="${ERRORS}❌ Cannot delete \`$deb\`: maintainer '${MAINT_EMAIL}' does not match PR author '${PR_AUTHOR}'\n"
-            fi
-          done < deleted_debs.txt
-
-          if [[ -n "$ERRORS" ]]; then
-            echo "VALIDATION_ERRORS<<EOF" >> "$GITHUB_ENV"
-            echo -e "$ERRORS" >> "$GITHUB_ENV"
-            echo "EOF" >> "$GITHUB_ENV"
-            echo -e "$ERRORS"
-            exit 1
-          fi
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Comment on PR with validation errors
-        if: failure()
-        uses: actions/github-script@v7
+      - name: Upload validation result
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
-          script: |
-            const errors = process.env.VALIDATION_ERRORS || 'Unknown validation failure';
-            const body = `## ❌ Package Validation Failed\n\n${errors}\n\n---\n*If you believe this is an error, contact a maintainer.*`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: body
-            });
+          name: pr-validation
+          path: /tmp/out
 
-      - name: Comment on PR with success
-        if: success()
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const body = `## ✅ Package Validation Passed\n\nAll checks passed. Ready for maintainer review.`;
-            github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: context.issue.number,
-              body: body
-            });
+      - name: Fail job if validation failed
+        if: steps.validate.outputs.status == 'failure'
+        run: exit 1

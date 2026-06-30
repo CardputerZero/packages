@@ -1,0 +1,9 @@
+{
+  "filename": "calendar_0.1.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/calendar_0.1.2_arm64.deb",
+  "sha256": "20b4a1fe8f4e1ca054ae045a372887f43758a024791e531d9a2c5115d06e633f",
+  "size": 5337480,
+  "package": "calendar",
+  "version": "0.1.2",
+  "architecture": "arm64"
+}

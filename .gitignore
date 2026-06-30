@@ -1,2 +1,9 @@
 dists/
 public/
+oss-public/
+release-debs/
+
+# .deb binaries are never committed to git. They live in the apt-pool GitHub
+# Release (and the Aliyun OSS mirror). Each package carries a
+# <pkg>_<ver>_<arch>.deb.release.json manifest instead.
+*.deb

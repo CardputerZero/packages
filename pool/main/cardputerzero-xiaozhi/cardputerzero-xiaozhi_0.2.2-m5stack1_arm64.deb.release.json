@@ -1,0 +1,9 @@
+{
+  "filename": "cardputerzero-xiaozhi_0.2.2-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/cardputerzero-xiaozhi_0.2.2-m5stack1_arm64.deb",
+  "sha256": "53c6dea5d7dc671618d5edfbe894522c72f5efb38ff545a9eeec7a15327f7ea4",
+  "size": 25851200,
+  "package": "cardputerzero-xiaozhi",
+  "version": "0.2.2-m5stack1",
+  "architecture": "arm64"
+}

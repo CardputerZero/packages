@@ -82,6 +82,11 @@ def quote_path(path: str) -> str:
 
 
 def public_url(base_url: str, path: str) -> str:
+    # Packages "Filename" may already be an absolute URL (e.g. when the .deb is
+    # served straight from a GitHub Release). In that case use it verbatim
+    # instead of prefixing the mirror base URL.
+    if path.startswith(("http://", "https://")):
+        return path
     return f"{base_url.rstrip('/')}/{quote_path(path)}"
 
 

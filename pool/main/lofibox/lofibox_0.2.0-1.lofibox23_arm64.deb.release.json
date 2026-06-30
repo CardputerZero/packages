@@ -1,0 +1,9 @@
+{
+  "filename": "lofibox_0.2.0-1.lofibox23_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/lofibox_0.2.0-1.lofibox23_arm64.deb",
+  "sha256": "469d14c030d4addb5ff54f6eef7700b1781da3c33047796b1bbd2c8b3fe3177d",
+  "size": 9077082,
+  "package": "lofibox",
+  "version": "0.2.0-1~lofibox23",
+  "architecture": "arm64"
+}
