@@ -7,22 +7,29 @@ Release (`apt-pool`) and are mirrored to Aliyun OSS for China. Git only holds
 small metadata: `meta.json`, screenshots, and one
 `<pkg>_<ver>_<arch>.deb.release.json` manifest per package.
 
-## Usage on device
+## How the device installs apps
 
-Global (GitHub Pages, `.deb` served from the Releases CDN):
+The on-device AppStore reads `registry.json` and downloads each `.deb` directly
+from its `download.url` (an absolute GitHub Release URL globally, or an OSS URL
+for the China registry), verifying `download.md5` before install. This is the
+primary install path and needs no apt configuration.
 
-```bash
-echo "deb [trusted=yes] https://cardputerzero.github.io/packages stable main" | sudo tee /etc/apt/sources.list.d/cardputerzero.list
-sudo apt update
-sudo apt install nc2000 lofibox
-```
+## Manual apt (optional, power users)
 
-China (Aliyun OSS mirror, `.deb` served from OSS):
+`apt` requires the `.deb` to be co-located with the metadata (it treats
+`Filename` as a path relative to the repo root), so the installable apt endpoint
+is the **OSS mirror**, which serves the binaries inline:
 
 ```bash
 echo "deb [trusted=yes] https://cardputer-zero-repo.oss-cn-shenzhen.aliyuncs.com/packages stable main" | sudo tee /etc/apt/sources.list.d/cardputerzero.list
 sudo apt update
+sudo apt install nc2000
 ```
+
+The GitHub Pages endpoint (`https://cardputerzero.github.io/packages`) publishes
+the index with absolute Release `Filename`s — it is the **data source for the
+registry** and the web UI, not a `apt`-installable mirror (apt does not follow
+absolute `Filename` URLs).
 
 ## Architecture
 

@@ -163,6 +163,31 @@ jobs:
             > oss-public/dists/stable/main/binary-arm64/Packages
           gzip -k -f oss-public/dists/stable/main/binary-arm64/Packages
 
+          # Regenerate the OSS Release so its hashes match the relative-path
+          # Packages (the rsync'd copy still carried the Pages-build hashes,
+          # which apt rejects as a size/hash mismatch).
+          cd oss-public/dists/stable
+          printf '%s\n' \
+            "Origin: CardputerZero" \
+            "Label: CardputerZero AppStore" \
+            "Suite: stable" \
+            "Codename: stable" \
+            "Architectures: arm64" \
+            "Components: main" \
+            "Description: CardputerZero APT Repository" > Release
+          echo "MD5Sum:" >> Release
+          for f in main/binary-arm64/Packages main/binary-arm64/Packages.gz; do
+            size=$(wc -c < "$f" | tr -d ' ')
+            hash=$(md5sum "$f" | awk '{print $1}')
+            printf " %s %s %s\n" "$hash" "$size" "$f" >> Release
+          done
+          echo "SHA256:" >> Release
+          for f in main/binary-arm64/Packages main/binary-arm64/Packages.gz; do
+            size=$(wc -c < "$f" | tr -d ' ')
+            hash=$(sha256sum "$f" | awk '{print $1}')
+            printf " %s %s %s\n" "$hash" "$size" "$f" >> Release
+          done
+
       - name: Setup ossutil
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
         uses: manyuanrong/setup-ossutil@v3.0
