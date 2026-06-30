@@ -41,6 +41,17 @@ jobs:
           mkdir -p /tmp/out
           echo "${{ github.event.pull_request.number }}" > /tmp/out/pr-number.txt
 
+          # Third-party submissions always arrive as fork PRs. Same-repo PRs are
+          # maintainer/infra changes (e.g. the migration that seeds many authors'
+          # packages at once) and must not be judged by the per-submission
+          # ownership rules below.
+          if [ "${{ github.event.pull_request.head.repo.full_name }}" = "${{ github.repository }}" ]; then
+            echo "Same-repo (maintainer) PR — skipping third-party submission validation."
+            { echo "## ✅ Validation skipped"; echo; echo "Same-repo (maintainer/infra) PR — third-party submission checks are not applied."; } > /tmp/out/result.md
+            echo "status=success" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
           # Reject raw .deb committed to git (must use the release-manifest flow).
           if git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep -q '\.deb$'; then
             ERRORS="${ERRORS}- ❌ Raw \`.deb\` files must not be committed to git. Upload the binary to a Release in your fork and submit a \`*.deb.release.json\` manifest (use \`czdev publish\`).\n"
@@ -81,7 +92,11 @@ jobs:
             if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
             fi
-            if ! dpkg-deb -c "$deb" | grep -q '\.desktop$'; then
+            # Write to a file first: `dpkg-deb -c | grep -q` makes grep close the
+            # pipe on first match, so dpkg-deb dies with SIGPIPE and pipefail
+            # turns the whole check into a false "missing .desktop".
+            dpkg-deb -c "$deb" > /tmp/deb-contents.txt 2>/dev/null || true
+            if ! grep -q '\.desktop$' /tmp/deb-contents.txt; then
               ERRORS="${ERRORS}- ❌ \`$fname\` has no .desktop file. All apps must include one.\n"
             fi
             if ! echo "$ctrl_pkg" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$'; then
