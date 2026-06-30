@@ -83,12 +83,26 @@ jobs:
             rm -f "$tmp"
           done
 
-      - name: Download .deb assets from the apt-pool release
+      - name: Collect manifested .deb from the apt-pool release
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          set -euo pipefail
+          # Manifests in git are the source of truth for the catalog: only the
+          # .deb referenced by a manifest is indexed, so deleting a manifest
+          # (e.g. `czdev unpublish`) drops the package on the next build even if
+          # the asset still exists in the release.
           mkdir -p release-debs
-          gh release download "$POOL_TAG" -D release-debs --pattern '*.deb' --clobber
+          shopt -s nullglob globstar
+          count=0
+          for manifest in pool/main/**/*.deb.release.json; do
+            name=$(jq -r '.filename' "$manifest")
+            if ! gh release download "$POOL_TAG" -D release-debs --pattern "$name" --clobber; then
+              echo "::error::asset '$name' (from $manifest) not found in the $POOL_TAG release"; exit 1
+            fi
+            count=$((count+1))
+          done
+          echo "collected $count .deb from manifests"
 
       - name: Build APT repository (Pages metadata only; .deb served from Releases)
         run: |
