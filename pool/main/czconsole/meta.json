@@ -1,0 +1,11 @@
+{
+  "title": "czconsole",
+  "summary": "Phone + on-device field console: telemetry, LCD mirror, files, and wardrive/SDR/recon tools",
+  "description": "A privilege-separated field console for the M5Stack CardputerZero. A powerless Go web worker serves a phone dashboard (telemetry, LCD mirror, file browser) and drives capability-gated tools — nmap, gobuster, tcpdump, rtl_433, rtl_power (RF heatmaps), and kismet+GPS wardriving — all defined by runtime JSON specs. A native LCD frontend runs the same tools on the device's own screen and keypad. OS-agnostic: same package on Kali and stock RaspiOS; tools self-disable when absent.",
+  "categories": ["Security", "Utilities"],
+  "author": { "github": "n0xa", "display_name": "n0xa" },
+  "license": "MIT",
+  "source_repo": "https://github.com/n0xa/czconsole",
+  "icon": "czconsole.png",
+  "permissions": { "network": true, "keyboard_input": true, "filesystem": true, "external_hardware": true }
+}
