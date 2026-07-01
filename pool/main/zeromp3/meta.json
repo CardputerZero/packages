@@ -1,0 +1,38 @@
+{
+  "title": "Zero MP3",
+  "summary": "Play local MP3 files with playlist, volume, repeat, and shuffle controls.",
+  "description": "Zero MP3 is a lightweight local music player for CardputerZero. It scans common music locations such as /home/pi/Music, /media, and /mnt, and can also use ZEROMP3_DIR for a custom music folder.",
+  "categories": [
+    "Media",
+    "Music"
+  ],
+  "license": "MIT",
+  "source_repo": "https://github.com/dianjixz/launcher",
+  "icon": "share/images/zeromp3.png",
+  "screenshots": [
+    "store/screenshots/player.png",
+    "store/screenshots/playlist.png"
+  ],
+  "locales": {
+    "zh-CN": {
+      "title": "Zero MP3",
+      "summary": "播放本地 MP3 文件，支持播放列表、音量、循环和随机播放。",
+      "description": "Zero MP3 是为 CardputerZero 设计的轻量本地音乐播放器。它会扫描 /home/pi/Music、/media、/mnt 等目录，也支持通过 ZEROMP3_DIR 指定音乐目录。应用提供播放列表、播放/暂停、上一首/下一首、音量调节、循环播放和随机播放等常用控制。"
+    },
+    "en": {
+      "title": "Zero MP3",
+      "summary": "Play local MP3 files with playlist, volume, repeat, and shuffle controls.",
+      "description": "Zero MP3 is a lightweight local music player for CardputerZero. It scans common music locations such as /home/pi/Music, /media, and /mnt, and can also use ZEROMP3_DIR for a custom music folder. The app provides playlist browsing, play/pause, previous/next, volume adjustment, repeat, and shuffle controls."
+    },
+    "ja": {
+      "title": "Zero MP3",
+      "summary": "ローカル MP3 をプレイリスト、音量、リピート、シャッフル操作で再生します。",
+      "description": "Zero MP3 は CardputerZero 向けの軽量なローカル音楽プレイヤーです。/home/pi/Music、/media、/mnt などの一般的な音楽フォルダをスキャンし、ZEROMP3_DIR で任意のフォルダも指定できます。プレイリスト表示、再生/一時停止、前後の曲への移動、音量調整、リピート、シャッフル操作に対応します。"
+    }
+  },
+  "permissions": {
+    "audio": true,
+    "filesystem": true,
+    "keyboard_input": true
+  }
+}

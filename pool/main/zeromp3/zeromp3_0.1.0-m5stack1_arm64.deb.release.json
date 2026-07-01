@@ -1,0 +1,9 @@
+{
+  "filename": "zeromp3_0.1.0-m5stack1_arm64.deb",
+  "url": "https://github.com/dianjixz/packages/releases/download/zeromp3-v0.1.0-m5stack1/zeromp3_0.1.0-m5stack1_arm64.deb",
+  "sha256": "034a99a20106e3d742139d7dc18221d2288a64c87979520068401ea38e59818c",
+  "size": 5920144,
+  "package": "zeromp3",
+  "version": "0.1.0-m5stack1",
+  "architecture": "arm64"
+}
