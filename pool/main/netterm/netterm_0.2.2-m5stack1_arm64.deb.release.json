@@ -1,0 +1,9 @@
+{
+  "filename": "netterm_0.2.2-m5stack1_arm64.deb",
+  "url": "https://github.com/u44e/packages/releases/download/czdev-buffer/netterm_0.2.2-m5stack1_arm64.deb",
+  "sha256": "5abb43ffab4696c485b67b34251fe648baa6d3311fddd05a29e816f2bff1d52e",
+  "size": 473670,
+  "package": "netterm",
+  "version": "0.2.2-m5stack1",
+  "architecture": "arm64"
+}
