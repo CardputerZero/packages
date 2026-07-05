@@ -1,0 +1,49 @@
+{
+  "title": "NetTerm",
+  "summary": "SSH / telnet / USB-serial / shell terminal with profiles, VPN, macros and file injection.",
+  "categories": [
+    "Network",
+    "Developer Tools",
+    "Utilities",
+    "System"
+  ],
+  "screenshots": [
+    "store/screenshots/01-sessions-320x170.png",
+    "store/screenshots/02-editor-320x170.png",
+    "store/screenshots/03-terminal-320x170.png",
+    "store/screenshots/04-menu-320x170.png",
+    "store/screenshots/05-macros-320x170.png",
+    "store/screenshots/06-macro-edit-320x170.png",
+    "store/screenshots/07-files-320x170.png",
+    "store/screenshots/08-send-320x170.png",
+    "store/screenshots/09-logview-320x170.png"
+  ],
+  "description": "A pocket terminal for network gear: SSH, telnet, USB-serial console (picocom) and local shell. Connection profiles with OS-managed VPN, per-profile SSH key and color theme, session logging with search, quick-send macros, charset-auto-detect file injection with wait-for-prompt, scrollback with search and line copy/paste, full SGR colour, and a switchable EN/JA UI.",
+  "locales": {
+    "en": {
+      "title": "NetTerm",
+      "summary": "SSH / telnet / USB-serial / shell terminal with profiles, VPN, macros and file injection."
+    },
+    "ja": {
+      "title": "NetTerm",
+      "summary": "SSH / telnet / USB-シリアル / シェル端末。プロファイル・VPN・マクロ・ファイル流し込み対応。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/cardputerzero-ssh-term",
+  "icon": "share/images/netterm.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": true,
+    "filesystem": "full",
+    "external_hardware": true,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": false,
+    "sensors": false,
+    "gps": false,
+    "device_id": false
+  }
+}
