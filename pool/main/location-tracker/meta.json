@@ -1,0 +1,42 @@
+{
+  "title": "Location Tracker",
+  "summary": "LoRa multi-node GPS location receiver — live node list + breadcrumb map.",
+  "categories": [
+    "Hardware",
+    "Utilities",
+    "Communication"
+  ],
+  "screenshots": [
+    "store/screenshots/01-hub-320x170.png",
+    "store/screenshots/02-node-320x170.png",
+    "store/screenshots/03-node-detail-320x170.png"
+  ],
+  "description": "A receiver/display for a LoRa (SX1262) multi-node GPS tracking mesh. Nodes send their position over LoRa; this CardputerZero app shows a live hub view (per-node ID / solution quality / lat-lon / satellites / signal) and a node-detail view (GPS fix, speed, altitude, TX). Radio + GNSS use the M5Stack Cap LoRa-1262 (SX1262 + AT6668/ATGM336H GNSS) — the same cap as the Cardputer ADV — driven on the CM0 via spidev/GPIO, so nodes and hubs interoperate across ADV and CardputerZero. Data arrives as NDJSON on stdin from a LoRa hub over USB-CDC, or from the on-device native LoRa receiver. The SIDE key switches between the hub and node views. Bundles a sample track so it self-demos without hardware. A companion macOS app (native MapKit map view) reads the same LoRa-hub NDJSON stream over USB-CDC/TCP, so the same fleet can be viewed on the Mac at the same time.",
+  "locales": {
+    "en": {
+      "title": "Location Tracker",
+      "summary": "LoRa multi-node GPS location receiver — live node list + breadcrumb map."
+    },
+    "ja": {
+      "title": "ロケーショントラッカー",
+      "summary": "LoRa マルチノードGPS位置の受信/表示。ノード一覧＋軌跡マップ。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/cardputerzero-location-tracker",
+  "icon": "share/images/location-tracker.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": false,
+    "filesystem": "full",
+    "external_hardware": true,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": false,
+    "sensors": true,
+    "gps": true,
+    "device_id": false
+  }
+}
