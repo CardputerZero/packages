@@ -1,0 +1,43 @@
+{
+  "title": "CamStreamEmu",
+  "summary": "Reproduce a captured camera's video stream (multicast / RTSP / HTTP-MJPEG) from the built-in camera.",
+  "categories": [
+    "Multimedia",
+    "Video",
+    "Utilities"
+  ],
+  "screenshots": [
+    "store/screenshots/01-list-320x170.png",
+    "store/screenshots/02-reproduce-320x170.png"
+  ],
+  "description": "CamStreamEmu regenerates the video stream of a real network camera from a profile captured by PacketScope. Pick a camera-profile JSON on the 320x170 screen and it encodes the built-in camera to that exact format via GStreamer (hardware H.264 on the Pi) and delivers it the same way the real camera did — multicast RTP (H.264/MPEG2-TS, MPEG-2, MLIT MPEG2-TTS/PT103, RTP-JPEG), an RTSP server, or an HTTP Motion-JPEG server — while showing live delivery mode / destination / packet & byte counters. Video-only; there is no pan/tilt/zoom camera control. Pairs with PacketScope (observe -> reproduce round-trip).",
+  "locales": {
+    "en": {
+      "title": "CamStreamEmu",
+      "summary": "Reproduce a captured camera's video stream (multicast / RTSP / HTTP-MJPEG) from the built-in camera.",
+      "description": "CamStreamEmu regenerates a real network camera's video stream from a profile captured by PacketScope. Pick a camera-profile JSON on the 320x170 screen; it encodes the built-in camera to that exact format via GStreamer (hardware H.264 on the Pi) and delivers it the way the real camera did: multicast RTP (H.264/MPEG2-TS, MPEG-2, MLIT MPEG2-TTS/PT103, RTP-JPEG), an RTSP server, or an HTTP Motion-JPEG server — with live delivery-mode / destination / packet & byte counters. Video only (no PTZF camera control). Pairs with PacketScope as the observe->reproduce round-trip."
+    },
+    "ja": {
+      "title": "カムストリームエミュ",
+      "summary": "取得したカメラの映像ストリームを内蔵カメラから再現(マルチキャスト/RTSP/HTTP-MJPEG)。",
+      "description": "CamStreamEmu は、PacketScope で取得したプロファイルから実ネットワークカメラの映像ストリームを再現します。320x170 の画面でカメラプロファイルJSONを選ぶと、内蔵カメラを GStreamer(Piではハードウェア H.264)でその形式に符号化し、実カメラと同じ方式で配信します: マルチキャストRTP(H.264/MPEG2-TS・MPEG-2・国交省MPEG2-TTS/PT103・RTP-JPEG)、RTSPサーバ、HTTP Motion-JPEG サーバ。配信モード・宛先・パケット/バイト数をライブ表示します。映像のみ(PTZFカメラ制御なし)。PacketScope と対で「観測→再現」の往復を成します。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/CamStreamEmu",
+  "icon": "share/images/camstreamemu.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": true,
+    "filesystem": "full",
+    "external_hardware": false,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": true,
+    "sensors": false,
+    "gps": false,
+    "device_id": false
+  }
+}
