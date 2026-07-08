@@ -1,0 +1,31 @@
+{
+  "title": "Battleship",
+  "summary": "Classic naval combat: 1P vs AI or 2P over BLE/WiFi.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "store/screenshots/main.png",
+    "store/screenshots/placement.png",
+    "store/screenshots/battle.png",
+    "store/screenshots/network.png"
+  ],
+  "locales": {
+    "zh-CN": {
+      "title": "海战棋",
+      "summary": "经典海战游戏：单人对战 AI，或通过 BLE/WiFi 双人对战。",
+      "description": "经典的海战益智游戏，专为 CardputerZero 打造。单人模式下与本地概率密度 AI 对战（三档难度），并有解说员实时点评战况。双人模式下可通过内置蓝牙（BLE，默认，无需路由器）或 WiFi 局域网与另一台 CardputerZero 对战。界面支持简体中文/日语/英语三语切换，随时可在设置中更改并即时生效。"
+    },
+    "en": {
+      "title": "Battleship",
+      "summary": "Classic naval combat: 1P vs AI or 2P over BLE/WiFi.",
+      "description": "A classic naval combat puzzle game built for CardputerZero. Play solo against a local probability-density AI (three difficulty levels) with live battle commentary. Play two-player over built-in Bluetooth (BLE, the default, no access point needed) or WiFi LAN against another CardputerZero. The UI switches between English, Japanese, and Simplified Chinese instantly from Settings."
+    },
+    "ja": {
+      "title": "バトルシップ",
+      "summary": "王道の海戦ゲーム。1人用はAI対戦、2人用はBLE/WiFi通信対戦。",
+      "description": "CardputerZero向けに作られた、古典的な海戦パズルゲームです。1人用モードでは、ローカルの確率密度AI（難易度3段階）と対戦でき、戦況をリアルタイムで実況する解説機能もあります。2人用モードでは、内蔵Bluetooth（BLE、デフォルト、アクセスポイント不要）またはWiFi LAN経由で、もう1台のCardputerZeroと対戦できます。UIは英語・日本語・簡体字中国語を設定画面から即座に切り替え可能です。"
+    }
+  },
+  "icon": "assets/images/battleship.png"
+}
