@@ -1,0 +1,44 @@
+{
+  "title": "Location Tracker",
+  "summary": "LoRa multi-node GPS location receiver — live node list, node detail, and an offline map view.",
+  "categories": [
+    "Hardware",
+    "Utilities",
+    "Communication"
+  ],
+  "screenshots": [
+    "store/screenshots/01-hub-320x170.png",
+    "store/screenshots/02-node-320x170.png",
+    "store/screenshots/03-node-detail-320x170.png",
+    "store/screenshots/04-hub-map-320x170.png",
+    "store/screenshots/05-node-map-320x170.png"
+  ],
+  "description": "A receiver/display for a LoRa (SX1262) multi-node GPS tracking mesh. Nodes send their position over LoRa; this CardputerZero app shows a live hub view (per-node ID / solution quality / lat-lon / satellites / signal) and a node-detail view (GPS fix, speed, altitude, TX). Radio + GNSS use the M5Stack Cap LoRa-1262 (SX1262 + AT6668/ATGM336H GNSS) — the same cap as the Cardputer ADV — driven on the CM0 via spidev/GPIO, so nodes and hubs interoperate across ADV and CardputerZero. Data arrives as NDJSON on stdin from a LoRa hub over USB-CDC, or from the on-device native LoRa receiver. The SIDE key cycles hub → hub-map → node → node-map, so each mode has both a text screen and a full-screen offline map. The map draws SD-stored offline slippy tiles (no network) with GPS/LoRa positions as markers, a scale bar, and pan/zoom (arrows pan, +/- zoom, 0 recenters): the hub-map auto-fits all received nodes, the node-map follows your own position at the most detail available. A small demo tile set of the Kanto–Chubu region (© GSI Japan / 地理院タイル, credited on-screen) ships with the app so the map self-demos out of the box; point CZ_TILES_DIR at your own tiles (see tools/cztiles) for other areas. Bundles a sample track so the whole app self-demos without hardware. A companion macOS app (native MapKit map view) reads the same LoRa-hub NDJSON stream over USB-CDC/TCP, so the same fleet can be viewed on the Mac at the same time.",
+  "locales": {
+    "en": {
+      "title": "Location Tracker",
+      "summary": "LoRa multi-node GPS location receiver — live node list, node detail, and an offline map view."
+    },
+    "ja": {
+      "title": "ロケーショントラッカー",
+      "summary": "LoRa マルチノードGPS位置の受信/表示。ノード一覧＋ノード詳細＋オフライン地図。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/cardputerzero-location-tracker",
+  "icon": "share/images/location-tracker.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": false,
+    "filesystem": "full",
+    "external_hardware": true,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": false,
+    "sensors": true,
+    "gps": true,
+    "device_id": false
+  }
+}
