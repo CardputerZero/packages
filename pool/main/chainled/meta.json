@@ -1,0 +1,31 @@
+{
+  "title": "ChainLED",
+  "summary": "Create 8x8 LED animations and drive a real Chain Mono/RGB matrix.",
+  "categories": [
+    "Graphics"
+  ],
+  "screenshots": [
+    "store/screenshots/editor.png",
+    "store/screenshots/simulator.png",
+    "store/screenshots/send_receive.png",
+    "store/screenshots/settings.png"
+  ],
+  "locales": {
+    "zh-CN": {
+      "title": "链式LED模拟器",
+      "summary": "创建8x8 LED动画，并驱动真实的Chain Mono/RGB矩阵。",
+      "description": "为CardputerZero打造的8x8像素动画编辑器与LED矩阵模拟器。使用键盘绘制最多10帧的动画（支持从第一帧自动生成剩余帧），在屏幕上以RGB或单色模式预览，并可通过UART实时驱动真实的Chain Mono / Chain RGB（M5Stack Chain系列）8x8 LED矩阵。可通过内置蓝牙（BLE，默认）或WiFi局域网与另一台CardputerZero互相发送/接收动画。界面支持简体中文/英语/日语三语切换，随时可在设置中更改并即时生效。"
+    },
+    "en": {
+      "title": "ChainLED",
+      "summary": "Create 8x8 LED animations and drive a real Chain Mono/RGB matrix.",
+      "description": "An 8x8 pixel-animation editor and LED-matrix simulator built for CardputerZero. Draw up to 10 frames with a keyboard-only editor (with automatic remaining-frame generation from a single seed frame), preview in RGB or Mono mode on-screen, and drive a real Chain Mono / Chain RGB (M5Stack Chain series) 8x8 LED matrix live over UART. Send and receive animations with another CardputerZero over built-in Bluetooth (BLE, the default) or WiFi LAN. The UI switches between English, Japanese, and Simplified Chinese instantly from Settings."
+    },
+    "ja": {
+      "title": "チェーンLEDシミュレーション",
+      "summary": "8x8のLEDアニメーションを作成し、実機のChain Mono/RGBを駆動。",
+      "description": "CardputerZero向けに作られた、8x8ドットアニメーションエディタ兼LEDマトリクスシミュレータです。キーボード操作のみで最大10コマのアニメーションを作成でき（1枚目のコマから残りを自動生成する機能付き）、画面上でRGB/Monoモードのプレビュー再生ができるほか、実際のChain Mono / Chain RGB（M5Stack Chainシリーズ）8x8 LEDマトリクスにUART経由でリアルタイム出力できます。内蔵Bluetooth（BLE、デフォルト）またはWiFi LAN経由で、もう1台のCardputerZeroとアニメーションを送受信できます。UIは英語・日本語・簡体字中国語を設定画面から即座に切り替え可能です。"
+    }
+  },
+  "icon": "assets/images/chainled.png"
+}
