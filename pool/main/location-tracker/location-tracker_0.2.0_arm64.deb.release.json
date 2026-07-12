@@ -1,8 +1,8 @@
 {
   "filename": "location-tracker_0.2.0_arm64.deb",
   "url": "https://github.com/u44e/packages/releases/download/czdev-buffer/location-tracker_0.2.0_arm64.deb",
-  "sha256": "13168489731fadc02301e33f24bd40fd1ea15f76b2d623b2607a27ca7f23a38e",
-  "size": 3456500,
+  "sha256": "3195687616446f7821cfdb4998f7aad93093bbba3ee0090bb4b8290f14f89b48",
+  "size": 2959750,
   "package": "location-tracker",
   "version": "0.2.0",
   "architecture": "arm64"
