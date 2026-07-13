@@ -1,0 +1,46 @@
+{
+  "title": "PacketScope",
+  "summary": "Offline pcap/pcapng investigator — packet list, protocol tree, hex, filters, RTP & video-stream stats.",
+  "categories": [
+    "Utilities",
+    "Development",
+    "Communication"
+  ],
+  "screenshots": [
+    "store/screenshots/01-list-320x170.png",
+    "store/screenshots/02-detail-320x170.png",
+    "store/screenshots/03-filter-320x170.png",
+    "store/screenshots/04-rtp-320x170.png",
+    "store/screenshots/05-streamcheck-320x170.png"
+  ],
+  "description": "A fully offline packet-capture investigation tool. Open a .pcap/.pcapng from the SD card and explore it Wireshark-style on the 320x170 screen: a virtualized packet list (No/Time/Src/Dst/Proto/Len/Info), an expandable protocol tree synced to a hex dump with field highlighting, display filters (ip.addr==, udp.port==, rtp.ssrc==, proto keywords, &&/||/!), and statistics: protocol hierarchy, conversations, RTP streams (loss/jitter/rate per SSRC) and a video-stream check (codec/resolution/GOP conformance for CCTV MPEG2-TS/TTS and H.264/MPEG-2). Exports a camera profile (control request + video format) as JSON. Dissectors: Ethernet/VLAN/ARP/IPv4/IPv6/UDP/TCP/ICMP/ICMPv6/IGMP/DNS/DHCP/NTP/RTSP/HTTP/SDP/MJPEG/RTP/MPEG2-TS/TTS(192)/H.264/MPEG-2. Focus protocols: RTSP, MJPEG, TCP, UDP. Includes a bundled sample capture so it self-demos without any setup. Viewer only: no network permission, nothing ever leaves the device.",
+  "locales": {
+    "en": {
+      "title": "PacketScope",
+      "summary": "Offline pcap/pcapng investigator — packet list, protocol tree, hex, filters, RTP & video-stream stats.",
+      "description": "A fully offline packet-capture investigation tool. Open a .pcap/.pcapng from the SD card and explore it Wireshark-style on the 320x170 screen: a virtualized packet list (No/Time/Src/Dst/Proto/Len/Info), an expandable protocol tree synced to a hex dump with field highlighting, display filters (ip.addr==, udp.port==, rtp.ssrc==, proto keywords, &&/||/!), and statistics: protocol hierarchy, conversations, RTP streams (loss/jitter/rate per SSRC) and a video-stream check for CCTV media (MPEG2-TS/TTS and H.264/MPEG-2). It can export a camera profile (control request + video format) as JSON. Focus protocols: RTSP, MJPEG, TCP, UDP. Viewer-first and offline: nothing ever leaves the device."
+    },
+    "ja": {
+      "title": "パケットスコープ",
+      "summary": "pcap/pcapngをその場で解析 — パケット一覧・プロトコルツリー・HEX・フィルタ・RTP/映像ストリーム統計。",
+      "description": "完全オフラインのパケットキャプチャ調査ツール。SDカードの .pcap/.pcapng を開き、320x170の画面でWireshark風に解析します: 仮想化されたパケット一覧(No/時刻/送信元/宛先/プロト/長さ/情報)、HEXダンプと同期しフィールドを強調表示する展開可能なプロトコルツリー、表示フィルタ(ip.addr==, udp.port==, rtp.ssrc==, プロト名, &&/||/!)、統計(プロトコル階層・カンバセーション・RTPストリームのSSRC別ロス/ジッタ/レート)、CCTV映像の形式チェック(MPEG2-TS/TTS・H.264/MPEG-2)。カメラプロファイル(制御要求+映像形式)をJSONで書き出せます。重点プロトコル: RTSP・MJPEG・TCP・UDP。ビューア中心・完全オフラインで、データは一切デバイス外へ出ません。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/cardputerzero-packetscope",
+  "icon": "share/images/packetscope.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": true,
+    "filesystem": "full",
+    "external_hardware": false,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": false,
+    "sensors": false,
+    "gps": false,
+    "device_id": false
+  }
+}
