@@ -1,0 +1,45 @@
+{
+  "title": "NetSim",
+  "summary": "2-port inline network tester: traffic load-generator + tc netem WAN impairment emulator over the built-in LAN port + one USB-LAN adapter.",
+  "categories": [
+    "Network",
+    "Utilities",
+    "System"
+  ],
+  "screenshots": [
+    "store/screenshots/01-home-320x170.png",
+    "store/screenshots/02-load-320x170.png",
+    "store/screenshots/03-sweep-320x170.png",
+    "store/screenshots/04-impair-320x170.png",
+    "store/screenshots/05-presets-320x170.png",
+    "store/screenshots/06-log-320x170.png"
+  ],
+  "description": "Turn a two-port CardputerZero (built-in LAN + one USB-LAN adapter) into a portable network lab. LOAD mode blasts self-timestamped frames out port A and receives them raw on port B, measuring one-way latency (min/avg/max), jitter, packet loss, duplication and reorder, plus a binary-search rate sweep that finds the loss-free maximum throughput of the device under test. IMPAIR mode bridges the two ports transparently (no IP needed) and shapes the pass-through traffic per direction with tc netem: delay, jitter, loss, duplicate, corrupt, reorder and rate limiting, with CCTV-tuned presets (Satellite, Congested, Lossy-wireless, Brownout, ...). Every ip/tc/nmcli command is shown in an on-device log. Designed for destructive testing of multicast RTP / MLIT CCTV streams.",
+  "locales": {
+    "en": {
+      "title": "NetSim",
+      "summary": "2-port inline network tester: traffic load-generator + tc netem WAN impairment emulator over the built-in LAN port + one USB-LAN adapter."
+    },
+    "ja": {
+      "title": "NetSim",
+      "summary": "USB-LAN 2ポートで使うインライン型ネットワーク試験機。負荷試験(トラフィック生成+片方向遅延/ロス/スループット測定+レートスイープ)と、透過ブリッジ+tc netem による遅延/ジッタ/ロス/帯域制限の劣化注入(WANエミュレータ)。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/u44e/cardputerzero-netsim",
+  "icon": "share/images/netsim.png",
+  "permissions": {
+    "keyboard_input": true,
+    "network": true,
+    "filesystem": "none",
+    "external_hardware": true,
+    "hdmi_output": false,
+    "background_service": false,
+    "audio_output": false,
+    "microphone": false,
+    "camera": false,
+    "sensors": false,
+    "gps": false,
+    "device_id": false
+  }
+}
