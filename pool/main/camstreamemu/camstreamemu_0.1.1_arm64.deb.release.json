@@ -1,0 +1,9 @@
+{
+  "filename": "camstreamemu_0.1.1_arm64.deb",
+  "url": "https://github.com/u44e/packages/releases/download/czdev-buffer/camstreamemu_0.1.1_arm64.deb",
+  "sha256": "63692877147de7036422dcd386ecf714d3eb53010d4f8e8e6943ba67aa4b2a5c",
+  "size": 452680,
+  "package": "camstreamemu",
+  "version": "0.1.1",
+  "architecture": "arm64"
+}
