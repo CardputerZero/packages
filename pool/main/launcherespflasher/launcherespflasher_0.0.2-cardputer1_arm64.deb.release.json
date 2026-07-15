@@ -1,6 +1,6 @@
 {
-  "filename": "launcherespflasher_0.0.2_arm64.deb",
-  "url": "https://github.com/CardputerZero/packages/releases/download/staging/launcherespflasher_0.0.2_arm64.deb",
+  "filename": "launcherespflasher_0.0.2-cardputer1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/launcherespflasher_0.0.2-cardputer1_arm64.deb",
   "sha256": "834a4d4663a3f877f4915c055bfd5aaf3099a9f3739e1fbdf43b8574c91613f3",
   "size": 1067798,
   "package": "launcherespflasher",
