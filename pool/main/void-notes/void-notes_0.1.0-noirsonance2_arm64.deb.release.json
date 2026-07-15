@@ -1,0 +1,9 @@
+{
+  "filename": "void-notes_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/void-notes_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "f6cedba66fb9d72eef41d7472233620d07cdbfd542f4c52e125fec3c12ed95ac",
+  "size": 15248,
+  "package": "void-notes",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
