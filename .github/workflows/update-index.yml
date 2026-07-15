@@ -73,7 +73,12 @@ jobs:
               continue
             fi
             echo "promoting $name from $url"
-            tmp="/tmp/promote-$name"
+            # The release asset name is the uploaded file's basename, so the temp
+            # file MUST be named exactly $name (a "promote-$name" temp path would
+            # upload the asset as "promote-<name>", which the Collect step below
+            # then fails to find).
+            mkdir -p /tmp/promote
+            tmp="/tmp/promote/$name"
             curl -fL --retry 3 --max-time 600 -o "$tmp" "$url"
             got_sha=$(sha256sum "$tmp" | awk '{print $1}')
             if [ -n "$want_sha" ] && [ "$want_sha" != "null" ] && [ "$got_sha" != "$want_sha" ]; then
