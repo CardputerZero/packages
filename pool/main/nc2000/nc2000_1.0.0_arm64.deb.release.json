@@ -1,9 +1,0 @@
-{
-  "filename": "nc2000_1.0.0_arm64.deb",
-  "url": "https://github.com/CardputerZero/packages/releases/download/apt-pool/nc2000_1.0.0_arm64.deb",
-  "sha256": "9b24dc061091115b82e817c2c0b39503cefede5641bb8d67b157ed8fb4f6088b",
-  "size": 20560466,
-  "package": "nc2000",
-  "version": "1.0.0",
-  "architecture": "arm64"
-}
