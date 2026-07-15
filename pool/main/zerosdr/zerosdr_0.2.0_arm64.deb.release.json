@@ -1,0 +1,9 @@
+{
+  "filename": "zerosdr_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/zerosdr_0.2.0_arm64.deb",
+  "sha256": "888789b66b0483e9b9a47c356f103a315b925009cac332a8b2b76860db08d6cf",
+  "size": 101396,
+  "package": "zerosdr",
+  "version": "0.2.0",
+  "architecture": "arm64"
+}

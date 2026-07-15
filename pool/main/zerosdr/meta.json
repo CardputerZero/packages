@@ -1,0 +1,19 @@
+{
+  "title": "zeroSDR",
+  "summary": "Real-time SDR spectrum analyzer and audio demodulator for RTL-SDR devices",
+  "categories": [
+    "hamradio",
+    "utility",
+    "multimedia"
+  ],
+  "screenshots": [
+    "store/screenshots/screenshot1.png",
+    "store/screenshots/screenshot2.png",
+    "store/screenshots/screenshot3.png",
+    "store/screenshots/screenshot4.png"
+  ],
+  "description": "zeroSDR is a lightweight Software Defined Radio (SDR) receiver optimized for embedded Linux systems with small displays. Features real-time spectrum and waterfall visualization, FM/NFM/AM audio demodulation with AGC and squelch, and direct framebuffer rendering for minimal overhead. Designed for Raspberry Pi Zero 2W and Pi 5 with RTL-SDR dongles.",
+  "source_repo": "https://github.com/nullbeing/zeroSDR",
+  "icon": "share/images/zerosdr.png",
+  "author": "Weiming Feng"
+}
