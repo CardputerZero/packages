@@ -1,0 +1,9 @@
+{
+  "filename": "signal-vs-noise_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/signal-vs-noise_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "d471d53c74d2fd0c09a3e2177975223736e0cb28ada47022e9881cdc9644a97a",
+  "size": 11490,
+  "package": "signal-vs-noise",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
