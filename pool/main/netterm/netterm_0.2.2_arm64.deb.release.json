@@ -1,6 +1,6 @@
 {
   "filename": "netterm_0.2.2_arm64.deb",
-  "url": "https://github.com/u44e/packages/releases/download/czdev-buffer/netterm_0.2.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/netterm_0.2.2_arm64.deb",
   "sha256": "7bc8e075190a28a63238f1cff585af75aa8269d7d5ecadaa487395f4b5602d0e",
   "size": 473664,
   "package": "netterm",

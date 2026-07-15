@@ -1,0 +1,9 @@
+{
+  "filename": "noirsonance-control-center_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/noirsonance-control-center_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "76989cbe51414917439c6de75636bf4b145c7bdcd44264b760087bc2bb5dd088",
+  "size": 14102,
+  "package": "noirsonance-control-center",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}

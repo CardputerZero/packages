@@ -1,6 +1,6 @@
 {
   "filename": "packetscope_0.1.1_arm64.deb",
-  "url": "https://github.com/u44e/packages/releases/download/czdev-buffer/packetscope_0.1.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/packetscope_0.1.1_arm64.deb",
   "sha256": "a29dd354c2a7a3a9d72b1d31cc435734b59ace7efbd7a9598e361aca3151001e",
   "size": 2045568,
   "package": "packetscope",

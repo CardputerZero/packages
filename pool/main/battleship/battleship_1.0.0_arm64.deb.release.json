@@ -1,6 +1,6 @@
 {
   "filename": "battleship_1.0.0_arm64.deb",
-  "url": "https://github.com/yutacar/packages/releases/download/czdev-buffer/battleship_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/battleship_1.0.0_arm64.deb",
   "sha256": "3de768d040c44e2e2a66fbf7f49d5fa2125d16dda94b58365eb5a4bc62069d6c",
   "size": 965790,
   "package": "battleship",
