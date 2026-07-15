@@ -1,0 +1,9 @@
+{
+  "filename": "noirsonance-toolkit_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/noirsonance-toolkit_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "fd2968da46beb82281efed731804a29423e9a5ed0b20e07955e603dcd620b96f",
+  "size": 19690,
+  "package": "noirsonance-toolkit",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
