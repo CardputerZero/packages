@@ -1,0 +1,9 @@
+{
+  "filename": "void-room_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/void-room_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "86f1df5a7b974b6207bd0208354761354e36783f693cd58f175f3530a0e6c82f",
+  "size": 11588,
+  "package": "void-room",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
