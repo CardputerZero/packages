@@ -1,0 +1,9 @@
+{
+  "filename": "lofibox_0.2.8-1.lofibox40_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/lofibox_0.2.8-1.lofibox40_arm64.deb",
+  "sha256": "b38be6767491e9e6c25486078a56108d52dd8e73eeb9c10dd4ecc5e33264305e",
+  "size": 12138244,
+  "package": "lofibox",
+  "version": "0.2.8-1~lofibox40",
+  "architecture": "arm64"
+}
