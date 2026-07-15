@@ -1,0 +1,9 @@
+{
+  "filename": "noirsonance-check_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/noirsonance-check_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "210ee5c296b9dd57fae63d061d077f6ee7cb34ad13ba8daed38a91e786ef8a5f",
+  "size": 12120,
+  "package": "noirsonance-check",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
