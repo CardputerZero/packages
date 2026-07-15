@@ -1,0 +1,9 @@
+{
+  "filename": "creative-pressure_0.1.0-noirsonance2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/creative-pressure_0.1.0-noirsonance2_arm64.deb",
+  "sha256": "939a435e94b9322ca0b3065c8589fe9d2e477c08a250280895cf70b13513a015",
+  "size": 11606,
+  "package": "creative-pressure",
+  "version": "0.1.0-noirsonance2",
+  "architecture": "arm64"
+}
