@@ -1,0 +1,87 @@
+# Mirrors every submitted .deb into the org-controlled `staging` release the
+# moment a publish PR is opened or updated, so pending binaries never depend
+# on a contributor's fork (deleted fork/release = lost package otherwise).
+#
+# Security notes (this runs on pull_request_target, i.e. with write access):
+#   - The PR's code is NEVER checked out or executed. We only read the
+#     changed *.deb.release.json manifests through the GitHub API and treat
+#     them as pure data (parsed with jq).
+#   - filename / url are attacker-controlled strings: filename must match a
+#     strict Debian-package pattern (no slashes), url must live on GitHub.
+#   - The download is verified against the manifest's sha256 before upload.
+#     The .deb is never executed. Full semantic validation still happens in
+#     validate-pr.yml, and promotion re-verifies sha256 again.
+name: Capture Submission to Staging
+
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+    paths:
+      - 'pool/main/**/*.deb.release.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: capture-${{ github.event.pull_request.number }}
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror manifested .deb into the staging release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ github.event.pull_request.number }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+
+          gh release view staging -R "$GITHUB_REPOSITORY" >/dev/null 2>&1 || \
+            gh release create staging -R "$GITHUB_REPOSITORY" --prerelease \
+              --title "Staging pool (pending submissions)" \
+              --notes "Org-controlled buffer: pending submissions' .deb live here until promoted into apt-pool."
+
+          gh api "repos/$GITHUB_REPOSITORY/pulls/$PR/files" --paginate \
+            --jq '.[] | select(.status != "removed") | .filename' \
+            | grep -E '^pool/main/[^/]+/[^/]+\.deb\.release\.json$' > /tmp/manifests.txt || true
+          if [ ! -s /tmp/manifests.txt ]; then
+            echo "no manifests changed in this PR"; exit 0
+          fi
+
+          mkdir -p /tmp/cap
+          while read -r path; do
+            echo "── $path"
+            gh api "repos/$HEAD_REPO/contents/$path?ref=$HEAD_SHA" --jq '.content' | base64 -d > /tmp/m.json
+            name=$(jq -r '.filename // empty' /tmp/m.json)
+            url=$(jq -r '.url // empty' /tmp/m.json)
+            want=$(jq -r '.sha256 // empty' /tmp/m.json)
+
+            # Strict validation — these strings come from an untrusted PR.
+            echo "$name" | grep -qE '^[a-z0-9][a-zA-Z0-9.+~_-]*_(arm64|all)\.deb$' \
+              || { echo "::error::bad filename '$name' in $path"; exit 1; }
+            case "$url" in
+              https://github.com/*|https://objects.githubusercontent.com/*) ;;
+              *) echo "::error::url must be hosted on GitHub ($path)"; exit 1;;
+            esac
+            [ -n "$want" ] || { echo "::error::manifest $path missing sha256"; exit 1; }
+
+            # Skip when staging already holds this exact content.
+            rm -rf /tmp/capdl && mkdir -p /tmp/capdl
+            if gh release download staging -R "$GITHUB_REPOSITORY" --pattern "$name" --dir /tmp/capdl 2>/dev/null \
+               && [ -f "/tmp/capdl/$name" ] \
+               && [ "$(sha256sum "/tmp/capdl/$name" | awk '{print $1}')" = "$want" ]; then
+              echo "already staged: $name"
+              continue
+            fi
+
+            curl -fL --retry 3 --max-time 600 -o "/tmp/cap/$name" "$url"
+            got=$(sha256sum "/tmp/cap/$name" | awk '{print $1}')
+            [ "$got" = "$want" ] || { echo "::error::sha256 mismatch for $name (manifest: $want, downloaded: $got)"; exit 1; }
+
+            gh release upload staging "/tmp/cap/$name" -R "$GITHUB_REPOSITORY" --clobber
+            echo "staged: $name ($(du -h "/tmp/cap/$name" | cut -f1))"
+            rm -f "/tmp/cap/$name"
+          done < /tmp/manifests.txt
