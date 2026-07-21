@@ -36,8 +36,8 @@ jobs:
         id: validate
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEB_URL: ${{ github.event.client_payload.url }}
-          WANT_SHA: ${{ github.event.client_payload.sha256 }}
+          DEB_URL: ${{ github.event.client_payload.binary.url }}
+          WANT_SHA: ${{ github.event.client_payload.binary.sha256 }}
           SUBMITTER: ${{ github.event.client_payload.login }}
           # JSON array of the submitter's verified emails (from the Worker,
           # which read them via the user's OAuth token — trusted).
@@ -271,9 +271,9 @@ jobs:
         if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEB_URL: ${{ github.event.client_payload.url }}
-          WANT_SHA: ${{ github.event.client_payload.sha256 }}
-          SIZE: ${{ github.event.client_payload.size }}
+          DEB_URL: ${{ github.event.client_payload.binary.url }}
+          WANT_SHA: ${{ github.event.client_payload.binary.sha256 }}
+          SIZE: ${{ github.event.client_payload.binary.size }}
           SUBMITTER: ${{ github.event.client_payload.login }}
           EMAILS_JSON: ${{ toJSON(github.event.client_payload.emails) }}
           PKG: ${{ steps.validate.outputs.pkg }}
