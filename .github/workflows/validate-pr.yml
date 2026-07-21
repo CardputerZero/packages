@@ -59,8 +59,9 @@ jobs:
 
           ADDED_MANIFESTS=$(git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
 
-          AUTHOR_EMAIL=$(gh api "users/$PR_AUTHOR" --jq '.email // empty' 2>/dev/null || true)
-          NOREPLY="${PR_AUTHOR}@users.noreply.github.com"
+          # Ownership is first-come-first-served by GitHub login. On a fork PR the
+          # PR author login is trusted, so it is the authoritative uploader key.
+          author_lc=$(printf '%s' "$PR_AUTHOR" | tr '[:upper:]' '[:lower:]')
 
           for manifest in $ADDED_MANIFESTS; do
             echo "=== $manifest ==="
@@ -108,22 +109,39 @@ jobs:
               ERRORS="${ERRORS}- ❌ filename '$fname' should be '$expected_name'\n"
             fi
 
-            maintainer=$(dpkg-deb -f "$deb" Maintainer 2>/dev/null || echo "")
-            maint_email=$(echo "$maintainer" | grep -oP '<\K[^>]+' || echo "$maintainer")
-            if [[ "$maint_email" != "$NOREPLY" && "$maint_email" != "$AUTHOR_EMAIL" ]]; then
-              ERRORS="${ERRORS}- ❌ Maintainer '${maint_email}' does not match PR author '${PR_AUTHOR}' (expected ${NOREPLY} or your verified email)\n"
+            # --- ownership: the submitted manifest must record `uploaded_by` ==
+            #     the PR author, and (if the package already exists) the recorded
+            #     owner must be the PR author. No maintainer-email matching. ---
+            manifest_owner=$(jq -r '.uploaded_by // empty' "$manifest" | tr '[:upper:]' '[:lower:]')
+            if [[ -z "$manifest_owner" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` is missing \`uploaded_by\` (should be your GitHub login '${PR_AUTHOR}'; re-run \`czdev publish\`)\n"
+            elif [[ "$manifest_owner" != "$author_lc" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` records uploaded_by '@${manifest_owner}' but the PR author is '@${PR_AUTHOR}'\n"
             fi
 
-            # Version must be newer than existing manifests for this package on base.
-            existing_ver=""
+            # Existing owner + latest version from the manifests on base.
+            existing_ver=""; latest_manifest=""
             for ex in $(git ls-tree -r "$BASE_SHA" --name-only | grep "^pool/main/${dir_pkg}/.*\.deb\.release\.json$" || true); do
               v=$(git show "$BASE_SHA:$ex" | jq -r '.version // empty' 2>/dev/null || true)
-              if [[ -n "$v" ]]; then
-                if [[ -z "$existing_ver" ]] || dpkg --compare-versions "$v" gt "$existing_ver" 2>/dev/null; then
-                  existing_ver="$v"
-                fi
+              if [[ -n "$v" ]] && { [[ -z "$existing_ver" ]] || dpkg --compare-versions "$v" gt "$existing_ver" 2>/dev/null; }; then
+                existing_ver="$v"; latest_manifest="$ex"
               fi
             done
+            if [[ -n "$latest_manifest" ]]; then
+              owner_login=$(git show "$BASE_SHA:$latest_manifest" | jq -r '.uploaded_by // empty' 2>/dev/null | tr '[:upper:]' '[:lower:]' || true)
+              # Legacy manifests have no uploaded_by: derive from the published
+              # binary's Maintainer noreply address.
+              if [[ -z "$owner_login" ]]; then
+                ourl=$(git show "$BASE_SHA:$latest_manifest" | jq -r '.url // empty' 2>/dev/null || true)
+                if [[ -n "$ourl" ]] && curl -fsL --max-time 300 -o /tmp/owner.deb "$ourl" 2>/dev/null; then
+                  om=$(dpkg-deb -f /tmp/owner.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
+                  owner_login=$(printf '%s' "$om" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
+                fi
+              fi
+              if [[ -n "$owner_login" && "$owner_login" != "$author_lc" ]]; then
+                ERRORS="${ERRORS}- ❌ package '$dir_pkg' is owned by @${owner_login}; only the original uploader can update it\n"
+              fi
+            fi
             if [[ -n "$existing_ver" ]] && dpkg --compare-versions "$new_ver" le "$existing_ver" 2>/dev/null; then
               ERRORS="${ERRORS}- ❌ Version $new_ver is not newer than existing $existing_ver\n"
             fi
@@ -131,19 +149,22 @@ jobs:
             if [[ -z "$ERRORS" ]]; then echo "✓ $fname passed"; fi
           done
 
-          # Ownership check for deleted manifests.
+          # Ownership check for deleted manifests: only the recorded uploader
+          # (or, for legacy manifests, the Maintainer-noreply login) may remove.
           DELETED=$(git diff --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
           for manifest in $DELETED; do
-            dir_pkg=$(echo "$manifest" | cut -d/ -f3)
-            url=$(git show "$BASE_SHA:$manifest" | jq -r '.url // empty' 2>/dev/null || true)
-            [[ -z "$url" ]] && continue
-            deb="/tmp/del-$(basename "$manifest").deb"
-            if curl -fsL --max-time 600 -o "$deb" "$url" 2>/dev/null; then
-              maintainer=$(dpkg-deb -f "$deb" Maintainer 2>/dev/null || echo "")
-              maint_email=$(echo "$maintainer" | grep -oP '<\K[^>]+' || echo "$maintainer")
-              if [[ "$maint_email" != "$NOREPLY" && "$maint_email" != "$AUTHOR_EMAIL" ]]; then
-                ERRORS="${ERRORS}- ❌ Cannot delete \`$manifest\`: maintainer '${maint_email}' != PR author '${PR_AUTHOR}'\n"
+            owner_login=$(git show "$BASE_SHA:$manifest" | jq -r '.uploaded_by // empty' 2>/dev/null | tr '[:upper:]' '[:lower:]' || true)
+            if [[ -z "$owner_login" ]]; then
+              url=$(git show "$BASE_SHA:$manifest" | jq -r '.url // empty' 2>/dev/null || true)
+              [[ -z "$url" ]] && continue
+              deb="/tmp/del-$(basename "$manifest").deb"
+              if curl -fsL --max-time 600 -o "$deb" "$url" 2>/dev/null; then
+                om=$(dpkg-deb -f "$deb" Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
+                owner_login=$(printf '%s' "$om" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
               fi
+            fi
+            if [[ -n "$owner_login" && "$owner_login" != "$author_lc" ]]; then
+              ERRORS="${ERRORS}- ❌ Cannot delete \`$manifest\`: package is owned by @${owner_login}, not @${PR_AUTHOR}\n"
             fi
           done
 
