@@ -1,0 +1,43 @@
+{
+  "title": "HarrisonTest",
+  "summary": "A CardputerZero packaging flow demo.",
+  "categories": [
+    "Utilities"
+  ],
+  "screenshots": [
+    "screenshots/harrison_test.png"
+  ],
+  "description": "HarrisonTest is a small LVGL application for validating the CardputerZero build, packaging, device deployment, and AppStore publishing workflow.",
+  "locales": {
+    "zh-CN": {
+      "title": "HarrisonTest",
+      "summary": "用于验证 CardputerZero 应用打包流程的演示应用。",
+      "description": "HarrisonTest 是一个小型 LVGL 应用，用于验证 CardputerZero 的构建、打包、真机部署和 AppStore 发布流程。"
+    },
+    "en": {
+      "title": "HarrisonTest",
+      "summary": "A CardputerZero packaging flow demo.",
+      "description": "HarrisonTest is a small LVGL application for validating the CardputerZero build, packaging, device deployment, and AppStore publishing workflow."
+    },
+    "ja": {
+      "title": "HarrisonTest",
+      "summary": "CardputerZero のパッケージ作成フローを検証するデモアプリです。",
+      "description": "HarrisonTest は、CardputerZero のビルド、パッケージ作成、実機へのデプロイ、AppStore 公開フローを検証するための小規模な LVGL アプリです。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/Harrison-Xu/Template",
+  "icon": "harrison_test.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": false,
+    "network": false,
+    "keyboard_input": true,
+    "background_service": true,
+    "external_hardware": false
+  },
+  "author": {
+    "github": "Harrison-Xu",
+    "display_name": "XuHaifeng"
+  }
+}
