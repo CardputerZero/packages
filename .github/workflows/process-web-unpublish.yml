@@ -18,6 +18,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  actions: write   # to trigger update-index via workflow_dispatch after auto-merge
 
 env:
   AUTO_MERGE: "true"
@@ -82,7 +83,14 @@ jobs:
               --title "unpublish: $PKG $VER (portal request by @$SUBMITTER)" \
               --body "Removal requested by @$SUBMITTER via the developer portal. Ownership verified against the recorded uploader (\`uploaded_by\`).")
             if [ "$AUTO_MERGE" = "true" ]; then
-              gh pr merge "$PR_URL" --squash --delete-branch || echo "::warning::auto-merge failed; awaiting manual review"
+              if gh pr merge "$PR_URL" --squash --delete-branch; then
+                # GITHUB_TOKEN pushes don't trigger the push-based update-index
+                # workflow; dispatch it explicitly so the removal drops from the
+                # APT index right away.
+                gh workflow run update-index.yml --ref main || echo "::warning::could not trigger update-index; run it manually"
+              else
+                echo "::warning::auto-merge failed; awaiting manual review"
+              fi
             fi
           fi
           printf 'errors<<EOM\n%b\nEOM\n' "$ERR" >> "$GITHUB_OUTPUT"
