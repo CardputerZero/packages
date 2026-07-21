@@ -18,6 +18,7 @@ permissions:
   contents: write
   issues: write
   pull-requests: write
+  actions: write   # to trigger update-index via workflow_dispatch after auto-merge
 
 env:
   # Set to "false" to require a human maintainer to merge every publish PR.
@@ -305,7 +306,15 @@ jobs:
               "$SUBMITTER" "$VER" "$ARCH" "$WANT_SHA" "$ASSET_NAME" "$DEB_URL" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}")")
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           if [ "$AUTO_MERGE" = "true" ]; then
-            gh pr merge "$PR_URL" --squash --delete-branch || echo "::warning::auto-merge failed; awaiting manual review"
+            if gh pr merge "$PR_URL" --squash --delete-branch; then
+              # The merge is pushed with GITHUB_TOKEN, which by design does NOT
+              # trigger the push-based update-index workflow. Kick it off
+              # explicitly (workflow_dispatch is allowed from GITHUB_TOKEN) so the
+              # APT index and Pages reflect the new version right away.
+              gh workflow run update-index.yml --ref main || echo "::warning::could not trigger update-index; run it manually"
+            else
+              echo "::warning::auto-merge failed; awaiting manual review"
+            fi
           fi
 
       - name: Report failure to the submitter
