@@ -1,0 +1,11 @@
+{
+  "filename": "harrisontest_0.0.1-m5stack_arm64.deb",
+  "url": "https://github.com/Harrison-Xu/packages/releases/download/czdev-buffer/harrisontest_0.0.1-m5stack_arm64.deb",
+  "sha256": "52fdc032fa441d7118a774b74cfba9cc5de49891bcacd527f1f2dadb0f798383",
+  "size": 1738050,
+  "package": "harrisontest",
+  "version": "0.0.1-m5stack",
+  "architecture": "arm64",
+  "uploaded_by": "Harrison-Xu",
+  "uploader_email": "Harrison-Xu@users.noreply.github.com"
+}
