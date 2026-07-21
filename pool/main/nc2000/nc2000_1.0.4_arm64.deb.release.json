@@ -1,0 +1,11 @@
+{
+  "filename": "nc2000_1.0.4_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/eggfly__nc2000_1.0.4_arm64.deb",
+  "sha256": "873670a119083172616afe024b4a77e0cc136014d29fa956a601d4d86303a25b",
+  "size": 20560446,
+  "package": "nc2000",
+  "version": "1.0.4",
+  "architecture": "arm64",
+  "uploaded_by": "eggfly",
+  "uploader_email": "eggfly@users.noreply.github.com"
+}
