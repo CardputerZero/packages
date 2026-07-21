@@ -1,9 +1,10 @@
 # Copy to CardputerZero/packages: .github/workflows/process-web-unpublish.yml
 #
 # Handles `repository_dispatch` (type: web-unpublish) from the developer
-# portal. Re-verifies ownership (the published manifest's deb Maintainer must
-# be one of the requester's verified emails, unless admin), removes the
-# manifest and opens a removal PR (auto-merged when AUTO_MERGE is true).
+# portal. Re-verifies ownership by GitHub login (the manifest's recorded
+# `uploaded_by`, or the login from the binary's Maintainer noreply address for
+# legacy manifests; admins bypass), removes the manifest and opens a removal PR
+# (auto-merged when AUTO_MERGE is true).
 # Removing the manifest drops the package from the APT index on the next
 # update-index build.
 
@@ -49,17 +50,23 @@ jobs:
           if [ ! -f "$MANIFEST" ]; then
             ERR="- ❌ manifest not found: \`$MANIFEST\`\n"
           else
-            URL=$(jq -r '.url // empty' "$MANIFEST")
-            OWNER_EMAIL=""
-            if [ -n "$URL" ] && curl -fsL --max-time 300 -o /tmp/pkg.deb "$URL" 2>/dev/null; then
-              OWNER_EMAIL=$(dpkg-deb -f /tmp/pkg.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
+            # Ownership is first-come-first-served by GitHub login. Prefer the
+            # recorded `uploaded_by`; fall back to the login encoded in the
+            # published binary's Maintainer noreply address for legacy manifests.
+            OWNER_LOGIN=$(jq -r '.uploaded_by // empty' "$MANIFEST" | tr '[:upper:]' '[:lower:]')
+            if [ -z "$OWNER_LOGIN" ]; then
+              URL=$(jq -r '.url // empty' "$MANIFEST")
+              if [ -n "$URL" ] && curl -fsL --max-time 300 -o /tmp/pkg.deb "$URL" 2>/dev/null; then
+                OM=$(dpkg-deb -f /tmp/pkg.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
+                OWNER_LOGIN=$(printf '%s' "$OM" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
+              fi
             fi
+            SUBMITTER_LC=$(printf '%s' "$SUBMITTER" | tr '[:upper:]' '[:lower:]')
             if [ "$IS_ADMIN" != "true" ]; then
-              if [ -z "$OWNER_EMAIL" ]; then
-                ERR="- ❌ could not verify ownership (binary unreachable); ask an admin\n"
-              else
-                OWNED=$(echo "$EMAILS_JSON" | jq --arg e "$OWNER_EMAIL" 'map(ascii_downcase) | contains([$e])')
-                [ "$OWNED" = "true" ] || ERR="- ❌ package is owned by \`$OWNER_EMAIL\`, not @$SUBMITTER\n"
+              if [ -z "$OWNER_LOGIN" ]; then
+                ERR="- ❌ could not verify ownership of \`$PKG\` (no recorded uploader); ask an admin\n"
+              elif [ "$OWNER_LOGIN" != "$SUBMITTER_LC" ]; then
+                ERR="- ❌ package '$PKG' is owned by @$OWNER_LOGIN, not @$SUBMITTER\n"
               fi
             fi
           fi
@@ -73,7 +80,7 @@ jobs:
             git push origin "$BRANCH"
             PR_URL=$(gh pr create --base main --head "$BRANCH" \
               --title "unpublish: $PKG $VER (portal request by @$SUBMITTER)" \
-              --body "Removal requested by @$SUBMITTER via the developer portal. Ownership verified against the published binary's Maintainer email.")
+              --body "Removal requested by @$SUBMITTER via the developer portal. Ownership verified against the recorded uploader (\`uploaded_by\`).")
             if [ "$AUTO_MERGE" = "true" ]; then
               gh pr merge "$PR_URL" --squash --delete-branch || echo "::warning::auto-merge failed; awaiting manual review"
             fi
