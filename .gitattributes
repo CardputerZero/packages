@@ -1,4 +1,4 @@
 # No Git LFS. .deb binaries are not stored in git at all — they live in the
 # apt-pool GitHub Release and the Aliyun OSS mirror, referenced by
-# <pkg>_<ver>_<arch>.deb.release.json manifests.
-*.deb filter=lfs diff=lfs merge=lfs -text
+# <pkg>_<ver>_<arch>.deb.release.json manifests. Store screenshots/icons are
+# committed as ordinary small PNGs (no LFS).

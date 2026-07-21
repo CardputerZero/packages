@@ -2,11 +2,11 @@
 #
 # Handles `repository_dispatch` (type: web-submission) sent by the developer
 # portal Worker. Authoritative validation with real dpkg-deb: integrity,
-# control fields, .desktop, structure & safety scan, maintainer-email
-# ownership (first submitter owns the package name; admins bypass), and
-# version monotonicity. On success it opens a publish PR (and can auto-merge
-# it when AUTO_MERGE is true); on failure it opens an issue mentioning the
-# submitter.
+# control fields, .desktop, structure & safety scan, first-come-first-served
+# ownership (the package name belongs to the GitHub login that first uploaded
+# it, recorded as `uploaded_by`; admins bypass), and version monotonicity. On
+# success it opens a publish PR (and can auto-merge it when AUTO_MERGE is true);
+# on failure it opens an issue mentioning the submitter.
 
 name: Process Web Submission
 
@@ -87,32 +87,34 @@ jobs:
               fi
             done
 
-            # --- ownership: maintainer email must be one of the submitter's
-            #     verified emails; existing packages only updatable by owner/admin ---
-            EMAIL=$(echo "$MAINT" | grep -oP '<\K[^>]+' || echo "$MAINT")
-            EMAIL=$(echo "$EMAIL" | tr '[:upper:]' '[:lower:]')
-            MATCH=$(echo "$EMAILS_JSON" | jq --arg e "$EMAIL" 'map(ascii_downcase) | contains([$e])')
-            if [ "$MATCH" != "true" ] && [ "$IS_ADMIN" != "true" ]; then
-              ERR="${ERR}- ❌ Maintainer email \`$EMAIL\` is not one of @$SUBMITTER's verified GitHub emails\n"
-            fi
-
-            EXISTING="" ; OWNER_EMAIL=""
+            # --- ownership: package names are first-come-first-served, keyed on
+            #     the uploader's GitHub login (recorded as `uploaded_by` in the
+            #     release manifest). Existing packages are only updatable by the
+            #     recorded owner or an admin. No email-vs-account matching. ---
+            EXISTING="" ; LATEST_MANIFEST=""
             for m in pool/main/"$PKG"/*.deb.release.json; do
               [ -f "$m" ] || continue
               v=$(jq -r '.version // empty' "$m")
               if [ -n "$v" ] && { [ -z "$EXISTING" ] || dpkg --compare-versions "$v" gt "$EXISTING"; }; then
-                EXISTING="$v"
-                u=$(jq -r '.url // empty' "$m")
-                if [ -n "$u" ] && curl -fsL --max-time 300 -o /tmp/existing.deb "$u" 2>/dev/null; then
-                  OWNER_EMAIL=$(dpkg-deb -f /tmp/existing.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
-                fi
+                EXISTING="$v"; LATEST_MANIFEST="$m"
               fi
             done
-            if [ -n "$OWNER_EMAIL" ] && [ "$IS_ADMIN" != "true" ]; then
-              OWNED=$(echo "$EMAILS_JSON" | jq --arg e "$OWNER_EMAIL" 'map(ascii_downcase) | contains([$e])')
-              if [ "$OWNED" != "true" ]; then
-                ERR="${ERR}- ❌ package '$PKG' is owned by \`$OWNER_EMAIL\`; only the owner or an admin can update it\n"
+            OWNER_LOGIN=""
+            if [ -n "$LATEST_MANIFEST" ]; then
+              OWNER_LOGIN=$(jq -r '.uploaded_by // empty' "$LATEST_MANIFEST" | tr '[:upper:]' '[:lower:]')
+              # Legacy manifests have no `uploaded_by`: derive the owner login
+              # from the published binary's Maintainer noreply address.
+              if [ -z "$OWNER_LOGIN" ]; then
+                u=$(jq -r '.url // empty' "$LATEST_MANIFEST")
+                if [ -n "$u" ] && curl -fsL --max-time 300 -o /tmp/existing.deb "$u" 2>/dev/null; then
+                  OM=$(dpkg-deb -f /tmp/existing.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
+                  OWNER_LOGIN=$(printf '%s' "$OM" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
+                fi
               fi
+            fi
+            SUBMITTER_LC=$(printf '%s' "$SUBMITTER" | tr '[:upper:]' '[:lower:]')
+            if [ -n "$OWNER_LOGIN" ] && [ "$IS_ADMIN" != "true" ] && [ "$OWNER_LOGIN" != "$SUBMITTER_LC" ]; then
+              ERR="${ERR}- ❌ package '$PKG' is owned by @$OWNER_LOGIN; only the original uploader or an admin can update it\n"
             fi
             if [ -n "$EXISTING" ] && dpkg --compare-versions "$VER" le "$EXISTING"; then
               ERR="${ERR}- ❌ version $VER is not newer than published $EXISTING\n"
@@ -127,6 +129,8 @@ jobs:
         env:
           SOURCE_REPO: ${{ github.event.client_payload.source_repo }}
           PKG: ${{ steps.validate.outputs.pkg }}
+          SUBMITTER: ${{ github.event.client_payload.login }}
+          STORE_JSON: ${{ toJSON(github.event.client_payload.store) }}
         run: |
           set -uo pipefail
           ERR=""
@@ -145,6 +149,55 @@ jobs:
           pkg = os.environ["PKG"]
           dest = Path(f"pool/main/{pkg}")
           dest.mkdir(parents=True, exist_ok=True)
+
+          import hashlib, urllib.request
+
+          PNG_SIG = b"\x89PNG\r\n\x1a\n"
+          def png_dims(data):
+              if len(data) < 24 or data[:8] != PNG_SIG:
+                  return None
+              return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
+
+          def download(url, want_sha, out_path):
+              req = urllib.request.Request(url, headers={"User-Agent": "cz-web-submit"})
+              data = urllib.request.urlopen(req, timeout=120).read()
+              if want_sha and hashlib.sha256(data).hexdigest() != want_sha:
+                  fail(f"checksum mismatch for {url}")
+              out_path.write_bytes(data)
+              return data
+
+          # Highest priority: store metadata + images supplied directly from the
+          # web form. Screenshots/icon are small PNGs uploaded to the buffer
+          # Release; we download and commit them into pool/main/<pkg>/ (no LFS).
+          try:
+              web = json.loads(os.environ.get("STORE_JSON") or "null")
+          except Exception:
+              web = None
+          if isinstance(web, dict):
+              meta = {"title": web.get("title") or pkg,
+                      "summary": web.get("summary", ""),
+                      "categories": web.get("categories", []),
+                      "screenshots": []}
+              if web.get("description"):
+                  meta["description"] = web["description"]
+              shots_dir = dest / "screenshots"
+              shots_dir.mkdir(exist_ok=True)
+              for i, sh in enumerate(web.get("screenshots") or []):
+                  name = Path(sh.get("name") or f"screenshot-{i}.png").name
+                  data = download(sh["url"], sh.get("sha256"), shots_dir / name)
+                  if png_dims(data) != (320, 170):
+                      fail(f"screenshot {name} must be 320x170, got {png_dims(data)}")
+                  meta["screenshots"].append(f"screenshots/{name}")
+              icon = web.get("icon") or {}
+              if icon.get("url"):
+                  iname = Path(icon.get("name") or f"{pkg}_icon.png").name
+                  idata = download(icon["url"], icon.get("sha256"), dest / iname)
+                  if png_dims(idata) is None:
+                      fail("icon must be a PNG")
+                  meta["icon"] = iname
+              meta["author"] = {"github": os.environ.get("SUBMITTER", "")}
+              (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
+              sys.exit(0)
 
           # Preferred: app-builder.json store section from the source repo.
           src_root = Path("/tmp/src")
@@ -222,6 +275,7 @@ jobs:
           WANT_SHA: ${{ github.event.client_payload.sha256 }}
           SIZE: ${{ github.event.client_payload.size }}
           SUBMITTER: ${{ github.event.client_payload.login }}
+          EMAILS_JSON: ${{ toJSON(github.event.client_payload.emails) }}
           PKG: ${{ steps.validate.outputs.pkg }}
           VER: ${{ steps.validate.outputs.ver }}
           ARCH: ${{ steps.validate.outputs.arch }}
@@ -229,9 +283,14 @@ jobs:
           set -euo pipefail
           NAME="${PKG}_${VER}_${ARCH}.deb"
           ASSET_NAME="${NAME//\~/.}"
+          # Ownership record: first uploader of a package name owns it. The login
+          # is the authoritative owner key; the email is kept for contact/audit.
+          UPLOADER_EMAIL=$(echo "$EMAILS_JSON" | jq -r '.[0] // empty')
+          [ -n "$UPLOADER_EMAIL" ] || UPLOADER_EMAIL="${SUBMITTER}@users.noreply.github.com"
           jq -n --arg f "$ASSET_NAME" --arg u "$DEB_URL" --arg s "$WANT_SHA" \
                 --arg p "$PKG" --arg v "$VER" --arg a "$ARCH" --argjson z "$SIZE" \
-                '{filename:$f,url:$u,sha256:$s,size:$z,package:$p,version:$v,architecture:$a}' \
+                --arg by "$SUBMITTER" --arg em "$UPLOADER_EMAIL" \
+                '{filename:$f,url:$u,sha256:$s,size:$z,package:$p,version:$v,architecture:$a,uploaded_by:$by,uploader_email:$em}' \
                 > "pool/main/$PKG/$ASSET_NAME.release.json"
           BRANCH="publish/${PKG}-${VER}-web-${{ github.run_id }}"
           git config user.name "cardputerzero-bot"
