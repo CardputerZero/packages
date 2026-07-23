@@ -87,6 +87,43 @@ jobs:
                 ERR="${ERR}- ❌ dangerous pattern in maintainer script $scr\n"
               fi
             done
+            # apps must NOT run as root: reject any bundled systemd *system*
+            # service that runs as root (no User=, User=root/0, no DynamicUser=yes).
+            ROOT_SVC=$(python3 - /tmp/pkg.deb <<'PY'
+          import io, subprocess, sys, tarfile
+          DIRS = ("lib/systemd/system/", "usr/lib/systemd/system/", "etc/systemd/system/")
+          def runs_as_root(text):
+              in_service = False; user = None; dyn = False
+              for raw in text.splitlines():
+                  line = raw.strip()
+                  if not line or line[0] in "#;": continue
+                  if line.startswith("[") and line.endswith("]"):
+                      in_service = line.lower() == "[service]"; continue
+                  if not in_service or "=" not in line: continue
+                  k, _, v = line.partition("="); k = k.strip().lower(); v = v.strip()
+                  if k == "user": user = v
+                  elif k == "dynamicuser": dyn = v.lower() in ("1", "yes", "true", "on")
+              if dyn: return False
+              if not user: return True
+              return user in ("root", "0")
+          try:
+              tb = subprocess.run(["dpkg-deb", "--fsys-tarfile", sys.argv[1]], capture_output=True, check=True).stdout
+          except Exception:
+              sys.exit(0)
+          out = []
+          with tarfile.open(fileobj=io.BytesIO(tb)) as tf:
+              for m in tf.getmembers():
+                  if not m.isfile(): continue
+                  n = m.name.lstrip("./")
+                  if not (n.endswith(".service") and n.startswith(DIRS)): continue
+                  f = tf.extractfile(m)
+                  if f and runs_as_root(f.read().decode("utf-8", "replace")): out.append(n)
+          print("\n".join(out))
+          PY
+          )
+            if [ -n "$ROOT_SVC" ]; then
+              ERR="${ERR}- ❌ apps must not run as root; these systemd services run as root (add User=<non-root> to [Service]):\n$(echo "$ROOT_SVC" | sed 's/^/    /')\n"
+            fi
 
             # --- ownership: package names are first-come-first-served, keyed on
             #     the uploader's GitHub login (recorded as `uploaded_by` in the
