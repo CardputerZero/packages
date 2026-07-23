@@ -215,9 +215,13 @@ jobs:
                           "summary": store.get("summary", ""),
                           "categories": store.get("categories", []),
                           "screenshots": store.get("screenshots", [])}
-                  for k in ("description", "locales", "license", "source_repo", "icon", "permissions"):
+                  for k in ("description", "locales", "license", "source_repo", "icon", "permissions", "author"):
                       if store.get(k):
                           meta[k] = store[k]
+                  # A portal submission always has a known uploader; default the
+                  # displayed author to their GitHub login so the store never
+                  # renders "@undefined".
+                  meta.setdefault("author", {"github": os.environ.get("SUBMITTER", "")})
                   shots = dest / "screenshots"
                   shots.mkdir(exist_ok=True)
                   for srel in meta["screenshots"]:
@@ -259,7 +263,8 @@ jobs:
           desc = subprocess.run(["dpkg-deb", "-f", "/tmp/pkg.deb", "Description"],
                                 capture_output=True, text=True).stdout.strip()
           meta = {"title": title, "summary": desc.splitlines()[0] if desc else "",
-                  "categories": [], "screenshots": []}
+                  "categories": [], "screenshots": [],
+                  "author": {"github": os.environ.get("SUBMITTER", "")}}
           if icon_rel:
               meta["icon"] = icon_rel
           (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
