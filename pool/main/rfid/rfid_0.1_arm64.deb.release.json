@@ -1,0 +1,11 @@
+{
+  "filename": "rfid_0.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/whywilson__rfid_0.1_arm64.deb",
+  "sha256": "cdf0ba7c0941d132c5a99a19124cae6931a2901392183c42fdefa7db61aa6ce4",
+  "size": 1923948,
+  "package": "rfid",
+  "version": "0.1",
+  "architecture": "arm64",
+  "uploaded_by": "whywilson",
+  "uploader_email": "whywilson@users.noreply.github.com"
+}
