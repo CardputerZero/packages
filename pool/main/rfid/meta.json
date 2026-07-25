@@ -1,0 +1,17 @@
+{
+  "title": "rfid",
+  "summary": "NFC/UHF tag reader, dumper, emulator with tool suite",
+  "categories": [],
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "description": "A full-featured RFID toolkit for CardputerZero. Connect via NFC Unit (I2C), PN532/PN532Killer (UART), or UHF Reader (UART) to read, dump, and emulate a wide range of tag types including NTAG21x, MIFARE Classic/Ultralight, ISO15693, FeliCa, and ISO14443B. Built-in tools: mfkey32/mfkey64 for MFC key recovery, hex log viewer, and slot-based profile management for rapid emulation switching.",
+  "author": {
+    "github": "whywilson"
+  }
+}
