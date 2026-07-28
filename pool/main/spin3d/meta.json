@@ -1,0 +1,10 @@
+{
+  "title": "Spin3D",
+  "summary": "Spinning 3D teapot / sphere / cube / torus demo",
+  "categories": [],
+  "screenshots": [],
+  "author": {
+    "github": "eggfly"
+  },
+  "icon": "spin3d_icon.png"
+}

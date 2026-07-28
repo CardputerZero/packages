@@ -1,0 +1,11 @@
+{
+  "filename": "spin3d_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/eggfly__spin3d_1.0.0_arm64.deb",
+  "sha256": "b9872f6e98d2e6a399418653e1ef09a5af8af29e59c90d89ab6d26b03b223e39",
+  "size": 206268,
+  "package": "spin3d",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "eggfly",
+  "uploader_email": "eggfly@users.noreply.github.com"
+}
