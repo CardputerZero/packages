@@ -161,6 +161,33 @@ jobs:
             printf " %s %s %s\n" "$hash" "$size" "$f" >> Release
           done
 
+      - name: Generate owners.json (authoritative package ownership for the portal)
+        run: |
+          set -euo pipefail
+          # Aggregate `uploaded_by` from every release manifest into one small
+          # JSON so the developer portal can resolve "my packages" without
+          # guessing from the deb's Maintainer email (which is often a real,
+          # non-noreply address that carries no GitHub login).
+          # Shape: { "<package>": { "<version>": "<github login, lowercase>" } }
+          python3 - <<'PY'
+          import glob, json
+          owners = {}
+          for path in glob.glob("pool/main/**/*.deb.release.json", recursive=True):
+              try:
+                  m = json.load(open(path))
+              except Exception:
+                  continue
+              pkg = m.get("package")
+              ver = m.get("version")
+              by = (m.get("uploaded_by") or "").strip().lower()
+              if pkg and ver and by:
+                  owners.setdefault(pkg, {})[ver] = by
+          with open("public/owners.json", "w") as f:
+              json.dump(owners, f, indent=1, sort_keys=True)
+          print(f"owners.json: {sum(len(v) for v in owners.values())} versions "
+                f"across {len(owners)} packages")
+          PY
+
       - name: Stage OSS tree (China mirror serves .deb locally with relative paths)
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
         run: |
