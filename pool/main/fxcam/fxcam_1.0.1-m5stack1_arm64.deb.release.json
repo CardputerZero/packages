@@ -1,0 +1,11 @@
+{
+  "filename": "fxcam_1.0.1-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/imliubo__fxcam_1.0.1-m5stack1_arm64.deb",
+  "sha256": "6c790760098c3ebc307632a4a8ae2b98793534a6a02416cf81cfb07e403b9cb6",
+  "size": 979232,
+  "package": "fxcam",
+  "version": "1.0.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "imliubo",
+  "uploader_email": "imliubo@users.noreply.github.com"
+}
