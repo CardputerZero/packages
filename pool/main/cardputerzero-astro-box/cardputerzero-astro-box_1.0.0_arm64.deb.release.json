@@ -1,0 +1,11 @@
+{
+  "filename": "cardputerzero-astro-box_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kur1k0__cardputerzero-astro-box_1.0.0_arm64.deb",
+  "sha256": "6d4c26c8800d1ce6b9f0340af78cd9abacb2cf80cb979e3dda61ee410e1717a0",
+  "size": 420768,
+  "package": "cardputerzero-astro-box",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "kur1k0",
+  "uploader_email": "kur1k0@users.noreply.github.com"
+}
