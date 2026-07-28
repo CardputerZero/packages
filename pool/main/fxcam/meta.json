@@ -1,0 +1,13 @@
+{
+  "title": "fxcam",
+  "summary": "FXCam is a pocket-sized creative camera for CardputerZero, featuring 106 live fi",
+  "categories": [
+    "camera",
+    "entertainment"
+  ],
+  "screenshots": [],
+  "description": "FXCam transforms the M5CardputerZero into a compact creative camera built for playful, hands-on photography. It offers 106 real-time effects, ranging from Polaroid, Game Boy, and iPhone-inspired looks to CRT, thermal, comic, and retro palette-based dithering styles. Filters are applied consistently to both the live preview and full-resolution JPEG captures, while every photo can include a transparent watermark with the device name, timestamp, application name, aperture, active filter, and author signature. The built-in gallery provides cached thumbnails, image information, deletion controls, and full-resolution viewing with zoom and pan support. FXCam supports CSI cameras through libcamera and USB cameras through V4L2, integrates with APPLaunch, and is distributed as an arm64 Debian package for straightforward installation on the device.",
+  "author": {
+    "github": "imliubo"
+  }
+}
