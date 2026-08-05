@@ -1,0 +1,11 @@
+{
+  "filename": "fontpreview_0.4.1-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Harrison-Xu__fontpreview_0.4.1-m5stack1_arm64.deb",
+  "sha256": "64649cb4db722b9912621464f14bdc43932d811218da95f333963c6caaf258aa",
+  "size": 76059540,
+  "package": "fontpreview",
+  "version": "0.4.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "Harrison-Xu",
+  "uploader_email": "harrison-xu@users.noreply.github.com"
+}
