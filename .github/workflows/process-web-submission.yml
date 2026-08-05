@@ -72,12 +72,186 @@ jobs:
             if awk '{print $1}' /tmp/contents.txt | grep -qE '^[bc]'; then
               ERR="${ERR}- ❌ package contains device files\n"
             fi
-            # paths outside the allowed prefixes
-            BAD_PATHS=$(awk '{print $NF}' /tmp/contents.txt | sed 's|^\./||' \
-              | grep -vE '^(usr/share/APPLaunch/|lib/systemd/system/|usr/share/doc/|usr/share/'"$PKG"'/|usr/lib/'"$PKG"'/|opt/'"$PKG"'/|usr/$|usr/share/$|usr/lib/$|lib/$|lib/systemd/$|opt/$|\.$)' \
-              | grep -v '/$' || true)
-            if [ -n "$BAD_PATHS" ]; then
-              ERR="${ERR}- ❌ files outside allowed install prefixes:\n$(echo "$BAD_PATHS" | sed 's/^/    /')\n"
+            # --- install path policy ---
+            # Aligned with Debian instead of a hand-rolled prefix list: /usr/bin
+            # is where Policy 10.1 says executables belong, and a data directory
+            # need not be spelled exactly like the package (Debian's own
+            # fonts-noto-cjk installs into /usr/share/fonts/opentype/noto/, and a
+            # deb package name cannot even contain the underscore an app
+            # directory often has). What is still enforced is that anything
+            # landing in a *shared* directory carries the package's name, so an
+            # upload cannot quietly take over /usr/bin/ls or sshd.service.
+            # Reads the member list from the tar rather than `dpkg-deb -c`, whose
+            # last field is the link target on symlink lines.
+            python3 - "$PKG" /tmp/pkg.deb <<'PY'
+          import io, re, subprocess, sys, tarfile
+
+          pkg = sys.argv[1]
+
+          # policy:begin — mirrored in the portal's site/debparse.js
+          # (installPathIssue); the wording is what the developer reads in both
+          # places, and test/installpath.test.js extracts this block to check
+          # the two implementations still agree. Keep them in sync.
+          PKG_DIR_ROOTS = ("usr/share/", "usr/lib/", "opt/", "var/lib/")
+          # Policy 10.1: on merged-usr systems these are symlinks into /usr and
+          # packages must not ship paths under them. lib/systemd/system is
+          # grandfathered in because already-published packages use it.
+          ALIASED_ROOTS = ("bin/", "sbin/", "lib/", "lib32/", "lib64/", "libx32/")
+          SYSTEMD_DIRS = ("lib/systemd/system/", "usr/lib/systemd/system/")
+          UNIT_SUFFIX = re.compile(r"\.(service|socket|timer|target|path|mount)$")
+          ALLOWED_SUMMARY = ("允许 usr/bin/<与包名相关的可执行文件>、"
+                             "usr/share|usr/lib|opt|var/lib 下与包名相关的子目录、etc/ 下与包名相关的配置、"
+                             "usr/share/APPLaunch/、usr/share/doc/、systemd 服务目录")
+
+          def normalize_name(s):
+              return re.sub(r"[-_.]", "", s.lower())
+
+          def named_after_pkg(name, pkg):
+              """Is `name` recognizably the package's own? Separators are ignored
+              and either may prefix the other, so package fontpreview accepts a
+              font_preview directory and myapp accepts myapp-cli, but neither
+              accepts ls."""
+              a = normalize_name(UNIT_SUFFIX.sub("", name))
+              b = normalize_name(pkg or "")
+              return bool(a and b) and (a.startswith(b) or b.startswith(a))
+
+          def install_path_issue(path, pkg):
+              """None when the path is fine, otherwise why it is not."""
+              if path.startswith("usr/local/"):
+                  return "Debian Policy 9.1.2 禁止软件包写入 /usr/local（那是留给系统管理员的）"
+              for d in SYSTEMD_DIRS:
+                  if path.startswith(d):
+                      unit = path[len(d):]
+                      if "/" in unit:
+                          return "systemd 服务目录下不应再有子目录"
+                      if named_after_pkg(unit, pkg):
+                          return None
+                      return f"systemd 服务名必须与包名 {pkg} 相关，避免覆盖系统服务"
+              if path.startswith(ALIASED_ROOTS):
+                  return "Debian Policy 10.1 禁止软件包写入 /bin /sbin /lib 等 usr-merge 别名路径，请改用 /usr 下的对应位置"
+              if path.startswith("usr/share/APPLaunch/") or path.startswith("usr/share/doc/"):
+                  return None
+              # /etc/<pkg>.conf is as much a Debian convention as /etc/<pkg>/
+              # (compare rsyslog.conf, logrotate.conf), so a lone conffile is
+              # fine here.
+              if path.startswith("etc/"):
+                  rest = path[len("etc/"):]
+                  top = rest.split("/", 1)[0]
+                  if named_after_pkg(top, pkg):
+                      return None
+                  return f"etc/ 下只能放与包名 {pkg} 相关的配置文件或目录，{top} 不符合"
+              if path.startswith("usr/bin/"):
+                  exe = path[len("usr/bin/"):]
+                  if "/" in exe:
+                      return "/usr/bin 下不应有子目录，程序数据请放 usr/share/<包名>/ 或 usr/lib/<包名>/"
+                  if named_after_pkg(exe, pkg):
+                      return None
+                  return f"/usr/bin 下的文件名必须与包名 {pkg} 相关，避免覆盖系统命令"
+              for root in PKG_DIR_ROOTS:
+                  if path.startswith(root):
+                      rest = path[len(root):]
+                      if "/" not in rest:
+                          return f"不能直接放在 {root} 下，请放进 {root}<包名>/ 子目录"
+                      top = rest.split("/", 1)[0]
+                      if named_after_pkg(top, pkg):
+                          return None
+                      return f"{root}{top}/ 的目录名必须与包名 {pkg} 相关"
+              return f"不在允许的安装位置内（{ALLOWED_SUMMARY}）"
+          # policy:end
+
+          # Without a package name nothing can be judged as the package's own,
+          # and an unreadable control file is already reported on its own.
+          if not pkg:
+              sys.exit(0)
+
+          try:
+              tb = subprocess.run(["dpkg-deb", "--fsys-tarfile", sys.argv[2]],
+                                  capture_output=True, check=True).stdout
+          except Exception:
+              sys.exit(0)
+
+          bad = []
+          with tarfile.open(fileobj=io.BytesIO(tb)) as tf:
+              for m in tf.getmembers():
+                  if m.isdir():
+                      continue
+                  p = re.sub(r"^\./", "", m.name).rstrip("/")
+                  if not p:
+                      continue
+                  why = install_path_issue(p, pkg)
+                  if why:
+                      # Backticks would break out of the code fence in the help
+                      # text below, and control characters would garble it.
+                      bad.append((re.sub(r"[`\x00-\x1f]", "?", p), why))
+          if not bad:
+              sys.exit(0)
+
+          with open("/tmp/bad-paths.txt", "w") as f:
+              for p, why in bad:
+                  f.write(f"{p} — {why}\n")
+
+          # prompt:begin — mirrored in the portal's site/debparse.js
+          # (INSTALL_PATH_PROMPT). A developer can hit this rule either in the
+          # browser pre-check or here, and should get the same prompt both ways;
+          # test/installpath.test.js keeps the two verbatim. Self-contained on
+          # purpose: it carries the whole policy plus the rejected paths, so
+          # pasting it into an assistant is enough to get the packaging fixed.
+          PROMPT = """我在给 CardputerZero AppStore 打一个 Debian 包（.deb），提交后被商店的安装路径检查拒绝了。
+          请帮我修改打包脚本（CMakeLists.txt / debian/rules / install 脚本 / Makefile，看项目里用的是哪种），
+          把文件装到合规位置，并同步更新 .desktop 里的 Exec 和 Icon、以及代码里读取资源文件的路径。
+
+          商店的规则（包名记作 PKG，比对时忽略 - _ . 的差异，所以 PKG 是 fontpreview 时目录叫 font_preview 也算合规）：
+
+          允许安装到：
+          - usr/bin/<名字>：可执行文件，名字必须与包名相关（这是 Debian Policy 10.1 的标准位置）
+          - usr/share/<与包名相关的目录>/**：图片、字体、音频等只读资源
+          - usr/lib/<与包名相关的目录>/**：私有库、插件
+          - opt/<与包名相关的目录>/**：整体打包自带的目录
+          - etc/<与包名相关的目录>/** 或 etc/<与包名相关>.conf：配置文件（Debian conffile 惯例）
+          - var/lib/<与包名相关的目录>/**：运行时数据
+          - usr/share/APPLaunch/**：CardputerZero 启动器资源，且必须有 usr/share/APPLaunch/applications/<名字>.desktop
+          - usr/share/doc/**：文档
+          - lib/systemd/system/<与包名相关>.service 或 usr/lib/systemd/system/<同样>：服务名必须与包名相关，
+            且 [Service] 段必须写 User=<非 root 用户>（商店拒绝以 root 运行的服务）
+
+          禁止：
+          - usr/local/** —— Debian Policy 9.1.2 明令禁止软件包写入
+          - 以 bin/ sbin/ lib/ lib32/ lib64/ libx32/ 开头的路径 —— Debian Policy 10.1（usr-merge 别名路径），请改用 usr/ 下的对应位置
+          - 直接散落在 usr/share/ 或 usr/lib/ 下的文件 —— 必须收进以包名命名的子目录
+          - 在 usr/bin/ 下建子目录
+          - 名字与包名无关的共享目录名、可执行文件名或服务名（这是为了防止覆盖系统文件）
+          - setuid/setgid 文件、设备文件
+
+          我的包名 PKG = {pkg}
+          这次被拒绝的路径：
+          {paths}
+
+          请告诉我具体要改哪些文件、改成什么，以及资源路径在源码里怎么同步修改。"""
+          # prompt:end
+
+          paths = "\n".join(p for p, _ in bad[:40])
+          if len(bad) > 40:
+              paths += f"\n…（另外 {len(bad) - 40} 条同类问题）"
+          prompt = PROMPT.format(pkg=pkg, paths=paths)
+          with open("/tmp/path-help.md", "w") as f:
+              f.write(f"""<details>
+          <summary>📁 安装路径规则 + 可直接交给 AI 的提示词（点开）</summary>
+
+          我们放行 Debian 的标准位置，只要求**落在共享目录里的文件名/目录名带上你的包名**，
+          这样一个应用不会悄悄覆盖系统命令或别人的文件。比对时忽略 `-`、`_`、`.` 的差异，
+          所以包名 `fontpreview` 用 `font_preview` 目录是可以的。
+
+          把下面整段复制给 AI（Cursor / Claude / ChatGPT），它带着完整规则和你这次被拒的路径，
+          可以直接帮你改打包脚本：
+
+          ```
+          {prompt}
+          ```
+          </details>
+          """)
+          PY
+            if [ -s /tmp/bad-paths.txt ]; then
+              ERR="${ERR}- ❌ files in disallowed install locations:\n$(sed 's/^/    /' /tmp/bad-paths.txt)\n"
             fi
             # maintainer scripts: dangerous patterns
             dpkg-deb -e /tmp/pkg.deb /tmp/ctrl 2>/dev/null || true
@@ -159,7 +333,15 @@ jobs:
             fi
             { echo "pkg=$PKG"; echo "ver=$VER"; echo "arch=$ARCH"; } >> "$GITHUB_OUTPUT"
           fi
-          printf 'errors<<EOM\n%b\nEOM\n' "$ERR" >> "$GITHUB_OUTPUT"
+          # Random delimiters: these values embed file names taken from the
+          # uploaded .deb, and a crafted name must not be able to close the
+          # heredoc early and append outputs of its own.
+          D=$(openssl rand -hex 16)
+          printf 'errors<<%s\n%b\n%s\n' "$D" "$ERR" "$D" >> "$GITHUB_OUTPUT"
+          if [ -s /tmp/path-help.md ]; then
+            D=$(openssl rand -hex 16)
+            printf 'path_help<<%s\n%s\n%s\n' "$D" "$(cat /tmp/path-help.md)" "$D" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Collect store metadata
         id: meta
@@ -367,12 +549,18 @@ jobs:
           FILENAME: ${{ github.event.client_payload.filename }}
           ERR1: ${{ steps.validate.outputs.errors }}
           ERR2: ${{ steps.meta.outputs.errors }}
+          PATH_HELP: ${{ steps.validate.outputs.path_help }}
         run: |
           {
             echo "@$SUBMITTER your portal submission of \`$FILENAME\` failed validation:"
             echo
             printf '%b%b' "$ERR1" "$ERR2"
             echo
+            # Set only when the install path check rejected something: states the
+            # rule and hands over a prompt that fixes the packaging scripts.
+            if [ -n "$PATH_HELP" ]; then
+              printf '%s\n\n' "$PATH_HELP"
+            fi
             echo "Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             echo
             echo "Fix the package and upload again at https://dev.cardputer.cc"
