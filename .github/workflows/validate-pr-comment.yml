@@ -1,9 +1,17 @@
+# Copy to CardputerZero/packages: .github/workflows/validate-pr-comment.yml
+#
 name: Comment Package Validation
 
 # Stage 2 of 2 (privileged): triggered when "Validate Package PR" finishes.
 # Runs in the base-repo context with write access, downloads the result
 # artifact produced by the untrusted stage, and posts it as a PR comment.
 # It only reads data from the artifact and never executes PR-provided code.
+#
+# It also merges the submission when validation passed, so publishing needs no
+# human in the loop — the same as the portal channel, which merges its own PR.
+# Everything the merge decision rests on comes from the trusted event or the
+# API, never from the artifact: the artifact is written by the untrusted stage
+# and could otherwise name someone else's PR to merge.
 
 on:
   workflow_run:
@@ -11,9 +19,9 @@ on:
     types: [completed]
 
 permissions:
-  contents: read
+  contents: write        # to merge the publish PR
   pull-requests: write
-  actions: read
+  actions: write         # to trigger update-index after the merge
 
 jobs:
   comment:
@@ -28,20 +36,59 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
+      # The head SHA comes from the event, so the PR it belongs to is resolved
+      # through the API rather than read out of the artifact.
+      - name: Resolve the pull request
+        id: pr
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const sha = context.payload.workflow_run.head_sha;
+            const { data: prs } = await github.rest.repos.listPullRequestsAssociatedWithCommit({
+              owner: context.repo.owner, repo: context.repo.repo, commit_sha: sha,
+            });
+            const pr = prs.find((p) => p.state === 'open' && p.head.sha === sha);
+            if (!pr) {
+              core.info(`no open PR at ${sha}; nothing to comment on`);
+              return;
+            }
+            core.setOutput('number', String(pr.number));
+            core.setOutput('sha', sha);
+            // Third-party submissions arrive as fork PRs; a same-repo PR is a
+            // maintainer change that validation skips and must not auto-merge.
+            core.setOutput('fork', String(pr.head.repo.full_name !== `${context.repo.owner}/${context.repo.repo}`));
+
       - name: Post comment on PR
+        if: steps.pr.outputs.number != ''
         uses: actions/github-script@v7
         with:
           script: |
             const fs = require('fs');
-            const prNumber = parseInt(fs.readFileSync('out/pr-number.txt', 'utf8').trim(), 10);
-            const body = fs.readFileSync('out/result.md', 'utf8');
-            if (!Number.isInteger(prNumber)) {
-              core.setFailed('Invalid PR number in artifact');
-              return;
-            }
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              issue_number: prNumber,
-              body,
+              issue_number: parseInt('${{ steps.pr.outputs.number }}', 10),
+              body: fs.readFileSync('out/result.md', 'utf8'),
             });
+
+      # Publishing is unattended: a submission that passes every check is merged
+      # here. --match-head-commit ties the merge to the commit that was actually
+      # validated, so a push landing between the two cannot ride along.
+      - name: Merge the submission
+        if: |
+          github.event.workflow_run.conclusion == 'success'
+            && steps.pr.outputs.number != '' && steps.pr.outputs.fork == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR: ${{ steps.pr.outputs.number }}
+          SHA: ${{ steps.pr.outputs.sha }}
+        run: |
+          if gh pr merge "$PR" --squash --match-head-commit "$SHA" \
+               -R "${{ github.repository }}"; then
+            # A GITHUB_TOKEN push does not trigger the push-based update-index
+            # workflow, so promotion and the APT index are kicked off explicitly.
+            gh workflow run update-index.yml --ref main -R "${{ github.repository }}" \
+              || echo "::warning::could not trigger update-index; run it manually"
+          else
+            echo "::warning::auto-merge failed; awaiting manual review"
+          fi
