@@ -1,0 +1,10 @@
+{
+  "title": "Zeno Runner",
+  "summary": "A tiny runner game for CardputerZero",
+  "categories": [],
+  "screenshots": [],
+  "author": {
+    "github": "TinyuZhao"
+  },
+  "icon": "zeno-runner.png"
+}
