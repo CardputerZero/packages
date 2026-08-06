@@ -1,0 +1,11 @@
+{
+  "filename": "yaoyiyao_0.1.0-m5stack1_arm64.deb",
+  "url": "https://github.com/Ocean-lhy/packages/releases/download/czdev-buffer/yaoyiyao_0.1.0-m5stack1_arm64.deb",
+  "sha256": "dffe450595268cc49615ede1fc857e74d9b39a73f3aa4f62c8f03eb4372ae54c",
+  "size": 5362884,
+  "package": "yaoyiyao",
+  "version": "0.1.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "Ocean-lhy",
+  "uploader_email": "Ocean-lhy@users.noreply.github.com"
+}
