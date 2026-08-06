@@ -1,0 +1,11 @@
+{
+  "filename": "quicktap_0.1.0_arm64.deb",
+  "url": "https://github.com/renletao/packages/releases/download/czdev-buffer/quicktap_0.1.0_arm64.deb",
+  "sha256": "2813779f7e5b4b87bbbb8ce7ee100a2bcecdbbc01d27784164135411f5b2939c",
+  "size": 703556,
+  "package": "quicktap",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "renletao",
+  "uploader_email": "renletao@users.noreply.github.com"
+}

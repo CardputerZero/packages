@@ -1,0 +1,23 @@
+{
+  "title": "QuickTap",
+  "summary": "Test your reflexes in a fast, minimal reaction game.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/main.png"
+  ],
+  "description": "Wait for the panel to turn green, then press Enter as quickly as you can. QuickTap tracks your personal best and includes light and dark themes.",
+  "locales": {
+    "zh-CN": {
+      "title": "QuickTap",
+      "summary": "一款简洁快速的反应力测试游戏。"
+    }
+  },
+  "license": "MIT",
+  "icon": "quicktap.png",
+  "author": {
+    "github": "renletao",
+    "display_name": "M5Stack"
+  }
+}
