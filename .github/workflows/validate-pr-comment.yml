@@ -36,18 +36,22 @@ jobs:
           run-id: ${{ github.event.workflow_run.id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      # The head SHA comes from the event, so the PR it belongs to is resolved
-      # through the API rather than read out of the artifact.
+      # Resolved from the event's head repository, branch and SHA, so the PR
+      # being acted on never comes from the artifact. Listing by head is what
+      # works for forks: listPullRequestsAssociatedWithCommit only sees commits
+      # in this repository and returns nothing for a fork's head.
       - name: Resolve the pull request
         id: pr
         uses: actions/github-script@v7
         with:
           script: |
-            const sha = context.payload.workflow_run.head_sha;
-            const { data: prs } = await github.rest.repos.listPullRequestsAssociatedWithCommit({
-              owner: context.repo.owner, repo: context.repo.repo, commit_sha: sha,
+            const run = context.payload.workflow_run;
+            const sha = run.head_sha;
+            const { data: prs } = await github.rest.pulls.list({
+              owner: context.repo.owner, repo: context.repo.repo, state: 'open',
+              head: `${run.head_repository.owner.login}:${run.head_branch}`,
             });
-            const pr = prs.find((p) => p.state === 'open' && p.head.sha === sha);
+            const pr = prs.find((p) => p.head.sha === sha);
             if (!pr) {
               core.info(`no open PR at ${sha}; nothing to comment on`);
               return;
