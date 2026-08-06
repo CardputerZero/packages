@@ -1,10 +1,16 @@
 {
-  "title": "Zeno Runner",
-  "summary": "A tiny runner game for CardputerZero",
-  "categories": [],
-  "screenshots": [],
+  "title": "zeno-runner",
+  "summary": "Jump, dodge, and chase high scores in a day-and-night CardputerZero runner.",
+  "categories": [
+    "Game"
+  ],
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "description": "Zeno Runner is a lightweight endless runner designed for CardputerZero. Guide your dinosaur over cacti, duck under flying obstacles, and survive as the game steadily speeds up. The scenery smoothly alternates between day and night, while a local leaderboard records the top three scores. Simple controls make it easy to start, but mastering the timing and rising pace takes sharp reflexes.",
   "author": {
     "github": "TinyuZhao"
-  },
-  "icon": "zeno-runner.png"
+  }
 }

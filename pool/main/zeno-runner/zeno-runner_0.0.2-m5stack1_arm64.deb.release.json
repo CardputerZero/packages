@@ -1,0 +1,11 @@
+{
+  "filename": "zeno-runner_0.0.2-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/TinyuZhao__zeno-runner_0.0.2-m5stack1_arm64.deb",
+  "sha256": "5dbaf25dd8c5fff13a55ce4ad0234bca58a8106bf22216c5e1e9aa537645f03d",
+  "size": 340644,
+  "package": "zeno-runner",
+  "version": "0.0.2-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "TinyuZhao",
+  "uploader_email": "tinyuzhao@users.noreply.github.com"
+}
