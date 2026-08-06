@@ -1,9 +1,0 @@
-{
-  "title": "Policy Self Test",
-  "summary": "Internal CI self-test package; not a real app.",
-  "categories": ["Utilities"],
-  "description": "Used to verify the submission pipeline. Should never be published.",
-  "license": "MIT",
-  "icon": "czdev-selftest.png",
-  "author": { "github": "eggfly", "display_name": "eggfly" }
-}
