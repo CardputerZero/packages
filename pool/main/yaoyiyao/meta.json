@@ -1,0 +1,24 @@
+{
+  "title": "爻一爻",
+  "summary": "晃动 CardputerZero，以三枚铜钱完成六爻起卦",
+  "categories": [
+    "Lifestyle",
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/01-waiting.png",
+    "screenshots/02-shaking.png",
+    "screenshots/08-result-judgment.png",
+    "screenshots/09-result-line-1.png"
+  ],
+  "description": "爻一爻是一款为 CardputerZero 设计的六爻摇卦模拟器。晃动机身驱动三枚铜钱翻滚，也可按 5 键代摇；六次成卦后显示本卦、之卦、卦辞与动爻爻辞。仅供传统文化娱乐体验。",
+  "license": "MIT",
+  "source_repo": "https://github.com/Ocean-lhy/CP0-YaoYiYao",
+  "icon": "yaoyiyao.png",
+  "author": {
+    "github": "Ocean-lhy",
+    "display_name": "Dylan Luo",
+    "name": "Dylan Luo",
+    "email": "dylan.luo@m5stack.com"
+  }
+}
