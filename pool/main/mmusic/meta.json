@@ -1,0 +1,23 @@
+{
+  "title": "mMusic",
+  "summary": "Browse and play local music with album art, lyrics, and a live spectrum.",
+  "categories": [
+    "Music",
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/playback.png"
+  ],
+  "description": "A keyboard-first local music player for CardputerZero with indexed libraries, album Cover Flow, playback modes, a live spectrum, and the official five-key control layout.",
+  "locales": {
+    "zh_CN": {
+      "title": "mMusic",
+      "summary": "支持封面、媒体库和实时频谱的本地音乐播放器。"
+    }
+  },
+  "icon": "music.png",
+  "author": {
+    "github": "hlym123",
+    "display_name": "m5stack"
+  }
+}
