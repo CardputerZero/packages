@@ -1,11 +1,43 @@
 {
-  "title": "fontpreview",
-  "summary": "",
-  "categories": [],
-  "screenshots": [
-    "screenshots/screenshot-0.png"
+  "title": "FontPreview",
+  "summary": "Preview multilingual text with five font families.",
+  "categories": [
+    "Utilities"
   ],
+  "screenshots": [
+    "screenshots/fontpreview.png"
+  ],
+  "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes.",
+  "locales": {
+    "zh-CN": {
+      "title": "字体预览",
+      "summary": "预览五种字体的多语言、字号和字重效果。",
+      "description": "专为 CardputerZero 设计的字体预览应用。可用九种语言和代码内容比较五种字体、六种字体形态、8–24 px 字号、三种字重和八种配色。"
+    },
+    "en": {
+      "title": "FontPreview",
+      "summary": "Preview multilingual text with five font families.",
+      "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes."
+    },
+    "ja": {
+      "title": "フォントプレビュー",
+      "summary": "5 種類のフォントで多言語表示を確認できます。",
+      "description": "CardputerZero 向けのフォントプレビューアプリです。9 言語とコードを5種類のフォント、6種類の書体、8～24 px、3ウェイト、8配色で比較できます。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/Harrison-Xu/FontPreview",
+  "icon": "fontpreview.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": true,
+    "network": false,
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": false
+  },
   "author": {
-    "github": "Harrison-Xu"
+    "github": "Harrison-Xu",
+    "display_name": "XuHaifeng"
   }
 }
