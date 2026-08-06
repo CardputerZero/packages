@@ -1,0 +1,11 @@
+{
+  "filename": "fontpreview_0.4.2-m5stack1_arm64.deb",
+  "url": "https://github.com/Harrison-Xu/packages/releases/download/czdev-buffer/fontpreview_0.4.2-m5stack1_arm64.deb",
+  "sha256": "edc09755638997f621696cbebc1de5b20860231f6780fbcd83fdb9763eed36be",
+  "size": 76059424,
+  "package": "fontpreview",
+  "version": "0.4.2-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "Harrison-Xu",
+  "uploader_email": "Harrison-Xu@users.noreply.github.com"
+}
