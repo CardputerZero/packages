@@ -1,3 +1,5 @@
+# Copy to CardputerZero/packages: .github/workflows/validate-pr.yml
+#
 name: Validate Package PR
 
 # Stage 1 of 2 (untrusted): runs in the fork/PR context with a READ-ONLY token
@@ -39,7 +41,6 @@ jobs:
           set -uo pipefail
           ERRORS=""
           mkdir -p /tmp/out
-          echo "${{ github.event.pull_request.number }}" > /tmp/out/pr-number.txt
 
           # Third-party submissions always arrive as fork PRs. Same-repo PRs are
           # maintainer/infra changes (e.g. the migration that seeds many authors'
@@ -50,6 +51,21 @@ jobs:
             { echo "## ✅ Validation skipped"; echo; echo "Same-repo (maintainer/infra) PR — third-party submission checks are not applied."; } > /tmp/out/result.md
             echo "status=success" >> "$GITHUB_OUTPUT"
             exit 0
+          fi
+
+          # A submission may only touch its own pool entry. Anything else — a
+          # workflow, a script, another package — would be merged by the
+          # auto-merge below without a human reading it, so it is refused here.
+          OUTSIDE=$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" | grep -v '^pool/main/' || true)
+          if [ -n "$OUTSIDE" ]; then
+            ERRORS="${ERRORS}- ❌ Submissions may only change files under \`pool/main/\`; found:\n$(echo "$OUTSIDE" | sed 's/^/    /')\n"
+          fi
+
+          # The checkout above is the PR's own code, so the policy is taken from
+          # the base branch: a fork must not be able to grade itself with a
+          # rewritten rule.
+          if ! git show "$BASE_SHA:.github/scripts/install_path_policy.py" > /tmp/install_path_policy.py 2>/dev/null; then
+            ERRORS="${ERRORS}- ❌ internal: install_path_policy.py is missing on the base branch\n"
           fi
 
           # Reject raw .deb committed to git (must use the release-manifest flow).
@@ -93,13 +109,45 @@ jobs:
             if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
             fi
+            case "$(dpkg-deb -f "$deb" Architecture 2>/dev/null)" in
+              arm64|all) ;;
+              *) ERRORS="${ERRORS}- ❌ \`$fname\` architecture must be arm64/all, got '$(dpkg-deb -f "$deb" Architecture 2>/dev/null)'\n" ;;
+            esac
             # Write to a file first: `dpkg-deb -c | grep -q` makes grep close the
             # pipe on first match, so dpkg-deb dies with SIGPIPE and pipefail
             # turns the whole check into a false "missing .desktop".
             dpkg-deb -c "$deb" > /tmp/deb-contents.txt 2>/dev/null || true
-            if ! grep -q '\.desktop$' /tmp/deb-contents.txt; then
-              ERRORS="${ERRORS}- ❌ \`$fname\` has no .desktop file. All apps must include one.\n"
+            # The launcher only reads this exact location, so a .desktop parked
+            # anywhere else would install an app that never appears.
+            if ! grep -q 'usr/share/APPLaunch/applications/.*\.desktop$' /tmp/deb-contents.txt; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` is missing usr/share/APPLaunch/applications/*.desktop\n"
             fi
+            # setuid/setgid bits in the archive listing (perm string like -rwsr-xr-x)
+            if awk '{print $1}' /tmp/deb-contents.txt | grep -qE '^[-l].{2}[sS]|^[-l].{5}[sS]'; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` contains setuid/setgid files\n"
+            fi
+            if awk '{print $1}' /tmp/deb-contents.txt | grep -qE '^[bc]'; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` contains device files\n"
+            fi
+            # Install locations, by the same script and wording the portal channel
+            # uses, so a package is judged identically whichever way it arrives.
+            rm -f /tmp/bad-paths.txt /tmp/path-help.md
+            python3 /tmp/install_path_policy.py \
+              "$ctrl_pkg" "$deb" /tmp/bad-paths.txt /tmp/path-help.md
+            if [ -s /tmp/bad-paths.txt ]; then
+              ERRORS="${ERRORS}- ❌ \`$fname\` installs files in disallowed locations:\n$(sed 's/^/    /' /tmp/bad-paths.txt)\n"
+              # The rule and the fix-it prompt are the same for every package, so
+              # keep the first one and state it once after the error list.
+              [ -s /tmp/path-help-final.md ] || cp /tmp/path-help.md /tmp/path-help-final.md
+            fi
+            # maintainer scripts: dangerous patterns
+            rm -rf /tmp/ctrl && dpkg-deb -e "$deb" /tmp/ctrl 2>/dev/null || true
+            for scr in preinst postinst prerm postrm; do
+              [ -f "/tmp/ctrl/$scr" ] || continue
+              if grep -qE 'rm[[:space:]]+(-[a-zA-Z]+[[:space:]]+)*(/([[:space:]]|$)|/(bin|etc|usr|var|home|boot|lib))|(curl|wget)[^|]*\|[[:space:]]*(ba)?sh|mkfs|/etc/(passwd|shadow|sudoers)|dd[[:space:]][^|]*of=/dev/' "/tmp/ctrl/$scr"; then
+                ERRORS="${ERRORS}- ❌ \`$fname\` has a dangerous pattern in maintainer script $scr\n"
+              fi
+            done
             # apps must NOT run as root: reject bundled systemd *system* services
             # that run as root (no User=, User=root/0, and no DynamicUser=yes).
             ROOT_SVC=$(python3 - "$deb" <<'PY'
@@ -206,7 +254,9 @@ jobs:
           done
 
           if [[ -n "$ERRORS" ]]; then
-            { echo "## ❌ Package Validation Failed"; echo; echo -e "$ERRORS"; echo; echo "---"; echo "*If you believe this is an error, contact a maintainer.*"; } > /tmp/out/result.md
+            { echo "## ❌ Package Validation Failed"; echo; echo -e "$ERRORS"
+              [ -s /tmp/path-help-final.md ] && { echo; cat /tmp/path-help-final.md; }
+              echo; echo "---"; echo "*If you believe this is an error, contact a maintainer.*"; } > /tmp/out/result.md
             echo "status=failure" >> "$GITHUB_OUTPUT"
           else
             { echo "## ✅ Package Validation Passed"; echo; echo "All checks passed. Ready for maintainer review."; } > /tmp/out/result.md

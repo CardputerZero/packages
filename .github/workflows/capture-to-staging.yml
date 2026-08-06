@@ -1,3 +1,5 @@
+# Copy to CardputerZero/packages: .github/workflows/capture-to-staging.yml
+#
 # Mirrors every submitted .deb into the org-controlled `staging` release the
 # moment a publish PR is opened or updated, so pending binaries never depend
 # on a contributor's fork (deleted fork/release = lost package otherwise).
