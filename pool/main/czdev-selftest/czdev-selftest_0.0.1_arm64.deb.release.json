@@ -1,0 +1,11 @@
+{
+  "filename": "czdev-selftest_0.0.1_arm64.deb",
+  "url": "https://github.com/eggfly/cz-packages-test/releases/download/czdev-buffer/czdev-selftest_0.0.1_arm64.deb",
+  "sha256": "11b0a6aa9f8e4e270282af8d21f4a2d14b30964bf4115a37eb8cfaea6067bb6a",
+  "size": 1068,
+  "package": "czdev-selftest",
+  "version": "0.0.1",
+  "architecture": "arm64",
+  "uploaded_by": "eggfly",
+  "uploader_email": "eggfly@users.noreply.github.com"
+}
