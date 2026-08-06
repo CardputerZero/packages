@@ -1,0 +1,11 @@
+{
+  "filename": "mmusic_0.1.8_arm64.deb",
+  "url": "https://github.com/hlym123/packages/releases/download/czdev-buffer/mmusic_0.1.8_arm64.deb",
+  "sha256": "fa573f084b8e0de68bbe904da601afd51f6c2538bb5c9639d5d96f811cf975ab",
+  "size": 11722302,
+  "package": "mmusic",
+  "version": "0.1.8",
+  "architecture": "arm64",
+  "uploaded_by": "hlym123",
+  "uploader_email": "hlym123@users.noreply.github.com"
+}
