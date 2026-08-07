@@ -1,0 +1,11 @@
+{
+  "filename": "waterfiresimulator_1.0.9-m5stack1_arm64.deb",
+  "url": "https://github.com/zhenquan-yao/packages/releases/download/czdev-buffer/waterfiresimulator_1.0.9-m5stack1_arm64.deb",
+  "sha256": "e01b5cd29e6a50f854ce3f76317e7ebd5c7d3eb669ea4aa41b160f4bdd3032b5",
+  "size": 3762396,
+  "package": "waterfiresimulator",
+  "version": "1.0.9-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "zhenquan-yao",
+  "uploader_email": "zhenquan-yao@users.noreply.github.com"
+}
