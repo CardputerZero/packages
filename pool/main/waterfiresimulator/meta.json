@@ -1,0 +1,22 @@
+{
+  "title": "Water & Fire",
+  "summary": "Interactive water and fire simulations that react to every tilt.",
+  "categories": [
+    "Education",
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/water.png",
+    "screenshots/fire.png"
+  ],
+  "description": "Turn your CardputerZero into a pocket-sized physics display. Tilt and shake the device to move a volume-preserving water simulation with fluid inertia, or switch to a full-width combustion field where flames and embers bend with gravity while retaining their upward jet. Note: CardputerZero Lite does not include an IMU, so the interactive experience is limited on that model.",
+  "license": "MIT",
+  "icon": "water-fire-simulator-v2.png",
+  "permissions": [
+    "imu"
+  ],
+  "author": {
+    "github": "zhenquan-yao",
+    "display_name": "zhenquan-yao"
+  }
+}
