@@ -1,5 +1,6 @@
 {
   "title": "Zero SDR Keyboard",
+  "share_code": "zsdr",
   "summary": "Tune RTL-SDR with a native spectrum, waterfall, and direct Cardputer keyboard entry.",
   "categories": [
     "Utilities",
