@@ -1,0 +1,11 @@
+{
+  "filename": "cardputerzero-radio_0.2.0-3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/churchja__cardputerzero-radio_0.2.0-3_arm64.deb",
+  "sha256": "a64662e587e2d9828993752ab701fa4a2f70df08d7397d608a59b0f5af9b3803",
+  "size": 40746,
+  "package": "cardputerzero-radio",
+  "version": "0.2.0-3",
+  "architecture": "arm64",
+  "uploaded_by": "churchja",
+  "uploader_email": "churchja@users.noreply.github.com"
+}
