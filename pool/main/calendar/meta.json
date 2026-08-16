@@ -1,26 +1,19 @@
 {
   "title": "Calendar",
-  "summary": "Compact calendar with ICS sync, lunar dates, regional holidays, and almanac.",
+  "summary": "中英日等多国日历",
   "categories": [
-    "Productivity",
-    "Calendar"
+    "Lifestyle",
+    "System"
   ],
-  "license": "MIT",
-  "source_repo": "https://github.com/CardputerZero/Calendar",
-  "author": {
-    "github": "zhuzhe1983",
-    "display_name": "Zhu Zhe"
-  },
-  "icon": "share/images/calendar.png",
   "screenshots": [
-    "store/screenshots/calendar-month-zh-320x170.png",
-    "store/screenshots/calendar-subscriptions-zh-320x170.png",
-    "store/screenshots/calendar-source-edit-zh-320x170.png",
-    "store/screenshots/calendar-manager-zh-320x170.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
   ],
-  "permissions": {
-    "filesystem": true,
-    "keyboard_input": true,
-    "network": true
+  "description": "中英日等多国日历，支持 ics 和部分内置日志",
+  "icon": "calendar_icon.png",
+  "author": {
+    "github": "zhuzhe1983"
   }
 }
