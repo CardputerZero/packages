@@ -11,6 +11,7 @@
   ],
   "description": "Zeno Runner is a lightweight endless runner designed for CardputerZero. Guide your dinosaur over cacti, duck under flying obstacles, and survive as the game steadily speeds up. The scenery smoothly alternates between day and night, while a local leaderboard records the top three scores. Simple controls make it easy to start, but mastering the timing and rising pace takes sharp reflexes.",
   "author": {
-    "github": "TinyuZhao"
+    "github": "TinyuZhao",
+    "display_name": "TinyuZhao"
   }
 }

@@ -1,4 +1,5 @@
 {
+  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
   "title": "NetSim",
   "summary": "2-port inline network tester: traffic load-generator + tc netem WAN impairment emulator over the built-in LAN port + one USB-LAN adapter.",
   "categories": [

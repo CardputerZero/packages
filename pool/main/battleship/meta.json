@@ -1,4 +1,5 @@
 {
+  "author": {"github": "yutacar", "display_name": "yutacar"},
   "title": "Battleship",
   "summary": "Classic naval combat: 1P vs AI or 2P over BLE/WiFi.",
   "categories": [

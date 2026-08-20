@@ -1,4 +1,5 @@
 {
+  "author": {"github": "yutacar", "display_name": "yutacar"},
   "title": "ChainLED",
   "summary": "Create 8x8 LED animations and drive a real Chain Mono/RGB matrix.",
   "categories": [

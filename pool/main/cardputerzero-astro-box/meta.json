@@ -13,6 +13,7 @@
   "description": "Create stars and planets, define their mass, color, and initial velocity, then watch gravity shape their paths in real time. Explore built-in orbital systems, pause or accelerate the simulation, follow individual bodies, and share complete universes with other CardputerZero users through QR codes.",
   "icon": "cardputerzero-astro-box_icon.png",
   "author": {
-    "github": "kur1k0"
+    "github": "kur1k0",
+    "display_name": "kur1k0"
   }
 }

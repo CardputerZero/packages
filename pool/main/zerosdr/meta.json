@@ -15,5 +15,8 @@
   "description": "zeroSDR is a lightweight Software Defined Radio (SDR) receiver optimized for embedded Linux systems with small displays. Features real-time spectrum and waterfall visualization, FM/NFM/AM audio demodulation with AGC and squelch, and direct framebuffer rendering for minimal overhead. Designed for Raspberry Pi Zero 2W and Pi 5 with RTL-SDR dongles.",
   "source_repo": "https://github.com/nullbeing/zeroSDR",
   "icon": "share/images/zerosdr.png",
-  "author": "Weiming Feng"
+  "author": {
+    "github": "nullbeing",
+    "display_name": "Weiming Feng"
+  }
 }

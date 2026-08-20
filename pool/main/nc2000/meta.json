@@ -1,4 +1,5 @@
 {
+  "author": {"github": "eggfly", "display_name": "eggfly"},
   "title": "NC2000",
   "summary": "NC2000 WenQuXing Emulator for CardputerZero",
   "categories": [],

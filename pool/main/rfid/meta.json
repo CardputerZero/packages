@@ -18,6 +18,7 @@
   "description": "RFID is a standalone NFC and UHF toolkit designed for Cardputer Zero.\r\n\r\nIt supports reading, scanning, saving, and emulating multiple RFID tag types. Saved card data and scan records can be managed directly on the device.\r\n\r\nSupported hardware includes NFC Unit, PN532, PN532Killer, and UHF RFID expansion modules connected through UART or USB.\r\n\r\nMain features:\r\n- Scan and read NFC and UHF tags\r\n- Save and manage card dumps\r\n- Emulate supported NFC tag types\r\n- Read and write supported tag data\r\n- Manage MIFARE keys and perform recovery operations\r\n- Record scan results and communication logs\r\n- Use Space to start or pause scanning and emulation\r\n- Use Backspace to clear records and logs",
   "icon": "rfid_icon.png",
   "author": {
-    "github": "whywilson"
+    "github": "whywilson",
+    "display_name": "whywilson"
   }
 }

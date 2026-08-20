@@ -1,4 +1,5 @@
 {
+  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
   "title": "PacketScope",
   "summary": "Offline pcap/pcapng investigator — packet list, protocol tree, hex, filters, RTP & video-stream stats.",
   "categories": [

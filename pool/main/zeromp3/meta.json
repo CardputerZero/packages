@@ -1,4 +1,5 @@
 {
+  "author": {"github": "dianjixz", "display_name": "dianjixz"},
   "title": "Zero MP3",
   "summary": "Play local MP3 files with playlist, volume, repeat, and shuffle controls.",
   "description": "Zero MP3 is a lightweight local music player for CardputerZero. It scans common music locations such as /home/pi/Music, /media, and /mnt, and can also use ZEROMP3_DIR for a custom music folder.",

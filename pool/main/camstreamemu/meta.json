@@ -1,4 +1,5 @@
 {
+  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
   "title": "CamStreamEmu",
   "summary": "Reproduce a captured camera's video stream (multicast / RTSP / HTTP-MJPEG) from the built-in camera.",
   "categories": [

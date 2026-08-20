@@ -4,5 +4,8 @@
   "categories": [],
   "screenshots": [],
   "icon": "liu-bo-icon.png",
-  "author": { "github": "imliubo" }
+  "author": {
+    "github": "imliubo",
+    "display_name": "imliubo"
+  }
 }

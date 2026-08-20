@@ -14,6 +14,7 @@
   "description": "中英日等多国日历，支持 ics 和部分内置日志",
   "icon": "calendar_icon.png",
   "author": {
-    "github": "zhuzhe1983"
+    "github": "zhuzhe1983",
+    "display_name": "zhuzhe1983"
   }
 }

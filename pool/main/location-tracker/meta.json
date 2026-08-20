@@ -1,4 +1,5 @@
 {
+  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
   "title": "Location Tracker",
   "summary": "LoRa multi-node GPS location receiver — live node list, node detail, and an offline map view.",
   "categories": [

@@ -16,6 +16,7 @@
   "description": "It gives you a compact physical interface to MeshMonitor's channels, direct messages, nodes, and telemetry — without needing a phone, tablet, or laptop nearby. MeshMonitor does the heavy lifting (radio connectivity, message storage, node history); CardMesh is a lightweight remote client optimized for fast, keyboard-first field use.",
   "icon": "cardmesh_icon.png",
   "author": {
-    "github": "maxhayim"
+    "github": "maxhayim",
+    "display_name": "maxhayim"
   }
 }
