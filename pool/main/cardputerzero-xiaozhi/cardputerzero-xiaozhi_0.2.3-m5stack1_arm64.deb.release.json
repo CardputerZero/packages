@@ -1,0 +1,11 @@
+{
+  "filename": "cardputerzero-xiaozhi_0.2.3-m5stack1_arm64.deb",
+  "url": "https://github.com/JdaieLin/packages/releases/download/czdev-buffer/cardputerzero-xiaozhi_0.2.3-m5stack1_arm64.deb",
+  "sha256": "e2f7aa4a16fbb537abb506975b0952f689a09f757594bea8d363f368f0dbbb55",
+  "size": 25860420,
+  "package": "cardputerzero-xiaozhi",
+  "version": "0.2.3-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "JdaieLin",
+  "uploader_email": "hongruilin@alum.calarts.edu"
+}
