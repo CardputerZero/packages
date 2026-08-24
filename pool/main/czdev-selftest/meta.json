@@ -1,6 +1,6 @@
 {
   "title": "CZDev Selftest",
-  "summary": "Pipeline self-test package; not a real app.",
+  "summary": "Pipeline self-test package (updated); not a real app.",
   "description": "Automated end-to-end test package for the CardputerZero publishing pipeline. Safe to ignore.",
   "categories": [
     "Development"
