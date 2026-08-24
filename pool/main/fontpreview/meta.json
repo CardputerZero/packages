@@ -2,7 +2,7 @@
   "title": "FontPreview",
   "summary": "Preview multilingual text with five font families.",
   "categories": [
-    "Utilities"
+    "System Tools"
   ],
   "screenshots": [
     "screenshots/fontpreview.png"
@@ -29,15 +29,18 @@
   "source_repo": "https://github.com/Harrison-Xu/FontPreview",
   "icon": "fontpreview.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": true,
+    "imu": false,
     "network": false,
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
+    "external_display": false
   },
   "author": {
     "github": "Harrison-Xu",
     "display_name": "XuHaifeng"
-  }
+  },
+  "share_code": "FONT",
+  "uuid": "797a244a-162d-548e-8b33-f4a3e7c3fc3c"
 }

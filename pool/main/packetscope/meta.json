@@ -1,18 +1,20 @@
 {
-  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
+  "author": {
+    "github": "u44e",
+    "display_name": "Yusuke Yoshie"
+  },
   "title": "PacketScope",
   "summary": "Offline pcap/pcapng investigator — packet list, protocol tree, hex, filters, RTP & video-stream stats.",
   "categories": [
-    "Utilities",
-    "Development",
-    "Communication"
+    "System Tools",
+    "Development"
   ],
   "screenshots": [
-    "store/screenshots/01-list-320x170.png",
-    "store/screenshots/02-detail-320x170.png",
-    "store/screenshots/03-filter-320x170.png",
-    "store/screenshots/04-rtp-320x170.png",
-    "store/screenshots/05-streamcheck-320x170.png"
+    "screenshots/01-list-320x170.png",
+    "screenshots/02-detail-320x170.png",
+    "screenshots/03-filter-320x170.png",
+    "screenshots/04-rtp-320x170.png",
+    "screenshots/05-streamcheck-320x170.png"
   ],
   "description": "A fully offline packet-capture investigation tool. Open a .pcap/.pcapng from the SD card and explore it Wireshark-style on the 320x170 screen: a virtualized packet list (No/Time/Src/Dst/Proto/Len/Info), an expandable protocol tree synced to a hex dump with field highlighting, display filters (ip.addr==, udp.port==, rtp.ssrc==, proto keywords, &&/||/!), and statistics: protocol hierarchy, conversations, RTP streams (loss/jitter/rate per SSRC) and a video-stream check (codec/resolution/GOP conformance for CCTV MPEG2-TS/TTS and H.264/MPEG-2). Exports a camera profile (control request + video format) as JSON. Dissectors: Ethernet/VLAN/ARP/IPv4/IPv6/UDP/TCP/ICMP/ICMPv6/IGMP/DNS/DHCP/NTP/RTSP/HTTP/SDP/MJPEG/RTP/MPEG2-TS/TTS(192)/H.264/MPEG-2. Focus protocols: RTSP, MJPEG, TCP, UDP. Includes a bundled sample capture so it self-demos without any setup. Viewer only: no network permission, nothing ever leaves the device.",
   "locales": {
@@ -29,19 +31,16 @@
   },
   "license": "MIT",
   "source_repo": "https://github.com/u44e/cardputerzero-packetscope",
-  "icon": "share/images/packetscope.png",
+  "icon": "packetscope.png",
   "permissions": {
-    "keyboard_input": true,
-    "network": true,
-    "filesystem": "full",
-    "external_hardware": false,
-    "hdmi_output": false,
-    "background_service": false,
-    "audio_output": false,
-    "microphone": false,
     "camera": false,
-    "sensors": false,
-    "gps": false,
-    "device_id": false
-  }
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "PKTS",
+  "uuid": "2aa0c29a-a02a-5a76-9005-6fd76ac8fd20"
 }

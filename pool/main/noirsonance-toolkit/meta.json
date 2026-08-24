@@ -1,25 +1,30 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "NoirSonance Toolkit",
   "summary": "Compact studio field toolkit for Cardputer Zero.",
   "categories": [
-    "Utilities"
+    "System Tools"
   ],
   "screenshots": [
-    "packaging/store/screenshots/tools.png",
-    "packaging/store/screenshots/audio-freq.png"
+    "screenshots/tools.png",
+    "screenshots/audio-freq.png"
   ],
   "description": "NoirSonance Toolkit provides six handheld studio utilities: MIDI/frequency, frequency-to-note, dB/linear conversion, delay time, pitch shift, and tap tempo.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/noirsonance-toolkit-cardputerzero",
-  "icon": "packaging/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "NSTK",
+  "uuid": "6cfdf8dd-1b61-5955-8c1d-487968106d9d"
 }

@@ -1,6 +1,6 @@
 {
   "uuid": "10f1b000-0000-4000-8000-000000000008",
-  "share_code": "lofi",
+  "share_code": "LOFI",
   "title": "LoFiBox",
   "summary": "Chromeless desktop-widget music player",
   "description": "LoFiBox is a pure C++ Linux music player with a compact chromeless desktop-widget surface, local playback, media-library browsing, and DSP-ready audio pipeline.",
@@ -14,7 +14,9 @@
       "summary": "無邊框桌面小部件音樂播放器"
     }
   },
-  "categories": ["Media", "Music"],
+  "categories": [
+    "Media"
+  ],
   "author": {
     "github": "vicliu624",
     "display_name": "vicliu624"
@@ -23,8 +25,12 @@
   "source_repo": "https://github.com/vicliu624/LoFiBox-Zero",
   "icon": "lofibox_icon.png",
   "permissions": {
-    "audio_output": true,
-    "keyboard_input": true,
-    "network": true
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
   }
 }

@@ -2,10 +2,8 @@
   "title": "cardputerzero-radio",
   "summary": "Internet radio with station search, favourites, sleep timer and alarm",
   "categories": [
-    "Audio",
-    "Music",
-    "Internet",
-    "Utilities"
+    "Media",
+    "Radio & Comms"
   ],
   "screenshots": [
     "screenshots/screenshot-0.png",
@@ -18,5 +16,7 @@
   "author": {
     "github": "churchja",
     "display_name": "churchja"
-  }
+  },
+  "share_code": "RADI",
+  "uuid": "954ab268-8e91-5994-b0f8-22df86ec923e"
 }

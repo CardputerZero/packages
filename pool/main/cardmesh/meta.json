@@ -2,12 +2,8 @@
   "title": "CardMesh for MeshMonitor",
   "summary": "Your pocket console for the mesh.",
   "categories": [
-    "LoRa",
-    "Meshtastic",
-    "Meshcore",
-    "Meshmonitor",
-    "Utility",
-    "Network"
+    "Radio & Comms",
+    "System Tools"
   ],
   "screenshots": [
     "screenshots/screenshot-0.png",
@@ -18,5 +14,7 @@
   "author": {
     "github": "maxhayim",
     "display_name": "maxhayim"
-  }
+  },
+  "share_code": "MESH",
+  "uuid": "1c604a40-dec8-5260-8af2-4c21f6315c65"
 }

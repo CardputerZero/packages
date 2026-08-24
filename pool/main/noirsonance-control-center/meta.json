@@ -1,25 +1,30 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "Control Center",
   "summary": "Privacy-safe local dashboard for Cardputer Zero.",
   "categories": [
-    "Utilities"
+    "System Tools"
   ],
   "screenshots": [
-    "packaging/store/screenshots/dashboard.png",
-    "packaging/store/screenshots/privacy.png"
+    "screenshots/dashboard.png",
+    "screenshots/privacy.png"
   ],
   "description": "Control Center provides local device health, configurable checks, safe actions, and a privacy status page without bundling personal infrastructure data.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/control-center-cardputerzero",
-  "icon": "packaging/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "NSCC",
+  "uuid": "75eec6c1-26d9-59d5-81af-746c01945759"
 }

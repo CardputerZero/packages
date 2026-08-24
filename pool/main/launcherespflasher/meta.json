@@ -2,7 +2,7 @@
   "title": "ESP Flasher",
   "summary": "ESP Flasher for Cardputer Zero, flash any M5Stack device with M5Burner firmware",
   "categories": [
-    "Utilities"
+    "System Tools"
   ],
   "author": {
     "github": "bmorcelli",
@@ -12,10 +12,13 @@
   "source_repo": "https://github.com/bmorcelli/LauncherESPFlasher",
   "icon": "Launcher_128x128.png",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
     "network": true,
-    "keyboard_input": true,
-    "filesystem": true,
-    "external_hardware": true
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
   },
   "screenshots": [
     "screenshots/00 bootscreen.png",
@@ -55,5 +58,7 @@
     "screenshots/29 firmware_flash_done.png",
     "screenshots/30 firmware_detail_multipart.png",
     "screenshots/31 firmware_detail_multipart_info.png"
-  ]
+  ],
+  "share_code": "ESPF",
+  "uuid": "3c8375db-f273-502c-ab14-a57225355c5c"
 }

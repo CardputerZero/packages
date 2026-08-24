@@ -1,23 +1,24 @@
 {
-  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
+  "author": {
+    "github": "u44e",
+    "display_name": "Yusuke Yoshie"
+  },
   "title": "NetTerm",
   "summary": "SSH / telnet / USB-serial / shell terminal with profiles, VPN, macros and file injection.",
   "categories": [
-    "Network",
-    "Developer Tools",
-    "Utilities",
-    "System"
+    "Radio & Comms",
+    "Development"
   ],
   "screenshots": [
-    "store/screenshots/01-sessions-320x170.png",
-    "store/screenshots/02-editor-320x170.png",
-    "store/screenshots/03-terminal-320x170.png",
-    "store/screenshots/04-menu-320x170.png",
-    "store/screenshots/05-macros-320x170.png",
-    "store/screenshots/06-macro-edit-320x170.png",
-    "store/screenshots/07-files-320x170.png",
-    "store/screenshots/08-send-320x170.png",
-    "store/screenshots/09-logview-320x170.png"
+    "screenshots/01-sessions-320x170.png",
+    "screenshots/02-editor-320x170.png",
+    "screenshots/03-terminal-320x170.png",
+    "screenshots/04-menu-320x170.png",
+    "screenshots/05-macros-320x170.png",
+    "screenshots/06-macro-edit-320x170.png",
+    "screenshots/07-files-320x170.png",
+    "screenshots/08-send-320x170.png",
+    "screenshots/09-logview-320x170.png"
   ],
   "description": "A pocket terminal for network gear: SSH, telnet, USB-serial console (picocom) and local shell. Connection profiles with OS-managed VPN, per-profile SSH key and color theme, session logging with search, quick-send macros, charset-auto-detect file injection with wait-for-prompt, scrollback with search and line copy/paste, full SGR colour, and a switchable EN/JA UI.",
   "locales": {
@@ -32,19 +33,16 @@
   },
   "license": "MIT",
   "source_repo": "https://github.com/u44e/cardputerzero-ssh-term",
-  "icon": "share/images/netterm.png",
+  "icon": "netterm.png",
   "permissions": {
-    "keyboard_input": true,
-    "network": true,
-    "filesystem": "full",
-    "external_hardware": true,
-    "hdmi_output": false,
-    "background_service": false,
-    "audio_output": false,
-    "microphone": false,
     "camera": false,
-    "sensors": false,
-    "gps": false,
-    "device_id": false
-  }
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "NTRM",
+  "uuid": "cf1b57b8-b7de-553a-90d6-75f4173cf588"
 }

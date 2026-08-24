@@ -4,7 +4,10 @@
   "categories": [],
   "screenshots": [],
   "author": {
-    "github": "whywilson"
+    "github": "whywilson",
+    "display_name": "whywilson"
   },
-  "icon": "ic_rfid.png"
+  "icon": "ic_rfid.png",
+  "share_code": "RFID",
+  "uuid": "a76ce93f-0c0a-5f65-8e7a-16f9fd5c5afa"
 }

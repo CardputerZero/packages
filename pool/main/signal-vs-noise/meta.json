@@ -1,26 +1,31 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "Signal vs Noise",
   "summary": "Offline writing distillation tool for Cardputer Zero.",
   "categories": [
-    "Utilities",
-    "Productivity"
+    "System Tools",
+    "Creative & Office"
   ],
   "screenshots": [
-    "packaging/store/screenshots/start.png",
-    "packaging/store/screenshots/distill.png"
+    "screenshots/start.png",
+    "screenshots/distill.png"
   ],
   "description": "Signal vs Noise turns messy input into one usable sentence through staged compression, then lets you keep or discard the final signal.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/signal-vs-noise-cardputerzero",
-  "icon": "packaging/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "SVSN",
+  "uuid": "1efab377-74f5-55c2-bd7a-a0f22d278dd5"
 }
