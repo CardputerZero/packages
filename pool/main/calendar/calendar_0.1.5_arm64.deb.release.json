@@ -1,0 +1,11 @@
+{
+  "filename": "calendar_0.1.5_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/zhuzhe1983__calendar_0.1.5_arm64.deb",
+  "sha256": "8f2ce3be626923d2597e8ce65adaf1a0a072bfaa954c2f78832fcbe8a77c2990",
+  "size": 721696,
+  "package": "calendar",
+  "version": "0.1.5",
+  "architecture": "arm64",
+  "uploaded_by": "zhuzhe1983",
+  "uploader_email": "zhuzhe1983@users.noreply.github.com"
+}

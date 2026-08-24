@@ -2,8 +2,8 @@
   "title": "Calendar",
   "summary": "中英日等多国日历",
   "categories": [
-    "Lifestyle",
-    "System Tools"
+    "System Tools",
+    "Lifestyle"
   ],
   "screenshots": [
     "screenshots/screenshot-0.png",
@@ -15,7 +15,7 @@
   "icon": "calendar_icon.png",
   "author": {
     "github": "zhuzhe1983",
-    "display_name": "zhuzhe1983"
+    "display_name": "Zhu Zhe"
   },
   "share_code": "CALE",
   "uuid": "ff2ee91e-c334-5a5d-8b91-725c59c08294",
@@ -35,5 +35,15 @@
       "summary": "ローカル予定とオンライン ICS 購読に対応したコンパクトなカレンダーです。",
       "description": "CardputerZero 向けのカレンダーです。ローカル予定、オンライン ICS 購読、旧暦、祝日、暦注、天気、多言語 UI に対応します。"
     }
+  },
+  "license": "MIT",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
   }
 }
