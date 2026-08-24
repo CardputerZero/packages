@@ -2,8 +2,7 @@
   "title": "2048",
   "summary": "Classic 2048 puzzle game tuned for the Cardputer Zero keyboard.",
   "categories": [
-    "Games",
-    "Puzzle"
+    "Games"
   ],
   "license": "MIT",
   "source_repo": "https://github.com/CardputerZero/2048",
@@ -11,15 +10,40 @@
     "github": "zhuzhe1983",
     "display_name": "Zhu Zhe"
   },
-  "icon": "share/images/2048.png",
+  "icon": "2048.png",
   "screenshots": [
-    "store/screenshots/2048-start-320x170.png",
-    "store/screenshots/2048-midgame-320x170.png",
-    "store/screenshots/2048-win-320x170.png",
-    "store/screenshots/2048-gameover-320x170.png"
+    "screenshots/2048-start-320x170.png",
+    "screenshots/2048-midgame-320x170.png",
+    "screenshots/2048-win-320x170.png",
+    "screenshots/2048-gameover-320x170.png"
   ],
   "permissions": {
-    "audio": true,
-    "keyboard_input": true
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "2048",
+  "uuid": "4ff51d2b-acfa-5300-b79a-27ef9512e079",
+  "description": "Classic 2048 puzzle game for CardputerZero with keyboard controls, smooth tile movement, and sound effects.",
+  "locales": {
+    "en": {
+      "title": "2048",
+      "summary": "Classic 2048 puzzle game tuned for the CardputerZero keyboard.",
+      "description": "Classic 2048 puzzle game for CardputerZero with keyboard controls, smooth tile movement, and sound effects."
+    },
+    "zh-CN": {
+      "title": "2048",
+      "summary": "为 CardputerZero 键盘优化的经典 2048 数字合成游戏。",
+      "description": "面向 CardputerZero 优化的经典 2048 数字合成游戏，支持键盘操作、平滑方块移动和音效反馈。"
+    },
+    "ja": {
+      "title": "2048",
+      "summary": "CardputerZero のキーボード向けに調整した定番 2048 パズルゲームです。",
+      "description": "CardputerZero 向けに調整した定番 2048 パズルゲームです。キーボード操作、滑らかなタイル移動、効果音に対応します。"
+    }
   }
 }

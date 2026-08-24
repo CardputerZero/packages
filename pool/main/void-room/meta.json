@@ -1,26 +1,31 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "Void Room",
   "summary": "Distraction-free offline writing room tuned for Cardputer Zero.",
   "categories": [
-    "Utilities",
-    "Productivity"
+    "System Tools",
+    "Creative & Office"
   ],
   "screenshots": [
-    "packaging/cardputer-store/screenshots/home-320x170.png",
-    "packaging/cardputer-store/screenshots/room-320x170.png"
+    "screenshots/home-320x170.png",
+    "screenshots/room-320x170.png"
   ],
   "description": "Void Room is a quiet offline writing space for timed focus sessions, with no-exit and no-backspace modes, local session archive, and optional ambient sound.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/void-room-cardputerzero",
-  "icon": "packaging/cardputer-store/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": true,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "VDRM",
+  "uuid": "db282581-9bb5-53d2-8139-5adb9978aec9"
 }

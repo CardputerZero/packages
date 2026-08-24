@@ -3,6 +3,11 @@
   "summary": "Spinning 3D teapot / sphere / cube / torus demo",
   "categories": [],
   "screenshots": [],
-  "author": {"github": "eggfly", "display_name": "eggfly"},
-  "icon": "spin3d_icon.png"
+  "author": {
+    "github": "eggfly",
+    "display_name": "eggfly"
+  },
+  "icon": "spin3d_icon.png",
+  "share_code": "SP3D",
+  "uuid": "a8a80032-dc97-58fb-9fbf-8be6c9dedda3"
 }

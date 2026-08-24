@@ -21,8 +21,7 @@
   },
   "categories": [
     "AI",
-    "Communication",
-    "Utilities"
+    "Radio & Comms"
   ],
   "license": "MIT",
   "source_repo": "https://github.com/JdaieLin/cardputer-xiaozhi",
@@ -38,12 +37,14 @@
     "screenshots/04-speaking.png"
   ],
   "permissions": {
+    "camera": false,
     "microphone": true,
-    "audio_output": true,
+    "imu": false,
     "network": true,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "XIAO",
+  "uuid": "5efda523-4689-5970-976d-dfc0e7d22e65"
 }

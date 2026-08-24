@@ -1,25 +1,30 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "Creative Pressure",
   "summary": "Offline creative focus ritual for Cardputer Zero.",
   "categories": [
-    "Productivity"
+    "Creative & Office"
   ],
   "screenshots": [
-    "packaging/store/screenshots/timer.png",
-    "packaging/store/screenshots/notes.png"
+    "screenshots/timer.png",
+    "screenshots/notes.png"
   ],
   "description": "Creative Pressure is a timed focus ritual for writing under pressure, with session notes, local history, rage mode, and generated ambient sound.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/creative-pressure-cardputerzero",
-  "icon": "packaging/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": true,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "CPRS",
+  "uuid": "457887b8-d796-57de-8cd2-c931d5f7592d"
 }

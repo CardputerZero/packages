@@ -1,7 +1,10 @@
 {
   "title": "Flint",
   "summary": "Offensive security firmware for M5Stack CardputerZero",
-  "categories": ["Security", "Utilities"],
+  "categories": [
+    "Security",
+    "System Tools"
+  ],
   "author": {
     "github": "flintdevices",
     "display_name": "Flint Devices"
@@ -40,9 +43,14 @@
     "screenshots/26_virtual_keyboard.png"
   ],
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
     "network": true,
-    "keyboard_input": true,
-    "filesystem": true,
-    "external_hardware": true
-  }
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FLNT",
+  "uuid": "eda9d233-da30-5f0f-9ae8-bc2c635f2aaf"
 }

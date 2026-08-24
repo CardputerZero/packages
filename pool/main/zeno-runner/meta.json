@@ -2,7 +2,7 @@
   "title": "zeno-runner",
   "summary": "Jump, dodge, and chase high scores in a day-and-night CardputerZero runner.",
   "categories": [
-    "Game"
+    "Games"
   ],
   "screenshots": [
     "screenshots/screenshot-0.png",
@@ -13,5 +13,7 @@
   "author": {
     "github": "TinyuZhao",
     "display_name": "TinyuZhao"
-  }
+  },
+  "share_code": "ZENO",
+  "uuid": "e50a1f7a-100d-5d19-a8c6-c82cd73109d4"
 }

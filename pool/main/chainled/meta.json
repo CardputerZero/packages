@@ -1,15 +1,18 @@
 {
-  "author": {"github": "yutacar", "display_name": "yutacar"},
+  "author": {
+    "github": "yutacar",
+    "display_name": "yutacar"
+  },
   "title": "ChainLED",
   "summary": "Create 8x8 LED animations and drive a real Chain Mono/RGB matrix.",
   "categories": [
-    "Graphics"
+    "Creative & Office"
   ],
   "screenshots": [
-    "store/screenshots/editor.png",
-    "store/screenshots/simulator.png",
-    "store/screenshots/send_receive.png",
-    "store/screenshots/settings.png"
+    "screenshots/editor.png",
+    "screenshots/simulator.png",
+    "screenshots/send_receive.png",
+    "screenshots/settings.png"
   ],
   "locales": {
     "zh-CN": {
@@ -28,5 +31,7 @@
       "description": "CardputerZero向けに作られた、8x8ドットアニメーションエディタ兼LEDマトリクスシミュレータです。キーボード操作のみで最大10コマのアニメーションを作成でき（1枚目のコマから残りを自動生成する機能付き）、画面上でRGB/Monoモードのプレビュー再生ができるほか、実際のChain Mono / Chain RGB（M5Stack Chainシリーズ）8x8 LEDマトリクスにUART経由でリアルタイム出力できます。内蔵Bluetooth（BLE、デフォルト）またはWiFi LAN経由で、もう1台のCardputerZeroとアニメーションを送受信できます。UIは英語・日本語・簡体字中国語を設定画面から即座に切り替え可能です。"
     }
   },
-  "icon": "assets/images/chainled.png"
+  "icon": "chainled.png",
+  "share_code": "CLED",
+  "uuid": "e9e7b981-11a7-508a-b2c1-485a1684713a"
 }

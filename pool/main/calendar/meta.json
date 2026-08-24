@@ -3,7 +3,7 @@
   "summary": "中英日等多国日历",
   "categories": [
     "Lifestyle",
-    "System"
+    "System Tools"
   ],
   "screenshots": [
     "screenshots/screenshot-0.png",
@@ -16,5 +16,24 @@
   "author": {
     "github": "zhuzhe1983",
     "display_name": "zhuzhe1983"
+  },
+  "share_code": "CALE",
+  "uuid": "ff2ee91e-c334-5a5d-8b91-725c59c08294",
+  "locales": {
+    "en": {
+      "title": "Calendar",
+      "summary": "Compact Calendar app for local and online ICS schedules.",
+      "description": "Calendar for CardputerZero with local schedules, online ICS subscriptions, lunar details, regional holidays, almanac, weather, and multilingual UI."
+    },
+    "zh-CN": {
+      "title": "日历",
+      "summary": "支持本地日程和在线 ICS 订阅的紧凑日历应用。",
+      "description": "为 CardputerZero 优化的日历应用，支持本地日程、在线 ICS 订阅、农历信息、节假日、黄历、天气和多语言界面。"
+    },
+    "ja": {
+      "title": "カレンダー",
+      "summary": "ローカル予定とオンライン ICS 購読に対応したコンパクトなカレンダーです。",
+      "description": "CardputerZero 向けのカレンダーです。ローカル予定、オンライン ICS 購読、旧暦、祝日、暦注、天気、多言語 UI に対応します。"
+    }
   }
 }

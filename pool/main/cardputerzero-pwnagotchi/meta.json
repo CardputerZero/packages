@@ -3,11 +3,10 @@
   "summary": "Pwnagotchi status, control, and handshake dashboard for CardputerZero with an external monitor-mode USB Wi-Fi adapter.",
   "categories": [
     "Security",
-    "Networking",
-    "Utilities"
+    "Radio & Comms"
   ],
   "screenshots": [
-    "store/screenshots/01-home.png"
+    "screenshots/01-home.png"
   ],
   "locales": {
     "zh-CN": {
@@ -26,14 +25,16 @@
     "github": "JdaieLin",
     "display_name": "Jdaie"
   },
-  "icon": "tools/assets/pwnagotchi.png",
+  "icon": "pwnagotchi.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": true,
-    "filesystem": "app-data-and-handshakes",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": true,
-    "external_hardware": true
-  }
+    "external_display": false
+  },
+  "share_code": "PWNA",
+  "uuid": "1cae73de-aa3e-5410-bfc2-0747ac721f84"
 }

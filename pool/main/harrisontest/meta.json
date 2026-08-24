@@ -2,7 +2,7 @@
   "title": "HarrisonTest",
   "summary": "A CardputerZero packaging flow demo.",
   "categories": [
-    "Utilities"
+    "System Tools"
   ],
   "screenshots": [
     "screenshots/harrison_test.png"
@@ -29,15 +29,17 @@
   "source_repo": "https://github.com/Harrison-Xu/Template",
   "icon": "harrison_test.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": false,
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": true,
-    "external_hardware": false
+    "external_display": false
   },
   "author": {
     "github": "Harrison-Xu",
     "display_name": "XuHaifeng"
-  }
+  },
+  "share_code": "HARR"
 }

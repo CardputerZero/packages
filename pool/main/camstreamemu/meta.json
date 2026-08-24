@@ -1,15 +1,17 @@
 {
-  "author": {"github": "u44e", "display_name": "Yusuke Yoshie"},
+  "author": {
+    "github": "u44e",
+    "display_name": "Yusuke Yoshie"
+  },
   "title": "CamStreamEmu",
   "summary": "Reproduce a captured camera's video stream (multicast / RTSP / HTTP-MJPEG) from the built-in camera.",
   "categories": [
-    "Multimedia",
-    "Video",
-    "Utilities"
+    "Media",
+    "System Tools"
   ],
   "screenshots": [
-    "store/screenshots/01-list-320x170.png",
-    "store/screenshots/02-reproduce-320x170.png"
+    "screenshots/01-list-320x170.png",
+    "screenshots/02-reproduce-320x170.png"
   ],
   "description": "CamStreamEmu regenerates the video stream of a real network camera from a profile captured by PacketScope. Pick a camera-profile JSON on the 320x170 screen and it encodes the built-in camera to that exact format via GStreamer (hardware H.264 on the Pi) and delivers it the same way the real camera did — multicast RTP (H.264/MPEG2-TS, MPEG-2, MLIT MPEG2-TTS/PT103, RTP-JPEG), an RTSP server, or an HTTP Motion-JPEG server — while showing live delivery mode / destination / packet & byte counters. Video-only; there is no pan/tilt/zoom camera control. Pairs with PacketScope (observe -> reproduce round-trip).",
   "locales": {
@@ -26,19 +28,16 @@
   },
   "license": "MIT",
   "source_repo": "https://github.com/u44e/CamStreamEmu",
-  "icon": "share/images/camstreamemu.png",
+  "icon": "camstreamemu.png",
   "permissions": {
-    "keyboard_input": true,
-    "network": true,
-    "filesystem": "full",
-    "external_hardware": false,
-    "hdmi_output": false,
-    "background_service": false,
-    "audio_output": false,
-    "microphone": false,
     "camera": true,
-    "sensors": false,
-    "gps": false,
-    "device_id": false
-  }
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CAMS",
+  "uuid": "191fd112-3862-5bfd-a695-bddb8f9019c4"
 }

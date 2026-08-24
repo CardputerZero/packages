@@ -1,26 +1,31 @@
 {
-  "author": {"github": "NoirSonance", "display_name": "NoirSonance"},
+  "author": {
+    "github": "NoirSonance",
+    "display_name": "NoirSonance"
+  },
   "title": "NoirSonance Check",
   "summary": "Local WAV analysis utility for Cardputer Zero.",
   "categories": [
-    "Audio",
-    "Productivity"
+    "Media",
+    "Creative & Office"
   ],
   "screenshots": [
-    "packaging/store/screenshots/ready.png",
-    "packaging/store/screenshots/analysis.png"
+    "screenshots/ready.png",
+    "screenshots/analysis.png"
   ],
   "description": "NoirSonance Check analyzes local 16-bit PCM WAV files for peak, RMS, crest factor, DC offset, and stereo correlation without uploading audio.",
   "license": "Proprietary",
   "source_repo": "https://github.com/NoirSonance/noirsonance-check-cardputerzero",
-  "icon": "packaging/icon.png",
+  "icon": "icon.png",
   "permissions": {
+    "camera": false,
     "microphone": false,
-    "audio_output": false,
+    "imu": false,
     "network": false,
-    "filesystem": "app-data-only",
-    "keyboard_input": true,
+    "additional_hardware": false,
     "background_service": false,
-    "external_hardware": false
-  }
+    "external_display": false
+  },
+  "share_code": "NSCK",
+  "uuid": "2fa94e4c-cecb-5d3c-9ec8-0380cd990847"
 }
