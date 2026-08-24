@@ -1,5 +1,3 @@
-# Copy to CardputerZero/packages: .github/workflows/validate-pr.yml
-#
 name: Validate Package PR
 
 # Stage 1 of 2 (untrusted): runs in the fork/PR context with a READ-ONLY token
@@ -11,9 +9,10 @@ name: Validate Package PR
 on:
   pull_request:
     branches: [main]
+    # Everything under pool/ — a metadata or screenshot change must be
+    # validated (and owned) exactly like a binary release.
     paths:
-      - 'pool/**/*.deb.release.json'
-      - 'pool/**/*.deb'
+      - 'pool/**'
 
 permissions:
   contents: read
@@ -53,6 +52,10 @@ jobs:
             exit 0
           fi
 
+          # Ownership is first-come-first-served by GitHub login. On a fork PR the
+          # PR author login is trusted, so it is the authoritative uploader key.
+          author_lc=$(printf '%s' "$PR_AUTHOR" | tr '[:upper:]' '[:lower:]')
+
           # A submission may only touch its own pool entry. Anything else — a
           # workflow, a script, another package — would be merged by the
           # auto-merge below without a human reading it, so it is refused here.
@@ -61,12 +64,34 @@ jobs:
             ERRORS="${ERRORS}- ❌ Submissions may only change files under \`pool/main/\`; found:\n$(echo "$OUTSIDE" | sed 's/^/    /')\n"
           fi
 
-          # The checkout above is the PR's own code, so the policy is taken from
-          # the base branch: a fork must not be able to grade itself with a
-          # rewritten rule.
-          if ! git show "$BASE_SHA:.github/scripts/install_path_policy.py" > /tmp/install_path_policy.py 2>/dev/null; then
-            ERRORS="${ERRORS}- ❌ internal: install_path_policy.py is missing on the base branch\n"
-          fi
+          # The checkout above is the PR's own code, so the policies are taken
+          # from the base branch: a fork must not be able to grade itself with
+          # a rewritten rule.
+          for script in install_path_policy.py store_meta_policy.py; do
+            if ! git show "$BASE_SHA:.github/scripts/$script" > "/tmp/$script" 2>/dev/null; then
+              ERRORS="${ERRORS}- ❌ internal: $script is missing on the base branch\n"
+            fi
+          done
+
+          # A PR may only touch package directories its author owns (or brand
+          # new ones). Without this, a fork could rewrite another package's
+          # meta.json or screenshots and the auto-merge would ship it.
+          TOUCHED_PKGS=$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" | grep '^pool/main/' | cut -d/ -f3 | sort -u)
+          for tp in $TOUCHED_PKGS; do
+            tp_manifest=""
+            tp_ver=""
+            for ex in $(git ls-tree -r "$BASE_SHA" --name-only | grep "^pool/main/${tp}/.*\.deb\.release\.json$" || true); do
+              v=$(git show "$BASE_SHA:$ex" | jq -r '.version // empty' 2>/dev/null || true)
+              if [[ -n "$v" ]] && { [[ -z "$tp_ver" ]] || dpkg --compare-versions "$v" gt "$tp_ver" 2>/dev/null; }; then
+                tp_ver="$v"; tp_manifest="$ex"
+              fi
+            done
+            [[ -z "$tp_manifest" ]] && continue   # new package: about to be owned by the author
+            tp_owner=$(git show "$BASE_SHA:$tp_manifest" | jq -r '.uploaded_by // empty' 2>/dev/null | tr '[:upper:]' '[:lower:]' || true)
+            if [[ -n "$tp_owner" && "$tp_owner" != "$author_lc" ]]; then
+              ERRORS="${ERRORS}- ❌ \`pool/main/$tp/\` is owned by @${tp_owner}; a PR may only change its author's own packages\n"
+            fi
+          done
 
           # Reject raw .deb committed to git (must use the release-manifest flow).
           if git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep -q '\.deb$'; then
@@ -74,10 +99,6 @@ jobs:
           fi
 
           ADDED_MANIFESTS=$(git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
-
-          # Ownership is first-come-first-served by GitHub login. On a fork PR the
-          # PR author login is trusted, so it is the authoritative uploader key.
-          author_lc=$(printf '%s' "$PR_AUTHOR" | tr '[:upper:]' '[:lower:]')
 
           for manifest in $ADDED_MANIFESTS; do
             echo "=== $manifest ==="
@@ -234,6 +255,35 @@ jobs:
             if [[ -z "$ERRORS" ]]; then echo "✓ $fname passed"; fi
           done
 
+          # Store metadata, by the same script and wording the portal channel
+          # uses. Runs for every touched package that still has a meta.json
+          # after the PR (an unpublish that removes the directory is exempt),
+          # so updating a package also means settling its metadata debts.
+          WARNINGS=""
+          for tp in $TOUCHED_PKGS; do
+            [ -f "pool/main/$tp/meta.json" ] || continue
+            rm -f /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+            python3 /tmp/store_meta_policy.py "$tp" "pool/main/$tp" pool/main \
+              /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+            if [ -s /tmp/meta-errors.txt ]; then
+              ERRORS="${ERRORS}- ❌ \`$tp\` store metadata is incomplete or invalid:\n$(sed 's/^/    /' /tmp/meta-errors.txt)\n"
+              [ -s /tmp/meta-help-final.md ] || cp /tmp/meta-help.md /tmp/meta-help-final.md
+            fi
+            if [ -s /tmp/meta-warnings.txt ]; then
+              WARNINGS="${WARNINGS}$(sed "s/^/- ⚠️ \`$tp\`: /" /tmp/meta-warnings.txt)\n"
+            fi
+          done
+
+          # First release of a new package name is gated on a human: the
+          # privileged stage re-derives this on its own and will not auto-merge
+          # (this note is informational — the artifact is untrusted).
+          NEW_PKGS=""
+          for tp in $TOUCHED_PKGS; do
+            if ! git ls-tree -r "$BASE_SHA" --name-only | grep -q "^pool/main/${tp}/.*\.deb\.release\.json$"; then
+              NEW_PKGS="${NEW_PKGS}${tp}\n"
+            fi
+          done
+
           # Ownership check for deleted manifests: only the recorded uploader
           # (or, for legacy manifests, the Maintainer-noreply login) may remove.
           DELETED=$(git diff --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
@@ -256,10 +306,20 @@ jobs:
           if [[ -n "$ERRORS" ]]; then
             { echo "## ❌ Package Validation Failed"; echo; echo -e "$ERRORS"
               [ -s /tmp/path-help-final.md ] && { echo; cat /tmp/path-help-final.md; }
+              [ -s /tmp/meta-help-final.md ] && { echo; cat /tmp/meta-help-final.md; }
+              [[ -n "$WARNINGS" ]] && { echo; echo "建议（不阻断）："; echo -e "$WARNINGS"; }
               echo; echo "---"; echo "*If you believe this is an error, contact a maintainer.*"; } > /tmp/out/result.md
             echo "status=failure" >> "$GITHUB_OUTPUT"
           else
-            { echo "## ✅ Package Validation Passed"; echo; echo "All checks passed. Ready for maintainer review."; } > /tmp/out/result.md
+            { echo "## ✅ Package Validation Passed"; echo
+              if [[ -n "$NEW_PKGS" ]]; then
+                echo "All checks passed. 🆕 这是新应用的首次发布（$(echo -e "$NEW_PKGS" | tr '\n' ' ' | sed 's/ $//')），"
+                echo "按商店政策**不会自动合并**：请在本 PR 评论区发一段应用在真机上运行的演示视频"
+                echo "（手机拍摄即可），维护者查看后会手动合并上架。后续版本更新会自动合并。"
+              else
+                echo "All checks passed. This update will be merged automatically."
+              fi
+              [[ -n "$WARNINGS" ]] && { echo; echo "建议（不阻断）："; echo -e "$WARNINGS"; }; } > /tmp/out/result.md
             echo "status=success" >> "$GITHUB_OUTPUT"
           fi
           cat /tmp/out/result.md

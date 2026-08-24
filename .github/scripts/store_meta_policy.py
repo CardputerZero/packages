@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# Copy to CardputerZero/packages: .github/scripts/store_meta_policy.py
 #
 # What a package's store metadata (pool/main/<pkg>/meta.json) must contain,
 # shared by both submission channels: process-web-submission.yml (the developer
@@ -244,7 +243,10 @@ app-builder.json 的 store 段示例：
 {problems}
 
 请告诉我具体要在哪个文件里加什么内容；如果截图/图标尺寸不对，请给出用
-ImageMagick 或 ffmpeg 转换尺寸的命令。"""
+ImageMagick 或 ffmpeg 转换尺寸的命令。
+另外：如果错误提到 icon/截图"不能带路径"，而我是用 czdev 发布的，
+说明我的 AppBuilder 仓库太旧——先 git pull 更新它再重新 czdev publish 即可，
+新版 czdev 会自动把路径转换成商店要求的形式。"""
 
 HELP_TEMPLATE = """<details>
 <summary>🏷️ 商店元数据规则 + 可直接交给 AI 的提示词（点开）</summary>
