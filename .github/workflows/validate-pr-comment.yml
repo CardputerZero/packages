@@ -1,5 +1,3 @@
-# Copy to CardputerZero/packages: .github/workflows/validate-pr-comment.yml
-#
 name: Comment Package Validation
 
 # Stage 2 of 2 (privileged): triggered when "Validate Package PR" finishes.
@@ -62,6 +60,22 @@ jobs:
             // maintainer change that validation skips and must not auto-merge.
             core.setOutput('fork', String(pr.head.repo.full_name !== `${context.repo.owner}/${context.repo.repo}`));
 
+            // First release of a new package name needs a human: store policy
+            // requires a demo video in the PR before a maintainer merges it.
+            // Derived here from the PR's files against main's git tree — never
+            // from the artifact, which the untrusted stage writes and could
+            // otherwise clear the flag and get a new package auto-merged.
+            const files = await github.paginate(github.rest.pulls.listFiles, {
+              owner: context.repo.owner, repo: context.repo.repo, pull_number: pr.number,
+            });
+            const pkgs = [...new Set(files.map((f) => f.filename.match(/^pool\/main\/([^/]+)\//))
+              .filter(Boolean).map((m) => m[1]))];
+            const { data: tree } = await github.rest.git.getTree({
+              owner: context.repo.owner, repo: context.repo.repo, tree_sha: 'main:pool/main',
+            });
+            const existing = new Set(tree.tree.map((t) => t.path));
+            core.setOutput('new_pkgs', pkgs.filter((p) => !existing.has(p)).join(' '));
+
       - name: Post comment on PR
         if: steps.pr.outputs.number != ''
         uses: actions/github-script@v7
@@ -78,10 +92,13 @@ jobs:
       # Publishing is unattended: a submission that passes every check is merged
       # here. --match-head-commit ties the merge to the commit that was actually
       # validated, so a push landing between the two cannot ride along.
+      # Exception: the first release of a new package name stays open until a
+      # maintainer has watched the demo video and merges by hand.
       - name: Merge the submission
         if: |
           github.event.workflow_run.conclusion == 'success'
             && steps.pr.outputs.number != '' && steps.pr.outputs.fork == 'true'
+            && steps.pr.outputs.new_pkgs == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PR: ${{ steps.pr.outputs.number }}

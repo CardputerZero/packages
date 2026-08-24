@@ -1,5 +1,3 @@
-# Copy to CardputerZero/packages: .github/workflows/process-web-submission.yml
-#
 # Handles `repository_dispatch` (type: web-submission) sent by the developer
 # portal Worker. Authoritative validation with real dpkg-deb: integrity,
 # control fields, .desktop, structure & safety scan, first-come-first-served
@@ -198,6 +196,37 @@ jobs:
           dest = Path(f"pool/main/{pkg}")
           dest.mkdir(parents=True, exist_ok=True)
 
+          # Updates MERGE into the published metadata instead of replacing it.
+          # A field the submitter does not provide keeps its previous value, so
+          # updating a version can no longer silently drop the license, the
+          # share code, or the pinned uuid.
+          meta = {}
+          if (dest / "meta.json").is_file():
+              try:
+                  meta = json.loads((dest / "meta.json").read_text())
+              except Exception:
+                  meta = {}
+
+          def merge(updates):
+              """Apply provided fields; author merges key-wise, the uploader's
+              login always wins (the store must never render someone else)."""
+              author = updates.pop("author", None)
+              for k, v in updates.items():
+                  if v not in (None, "", [], {}):
+                      meta[k] = v
+              if isinstance(author, dict):
+                  merged = dict(meta.get("author") or {})
+                  merged.update({k: v for k, v in author.items() if v})
+                  meta["author"] = merged
+              meta.setdefault("author", {})
+              meta["author"]["github"] = os.environ.get("SUBMITTER", "")
+              if not meta["author"].get("display_name"):
+                  meta["author"]["display_name"] = meta["author"]["github"]
+
+          def write_and_exit():
+              (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
+              sys.exit(0)
+
           import hashlib, urllib.request
 
           PNG_SIG = b"\x89PNG\r\n\x1a\n"
@@ -217,25 +246,35 @@ jobs:
           # Highest priority: store metadata + images supplied directly from the
           # web form. Screenshots/icon are small PNGs uploaded to the buffer
           # Release; we download and commit them into pool/main/<pkg>/ (no LFS).
+          # The form prefills the published state, so when a "screenshots" or
+          # "icon" key is present it is the complete intended set (replace);
+          # when absent the published images stay.
           try:
               web = json.loads(os.environ.get("STORE_JSON") or "null")
           except Exception:
               web = None
           if isinstance(web, dict):
-              meta = {"title": web.get("title") or pkg,
-                      "summary": web.get("summary", ""),
-                      "categories": web.get("categories", []),
-                      "screenshots": []}
-              if web.get("description"):
-                  meta["description"] = web["description"]
-              shots_dir = dest / "screenshots"
-              shots_dir.mkdir(exist_ok=True)
-              for i, sh in enumerate(web.get("screenshots") or []):
-                  name = Path(sh.get("name") or f"screenshot-{i}.png").name
-                  data = download(sh["url"], sh.get("sha256"), shots_dir / name)
-                  if png_dims(data) != (320, 170):
-                      fail(f"screenshot {name} must be 320x170, got {png_dims(data)}")
-                  meta["screenshots"].append(f"screenshots/{name}")
+              merge({"title": web.get("title"),
+                     "summary": web.get("summary"),
+                     "description": web.get("description"),
+                     "categories": web.get("categories"),
+                     "license": web.get("license"),
+                     "share_code": web.get("share_code"),
+                     "source_repo": web.get("source_repo") or os.environ.get("SOURCE_REPO"),
+                     "permissions": web.get("permissions"),
+                     "author": {"display_name": web.get("display_name")}})
+              if "screenshots" in web:
+                  shots_dir = dest / "screenshots"
+                  if shots_dir.is_dir():
+                      shutil.rmtree(shots_dir)
+                  shots_dir.mkdir()
+                  meta["screenshots"] = []
+                  for i, sh in enumerate(web.get("screenshots") or []):
+                      name = Path(sh.get("name") or f"screenshot-{i}.png").name
+                      data = download(sh["url"], sh.get("sha256"), shots_dir / name)
+                      if png_dims(data) != (320, 170):
+                          fail(f"screenshot {name} must be 320x170, got {png_dims(data)}")
+                      meta["screenshots"].append(f"screenshots/{name}")
               icon = web.get("icon") or {}
               if icon.get("url"):
                   iname = Path(icon.get("name") or f"{pkg}_icon.png").name
@@ -243,9 +282,7 @@ jobs:
                   if png_dims(idata) is None:
                       fail("icon must be a PNG")
                   meta["icon"] = iname
-              meta["author"] = {"github": os.environ.get("SUBMITTER", "")}
-              (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
-              sys.exit(0)
+              write_and_exit()
 
           # Preferred: app-builder.json store section from the source repo.
           src_root = Path("/tmp/src")
@@ -258,34 +295,34 @@ jobs:
                   if raw.get("package_name") != pkg or "store" not in raw:
                       continue
                   store, app_dir = raw["store"], mf.parent
-                  meta = {"title": raw.get("app_name", ""),
-                          "summary": store.get("summary", ""),
-                          "categories": store.get("categories", []),
-                          "screenshots": store.get("screenshots", [])}
-                  for k in ("description", "locales", "license", "source_repo", "icon", "permissions", "author"):
-                      if store.get(k):
-                          meta[k] = store[k]
-                  # A portal submission always has a known uploader; default the
-                  # displayed author to their GitHub login so the store never
-                  # renders "@undefined".
-                  meta.setdefault("author", {"github": os.environ.get("SUBMITTER", "")})
+                  merge({"title": raw.get("app_name"),
+                         **{k: store.get(k) for k in
+                            ("summary", "categories", "description", "locales",
+                             "license", "source_repo", "permissions", "author",
+                             "share_code")}})
+                  # meta.json records the canonical pool layout (bare names);
+                  # the store section referenced files inside the source repo.
                   shots = dest / "screenshots"
                   shots.mkdir(exist_ok=True)
-                  for srel in meta["screenshots"]:
-                      p = app_dir / srel
-                      if not p.is_file():
-                          fail(f"screenshot not found in source repo: {srel}")
-                      shutil.copy2(p, shots / p.name)
+                  if store.get("screenshots"):
+                      meta["screenshots"] = []
+                      for srel in store["screenshots"]:
+                          p = app_dir / srel
+                          if not p.is_file():
+                              fail(f"screenshot not found in source repo: {srel}")
+                          shutil.copy2(p, shots / p.name)
+                          meta["screenshots"].append(f"screenshots/{p.name}")
                   if store.get("icon") and (app_dir / store["icon"]).is_file():
                       shutil.copy2(app_dir / store["icon"], dest / Path(store["icon"]).name)
-                  (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
-                  sys.exit(0)
+                      meta["icon"] = Path(store["icon"]).name
+                  write_and_exit()
 
-          # Fallback: build minimal metadata from the deb itself (.desktop + icon).
+          # Fallback: derive what the deb itself can offer (.desktop + icon).
+          # Merged like the rest, so it fills gaps but never erases anything.
           out = subprocess.run(["dpkg-deb", "--fsys-tarfile", "/tmp/pkg.deb"], capture_output=True, check=True)
           import io, tarfile
           tf = tarfile.open(fileobj=io.BytesIO(out.stdout))
-          desktop, icon_member = None, None
+          desktop = None
           members = {m.name.lstrip("./"): m for m in tf.getmembers()}
           for name, m in members.items():
               if name.startswith("usr/share/APPLaunch/applications/") and name.endswith(".desktop"):
@@ -298,30 +335,52 @@ jobs:
                       title = line.split("=", 1)[1].strip()
                   if line.startswith("Icon="):
                       icon_rel = line.split("=", 1)[1].strip().lstrip("/")
-          if icon_rel:
+          if icon_rel and not meta.get("icon"):
               for cand in (icon_rel, f"usr/share/APPLaunch/{icon_rel}"):
                   if cand in members:
                       data = tf.extractfile(members[cand]).read()
                       (dest / Path(cand).name).write_bytes(data)
-                      icon_rel = Path(cand).name
+                      meta["icon"] = Path(cand).name
                       break
-              else:
-                  icon_rel = None
           desc = subprocess.run(["dpkg-deb", "-f", "/tmp/pkg.deb", "Description"],
                                 capture_output=True, text=True).stdout.strip()
-          meta = {"title": title, "summary": desc.splitlines()[0] if desc else "",
-                  "categories": [], "screenshots": [],
-                  "author": {"github": os.environ.get("SUBMITTER", "")}}
-          if icon_rel:
-              meta["icon"] = icon_rel
-          (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False))
+          merge({"title": None if meta.get("title") else title,
+                 "summary": None if meta.get("summary") else (desc.splitlines()[0] if desc else None)})
+          write_and_exit()
           EOF
           fi
           printf 'errors<<EOM\n%b\nEOM\n' "$ERR" >> "$GITHUB_OUTPUT"
 
+      # Same script and wording as the czdev channel (validate-pr.yml), so a
+      # submission is judged identically whichever way it arrives.
+      - name: Validate store metadata
+        id: metacheck
+        if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == ''
+        env:
+          PKG: ${{ steps.validate.outputs.pkg }}
+        run: |
+          set -uo pipefail
+          ERR=""
+          rm -f /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+          python3 .github/scripts/store_meta_policy.py "$PKG" "pool/main/$PKG" pool/main \
+            /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+          if [ -s /tmp/meta-errors.txt ]; then
+            ERR="- ❌ store metadata is incomplete or invalid:\n$(sed 's/^/    /' /tmp/meta-errors.txt)\n"
+          fi
+          D=$(openssl rand -hex 16)
+          printf 'errors<<%s\n%b\n%s\n' "$D" "$ERR" "$D" >> "$GITHUB_OUTPUT"
+          if [ -s /tmp/meta-help.md ]; then
+            D=$(openssl rand -hex 16)
+            printf 'meta_help<<%s\n%s\n%s\n' "$D" "$(cat /tmp/meta-help.md)" "$D" >> "$GITHUB_OUTPUT"
+          fi
+          if [ -s /tmp/meta-warnings.txt ]; then
+            D=$(openssl rand -hex 16)
+            printf 'warnings<<%s\n%s\n%s\n' "$D" "$(sed 's/^/- ⚠️ /' /tmp/meta-warnings.txt)" "$D" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Create publish PR
         id: pr
-        if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == ''
+        if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == '' && steps.metacheck.outputs.errors == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEB_URL: ${{ github.event.client_payload.binary.url }}
@@ -336,6 +395,12 @@ jobs:
           set -euo pipefail
           NAME="${PKG}_${VER}_${ARCH}.deb"
           ASSET_NAME="${NAME//\~/.}"
+          # First release of a new package name is gated on a human maintainer
+          # watching a demo video; updates to published packages are unattended.
+          # Judged by the manifests tracked on main (the checkout's index) —
+          # the working tree already holds this submission's files.
+          NEW_PKG="true"
+          git ls-files "pool/main/$PKG/*.deb.release.json" | grep -q . && NEW_PKG="false"
           # Ownership record: first uploader of a package name owns it. The login
           # is the authoritative owner key; the email is kept for contact/audit.
           UPLOADER_EMAIL=$(echo "$EMAILS_JSON" | jq -r '.[0] // empty')
@@ -357,7 +422,10 @@ jobs:
             --body "$(printf 'Submitted by @%s via the developer portal.\n\n| Field | Value |\n|---|---|\n| Version | %s |\n| Architecture | %s |\n| SHA-256 | `%s` |\n| Binary | [%s](%s) |\n\nAll automated checks passed in [this run](%s/%s/actions/runs/%s).' \
               "$SUBMITTER" "$VER" "$ARCH" "$WANT_SHA" "$ASSET_NAME" "$DEB_URL" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}")")
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
-          if [ "$AUTO_MERGE" = "true" ]; then
+          if [ "$NEW_PKG" = "true" ]; then
+            gh pr comment "$PR_URL" --body "$(printf '@%s ✅ 自动校验全部通过。\n\n🆕 这是新应用 \`%s\` 的**首次发布**，按商店政策不会自动合并：\n请在本 PR 评论区发一段应用在真机上运行的演示视频（手机拍摄即可），\n维护者查看后会手动合并上架。后续版本更新会自动合并。' "$SUBMITTER" "$PKG")"
+            echo "::notice::new package $PKG — awaiting demo video and maintainer review"
+          elif [ "$AUTO_MERGE" = "true" ]; then
             if gh pr merge "$PR_URL" --squash --delete-branch; then
               # The merge is pushed with GITHUB_TOKEN, which by design does NOT
               # trigger the push-based update-index workflow. Kick it off
@@ -370,24 +438,29 @@ jobs:
           fi
 
       - name: Report failure to the submitter
-        if: always() && (steps.validate.outputs.errors != '' || steps.meta.outputs.errors != '' || failure())
+        if: always() && (steps.validate.outputs.errors != '' || steps.meta.outputs.errors != '' || steps.metacheck.outputs.errors != '' || failure())
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SUBMITTER: ${{ github.event.client_payload.login }}
           FILENAME: ${{ github.event.client_payload.filename }}
           ERR1: ${{ steps.validate.outputs.errors }}
           ERR2: ${{ steps.meta.outputs.errors }}
+          ERR3: ${{ steps.metacheck.outputs.errors }}
           PATH_HELP: ${{ steps.validate.outputs.path_help }}
+          META_HELP: ${{ steps.metacheck.outputs.meta_help }}
         run: |
           {
             echo "@$SUBMITTER your portal submission of \`$FILENAME\` failed validation:"
             echo
-            printf '%b%b' "$ERR1" "$ERR2"
+            printf '%b%b%b' "$ERR1" "$ERR2" "$ERR3"
             echo
-            # Set only when the install path check rejected something: states the
-            # rule and hands over a prompt that fixes the packaging scripts.
+            # Set only when a policy check rejected something: states the rule
+            # and hands over a prompt that fixes the packaging or metadata.
             if [ -n "$PATH_HELP" ]; then
               printf '%s\n\n' "$PATH_HELP"
+            fi
+            if [ -n "$META_HELP" ]; then
+              printf '%s\n\n' "$META_HELP"
             fi
             echo "Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             echo
