@@ -224,6 +224,12 @@ jobs:
                   meta["author"]["display_name"] = meta["author"]["github"]
 
           def write_and_exit():
+              # Stamp publish timestamps so the registry shows real dates
+              # instead of falling back to overrides or the build time.
+              from datetime import datetime, timezone
+              now = datetime.now(timezone.utc).isoformat(timespec="seconds")
+              meta.setdefault("published_at", now)
+              meta["updated_at"] = now
               (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
               sys.exit(0)
 
