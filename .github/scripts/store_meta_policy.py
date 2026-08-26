@@ -43,6 +43,42 @@ MAX_SCREENSHOTS = 6
 SCREENSHOT_DIMS = (320, 170)
 ICON_MIN, ICON_MAX = 128, 512
 
+# Unedited-template detection: the Template repo deliberately ships metadata
+# that trips these rules, so a submission that kept any of it is auto-rejected
+# instead of burning a human reviewer's time. Keep in sync with
+# CardputerZero/Template app-builder.json + cmake/cm0-package.cmake.
+PLACEHOLDER_TITLES = {"template", "your app", "my app", "templateapp"}
+PLACEHOLDER_NAMES = {"m5stack", "your name", "your name here", "todo"}
+PLACEHOLDER_CODES = {"TEMP", "TODO", "YOUR", "XXXX", "MYAP"}
+PLACEHOLDER_REPOS = ("cardputerzero/template", "cardputerzero/factorytest")
+PLACEHOLDER_SUMMARY_PHRASES = ("template application for cardputerzero",)
+
+
+def is_todo(value):
+    """True when a text field still carries a TODO placeholder."""
+    return isinstance(value, str) and value.strip().lower().startswith("todo")
+
+
+def check_maintainer(maintainer):
+    """Errors for a placeholder deb Maintainer (e.g. an unedited Template).
+
+    `maintainer` is the control field, "Name <email>". The store must never
+    publish a binary claiming M5Stack or a template/example identity.
+    """
+    m = str(maintainer or "").strip()
+    if not m:
+        return []
+    name = m.split("<")[0].strip().lower()
+    email = ""
+    if "<" in m and ">" in m:
+        email = m[m.index("<") + 1:m.index(">")].strip().lower()
+    if (name in PLACEHOLDER_NAMES or is_todo(name)
+            or email.endswith("@m5stack.com")
+            or "@example." in email or email.endswith(".invalid")):
+        return [f"deb 的 Maintainer 还是模板占位值（{m}）：请在 cmake/cm0-package.cmake 的 "
+                "APP_MAINTAINER 里改成你自己的名字和邮箱，重新打包后再发布"]
+    return []
+
 PNG_SIG = b"\x89PNG\r\n\x1a\n"
 
 
@@ -80,15 +116,21 @@ def check_meta(pkg, pkg_dir, pool_dir):
     title = meta.get("title")
     if not isinstance(title, str) or not title.strip():
         errors.append("title（应用显示名）必填，不能为空")
+    elif title.strip().lower() in PLACEHOLDER_TITLES or is_todo(title):
+        errors.append(f"title 还是模板占位内容（{title!r}），请改成你应用的真实名字")
     summary = meta.get("summary")
     if not isinstance(summary, str) or not summary.strip():
         errors.append("summary（一句话简介）必填，不能为空")
     elif len(summary.strip()) > 80:
         errors.append(f"summary 不能超过 80 字符（现在 {len(summary.strip())} 个）")
+    elif is_todo(summary) or any(p in summary.strip().lower() for p in PLACEHOLDER_SUMMARY_PHRASES):
+        errors.append("summary 还是模板占位内容，请写一句你应用的真实简介")
 
     license_ = meta.get("license")
     if not isinstance(license_, str) or not license_.strip():
         errors.append("license（许可证）必填，例如 MIT / GPL-3.0 / Apache-2.0")
+    elif is_todo(license_) or license_.strip().lower() in ("yourlicense", "license"):
+        errors.append(f"license 还是模板占位内容（{license_!r}），请填 SPDX 标识符，例如 MIT / GPL-3.0-only")
 
     # --- categories: 1-2 out of the fixed enum ---
     cats = meta.get("categories")
@@ -103,11 +145,20 @@ def check_meta(pkg, pkg_dir, pool_dir):
     author = meta.get("author")
     if not isinstance(author, dict) or not str(author.get("display_name") or "").strip():
         errors.append("author.display_name（作者显示名）必填，商店列表和详情页都会展示它")
+    else:
+        dn = str(author.get("display_name")).strip()
+        email = str(author.get("email") or "").strip().lower()
+        if dn.lower() in PLACEHOLDER_NAMES or is_todo(dn):
+            errors.append(f"author.display_name 还是模板占位内容（{dn!r}），请填你自己的名字")
+        if email.endswith("@m5stack.com") or "@example." in email:
+            errors.append(f"author.email 还是模板占位邮箱（{email}），请改成你自己的邮箱或删掉该字段")
 
     # --- share_code ---
     code = meta.get("share_code")
     if not isinstance(code, str) or not SHARE_CODE_RE.match(code):
         errors.append("share_code 必填：4 位字母或数字（如 LOFI），用户可在商店里用它快速找到应用")
+    elif code.upper() in PLACEHOLDER_CODES:
+        errors.append(f"share_code {code!r} 是模板占位值，请换一个属于你应用的 4 位分享码")
 
     # --- permissions: exactly the seven declared keys, all booleans ---
     perms = meta.get("permissions")
@@ -185,6 +236,8 @@ def check_meta(pkg, pkg_dir, pool_dir):
         warnings.append("建议提供 source_repo（开源仓库地址）")
     elif not str(repo).startswith(("http://", "https://")):
         errors.append(f"source_repo 必须是 http(s) 链接：{repo!r}")
+    elif any(p in str(repo).strip().lower() for p in PLACEHOLDER_REPOS):
+        errors.append(f"source_repo 还指向模板仓库（{repo}），请改成你应用自己的仓库或删掉该字段")
 
     return errors, warnings
 
@@ -217,10 +270,15 @@ PROMPT = """我在给 CardputerZero AppStore 发布一个应用，提交被商�
 - locales：多语言 title/summary（如 zh-CN / ja）
 - source_repo：开源仓库地址（提供时必须是 http(s) 链接）
 
+注意：模板占位内容会被自动驳回——包括 TODO 开头的字段、作者写 M5Stack /
+Your Name、share_code 用 TEMP/TODO、source_repo 指向 Template 仓库，以及
+deb 的 Maintainer 还是模板默认值（要改 cmake/cm0-package.cmake 里的
+APP_MAINTAINER，重新打包）。这些字段必须换成你应用自己的真实信息。
+
 app-builder.json 的 store 段示例：
 
 {{
-  "app_name": "My App",
+  "app_name": "Pixel Chess",
   "store": {{
     "summary": "One-line summary",
     "description": "Longer detail-page text",
@@ -228,9 +286,9 @@ app-builder.json 的 store 段示例：
     "screenshots": ["screenshots/main.png"],
     "icon": "packaging/icon.png",
     "license": "MIT",
-    "source_repo": "https://github.com/you/my-app",
-    "author": {{ "github": "you", "display_name": "Your Name" }},
-    "share_code": "MYAP",
+    "source_repo": "https://github.com/alice/pixel-chess",
+    "author": {{ "github": "alice", "display_name": "Alice Chen" }},
+    "share_code": "PXCH",
     "permissions": {{
       "camera": false, "microphone": false, "imu": false, "network": false,
       "additional_hardware": false, "background_service": false,
@@ -270,6 +328,11 @@ def main(argv):
     help_out = argv[6] if len(argv) > 6 else None
 
     errors, warnings = check_meta(pkg, pkg_dir, pool_dir)
+    # Callers that have the .deb at hand pass its Maintainer control field
+    # through the environment, so an unedited-template identity is rejected
+    # with the same wording on every channel.
+    import os
+    errors += check_maintainer(os.environ.get("DEB_MAINTAINER"))
 
     if errors:
         Path(err_out).write_text("".join(f"{e}\n" for e in errors), encoding="utf-8")

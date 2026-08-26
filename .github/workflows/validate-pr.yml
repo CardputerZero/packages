@@ -127,6 +127,9 @@ jobs:
             if [[ -z "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ \`$fname\` is not a valid .deb\n"; continue
             fi
+            # Saved for the metadata stage: the policy rejects a placeholder
+            # Maintainer (an unedited Template still claiming M5Stack).
+            dpkg-deb -f "$deb" Maintainer 2>/dev/null > "/tmp/maint-$ctrl_pkg.txt" || true
             if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
             fi
@@ -263,6 +266,8 @@ jobs:
           for tp in $TOUCHED_PKGS; do
             [ -f "pool/main/$tp/meta.json" ] || continue
             rm -f /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+            DEB_MAINTAINER=$(cat "/tmp/maint-$tp.txt" 2>/dev/null || true)
+            export DEB_MAINTAINER
             python3 /tmp/store_meta_policy.py "$tp" "pool/main/$tp" pool/main \
               /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
             if [ -s /tmp/meta-errors.txt ]; then

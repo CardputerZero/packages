@@ -368,6 +368,9 @@ jobs:
           set -uo pipefail
           ERR=""
           rm -f /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
+          # The policy also rejects a placeholder Maintainer (unedited Template).
+          DEB_MAINTAINER=$(dpkg-deb -f /tmp/pkg.deb Maintainer 2>/dev/null || true)
+          export DEB_MAINTAINER
           python3 .github/scripts/store_meta_policy.py "$PKG" "pool/main/$PKG" pool/main \
             /tmp/meta-errors.txt /tmp/meta-warnings.txt /tmp/meta-help.md
           if [ -s /tmp/meta-errors.txt ]; then
