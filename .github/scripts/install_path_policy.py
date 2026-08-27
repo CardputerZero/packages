@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# Copy to CardputerZero/packages: .github/scripts/install_path_policy.py
 #
 # Where a package may install files, shared by both submission channels:
 # process-web-submission.yml (the developer portal) and validate-pr.yml
@@ -57,17 +56,17 @@ def install_path_issue(path, pkg):
     upload cannot quietly take over /usr/bin/ls or sshd.service.
     """
     if path.startswith("usr/local/"):
-        return "Debian Policy 9.1.2 禁止软件包写入 /usr/local（那是留给系统管理员的）"
+        return "Debian Policy 9.1.2 forbids packages installing into /usr/local (reserved for the sysadmin) / Debian Policy 9.1.2 禁止软件包写入 /usr/local（那是留给系统管理员的）"
     for d in SYSTEMD_DIRS:
         if path.startswith(d):
             unit = path[len(d):]
             if "/" in unit:
-                return "systemd 服务目录下不应再有子目录"
+                return "no subdirectories under the systemd unit directory / systemd 服务目录下不应再有子目录"
             if named_after_pkg(unit, pkg):
                 return None
-            return f"systemd 服务名必须与包名 {pkg} 相关，避免覆盖系统服务"
+            return f"systemd unit name must relate to the package name {pkg} (avoids shadowing system services) / systemd 服务名必须与包名 {pkg} 相关，避免覆盖系统服务"
     if path.startswith(ALIASED_ROOTS):
-        return "Debian Policy 10.1 禁止软件包写入 /bin /sbin /lib 等 usr-merge 别名路径，请改用 /usr 下的对应位置"
+        return "Debian Policy 10.1 forbids /bin /sbin /lib etc. (usr-merge alias paths); use the /usr equivalent / Debian Policy 10.1 禁止软件包写入 /bin /sbin /lib 等 usr-merge 别名路径，请改用 /usr 下的对应位置"
     if path.startswith("usr/share/APPLaunch/") or path.startswith("usr/share/doc/"):
         return None
     # /etc/<pkg>.conf is as much a Debian convention as /etc/<pkg>/ (compare
@@ -77,24 +76,24 @@ def install_path_issue(path, pkg):
         top = rest.split("/", 1)[0]
         if named_after_pkg(top, pkg):
             return None
-        return f"etc/ 下只能放与包名 {pkg} 相关的配置文件或目录，{top} 不符合"
+        return f"etc/ may only hold config named after the package {pkg}; {top} does not match / etc/ 下只能放与包名 {pkg} 相关的配置文件或目录，{top} 不符合"
     if path.startswith("usr/bin/"):
         exe = path[len("usr/bin/"):]
         if "/" in exe:
-            return "/usr/bin 下不应有子目录，程序数据请放 usr/share/<包名>/ 或 usr/lib/<包名>/"
+            return "no subdirectories under /usr/bin; put app data in usr/share/<pkg>/ or usr/lib/<pkg>/ / /usr/bin 下不应有子目录，程序数据请放 usr/share/<包名>/ 或 usr/lib/<包名>/"
         if named_after_pkg(exe, pkg):
             return None
-        return f"/usr/bin 下的文件名必须与包名 {pkg} 相关，避免覆盖系统命令"
+        return f"the filename under /usr/bin must relate to the package name {pkg} (avoids shadowing system commands) / /usr/bin 下的文件名必须与包名 {pkg} 相关，避免覆盖系统命令"
     for root in PKG_DIR_ROOTS:
         if path.startswith(root):
             rest = path[len(root):]
             if "/" not in rest:
-                return f"不能直接放在 {root} 下，请放进 {root}<包名>/ 子目录"
+                return f"files must not sit directly under {root}; use a {root}<pkg>/ subdirectory / 不能直接放在 {root} 下，请放进 {root}<包名>/ 子目录"
             top = rest.split("/", 1)[0]
             if named_after_pkg(top, pkg):
                 return None
-            return f"{root}{top}/ 的目录名必须与包名 {pkg} 相关"
-    return f"不在允许的安装位置内（{ALLOWED_SUMMARY}）"
+            return f"the directory name {root}{top}/ must relate to the package name {pkg} / {root}{top}/ 的目录名必须与包名 {pkg} 相关"
+    return f"not an allowed install location / 不在允许的安装位置内（{ALLOWED_SUMMARY}）"
 
 
 # A developer can hit this rule in the browser pre-check or in either CI
@@ -132,15 +131,23 @@ PROMPT = """我在给 CardputerZero AppStore 打一个 Debian 包（.deb），�
 这次被拒绝的路径：
 {paths}
 
-请告诉我具体要改哪些文件、改成什么，以及资源路径在源码里怎么同步修改。"""
+请告诉我具体要改哪些文件、改成什么，以及资源路径在源码里怎么同步修改。
+(Assistant: reply in the same language the user speaks to you.)"""
 
 HELP_TEMPLATE = """<details>
-<summary>📁 安装路径规则 + 可直接交给 AI 的提示词（点开）</summary>
+<summary>📁 Install path rules + a ready-to-paste AI prompt / 安装路径规则 + 可直接交给 AI 的提示词（点开）</summary>
+
+We allow Debian's standard locations and only require that **anything landing
+in a shared directory carries your package name**, so an app cannot quietly
+shadow system commands or other packages' files. `-`, `_` and `.` are ignored
+in the comparison, so package `fontpreview` may use a `font_preview` directory.
+Copy the block below into an AI assistant (Cursor / Claude / ChatGPT); it
+carries the full policy plus your rejected paths and can fix the packaging
+scripts directly.
 
 我们放行 Debian 的标准位置，只要求**落在共享目录里的文件名/目录名带上你的包名**，
 这样一个应用不会悄悄覆盖系统命令或别人的文件。比对时忽略 `-`、`_`、`.` 的差异，
 所以包名 `fontpreview` 用 `font_preview` 目录是可以的。
-
 把下面整段复制给 AI（Cursor / Claude / ChatGPT），它带着完整规则和你这次被拒的路径，
 可以直接帮你改打包脚本：
 

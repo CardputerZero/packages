@@ -432,7 +432,7 @@ jobs:
               "$SUBMITTER" "$VER" "$ARCH" "$WANT_SHA" "$ASSET_NAME" "$DEB_URL" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}")")
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           if [ "$NEW_PKG" = "true" ]; then
-            gh pr comment "$PR_URL" --body "$(printf '@%s ✅ 自动校验全部通过。\n\n🆕 这是新应用 \`%s\` 的**首次发布**，按商店政策不会自动合并：\n请在本 PR 评论区发一段应用在真机上运行的演示视频（手机拍摄即可），\n维护者查看后会手动合并上架。后续版本更新会自动合并。' "$SUBMITTER" "$PKG")"
+            gh pr comment "$PR_URL" --body "$(printf '@%s ✅ All automated checks passed.\n\n🆕 This is the **first release** of a new app (\`%s\`), so per store policy it will not merge automatically: please post a short video of the app running on a real device in this PR (a phone recording is fine). A maintainer will review and merge it. Later version updates merge automatically.\n\n---\n\n✅ 自动校验全部通过。\n\n🆕 这是新应用 \`%s\` 的**首次发布**，按商店政策不会自动合并：\n请在本 PR 评论区发一段应用在真机上运行的演示视频（手机拍摄即可），\n维护者查看后会手动合并上架。后续版本更新会自动合并。' "$SUBMITTER" "$PKG" "$PKG")"
             echo "::notice::new package $PKG — awaiting demo video and maintainer review"
           elif [ "$AUTO_MERGE" = "true" ]; then
             if gh pr merge "$PR_URL" --squash --delete-branch; then
@@ -474,6 +474,8 @@ jobs:
             echo "Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             echo
             echo "Fix the package and upload again at https://dev.cardputer.cc"
+            echo
+            echo "修复上面列出的问题后，到 https://dev.cardputer.cc 重新上传即可。"
           } > /tmp/issue.md
           gh issue create \
             --title "portal submission failed: $FILENAME" \

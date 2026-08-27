@@ -312,19 +312,30 @@ jobs:
             { echo "## ❌ Package Validation Failed"; echo; echo -e "$ERRORS"
               [ -s /tmp/path-help-final.md ] && { echo; cat /tmp/path-help-final.md; }
               [ -s /tmp/meta-help-final.md ] && { echo; cat /tmp/meta-help-final.md; }
-              [[ -n "$WARNINGS" ]] && { echo; echo "建议（不阻断）："; echo -e "$WARNINGS"; }
-              echo; echo "---"; echo "*If you believe this is an error, contact a maintainer.*"; } > /tmp/out/result.md
+              [[ -n "$WARNINGS" ]] && { echo; echo "Suggestions (non-blocking) / 建议（不阻断）："; echo -e "$WARNINGS"; }
+              echo; echo "---"
+              echo "*If you believe this is an error, contact a maintainer.*"
+              echo; echo "*如果你认为这是误判，请联系维护者。*"; } > /tmp/out/result.md
             echo "status=failure" >> "$GITHUB_OUTPUT"
           else
             { echo "## ✅ Package Validation Passed"; echo
               if [[ -n "$NEW_PKGS" ]]; then
-                echo "All checks passed. 🆕 这是新应用的首次发布（$(echo -e "$NEW_PKGS" | tr '\n' ' ' | sed 's/ $//')），"
+                NEW_LIST=$(echo -e "$NEW_PKGS" | tr '\n' ' ' | sed 's/ $//')
+                echo "All checks passed. 🆕 This is the first release of a new app ($NEW_LIST),"
+                echo "so per store policy it will **not merge automatically**: please post a short"
+                echo "video of the app running on a real device in this PR (a phone recording is"
+                echo "fine). A maintainer will review and merge it. Later version updates merge"
+                echo "automatically."
+                echo
+                echo "自动校验全部通过。🆕 这是新应用的首次发布（$NEW_LIST），"
                 echo "按商店政策**不会自动合并**：请在本 PR 评论区发一段应用在真机上运行的演示视频"
                 echo "（手机拍摄即可），维护者查看后会手动合并上架。后续版本更新会自动合并。"
               else
                 echo "All checks passed. This update will be merged automatically."
+                echo
+                echo "自动校验全部通过，此版本更新将自动合并上架。"
               fi
-              [[ -n "$WARNINGS" ]] && { echo; echo "建议（不阻断）："; echo -e "$WARNINGS"; }; } > /tmp/out/result.md
+              [[ -n "$WARNINGS" ]] && { echo; echo "Suggestions (non-blocking) / 建议（不阻断）："; echo -e "$WARNINGS"; }; } > /tmp/out/result.md
             echo "status=success" >> "$GITHUB_OUTPUT"
           fi
           cat /tmp/out/result.md
