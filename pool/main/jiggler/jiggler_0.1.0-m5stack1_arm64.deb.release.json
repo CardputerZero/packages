@@ -1,0 +1,11 @@
+{
+  "filename": "jiggler_0.1.0-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/intGus__jiggler_0.1.0-m5stack1_arm64.deb",
+  "sha256": "824e8e2b64b3035f157eb1424599a674d8a69b0296d9edd239a283d55e9e6df4",
+  "size": 1949860,
+  "package": "jiggler",
+  "version": "0.1.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "intGus",
+  "uploader_email": "intgus@users.noreply.github.com"
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Jiggler",
+  "summary": "Keeps a connected computer awake by simulating mouse/keyboard activity over USB.",
+  "description": "Jiggler turns CardputerZero into a small USB accessory that keeps a connected computer from going idle or locking. Plug it into a host over the switchable USB port and it sends small, randomized mouse moves and/or key taps at an interval you choose — no software to install on the host. Everything is controlled from the five keys under the screen: start/stop, cycle between mouse, keyboard, or both, adjust the interval, and check status at a glance. Real HID output uses the standard Linux USB gadget interface (/dev/hidg0, /dev/hidg1); on today's desktop emulator, jiggling is simulated only, since CardputerZero hardware hasn't shipped yet.",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "WAKE",
+  "source_repo": "https://github.com/intGus/jiggler",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "intGus",
+    "github": "intGus"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "jiggler_icon.png",
+  "published_at": "2026-08-29T19:22:55+00:00",
+  "updated_at": "2026-08-29T19:22:55+00:00"
+}
