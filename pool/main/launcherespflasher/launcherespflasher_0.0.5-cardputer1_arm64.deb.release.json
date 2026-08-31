@@ -1,0 +1,11 @@
+{
+  "filename": "launcherespflasher_0.0.5-cardputer1_arm64.deb",
+  "url": "https://github.com/bmorcelli/packages/releases/download/czdev-buffer/launcherespflasher_0.0.5-cardputer1_arm64.deb",
+  "sha256": "3a730bb26bbebbbcea1d62b76c668e88f8b74955cb9f20253809abd04bf78847",
+  "size": 1196386,
+  "package": "launcherespflasher",
+  "version": "0.0.5-cardputer1",
+  "architecture": "arm64",
+  "uploaded_by": "bmorcelli",
+  "uploader_email": "bmorcelli@users.noreply.github.com"
+}
