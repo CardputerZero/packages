@@ -1,56 +1,36 @@
 {
   "title": "Flint",
-  "summary": "Offensive security firmware for M5Stack CardputerZero",
+  "summary": "Offensive security toolkit for the CardputerZero: Wi-Fi, BLE, IR, RF & more.",
   "categories": [
     "Security",
-    "System Tools"
+    "Radio & Comms"
   ],
   "author": {
-    "github": "flintdevices",
+    "github": "marivaaldo",
     "display_name": "Flint Devices"
   },
   "license": "MIT",
   "source_repo": "https://github.com/flintdevices/flint",
-  "icon": "flint.png",
+  "icon": "flint_icon_store.png",
   "screenshots": [
     "screenshots/00_home.png",
     "screenshots/00_home_list.png",
     "screenshots/01_home_carousel.png",
-    "screenshots/02_wifi_scan.png",
-    "screenshots/03_ping_stats.png",
-    "screenshots/04_ping_chart.png",
-    "screenshots/05_sysmon_dashboard.png",
-    "screenshots/06_deauth_running.png",
-    "screenshots/07_beacon_spam_running.png",
-    "screenshots/08_handshake_capture.png",
-    "screenshots/09_probe_scan.png",
-    "screenshots/10_signal_monitor.png",
-    "screenshots/11_station_scan.png",
-    "screenshots/12_anomaly_detector.png",
-    "screenshots/13_cctv_scanner.png",
-    "screenshots/14_tetris.png",
-    "screenshots/15_nfc_scan.png",
-    "screenshots/16_lora_radio.png",
-    "screenshots/17_rf_scan.png",
-    "screenshots/18_gps_info.png",
-    "screenshots/19_ble_spam_running.png",
     "screenshots/20_codegotchi.png",
-    "screenshots/21_snake.png",
-    "screenshots/22_evil_portal_config.png",
-    "screenshots/23_file_manager.png",
-    "screenshots/24_mac_tracker.png",
-    "screenshots/25_pwnagotchi.png",
-    "screenshots/26_virtual_keyboard.png"
+    "screenshots/05_sysmon_dashboard.png",
+    "screenshots/06_deauth_running.png"
   ],
   "permissions": {
     "camera": false,
     "microphone": false,
     "imu": false,
     "network": true,
-    "additional_hardware": false,
+    "additional_hardware": true,
     "background_service": false,
     "external_display": false
   },
   "share_code": "FLNT",
-  "uuid": "eda9d233-da30-5f0f-9ae8-bc2c635f2aaf"
+  "uuid": "eda9d233-da30-5f0f-9ae8-bc2c635f2aaf",
+  "published_at": "2026-09-05T21:36:31+00:00",
+  "updated_at": "2026-09-05T21:36:31+00:00"
 }
