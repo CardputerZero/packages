@@ -1,6 +1,6 @@
 {
   "title": "XiaoZhi",
-  "summary": "Voice-first AI assistant for CardputerZero with activation, chat, and continuous listening.",
+  "summary": "Voice AI assistant for CardputerZero with chat and continuous listening.",
   "description": "XiaoZhi brings the xiaozhi.me voice assistant experience to CardputerZero with activation-code pairing, push-to-talk wake, bidirectional voice chat, server-side VAD, and continuous conversation flow. The package is tuned for the 320 x 170 framebuffer UI and ships as an APPLaunch-ready Debian package.",
   "locales": {
     "zh-CN": {
@@ -10,7 +10,7 @@
     },
     "en": {
       "title": "XiaoZhi Voice Assistant",
-      "summary": "Voice-first AI assistant for CardputerZero with activation, chat, and continuous listening.",
+      "summary": "Voice AI assistant for CardputerZero with chat and continuous listening.",
       "description": "XiaoZhi brings the xiaozhi.me voice assistant experience to CardputerZero with activation-code pairing, push-to-talk wake, bidirectional voice chat, server-side VAD, and continuous conversation flow. The package is tuned for the 320 x 170 framebuffer UI and ships as an APPLaunch-ready Debian package."
     },
     "ja": {
@@ -27,7 +27,7 @@
   "source_repo": "https://github.com/JdaieLin/cardputer-xiaozhi",
   "author": {
     "github": "JdaieLin",
-    "display_name": "Jdaie"
+    "display_name": "JdaieLin"
   },
   "icon": "xiaozhi.png",
   "screenshots": [
@@ -46,5 +46,7 @@
     "external_display": false
   },
   "share_code": "XIAO",
-  "uuid": "5efda523-4689-5970-976d-dfc0e7d22e65"
+  "uuid": "5efda523-4689-5970-976d-dfc0e7d22e65",
+  "published_at": "2026-09-06T03:10:22+00:00",
+  "updated_at": "2026-09-06T03:10:22+00:00"
 }
