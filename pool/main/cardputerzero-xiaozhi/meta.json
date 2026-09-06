@@ -37,7 +37,7 @@
     "screenshots/04-speaking.png"
   ],
   "permissions": {
-    "camera": false,
+    "camera": true,
     "microphone": true,
     "imu": false,
     "network": true,
@@ -48,5 +48,5 @@
   "share_code": "XIAO",
   "uuid": "5efda523-4689-5970-976d-dfc0e7d22e65",
   "published_at": "2026-09-06T03:10:22+00:00",
-  "updated_at": "2026-09-06T03:10:22+00:00"
+  "updated_at": "2026-09-06T05:53:40+00:00"
 }
