@@ -1,0 +1,11 @@
+{
+  "filename": "advancewebui_0.0.11_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/bomberman30__advancewebui_0.0.11_arm64.deb",
+  "sha256": "81727eee9163dff8321e8b32edb59ec05ad8f7a27616c9f0bcae799dbc9b8fff",
+  "size": 623470,
+  "package": "advancewebui",
+  "version": "0.0.11",
+  "architecture": "arm64",
+  "uploaded_by": "bomberman30",
+  "uploader_email": "bomberman30@users.noreply.github.com"
+}

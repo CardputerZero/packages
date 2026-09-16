@@ -1,0 +1,31 @@
+{
+  "title": "AdvanceWebUI",
+  "summary": "upload files to the cardputer via web ui using Acces point or wifi",
+  "description": "upload files to the cardputer via web ui using Acces point or wifi\r\nyou can transfer multiple files or download files from the cardputer itself by using your PC or your Phone",
+  "categories": [
+    "System Tools",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "AWUI",
+  "source_repo": "https://github.com/bomberman30/AdvanceWebUI-for-Cardputer-ZERO",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Bomberman30",
+    "github": "bomberman30"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "advancewebui_icon.png",
+  "published_at": "2026-09-02T22:33:46+00:00",
+  "updated_at": "2026-09-02T22:33:46+00:00"
+}
