@@ -1,0 +1,30 @@
+{
+  "title": "Advanced Password Vault",
+  "summary": "Advanced Password Vault for Cardputer Zero securely stores all your passwords on",
+  "description": "Advanced Password Vault for Cardputer Zero securely stores all your passwords on your Cardputer device in an encrypted file.",
+  "categories": [
+    "Security"
+  ],
+  "license": "MIT",
+  "share_code": "ADPV",
+  "source_repo": "https://github.com/bomberman30/Advance-Password-Vault-For-Cardputer-Zero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Bomberman30",
+    "github": "bomberman30"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "advancepasswordvault_icon.png",
+  "published_at": "2026-09-08T21:14:06+00:00",
+  "updated_at": "2026-09-08T21:14:06+00:00"
+}
