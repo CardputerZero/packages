@@ -1,0 +1,11 @@
+{
+  "filename": "frame_0.2.1-m5stack1_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/frame_0.2.1-m5stack1_arm64.deb",
+  "sha256": "a16bc93dc7f4f4a397205c63d7340f1392000664c8586043c9615f3738f3023e",
+  "size": 3284070,
+  "package": "frame",
+  "version": "0.2.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}

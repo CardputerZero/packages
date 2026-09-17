@@ -1,0 +1,31 @@
+{
+  "title": "Frame",
+  "summary": "Stream and watch videos on your CardputerZero.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/store-1-320x170.png",
+    "screenshots/store-2-320x170.png"
+  ],
+  "description": "Frame is a video streaming application built for the CardputerZero. Browse and play your favorite videos directly on the device with a clean, responsive interface designed for the handheld form factor. Stream over the network or play local media, with playback controls tailored to the compact screen and keypad.",
+  "license": "MIT",
+  "source_repo": "https://github.com/CardputerZero/frame",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FRME",
+  "author": {
+    "github": "d4rkmen",
+    "display_name": "pan Dmytro"
+  },
+  "published_at": "2026-09-17T16:49:59+00:00",
+  "updated_at": "2026-09-17T16:49:59+00:00"
+}
