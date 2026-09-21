@@ -1,0 +1,11 @@
+{
+  "filename": "cardputerzero-sdr_0.1.0-10_arm64.deb",
+  "url": "https://github.com/k1412/packages/releases/download/czdev-buffer/cardputerzero-sdr_0.1.0-10_arm64.deb",
+  "sha256": "e129b870ec113dc3dfc6bb74dcfb579a1197f480e64ba100747d3d8e799fa530",
+  "size": 1911532,
+  "package": "cardputerzero-sdr",
+  "version": "0.1.0-10",
+  "architecture": "arm64",
+  "uploaded_by": "k1412",
+  "uploader_email": "k1412@users.noreply.github.com"
+}
