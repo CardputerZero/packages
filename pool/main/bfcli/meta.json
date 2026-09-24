@@ -1,0 +1,36 @@
+{
+  "title": "GNDHOG ZERO",
+  "summary": "Betaflight CLI and backups, plus Meshtastic mesh chat, on Cardputer Zero.",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/terminal.png",
+    "screenshots/mesh-nodes.png",
+    "screenshots/mesh-chat.png",
+    "screenshots/mesh-locate.png",
+    "screenshots/keymap.png",
+    "screenshots/safety-confirmation.png"
+  ],
+  "description": "A pocket field terminal for FPV pilots and Meshtastic users. Connect a Betaflight flight controller over USB or UART for CLI commands, field checks, command completion, and configuration backup/restore. Motor and erase commands ask for confirmation; supported VTX hardware can use a verified pit-mode guard. Connect a separate radio running Meshtastic firmware for direct or broadcast chat, heard-node ages, routing acknowledgements, quick messages, and local transcripts. Add a GNSS receiver for position sharing, range and bearing to reported positions, and saved marks; calibrate the built-in compass for heading in Locate. Auto-share is opt-in and session-only. SOS broadcasts to the mesh channel, not emergency services. Runs locally without an account or internet connection. Props off. Data cable in. The laptop can stay home. Screenshots are software-rendered UI examples with simulated data.",
+  "license": "MIT",
+  "source_repo": "https://github.com/0ct0sec/GNDHOG",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "GNDH",
+  "author": {
+    "github": "0ct0sec",
+    "display_name": "0ct0"
+  },
+  "published_at": "2026-09-05T18:27:18+00:00",
+  "updated_at": "2026-09-05T18:27:18+00:00"
+}
