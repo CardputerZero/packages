@@ -1,0 +1,11 @@
+{
+  "filename": "flint_0.0.57_arm64.deb",
+  "url": "https://github.com/marivaaldo/packages/releases/download/czdev-buffer/flint_0.0.57_arm64.deb",
+  "sha256": "3be445f55deb0f0bec8dbf487ab4c257e2c763e0ac0ed160be521d0aee4877e2",
+  "size": 4136224,
+  "package": "flint",
+  "version": "0.0.57",
+  "architecture": "arm64",
+  "uploaded_by": "marivaaldo",
+  "uploader_email": "marivaldoeng@gmail.com"
+}
