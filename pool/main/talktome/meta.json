@@ -1,0 +1,40 @@
+{
+  "title": "TalkToMe",
+  "summary": "Offline neural text-to-speech: type English or Ukrainian, hear it spoken.",
+  "categories": [
+    "AI",
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/ukrainian.png",
+    "screenshots/keyboard-en.png",
+    "screenshots/keyboard-uk.png"
+  ],
+  "description": "TalkToMe turns the Cardputer Zero into a talking device: type text, pick a voice and hear it spoken on the built-in speaker. Synthesis runs entirely on the device with a compact neural TTS engine, so your text never leaves it: no network, no account, no cloud service.\n\nVoices: Linda (English) and Mykyta, Oleksa, Tetiana and Serhiy (Ukrainian). All voices ship with the app and nothing is downloaded at run time.\n\nNumbers, dates, times, money and percentages are read out in words with correct grammar, in Ukrainian down to case endings and word stress. Ukrainian text is shown with the stress the voice used.\n\nKeys: Enter opens the text editor with an on-screen keyboard map, Alt switches between English and Ukrainian input, Enter speaks and Esc stops. Space reads a random sample line. In the editor, hold Fn+Z/C to move by character, Fn+Ctrl+Z/C by word and Fn+F/X to jump to the start or end. Ctrl+C and Ctrl+V copy and paste through the system clipboard.",
+  "locales": {
+    "uk": {
+      "title": "TalkToMe",
+      "summary": "Офлайн синтез мовлення: введіть текст українською чи англійською."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/d4rkmen/talktome",
+  "icon": "talktome_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TTME",
+  "author": {
+    "github": "d4rkmen",
+    "display_name": "d4rkmen"
+  },
+  "published_at": "2026-10-03T17:18:15+00:00",
+  "updated_at": "2026-10-03T17:18:15+00:00"
+}
