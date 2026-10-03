@@ -1,0 +1,42 @@
+{
+  "title": "Telega",
+  "summary": "Unofficial Telegram client: chats, photos, voice messages, EN/UA typing.",
+  "categories": [
+    "Radio & Comms",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/sign-in.png",
+    "screenshots/chats.png",
+    "screenshots/chat.png",
+    "screenshots/voice.png",
+    "screenshots/editor.png",
+    "screenshots/menu.png"
+  ],
+  "description": "Telega is an unofficial Telegram client built for the Cardputer Zero keyboard and 320x170 screen. Sign in by scanning a QR code with the Telegram app on your phone, or with a phone number and login code.\n\nThe chat list follows your Telegram folders (New, All and your own tabs), shows pinned, muted and unread state, and searches by name as you type. Open a chat to read history with read ticks and day separators, reply, react, delete, view and save photos, send images from the device, and record or play voice messages on the built-in microphone and speaker. Forum groups open as a list of threads.\n\nTyping uses a full-screen editor with an on-screen keyboard map: Alt switches between English and Ukrainian (transliterated from the Latin keys), SYM lights up the symbols each key will type, Fn+Z/C and Fn+F/X move the cursor, and Ctrl+C / Ctrl+V go through the system clipboard. Every screen lists its keys at the bottom, and Fn+J saves a screenshot.\n\nTelega is not affiliated with Telegram. It is built on TDLib and uses its own application credentials; your account data stays on the device in your home directory.",
+  "locales": {
+    "uk": {
+      "title": "Telega",
+      "summary": "Неофіційний клієнт Telegram: чати, фото, голосові, введення EN/UA."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/d4rkmen/telega",
+  "icon": "telega_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TLGA",
+  "author": {
+    "github": "d4rkmen",
+    "display_name": "d4rkmen"
+  },
+  "published_at": "2026-10-03T20:01:02+00:00",
+  "updated_at": "2026-10-03T20:01:02+00:00"
+}
