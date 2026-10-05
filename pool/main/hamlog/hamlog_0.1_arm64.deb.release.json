@@ -1,0 +1,11 @@
+{
+  "filename": "hamlog_0.1_arm64.deb",
+  "url": "https://github.com/stefexec/packages/releases/download/czdev-buffer/hamlog_0.1_arm64.deb",
+  "sha256": "b98f9e7d78fcb2d9fb097a0bf94440b595712cf8ed5f457f40e10799520b5164",
+  "size": 5123784,
+  "package": "hamlog",
+  "version": "0.1",
+  "architecture": "arm64",
+  "uploaded_by": "stefexec",
+  "uploader_email": "stefexec@users.noreply.github.com"
+}
