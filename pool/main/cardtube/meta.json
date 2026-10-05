@@ -1,0 +1,40 @@
+{
+  "title": "CardTube",
+  "summary": "Download and play YouTube audio on your CardputerZero.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/channels.png",
+    "screenshots/videos.png",
+    "screenshots/player.png"
+  ],
+  "description": "CardTube keeps a small library of YouTube channels. Add a channel with a link or @handle, browse its latest uploads, download the audio you like and play it right on the device. Downloaded videos are marked in the list, and the built-in player shows progress with play, pause, seek, previous and next. When a track ends it plays the next one automatically, downloading it first if needed; without internet it stays within the tracks you already downloaded.",
+  "locales": {
+    "zh-CN": {
+      "summary": "在 CardputerZero 上下载并播放 YouTube 音频。"
+    },
+    "ja": {
+      "summary": "CardputerZero で YouTube の音声をダウンロードして再生します。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/jmas/cardtube",
+  "icon": "cardtube.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "CTUB",
+  "author": {
+    "github": "jmas",
+    "display_name": "Olex Maslakov"
+  },
+  "published_at": "2026-10-05T03:10:38+00:00",
+  "updated_at": "2026-10-05T03:10:38+00:00"
+}

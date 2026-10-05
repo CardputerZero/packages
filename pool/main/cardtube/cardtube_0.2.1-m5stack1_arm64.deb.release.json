@@ -1,0 +1,11 @@
+{
+  "filename": "cardtube_0.2.1-m5stack1_arm64.deb",
+  "url": "https://github.com/jmas/packages/releases/download/czdev-buffer/cardtube_0.2.1-m5stack1_arm64.deb",
+  "sha256": "15b54ae6e3bbcdcb7f8f42d3fb43f1d8f7cbd2e118e996954977606e19cea01e",
+  "size": 3773886,
+  "package": "cardtube",
+  "version": "0.2.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "jmas",
+  "uploader_email": "jmas@users.noreply.github.com"
+}
