@@ -1,13 +1,13 @@
 {
   "title": "FontPreview",
-  "summary": "Preview multilingual text with five font families.",
+  "summary": "Preview multilingual text using existing system fonts.",
   "categories": [
     "System Tools"
   ],
   "screenshots": [
-    "screenshots/fontpreview.png"
+    "screenshots/screenshot-0.png"
   ],
-  "description": "A focused typography preview for CardputerZero. Compare nine languages and code with five font families, six typeface styles, 8–24 px sizes, three weights, and eight color schemes.",
+  "description": "A focused typography preview for CardputerZero. Compare nine languages and code using installed system fonts, six typeface styles, 8–24 px sizes, three weights, and eight color schemes. Supports Noto CJK, Go, Inter, DejaVu, and JetBrains Mono when present on the system. No fonts are bundled, downloaded, or installed; unavailable faces are reported in the preview.",
   "locales": {
     "zh-CN": {
       "title": "字体预览",
@@ -27,20 +27,22 @@
   },
   "license": "MIT",
   "source_repo": "https://github.com/Harrison-Xu/FontPreview",
-  "icon": "fontpreview.png",
+  "icon": "fontpreview_icon.png",
   "permissions": {
-    "camera": false,
-    "microphone": false,
-    "imu": false,
-    "network": false,
     "additional_hardware": false,
     "background_service": false,
-    "external_display": false
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
   },
   "author": {
     "github": "Harrison-Xu",
-    "display_name": "XuHaifeng"
+    "display_name": "Harrison Xu"
   },
   "share_code": "FONT",
-  "uuid": "797a244a-162d-548e-8b33-f4a3e7c3fc3c"
+  "uuid": "797a244a-162d-548e-8b33-f4a3e7c3fc3c",
+  "published_at": "2026-10-09T12:41:09+00:00",
+  "updated_at": "2026-10-09T12:41:09+00:00"
 }
