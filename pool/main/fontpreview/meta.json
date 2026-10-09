@@ -1,0 +1,48 @@
+{
+  "title": "FontPreview",
+  "summary": "Preview multilingual text using existing system fonts.",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/fontpreview.png"
+  ],
+  "description": "A focused typography preview for CardputerZero. Compare nine languages and code using installed system fonts, six typeface styles, 8–24 px sizes, three weights, and eight color schemes. Supports Noto CJK, Go, Inter, DejaVu, and JetBrains Mono when present on the system. No fonts are bundled, downloaded, or installed; unavailable faces are reported in the preview.",
+  "locales": {
+    "zh-CN": {
+      "title": "字体预览",
+      "summary": "预览系统已有字体的多语言、字号和字重效果。",
+      "description": "专为 CardputerZero 设计的字体预览应用。使用系统已有字体比较九种语言和代码、六种字体形态、8–24 px 字号、三种字重和八种配色。支持系统中已存在的 Noto CJK、Go、Inter、DejaVu 和 JetBrains Mono。不附带、下载或安装任何字体；系统缺少的字体形态会在预览区提示。"
+    },
+    "en": {
+      "title": "FontPreview",
+      "summary": "Preview multilingual text using existing system fonts.",
+      "description": "A focused typography preview for CardputerZero. Compare nine languages and code using installed system fonts, six typeface styles, 8–24 px sizes, three weights, and eight color schemes. Supports Noto CJK, Go, Inter, DejaVu, and JetBrains Mono when present on the system. No fonts are bundled, downloaded, or installed; unavailable faces are reported in the preview."
+    },
+    "ja": {
+      "title": "フォントプレビュー",
+      "summary": "システムにあるフォントで多言語表示を確認できます。",
+      "description": "CardputerZero 向けのフォントプレビューアプリです。システムにあるフォントを使い、9言語とコードを6種類の書体、8～24 px、3ウェイト、8配色で比較できます。Noto CJK、Go、Inter、DejaVu、JetBrains Mono がシステムにある場合に対応します。フォントの同梱・ダウンロード・インストールは行わず、利用できない書体はプレビューに表示します。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/Harrison-Xu/FontPreview",
+  "icon": "fontpreview.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "github": "Harrison-Xu",
+    "display_name": "XuHaifeng"
+  },
+  "share_code": "FONT",
+  "uuid": "797a244a-162d-548e-8b33-f4a3e7c3fc3c",
+  "published_at": "2026-10-09T12:08:44+00:00",
+  "updated_at": "2026-10-09T12:08:44+00:00"
+}
