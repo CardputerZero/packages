@@ -1,0 +1,90 @@
+{
+  "title": "Zero SDR Keyboard",
+  "share_code": "zsdr",
+  "summary": "Tune RTL-SDR with a native spectrum, waterfall, and direct Cardputer keyboard entry.",
+  "categories": [
+    "Utilities",
+    "Audio",
+    "Hardware"
+  ],
+  "screenshots": [
+    "screenshots/radio-dark.png",
+    "screenshots/direct-tune-dark.png",
+    "screenshots/settings-dark.png",
+    "screenshots/settings-zh-cn.png"
+  ],
+  "description": "A native, keyboard-first SDR receiver for Cardputer Zero's 320×170 display. Connect a supported RTL-SDR dongle to tune 22.0–948.6 MHz, inspect a live spectrum and waterfall, and listen to local WFM audio. Direct MHz entry, tuner-reported gain steps, reconnect guidance, dark/light themes, persistent settings, and ten UI languages are built in. A deterministic offline demo works without a dongle. All processing stays on-device; Zero SDR needs no network or cloud service.",
+  "locales": {
+    "en": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Tune RTL-SDR with a native spectrum, waterfall, and direct Cardputer keyboard entry.",
+      "description": "A native SDR receiver for the Cardputer Zero display and keyboard. Connect a supported RTL-SDR dongle for live 22.0–948.6 MHz spectrum, waterfall, and local WFM audio, or use the deterministic offline demo without hardware. Processing stays on-device and needs no network or cloud service."
+    },
+    "zh-CN": {
+      "title": "Zero SDR 键盘版",
+      "summary": "用 Cardputer 键盘调谐 RTL-SDR，并查看频谱与瀑布图。",
+      "description": "面向 Cardputer Zero 原生屏幕和实体键盘的 SDR 接收机。连接受支持的 RTL-SDR 后可调谐 22.0–948.6 MHz、查看实时频谱与瀑布图并收听本地 WFM；无接收棒时也可使用可复现的离线演示。全部处理在设备本地完成，无需网络或云服务。"
+    },
+    "zh-TW": {
+      "title": "Zero SDR 鍵盤版",
+      "summary": "用 Cardputer 鍵盤調諧 RTL-SDR，並查看頻譜與瀑布圖。",
+      "description": "專為 Cardputer Zero 原生螢幕與實體鍵盤設計的 SDR 接收器。連接受支援的 RTL-SDR 後可調諧 22.0–948.6 MHz、查看即時頻譜與瀑布圖並收聽本機 WFM；未連接接收棒時也能使用可重現的離線示範。所有處理都在裝置本機完成，不需要網路或雲端服務。"
+    },
+    "es": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Sintoniza RTL-SDR con espectro, cascada y teclado Cardputer.",
+      "description": "Receptor SDR nativo para la pantalla y el teclado de Cardputer Zero. Conecta un RTL-SDR compatible para sintonizar 22,0–948,6 MHz, ver el espectro y la cascada en directo y escuchar WFM local, o usa la demostración sin hardware. Todo se procesa en el dispositivo, sin red ni nube."
+    },
+    "ja": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Cardputer キーボードで RTL-SDR を選局し、スペクトラムとウォーターフォールを表示。",
+      "description": "Cardputer Zero の画面と物理キーボードに最適化した SDR 受信機です。対応 RTL-SDR を接続すると 22.0〜948.6 MHz のライブスペクトラム、ウォーターフォール、ローカル WFM 音声を利用でき、機器なしでも再現可能なオフラインデモを試せます。処理はすべて端末内で完結し、ネットワークやクラウドは不要です。"
+    },
+    "ko": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Cardputer 키보드로 RTL-SDR을 조정하고 스펙트럼과 워터폴을 확인하세요.",
+      "description": "Cardputer Zero 화면과 물리 키보드에 맞춘 SDR 수신기입니다. 지원되는 RTL-SDR을 연결하면 22.0–948.6 MHz 실시간 스펙트럼, 워터폴, 로컬 WFM 오디오를 사용할 수 있으며, 장치 없이도 재현 가능한 오프라인 데모를 실행할 수 있습니다. 모든 처리는 기기에서 이루어지며 네트워크나 클라우드가 필요하지 않습니다."
+    },
+    "fr": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Réglez RTL-SDR avec le clavier Cardputer, spectre et chute d’eau.",
+      "description": "Récepteur SDR natif pour l’écran et le clavier du Cardputer Zero. Branchez un RTL-SDR compatible pour régler 22,0–948,6 MHz, afficher le spectre et la cascade en direct et écouter la WFM locale, ou utilisez la démo hors ligne sans matériel. Tout reste sur l’appareil, sans réseau ni cloud."
+    },
+    "de": {
+      "title": "Zero SDR Keyboard",
+      "summary": "RTL-SDR per Cardputer-Tastatur mit Spektrum und Wasserfall abstimmen.",
+      "description": "Ein nativer SDR-Empfänger für Display und Tastatur des Cardputer Zero. Mit einem unterstützten RTL-SDR stehen 22,0–948,6 MHz, Live-Spektrum, Wasserfall und lokales WFM-Audio bereit; ohne Hardware läuft die reproduzierbare Offline-Demo. Die Verarbeitung erfolgt vollständig auf dem Gerät, ohne Netzwerk oder Cloud."
+    },
+    "pt-BR": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Sintonize RTL-SDR pelo teclado Cardputer com espectro e waterfall.",
+      "description": "Receptor SDR nativo para a tela e o teclado do Cardputer Zero. Conecte um RTL-SDR compatível para sintonizar 22,0–948,6 MHz, ver espectro e waterfall ao vivo e ouvir WFM local, ou use a demonstração offline sem hardware. Todo o processamento fica no dispositivo, sem rede nem nuvem."
+    },
+    "ru": {
+      "title": "Zero SDR Keyboard",
+      "summary": "Настройка RTL-SDR с клавиатуры Cardputer, спектр и водопад.",
+      "description": "Нативный SDR-приёмник для экрана и клавиатуры Cardputer Zero. Подключите совместимый RTL-SDR для настройки 22,0–948,6 МГц, просмотра спектра и водопада в реальном времени и локального WFM-звука либо запустите автономную демонстрацию без оборудования. Вся обработка выполняется на устройстве без сети и облака."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/k1412/cardputerzero-sdr",
+  "icon": "icon.png",
+  "permissions": {
+    "microphone": false,
+    "audio_output": true,
+    "network": false,
+    "filesystem": "app-data-only",
+    "keyboard_input": true,
+    "background_service": false,
+    "external_hardware": true,
+    "hdmi_output": false,
+    "camera": false,
+    "sensors": false,
+    "gps": false,
+    "device_id": false
+  },
+  "author": {
+    "github": "k1412",
+    "display_name": "k1412"
+  }
+}
