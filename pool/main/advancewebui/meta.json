@@ -1,0 +1,32 @@
+{
+  "title": "AdvanceWebUI",
+  "summary": "AdvanceWebUI for Cardputer ZERO upload files to the cardputer via web ui using A",
+  "description": "AdvanceWebUI enables seamless file management on the Cardputer ZERO through a Web‑based interface. Using either an Access Point or a Wi‑Fi connection, you can upload multiple files, download files directly from the device to your PC or phone, and install .deb packages via the WebUI.\r\n\r\nThe system works entirely offline, with no Internet connection required, by creating a local Access Point. You can download the .deb package from the Release section and install it on the Cardputer ZERO.",
+  "categories": [
+    "System Tools",
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "AWUI",
+  "source_repo": "https://github.com/bomberman30/AdvanceWebUI-for-Cardputer-ZERO",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Bomberman30",
+    "github": "bomberman30"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "advancewebui_icon.png",
+  "published_at": "2026-10-13T18:40:52+00:00",
+  "updated_at": "2026-10-13T18:40:52+00:00"
+}
