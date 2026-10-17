@@ -1,0 +1,11 @@
+{
+  "filename": "retro-zero_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/geo-tp__retro-zero_0.1.0-1_arm64.deb",
+  "sha256": "34c9e435fa877c28753e1989e8c338a1230fd1304102808e603a87c2470f9a16",
+  "size": 630046,
+  "package": "retro-zero",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "geo-tp",
+  "uploader_email": "geo-tp@users.noreply.github.com"
+}

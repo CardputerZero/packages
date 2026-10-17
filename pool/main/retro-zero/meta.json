@@ -1,0 +1,31 @@
+{
+  "title": "Retro-Zero",
+  "summary": "Collection of game console emulators for the Cardputer Zero",
+  "description": "Libretro-based emulator frontend running NES, SNES, GB, GBC, GBA, N64, Mega Drive, Master System, Game Gear, Dreamcast, PSP, PS1, Neo Geo, Neo Geo Pocket, FBNeo, MAME, PC Engine, MSX, Atari 2600, Atari 7800, Atari Lynx and WonderSwan on the Cardputer Zero",
+  "categories": [
+    "Games",
+    "Emulators"
+  ],
+  "license": "MIT",
+  "share_code": "RTZR",
+  "source_repo": "https://github.com/geo-tp/Retro-Zero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "geo-tp",
+    "github": "geo-tp"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "retro-zero_icon.png",
+  "published_at": "2026-10-16T16:37:33+00:00",
+  "updated_at": "2026-10-16T16:37:33+00:00"
+}
