@@ -1,0 +1,11 @@
+{
+  "filename": "meshterm_0.11.3-1_arm64.deb",
+  "url": "https://github.com/jpmartineau/packages/releases/download/czdev-buffer/meshterm_0.11.3-1_arm64.deb",
+  "sha256": "0d124c34b8d9768cfd91648ade3bdc1e3479d3c05af44a2b56fdf7fe1c376b30",
+  "size": 11881988,
+  "package": "meshterm",
+  "version": "0.11.3-1",
+  "architecture": "arm64",
+  "uploaded_by": "jpmartineau",
+  "uploader_email": "johnputer@meshterm.net"
+}
