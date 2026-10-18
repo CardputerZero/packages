@@ -1,0 +1,11 @@
+{
+  "filename": "talktome_0.3.0_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/talktome_0.3.0_arm64.deb",
+  "sha256": "d7b343c316f3920be59ca58639b98a08716c75231fc241ce840649a090fa3383",
+  "size": 25323764,
+  "package": "talktome",
+  "version": "0.3.0",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}
