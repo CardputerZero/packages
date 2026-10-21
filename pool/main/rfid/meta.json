@@ -1,7 +1,7 @@
 {
   "title": "RFID",
   "summary": "NFC/UHF scan, saved dumps, NTAG emulation and RFID tools",
-  "description": "RFID 1.0 for CardputerZero: READ, SAVED, EMU and TOOLS workflows for M5 NFC CAP (SPI), M5 NFC Unit (IIC), PN532, PN532Killer and supported UHF readers. Manage saved dumps, write MFC dumps using compatible hardware/card modes, use MFKey32v2/MFKey64/Staticnested tools, and load JSON data for NTAG emulation. Hardware support varies per function. External RFID/NFC reader required. SPI MFC 1K encrypted emulation is experimental and disabled by default in 1.0: restart authentication regression remains unresolved.",
+  "description": "RFID 1.0.3 for CardputerZero: READ, SAVED, EMU and TOOLS for M5 NFC CAP (SPI), M5 NFC Unit (IIC), PN532, PN532Killer and compatible UHF readers. Includes saved MFC dump writing, MFKey32v2/MFKey64/Staticnested tools and JSON-backed NTAG emulation. Hardware support varies by function; an external reader is required.\r\n\r\n1.0.3 restores the panel mode from the board firmware at startup, after CAP operations and on clean exit; Gen1A Saved writes reuse one unlocked session, check every write ACK and finish without read-back verification. Other write modes retain verification. Prefixed dump key export is corrected, and source modules/tests/build tools are reorganized.\r\n\r\nSPI MFC 1K encrypted emulation remains experimental and disabled by default because restart authentication regression is unresolved. Its kernel helper is not installed by this package. The intermittent panel-mode trigger remains under investigation; this release adds recovery.",
   "categories": [
     "Hardware & IoT",
     "Security"
@@ -30,5 +30,5 @@
   ],
   "icon": "rfid_icon.png",
   "published_at": "2026-10-21T09:04:48+00:00",
-  "updated_at": "2026-10-21T09:04:48+00:00"
+  "updated_at": "2026-10-21T15:08:49+00:00"
 }
