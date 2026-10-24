@@ -1,0 +1,35 @@
+{
+  "title": "M5 Cardputer Zero Typing",
+  "summary": "Type, improve, and compete in a 30-second English typing challenge.",
+  "description": "Type short English or programming words in 30-second, 60-second or untimed ten-word rounds. Live WPM, accuracy, strict letter matching, automatic word advancement, miss counts and local personal bests. Optional English-only 30-second online challenges share your player name and server-verified score on public leaderboards. Offline play does not connect. A mascot inspired by the official M5Stack StackChan K151 accompanies your rounds. Optional private contact email can be managed on your phone using a short-lived QR code. This is an independent community app, not an official M5Stack application. Contact email is optional, private, unverified, and used only by the organizer for event result notifications; no automatic emails are sent.",
+  "categories": [
+    "Games",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "M5ZT",
+  "source_repo": "https://github.com/yuk1-kondo/key-dash",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "yuk1-kondo",
+    "github": "yuk1-kondo"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "key-dash_icon.png",
+  "published_at": "2026-10-24T12:30:25+00:00",
+  "updated_at": "2026-10-24T12:30:25+00:00"
+}
