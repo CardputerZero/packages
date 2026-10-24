@@ -1,0 +1,11 @@
+{
+  "filename": "key-dash_0.4.2-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/yuk1-kondo__key-dash_0.4.2-rev1_arm64.deb",
+  "sha256": "e30e80a4c016a1af21c9e907a6d2ef9a240edf3fd1854858662ca23e8f8b1521",
+  "size": 2609204,
+  "package": "key-dash",
+  "version": "0.4.2-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "yuk1-kondo",
+  "uploader_email": "yuk1-kondo@users.noreply.github.com"
+}
