@@ -5,9 +5,13 @@
 #
 # What goes, and why it is safe:
 #   - a .deb already in apt-pool: promotion (update-index.yml) skips names the
-#     pool holds, so the staging copy is never read again;
-#   - a .deb older than STALE_DAYS that no open PR's manifest names: its
-#     submission failed, was abandoned or was closed unmerged;
+#     pool holds, so the staging copy is never read again. A portal upload is
+#     stored under "<login>__<file>", not the pool's name, so it counts as
+#     promoted when a manifest on main points its url at it and the pool holds
+#     that manifest's file;
+#   - a .deb older than STALE_DAYS that no open PR's manifest names, by its
+#     filename or by the file its url downloads: its submission failed, was
+#     abandoned or was closed unmerged;
 #   - a store PNG older than PNG_DAYS: process-web-submission.yml commits the
 #     images into git within the same run, so they are dead after it.
 # A .deb an open PR still points at is always kept, however old.
@@ -43,6 +47,12 @@ jobs:
   prune:
     runs-on: ubuntu-latest
     steps:
+      # Data only: the published manifests on main, to recognise portal
+      # uploads whose staging name differs from the pool's.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
       - name: Delete promoted and stale staging assets
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -53,6 +63,34 @@ jobs:
           gh release view staging -R "$R" >/dev/null 2>&1 || { echo "no staging release"; exit 0; }
 
           gh release view apt-pool -R "$R" --json assets --jq '.assets[].name' | sort -u > /tmp/pool.txt
+
+          # The staging file names a manifest refers to: its `filename`, and the
+          # last path segment of its `url` (URL-decoded), which for a portal
+          # upload is the "<login>__<file>" asset. Reads manifest JSON on stdin,
+          # one document per line.
+          manifest_names() {
+            python3 -c '
+          import json, sys, urllib.parse
+          for line in sys.stdin:
+              try:
+                  m = json.loads(line)
+              except ValueError:
+                  continue
+              print(m.get("filename") or "")
+              url = urllib.parse.urlsplit(m.get("url") or "").path
+              print(urllib.parse.unquote(url.rsplit("/", 1)[-1]))
+          ' | grep -v '^$' || true
+          }
+
+          # Staging copies of published files: manifests on main whose file
+          # the pool already holds.
+          : > /tmp/published.txt
+          for m in pool/main/*/*.deb.release.json; do
+            [ -f "$m" ] || continue
+            grep -qxF "$(jq -r '.filename // empty' "$m")" /tmp/pool.txt || continue
+            jq -c . "$m" | manifest_names >> /tmp/published.txt
+          done
+          sort -u -o /tmp/published.txt /tmp/published.txt
 
           # File names that open PRs' manifests still need. Read through the API
           # as data, like capture-to-staging.yml: no PR code is checked out.
@@ -66,7 +104,7 @@ jobs:
               | grep -E '^pool/main/[^/]+/[^/]+\.deb\.release\.json$' \
               | while read -r path; do
                   gh api "repos/$repo/contents/$path?ref=$sha" --jq '.content' 2>/dev/null \
-                    | base64 -d | jq -r '.filename // empty' || true
+                    | base64 -d | jq -c . | manifest_names || true
                 done >> /tmp/wanted.txt || true
           done
           sort -u -o /tmp/wanted.txt /tmp/wanted.txt
@@ -81,7 +119,7 @@ jobs:
               *.deb)
                 if grep -qxF "$name" /tmp/wanted.txt; then
                   continue
-                elif grep -qxF "$name" /tmp/pool.txt; then
+                elif grep -qxF "$name" /tmp/pool.txt || grep -qxF "$name" /tmp/published.txt; then
                   why="promoted to apt-pool"
                 elif [ "$age_days" -ge "$STALE_DAYS" ]; then
                   why="no open PR uses it, ${age_days} days old"
