@@ -98,6 +98,16 @@ jobs:
             ERRORS="${ERRORS}- ❌ Raw \`.deb\` files must not be committed to git. Upload the binary to a Release in your fork and submit a \`*.deb.release.json\` manifest (use \`czdev publish\`).\n"
           fi
 
+          # A published manifest is never edited: the pool keeps serving the
+          # binary already promoted under its name, so a changed url/sha256
+          # would describe a file nobody downloads. This is also how a version
+          # whose asset name collides with a published one (1.0~rc1 vs
+          # 1.0.rc1) shows up.
+          for m in $(git diff --name-only --diff-filter=MR "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true); do
+            ERRORS="${ERRORS}- ❌ \`$m\` is already published and cannot be changed; publish a new version instead (versions that differ only in '~' / '.' / ':' share one file name)\n"
+          done
+
+          SUMMARIES=""
           ADDED_MANIFESTS=$(git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
 
           for manifest in $ADDED_MANIFESTS; do
@@ -132,6 +142,10 @@ jobs:
             dpkg-deb -f "$deb" Maintainer 2>/dev/null > "/tmp/maint-$ctrl_pkg.txt" || true
             if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
+            fi
+            # A name that was taken down stays reserved (takedown.yml).
+            if git show "$BASE_SHA:policy/takedowns.json" 2>/dev/null | jq -e --arg p "$dir_pkg" 'has($p)' >/dev/null 2>&1; then
+              ERRORS="${ERRORS}- ❌ package name '$dir_pkg' was taken down and is reserved; contact a maintainer\n"
             fi
             case "$(dpkg-deb -f "$deb" Architecture 2>/dev/null)" in
               arm64|all) ;;
@@ -213,8 +227,8 @@ jobs:
               ERRORS="${ERRORS}- ❌ Invalid package name: '$ctrl_pkg'\n"
             fi
             expected_name="${ctrl_pkg}_${new_ver}_$(dpkg-deb -f "$deb" Architecture).deb"
-            # GitHub release assets sanitize '~' to '.'; allow either form.
-            if [[ "$fname" != "$expected_name" && "$fname" != "${expected_name//\~/.}" ]]; then
+            # GitHub release assets sanitize '~' and ':' to '.'; allow either form.
+            if [[ "$fname" != "$expected_name" && "$fname" != "${expected_name//[\~:]/.}" ]]; then
               ERRORS="${ERRORS}- ❌ filename '$fname' should be '$expected_name'\n"
             fi
 
@@ -253,6 +267,13 @@ jobs:
             fi
             if [[ -n "$existing_ver" ]] && dpkg --compare-versions "$new_ver" le "$existing_ver" 2>/dev/null; then
               ERRORS="${ERRORS}- ❌ Version $new_ver is not newer than existing $existing_ver\n"
+            fi
+
+            # The facts a reviewer wants (sizes, binaries), in the same table
+            # the portal channel puts in its PR body. Taken from the base branch
+            # like the policies; optional, so its absence never blocks a PR.
+            if git show "$BASE_SHA:.github/scripts/deb_summary.py" > /tmp/deb_summary.py 2>/dev/null; then
+              SUMMARIES="${SUMMARIES}### \`$fname\`\n\n$(python3 /tmp/deb_summary.py "$deb" "$existing_ver")\n| SHA-256 | \`$sha\` |\n\n"
             fi
 
             if [[ -z "$ERRORS" ]]; then echo "✓ $fname passed"; fi
@@ -313,6 +334,7 @@ jobs:
               [ -s /tmp/path-help-final.md ] && { echo; cat /tmp/path-help-final.md; }
               [ -s /tmp/meta-help-final.md ] && { echo; cat /tmp/meta-help-final.md; }
               [[ -n "$WARNINGS" ]] && { echo; echo "Suggestions (non-blocking) / 建议（不阻断）："; echo -e "$WARNINGS"; }
+              [[ -n "$SUMMARIES" ]] && { echo; echo "## Package details / 安装包信息"; echo; printf '%b' "$SUMMARIES"; }
               echo; echo "---"
               echo "*If you believe this is an error, contact a maintainer.*"
               echo; echo "*如果你认为这是误判，请联系维护者。*"; } > /tmp/out/result.md
@@ -335,7 +357,8 @@ jobs:
                 echo
                 echo "自动校验全部通过，此版本更新将自动合并上架。"
               fi
-              [[ -n "$WARNINGS" ]] && { echo; echo "Suggestions (non-blocking) / 建议（不阻断）："; echo -e "$WARNINGS"; }; } > /tmp/out/result.md
+              [[ -n "$WARNINGS" ]] && { echo; echo "Suggestions (non-blocking) / 建议（不阻断）："; echo -e "$WARNINGS"; }
+              [[ -n "$SUMMARIES" ]] && { echo; echo "## Package details / 安装包信息"; echo; printf '%b' "$SUMMARIES"; }; } > /tmp/out/result.md
             echo "status=success" >> "$GITHUB_OUTPUT"
           fi
           cat /tmp/out/result.md

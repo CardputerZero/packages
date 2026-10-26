@@ -1,0 +1,99 @@
+# Keeps the `staging` release from growing forever. It is a buffer, not an
+# archive: the portal uploads each submission's .deb and store PNGs there
+# (worker BUFFER_TAG), and capture-to-staging.yml mirrors every czdev PR's .deb
+# into it. Nothing used to delete them afterwards.
+#
+# What goes, and why it is safe:
+#   - a .deb already in apt-pool: promotion (update-index.yml) skips names the
+#     pool holds, so the staging copy is never read again;
+#   - a .deb older than STALE_DAYS that no open PR's manifest names: its
+#     submission failed, was abandoned or was closed unmerged;
+#   - a store PNG older than PNG_DAYS: process-web-submission.yml commits the
+#     images into git within the same run, so they are dead after it.
+# A .deb an open PR still points at is always kept, however old.
+
+name: Prune Staging Release
+
+on:
+  schedule:
+    - cron: '17 3 * * *'
+  workflow_run:
+    workflows: ["Deploy APT Repository to Pages"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only list what would be deleted'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: read
+
+concurrency:
+  group: prune-staging
+  cancel-in-progress: false
+
+env:
+  STALE_DAYS: "14"
+  PNG_DAYS: "2"
+
+jobs:
+  prune:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete promoted and stale staging assets
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+        run: |
+          set -euo pipefail
+          R="$GITHUB_REPOSITORY"
+          gh release view staging -R "$R" >/dev/null 2>&1 || { echo "no staging release"; exit 0; }
+
+          gh release view apt-pool -R "$R" --json assets --jq '.assets[].name' | sort -u > /tmp/pool.txt
+
+          # File names that open PRs' manifests still need. Read through the API
+          # as data, like capture-to-staging.yml: no PR code is checked out.
+          : > /tmp/wanted.txt
+          for pr in $(gh pr list -R "$R" --state open --limit 500 --json number --jq '.[].number'); do
+            head=$(gh pr view "$pr" -R "$R" --json headRepositoryOwner,headRepository,headRefOid \
+              --jq '"\(.headRepositoryOwner.login)/\(.headRepository.name) \(.headRefOid)"')
+            repo=${head% *}; sha=${head#* }
+            gh api "repos/$R/pulls/$pr/files" --paginate \
+              --jq '.[] | select(.status != "removed") | .filename' \
+              | grep -E '^pool/main/[^/]+/[^/]+\.deb\.release\.json$' \
+              | while read -r path; do
+                  gh api "repos/$repo/contents/$path?ref=$sha" --jq '.content' 2>/dev/null \
+                    | base64 -d | jq -r '.filename // empty' || true
+                done >> /tmp/wanted.txt || true
+          done
+          sort -u -o /tmp/wanted.txt /tmp/wanted.txt
+
+          now=$(date -u +%s)
+          gh api "repos/$R/releases/tags/staging" --jq '.assets[] | "\(.id)\t\(.name)\t\(.created_at)"' > /tmp/assets.tsv
+          deleted=0
+          while IFS=$'\t' read -r id name created; do
+            age_days=$(( (now - $(date -u -d "$created" +%s)) / 86400 ))
+            why=""
+            case "$name" in
+              *.deb)
+                if grep -qxF "$name" /tmp/wanted.txt; then
+                  continue
+                elif grep -qxF "$name" /tmp/pool.txt; then
+                  why="promoted to apt-pool"
+                elif [ "$age_days" -ge "$STALE_DAYS" ]; then
+                  why="no open PR uses it, ${age_days} days old"
+                fi ;;
+              *.png)
+                [ "$age_days" -ge "$PNG_DAYS" ] && why="store image, ${age_days} days old" ;;
+            esac
+            [ -n "$why" ] || continue
+            echo "delete $name ($why)"
+            if [ "$DRY_RUN" != "true" ]; then
+              gh api -X DELETE "repos/$R/releases/assets/$id"
+            fi
+            deleted=$((deleted + 1))
+          done < /tmp/assets.tsv
+          echo "::notice::staging: $deleted asset(s) $([ "$DRY_RUN" = "true" ] && echo "would be deleted" || echo "deleted")"

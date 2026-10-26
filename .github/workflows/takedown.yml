@@ -1,0 +1,176 @@
+# Takes a package off the store for a policy violation (malware, infringement,
+# content that breaks the rules). Run by a maintainer from the Actions tab;
+# this is not the developer's own unpublish (process-web-unpublish.yml), which
+# removes one version and leaves the binary downloadable.
+#
+# A takedown removes every trace the store serves:
+#   - pool/main/<pkg>/ entirely (all manifests, meta.json, screenshots, icon),
+#     so the next index build drops it from APT and the store registry;
+#   - the package's binaries in the apt-pool and staging releases, so old
+#     download links stop working too (only after the removal is merged: the
+#     index build fails on a manifest whose binary is gone);
+#   - and, unless told otherwise, records the name in policy/takedowns.json,
+#     which both submission channels check, so the same app cannot come back
+#     by being uploaded again. The owner's account is not blocked.
+# The owner is notified in an issue that states the reason; an appeal is
+# discussed there, and lifting it means deleting the takedowns.json entry.
+
+name: Take Down Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: 'Package name to take down'
+        required: true
+      reason:
+        description: 'Reason, shown to the owner in the notification issue'
+        required: true
+      reserve_name:
+        description: 'Reserve the package name so it cannot be uploaded again'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  actions: write   # to trigger update-index via workflow_dispatch after the merge
+
+concurrency:
+  group: takedown-${{ inputs.package }}
+  cancel-in-progress: false
+
+jobs:
+  takedown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install tools
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev jq
+
+      - name: Remove the package and open the takedown PR
+        id: remove
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKG: ${{ inputs.package }}
+          REASON: ${{ inputs.reason }}
+          RESERVE: ${{ inputs.reserve_name }}
+          ACTOR: ${{ github.actor }}
+        run: |
+          set -euo pipefail
+          # Anyone with write access can dispatch a workflow; a takedown is for
+          # the people who run the store.
+          PERM=$(gh api "repos/$GITHUB_REPOSITORY/collaborators/$ACTOR/permission" --jq .permission)
+          case "$PERM" in admin|maintain) ;; *) echo "::error::@$ACTOR has '$PERM' access; a takedown needs admin or maintain"; exit 1;; esac
+
+          echo "$PKG" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$' || { echo "::error::bad package name '$PKG'"; exit 1; }
+          [ -d "pool/main/$PKG" ] || { echo "::error::pool/main/$PKG does not exist"; exit 1; }
+
+          IFS='|' read -r LATEST OWNER < <(bash .github/scripts/package_owner.sh "$PKG")
+          VERSIONS=$(jq -r '.version // empty' pool/main/"$PKG"/*.deb.release.json 2>/dev/null | sort -V | paste -sd, - || true)
+          jq -r '.filename // empty' pool/main/"$PKG"/*.deb.release.json 2>/dev/null > /tmp/assets.txt || true
+
+          BRANCH="takedown/${PKG}-${{ github.run_id }}"
+          git config user.name "cardputerzero-bot"
+          git config user.email "cardputerzero-bot@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git rm -rq "pool/main/$PKG"
+          if [ "$RESERVE" = "true" ]; then
+            mkdir -p policy
+            [ -f policy/takedowns.json ] || echo '{}' > policy/takedowns.json
+            jq --arg p "$PKG" --arg r "$REASON" --arg by "$ACTOR" --arg o "$OWNER" --arg v "$VERSIONS" \
+               --arg at "$(date -u +%Y-%m-%dT%H:%M:%SZ)" \
+               '.[$p] = {reason: $r, taken_down_at: $at, by: $by, owner: $o, versions: ($v | split(",") | map(select(. != "")))}' \
+               policy/takedowns.json > /tmp/takedowns.json
+            mv /tmp/takedowns.json policy/takedowns.json
+            git add policy/takedowns.json
+          fi
+          git commit -qm "takedown: $PKG by @$ACTOR"
+          git push -q origin "$BRANCH"
+
+          {
+            echo "Takedown of \`$PKG\` by @$ACTOR."
+            echo
+            echo "| Field | Value |"
+            echo "|---|---|"
+            echo "| Owner | ${OWNER:+@$OWNER} |"
+            echo "| Versions | ${VERSIONS:-—} |"
+            echo "| Name reserved | $RESERVE |"
+            echo
+            echo "**Reason:**"
+            echo
+            printf '%s\n' "$REASON" | sed 's/^/> /'
+          } > /tmp/pr.md
+          PR_URL=$(gh pr create --base main --head "$BRANCH" --title "takedown: $PKG" --body-file /tmp/pr.md)
+          MERGED=false
+          if gh pr merge "$PR_URL" --squash --delete-branch; then
+            MERGED=true
+            gh workflow run update-index.yml --ref main || echo "::warning::could not trigger update-index; run it manually"
+          else
+            echo "::warning::could not merge $PR_URL; merge it by hand, then delete the binaries listed in this run"
+          fi
+          { echo "owner=$OWNER"; echo "versions=$VERSIONS"; echo "pr=$PR_URL"; echo "merged=$MERGED"; } >> "$GITHUB_OUTPUT"
+
+      - name: Delete the binaries from apt-pool and staging
+        if: steps.remove.outputs.merged == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          for tag in apt-pool staging; do
+            gh api "repos/$GITHUB_REPOSITORY/releases/tags/$tag" --jq '.assets[] | "\(.id)\t\(.name)"' > /tmp/rel.tsv 2>/dev/null || continue
+            while IFS=$'\t' read -r id name; do
+              if grep -qxF "$name" /tmp/assets.txt; then
+                gh api -X DELETE "repos/$GITHUB_REPOSITORY/releases/assets/$id" && echo "deleted $tag/$name"
+              fi
+            done < /tmp/rel.tsv
+          done
+
+      - name: Notify the owner
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKG: ${{ inputs.package }}
+          REASON: ${{ inputs.reason }}
+          RESERVE: ${{ inputs.reserve_name }}
+          OWNER: ${{ steps.remove.outputs.owner }}
+          VERSIONS: ${{ steps.remove.outputs.versions }}
+          PR_URL: ${{ steps.remove.outputs.pr }}
+        run: |
+          {
+            [ -n "$OWNER" ] && echo "@$OWNER"
+            echo
+            echo "Your app \`$PKG\` (versions: ${VERSIONS:-—}) has been taken down from the CardputerZero AppStore."
+            echo
+            echo "**Reason:**"
+            echo
+            printf '%s\n' "$REASON" | sed 's/^/> /'
+            echo
+            if [ "$RESERVE" = "true" ]; then
+              echo "The package name \`$PKG\` is reserved and cannot be uploaded again. Your account is not affected: your other apps stay published and you can keep submitting."
+            else
+              echo "Your account is not affected: your other apps stay published and you can keep submitting."
+            fi
+            echo
+            echo "If you believe this is a mistake, or have fixed the problem, reply in this issue and a maintainer will review it."
+            echo
+            echo "Change: $PR_URL"
+            echo
+            echo "---"
+            echo
+            echo "你的应用 \`$PKG\`（版本：${VERSIONS:-—}）已从 CardputerZero AppStore 下架。"
+            echo
+            echo "**原因：**"
+            echo
+            printf '%s\n' "$REASON" | sed 's/^/> /'
+            echo
+            if [ "$RESERVE" = "true" ]; then
+              echo "包名 \`$PKG\` 已被保留，不能再次上传。你的账号不受影响：其他应用照常上架，也可以继续提交。"
+            else
+              echo "你的账号不受影响：其他应用照常上架，也可以继续提交。"
+            fi
+            echo
+            echo "如果你认为这是误判，或者已经修正了问题，请直接在这个 issue 里回复，维护者会重新审核。"
+          } > /tmp/issue.md
+          gh issue create --title "takedown: $PKG" --body-file /tmp/issue.md

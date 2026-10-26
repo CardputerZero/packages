@@ -1,16 +1,24 @@
-# Handles `repository_dispatch` (type: web-submission) sent by the developer
-# portal Worker. Authoritative validation with real dpkg-deb: integrity,
-# control fields, .desktop, structure & safety scan, first-come-first-served
-# ownership (the package name belongs to the GitHub login that first uploaded
-# it, recorded as `uploaded_by`; admins bypass), and version monotonicity. On
-# success it opens a publish PR (and can auto-merge it when AUTO_MERGE is true);
-# on failure it opens an issue mentioning the submitter.
+# Handles `repository_dispatch` sent by the developer portal Worker:
+#
+#   web-submission       a new .deb. Authoritative validation with real
+#                        dpkg-deb: integrity, control fields, .desktop,
+#                        structure & safety scan, first-come-first-served
+#                        ownership (the package name belongs to the GitHub login
+#                        that first uploaded it, recorded as `uploaded_by`;
+#                        admins bypass), version monotonicity, and names that
+#                        were taken down (policy/takedowns.json).
+#   web-listing-update   only the store listing (meta.json, screenshots, icon)
+#                        of a published package; the version and binary stay.
+#                        Ownership and the metadata policy are checked the same.
+#
+# On success it opens a PR (and can auto-merge it when AUTO_MERGE is true); on
+# failure it opens an issue mentioning the submitter.
 
 name: Process Web Submission
 
 on:
   repository_dispatch:
-    types: [web-submission]
+    types: [web-submission, web-listing-update]
 
 permissions:
   contents: write
@@ -33,6 +41,7 @@ jobs:
 
       - name: Download and validate .deb
         id: validate
+        if: github.event.action == 'web-submission'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEB_URL: ${{ github.event.client_payload.binary.url }}
@@ -129,26 +138,11 @@ jobs:
             #     the uploader's GitHub login (recorded as `uploaded_by` in the
             #     release manifest). Existing packages are only updatable by the
             #     recorded owner or an admin. No email-vs-account matching. ---
-            EXISTING="" ; LATEST_MANIFEST=""
-            for m in pool/main/"$PKG"/*.deb.release.json; do
-              [ -f "$m" ] || continue
-              v=$(jq -r '.version // empty' "$m")
-              if [ -n "$v" ] && { [ -z "$EXISTING" ] || dpkg --compare-versions "$v" gt "$EXISTING"; }; then
-                EXISTING="$v"; LATEST_MANIFEST="$m"
-              fi
-            done
-            OWNER_LOGIN=""
-            if [ -n "$LATEST_MANIFEST" ]; then
-              OWNER_LOGIN=$(jq -r '.uploaded_by // empty' "$LATEST_MANIFEST" | tr '[:upper:]' '[:lower:]')
-              # Legacy manifests have no `uploaded_by`: derive the owner login
-              # from the published binary's Maintainer noreply address.
-              if [ -z "$OWNER_LOGIN" ]; then
-                u=$(jq -r '.url // empty' "$LATEST_MANIFEST")
-                if [ -n "$u" ] && curl -fsL --max-time 300 -o /tmp/existing.deb "$u" 2>/dev/null; then
-                  OM=$(dpkg-deb -f /tmp/existing.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
-                  OWNER_LOGIN=$(printf '%s' "$OM" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
-                fi
-              fi
+            IFS='|' read -r EXISTING OWNER_LOGIN < <(bash .github/scripts/package_owner.sh "$PKG")
+            # A name that was taken down stays reserved: the same app cannot
+            # come back under it by being uploaded again.
+            if [ -f policy/takedowns.json ] && jq -e --arg p "$PKG" 'has($p)' policy/takedowns.json >/dev/null; then
+              ERR="${ERR}- ❌ package name '$PKG' was taken down and is reserved; contact a maintainer\n"
             fi
             SUBMITTER_LC=$(printf '%s' "$SUBMITTER" | tr '[:upper:]' '[:lower:]')
             if [ -n "$OWNER_LOGIN" ] && [ "$IS_ADMIN" != "true" ] && [ "$OWNER_LOGIN" != "$SUBMITTER_LC" ]; then
@@ -157,7 +151,16 @@ jobs:
             if [ -n "$EXISTING" ] && dpkg --compare-versions "$VER" le "$EXISTING"; then
               ERR="${ERR}- ❌ version $VER is not newer than published $EXISTING\n"
             fi
-            { echo "pkg=$PKG"; echo "ver=$VER"; echo "arch=$ARCH"; } >> "$GITHUB_OUTPUT"
+            # Release asset names turn '~' and ':' into '.', so 1.0~rc1 and
+            # 1.0.rc1 share one asset and one manifest. Publishing the second
+            # would overwrite the first's manifest while the pool kept serving
+            # the first's binary.
+            ASSET_NAME="${PKG}_${VER//[\~:]/.}_${ARCH}.deb"
+            if [ -f "pool/main/$PKG/$ASSET_NAME.release.json" ]; then
+              TAKEN=$(jq -r '.version // empty' "pool/main/$PKG/$ASSET_NAME.release.json")
+              ERR="${ERR}- ❌ version $VER maps to the same file name ($ASSET_NAME) as published version $TAKEN; pick a version that differs in more than '~' / '.' / ':'\n"
+            fi
+            { echo "pkg=$PKG"; echo "ver=$VER"; echo "arch=$ARCH"; echo "prev=$EXISTING"; } >> "$GITHUB_OUTPUT"
           fi
           # Random delimiters: these values embed file names taken from the
           # uploaded .deb, and a crafted name must not be able to close the
@@ -169,12 +172,35 @@ jobs:
             printf 'path_help<<%s\n%s\n%s\n' "$D" "$(cat /tmp/path-help.md)" "$D" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Validate listing update
+        id: listing
+        if: github.event.action == 'web-listing-update'
+        env:
+          PKG: ${{ github.event.client_payload.package }}
+          SUBMITTER: ${{ github.event.client_payload.login }}
+          IS_ADMIN: ${{ github.event.client_payload.is_admin }}
+        run: |
+          set -uo pipefail
+          ERR=""
+          echo "$PKG" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$' || { echo "::error::bad package name"; exit 1; }
+          IFS='|' read -r EXISTING OWNER_LOGIN < <(bash .github/scripts/package_owner.sh "$PKG")
+          SUBMITTER_LC=$(printf '%s' "$SUBMITTER" | tr '[:upper:]' '[:lower:]')
+          if [ -z "$EXISTING" ]; then
+            ERR="- ❌ '$PKG' has no published version; publish a .deb first\n"
+          elif [ "$IS_ADMIN" != "true" ] && [ -z "$OWNER_LOGIN" ]; then
+            ERR="- ❌ could not verify ownership of '$PKG' (no recorded uploader); ask an admin\n"
+          elif [ "$IS_ADMIN" != "true" ] && [ "$OWNER_LOGIN" != "$SUBMITTER_LC" ]; then
+            ERR="- ❌ package '$PKG' is owned by @$OWNER_LOGIN; only the original uploader or an admin can update it\n"
+          fi
+          echo "pkg=$PKG" >> "$GITHUB_OUTPUT"
+          printf 'errors<<EOM\n%b\nEOM\n' "$ERR" >> "$GITHUB_OUTPUT"
+
       - name: Collect store metadata
         id: meta
-        if: steps.validate.outputs.errors == ''
+        if: steps.validate.outputs.errors == '' && steps.listing.outputs.errors == ''
         env:
           SOURCE_REPO: ${{ github.event.client_payload.source_repo }}
-          PKG: ${{ steps.validate.outputs.pkg }}
+          PKG: ${{ steps.validate.outputs.pkg || steps.listing.outputs.pkg }}
           SUBMITTER: ${{ github.event.client_payload.login }}
           STORE_JSON: ${{ toJSON(github.event.client_payload.store) }}
         run: |
@@ -361,9 +387,9 @@ jobs:
       # submission is judged identically whichever way it arrives.
       - name: Validate store metadata
         id: metacheck
-        if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == ''
+        if: steps.validate.outputs.errors == '' && steps.listing.outputs.errors == '' && steps.meta.outputs.errors == ''
         env:
-          PKG: ${{ steps.validate.outputs.pkg }}
+          PKG: ${{ steps.validate.outputs.pkg || steps.listing.outputs.pkg }}
         run: |
           set -uo pipefail
           ERR=""
@@ -389,7 +415,7 @@ jobs:
 
       - name: Create publish PR
         id: pr
-        if: steps.validate.outputs.errors == '' && steps.meta.outputs.errors == '' && steps.metacheck.outputs.errors == ''
+        if: github.event.action == 'web-submission' && steps.validate.outputs.errors == '' && steps.meta.outputs.errors == '' && steps.metacheck.outputs.errors == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEB_URL: ${{ github.event.client_payload.binary.url }}
@@ -400,10 +426,12 @@ jobs:
           PKG: ${{ steps.validate.outputs.pkg }}
           VER: ${{ steps.validate.outputs.ver }}
           ARCH: ${{ steps.validate.outputs.arch }}
+          PREV: ${{ steps.validate.outputs.prev }}
+          SOURCE_REPO: ${{ github.event.client_payload.source_repo }}
         run: |
           set -euo pipefail
           NAME="${PKG}_${VER}_${ARCH}.deb"
-          ASSET_NAME="${NAME//\~/.}"
+          ASSET_NAME="${NAME//[\~:]/.}"
           # First release of a new package name is gated on a human maintainer
           # watching a demo video; updates to published packages are unattended.
           # Judged by the manifests tracked on main (the checkout's index) —
@@ -419,17 +447,28 @@ jobs:
                 --arg by "$SUBMITTER" --arg em "$UPLOADER_EMAIL" \
                 '{filename:$f,url:$u,sha256:$s,size:$z,package:$p,version:$v,architecture:$a,uploaded_by:$by,uploader_email:$em}' \
                 > "pool/main/$PKG/$ASSET_NAME.release.json"
-          BRANCH="publish/${PKG}-${VER}-web-${{ github.run_id }}"
+          # '~' and ':' are legal in a Debian version but not in a git ref.
+          BRANCH="publish/${PKG}-${VER//[\~:]/_}-web-${{ github.run_id }}"
           git config user.name "cardputerzero-bot"
           git config user.email "cardputerzero-bot@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add "pool/main/$PKG"
           git commit -m "publish: $PKG $VER ($ARCH) via developer portal by @$SUBMITTER"
           git push origin "$BRANCH"
+          # Same table as the czdev channel's validation comment, so a reviewer
+          # sees size, installed size and binaries whichever way it arrived.
+          {
+            printf 'Submitted by @%s via the developer portal.\n\n' "$SUBMITTER"
+            python3 .github/scripts/deb_summary.py /tmp/pkg.deb "$PREV"
+            printf '| SHA-256 | `%s` |\n' "$WANT_SHA"
+            printf '| Binary | [%s](%s) |\n' "$ASSET_NAME" "$DEB_URL"
+            [ -n "$SOURCE_REPO" ] && printf '| Source | %s |\n' "$SOURCE_REPO"
+            printf '\nAll automated checks passed in [this run](%s/%s/actions/runs/%s).\n' \
+              "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}"
+          } > /tmp/pr-body.md
           PR_URL=$(gh pr create --base main --head "$BRANCH" \
             --title "publish: $PKG $VER (portal submission by @$SUBMITTER)" \
-            --body "$(printf 'Submitted by @%s via the developer portal.\n\n| Field | Value |\n|---|---|\n| Version | %s |\n| Architecture | %s |\n| SHA-256 | `%s` |\n| Binary | [%s](%s) |\n\nAll automated checks passed in [this run](%s/%s/actions/runs/%s).' \
-              "$SUBMITTER" "$VER" "$ARCH" "$WANT_SHA" "$ASSET_NAME" "$DEB_URL" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}")")
+            --body-file /tmp/pr-body.md)
           echo "url=$PR_URL" >> "$GITHUB_OUTPUT"
           if [ "$NEW_PKG" = "true" ]; then
             gh pr comment "$PR_URL" --body "$(printf '@%s ✅ All automated checks passed.\n\n🆕 This is the **first release** of a new app (\`%s\`), so per store policy it will not merge automatically: please post a short video of the app running on a real device in this PR (a phone recording is fine). A maintainer will review and merge it. Later version updates merge automatically.\n\n---\n\n✅ 自动校验全部通过。\n\n🆕 这是新应用 \`%s\` 的**首次发布**，按商店政策不会自动合并：\n请在本 PR 评论区发一段应用在真机上运行的演示视频（手机拍摄即可），\n维护者查看后会手动合并上架。后续版本更新会自动合并。' "$SUBMITTER" "$PKG" "$PKG")"
@@ -446,12 +485,42 @@ jobs:
             fi
           fi
 
-      - name: Report failure to the submitter
-        if: always() && (steps.validate.outputs.errors != '' || steps.meta.outputs.errors != '' || steps.metacheck.outputs.errors != '' || failure())
+      - name: Create listing update PR
+        if: github.event.action == 'web-listing-update' && steps.listing.outputs.errors == '' && steps.meta.outputs.errors == '' && steps.metacheck.outputs.errors == ''
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SUBMITTER: ${{ github.event.client_payload.login }}
-          FILENAME: ${{ github.event.client_payload.filename }}
+          PKG: ${{ steps.listing.outputs.pkg }}
+        run: |
+          set -euo pipefail
+          BRANCH="metadata/${PKG}-web-${{ github.run_id }}"
+          git config user.name "cardputerzero-bot"
+          git config user.email "cardputerzero-bot@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add -A "pool/main/$PKG"
+          git commit -m "metadata: $PKG store listing via developer portal by @$SUBMITTER"
+          git push origin "$BRANCH"
+          PR_URL=$(gh pr create --base main --head "$BRANCH" \
+            --title "metadata: $PKG store listing (portal update by @$SUBMITTER)" \
+            --body "$(printf 'Store listing update for `%s` by @%s via the developer portal.\n\nOnly `meta.json`, screenshots and the icon change; the published version and binary stay as they are. Ownership and the metadata policy passed in [this run](%s/%s/actions/runs/%s).' \
+              "$PKG" "$SUBMITTER" "${{ github.server_url }}" "${{ github.repository }}" "${{ github.run_id }}")")
+          # Same rule as a version update of a published package: it merges
+          # unattended once the checks above pass.
+          if [ "$AUTO_MERGE" = "true" ]; then
+            if gh pr merge "$PR_URL" --squash --delete-branch; then
+              gh workflow run update-index.yml --ref main || echo "::warning::could not trigger update-index; run it manually"
+            else
+              echo "::warning::auto-merge failed; awaiting manual review"
+            fi
+          fi
+
+      - name: Report failure to the submitter
+        if: always() && (steps.validate.outputs.errors != '' || steps.listing.outputs.errors != '' || steps.meta.outputs.errors != '' || steps.metacheck.outputs.errors != '' || failure())
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SUBMITTER: ${{ github.event.client_payload.login }}
+          FILENAME: ${{ github.event.client_payload.filename || format('{0} store listing', github.event.client_payload.package) }}
+          ERR0: ${{ steps.listing.outputs.errors }}
           ERR1: ${{ steps.validate.outputs.errors }}
           ERR2: ${{ steps.meta.outputs.errors }}
           ERR3: ${{ steps.metacheck.outputs.errors }}
@@ -461,7 +530,7 @@ jobs:
           {
             echo "@$SUBMITTER your portal submission of \`$FILENAME\` failed validation:"
             echo
-            printf '%b%b%b' "$ERR1" "$ERR2" "$ERR3"
+            printf '%b%b%b%b' "$ERR0" "$ERR1" "$ERR2" "$ERR3"
             echo
             # Set only when a policy check rejected something: states the rule
             # and hands over a prompt that fixes the packaging or metadata.

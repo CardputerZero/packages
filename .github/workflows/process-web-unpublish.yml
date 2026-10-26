@@ -46,7 +46,7 @@ jobs:
           set -uo pipefail
           ERR=""
           echo "$PKG" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$' || { echo "::error::bad package name"; exit 1; }
-          ASSET_NAME=$(echo "${PKG}_${VER}_${ARCH}.deb" | tr '~' '.')
+          ASSET_NAME=$(echo "${PKG}_${VER}_${ARCH}.deb" | tr '~:' '..')
           MANIFEST="pool/main/$PKG/$ASSET_NAME.release.json"
           if [ ! -f "$MANIFEST" ]; then
             ERR="- ❌ manifest not found: \`$MANIFEST\`\n"
@@ -72,7 +72,8 @@ jobs:
             fi
           fi
           if [ -z "$ERR" ]; then
-            BRANCH="unpublish/${PKG}-${VER}-web-${{ github.run_id }}"
+            # '~' and ':' are legal in a Debian version but not in a git ref.
+            BRANCH="unpublish/${PKG}-${VER//[\~:]/_}-web-${{ github.run_id }}"
             git config user.name "cardputerzero-bot"
             git config user.email "cardputerzero-bot@users.noreply.github.com"
             git checkout -b "$BRANCH"
