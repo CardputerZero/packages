@@ -1,0 +1,31 @@
+{
+  "title": "Ultimate Remote",
+  "summary": "Universal remote control for the Cardputer Zero",
+  "description": "A powerful universal remote control supporting 3366 remote profiles from 636 different manufacturers and containing around 30,000 commands. It allows you to easily find a suitable remote for you device thanks to a automatic remotes scan. Now, with added compatibility for .ir files of the Flipper-IRDB.\r\n\r\nUltimate Remote gives you access to virtually every IR remote control code available online by combining two of the largest infrared code databases.",
+  "categories": [
+    "Hardware & IoT",
+    "Other"
+  ],
+  "license": "MIT",
+  "share_code": "URMT",
+  "source_repo": "https://github.com/geo-tp/Ultimate-Remote",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "geo-tp",
+    "github": "geo-tp"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "ultimate-remote_icon.png",
+  "published_at": "2026-10-27T11:52:59+00:00",
+  "updated_at": "2026-10-27T11:52:59+00:00"
+}

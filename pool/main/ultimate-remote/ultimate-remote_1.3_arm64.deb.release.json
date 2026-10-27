@@ -1,0 +1,11 @@
+{
+  "filename": "ultimate-remote_1.3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/geo-tp__ultimate-remote_1.3_arm64.deb",
+  "sha256": "7de17590a6bbfd6aed6f435cd5158bf4368856daa2f72d3f25217e69a1256f60",
+  "size": 3660044,
+  "package": "ultimate-remote",
+  "version": "1.3",
+  "architecture": "arm64",
+  "uploaded_by": "geo-tp",
+  "uploader_email": "geo-tp@users.noreply.github.com"
+}
