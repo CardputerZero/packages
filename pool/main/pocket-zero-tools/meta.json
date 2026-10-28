@@ -1,0 +1,46 @@
+{
+  "title": "Tools",
+  "summary": "13 tools on the Zero's own sensors: level, IR remote, audio, radio, camera, more",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/01-home.png",
+    "screenshots/02-level.png",
+    "screenshots/03-audio.png",
+    "screenshots/04-radio.png",
+    "screenshots/05-calculator.png",
+    "screenshots/06-small-grid.png"
+  ],
+  "description": "Tools turns the CardputerZero's own hardware into thirteen pocket instruments behind one icon grid: a bubble level, angle finder and compass on the IMU; an IR remote that learns keys from any remote and sends them back; a sound meter, spectrum, tuner and recorder on the microphone; a list of nearby Wi-Fi networks and Bluetooth devices; a camera with a live viewfinder and a QR reader; a shake and impact meter; a clock with a timer and a stopwatch; a metronome; a calculator; a hand counter; a key tester; a flashlight; and battery, memory and brightness at a glance. Every screen is driven by the keyboard (F/X/Z/C move, Enter acts, Esc goes back, / searches), Tab changes the size of the icon grid, and every move animates. Built with PocketJS; source at https://github.com/pocket-nexus/pocket-zero-tools.",
+  "locales": {
+    "zh-CN": {
+      "title": "Tools",
+      "summary": "用 Zero 自带硬件的 13 个工具：水平仪、红外遥控、音频、无线、相机等"
+    },
+    "ja": {
+      "title": "Tools",
+      "summary": "Zero 内蔵ハードで動く 13 のツール：水準器、赤外線リモコン、音声、無線、カメラなど"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/pocket-nexus/pocket-zero-tools",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": true,
+    "microphone": true,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TOOL",
+  "author": {
+    "display_name": "Pocket Nexus",
+    "github": "doodlewind"
+  },
+  "published_at": "2026-10-28T16:21:16+00:00",
+  "updated_at": "2026-10-28T16:21:16+00:00"
+}
