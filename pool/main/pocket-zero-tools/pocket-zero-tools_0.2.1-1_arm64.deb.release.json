@@ -1,0 +1,11 @@
+{
+  "filename": "pocket-zero-tools_0.2.1-1_arm64.deb",
+  "url": "https://github.com/doodlewind/packages/releases/download/czdev-buffer/pocket-zero-tools_0.2.1-1_arm64.deb",
+  "sha256": "2958ee3e1177574b7fecc461397656931091c02cdfa1354016f1530fb713721a",
+  "size": 1651960,
+  "package": "pocket-zero-tools",
+  "version": "0.2.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "doodlewind",
+  "uploader_email": "doodlewind@users.noreply.github.com"
+}
