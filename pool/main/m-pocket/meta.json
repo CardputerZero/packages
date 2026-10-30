@@ -1,0 +1,33 @@
+{
+  "title": "Mastodon Pocket",
+  "summary": "A Mastodon client for Cardputer Zero with phone QR sign-in for easy access.",
+  "description": "Read your Mastodon home and local feeds, scroll through posts, and write public posts from your Cardputer Zero.\r\n\r\nSign in by scanning a QR code with your phone and approving access. Sign-in completes automatically without typing an authorization code. (Manual access-token login is also available)\r\n\r\nIncludes light and dark purple themes, adjustable text size, keyboard controls, and saved settings. Requires Wi-Fi and a Mastodon account.\r\n\r\nBeta release: automated checks have passed, but testing on a physical Cardputer Zero is still pending. Media appears as attachment markers, and accounts must sign in again after closing the app.",
+  "categories": [
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "MSTD",
+  "source_repo": "https://github.com/DavisW9/m-pocket",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "DavisW9",
+    "github": "DavisW9"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "m-pocket_icon.png",
+  "published_at": "2026-10-30T21:00:32+00:00",
+  "updated_at": "2026-10-30T21:00:32+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "m-pocket_0.2.0.beta1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/DavisW9__m-pocket_0.2.0.beta1_arm64.deb",
+  "sha256": "c5db4f10985201c0b3597bff047af5d7c53676d9ad5d9775d727450919c37f11",
+  "size": 574004,
+  "package": "m-pocket",
+  "version": "0.2.0~beta1",
+  "architecture": "arm64",
+  "uploaded_by": "DavisW9",
+  "uploader_email": "davisw9@users.noreply.github.com"
+}
