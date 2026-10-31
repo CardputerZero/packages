@@ -1,0 +1,35 @@
+{
+  "title": "Octet Desktop",
+  "summary": "A complete pocket desktop: apps, windows, drawers and AI assistant with speech.",
+  "description": "Octet is a windowed desktop made for the CardputerZero's 320x170 screen and its keyboard.\r\n\r\nThe desktop has your drives top left (the SD card, your home folder, USB sticks, the network), Files, and a folder for each kind of app that opens as a drawer. There are four virtual desktops, a Start menu that finds anything as you type, a clock and weather widget, notifications, screensavers, and snow on the desktop at Christmas.\r\n\r\nApps, including:\r\n\r\n- Office: Write, Sheets, Calendar with reminders, Tasks, Sticky Notes, and Vault for encrypted passwords.\r\n\r\n- Internet: Web, Mail, Weather, Wi-Fi, FTP, File Server, and LoRa chat with GPS (with the Cap LoRa-1262).\r\n\r\n- Media: Music, Video, Photos, Paint and a NAS player.\r\n\r\n- Music making: Tracker Player, Tracker Studio, a MIDI player and a sequencer.\r\n\r\n- System: a real Linux terminal, Commander, Drives, Disk Doctor, Users, Backup, Task Manager and Software Update.\r\n\r\n- Fun: Chess (seven levels), Solitaire, Mines, Boing and Robot City, BASIC, and a talking Assistant.\r\n\r\nOctet speaks with its own new speech synthesiser: three voices.\r\n\r\nIt's one small program that needs nothing else installed. Everything works from the keyboard, and USB mouse too.\r\n\r\nFree to download. (c) 2026 Software Amusements. All rights reserved.\r\n\r\nwww.softwareamusements.com",
+  "categories": [
+    "System Tools",
+    "Creative & Office"
+  ],
+  "license": "Proprietary",
+  "share_code": "PLAT",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": true,
+    "camera": true,
+    "external_display": true,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Software Amusements",
+    "github": "FuzzyDweeb"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "octet_icon.png",
+  "published_at": "2026-10-31T10:14:27+00:00",
+  "updated_at": "2026-10-31T10:14:27+00:00"
+}
