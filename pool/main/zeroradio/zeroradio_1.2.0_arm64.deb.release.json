@@ -1,0 +1,11 @@
+{
+  "filename": "zeroradio_1.2.0_arm64.deb",
+  "url": "https://github.com/andreahaku/packages/releases/download/czdev-buffer/zeroradio_1.2.0_arm64.deb",
+  "sha256": "fa1f8b165884b56bd5ed4a130c676008754efe6b57423515c0fb22c63037d5c4",
+  "size": 9968168,
+  "package": "zeroradio",
+  "version": "1.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "andreahaku",
+  "uploader_email": "andreahaku@gmail.com"
+}
