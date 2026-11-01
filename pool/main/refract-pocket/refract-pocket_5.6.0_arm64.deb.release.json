@@ -1,0 +1,11 @@
+{
+  "filename": "refract-pocket_5.6.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__refract-pocket_5.6.0_arm64.deb",
+  "sha256": "c1d7572a11feb81ceb04810efd71914d0be5bce0948b849a21de5bb1805234ad",
+  "size": 848616,
+  "package": "refract-pocket",
+  "version": "5.6.0",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}

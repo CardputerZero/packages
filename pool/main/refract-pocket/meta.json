@@ -1,0 +1,35 @@
+{
+  "title": "Refract Pocket",
+  "summary": "ZX Spectrum Next Emulator for M5Stack CardputerZero",
+  "description": "Refract Pocket puts a ZX Spectrum Next in your pocket. It’s the Refract 5.6 emulator by Software Amusements, rebuilt for the M5Stack CardputerZero. It loads your .nex, .snx and .sna files, fits the Next’s full picture to the 320×170 screen, and turns the built-in keyboard into a Spectrum keyboard and joystick. Bubblegum Bros, Dweebs Drop, Montana Mike, DeltaStar and Dungeonette come ready to play as FREE demos.\r\n\r\nwww.softwareamusements.com",
+  "categories": [
+    "Development",
+    "Emulators"
+  ],
+  "license": "Proprietary",
+  "share_code": "REFP",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": true,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Software Amusements",
+    "github": "FuzzyDweeb"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "refract-pocket_icon.png",
+  "published_at": "2026-11-01T16:29:05+00:00",
+  "updated_at": "2026-11-01T16:29:05+00:00"
+}
