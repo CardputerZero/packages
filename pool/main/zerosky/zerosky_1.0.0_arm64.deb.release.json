@@ -1,0 +1,11 @@
+{
+  "filename": "zerosky_1.0.0_arm64.deb",
+  "url": "https://github.com/andreahaku/packages/releases/download/czdev-buffer/zerosky_1.0.0_arm64.deb",
+  "sha256": "f129ab159f3a21081456f07f5a212f82ff0b45e1999b3a99be4be8017ac1a8f5",
+  "size": 2662078,
+  "package": "zerosky",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "andreahaku",
+  "uploader_email": "andreahaku@gmail.com"
+}
