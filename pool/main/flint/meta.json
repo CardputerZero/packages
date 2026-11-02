@@ -1,0 +1,36 @@
+{
+  "title": "Flint",
+  "summary": "Offensive security toolkit for the CardputerZero: Wi-Fi, BLE, IR, RF & more.",
+  "categories": [
+    "Security",
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/00_home.png",
+    "screenshots/00_home_list.png",
+    "screenshots/01_home_carousel.png",
+    "screenshots/20_codegotchi.png",
+    "screenshots/05_sysmon_dashboard.png",
+    "screenshots/06_deauth_running.png"
+  ],
+  "description": "Offensive security firmware for the CardputerZero: Wi-Fi, BLE, IR, RF and more, for authorized security testing and educational research.",
+  "license": "MIT",
+  "source_repo": "https://github.com/flintdevices/flint",
+  "icon": "flint_icon_store.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FLNT",
+  "author": {
+    "github": "marivaaldo",
+    "display_name": "Flint Devices"
+  },
+  "published_at": "2026-11-01T19:08:26+00:00",
+  "updated_at": "2026-11-01T19:08:26+00:00"
+}
