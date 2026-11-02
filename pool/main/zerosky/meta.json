@@ -1,0 +1,58 @@
+{
+  "title": "ZeroSky",
+  "summary": "Pocket AR planetarium: point the device at the sky and see what is there",
+  "categories": [
+    "Education"
+  ],
+  "screenshots": [
+    "screenshots/sky.png",
+    "screenshots/find-on-screen.png",
+    "screenshots/find-arrow.png",
+    "screenshots/sky-day.png",
+    "screenshots/calibration.png",
+    "screenshots/find.png"
+  ],
+  "description": "ZeroSky shows the real sky, live. It computes the stars, constellations, planets, Sun and Moon for the time and your position, and draws them in the direction you point the CardputerZero.\n\n- Sky: 5,070 stars, 605 Messier, NGC and IC objects, constellation figures with their names, and the Solar System. The star limit follows daylight and twilight.\n- Pointing: the IMU follows the device. Calibrate the compass outdoors with a guided figure 8 and it also finds true north; without it, align north with the arrows.\n- Find: type a name, and an arrow and rising beeps lead you to the object.\n- Camera: draw the sky over the live image and align it with the stars you see.\n- Red night theme, blue day theme, location by city, coordinates or GPS.\n\nEverything runs on the device, with no network. Press H for help in seven languages. Pointing accuracy and the camera lens field (an estimated 62.2 degrees) are not yet measured against the night sky.",
+  "locales": {
+    "en": {
+      "summary": "Pocket AR planetarium: point the device at the sky and see what is there"
+    },
+    "it": {
+      "summary": "Planetario AR tascabile: punta il device verso il cielo e scopri cosa c'è"
+    },
+    "fr": {
+      "summary": "Planétarium AR de poche : pointez l'appareil vers le ciel et explorez-le"
+    },
+    "de": {
+      "summary": "AR-Planetarium für die Tasche: zum Himmel richten und Sterne entdecken"
+    },
+    "es": {
+      "summary": "Planetario RA de bolsillo: apunta al cielo y descubre sus objetos"
+    },
+    "ja": {
+      "summary": "ポケットARプラネタリウム：空に向けて星を探そう"
+    },
+    "zh-CN": {
+      "summary": "口袋 AR 天象仪：将设备指向天空，探索星空"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/andreahaku/zerosky",
+  "icon": "zerosky.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZSKY",
+  "author": {
+    "github": "andreahaku",
+    "display_name": "Andrea Salvatore (IU4APC)"
+  },
+  "published_at": "2026-11-01T09:43:34+00:00",
+  "updated_at": "2026-11-01T09:43:34+00:00"
+}
