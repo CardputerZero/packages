@@ -1,0 +1,31 @@
+{
+  "title": "Zero Browser",
+  "summary": "Lightweight experimental web browser for the Cardputer Zero.",
+  "description": "Browse websites, search the web and download files. Zero Browser is designed for the Cardputer Zero small screen and built-in keyboard. Choose QtWebKit for general browsing with Javascript support, or NetSurf for lightweight browsing on simpler websites.\r\n\r\nZero Browser is experimental. Some websites may reject this unfamiliar browser or fail to load due to JavaScript incompatibilities. It should not be used for sensitive activities or anything requiring security. Don't expect it to work like a regular browser capable of handling large, complex web applications. This browser is based on old WebKit revision with known unpatched vulnerabilities. Please use it carefully and avoid visiting untrusted websites and using it for transmission of sensitive data.",
+  "categories": [
+    "Media",
+    "Other"
+  ],
+  "license": "MIT",
+  "share_code": "NETB",
+  "source_repo": "https://github.com/geo-tp/Zero-Browser",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "geo-tp",
+    "github": "geo-tp"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "zero-browser_icon.png",
+  "published_at": "2026-11-04T15:00:04+00:00",
+  "updated_at": "2026-11-04T15:00:04+00:00"
+}

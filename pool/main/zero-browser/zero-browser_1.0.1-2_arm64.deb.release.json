@@ -1,0 +1,11 @@
+{
+  "filename": "zero-browser_1.0.1-2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/geo-tp__zero-browser_1.0.1-2_arm64.deb",
+  "sha256": "8d1f2e2b7ab801e8a1bd4781d7ad9c54227470129dd23e78f61b20770f6d59b5",
+  "size": 38880836,
+  "package": "zero-browser",
+  "version": "1:0.1-2",
+  "architecture": "arm64",
+  "uploaded_by": "geo-tp",
+  "uploader_email": "geo-tp@users.noreply.github.com"
+}
