@@ -1,0 +1,48 @@
+{
+  "title": "Gemini Live",
+  "summary": "Live speech-to-speech AI voice assistant with streaming transcripts.",
+  "categories": [
+    "AI",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/chat.png",
+    "screenshots/settings.png",
+    "screenshots/apikey-qr.png",
+    "screenshots/editor.png"
+  ],
+  "description": "Gemini Live turns the Cardputer Zero into a real-time conversational voice assistant powered by the Google Gemini Live API (BidiGenerateContent).\n\nSpeak naturally into the built-in microphone and hear spoken replies through the speaker while both sides of the conversation stream live on the 320x170 screen — user prompts anchored on the right and assistant replies on the left, each with an inline voice waveform indicator. Press ESC or key 6 while the assistant is speaking to interrupt the reply and immediately start listening again, or press key 5 to clear the history and start a fresh conversation context.\n\nIn Settings, configure your Google AI Studio API key (with a built-in QR code link and Ctrl+V clipboard paste), pick from live-capable Gemini models (including extended-thinking models), select a prebuilt voice (Kore, Puck, Charon, Fenrir, Aoede, Leda, Orus, Vesta, Zephyr), and customize the system instructions using the full-screen English/Ukrainian (EN/UA) keyboard editor with Sym, Shift, Fn, Ctrl, Alt layer highlights and Ctrl+C / Ctrl+V clipboard support.",
+  "locales": {
+    "uk": {
+      "title": "Gemini Live",
+      "summary": "Голосовий AI-асистент Gemini у реальному часі з транскрипцією розмови."
+    },
+    "zh-CN": {
+      "title": "Gemini Live",
+      "summary": "基于 Google Gemini Live API 的实时语音对话助手，支持双向语音与实时字幕。"
+    },
+    "ja": {
+      "title": "Gemini Live",
+      "summary": "Google Gemini Live API によるリアルタイム音声対話・文字起こしアシスタント。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/d4rkmen/geminilive",
+  "icon": "geminilive_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "GMLV",
+  "author": {
+    "github": "d4rkmen",
+    "display_name": "d4rkmen"
+  },
+  "published_at": "2026-11-04T11:54:43+00:00",
+  "updated_at": "2026-11-04T11:54:43+00:00"
+}
