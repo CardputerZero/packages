@@ -1,0 +1,11 @@
+{
+  "filename": "geminilive_0.1.0-1_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/geminilive_0.1.0-1_arm64.deb",
+  "sha256": "5144d129f75582095232e695a9c18ad677532ca47262a8c8b8bbbc05aecb9388",
+  "size": 3454970,
+  "package": "geminilive",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}
