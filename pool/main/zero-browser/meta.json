@@ -16,7 +16,7 @@
     "external_display": false,
     "imu": false,
     "microphone": false,
-    "network": false
+    "network": true
   },
   "author": {
     "display_name": "geo-tp",
@@ -27,5 +27,5 @@
   ],
   "icon": "zero-browser_icon.png",
   "published_at": "2026-11-04T15:00:04+00:00",
-  "updated_at": "2026-11-04T15:00:04+00:00"
+  "updated_at": "2026-11-04T20:14:07+00:00"
 }
