@@ -1,0 +1,11 @@
+{
+  "filename": "launcherespflasher_0.0.6-m5stack1_arm64.deb",
+  "url": "https://github.com/bmorcelli/packages/releases/download/czdev-buffer/launcherespflasher_0.0.6-m5stack1_arm64.deb",
+  "sha256": "f08c9fc986651d0da7c74d2c5b6c0222cb4e7837547e144bb08ec44f5469fb37",
+  "size": 1196394,
+  "package": "launcherespflasher",
+  "version": "0.0.6-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "bmorcelli",
+  "uploader_email": "bmorcelli@users.noreply.github.com"
+}
