@@ -1,0 +1,11 @@
+{
+  "filename": "telega_0.3.0-1_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/telega_0.3.0-1_arm64.deb",
+  "sha256": "5117494ae494d2a7b09e690c8f3eb9855bfcf850237cb4357b450b9419e2379c",
+  "size": 15790874,
+  "package": "telega",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}
