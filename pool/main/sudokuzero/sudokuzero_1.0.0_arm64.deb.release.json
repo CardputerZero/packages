@@ -1,0 +1,11 @@
+{
+  "filename": "sudokuzero_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/dbrhspyjkf-code__sudokuzero_1.0.0_arm64.deb",
+  "sha256": "c6cddfa4f196f0371dcb1f537081ffe91479dfbe0db3f7302202353c0b5f173f",
+  "size": 47496,
+  "package": "sudokuzero",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "dbrhspyjkf-code",
+  "uploader_email": "dbrhspyjkf-code@users.noreply.github.com"
+}
