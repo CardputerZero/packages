@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-zero-iptv_0.1.22_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/olp5735-sys__cardputer-zero-iptv_0.1.22_arm64.deb",
+  "sha256": "056217324401ffa9947a131c0e83c5aed3f9438680a8bc6c0a7154bf7e6fbf81",
+  "size": 1619916,
+  "package": "cardputer-zero-iptv",
+  "version": "0.1.22",
+  "architecture": "arm64",
+  "uploaded_by": "olp5735-sys",
+  "uploader_email": "olp5735-sys@users.noreply.github.com"
+}
