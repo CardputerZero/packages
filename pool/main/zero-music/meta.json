@@ -1,0 +1,33 @@
+{
+  "title": "Zero Music",
+  "summary": "Zero Music is a music player designed for Cardputer Zero.",
+  "description": "Zero Music is a keyboard-first music player built for the Cardputer Zero's 320x170 screen.\r\n\r\nIt plays music stored on the device and, through third-party MyGo Music-compatible plugins, can browse and play network sources. Zero Music does not provide, host, bundle, or distribute any music catalogue, streaming service, or credentials. Local playback works without plugins; network playback requires a plugin that you install and configure yourself.\r\n\r\nFeatures:\r\n- Local library with folders, albums, artists, playlists, likes and recent history.\r\n- MyGo Music-compatible plugin manager: discovery, install/remove, QR sign-in where supported, per-plugin settings and process permission.\r\n- Album art, progress and volume controls, scrolling lyrics.\r\n- Played songs are cached on disk and reused without downloading again.\r\n- Full keyboard operation: Q/W/E transport, arrow seek/volume, Fn shortcuts and built-in help.\r\n- Open source under AGPL-3.0-only.\r\n\r\nPlugins are separate third-party software, not part of MyGo Music or Zero Music. This project does not control, review, endorse or support them. Find plugins at https://music.egoist.dev/plugins/ or build your own using the guide at https://github.com/egoist/mygo-music#publishing-a-plugin. You are responsible for ensuring that the plugins you use and the music you access are legal in your jurisdiction.\r\n\r\n\r\nZero Music 是面向 Cardputer Zero 320×170 屏幕打造的键盘优先音乐播放器。\r\n\r\n它可播放设备上的本地音乐，并可通过第三方 MyGo Music 兼容插件浏览和播放网络音源。Zero Music 本身不提供、托管、捆绑或分发任何音乐目录、流媒体服务或凭据；本地播放无需插件，网络播放需要自行安装并配置插件。\r\n\r\n功能：\r\n- 本地音乐库：文件夹、专辑、艺人、播放列表、喜欢和最近播放。\r\n- MyGo Music 兼容插件管理：发现、安装/删除、扫码登录、插件设置和进程权限。\r\n- 专辑封面、进度与音量控制、滚动歌词。\r\n- 播放过的歌曲缓存在本地，再次播放不重复下载。\r\n- 全键盘操作：Q/W/E 播放控制、方向键快进/音量、Fn 快捷键和内置帮助。\r\n- 以 AGPL-3.0-only 开源。\r\n\r\n插件是独立第三方软件，不属于 MyGo Music 或 Zero Music；本项目不控制、审查、背书或支持插件。可在 https://music.egoist.dev/plugins/ 寻找插件，或参考 https://github.com/egoist/mygo-music#publishing-a-plugin 制作自己的插件。使用插件和访问音乐时，请自行确认符合当地法律及服务条款。",
+  "categories": [
+    "Media"
+  ],
+  "license": "AGPL-3.0-only",
+  "share_code": "ZMUS",
+  "source_repo": "https://github.com/YuHaibo/ZeroMusic",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "YuHaibo",
+    "github": "YuHaibo"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "zero-music_icon.png",
+  "published_at": "2026-11-08T03:14:58+00:00",
+  "updated_at": "2026-11-08T03:14:58+00:00"
+}
