@@ -1,0 +1,11 @@
+{
+  "filename": "kimi-remote_1.0.0-1_arm64.deb",
+  "url": "https://github.com/mengxiyou/packages/releases/download/czdev-buffer/kimi-remote_1.0.0-1_arm64.deb",
+  "sha256": "13d7c0e638de33fc27a11cc3607ea6217b663f3a2319b501fa5012d64b836fcd",
+  "size": 48052,
+  "package": "kimi-remote",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "mengxiyou",
+  "uploader_email": "gzp16@163.com"
+}
