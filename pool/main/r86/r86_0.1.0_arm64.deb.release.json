@@ -1,0 +1,11 @@
+{
+  "filename": "r86_0.1.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/tcchen2026__r86_0.1.0_arm64.deb",
+  "sha256": "79d6e42fcc33f3925c58368361099576ba9c656e561e856f9aa9e10629049307",
+  "size": 22453060,
+  "package": "r86",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "tcchen2026",
+  "uploader_email": "tcchen2026@users.noreply.github.com"
+}
