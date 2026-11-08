@@ -1,0 +1,11 @@
+{
+  "filename": "zero-music_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/YuHaibo__zero-music_1.0.0-rev1_arm64.deb",
+  "sha256": "7bec5df46544c266307648a665d789e6e9b2b654dbee6334744e2619aba54b1f",
+  "size": 8417664,
+  "package": "zero-music",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "YuHaibo",
+  "uploader_email": "yuhaibo@users.noreply.github.com"
+}
