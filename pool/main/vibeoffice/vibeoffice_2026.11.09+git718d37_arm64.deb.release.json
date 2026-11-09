@@ -1,0 +1,11 @@
+{
+  "filename": "vibeoffice_2026.11.09+git718d37_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/tcchen2026__vibeoffice_2026.11.09%2Bgit718d37_arm64.deb",
+  "sha256": "a2af12e60cd84a8be4044119fc06973639a6601d435b6a4da3cb218ed03fb7f9",
+  "size": 6549864,
+  "package": "vibeoffice",
+  "version": "2026.11.09+git718d37",
+  "architecture": "arm64",
+  "uploaded_by": "tcchen2026",
+  "uploader_email": "tcchen2026@users.noreply.github.com"
+}
