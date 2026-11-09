@@ -1,0 +1,11 @@
+{
+  "filename": "musictagger_0.2.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jiawud__musictagger_0.2.1_arm64.deb",
+  "sha256": "1b27e48a428c6180442975b9bf0cd3dbc69dc169dcc5d8d80725c2a8deeae832",
+  "size": 1414524,
+  "package": "musictagger",
+  "version": "0.2.1",
+  "architecture": "arm64",
+  "uploaded_by": "jiawud",
+  "uploader_email": "jiawud@users.noreply.github.com"
+}
