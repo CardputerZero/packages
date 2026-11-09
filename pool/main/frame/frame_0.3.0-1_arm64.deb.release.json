@@ -1,0 +1,11 @@
+{
+  "filename": "frame_0.3.0-1_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/frame_0.3.0-1_arm64.deb",
+  "sha256": "544c5fba97a97502277ceeb10d1dc43b42ffe02366a0fcb124af85e8777d5ebb",
+  "size": 3287592,
+  "package": "frame",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}
