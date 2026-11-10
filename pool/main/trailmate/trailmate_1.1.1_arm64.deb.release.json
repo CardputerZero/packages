@@ -1,0 +1,11 @@
+{
+  "filename": "trailmate_1.1.1_arm64.deb",
+  "url": "https://github.com/vicliu624/packages/releases/download/czdev-buffer/trailmate_1.1.1_arm64.deb",
+  "sha256": "3ffb81fb6ac14a0090e9deac6c0e7e21ee4a20fc4b10b8ce1b80c61e3548429c",
+  "size": 68828226,
+  "package": "trailmate",
+  "version": "1.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "vicliu624",
+  "uploader_email": "vicliu@outlook.com"
+}
