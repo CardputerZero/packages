@@ -1,0 +1,11 @@
+{
+  "filename": "muser_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/YuHaibo__muser_1.0.0_arm64.deb",
+  "sha256": "40539a0a97a1b74c9e0b203be8b4dcf0e94da6e63f96dd8c0de88414fcaa2989",
+  "size": 14703450,
+  "package": "muser",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "YuHaibo",
+  "uploader_email": "yuhaibo@users.noreply.github.com"
+}
