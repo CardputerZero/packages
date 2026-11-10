@@ -1,0 +1,11 @@
+{
+  "filename": "brucecardputerzero_0.1.0-bruce1_arm64.deb",
+  "url": "https://github.com/pr3y/packages/releases/download/czdev-buffer/brucecardputerzero_0.1.0-bruce1_arm64.deb",
+  "sha256": "c2c3d91a54ec9cd85fd15ecba74578761989bad3586f55e6ef1a27966bae18d3",
+  "size": 4050630,
+  "package": "brucecardputerzero",
+  "version": "0.1.0-bruce1",
+  "architecture": "arm64",
+  "uploaded_by": "pr3y",
+  "uploader_email": "pr3y@users.noreply.github.com"
+}
