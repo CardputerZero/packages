@@ -1,0 +1,33 @@
+{
+  "title": "Muser",
+  "summary": "Talk to Muse with a pixel companion and live captions.",
+  "description": "Muser is an independent, unofficial community app for Cardputer Zero. Voice conversations, captions, keyboard chat and session-only records on a 320x170 display.\r\n\r\nEnglish UI by default, with Simplified Chinese available in Settings.\r\n\r\nRequires a Muse account, SDK token and phone pairing; Muse is not available in every country or region, so confirm that you are in a supported region and that your account works before pairing.\r\n\r\nNot affiliated with or endorsed by Meta. Fn-free navigation with message paging, an in-app key reference, and setup by QR or the displayed IP and port; paste your SDK token in any phone or PC browser, then pair over Bluetooth.\r\n\r\nSaved pairing is retained while Muse service connections retry.\r\n\r\n\r\nMuser 是独立开发的非官方社区应用，支持语音、字幕、英文键盘聊天和本次会话记录。\r\n\r\n英语默认、简体中文可切换；无需 Fn 即可使用消息翻页、按键帮助等导航。\r\n\r\nApp 内扫码在手机粘贴个人 SDK token 后自动蓝牙配对，与 Meta 无隶属或背书关系。\r\n\r\nMuse 并非在所有地区可用，请在配对前确认你处于支持的地区且账号可用。",
+  "categories": [
+    "AI"
+  ],
+  "license": "Apache-2.0",
+  "share_code": "MUSE",
+  "source_repo": "https://github.com/YuHaibo/Muser",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "YuHaibo",
+    "github": "YuHaibo"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "muser_icon.png",
+  "published_at": "2026-11-10T01:54:54+00:00",
+  "updated_at": "2026-11-10T01:54:54+00:00"
+}
