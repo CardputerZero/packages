@@ -1,0 +1,11 @@
+{
+  "filename": "trailmate_1.2.1_arm64.deb",
+  "url": "https://github.com/vicliu624/trail-mate/releases/download/v1.2.1/trailmate_1.2.1_arm64.deb",
+  "sha256": "4eb0277c03c2d11535342d6bf908b3ad874e1589a78e140593a9662fc02a749a",
+  "size": 68856458,
+  "package": "trailmate",
+  "version": "1.2.1",
+  "architecture": "arm64",
+  "uploaded_by": "vicliu624",
+  "uploader_email": "vicliu@outlook.com"
+}
