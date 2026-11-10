@@ -1,0 +1,11 @@
+{
+  "filename": "lofibox-cardputer-zero_0.3.8-4_arm64.deb",
+  "url": "https://github.com/vicliu624/packages/releases/download/czdev-buffer/lofibox-cardputer-zero_0.3.8-4_arm64.deb",
+  "sha256": "1696e536e821970f2b208c793d6cda479f1a57de670395ceae3307a452de0a86",
+  "size": 4569428,
+  "package": "lofibox-cardputer-zero",
+  "version": "0.3.8-4",
+  "architecture": "arm64",
+  "uploaded_by": "vicliu624",
+  "uploader_email": "vicliu@outlook.com"
+}
