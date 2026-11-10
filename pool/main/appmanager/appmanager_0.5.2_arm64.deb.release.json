@@ -1,0 +1,11 @@
+{
+  "filename": "appmanager_0.5.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jiawud__appmanager_0.5.2_arm64.deb",
+  "sha256": "d198368802427b716e098658c19cc6679907a5f426a0762113ab5dbb908832e0",
+  "size": 1952888,
+  "package": "appmanager",
+  "version": "0.5.2",
+  "architecture": "arm64",
+  "uploaded_by": "jiawud",
+  "uploader_email": "jiawud@users.noreply.github.com"
+}

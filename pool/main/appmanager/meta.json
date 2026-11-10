@@ -1,0 +1,31 @@
+{
+  "title": "App Manager",
+  "summary": "按系统内置、应用商店、本地安装分类管理应用，查看安装日期与占用空间，一键卸载。",
+  "description": "App Manager 是 CardputerZero 上的独立应用管理 / 卸载工具，帮助你在小屏幕上快速看清装了什么、来自哪里，并安全地卸载不再需要的应用。\r\n\r\n功能：\r\n• 来源分类：全部、系统内置、应用商店、本地安装；用 Z/C 左右切换，默认总览。\r\n• 应用详情：显示图标、版本、来源、安装日期和占用空间；保护包和 App Manager 自身有标记。\r\n• 一键卸载：Enter 打开确认，可选择保留或清除配置；完成后显示图标粉碎动画。\r\n• 操作：F/X 上下移动，长按连续滚动；L 切换中文/英文；T 切换深色/浅色主题，主题切换带平滑淡入淡出。\r\n• 打开速度快：首次扫描后缓存结果，后续打开更快；空闲时真正休眠，降低 CPU 占用。\r\n• 安全：只管理启动器中的应用；系统关键包、启动器和 App Manager 自身受保护；不联网、不上传数据、不保存密码。\r\n\r\n权限说明：卸载应用需要设备管理员密码（sudo）。App Manager 不包含 sudoers 文件，不安装后台服务，也不以 root 常驻运行；每次卸载仅在用户确认并输入密码后临时提权。\r\n\r\n适用设备：CardputerZero（arm64 / Debian）。当前版本 0.5.2。",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "APPM",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "ddddd",
+    "github": "jiawud"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "appmanager_icon.png",
+  "published_at": "2026-11-10T07:58:06+00:00",
+  "updated_at": "2026-11-10T07:58:06+00:00"
+}
