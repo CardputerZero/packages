@@ -1,0 +1,34 @@
+{
+  "title": "zeroSDR",
+  "summary": "zeroSDR turns the Cardputer Zero into a pocket SDR receiver.",
+  "description": "FEATURES\r\n- Real-time spectrum and waterfall on the 320x170 display\r\n- FM / NFM / AM / USB / LSB demodulation with squelch, audio AGC and\r\n  FM de-emphasis (50/75 us)\r\n- Adjustable tuning step, display zoom, FFT size and sample rate\r\n- On-screen key reference and settings panel (press H)\r\n- ADSB aircraft page: sortable list, detail view with a PFD, and a radar\r\n  view with a fading sweep, range rings and a large callsign plate\r\n- Runs as the normal user through the librtlsdr udev rule - no root,\r\n  no background service\r\n\r\nREQUIRED EXTRA HARDWARE\r\n- An RTL-SDR USB dongle (tested with RTL-SDR Blog V4 / RTL2832U).\r\n  The app has no built-in radio, so a dongle is mandatory.\r\n- An antenna: any VHF/UHF antenna for the SDR page; a 1090 MHz antenna\r\n  for the ADSB page.\r\n- The dongle plugs into the Cardputer Zero USB-A port and is powered by\r\n  the device.\r\n\r\nNOTES\r\n- ADSB decoding is done by the external \"readsb\" program, which must be\r\n  installed separately (a build with the RTL-SDR backend). Without it the\r\n  ADSB list stays empty; the SDR page still works.\r\n- Audio plays through the built-in speaker or the 3.5 mm jack.",
+  "categories": [
+    "System Tools",
+    "Radio & Comms"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "0SDR",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Weiming Feng",
+    "github": "nullbeing"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "zerosdr_icon.png",
+  "published_at": "2026-11-10T02:37:56+00:00",
+  "updated_at": "2026-11-10T02:37:56+00:00"
+}
