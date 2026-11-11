@@ -1,0 +1,34 @@
+{
+  "title": "FlipCTL",
+  "summary": "Control Flipper One over Ethernet or WiFi from CardputerZero",
+  "categories": [
+    "Hardware & IoT",
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/connection-auto.png",
+    "screenshots/connection-wifi.png",
+    "screenshots/key-guide.png",
+    "screenshots/invalid-ip.png"
+  ],
+  "description": "Display and control Flipper One on CardputerZero over wired Ethernet or LAN WiFi. Auto mode prefers the wired target and supports an editable WiFi fallback. The remote image fills the 320x170 screen, and H opens a pixel-art guide to the physical key mappings. Requires a Flipper One target, access to the device framebuffer and keyboard, and a compatible CardputerZero OS with glibc 2.38 or later. The remote protocol uses unauthenticated HTTP and should be used on trusted networks. The app runs as the device user and stores the selected WiFi address locally.",
+  "license": "GPL-3.0-only",
+  "source_repo": "https://github.com/whywilson/CardputerZeroFlipCtrl",
+  "icon": "flipper-one-remote.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FLIP",
+  "author": {
+    "github": "whywilson",
+    "display_name": "Wilson"
+  },
+  "published_at": "2026-11-11T19:55:53+00:00",
+  "updated_at": "2026-11-11T19:55:53+00:00"
+}
