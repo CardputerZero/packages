@@ -16,7 +16,7 @@
     "external_display": false,
     "imu": false,
     "microphone": false,
-    "network": false
+    "network": true
   },
   "author": {
     "display_name": "Bomberman30",
@@ -28,5 +28,5 @@
   ],
   "icon": "advancewebui_icon.png",
   "published_at": "2026-10-13T18:40:52+00:00",
-  "updated_at": "2026-10-13T18:40:52+00:00"
+  "updated_at": "2026-11-11T19:55:49+00:00"
 }
