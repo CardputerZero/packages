@@ -1,0 +1,34 @@
+{
+  "title": "NET Toolkit",
+  "summary": "口袋网络运维工具箱:Ping/路由/端口扫描/DNS/ARP/局域网发现/SSH/Telnet/串口/接口配置/文件投送。",
+  "description": "NET Toolkit 是运行在 CardputerZero 主机上的随身网络运维工具,把现场调试与日常排障装进 320×170 小屏。\r\n· 接口配置:有线/无线/USB 网卡 IP/掩码/网关/DNS,支持 DHCP 与静态。\r\n· Ping / 路由追踪(到达即停)/ 端口扫描(多选+自定义端口)/ DNS(解析真实 IP+运营商地区)/ ARP(IP→MAC→厂家识别)。\r\n· 局域网扫描:自定义网段(掩码支持完整或缩写),ARP 发现存活设备并识别厂家。\r\n· SSH / Telnet / 串口控制台:会话书签、回滚滚动、Ctrl+S 保存、Ctrl+C 停止、长按回车连续输出。\r\n· 文件投送:局域网 HTTP 一次性 PIN 上传/下载。\r\n· 体验:中英切换、多套明暗配色一键循环、结果历史保存/导出、标题栏实时显示接入接口与 IP。\r\n单文件自包含安装,不依赖 root 服务,普通用户即可使用。\r\nNET Toolkit is a pocket network operations toolkit for the CardputerZero Debian handheld, fitting switch/router field work and everyday troubleshooting onto a 320×170 screen.\r\nFeatures:\r\n· Interfaces: view/edit IP, netmask, gateway and DNS for wired, wireless and USB adapters; DHCP or static.\r\n· Ping / Traceroute: ping any hostname or IP; hop-by-hop trace that stops automatically when the destination is reached.\r\n· Port scan: multi-select checklist of common ports plus custom ports.\r\n· DNS lookup: resolve a hostname to its real IP and show the ISP/region.\r\n· ARP resolve: IP to MAC with OUI vendor lookup; randomized MACs get a device-type hint.\r\n· LAN scan: custom network address and netmask (full or prefix length), discover live hosts and their vendors.\r\n· Remote console: SSH / Telnet / serial (port and baud selectable) with bookmarks, scrollback, Ctrl+S save, Ctrl+C stop and hold-Enter to keep output flowing.\r\n· File drop: LAN HTTP upload/download with a one-time PIN.\r\n· UX: Chinese/English switch, multiple light/dark color schemes cycled with one key, saved/exportable result history, live interface + IP in the title bar.\r\nSelf-contained single package; no root service; runs as a normal user.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "NTKT",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "ddddd",
+    "github": "jiawud"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "nettoolkit_icon.png",
+  "published_at": "2026-11-12T08:43:10+00:00",
+  "updated_at": "2026-11-12T08:43:10+00:00"
+}

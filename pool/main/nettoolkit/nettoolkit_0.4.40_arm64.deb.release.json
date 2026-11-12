@@ -1,0 +1,11 @@
+{
+  "filename": "nettoolkit_0.4.40_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jiawud__nettoolkit_0.4.40_arm64.deb",
+  "sha256": "767684a64bd9a6def13c208f632f9d3d47e893fa2ecdd04add3a40a432442007",
+  "size": 2397262,
+  "package": "nettoolkit",
+  "version": "0.4.40",
+  "architecture": "arm64",
+  "uploaded_by": "jiawud",
+  "uploader_email": "jiawud@users.noreply.github.com"
+}
