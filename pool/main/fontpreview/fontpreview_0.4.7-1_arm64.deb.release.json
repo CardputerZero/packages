@@ -1,0 +1,11 @@
+{
+  "filename": "fontpreview_0.4.7-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/czdev-buffer/fontpreview_0.4.7-1_arm64.deb",
+  "sha256": "8d2b2433dee57c29c3f069191031e785f00abc4c96256b1dd46a62c902f4ff73",
+  "size": 823726,
+  "package": "fontpreview",
+  "version": "0.4.7-1",
+  "architecture": "arm64",
+  "uploaded_by": "Harrison-Xu",
+  "uploader_email": "Harrison-Xu@users.noreply.github.com"
+}
