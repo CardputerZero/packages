@@ -1,0 +1,11 @@
+{
+  "filename": "tailzero_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/fa1247__tailzero_0.1.0-1_arm64.deb",
+  "sha256": "06223786891cb6ade92c1704409eab2cfe67437e0ed2d8445548c83bd7761b42",
+  "size": 457896,
+  "package": "tailzero",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "fa1247",
+  "uploader_email": "fa1247@users.noreply.github.com"
+}
