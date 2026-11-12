@@ -1,0 +1,32 @@
+{
+  "title": "WebRadio",
+  "summary": "Browse, save, and play internet radio stations on Cardputer Zero.",
+  "description": "WebRadio brings the Radio Browser directory to Cardputer Zero. Search and filter stations by country or region, language, and genre. Save your favorites, adjust volume with the keyboard, and switch between Simplified Chinese and English. WebRadio remembers favorites, volume, filters, and the interface language on your device.\r\n\r\nAn internet connection is required to stream radio. Stations provide their own programming. Follow the Radio Browser rules and applicable local laws.",
+  "categories": [
+    "Media"
+  ],
+  "license": "Proprietary",
+  "share_code": "WRAD",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "xu-c",
+    "github": "xu-c"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardputer-zero-radio_icon.png",
+  "published_at": "2026-11-12T15:59:02+00:00",
+  "updated_at": "2026-11-12T15:59:02+00:00"
+}
