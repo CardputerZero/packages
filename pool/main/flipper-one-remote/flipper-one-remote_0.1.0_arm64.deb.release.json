@@ -1,0 +1,11 @@
+{
+  "filename": "flipper-one-remote_0.1.0_arm64.deb",
+  "url": "https://github.com/whywilson/packages/releases/download/czdev-buffer/flipper-one-remote_0.1.0_arm64.deb",
+  "sha256": "d694d36dcef063451e68295dcee96b9846c41a7af27c2ac446add3a44bdaf69b",
+  "size": 433394,
+  "package": "flipper-one-remote",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "whywilson",
+  "uploader_email": "whywilson@users.noreply.github.com"
+}
