@@ -1,0 +1,11 @@
+{
+  "filename": "zero-weather_1.0.2_all.deb",
+  "url": "https://github.com/ChrisOr-Dev/packages/releases/download/czdev-buffer/zero-weather_1.0.2_all.deb",
+  "sha256": "5b742fff726087fdc9ed3bd530435e176ef36451ced49d0613a23c5fcb0487d4",
+  "size": 10896,
+  "package": "zero-weather",
+  "version": "1.0.2",
+  "architecture": "all",
+  "uploaded_by": "ChrisOr-Dev",
+  "uploader_email": "ChrisOr-Dev@users.noreply.github.com"
+}
