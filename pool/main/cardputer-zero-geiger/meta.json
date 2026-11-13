@@ -1,0 +1,31 @@
+{
+  "title": "Cardputer Zero Geiger Counter",
+  "summary": "通过 G22 读取盖格模块脉冲，显示实时计数、趋势图和 γ 剂量估算。",
+  "description": "适用于 M5Stack Cardputer Zero 的外接盖格计数器。通过顶部扩展口的 G22 接收脉冲，显示 CPS、滚动 60 秒 CPM、累计计数和趋势图。按 T 切换 J305 或 M4011 管型，按 U 切换 CPM 与多种 γ 剂量估算单位。\r\n\r\n实际计数需要外接盖格模块。剂量估算采用管型预设系数。截图为 App 的模拟模式。",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "CZGC",
+  "source_repo": "https://github.com/Kasiin/Cardputer-Zero-Geiger-Counter",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Kasiin",
+    "github": "Kasiin"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "cardputer-zero-geiger_icon.png",
+  "published_at": "2026-11-12T15:11:11+00:00",
+  "updated_at": "2026-11-12T15:11:11+00:00"
+}

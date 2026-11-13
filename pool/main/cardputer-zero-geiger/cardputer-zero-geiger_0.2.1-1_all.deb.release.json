@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-zero-geiger_0.2.1-1_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Kasiin__cardputer-zero-geiger_0.2.1-1_all.deb",
+  "sha256": "5d4bc3729df5a45add71b9e88d557ef22a69245c4e3edec2e5dd4248fd537b53",
+  "size": 9004,
+  "package": "cardputer-zero-geiger",
+  "version": "0.2.1-1",
+  "architecture": "all",
+  "uploaded_by": "Kasiin",
+  "uploader_email": "kasiin@users.noreply.github.com"
+}
