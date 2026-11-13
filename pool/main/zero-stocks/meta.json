@@ -1,0 +1,32 @@
+{
+  "title": "Stocks",
+  "summary": "Live watchlist with sparklines and candlestick charts for US, HK, TW and more.",
+  "categories": [
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/kline.png",
+    "screenshots/add.png"
+  ],
+  "description": "A watchlist of live prices with an intraday sparkline and the day's change for each stock. Press ENTER for a K-line (candlestick) chart with volume; switch the candle period between 1m, 5m, 15m, 30m, 1h, 1D, 1W and 1M with Z/C.\n\nAdd stocks from the US, Hong Kong, Taiwan, China and Japan markets, plus indices, ETFs and crypto, by name or code. Rising color can be green (US) or red (Taiwan/China). Data comes from Yahoo Finance (no API key); refreshes every 15 seconds while a market is open.\n\nKeys: F/X move, ENTER chart, A add, DEL remove, Shift+F/X reorder, S settings, R refresh, hold ESC 3 seconds to exit.",
+  "license": "MIT",
+  "source_repo": "https://github.com/ChrisOr-Dev/zero-stocks",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "STCK",
+  "author": {
+    "github": "ChrisOr-Dev",
+    "display_name": "ChrisOr-Dev"
+  },
+  "published_at": "2026-11-12T19:38:13+00:00",
+  "updated_at": "2026-11-12T19:38:13+00:00"
+}
