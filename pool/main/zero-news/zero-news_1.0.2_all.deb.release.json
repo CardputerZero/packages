@@ -1,0 +1,11 @@
+{
+  "filename": "zero-news_1.0.2_all.deb",
+  "url": "https://github.com/ChrisOr-Dev/packages/releases/download/czdev-buffer/zero-news_1.0.2_all.deb",
+  "sha256": "7b182d368b049d60e6516ebaecfd4945268bc8b687381f06ca522826a8aa2e3b",
+  "size": 20892,
+  "package": "zero-news",
+  "version": "1.0.2",
+  "architecture": "all",
+  "uploaded_by": "ChrisOr-Dev",
+  "uploader_email": "ChrisOr-Dev@users.noreply.github.com"
+}
