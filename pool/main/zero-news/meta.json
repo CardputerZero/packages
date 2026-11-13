@@ -11,7 +11,7 @@
     "screenshots/settings.png",
     "screenshots/my-feeds.png"
   ],
-  "description": "Shows the latest headlines from RSS feeds, one at a time in large type, rotating every few seconds, with a scrolling ticker of the next headlines. ENTER shows the full summary.\n\nSettings (S): choose English and/or Chinese, and Tech, Life and/or General news; each combination has its own sources (Hacker News, The Verge, BBC, NYT, CBC, RTHK, unwire.hk, iThome and more). Also sets how fast headlines rotate. My feeds adds your own RSS feeds: type a feed or website address on the keyboard.\n\nKeys: F/X previous/next (Z/C left/right), OK details, P pause, R refresh, S settings, hold ESC 3 seconds to exit. Headlines are cached for offline viewing.",
+  "description": "Shows the latest headlines from RSS feeds, one at a time in large type, rotating every few seconds, with a scrolling ticker of the next headlines. OK opens the full story: the feed text at once, then the whole article fetched from its web page.\n\nSettings (S): choose English and/or Chinese, and Tech, Life and/or General news; each combination has its own sources (Hacker News, The Verge, BBC, NYT, CBC, RTHK, unwire.hk, iThome and more). Also sets how fast headlines rotate. My feeds adds your own RSS feeds: type a feed or website address on the keyboard.\n\nKeys: F/X previous/next (Z/C left/right), OK details (up/down scroll a line, left/right a page), P pause, R refresh, S settings, hold ESC 3 seconds to exit. Headlines are cached for offline viewing.",
   "license": "MIT",
   "source_repo": "https://github.com/ChrisOr-Dev/zero-news",
   "icon": "icon.png",
@@ -30,5 +30,5 @@
     "display_name": "ChrisOr-Dev"
   },
   "published_at": "2026-11-12T17:18:33+00:00",
-  "updated_at": "2026-11-12T17:18:33+00:00"
+  "updated_at": "2026-11-13T17:04:22+00:00"
 }
