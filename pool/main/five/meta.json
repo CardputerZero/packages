@@ -1,0 +1,31 @@
+{
+  "title": "Five",
+  "summary": "离线五子棋，支持 Rapfi 人机和同机双人。 Offline Gomoku with Rapfi or local two-player.",
+  "description": "简体中文\r\n在 Cardputer Zero 上离线下五子棋。可与 Rapfi 对弈，选择简单、普通或困难，也可在同一台设备上双人对弈。支持 15×15 和 13×13 棋盘、自由规则和连珠禁手。设置中可查看规则说明，两种对局均支持悔棋和续局。界面支持简体中文和英文。\r\n\r\nFive 应用部分采用专有许可。Rapfi 是独立引擎，按 GPL-3.0-or-later 分发，官方模型权重采用 CC0-1.0。安装包内的 /usr/share/doc/five/ 提供 Rapfi 对应源码、构建脚本及许可证。\r\n\r\nEnglish\r\nPlay offline Gomoku on Cardputer Zero. Play Rapfi at three difficulty levels or share one device with a friend. Choose a 15×15 or 13×13 board and Freestyle or Renju fouls. A rules guide, undo and resume are available. The interface supports Simplified Chinese and English.\r\n\r\nFive is proprietary. The separate Rapfi engine is distributed under GPL-3.0-or-later and its official weights under CC0-1.0. Corresponding Rapfi source, build instructions and license texts are included in the package under /usr/share/doc/five/.",
+  "categories": [
+    "Games"
+  ],
+  "license": "Proprietary",
+  "share_code": "FIVE",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "xu-c",
+    "github": "xu-c"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "five_icon.png",
+  "published_at": "2026-11-13T15:17:18+00:00",
+  "updated_at": "2026-11-13T15:17:18+00:00"
+}

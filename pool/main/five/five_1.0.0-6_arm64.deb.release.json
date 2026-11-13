@@ -1,0 +1,11 @@
+{
+  "filename": "five_1.0.0-6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/xu-c__five_1.0.0-6_arm64.deb",
+  "sha256": "bbf319e4c8937848ed05e3f3cb6c1659542413fc1207d3892ff54c130b601619",
+  "size": 1790618,
+  "package": "five",
+  "version": "1.0.0-6",
+  "architecture": "arm64",
+  "uploaded_by": "xu-c",
+  "uploader_email": "xu-c@users.noreply.github.com"
+}
