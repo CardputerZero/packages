@@ -1,0 +1,31 @@
+{
+  "title": "TailZero",
+  "summary": "A manager application for Tailscale.",
+  "description": "This application is a management tool for the local Tailscale instance. It is not the Tailscale software itself, but rather a utility for viewing status and managing the service. Please refer to the official documentation for instructions on installing and running Tailscale.",
+  "categories": [
+    "System Tools",
+    "Security"
+  ],
+  "license": "MIT",
+  "share_code": "TLZ0",
+  "source_repo": "https://github.com/fa1247/TailZero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "xyfan",
+    "github": "fa1247"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "tailzero_icon.png",
+  "published_at": "2026-11-12T14:45:45+00:00",
+  "updated_at": "2026-11-12T14:45:45+00:00"
+}
