@@ -1,7 +1,7 @@
 {
   "title": "Weather",
   "summary": "Current weather and 3-day forecast from Open-Meteo, with optional GPS location.",
-  "description": "Shows the current temperature, feels-like, humidity and wind, plus a 3-day forecast with rain chance. Data comes from Open-Meteo (no API key needed) and refreshes every 15 minutes.\r\n\r\nLocation: uses the Cap LoRa-1262 GPS when it has a fix; otherwise a fixed place you search for in Settings.\r\n\r\nKeys: S settings, R refresh, ESC exit. In Settings, F/X move up/down and ENTER selects.",
+  "description": "Shows the current temperature, feels-like, humidity and wind, plus a 3-day forecast with rain chance. Data comes from Open-Meteo (no API key needed) and refreshes every 15 minutes.\n\nLocation: uses the Cap LoRa-1262 GPS when it has a fix; otherwise a fixed place you search for in Settings.\n\nKeys: S settings, R refresh, hold ESC 3 seconds to exit. In Settings, F/X move up/down and ENTER selects.",
   "categories": [
     "Lifestyle"
   ],
@@ -9,23 +9,24 @@
   "share_code": "WTHR",
   "source_repo": "https://github.com/ChrisOr-Dev/zero-weather",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
     "additional_hardware": true,
     "background_service": false,
-    "camera": false,
-    "external_display": false,
-    "imu": false,
-    "microphone": false,
-    "network": true
+    "external_display": false
   },
   "author": {
     "display_name": "ChrisOr-Dev",
     "github": "ChrisOr-Dev"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png"
+    "screenshots/main.png",
+    "screenshots/settings.png",
+    "screenshots/search-results.png"
   ],
-  "icon": "zero-weather_icon.png",
+  "icon": "icon.png",
   "published_at": "2026-11-12T15:30:29+00:00",
-  "updated_at": "2026-11-12T15:30:29+00:00"
+  "updated_at": "2026-11-13T14:45:58+00:00"
 }
