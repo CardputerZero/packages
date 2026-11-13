@@ -1,0 +1,33 @@
+{
+  "title": "PocketMesh",
+  "summary": "A pocket-sized Meshtastic messenger powered by Linux.",
+  "description": "Take Meshtastic with you on a compact, keyboard-equipped device. This Linux port aims to make mesh communication easy to use on the Cardputer Zero and other compatible Linux hardware.\r\n\r\nPlanned features:\r\n- Mesh messaging — send and receive text messages over a Meshtastic network.\r\n- Direct messages and channels — chat with individual nodes or groups.\r\n- Node discovery — see the devices and people on your mesh.\r\n- Radio and channel settings — configure your connection and preferences.\r\n- Keyboard-friendly controls — navigate and compose messages on a physical keyboard.\r\n- Pocket-sized operation — use your Cardputer Zero as a dedicated handheld communicator.\r\n- Linux support — bring the experience to compatible Linux devices.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "MESH",
+  "source_repo": "https://github.com/DavisW9/pocket-mesh-cardputer",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "DavisW9",
+    "github": "DavisW9"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardputerzero-mesh_icon.png",
+  "published_at": "2026-11-10T18:02:56+00:00",
+  "updated_at": "2026-11-10T18:02:56+00:00"
+}
