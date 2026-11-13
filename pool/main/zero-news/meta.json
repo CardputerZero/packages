@@ -1,0 +1,34 @@
+{
+  "title": "News",
+  "summary": "Rotating RSS headlines in large type: English and Chinese, tech, life, general.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/chinese.png",
+    "screenshots/detail.png",
+    "screenshots/settings.png",
+    "screenshots/my-feeds.png"
+  ],
+  "description": "Shows the latest headlines from RSS feeds, one at a time in large type, rotating every few seconds, with a scrolling ticker of the next headlines. ENTER shows the full summary.\n\nSettings (S): choose English and/or Chinese, and Tech, Life and/or General news; each combination has its own sources (Hacker News, The Verge, BBC, NYT, CBC, RTHK, unwire.hk, iThome and more). Also sets how fast headlines rotate. My feeds adds your own RSS feeds: type a feed or website address on the keyboard.\n\nKeys: F/X previous/next (Z/C left/right), OK details, P pause, R refresh, S settings, hold ESC 3 seconds to exit. Headlines are cached for offline viewing.",
+  "license": "MIT",
+  "source_repo": "https://github.com/ChrisOr-Dev/zero-news",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "NEWS",
+  "author": {
+    "github": "ChrisOr-Dev",
+    "display_name": "ChrisOr-Dev"
+  },
+  "published_at": "2026-11-12T17:18:33+00:00",
+  "updated_at": "2026-11-12T17:18:33+00:00"
+}
