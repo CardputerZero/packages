@@ -1,0 +1,32 @@
+{
+  "title": "Updates",
+  "summary": "Check your installed store apps for updates and install them all in one click.",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/list.png",
+    "screenshots/progress.png",
+    "screenshots/confirm.png"
+  ],
+  "description": "Checks every AppStore app installed on the device for updates and shows the installed and the latest version, apps with an update first. One-click update: press ENTER on Update all at the top to install every update at once, or pick apps with SPACE and press ENTER.\n\nEach package comes from the official store registry and is checked against its size and SHA-256 before installing. A dry run comes first: if an update would remove any other package, it is skipped and the reason shown. Installing needs the pi user's sudo password, asked once per batch and never stored.\n\nKeys: F/X move, ENTER update, SPACE pick, A update all, R check again, hold ESC 3 seconds to exit.",
+  "license": "MIT",
+  "source_repo": "https://github.com/ChrisOr-Dev/zero-updates",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "UPDT",
+  "author": {
+    "github": "ChrisOr-Dev",
+    "display_name": "ChrisOr-Dev"
+  },
+  "published_at": "2026-11-13T22:18:22+00:00",
+  "updated_at": "2026-11-13T22:18:22+00:00"
+}

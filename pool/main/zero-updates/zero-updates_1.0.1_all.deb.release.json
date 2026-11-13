@@ -1,0 +1,11 @@
+{
+  "filename": "zero-updates_1.0.1_all.deb",
+  "url": "https://github.com/ChrisOr-Dev/packages/releases/download/czdev-buffer/zero-updates_1.0.1_all.deb",
+  "sha256": "94f33329a6c0d461af7d82611d3b9e42abf4fc3e1618d8d05a56f2ecdd4f4fc6",
+  "size": 14140,
+  "package": "zero-updates",
+  "version": "1.0.1",
+  "architecture": "all",
+  "uploaded_by": "ChrisOr-Dev",
+  "uploader_email": "ChrisOr-Dev@users.noreply.github.com"
+}
