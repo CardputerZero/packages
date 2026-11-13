@@ -7,7 +7,8 @@
   "screenshots": [
     "screenshots/now-playing.png",
     "screenshots/library.png",
-    "screenshots/timers.png"
+    "screenshots/timers.png",
+    "screenshots/power.png"
   ],
   "description": "LoFiBox is a music player built for Cardputer Zero, bringing a local music library, online metadata scraping, network sources and several control interfaces to a handheld device.\n\n- Library browsing and search: add multiple local music folders, index your collection, browse by artist, album, song, genre, composer or compilation, and search and sort the library.\n- Music metadata scraping: read embedded tags, match and fill in song information, album covers and lyrics online, and cache matching results locally. When the format, write permissions and writeback rules allow it, metadata, artwork or lyrics can be written back to local music files.\n- Playback and queue: pause, resume, skip, seek, adjust volume, shuffle, repeat one or repeat all. Use the playback queue and built-in smart playlists for recently added, most played and recently played music.\n- Covers and lyrics: see album artwork and track information in Now Playing. The lyrics page supports plain lyrics and synchronized highlighting, using embedded content or online matches.\n- Equalizer and presets: adjust frequency gains with a 10-band equalizer and switch presets.\n- Network sources: configure media servers such as Jellyfin, Emby and OpenSubsonic/Navidrome, or play network audio URLs and internet radio. Supply a reachable service address and any required account permissions.\n- Device controls and visualization: contextual icon actions map to keys 4-8. Now Playing uses a translucent background spectrum, and the three white keyboard LEDs follow its rightmost column.\n- Stop-and-exit and screen timers: the close timer stops playback and exits LoFiBox without powering off the device. An independent idle-screen timer turns off the backlight while music continues; the first wake key only wakes the display. Both timers reset to OFF when the app is reopened.\n- Multiple control interfaces: the device GUI, terminal TUI, command-line CLI and browser WebUI share playback state. Control the player remotely from a browser on the local network.\n\nOnline scraping results depend on the network and available data sources. This release provides built-in smart playlists and does not include custom playlist editing.",
   "locales": {
@@ -40,5 +41,5 @@
     "github": "vicliu624"
   },
   "published_at": "2026-11-10T13:42:09+00:00",
-  "updated_at": "2026-11-10T13:42:09+00:00"
+  "updated_at": "2026-11-13T16:22:54+00:00"
 }
