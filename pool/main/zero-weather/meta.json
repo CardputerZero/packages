@@ -1,7 +1,7 @@
 {
   "title": "Weather",
   "summary": "Current weather and 3-day forecast from Open-Meteo, with optional GPS location.",
-  "description": "Shows the current temperature, feels-like, humidity and wind, plus a 3-day forecast with rain chance. Data comes from Open-Meteo (no API key needed) and refreshes every 15 minutes.\n\nLocation: uses the Cap LoRa-1262 GPS when it has a fix; otherwise a fixed place you search for in Settings.\n\nKeys: S settings, R refresh, hold ESC 3 seconds to exit. In Settings, F/X move up/down and ENTER selects.",
+  "description": "Shows the current temperature, feels-like, humidity and wind, plus a 3-day forecast with rain chance. Data comes from Open-Meteo (no API key needed) and refreshes every 15 minutes.\n\nLocation: uses the Cap LoRa-1262 GPS when it has a fix; otherwise a fixed place you search for in Settings.\n\nTemperature can be shown in °C or °F (Settings).\n\nKeys: S settings, R refresh, hold ESC 3 seconds to exit. In Settings, F/X move up/down and ENTER selects.",
   "categories": [
     "Lifestyle"
   ],
@@ -28,5 +28,5 @@
   ],
   "icon": "icon.png",
   "published_at": "2026-11-12T15:30:29+00:00",
-  "updated_at": "2026-11-13T22:12:35+00:00"
+  "updated_at": "2026-11-14T16:27:51+00:00"
 }
