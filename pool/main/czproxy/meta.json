@@ -1,0 +1,29 @@
+{
+  "title": "CZProxy",
+  "summary": "轻量 mihomo 代理控制：节点切换、全节点测速、TUN 与后台服务管理",
+  "description": "原生 LVGL 单应用。专为 Cardputer Zero 设计的轻量化 Clash (mihomo Meta) 代理管理器。\r\n\r\n核心特性：\r\n- 核心瘦身：针对 512MB 内存精简，GOMEMLIMIT/GOGC 优化，稳定低功耗\r\n- 节点控制：支持 Clash/mihomo 配置与订阅，可视化节点切换、延迟测速与排序\r\n- 网络管理：支持 TUN 模式开关、实时流量统计与后台服务管理\r\n- 便捷操作：短按 ESC 返回主页，长按 ESC 停止后台代理，重新进入自动拉起",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "CZPX",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "king",
+    "github": "2001261"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "czproxy_icon.png",
+  "published_at": "2026-11-14T02:58:10+00:00",
+  "updated_at": "2026-11-14T02:58:10+00:00"
+}
