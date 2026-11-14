@@ -10,14 +10,15 @@
     "screenshots/thread.png",
     "screenshots/pinyin.png",
     "screenshots/settings.png",
+    "screenshots/configuration.png",
     "screenshots/about.png"
   ],
-  "description": "Control Kimi Code sessions from CardputerZero with a compact native interface. Sign in through official Kimi device authorization, browse remote folders, create and manage sessions, read history and streamed replies, and configure models, thinking and permissions. Includes local pinyin input, English/Chinese UI, light/dark themes and configurable send keys. Requires an online computer running kimi rc and the same Kimi account. This is an independent client, not an official Moonshot app. Attachments, voice input and complex interactive questions are not supported; use the computer for those actions.",
+  "description": "Control Kimi Code sessions from CardputerZero with a compact native interface. Sign in through official Kimi device authorization, browse remote folders, create and manage sessions, read history and streamed replies, and configure models, thinking, permissions and compact/detailed display modes. Includes local pinyin input, English/Chinese UI, light/dark themes, colored conversation roles and configurable send keys. Requires an online computer running kimi rc and the same Kimi account. This is an independent client, not an official Moonshot app. Attachments, voice input and complex interactive questions are not supported; use the computer for those actions.",
   "locales": {
     "zh-CN": {
       "title": "KimiRC",
       "summary": "在 CardputerZero 上管理 Kimi Code 会话，支持原生键盘界面与中文拼音。",
-      "description": "通过 Kimi 官方设备码授权登录，连接运行 kimi rc 的电脑，浏览远端目录、创建和管理会话、阅读历史与流式回复，并配置模型、思考强度和权限。支持本地拼音、中英文、白色/深灰主题与发送按键切换。需联网及同一 Kimi 账号。本应用由梦西游啊游独立开发，并非 Moonshot 官方应用。暂不支持附件、语音和复杂交互提问，这些操作请在电脑端完成。"
+      "description": "通过 Kimi 官方设备码授权登录，连接运行 kimi rc 的电脑，浏览远端目录、创建和管理会话、阅读历史与流式回复，并配置模型、思考强度、权限和精简/详细显示模式。支持本地拼音、中英文、白色/深灰主题、对话角色配色与发送按键切换。需联网及同一 Kimi 账号。本应用由梦西游啊游独立开发，并非 Moonshot 官方应用。暂不支持附件、语音和复杂交互提问，这些操作请在电脑端完成。"
     }
   },
   "license": "MIT",
@@ -39,5 +40,5 @@
     "email": "gzp16@163.com"
   },
   "published_at": "2026-11-08T02:34:43+00:00",
-  "updated_at": "2026-11-08T02:34:43+00:00"
+  "updated_at": "2026-11-14T07:49:03+00:00"
 }
