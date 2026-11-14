@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-player_0.1.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Biersteker__cardputer-player_0.1.0_arm64.deb",
+  "sha256": "de95de22f21346856f3080857327f5e6c4b42daaed5ad94aea07fef755cca101",
+  "size": 738108,
+  "package": "cardputer-player",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "Biersteker",
+  "uploader_email": "biersteker@users.noreply.github.com"
+}
