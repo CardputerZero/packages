@@ -1,0 +1,35 @@
+{
+  "title": "M-Pocket",
+  "summary": "A Mastodon client for Cardputer Zero.",
+  "description": "M-Pocket is an open-source Mastodon client for the Cardputer Zero. Sign in by scanning a QR code with your phone, then browse your home and local timelines from your pocket.\r\n\r\nSearch for posts, write and review replies, boost posts, and reveal content warnings when you’re ready. M-Pocket can remember your login and offers light and dark purple themes with adjustable text size.",
+  "categories": [
+    "Radio & Comms",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "MSTD",
+  "source_repo": "https://github.com/DavisW9/m-pocket",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "DavisW9",
+    "github": "DavisW9"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "m-pocket_icon.png",
+  "published_at": "2026-11-10T18:24:56+00:00",
+  "updated_at": "2026-11-10T18:24:56+00:00"
+}
