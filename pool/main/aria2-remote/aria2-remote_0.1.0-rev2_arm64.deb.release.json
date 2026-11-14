@@ -1,0 +1,11 @@
+{
+  "filename": "aria2-remote_0.1.0-rev2_arm64.deb",
+  "url": "https://github.com/Jason-1993-code/packages/releases/download/czdev-buffer/aria2-remote_0.1.0-rev2_arm64.deb",
+  "sha256": "00092ed2d0e2d6019fc1a4404fa55d37873ceb802cf1985b846a409f7083f776",
+  "size": 2071720,
+  "package": "aria2-remote",
+  "version": "0.1.0-rev2",
+  "architecture": "arm64",
+  "uploaded_by": "Jason-1993-code",
+  "uploader_email": "Jason-1993-code@users.noreply.github.com"
+}
