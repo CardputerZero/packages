@@ -1,0 +1,11 @@
+{
+  "filename": "octet_4.9_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__octet_4.9_arm64.deb",
+  "sha256": "421764e198b9afa4062b2fe93b6b0296abe465575904c45ff3afaa07e59d156a",
+  "size": 1396084,
+  "package": "octet",
+  "version": "4.9",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}
