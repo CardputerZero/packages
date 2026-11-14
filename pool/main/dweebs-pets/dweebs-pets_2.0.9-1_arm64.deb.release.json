@@ -1,0 +1,11 @@
+{
+  "filename": "dweebs-pets_2.0.9-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__dweebs-pets_2.0.9-1_arm64.deb",
+  "sha256": "3e13dec5f8901287381740b32c2fe10507606cd5e7663b4f8c2dccb4ac9ee001",
+  "size": 1224224,
+  "package": "dweebs-pets",
+  "version": "2.0.9-1",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}
