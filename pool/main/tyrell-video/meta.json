@@ -1,0 +1,32 @@
+{
+  "title": "Tyrell Video",
+  "summary": "Local video with subtitles, audio tracks and handheld or HDMI playback",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/01-browser-preview.png",
+    "screenshots/02-lcd-player-preview.png",
+    "screenshots/03-tracks-preview.png",
+    "screenshots/04-hdmi-controller-preview.png"
+  ],
+  "description": "Play local videos on the CardputerZero's built-in display, or send the movie to a dedicated HDMI screen while keeping controls on the handheld.\n\nBrowse folders and mounted media without a full-card scan. Choose audio tracks and common text subtitles, including matching external SRT files. Subtitles start off. HDMI playback prefers TV audio and falls back to onboard sound when necessary.\n\nEnter opens a file. Space pauses or resumes. Left/Right seek 10 seconds; Up/Down change volume. O selects the display, T opens audio/subtitle tracks, V selects audio output, M mutes, Esc returns to the browser, and Q exits to APPLaunch. W/A/S/D provide navigation fallbacks.\n\nVersion 0.1.7 adds one software-decoder retry per file load for a specific HDMI buffer-pool activation failure after hardware decoding. The retry preserves playback position, selected tracks and play/pause intent. Software decoding may be slower, and demanding files may need computer-side conversion.\n\nRequires a CardputerZero running compatible Debian 13 ARM64 software with APPLaunch, GStreamer 1.26 and systemd 253 or newer. Dedicated HDMI playback temporarily releases the stock desktop and restores it on exit. The package installs a restricted nonroot console helper. Codec availability and smooth playback depend on the file. Streaming, playlists and saved playback positions are not included.\n\nThe screenshots are rendered UI previews. A tested 1920x816, 24 fps H.264/AAC source completed more than ten minutes of HDMI playback with captions, including recovery from one controlled startup allocation failure using software decoding. The tested TV output mode was 720p. Other file profiles can have different performance limits.",
+  "license": "MIT",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": true
+  },
+  "share_code": "TYVD",
+  "author": {
+    "display_name": "Tyrell contributors",
+    "github": "beatsforthemind"
+  },
+  "published_at": "2026-11-15T05:52:23+00:00",
+  "updated_at": "2026-11-15T05:52:23+00:00"
+}
