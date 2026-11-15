@@ -1,0 +1,42 @@
+{
+  "title": "APTool",
+  "summary": "Turn the CardputerZero into a Wi-Fi diagnostic access point (NAT or bridge)",
+  "categories": [
+    "Radio & Comms",
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/01-status.png",
+    "screenshots/02-clients.png",
+    "screenshots/03-uplink.png",
+    "screenshots/04-settings.png"
+  ],
+  "description": "APTool turns the CardputerZero into a Wi-Fi access point for network diagnostics, for example in a data center. Connect it to Ethernet (the built-in port or a USB-C gigabit adapter) and your laptop or phone joins the hotspot, either behind NAT (DHCP included) or in a transparent bridge to the wired network, optionally on a tagged VLAN. The screen shows uplink speed and duplex, IP and gateway ping, the LLDP neighbor (switch and port), the connected clients and more. Everything is operated with the built-in keyboard. The access point is stopped again when you leave the app (hold Esc for 2 seconds).",
+  "locales": {
+    "ja": {
+      "summary": "CardputerZero を Wi-Fi 診断用アクセスポイントにします(NAT/ブリッジ)"
+    },
+    "zh-CN": {
+      "summary": "将 CardputerZero 变成用于网络诊断的 Wi-Fi 热点(NAT/桥接)"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/FPVZaphod/APTool",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "APTL",
+  "author": {
+    "display_name": "FPVZaphod",
+    "github": "FPVZaphod"
+  },
+  "published_at": "2026-11-14T19:49:14+00:00",
+  "updated_at": "2026-11-14T19:49:14+00:00"
+}
