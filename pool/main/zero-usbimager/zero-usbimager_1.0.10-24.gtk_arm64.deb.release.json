@@ -1,0 +1,11 @@
+{
+  "filename": "zero-usbimager_1.0.10-24.gtk_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/geo-tp__zero-usbimager_1.0.10-24.gtk_arm64.deb",
+  "sha256": "9e293f682a34cfba8990476b8659ca6da4403d1263754c171fda8662d0fcdc88",
+  "size": 286930,
+  "package": "zero-usbimager",
+  "version": "1.0.10-24.gtk",
+  "architecture": "arm64",
+  "uploaded_by": "geo-tp",
+  "uploader_email": "geo-tp@users.noreply.github.com"
+}
