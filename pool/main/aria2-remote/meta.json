@@ -1,0 +1,33 @@
+{
+  "title": "Aria2 Remote",
+  "summary": "Monitor and control a remote aria2 download server.",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/aria2-remote_20261114_150439_376.png",
+    "screenshots/aria2-remote_20261114_150509_358.png",
+    "screenshots/aria2-remote_20261114_150518_189.png",
+    "screenshots/aria2-remote_20261114_150539_539.png"
+  ],
+  "description": "Remote aria2 JSON-RPC client with task monitoring and download controls.",
+  "license": "MIT",
+  "icon": "aria2-remote.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "A2RM",
+  "author": {
+    "display_name": "Jason-1993-code",
+    "email": "jason@kingwoods.win",
+    "github": "Jason-1993-code"
+  },
+  "published_at": "2026-11-14T07:14:54+00:00",
+  "updated_at": "2026-11-14T07:14:54+00:00"
+}
