@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-boot-assets_0.4.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__cardputer-boot-assets_0.4.0-1_arm64.deb",
+  "sha256": "6353d72354b7d4b61222be1a1c31f7e981126745527eb8348175b27a269b03fb",
+  "size": 27172,
+  "package": "cardputer-boot-assets",
+  "version": "0.4.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}
