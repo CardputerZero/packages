@@ -1,0 +1,33 @@
+{
+  "title": "CardBili",
+  "summary": "适用于 CardputerZero 的非官方 BiliBili 客户端",
+  "description": "功能\r\n浏览推荐、热门、关注动态、历史记录与收藏\r\n查看视频详情、评论、作者作品与选集\r\n视频播放、弹幕、进度跳转与倍速控制\r\n键盘导航、多种列表布局与外观设置",
+  "categories": [
+    "Media"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "BILI",
+  "source_repo": "https://github.com/journey-ad/M5CardputerZero-CardBili",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "journey-ad",
+    "github": "journey-ad"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardbili_icon.png",
+  "published_at": "2026-11-14T19:55:40+00:00",
+  "updated_at": "2026-11-14T19:55:40+00:00"
+}
