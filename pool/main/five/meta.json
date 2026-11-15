@@ -1,7 +1,7 @@
 {
   "title": "Five",
   "summary": "离线五子棋，支持 Rapfi 人机和同机双人。 Offline Gomoku with Rapfi or local two-player.",
-  "description": "简体中文\r\n在 Cardputer Zero 上离线下五子棋。可与 Rapfi 对弈，选择简单、普通或困难，也可在同一台设备上双人对弈。支持 15×15 和 13×13 棋盘、自由规则和连珠禁手。设置中可查看规则说明，两种对局均支持悔棋和续局。界面支持简体中文和英文。\r\n\r\nFive 应用部分采用专有许可。Rapfi 是独立引擎，按 GPL-3.0-or-later 分发，官方模型权重采用 CC0-1.0。安装包内的 /usr/share/doc/five/ 提供 Rapfi 对应源码、构建脚本及许可证。\r\n\r\nEnglish\r\nPlay offline Gomoku on Cardputer Zero. Play Rapfi at three difficulty levels or share one device with a friend. Choose a 15×15 or 13×13 board and Freestyle or Renju fouls. A rules guide, undo and resume are available. The interface supports Simplified Chinese and English.\r\n\r\nFive is proprietary. The separate Rapfi engine is distributed under GPL-3.0-or-later and its official weights under CC0-1.0. Corresponding Rapfi source, build instructions and license texts are included in the package under /usr/share/doc/five/.",
+  "description": "简体中文\r\n在 Cardputer Zero 上离线下五子棋。与 Rapfi 对弈可选简单、普通或困难，也可在同一台设备上两人轮流落子。支持 15×15 和 13×13 棋盘，以及自由规则和连珠禁手。两种对局均支持悔棋和续局。界面和规则说明均支持简体中文和英文。\r\n\r\n最近改动（1.0.0-7）\r\nRapfi 落子失败后，Five 会自动重试。连续失败时，重试间隔从 0.5 秒逐步增加到 4 秒。重试期间仍可悔棋或返回菜单。\r\n\r\nFive 应用部分采用专有许可。Rapfi 是独立引擎，按 GPL-3.0-or-later 分发，官方模型权重采用 CC0-1.0。安装包内的 /usr/share/doc/five/ 提供 Rapfi 对应源码、构建脚本及许可证。\r\n\r\nEnglish\r\nPlay Gomoku offline on Cardputer Zero. Face Rapfi at one of three difficulty levels or take turns with a friend on the same device. Choose a 15×15 or 13×13 board and play with Freestyle or Renju fouls. Both modes support undo and resume. The interface and rules guide are available in Simplified Chinese and English.\r\n\r\nWhat’s new (1.0.0-7)\r\nFive automatically retries when Rapfi fails to return a move. For repeated failures, the delay grows from 0.5 seconds to 4 seconds. You can still undo or return to the menu while Five retries.\r\n\r\nFive is proprietary. The separate Rapfi engine is distributed under GPL-3.0-or-later and its official weights under CC0-1.0. Corresponding Rapfi source, build scripts and license texts are included in the package under /usr/share/doc/five/.",
   "categories": [
     "Games"
   ],
@@ -23,9 +23,12 @@
   "screenshots": [
     "screenshots/screenshot-0.png",
     "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png"
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
   ],
   "icon": "five_icon.png",
   "published_at": "2026-11-13T15:17:18+00:00",
-  "updated_at": "2026-11-13T15:17:18+00:00"
+  "updated_at": "2026-11-15T08:37:58+00:00"
 }
