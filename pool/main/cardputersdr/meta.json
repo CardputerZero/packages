@@ -1,0 +1,31 @@
+{
+  "title": "CardputerSDR",
+  "summary": "SDR Platform based on Cardputer.",
+  "description": "支持通过web转发SDR设备采样数据，也支持在Cardputer Zero上计算并显示。",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "CSDR",
+  "source_repo": "https://github.com/RiviaRammer/CardputerZeroApps",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "RiviaRammer",
+    "github": "RiviaRammer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "cardputersdr_icon.png",
+  "published_at": "2026-11-15T23:06:54+00:00",
+  "updated_at": "2026-11-15T23:06:54+00:00"
+}
