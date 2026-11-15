@@ -1,0 +1,31 @@
+{
+  "title": "USB Imager",
+  "summary": "Burn disk images to USB drives and creates backups",
+  "description": "USBImager is a really really simple GUI application that writes compressed disk images to USB drives and creates backups. Available platforms: Windows, MacOS and Linux. Its interface is as simple as it gets, totally bloat-free",
+  "categories": [
+    "System Tools",
+    "Development"
+  ],
+  "license": "MIT",
+  "share_code": "USBI",
+  "source_repo": "https://github.com/geo-tp/USBImager-Zero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "geo-tp",
+    "github": "geo-tp"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "zero-usbimager_icon.png",
+  "published_at": "2026-11-13T22:19:23+00:00",
+  "updated_at": "2026-11-13T22:19:23+00:00"
+}
