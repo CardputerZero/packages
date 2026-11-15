@@ -1,0 +1,11 @@
+{
+  "filename": "amiibo-sim_0.1.8_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__amiibo-sim_0.1.8_arm64.deb",
+  "sha256": "074bc6c257d0ed82641a45d7396d2d7280d364fb400cb692edec1ffa0b5557b0",
+  "size": 514056,
+  "package": "amiibo-sim",
+  "version": "0.1.8",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}
