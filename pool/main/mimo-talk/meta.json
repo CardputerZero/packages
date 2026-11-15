@@ -1,0 +1,30 @@
+{
+  "title": "MiMo Talk",
+  "summary": "MiMo大模型语音对话",
+  "description": "需在 ~/mimo_talk/config.json 中填写MiMo API key",
+  "categories": [
+    "AI"
+  ],
+  "license": "MIT",
+  "share_code": "MIMO",
+  "source_repo": "https://github.com/RiviaRammer/CardputerZeroApps",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "RiviaRammer",
+    "github": "RiviaRammer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "mimo-talk_icon.png",
+  "published_at": "2026-11-15T19:41:24+00:00",
+  "updated_at": "2026-11-15T19:41:24+00:00"
+}

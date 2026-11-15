@@ -1,0 +1,11 @@
+{
+  "filename": "mimo-talk_0.2.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__mimo-talk_0.2.2_arm64.deb",
+  "sha256": "12ff19f6b93f943b8b738e795663aac8e043d5d1c6943e442d59c8c67b0b2a42",
+  "size": 480804,
+  "package": "mimo-talk",
+  "version": "0.2.2",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}
