@@ -1,0 +1,38 @@
+{
+  "title": "AirSIM Cardputer",
+  "summary": "Calls, SMS and two-way audio through an Android phone over Wi-Fi or Bluetooth.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/messages.png",
+    "screenshots/connection-modes.png",
+    "screenshots/dial.png"
+  ],
+  "description": "Independent AirSIM client for Cardputer Zero. Connect to an Android phone running AirSIM using Wi-Fi discovery/manual pairing or VoBLE Bluetooth. Make and answer calls, send and receive SMS, use two-way call audio, and view device battery, unread messages and missed-call numbers. Includes local contacts, call records, SIM selection and DTMF. Runs as the ordinary pi user. The app must remain open for incoming calls. No cloud/Relay mode. Wi-Fi pairing uses the Android local-mode protocol and asks before replacing its cloud registration. SMS uses the existing shared delivery queue: other clients acknowledging messages first can remove them before this client reads them. For reliable Wi-Fi reception, avoid simultaneous local SMS synchronization by other clients. Screenshots and the device recording use synthetic data. An Android phone with AirSIM and its required permissions is needed. This is not an official AirSIM release.",
+  "locales": {
+    "zh-CN": {
+      "title": "AirSIM Cardputer",
+      "summary": "通过 Wi-Fi 或蓝牙连接安卓手机，拨打接听电话、收发短信和双向通话。"
+    }
+  },
+  "license": "PolyForm-Noncommercial-1.0.0",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ASCP",
+  "author": {
+    "github": "kai-wu-cortex",
+    "display_name": "Kyle"
+  },
+  "published_at": "2026-11-15T06:28:47+00:00",
+  "updated_at": "2026-11-15T06:28:47+00:00"
+}
