@@ -1,0 +1,33 @@
+{
+  "title": "CardMesh",
+  "summary": "Your pocket console for the mesh.",
+  "description": "CardMesh is a keyboard-first pocket client for MeshMonitor, Meshtastic, and MeshCore, built for the M5Stack CardputerZero -- the first CardputerZero client targeting all three.\r\n\r\nThis release (v0.1.0) ships the MeshMonitor-based Dashboard, an offline-capable OpenStreetMap node-position Map screen, and a GitHub Releases-based self-updater (check/install with one key). Direct Meshtastic/MeshCore support via the CardputerZero's onboard LoRa hat is planned, not yet implemented -- see the project README for the full roadmap.\r\n\r\nNot yet verified on real CardputerZero hardware or the official online emulator.",
+  "categories": [
+    "Hardware & IoT",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "CMSH",
+  "source_repo": "https://github.com/maxhayim/CardMesh",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "maxhayim",
+    "github": "maxhayim"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "cardmesh_icon.png",
+  "published_at": "2026-11-16T03:59:52+00:00",
+  "updated_at": "2026-11-16T03:59:52+00:00"
+}
