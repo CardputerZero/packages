@@ -35,6 +35,35 @@ default registry published at:
 https://cardputerzero.github.io/generated/registry.json
 ```
 
+## Incremental Uploads
+
+Each file is compared with the destination object's CRC64-ECMA checksum using
+`ossutil stat` and `ossutil hash`. Matching contents are skipped, including when
+a fresh checkout or download changes the local modification time. New files,
+changed contents and objects without a CRC64 header are uploaded. A retry checks
+the objects already uploaded by the previous attempt and skips matching contents.
+
+The configured credentials need `oss:GetObject` and `oss:GetObjectAcl` for the
+metadata queries made by ossutil 1.7.7, in addition to `oss:PutObject`. A missing
+object is uploaded; other metadata query errors stop the sync. Remote objects
+outside the generated tree are retained.
+
+## Tests
+
+The regression tests run the real ossutil CLI against a local HTTP server with
+temporary credentials and objects. They require Python 3.10+, Bash, ossutil 1.7.7,
+`dpkg-deb`, and `dpkg-scanpackages` from `dpkg-dev`.
+
+From the repository root:
+
+```bash
+OSSUTIL_TEST_BINARY=/path/to/ossutil python3 -m unittest discover -s oss -p 'test_*.py' -v
+```
+
+The suite covers repeated uploads after modification-time changes, same-size
+content changes, missing objects, interrupted uploads, metadata failures, empty
+files, the default destination prefix, and the China region filter.
+
 ## Enable It
 
 Manual run:
