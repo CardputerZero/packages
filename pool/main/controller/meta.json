@@ -1,0 +1,33 @@
+{
+  "title": "Controller",
+  "summary": "Pair a Bluetooth game controller and see sticks, triggers and buttons live",
+  "description": "Controller pairs a Bluetooth game controller with your CardputerZero and shows its input live.\r\n\r\nPad view: both sticks with their position and recent path, trigger pull in percent, bumpers, d-pad and every button, plus report rate and battery level. Press R to test rumble.\r\n\r\nData view: each axis as a normalised and a raw value, every button, and the controller's ID, address and input node.\r\n\r\nDevices view: scan, pair, connect, disconnect and forget controllers, and reset Bluetooth if a connection gets stuck.\r\n\r\nThe controller stays connected after you close the app, so other programs can use it. The bundled /usr/share/controller/gamepad.py gives Python scripts sticks, triggers and named buttons with no extra dependencies.\r\n\r\nTested with an Xbox One S controller over Bluetooth LE. Written to also handle Xbox Series, PlayStation, Switch Pro, 8BitDo and other HID controllers, which have not been tried yet. Screenshots show the app's demo mode.\r\n\r\nKeys: 1-3 or TAB switch views, ENTER selects, S scans, ESC quits.",
+  "categories": [
+    "System Tools",
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "KUKA",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Matthew KuKanich",
+    "github": "MatthewKuKanich"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "controller_icon.png",
+  "published_at": "2026-11-16T04:26:18+00:00",
+  "updated_at": "2026-11-16T04:26:18+00:00"
+}
