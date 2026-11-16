@@ -1,0 +1,30 @@
+{
+  "title": "NFCQSL",
+  "summary": "业余无线电NFC QSL卡片读写器",
+  "description": "根据 https://nfcqsl.com/nfcqsl/index.html 的数据格式\r\n读写NTAG 215卡片中的业余无线电通联信息",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "NQSL",
+  "source_repo": "https://github.com/RiviaRammer/CardputerZeroApps",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "RiviaRammer",
+    "github": "RiviaRammer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "nfcqsl_icon.png",
+  "published_at": "2026-11-15T19:38:26+00:00",
+  "updated_at": "2026-11-15T19:38:26+00:00"
+}

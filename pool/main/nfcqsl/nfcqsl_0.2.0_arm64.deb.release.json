@@ -1,0 +1,11 @@
+{
+  "filename": "nfcqsl_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__nfcqsl_0.2.0_arm64.deb",
+  "sha256": "e46b348afa231f08af8ad78c2f9832465daaff0124545b5585e0e86e35ab2e84",
+  "size": 164874,
+  "package": "nfcqsl",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}
