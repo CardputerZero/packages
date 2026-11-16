@@ -1,0 +1,40 @@
+{
+  "title": "AuraCam",
+  "summary": "Thermal aura over the camera view, with HUD, snapshots and recording",
+  "categories": [
+    "Media",
+    "Hardware & IoT"
+  ],
+  "description": "AuraCam blends an MLX90640 32x24 thermal array into the IMX219 camera view as a registered, semi-transparent heat aura.\n\n- Seven aura modes and nine thermal gradients (ironbow, whitehot, arctic, amber and more)\n- Probe, high and low temperature markers and a pixel-font HUD, burned into snapshots and H.264 recordings\n- Camera looks (natural, mono, high contrast, fast) and a wide field of view\n- Calibration screen to align the thermal frame\n- Optional M5Stack 8ANGLE unit on the side Grove port: eight knobs for threshold, opacity, range, blur, smoothing, exposure and contrast\n\nRequires an MLX90640 breakout wired to the top EXT header (5VOUT, GND, I2C1 SDA/SCL). Setting I2C1 to 400 kHz raises the thermal rate from about 4 Hz to 16 Hz. Wiring, setup and the 8ANGLE bus are in the README.",
+  "locales": {
+    "zh-CN": {
+      "summary": "在摄像头画面上叠加热成像光晕，支持 HUD、拍照和录像"
+    },
+    "ja": {
+      "summary": "カメラ映像にサーマルオーラを重ね、HUD・撮影・録画に対応"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/jrdntnnr/AuraCam",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "AURA",
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/live.png",
+    "screenshots/mono.png"
+  ],
+  "author": {
+    "github": "jrdntnnr",
+    "display_name": "jrdntnnr"
+  },
+  "published_at": "2026-11-16T09:57:15+00:00",
+  "updated_at": "2026-11-16T09:57:15+00:00"
+}
