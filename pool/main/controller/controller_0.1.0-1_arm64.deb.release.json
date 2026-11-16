@@ -1,0 +1,11 @@
+{
+  "filename": "controller_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/MatthewKuKanich__controller_0.1.0-1_arm64.deb",
+  "sha256": "0155239fa278e6985e59517e43de8770ec98afddd52c3d8f86aacc8ab4924b4b",
+  "size": 38808,
+  "package": "controller",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "MatthewKuKanich",
+  "uploader_email": "matthewkukanich@users.noreply.github.com"
+}
