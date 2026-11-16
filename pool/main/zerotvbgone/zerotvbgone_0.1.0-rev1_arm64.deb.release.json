@@ -1,0 +1,11 @@
+{
+  "filename": "zerotvbgone_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/baltamir1978/packages/releases/download/czdev-buffer/zerotvbgone_0.1.0-rev1_arm64.deb",
+  "sha256": "fbc4ce145d7db76f5658cec051f62f12dbc1dc66706284edeffa6f7edd3f9059",
+  "size": 975194,
+  "package": "zerotvbgone",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "baltamir1978",
+  "uploader_email": "baltamir1978@users.noreply.github.com"
+}

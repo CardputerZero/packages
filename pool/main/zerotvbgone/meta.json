@@ -1,0 +1,31 @@
+{
+  "title": "ZeroTVBGone",
+  "summary": "Turn off almost any TV: sends every known power-off code over IR",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/ready.png",
+    "screenshots/sending.png"
+  ],
+  "description": "A port of TV-B-Gone, by Mitch Altman and Limor Fried, to the CardputerZero. Pick Europe or Americas / Asia, point at the TV and press ENTER: it sends about 140 power-off codes in under a minute, most popular brands first, through the built-in infrared LED. ENTER or ESC stops, hold ESC to exit.",
+  "license": "MIT AND CC-BY-SA-3.0",
+  "source_repo": "https://github.com/baltamir1978/ZeroTVBGone",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TVBG",
+  "author": {
+    "github": "baltamir1978",
+    "display_name": "baltamir1978"
+  },
+  "published_at": "2026-11-16T22:16:56+00:00",
+  "updated_at": "2026-11-16T22:16:56+00:00"
+}
