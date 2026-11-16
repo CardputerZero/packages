@@ -8,3 +8,4 @@ release-debs/
 # <pkg>_<ver>_<arch>.deb.release.json manifest instead.
 *.deb
 *.DS_Store
+__pycache__/

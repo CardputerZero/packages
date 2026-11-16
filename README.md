@@ -72,6 +72,31 @@ CI then:
 If a PR is rejected, the project stored nothing — the binary only ever lived in
 the contributor's own fork release.
 
+## Withdrawing a version
+
+Unpublish removes the requested version, keeping other published versions of
+the app. When the last version goes, its listing, icon and screenshots go too.
+The deployment rebuilds both APT indexes, `owners.json`, the worldwide
+`generated/registry.json` and the OSS `cn/registry.json`; OSS's managed `pool/`
+is synchronized with deletion enabled. After both store registries no longer
+list withdrawn versions, their binaries are deleted from this repository's
+`apt-pool`, `staging` and `czdev-buffer` releases, including portal-prefixed files.
+
+Cleanup is derived from manifest deletions in main's full first-parent history,
+so it also repairs old incomplete withdrawals and can be retried after a failed
+deployment. Active manifest filenames are always protected. A repeated portal
+request verifies the historical owner and retries the deployment without
+opening a spurious failure issue. Run `update-index.yml` manually to retry an
+incomplete cleanup; a failed registry check or deletion fails the workflow.
+
+Upload downloads retry transient network/Release-CDN failures for up to ten
+minutes using increasing delays. Downloads are written atomically, screenshots
+and icons use the same retry helper, and integrity failures remain blocking.
+
+Run regression checks with `python3 -m unittest discover -s tests -v` (Python
+3.10+ and Node.js). They use temporary repositories and mocked downloads, and
+never delete remote assets.
+
 ## Manifest format
 
 `pool/main/<pkg>/<pkg>_<ver>_<arch>.deb.release.json`:

@@ -6,6 +6,8 @@ on:
     paths:
       - 'pool/**'
       - 'oss/**'
+      - '.github/scripts/catalog_cleanup.py'
+      - '.github/scripts/download.py'
       - '.github/workflows/update-index.yml'
 
   workflow_dispatch:
@@ -27,7 +29,8 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  # Never interrupt a withdrawal between catalog publication and asset cleanup.
+  cancel-in-progress: false
 
 env:
   # Long-lived "pool" release that stores every .deb as an asset.
@@ -40,6 +43,8 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    outputs:
+      sha: ${{ steps.snapshot.outputs.sha }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -47,6 +52,21 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Record current catalog and approved withdrawals
+        id: snapshot
+        run: |
+          echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          python3 .github/scripts/catalog_cleanup.py plan > /tmp/withdrawals.json
+          echo "withdrawals=$(python3 -c 'import json; print(str(bool(json.load(open("/tmp/withdrawals.json"))["withdrawn"])).lower())')" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: withdrawal-plan
+          path: /tmp/withdrawals.json
 
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y dpkg-dev rsync jq
@@ -86,7 +106,7 @@ jobs:
             for src in "https://github.com/${GITHUB_REPOSITORY}/releases/download/staging/$name" "$url"; do
               rm -f "$tmp"
               echo "promoting $name from $src"
-              curl -fL --retry 3 --max-time 600 -o "$tmp" "$src" || continue
+              python3 .github/scripts/download.py "$src" "$tmp" || continue
               got_sha=$(sha256sum "$tmp" | awk '{print $1}')
               if [ -n "$want_sha" ] && [ "$want_sha" != "null" ] && [ "$got_sha" != "$want_sha" ]; then
                 echo "::warning::sha256 mismatch for $name from $src (want $want_sha got $got_sha)"; continue
@@ -107,8 +127,8 @@ jobs:
           set -euo pipefail
           # Manifests in git are the source of truth for the catalog: only the
           # .deb referenced by a manifest is indexed, so deleting a manifest
-          # (e.g. `czdev unpublish`) drops the package on the next build even if
-          # the asset still exists in the release.
+          # (e.g. `czdev unpublish`) drops the package on the next build. The
+          # completion job then revokes the old release download links too.
           mkdir -p release-debs
           shopt -s nullglob globstar
           count=0
@@ -130,6 +150,7 @@ jobs:
 
           # Pages serves metadata + screenshots + meta.json, but NOT the .deb files.
           rsync -a --exclude='*.deb' pool/ public/pool/
+          python3 .github/scripts/catalog_cleanup.py prune-tree public/pool/main
 
           # Scan the .deb downloaded from the release; rewrite Filename to the
           # release asset download URL (flat asset name == basename).
@@ -190,7 +211,7 @@ jobs:
           PY
 
       - name: Stage OSS tree (China mirror serves .deb locally with relative paths)
-        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
         run: |
           set -euo pipefail
           # OSS hosts the full repo: copy metadata, drop the .deb into pool/ by
@@ -236,7 +257,7 @@ jobs:
           done
 
       - name: Setup ossutil
-        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
         uses: manyuanrong/setup-ossutil@v3.0
         with:
           endpoint: ${{ vars.PACKAGES_OSS_ENDPOINT || 'oss-cn-shenzhen.aliyuncs.com' }}
@@ -244,7 +265,7 @@ jobs:
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
       - name: Sync APT repository to Aliyun OSS
-        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true }}
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
         env:
           OSS_SYNC_ENABLED: 'true'
           OSS_PUBLIC_DIR: oss-public
@@ -276,3 +297,31 @@ jobs:
           token: ${{ secrets.DISPATCH_TOKEN }}
           repository: CardputerZero/cardputerzero.github.io
           event-type: packages-updated
+
+  complete-withdrawals:
+    needs: [build-and-deploy, notify-registry]
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.build-and-deploy.outputs.sha }}
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: withdrawal-plan
+          path: /tmp
+
+      - name: Verify both published store registries
+        env:
+          OSS_BASE: ${{ vars.PACKAGES_OSS_PUBLIC_BASE_URL || 'https://cardputer-zero-repo.oss-cn-shenzhen.aliyuncs.com' }}
+          OSS_PREFIX: ${{ inputs.oss_prefix || vars.PACKAGES_OSS_PREFIX || 'packages' }}
+        run: |
+          python3 .github/scripts/catalog_cleanup.py verify-registries /tmp/withdrawals.json \
+            https://cardputerzero.github.io/generated/registry.json \
+            "${OSS_BASE%/}/${OSS_PREFIX#/}/cn/registry.json"
+
+      - name: Delete withdrawn binaries from all package releases
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 .github/scripts/catalog_cleanup.py releases /tmp/withdrawals.json

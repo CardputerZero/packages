@@ -111,17 +111,15 @@ for meta_path in sorted(root.glob("*/meta.json")):
         print(meta_path.parent.name)
 PY
 
-  blocked_packages=()
+  blocked_count=0
   while IFS= read -r pkg; do
-    [[ -n "$pkg" ]] && blocked_packages+=("$pkg")
-  done < "$blocked_file"
-
-  for pkg in "${blocked_packages[@]}"; do
+    [[ -n "$pkg" ]] || continue
     echo "Skipping ${pkg}: meta.json region.CN=false for ${endpoint_host}"
     rm -rf "$sync_dir/pool/main/$pkg"
-  done
+    blocked_count=$((blocked_count + 1))
+  done < "$blocked_file"
 
-  if ((${#blocked_packages[@]} > 0)); then
+  if ((blocked_count > 0)); then
     apt_dir="$sync_dir/dists/stable/main/binary-arm64"
     mkdir -p "$apt_dir"
     (cd "$sync_dir" && dpkg-scanpackages --multiversion pool/ > dists/stable/main/binary-arm64/Packages)
@@ -151,8 +149,14 @@ if [[ -n "$prefix" ]]; then
 fi
 
 count=0
+# Only pool/ is an exact mirror. Never --delete at the bucket root: it can
+# contain OS images and other repositories. Empty catalogs intentionally clear
+# the managed pool too. A failed listing/delete must fail the deployment.
+mkdir -p "$sync_dir/pool"
+ossutil sync "$sync_dir/pool/" "${dest_base}/pool/" --delete -f
 while IFS= read -r -d '' file; do
   rel="${file#"$sync_dir"/}"
+  [[ "$rel" == pool/* ]] && continue
   echo "Uploading ${rel} -> ${dest_base}/${rel}"
   ossutil cp -f "$file" "${dest_base}/${rel}"
   count=$((count + 1))
