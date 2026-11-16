@@ -1,0 +1,34 @@
+{
+  "title": "ZeroAmp",
+  "summary": "Inspired from Winamp music player",
+  "description": "this is created inspiring winamp music player. added support to create playlists, default button layout with out pressing the fn button. this will disable the wifi when the app is launched and turns it back on when exiting, had to do this as when connected through bluetooth it is conflicting with wifi.",
+  "categories": [
+    "Media"
+  ],
+  "license": "Unlicense",
+  "share_code": "1990",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Ramchand",
+    "github": "kakashi2018"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "zeroamp_icon.png",
+  "published_at": "2026-11-16T01:56:20+00:00",
+  "updated_at": "2026-11-16T01:56:20+00:00"
+}
