@@ -1,0 +1,36 @@
+{
+  "title": "SubGHz",
+  "summary": "A Flipper-zero inspired SubGHz app for the CardputerZero with the CC1101 Cap",
+  "description": "SubGHz turns your CardputerZero and Cap CC1101 into a portable Sub-GHz transceiver inspired by the Flipper Zero Sub-GHz app.\r\n\r\nBrowse, inspect, capture, and transmit .sub files, the same format used on the Flipper, across the 300–348 MHz, 387–464 MHz, and 779–928 MHz bands.",
+  "categories": [
+    "Hardware & IoT",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "SUBG",
+  "source_repo": "https://github.com/bfayers/CardputerZero-SubGHz",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "bfayers",
+    "github": "bfayers"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "subghz_icon.png",
+  "published_at": "2026-11-16T15:08:12+00:00",
+  "updated_at": "2026-11-16T15:08:12+00:00"
+}
