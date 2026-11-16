@@ -1,0 +1,11 @@
+{
+  "filename": "zerogallery_0.3.0-rev1_arm64.deb",
+  "url": "https://github.com/baltamir1978/packages/releases/download/czdev-buffer/zerogallery_0.3.0-rev1_arm64.deb",
+  "sha256": "bc0b9409cfdb8393176e118e78a50450379581135a961b0af634379d36f07776",
+  "size": 995222,
+  "package": "zerogallery",
+  "version": "0.3.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "baltamir1978",
+  "uploader_email": "baltamir1978@users.noreply.github.com"
+}
