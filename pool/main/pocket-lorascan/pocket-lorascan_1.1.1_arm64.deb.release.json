@@ -1,0 +1,11 @@
+{
+  "filename": "pocket-lorascan_1.1.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/duanesweazy1__pocket-lorascan_1.1.1_arm64.deb",
+  "sha256": "98a6ab7f7e10d9b27f2ad2288a91520f13a22fe5e8e3abe66e10e34c9966e08c",
+  "size": 28242,
+  "package": "pocket-lorascan",
+  "version": "1.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "duanesweazy1",
+  "uploader_email": "duanesweazy1@users.noreply.github.com"
+}

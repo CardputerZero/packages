@@ -1,0 +1,36 @@
+{
+  "title": "LoRa Scanner",
+  "summary": "LoRa spectrum + Meshtastic & LoRaWAN packet decoder + GPS coverage map",
+  "description": "LoRa Scanner shows and decodes what is on the air in the US 902-928 MHz band using the Cap LoRa-1262. Spectrum with max-hold and a waterfall show activity across the band. The Meshtastic Finder listens on each preset's default frequency and decodes the public default channel: text messages, node names, telemetry, positions and traceroutes (private channels stay encrypted). The LoRaWAN page hops the US915 channels of any sub-band (or the gateway downlink channels) and decodes frame headers: device address, network (The Things Network, Helium...), frame counter, port, and join requests with the device's EUI. Every packet is listed with full details and a hex dump, logged to ~/LoRaScan/packets.csv, and - with the Cap's GPS - plotted on a coverage map you can export as a Google Earth KML file. Receive only: it never transmits. Requires the Cap LoRa-1262.",
+  "categories": [
+    "Hardware & IoT",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "LSCN",
+  "source_repo": "https://github.com/duanesweazy1/pocket-lorascan",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Duane Sweazy",
+    "github": "duanesweazy1"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "pocket-lorascan_icon.png",
+  "published_at": "2026-11-16T18:57:04+00:00",
+  "updated_at": "2026-11-16T18:57:04+00:00"
+}
