@@ -54,7 +54,7 @@ jobs:
         run: |
           set -uo pipefail
           ERR=""
-          curl -fL --retry 3 --max-time 600 -o /tmp/pkg.deb "$DEB_URL" || ERR="- ❌ could not download the uploaded .deb\n"
+          python3 .github/scripts/download.py "$DEB_URL" /tmp/pkg.deb || ERR="- ❌ download temporarily unavailable; please retry later (no package change required)\n"
           if [ -f /tmp/pkg.deb ]; then
             GOT=$(sha256sum /tmp/pkg.deb | awk '{print $1}')
             [ "$GOT" = "$WANT_SHA" ] || ERR="${ERR}- ❌ sha256 mismatch\n"
@@ -259,7 +259,8 @@ jobs:
               (dest / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
               sys.exit(0)
 
-          import hashlib, urllib.request
+          sys.path.insert(0, str(Path('.github/scripts').resolve()))
+          from download import download as download_file
 
           PNG_SIG = b"\x89PNG\r\n\x1a\n"
           def png_dims(data):
@@ -268,12 +269,13 @@ jobs:
               return int.from_bytes(data[16:20], "big"), int.from_bytes(data[20:24], "big")
 
           def download(url, want_sha, out_path):
-              req = urllib.request.Request(url, headers={"User-Agent": "cz-web-submit"})
-              data = urllib.request.urlopen(req, timeout=120).read()
-              if want_sha and hashlib.sha256(data).hexdigest() != want_sha:
-                  fail(f"checksum mismatch for {url}")
-              out_path.write_bytes(data)
-              return data
+              try:
+                  download_file(url, out_path, want_sha)
+              except ValueError as exc:
+                  fail(str(exc))
+              except Exception:
+                  fail("download temporarily unavailable for screenshot/icon; please retry later (no package change required)")
+              return out_path.read_bytes()
 
           # Highest priority: store metadata + images supplied directly from the
           # web form. Screenshots/icon are small PNGs uploaded to the buffer
@@ -437,7 +439,7 @@ jobs:
           # Judged by the manifests tracked on main (the checkout's index) —
           # the working tree already holds this submission's files.
           NEW_PKG="true"
-          git ls-files "pool/main/$PKG/*.deb.release.json" | grep -q . && NEW_PKG="false"
+          git ls-files "pool/main/$PKG/*.deb.release.json" | grep . > /dev/null && NEW_PKG="false"
           # Ownership record: first uploader of a package name owns it. The login
           # is the authoritative owner key; the email is kept for contact/audit.
           UPLOADER_EMAIL=$(echo "$EMAILS_JSON" | jq -r '.[0] // empty')
@@ -542,9 +544,15 @@ jobs:
             fi
             echo "Details: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
             echo
-            echo "Fix the package and upload again at https://dev.cardputer.cc"
-            echo
-            echo "修复上面列出的问题后，到 https://dev.cardputer.cc 重新上传即可。"
+            if printf '%s%s' "$ERR1" "$ERR2" | grep -F 'download temporarily unavailable' >/dev/null; then
+              echo "The upload could not be downloaded after retries. Please wait and submit again at https://dev.cardputer.cc; no package change is required."
+              echo
+              echo "上传文件暂时无法下载，多次重试后仍未恢复。请稍后到 https://dev.cardputer.cc 重新提交，无需修改安装包。"
+            else
+              echo "Fix the package and upload again at https://dev.cardputer.cc"
+              echo
+              echo "修复上面列出的问题后，到 https://dev.cardputer.cc 重新上传即可。"
+            fi
           } > /tmp/issue.md
           gh issue create \
             --title "portal submission failed: $FILENAME" \

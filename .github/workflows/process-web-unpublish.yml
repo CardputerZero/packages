@@ -5,8 +5,8 @@
 # `uploaded_by`, or the login from the binary's Maintainer noreply address for
 # legacy manifests; admins bypass), removes the manifest and opens a removal PR
 # (auto-merged when AUTO_MERGE is true).
-# Removing the manifest drops the package from the APT index on the next
-# update-index build.
+# The index deployment also removes withdrawn binaries from Releases and OSS,
+# and verifies both store registries. Repeated requests retry that cleanup.
 
 name: Process Web Unpublish
 
@@ -23,11 +23,18 @@ permissions:
 env:
   AUTO_MERGE: "true"
 
+concurrency:
+  group: web-unpublish
+  cancel-in-progress: false
+
 jobs:
   process:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y dpkg-dev jq
@@ -46,17 +53,27 @@ jobs:
           set -uo pipefail
           ERR=""
           echo "$PKG" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$' || { echo "::error::bad package name"; exit 1; }
+          dpkg --validate-version "$VER" || { echo "::error::bad version"; exit 1; }
+          case "$ARCH" in arm64|all) ;; *) echo "::error::bad architecture"; exit 1;; esac
           ASSET_NAME=$(echo "${PKG}_${VER}_${ARCH}.deb" | tr '~:' '..')
           MANIFEST="pool/main/$PKG/$ASSET_NAME.release.json"
+          ALREADY_REMOVED=false
+          OWNER_MANIFEST="$MANIFEST"
           if [ ! -f "$MANIFEST" ]; then
-            ERR="- ❌ manifest not found: \`$MANIFEST\`\n"
-          else
+            if python3 .github/scripts/catalog_cleanup.py lookup "$MANIFEST" > /tmp/withdrawn.json; then
+              OWNER_MANIFEST=/tmp/withdrawn.json
+              ALREADY_REMOVED=true
+            else
+              ERR="- ❌ version was not published or previously withdrawn: \`$MANIFEST\`\n"
+            fi
+          fi
+          if [ -z "$ERR" ]; then
             # Ownership is first-come-first-served by GitHub login. Prefer the
             # recorded `uploaded_by`; fall back to the login encoded in the
             # published binary's Maintainer noreply address for legacy manifests.
-            OWNER_LOGIN=$(jq -r '.uploaded_by // empty' "$MANIFEST" | tr '[:upper:]' '[:lower:]')
+            OWNER_LOGIN=$(jq -r '.uploaded_by // empty' "$OWNER_MANIFEST" | tr '[:upper:]' '[:lower:]')
             if [ -z "$OWNER_LOGIN" ]; then
-              URL=$(jq -r '.url // empty' "$MANIFEST")
+              URL=$(jq -r '.url // empty' "$OWNER_MANIFEST")
               if [ -n "$URL" ] && curl -fsL --max-time 300 -o /tmp/pkg.deb "$URL" 2>/dev/null; then
                 OM=$(dpkg-deb -f /tmp/pkg.deb Maintainer 2>/dev/null | grep -oP '<\K[^>]+' | tr '[:upper:]' '[:lower:]' || true)
                 OWNER_LOGIN=$(printf '%s' "$OM" | sed -nE 's/^([0-9]+\+)?([^@]+)@users\.noreply\.github\.com$/\2/p')
@@ -71,13 +88,22 @@ jobs:
               fi
             fi
           fi
+          if [ -z "$ERR" ] && [ "$ALREADY_REMOVED" = true ]; then
+            echo "::notice::version already withdrawn; retrying cleanup on all distribution channels"
+            gh workflow run update-index.yml --ref main -f sync_oss=true
+            exit 0
+          fi
           if [ -z "$ERR" ]; then
+            set -e
             # '~' and ':' are legal in a Debian version but not in a git ref.
             BRANCH="unpublish/${PKG}-${VER//[\~:]/_}-web-${{ github.run_id }}"
             git config user.name "cardputerzero-bot"
             git config user.email "cardputerzero-bot@users.noreply.github.com"
             git checkout -b "$BRANCH"
             git rm -q "$MANIFEST"
+            if ! git ls-files "pool/main/$PKG/*.deb.release.json" | grep . >/dev/null; then
+              git rm -rq --ignore-unmatch "pool/main/$PKG"
+            fi
             git commit -m "unpublish: $PKG $VER via developer portal by @$SUBMITTER"
             git push origin "$BRANCH"
             PR_URL=$(gh pr create --base main --head "$BRANCH" \
@@ -88,7 +114,7 @@ jobs:
                 # GITHUB_TOKEN pushes don't trigger the push-based update-index
                 # workflow; dispatch it explicitly so the removal drops from the
                 # APT index right away.
-                gh workflow run update-index.yml --ref main || echo "::warning::could not trigger update-index; run it manually"
+                gh workflow run update-index.yml --ref main -f sync_oss=true
               else
                 echo "::warning::auto-merge failed; awaiting manual review"
               fi

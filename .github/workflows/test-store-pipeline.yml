@@ -1,0 +1,20 @@
+name: Test Store Pipeline
+
+on:
+  push:
+    paths: ['.github/**', 'oss/**', 'tests/**']
+  pull_request:
+    paths: ['.github/**', 'oss/**', 'tests/**']
+
+permissions:
+  contents: read
+
+jobs:
+  regressions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test retries, withdrawals and release classification
+        run: python3 -m unittest discover -s tests -v
+      - name: Check shell syntax
+        run: bash -n oss/sync-apt-repo.sh .github/scripts/package_owner.sh

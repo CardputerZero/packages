@@ -67,7 +67,7 @@ jobs:
           # The checkout above is the PR's own code, so the policies are taken
           # from the base branch: a fork must not be able to grade itself with
           # a rewritten rule.
-          for script in install_path_policy.py store_meta_policy.py; do
+          for script in install_path_policy.py store_meta_policy.py download.py; do
             if ! git show "$BASE_SHA:.github/scripts/$script" > "/tmp/$script" 2>/dev/null; then
               ERRORS="${ERRORS}- ❌ internal: $script is missing on the base branch\n"
             fi
@@ -124,7 +124,7 @@ jobs:
             fi
 
             deb="/tmp/$fname"
-            if ! curl -fL --retry 3 --max-time 600 -o "$deb" "$url"; then
+            if ! python3 /tmp/download.py "$url" "$deb"; then
               ERRORS="${ERRORS}- ❌ Could not download \`$fname\` from \`$url\`\n"; continue
             fi
             got=$(sha256sum "$deb" | awk '{print $1}')
@@ -305,7 +305,9 @@ jobs:
           # (this note is informational — the artifact is untrusted).
           NEW_PKGS=""
           for tp in $TOUCHED_PKGS; do
-            if ! git ls-tree -r "$BASE_SHA" --name-only | grep -q "^pool/main/${tp}/.*\.deb\.release\.json$"; then
+            # Consume all input: grep -q exits early and makes git fail with
+            # SIGPIPE under pipefail, incorrectly labelling updates as new apps.
+            if ! git ls-tree -r "$BASE_SHA" --name-only | grep "^pool/main/${tp}/[^/]*\.deb\.release\.json$" > /dev/null; then
               NEW_PKGS="${NEW_PKGS}${tp}\n"
             fi
           done
