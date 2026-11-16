@@ -1,0 +1,31 @@
+{
+  "title": "Mod Player",
+  "summary": "Play tracker modules with live, PCM-driven visualizers.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/app-simulator-dark-darwin.png",
+    "screenshots/app-simulator-light-darwin.png"
+  ],
+  "description": "Browse and play tracker modules from your Music folder. Skip between tracks, seek while holding navigation keys, adjust volume or mute, and switch between spectrum, oscilloscope, and waterfall visualizers. No music is bundled; put your modules in Music or any subfolder.",
+  "license": "MIT",
+  "source_repo": "https://github.com/MrJoshMurray/mod-player",
+  "icon": "mod-player-store.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "MODP",
+  "author": {
+    "github": "MrJoshMurray",
+    "display_name": "MrJoshua"
+  },
+  "published_at": "2026-11-16T19:40:04+00:00",
+  "updated_at": "2026-11-16T19:40:04+00:00"
+}
