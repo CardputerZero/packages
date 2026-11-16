@@ -1,8 +1,8 @@
 {
   "filename": "mod-player_0.2.1-rev1_arm64.deb",
   "url": "https://github.com/MrJoshMurray/packages/releases/download/czdev-buffer/mod-player_0.2.1-rev1_arm64.deb",
-  "sha256": "119673806d545a2cce1c8d8ed99111d2006dcd5032ca45cb560cdfe929e6c5f1",
-  "size": 2037856,
+  "sha256": "35e8da9dc9f7401bd38255159701edfc23b2108d92273d4856969f6b5b9de593",
+  "size": 2039466,
   "package": "mod-player",
   "version": "0.2.1-rev1",
   "architecture": "arm64",

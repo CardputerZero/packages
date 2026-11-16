@@ -8,7 +8,7 @@
     "screenshots/app-simulator-dark-darwin.png",
     "screenshots/app-simulator-light-darwin.png"
   ],
-  "description": "Browse and play tracker modules from your Music folder. Skip between tracks, seek while holding navigation keys, adjust volume or mute, and switch between spectrum, oscilloscope, and waterfall visualizers. No music is bundled; put your modules in Music or any subfolder.",
+  "description": "Browse and play tracker modules in your Music folder or its subfolders. Supports the formats reported by the installed libopenmpt build, including classic MOD, S3M, XM, and IT modules. Skip tracks, seek, adjust volume or mute, and switch between spectrum, oscilloscope, and waterfall visualizers. No music is bundled.",
   "license": "MIT",
   "source_repo": "https://github.com/MrJoshMurray/mod-player",
   "icon": "mod-player-store.png",
