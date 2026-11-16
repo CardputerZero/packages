@@ -1,0 +1,33 @@
+{
+  "title": "CardFlash",
+  "summary": "Download Linux distros and flash them to a USB drive, no PC needed",
+  "description": "Pick an OS on the Cardputer, plug a USB flash drive into the USB-A port, and CardFlash downloads the image (BitTorrent first, the project's own mirrors as backup), writes it to the drive and reads it back to verify it. Sources include Fedora, Ubuntu, Debian, Arch Linux, Manjaro, Pop!_OS, Universal Blue, FydeOS, SteamOS, Armbian, the Raspberry Pi Imager list, fosstorrents and linuxtracker. Raspberry Pi and Armbian images can be set up for first boot, and it can make Windows LTSC evaluation install sticks. Press Space on a distro to pin it to the home screen. Set the side switch to Host before plugging in the drive. Made with Claude Code.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "FLSH",
+  "source_repo": "https://gitlab.com/ScarletPachyderm/cardflash",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "display_name": "ScarletPachyderm",
+    "github": "ScarletPachydermDev"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardflash_icon.png",
+  "published_at": "2026-11-16T22:17:20+00:00",
+  "updated_at": "2026-11-16T22:17:20+00:00"
+}
