@@ -27,5 +27,19 @@
     "display_name": "MrJoshua"
   },
   "published_at": "2026-11-16T19:40:04+00:00",
-  "updated_at": "2026-11-16T19:40:04+00:00"
+  "updated_at": "2026-11-16T19:40:04+00:00",
+  "locales": {
+    "ja": {
+      "title": "Mod Player",
+      "summary": "トラッカーモジュールを再生し、PCM駆動のビジュアライザーを楽しめます。"
+    },
+    "zh-CN": {
+      "title": "Mod Player",
+      "summary": "播放 Tracker 音乐模块，并体验 PCM 实时驱动的可视化效果。"
+    },
+    "es": {
+      "title": "Mod Player",
+      "summary": "Reproduce módulos tracker con visualizadores en tiempo real basados en PCM."
+    }
+  }
 }
