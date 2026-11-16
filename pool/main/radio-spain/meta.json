@@ -1,0 +1,39 @@
+{
+  "title": "Radio Spain",
+  "summary": "Listen to Spain's most popular internet radio stations",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/1-inicio.png",
+    "screenshots/2-sonando.png",
+    "screenshots/3-volumen.png",
+    "screenshots/4-pagina2.png",
+    "screenshots/5-ayuda.png"
+  ],
+  "description": "Radio Spain brings the most popular Spanish radio stations to your CardputerZero in a simple, keyboard-friendly screen.\n\n- Grid of 6 stations per page, each with its logo.\n- F / X for the previous or next 6 stations, Z / C to select and OK to listen.\n- Keys 1-6 play a station on the current page directly.\n- Volume with Fn+S / Fn+D, mute with Fn+A, help with Fn+H.\n- Shows the current song when the station broadcasts it.\n- Reconnects automatically and caches the station list for instant start-up.\n\nStation list provided by Radio Browser (radio-browser.info), a free, community-driven internet radio directory.\n\nLEGAL NOTICE ON NAMES AND LOGOS\nStation names, logos and trademarks shown in the app belong to their respective owners. Radio Spain is an independent app and is not affiliated with, sponsored by or endorsed by any radio station or media group. Logos are not bundled with the app: they are downloaded on the device from the public Radio Browser directory and are displayed solely to identify each station. Audio comes directly from each station's own public internet stream; the app does not record, store or redistribute any content. If you own any of these trademarks and would like its use in the app changed or removed, please get in touch through the app's store page and the request will be handled.",
+  "locales": {
+    "es": {
+      "summary": "Escucha las radios de internet más populares de España",
+      "description": "Radio Spain reúne las emisoras de radio españolas más escuchadas en una pantalla sencilla, pensada para el teclado del CardputerZero.\n\n- Rejilla con 6 emisoras por página, cada una con su logo.\n- F / X para las 6 emisoras anteriores o siguientes, Z / C para elegir y OK para escuchar.\n- Teclas 1-6 para escuchar directamente una emisora de la página.\n- Volumen con Fn+S / Fn+D, silencio con Fn+A y ayuda con Fn+H.\n- Muestra la canción que suena cuando la emisora la envía.\n- Reconecta sola si se corta la emisión y guarda la lista para arrancar al instante.\n\nLista de emisoras proporcionada por Radio Browser (radio-browser.info), un directorio libre y colaborativo de radios por internet.\n\nAVISO LEGAL SOBRE NOMBRES Y LOGOTIPOS\nLos nombres, logotipos y marcas de las emisoras que aparecen en la aplicación pertenecen a sus respectivos titulares. Radio Spain es una aplicación independiente y no está afiliada, patrocinada ni respaldada por ninguna de las emisoras ni por sus grupos de comunicación. Los logotipos no se incluyen en la aplicación: se descargan en el propio dispositivo desde el directorio público Radio Browser y se muestran únicamente para identificar cada emisora. El audio procede directamente de las emisiones públicas que ofrece cada emisora en internet; la aplicación no graba, almacena ni redistribuye ningún contenido. Si eres titular de alguna de estas marcas y quieres que se modifique o retire su presencia en la aplicación, ponte en contacto a través de la página de la aplicación en la tienda y se atenderá la solicitud."
+    }
+  },
+  "license": "MIT",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "RSPN",
+  "author": {
+    "display_name": "Antocop2024",
+    "github": "Antocop2024"
+  },
+  "published_at": "2026-11-16T10:20:09+00:00",
+  "updated_at": "2026-11-16T10:20:09+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "radio-spain_1.0.0-1_arm64.deb",
+  "url": "https://github.com/Antocop2024/packages/releases/download/czdev-buffer/radio-spain_1.0.0-1_arm64.deb",
+  "sha256": "91b190a71b300d98d67cdf3398adb20e7cee8a829cdad0c714df7216eada615a",
+  "size": 21562,
+  "package": "radio-spain",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "Antocop2024",
+  "uploader_email": "Antocop2024@users.noreply.github.com"
+}
