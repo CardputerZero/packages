@@ -1,0 +1,11 @@
+{
+  "filename": "cardrouter_0.1.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jiawud__cardrouter_0.1.0_arm64.deb",
+  "sha256": "b692436676c5ba50600d5a915459b73e07c15bdf167fa5fcc75c79abba49f9c0",
+  "size": 2505968,
+  "package": "cardrouter",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "jiawud",
+  "uploader_email": "jiawud@users.noreply.github.com"
+}
