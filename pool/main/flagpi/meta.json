@@ -1,0 +1,31 @@
+{
+  "title": "Semaphore旗语",
+  "summary": "旗语学习小工具",
+  "description": "海上手旗旗语交互小工具\r\n在无线电还没普及的时候\r\n水手靠两面旗子的不同姿势传递消息\r\n现在做成可视化交互版本\r\n点选字母，直接展示对应的旗位",
+  "categories": [
+    "Games",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "REAL",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Real",
+    "github": "RealOuO"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "flagpi_icon.png",
+  "published_at": "2026-11-16T07:06:32+00:00",
+  "updated_at": "2026-11-16T07:06:32+00:00"
+}
