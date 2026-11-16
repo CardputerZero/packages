@@ -1,0 +1,11 @@
+{
+  "filename": "flightzero_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/olp5735-sys__flightzero_0.2.0_arm64.deb",
+  "sha256": "ef3cbf6c76f4d549afc82bf3abc91e09a6e7f966f3716b5f19d7dfa172d16dd3",
+  "size": 1386916,
+  "package": "flightzero",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "olp5735-sys",
+  "uploader_email": "olp5735-sys@users.noreply.github.com"
+}
