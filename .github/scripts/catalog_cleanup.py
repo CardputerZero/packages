@@ -66,16 +66,27 @@ def gh_json(endpoint):
 
 def release_cleanup(data, dry_run=False):
     repo = os.environ["GITHUB_REPOSITORY"]
-    # A newer deployment must reconcile a newer main; never delete against an
-    # obsolete checkout. All deploys share a non-cancelling concurrency group.
-    if gh_json(f"repos/{repo}/commits/main")["sha"] != data["sha"]:
-        raise ValueError("main changed during deployment; rerun update-index on latest main")
     active = {m["filename"] for m in data["active"]}
+    active_packages = {m.get("package") for m in data["active"]}
+    # Publishing may advance main during a long deployment. Protect any newly
+    # (re)published filenames as well, without blocking unrelated withdrawals.
+    sha = gh_json(f"repos/{repo}/commits/main")["sha"]
+    if sha != data["sha"]:
+        tree = gh_json(f"repos/{repo}/git/trees/{sha}?recursive=1")
+        if tree.get("truncated"):
+            raise ValueError("current main tree is truncated; refusing asset deletion")
+        active.update(MANIFEST.fullmatch(t["path"])[2] for t in tree["tree"]
+                      if t["type"] == "blob" and MANIFEST.fullmatch(t["path"]))
+        active_packages.update(MANIFEST.fullmatch(t["path"])[1] for t in tree["tree"]
+                               if t["type"] == "blob" and MANIFEST.fullmatch(t["path"]))
     withdrawn = {m["filename"] for m in data["withdrawn"]} - active
+    retired_image_prefixes = {f"{m['uploaded_by']}__{m['package']}__".lower()
+                              for m in data["withdrawn"]
+                              if m.get("uploaded_by") and m.get("package") not in active_packages}
+    # List releases rather than swallowing API failures as an absent tag.
+    releases = json.loads(subprocess.check_output(
+        ["gh", "api", "--paginate", "--slurp", f"repos/{repo}/releases?per_page=100"], text=True))
     for tag in ("apt-pool", "staging", "czdev-buffer"):
-        # List releases rather than swallowing API failures as an absent tag.
-        releases = json.loads(subprocess.check_output(
-            ["gh", "api", "--paginate", "--slurp", f"repos/{repo}/releases?per_page=100"], text=True))
         release = next((r for page in releases for r in page if r["tag_name"] == tag), None)
         if release is None:
             continue
@@ -84,7 +95,9 @@ def release_cleanup(data, dry_run=False):
         for asset in (a for page in pages for a in page):
             # Portal uploads have a login prefix; czdev uploads do not.
             filename = asset["name"].split("__", 1)[-1]
-            if filename not in withdrawn:
+            retired_image = (tag == "staging" and asset["name"].lower().endswith(".png")
+                             and any(asset["name"].lower().startswith(p) for p in retired_image_prefixes))
+            if filename not in withdrawn and not retired_image:
                 continue
             print(f"{'would delete' if dry_run else 'delete'} {tag}/{asset['name']}", flush=True)
             if not dry_run:

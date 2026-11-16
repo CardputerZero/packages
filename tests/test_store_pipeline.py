@@ -136,11 +136,14 @@ class WithdrawalTests(unittest.TestCase):
         self.assertTrue(self.current.exists())
 
     def test_release_cleanup_is_exact_paginated_and_idempotent(self):
-        data = {'sha': 'current', 'active': [{'filename': 'sample_2.0_arm64.deb'}],
-                'withdrawn': [{'filename': 'sample_1.0_arm64.deb'}]}
+        data = {'sha': 'current', 'active': [{'filename': 'sample_2.0_arm64.deb', 'package': 'sample'}],
+                'withdrawn': [{'filename': 'sample_1.0_arm64.deb', 'package': 'sample', 'uploaded_by': 'owner'},
+                              {'filename': 'retired_1.0_arm64.deb', 'package': 'retired', 'uploaded_by': 'owner'}]}
         releases = [[{'id': 1, 'tag_name': 'apt-pool'}, {'id': 2, 'tag_name': 'staging'}]]
         assets = {1: [[{'id': 10, 'name': 'sample_1.0_arm64.deb'}], [{'id': 11, 'name': 'sample_2.0_arm64.deb'}]],
-                  2: [[{'id': 12, 'name': 'owner__sample_1.0_arm64.deb'}, {'id': 13, 'name': 'sample_3.0_arm64.deb'}]]}
+                  2: [[{'id': 12, 'name': 'owner__sample_1.0_arm64.deb'}, {'id': 13, 'name': 'sample_3.0_arm64.deb'},
+                       {'id': 14, 'name': 'owner__sample__icon.png'}, {'id': 15, 'name': 'owner__retired__shot0.png'},
+                       {'id': 16, 'name': 'other__retired__shot0.png'}]]}
         def api(cmd, **kwargs):
             match = re.search(r'/releases/(\d+)/assets\?', cmd[-1])
             return json.dumps(assets[int(match[1])] if match else releases)
@@ -156,7 +159,8 @@ class WithdrawalTests(unittest.TestCase):
             cleanup.release_cleanup(data)
             cleanup.release_cleanup(data)
         paths = [c.args[0][-1] for c in delete.call_args_list]
-        self.assertEqual(paths, ['repos/owner/repo/releases/assets/10', 'repos/owner/repo/releases/assets/12'])
+        self.assertEqual(paths, ['repos/owner/repo/releases/assets/10', 'repos/owner/repo/releases/assets/12',
+                                 'repos/owner/repo/releases/assets/15'])
 
     def test_first_release_comment_handles_a_large_tree_without_sigpipe(self):
         for i in range(1000):
@@ -173,11 +177,23 @@ class WithdrawalTests(unittest.TestCase):
         self.commit('remove all versions but keep metadata')
         self.assertEqual(subprocess.check_output(['bash', '-c', script], text=True).strip(), 'new')
 
-    def test_stale_deploy_refuses_to_delete_assets(self):
+    def test_truncated_current_tree_refuses_to_delete_assets(self):
         with patch.dict(os.environ, {'GITHUB_REPOSITORY': 'owner/repo'}), \
-             patch.object(cleanup, 'gh_json', return_value={'sha': 'newer'}), \
-             patch.object(cleanup.subprocess, 'run') as delete, self.assertRaisesRegex(ValueError, 'main changed'):
-            cleanup.release_cleanup({'sha': 'old'})
+             patch.object(cleanup, 'gh_json', side_effect=[{'sha': 'newer'}, {'truncated': True}]), \
+             patch.object(cleanup.subprocess, 'run') as delete, self.assertRaisesRegex(ValueError, 'truncated'):
+            cleanup.release_cleanup({'sha': 'old', 'active': []})
+        delete.assert_not_called()
+
+    def test_republished_version_on_newer_main_is_protected(self):
+        data = {'sha': 'old', 'active': [], 'withdrawn': [{'filename': 'sample_1.0_arm64.deb'}]}
+        tree = {'truncated': False, 'tree': [{'type': 'blob', 'path': 'pool/main/sample/sample_1.0_arm64.deb.release.json'}]}
+        pages = [[{'id': 1, 'tag_name': 'apt-pool'}]]
+        assets = [[{'id': 10, 'name': 'sample_1.0_arm64.deb'}]]
+        with patch.dict(os.environ, {'GITHUB_REPOSITORY': 'owner/repo'}), \
+             patch.object(cleanup, 'gh_json', side_effect=[{'sha': 'newer'}, tree]), \
+             patch.object(cleanup.subprocess, 'check_output', side_effect=[json.dumps(pages), json.dumps(assets)]), \
+             patch.object(cleanup.subprocess, 'run') as delete:
+            cleanup.release_cleanup(data)
         delete.assert_not_called()
 
     def test_registry_verification_checks_package_and_version(self):
