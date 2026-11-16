@@ -1,0 +1,33 @@
+{
+  "title": "Kesha Code LLM",
+  "summary": "On-device LLM that writes & runs scripts, with chat and camera recognition",
+  "description": "Kesha Code LLM runs small language models entirely on the M5Stack Cardputer Zero with llama.cpp — no account, no cloud.\r\n\r\nCode: each project has a file manager, a tiny sh/Python editor and a console. A local model writes, names and edits scripts for you from the project chat, using built-in skills for common tasks (wifi, web server, Python snippets, battery and more). Pick the model per task: a 90M for speed, a 350M for better code, or a 0.5B coder to leave thinking.\r\n\r\nPower mode frees RAM so the bigger models fit (it lowers gpu_mem and turns the camera off; reversible, needs a restart).\r\n\r\nChat: talk to a small model offline.\r\nVision: live object detection (YOLOX) with boxes and percentages, text recognition (OCR), photos and annotated video.\r\nModels: download, switch and delete models, or drop in your own .gguf / .onnx files.\r\n\r\nAlways review a script before you run it.",
+  "categories": [
+    "Development",
+    "AI"
+  ],
+  "license": "MIT",
+  "share_code": "KESH",
+  "source_repo": "https://github.com/EduardoMoraton/kesha-llm",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": true,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "Eduardo Moraton",
+    "github": "EduardoMoraton"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "kesha-llm_icon.png",
+  "published_at": "2026-11-16T19:23:43+00:00",
+  "updated_at": "2026-11-16T19:23:43+00:00"
+}
