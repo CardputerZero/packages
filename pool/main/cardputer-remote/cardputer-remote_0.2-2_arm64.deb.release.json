@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-remote_0.2-2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RealOuO__cardputer-remote_0.2-2_arm64.deb",
+  "sha256": "7b91c0a62694131bf2ec9e8689561ff0c181d291198d76fde0f4d9ddc77a83ee",
+  "size": 151968,
+  "package": "cardputer-remote",
+  "version": "0.2-2",
+  "architecture": "arm64",
+  "uploaded_by": "RealOuO",
+  "uploader_email": "realouo@users.noreply.github.com"
+}
