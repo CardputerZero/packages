@@ -1,0 +1,11 @@
+{
+  "filename": "poweroff_0.1.0-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/intGus__poweroff_0.1.0-m5stack1_arm64.deb",
+  "sha256": "e0031aa7892e14b7c480d54695dbcceeef954ddec08a4facdd03511933cb4a08",
+  "size": 1916848,
+  "package": "poweroff",
+  "version": "0.1.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "intGus",
+  "uploader_email": "intgus@users.noreply.github.com"
+}
