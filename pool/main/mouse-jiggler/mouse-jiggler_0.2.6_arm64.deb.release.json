@@ -1,0 +1,11 @@
+{
+  "filename": "mouse-jiggler_0.2.6_arm64.deb",
+  "url": "https://github.com/kkazakov/packages/releases/download/czdev-buffer/mouse-jiggler_0.2.6_arm64.deb",
+  "sha256": "b8867d52d5f2ca6a9737c1de5cbf369e751b26d9eed571c6d2a35bf8625d943c",
+  "size": 27816,
+  "package": "mouse-jiggler",
+  "version": "0.2.6",
+  "architecture": "arm64",
+  "uploaded_by": "kkazakov",
+  "uploader_email": "kkazakov@users.noreply.github.com"
+}

@@ -1,0 +1,43 @@
+{
+  "title": "Mouse Jiggler",
+  "summary": "Bluetooth mouse that nudges the pointer to keep a host awake",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/01-home.png",
+    "screenshots/02-running.png",
+    "screenshots/03-mode.png",
+    "screenshots/04-rename.png"
+  ],
+  "description": "Turns the CardputerZero into a real Bluetooth HID mouse and nudges the host pointer in one of three rhythms: Slow (2 px every 30 s), Fast (5 px every 10 s) and Jiggle (20-30 px every 100 ms).\n\nPair once from the device itself, then start or stop the movement from the carousel UI. Stop always releases every button, so the pointer never sticks. The device name can be edited on the device keyboard, and the chosen mode is remembered across restarts.\n\nAlternating movement vectors keep the pointer around its starting point instead of dragging it across the screen. No dongle, no cable, no host-side software: Windows, macOS and Linux see an ordinary Bluetooth mouse.",
+  "locales": {
+    "zh-CN": {
+      "summary": "蓝牙鼠标：轻微移动指针，让电脑保持唤醒",
+      "description": "把 CardputerZero 变成真正的蓝牙 HID 鼠标，按三种节奏轻推指针：慢速（每 30 秒 2 像素）、快速（每 10 秒 5 像素）、抖动（每 100 毫秒 20-30 像素）。在设备上完成配对，用转盘界面开始或停止。"
+    },
+    "ja": {
+      "summary": "Bluetooth マウスでポインタを微移動し、PC をスリープさせない",
+      "description": "CardputerZero を本物の Bluetooth HID マウスにします。遅い（30 秒ごとに 2 px）、速い（10 秒ごとに 5 px）、ジグル（100 ms ごとに 20〜30 px）の 3 つのモードでポインタを動かします。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/kkazakov/cardputer-zero-mouse-emu",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "MOUS",
+  "author": {
+    "github": "kkazakov",
+    "display_name": "Krasimir Kazakov"
+  },
+  "published_at": "2026-11-17T03:20:33+00:00",
+  "updated_at": "2026-11-17T03:20:33+00:00"
+}
