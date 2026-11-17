@@ -1,0 +1,11 @@
+{
+  "filename": "zerosub_0.18.18-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/csaboka21__zerosub_0.18.18-rev1_arm64.deb",
+  "sha256": "5c6be85ac940c109881bb91ce42b237b0ccfba0529518655e03f6321eafd84ed",
+  "size": 2665042,
+  "package": "zerosub",
+  "version": "0.18.18-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "csaboka21",
+  "uploader_email": "csaboka21@users.noreply.github.com"
+}
