@@ -1,0 +1,11 @@
+{
+  "filename": "zero-watt_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/hhzzzyy/packages/releases/download/czdev-buffer/zero-watt_0.1.0-rev1_arm64.deb",
+  "sha256": "dee8d52bf67c2f29e44caa6ec97fa14ded44976b78b20e9b66916c5ec8051a40",
+  "size": 529814,
+  "package": "zero-watt",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "hhzzzyy",
+  "uploader_email": "hhzzzyy@users.noreply.github.com"
+}
