@@ -1,0 +1,35 @@
+{
+  "title": "FMO Mate Pro",
+  "summary": "面向 Cardputer Zero 的原生 FMO 面板，支持 APRS、通联日志、中文输入与音量控制",
+  "description": "FMO Mate Pro 是专为 Cardputer Zero 移植的原生 Debian/APPLaunch 应用。\r\n\r\n主要功能：实时 FMO 面板、APRS 消息、通联日志、服务器切换、天气与 QTH 查询、中文拼音输入、音量调节和省电时钟。界面针对 320×170 屏幕与 46 键键盘优化，支持 FMO WebSocket 和 PipeWire 音频。",
+  "categories": [
+    "System Tools",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "FMOP",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "askachao2026",
+    "github": "askachao2026"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "fmo-mate-pro_icon.png",
+  "published_at": "2026-11-17T16:06:35+00:00",
+  "updated_at": "2026-11-17T16:06:35+00:00"
+}

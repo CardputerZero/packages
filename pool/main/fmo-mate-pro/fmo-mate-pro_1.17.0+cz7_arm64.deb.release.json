@@ -1,0 +1,11 @@
+{
+  "filename": "fmo-mate-pro_1.17.0+cz7_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/askachao2026__fmo-mate-pro_1.17.0%2Bcz7_arm64.deb",
+  "sha256": "ecbdfcae77b0b676b6cd0f978ed90700bf4d2cb0990576866cabce3fdf0d4d2e",
+  "size": 178364,
+  "package": "fmo-mate-pro",
+  "version": "1.17.0+cz7",
+  "architecture": "arm64",
+  "uploaded_by": "askachao2026",
+  "uploader_email": "askachao2026@users.noreply.github.com"
+}
