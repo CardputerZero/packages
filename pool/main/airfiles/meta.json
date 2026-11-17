@@ -1,0 +1,36 @@
+{
+  "title": "Airfiles",
+  "summary": "Network files transfer tool on the CardputerZero from SmartPhones & PC's.",
+  "description": "Network file transfer tool on the M5Stack CardputerZero from SmartPhone or any computer.\r\n\r\nAirfiles puts a QR code and a PIN on the CardputerZero's 320x170 screen. Scan the code with a phone, pick files in the browser, and they land in ~/Airfiles on the device. No app is needed on the phone, and it works the same for iPhone, Android, Windows, macOS, Linux and curl with API supported.",
+  "categories": [
+    "System Tools",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "AIRF",
+  "source_repo": "https://github.com/JC3GDEV/Airfiles",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "JackyC",
+    "github": "JC3GDEV"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "airfiles_icon.png",
+  "published_at": "2026-11-17T03:56:20+00:00",
+  "updated_at": "2026-11-17T03:56:20+00:00"
+}

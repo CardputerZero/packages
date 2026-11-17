@@ -1,0 +1,11 @@
+{
+  "filename": "airfiles_0.4.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/JC3GDEV__airfiles_0.4.0_arm64.deb",
+  "sha256": "285619a39541abb2d58d819e0e6fd3476cf2bc563e87a786eadaac0d891e3d44",
+  "size": 24292,
+  "package": "airfiles",
+  "version": "0.4.0",
+  "architecture": "arm64",
+  "uploaded_by": "JC3GDEV",
+  "uploader_email": "jc3gdev@users.noreply.github.com"
+}
