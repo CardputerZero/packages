@@ -1,0 +1,11 @@
+{
+  "filename": "ugly-games_0.2.6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/colcyber__ugly-games_0.2.6_arm64.deb",
+  "sha256": "9c501b1aff826f8a53ec7437c8cdcc4510012a532a523a7d1943ed1f52a60063",
+  "size": 739664,
+  "package": "ugly-games",
+  "version": "0.2.6",
+  "architecture": "arm64",
+  "uploaded_by": "colcyber",
+  "uploader_email": "colcyber@users.noreply.github.com"
+}

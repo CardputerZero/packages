@@ -1,0 +1,34 @@
+{
+  "title": "Ugly Games",
+  "summary": "Online arcade: Chess, Tetris, Poker, Stratego, Bomberman, crossplay with the web",
+  "description": "Ugly Games is an online arcade hub for the CardputerZero. The home screen lists the public rooms waiting for players across all games, live.\r\nCrossplay with M5StickS3 or CardputerADV.\r\n\r\nGames: Tetris, Chess (online, 1-day or live), Blackjack, Poker (with bots), Stratego, Scorch and Bomberman.\r\n\r\nRooms are shared with uglygames.online and the Cardputer ADV, so you can play against people on a PC, a phone or another device. Rooms can be public or private (4-letter code). No registration needed: choose a nickname; an optional free site account adds the chess ranking.\r\n\r\nKeys: F up, Z left, X down, C right, Space/Enter confirm, Esc back. Requires Wi-Fi.",
+  "categories": [
+    "Games"
+  ],
+  "license": "Proprietary",
+  "share_code": "UGLY",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "uglygames.online",
+    "github": "colcyber"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "ugly-games_icon.png",
+  "published_at": "2026-11-17T15:58:52+00:00",
+  "updated_at": "2026-11-17T15:58:52+00:00"
+}
