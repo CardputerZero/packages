@@ -1,0 +1,43 @@
+{
+  "title": "CardBili",
+  "summary": "哔哩哔哩客户端，支持视频浏览与弹幕播放",
+  "description": "支持推荐、热门、动态、评论、作者作品、选集与扫码登录",
+  "categories": [
+    "Media"
+  ],
+  "license": "GPL-3.0-only",
+  "share_code": "BILI",
+  "source_repo": "https://github.com/journey-ad/M5CardputerZero-CardBili",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "display_name": "journey-ad",
+    "github": "journey-ad"
+  },
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/detail.png",
+    "screenshots/player.png",
+    "screenshots/author.png"
+  ],
+  "icon": "store-icon.png",
+  "published_at": "2026-11-14T19:55:40+00:00",
+  "updated_at": "2026-11-16T11:59:54+00:00",
+  "locales": {
+    "zh-CN": {
+      "title": "CardBili",
+      "summary": "哔哩哔哩客户端，支持视频浏览与弹幕播放"
+    },
+    "en": {
+      "title": "CardBili",
+      "summary": "Bilibili client with video browsing and danmaku playback"
+    }
+  }
+}

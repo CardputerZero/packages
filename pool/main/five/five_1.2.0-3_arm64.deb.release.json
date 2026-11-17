@@ -1,0 +1,11 @@
+{
+  "filename": "five_1.2.0-3_arm64.deb",
+  "url": "https://github.com/xu-c/packages/releases/download/five-1.2.0-3/five_1.2.0-3_arm64.deb",
+  "sha256": "aef65ef16f1483881690cdcdbfd8ac0c089fbfb5ed4770fcebf842ab299fc12c",
+  "size": 1800612,
+  "package": "five",
+  "version": "1.2.0-3",
+  "architecture": "arm64",
+  "uploaded_by": "xu-c",
+  "uploader_email": "xu-c@users.noreply.github.com"
+}

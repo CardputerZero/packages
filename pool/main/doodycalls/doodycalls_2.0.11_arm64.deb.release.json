@@ -1,0 +1,11 @@
+{
+  "filename": "doodycalls_2.0.11_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__doodycalls_2.0.11_arm64.deb",
+  "sha256": "6cc7c256dbcc208e47b403dec6057ded4190b8b2196fe5701b68768090fddcf7",
+  "size": 11881748,
+  "package": "doodycalls",
+  "version": "2.0.11",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}

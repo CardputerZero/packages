@@ -1,0 +1,11 @@
+{
+  "filename": "zero-ssh_0.1.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/tongfei11__zero-ssh_0.1.1_arm64.deb",
+  "sha256": "41a323594c9028756d87b05c109067b15cfd925d9a1632a8a5aa7dd6d2a4e0fe",
+  "size": 191892,
+  "package": "zero-ssh",
+  "version": "0.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "tongfei11",
+  "uploader_email": "tongfei11@users.noreply.github.com"
+}

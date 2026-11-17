@@ -1,0 +1,11 @@
+{
+  "filename": "tyrell-video_0.1.7-1_arm64.deb",
+  "url": "https://github.com/beatsforthemind/packages/releases/download/czdev-buffer/tyrell-video_0.1.7-1_arm64.deb",
+  "sha256": "7ddf4ead5f9d27e44d92ab510b8cca503847af36762d60b315fea62de4450d79",
+  "size": 686346,
+  "package": "tyrell-video",
+  "version": "0.1.7-1",
+  "architecture": "arm64",
+  "uploaded_by": "beatsforthemind",
+  "uploader_email": "beatsforthemind@users.noreply.github.com"
+}

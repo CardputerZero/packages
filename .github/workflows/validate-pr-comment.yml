@@ -62,7 +62,7 @@ jobs:
 
             // First release of a new package name needs a human: store policy
             // requires a demo video in the PR before a maintainer merges it.
-            // Derived here from the PR's files against main's git tree — never
+            // Derived here from the PR's files against its base git tree — never
             // from the artifact, which the untrusted stage writes and could
             // otherwise clear the flag and get a new package auto-merged.
             const files = await github.paginate(github.rest.pulls.listFiles, {
@@ -71,9 +71,13 @@ jobs:
             const pkgs = [...new Set(files.map((f) => f.filename.match(/^pool\/main\/([^/]+)\//))
               .filter(Boolean).map((m) => m[1]))];
             const { data: tree } = await github.rest.git.getTree({
-              owner: context.repo.owner, repo: context.repo.repo, tree_sha: 'main:pool/main',
+              owner: context.repo.owner, repo: context.repo.repo,
+              tree_sha: pr.base.sha, recursive: 'true',
             });
-            const existing = new Set(tree.tree.map((t) => t.path));
+            if (tree.truncated) throw new Error('base tree is truncated; refusing automatic merge');
+            const existing = new Set(tree.tree
+              .filter((t) => t.type === 'blob' && /^pool\/main\/[^/]+\/[^/]+\.deb\.release\.json$/.test(t.path))
+              .map((t) => t.path.split('/')[2]));
             core.setOutput('new_pkgs', pkgs.filter((p) => !existing.has(p)).join(' '));
 
       - name: Post comment on PR

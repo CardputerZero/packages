@@ -1,7 +1,7 @@
 {
   "title": "WebRadio",
-  "summary": "Browse, save, and play internet radio stations on Cardputer Zero.",
-  "description": "WebRadio brings the Radio Browser directory to Cardputer Zero. Search and filter stations by country or region, language, and genre. Save your favorites, adjust volume with the keyboard, and switch between Simplified Chinese and English. WebRadio remembers favorites, volume, filters, and the interface language on your device.\r\n\r\nAn internet connection is required to stream radio. Stations provide their own programming. Follow the Radio Browser rules and applicable local laws.",
+  "summary": "发现、收藏和收听网络电台 · Browse, save, and listen to internet radio",
+  "description": "简体中文\r\n在 Cardputer Zero 上发现、收藏和收听全球网络电台。首次打开显示中国大陆电台，可按国家／地区、语言和类型筛选。支持英文台名、频率、呼号及中文全拼搜索，可搜索当前范围或全球。按 Q 继续收听上次成功播放的电台。播放栏显示台名及电台流提供的节目或曲名。收藏、筛选、应用音量和中英文界面偏好均保存在设备上。\r\n\r\n主界面右上角显示电量。按 8 或 V 打开音量页，可分别调节应用音量和系统音量。\r\n\r\n收听需要联网。电台目录来自 Radio Browser，节目由各电台提供，WebRadio 作者不对电台内容负责。请遵守 Radio Browser 的使用规则和当地适用法律。\r\nhttps://www.radio-browser.info/\r\n\r\n最近改动 · 1.0.11-1\r\n- 主界面右上角显示剩余电量，低电量时变红。\r\n- 音量页同时显示应用音量和当前音频输出的系统音量。\r\n- 用上下键或 F / X 选择，左右键或 Z / C 调节。4 / 5 直接调应用音量，6 / 7 直接调系统音量。\r\n\r\nEnglish\r\nBrowse, save, and listen to internet radio on Cardputer Zero. The first launch shows mainland China stations. Filter by country or region, language, and genre. Search the current selection or the worldwide directory by English name, frequency, call sign, or full pinyin for Chinese station names. Press Q to resume the last station that played successfully. The player shows the station and any program or track title supplied by the stream. Favorites, filters, app volume, and the Simplified Chinese or English interface preference are saved on the device.\r\n\r\nThe main screen shows battery percentage. Press 8 or V to adjust WebRadio and system volume independently.\r\n\r\nStreaming requires internet access. Radio Browser provides the directory. Stations supply their programming, and the WebRadio author is not responsible for station content. Follow Radio Browser’s usage rules and applicable local laws.\r\nhttps://www.radio-browser.info/\r\n\r\nWhat’s new · 1.0.11-1\r\n- The top-right corner shows battery percentage and highlights low charge in red.\r\n- The volume screen shows WebRadio volume and system volume for the active output.\r\n- Use Up / Down or F / X to select, and Left / Right or Z / C to adjust. Use 4 / 5 for app volume and 6 / 7 for system volume directly.",
   "categories": [
     "Media"
   ],
@@ -24,9 +24,11 @@
     "screenshots/screenshot-0.png",
     "screenshots/screenshot-1.png",
     "screenshots/screenshot-2.png",
-    "screenshots/screenshot-3.png"
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
   ],
   "icon": "cardputer-zero-radio_icon.png",
   "published_at": "2026-11-12T15:59:02+00:00",
-  "updated_at": "2026-11-12T15:59:02+00:00"
+  "updated_at": "2026-11-15T13:37:05+00:00"
 }

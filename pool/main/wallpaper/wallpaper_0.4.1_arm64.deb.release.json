@@ -1,0 +1,11 @@
+{
+  "filename": "wallpaper_0.4.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__wallpaper_0.4.1_arm64.deb",
+  "sha256": "ebce4aca3629f4124030ce77b32dc72e87d51f07b5b29f67e9c1e5fe5e4d4805",
+  "size": 27204,
+  "package": "wallpaper",
+  "version": "0.4.1",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}

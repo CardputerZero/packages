@@ -1,0 +1,11 @@
+{
+  "filename": "octet_5.3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__octet_5.3_arm64.deb",
+  "sha256": "65befcd9111115a1c225fb335ac91a27764839a6df924d915ebfb64857e8f9ac",
+  "size": 1423414,
+  "package": "octet",
+  "version": "5.3",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}

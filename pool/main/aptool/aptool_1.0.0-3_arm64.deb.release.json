@@ -1,0 +1,11 @@
+{
+  "filename": "aptool_1.0.0-3_arm64.deb",
+  "url": "https://github.com/FPVZaphod/packages/releases/download/czdev-buffer/aptool_1.0.0-3_arm64.deb",
+  "sha256": "40a2a7dfb0ba899baf0ae2da4ae7646591b7e7d81203e038ded2d874cebd9f49",
+  "size": 27138,
+  "package": "aptool",
+  "version": "1.0.0-3",
+  "architecture": "arm64",
+  "uploaded_by": "FPVZaphod",
+  "uploader_email": "FPVZaphod@users.noreply.github.com"
+}

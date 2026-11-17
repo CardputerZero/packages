@@ -1,0 +1,35 @@
+{
+  "title": "KanSTL",
+  "summary": "STL 3D viewer for the Cardputer Zero",
+  "description": "KanSTL opens STL 3D models on the Cardputer Zero and lets you look at them from every side.\r\nPick a file from the built-in browser, then rotate and zoom with the keypad. One key cycles four looks: solid, edges, metallic and wireframe, and auto-rotate turns the model slowly when you want to see it all round. A small XYZ gizmo keeps you oriented.\r\n\r\nModels are read straight from the device: copy STL files over SSH or a USB stick, and the browser remembers the folder you were in. Binary and ASCII files both work.\r\n\r\nNo permissions, no network, no background service.Open source, GPL-3.0.",
+  "categories": [
+    "System Tools",
+    "Development"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "KSTL",
+  "source_repo": "https://github.com/nullbeing/KanSTL",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Weiming Feng",
+    "github": "nullbeing"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "kanstl_icon.png",
+  "published_at": "2026-11-15T14:18:45+00:00",
+  "updated_at": "2026-11-15T14:18:45+00:00"
+}

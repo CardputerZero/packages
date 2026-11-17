@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-zero-radio_1.0.9-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/xu-c__cardputer-zero-radio_1.0.9-1_arm64.deb",
+  "sha256": "cbbf00fd09b8422c85723d77e3303773ee428d43b9507db4598d3ebc946a2541",
+  "size": 27576,
+  "package": "cardputer-zero-radio",
+  "version": "1.0.9-1",
+  "architecture": "arm64",
+  "uploaded_by": "xu-c",
+  "uploader_email": "xu-c@users.noreply.github.com"
+}

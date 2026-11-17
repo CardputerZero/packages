@@ -1,7 +1,7 @@
 {
   "title": "Five",
-  "summary": "离线五子棋，支持 Rapfi 人机和同机双人。 Offline Gomoku with Rapfi or local two-player.",
-  "description": "简体中文\r\n在 Cardputer Zero 上离线下五子棋。可与 Rapfi 对弈，选择简单、普通或困难，也可在同一台设备上双人对弈。支持 15×15 和 13×13 棋盘、自由规则和连珠禁手。设置中可查看规则说明，两种对局均支持悔棋和续局。界面支持简体中文和英文。\r\n\r\nFive 应用部分采用专有许可。Rapfi 是独立引擎，按 GPL-3.0-or-later 分发，官方模型权重采用 CC0-1.0。安装包内的 /usr/share/doc/five/ 提供 Rapfi 对应源码、构建脚本及许可证。\r\n\r\nEnglish\r\nPlay offline Gomoku on Cardputer Zero. Play Rapfi at three difficulty levels or share one device with a friend. Choose a 15×15 or 13×13 board and Freestyle or Renju fouls. A rules guide, undo and resume are available. The interface supports Simplified Chinese and English.\r\n\r\nFive is proprietary. The separate Rapfi engine is distributed under GPL-3.0-or-later and its official weights under CC0-1.0. Corresponding Rapfi source, build instructions and license texts are included in the package under /usr/share/doc/five/.",
+  "summary": "五子棋，支持 Rapfi、同机双人和房间码联机。 Gomoku with Rapfi, local and LAN play.",
+  "description": "简体中文\n在 Cardputer Zero 上下五子棋。可与 Rapfi 对弈，选择三档难度，也可在同一台设备轮流落子。联机时，Zero 和浏览器都可创建房间，用 10 位房间码加入。同一局域网内可双 Zero、双网页或混合对战，电脑无需安装或运行额外程序。支持 15×15 和 13×13 棋盘、自由规则与连珠禁手，界面提供简体中文和英文。联机配对需要互联网连接，对局在局域网内直连。网页版：https://fivezero.vercel.app/\n\n最近改动（1.2.0-3）\n对局结束后按 Enter 重新开始。联机双方确认后，在原房间沿用当前设置再来一局。\n\nEnglish\nPlay Gomoku against Rapfi at three difficulty levels, take turns on one Cardputer Zero, or play over your LAN. Either a Zero or a browser can host or join using a 10-digit room code. The browser needs no extra software. Choose a 15×15 or 13×13 board with Freestyle or Renju fouls. The interface supports Simplified Chinese and English. Pairing requires internet access. Moves travel directly between players on the LAN. Web app: https://fivezero.vercel.app/\n\nWhat’s new (1.2.0-3)\nPress Enter to play again after a game. When both players confirm an online rematch, it starts in the same room with the current settings.\n\n许可 / Licenses\nFive 自有应用部分采用专有许可。独立 Rapfi 引擎按 GPL-3.0-or-later 分发，官方模型权重采用 CC0-1.0。对应源码、构建脚本和许可证随安装包提供。\nFive is proprietary. The separate Rapfi engine is distributed under GPL-3.0-or-later with CC0-1.0 official weights. Corresponding source, build scripts, and license texts are included in the package.",
   "categories": [
     "Games"
   ],
@@ -14,7 +14,7 @@
     "external_display": false,
     "imu": false,
     "microphone": false,
-    "network": false
+    "network": true
   },
   "author": {
     "display_name": "xu-c",
@@ -23,9 +23,12 @@
   "screenshots": [
     "screenshots/screenshot-0.png",
     "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png"
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
   ],
   "icon": "five_icon.png",
   "published_at": "2026-11-13T15:17:18+00:00",
-  "updated_at": "2026-11-13T15:17:18+00:00"
+  "updated_at": "2026-11-16T14:03:07.616Z"
 }
