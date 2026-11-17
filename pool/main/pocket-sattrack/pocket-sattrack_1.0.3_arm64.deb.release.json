@@ -1,0 +1,11 @@
+{
+  "filename": "pocket-sattrack_1.0.3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/duanesweazy1__pocket-sattrack_1.0.3_arm64.deb",
+  "sha256": "11e15080e863b04ec0e8783921ede279f8064351bd7fb666ff4251c729c2990a",
+  "size": 22456,
+  "package": "pocket-sattrack",
+  "version": "1.0.3",
+  "architecture": "arm64",
+  "uploaded_by": "duanesweazy1",
+  "uploader_email": "duanesweazy1@users.noreply.github.com"
+}
