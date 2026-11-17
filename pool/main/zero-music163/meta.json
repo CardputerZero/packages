@@ -1,0 +1,33 @@
+{
+  "title": "ZeroMusic163",
+  "summary": "网易云音乐播放器，支持拼音搜歌、歌单浏览和键盘播放控制",
+  "description": "ZeroMusic163 是面向 Cardputer Zero 的独立网易云音乐客户端。用实体键盘输入拼音就能找歌，也可以浏览喜欢的音乐、我的歌单和每日推荐，把整张歌单加入播放队列。\r\n\r\n播放页采用黑胶唱片界面，支持同步歌词、收藏、快进和快退。开启后台播放后，退出界面也能继续听。再次打开应用，可以从上次的播放位置继续。\r\n\r\n首次使用需要自己的网易云音乐开放平台 App ID 和 Private Key。在同一局域网内用手机或电脑打开 Zero 显示的配置网页，保存凭据后扫码登录。",
+  "categories": [
+    "Media",
+    "Lifestyle"
+  ],
+  "license": "MIT",
+  "share_code": "M163",
+  "source_repo": "https://github.com/tongfei11/ZeroMusic163",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "tongfei11",
+    "github": "tongfei11"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "zero-music163_icon.png",
+  "published_at": "2026-11-17T09:11:46+00:00",
+  "updated_at": "2026-11-17T09:11:46+00:00"
+}
