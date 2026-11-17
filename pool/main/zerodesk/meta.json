@@ -1,0 +1,33 @@
+{
+  "title": "ZeroDesk",
+  "summary": "Control your Cardputer from a browser: screen, keyboard, shell, files and apps",
+  "description": "Open ZeroDesk and it shows an address and a one-time pairing code. Enter them in a browser on the same network to get the Cardputer's live screen with a working copy of its keyboard (plus paste, screenshots and recordings), a shell, a file browser, app installs from the store, and CPU, memory, battery and network stats. HTTPS and local network only; runs as your user; installing apps asks for your password. Remote typing needs one reboot after the first install.",
+  "categories": [
+    "System Tools",
+    "Development"
+  ],
+  "license": "MIT",
+  "share_code": "ZDSK",
+  "source_repo": "https://github.com/r-morato/zerodesk",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Roger Morato",
+    "github": "r-morato"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "zerodesk_icon.png",
+  "published_at": "2026-11-17T23:58:25+00:00",
+  "updated_at": "2026-11-17T23:58:25+00:00"
+}
