@@ -1,0 +1,11 @@
+{
+  "filename": "cz-desk-mode_1.0.0_all.deb",
+  "url": "https://github.com/InstantComet/packages/releases/download/czdev-buffer/cz-desk-mode_1.0.0_all.deb",
+  "sha256": "d94593fa5fe118af75230fa5d498c3e5577ae2899f50100ede7bb387ab80e85d",
+  "size": 19312,
+  "package": "cz-desk-mode",
+  "version": "1.0.0",
+  "architecture": "all",
+  "uploaded_by": "InstantComet",
+  "uploader_email": "InstantComet@users.noreply.github.com"
+}

@@ -1,0 +1,38 @@
+{
+  "title": "Desk Mode",
+  "summary": "Plug in HDMI, get the Pi desktop, type on the Cardputer's own keyboard",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/ask.png",
+    "screenshots/handover.png"
+  ],
+  "description": "Desk Mode turns the CardputerZero into a small desktop computer: plug in an HDMI display and the Raspberry Pi desktop starts on it, while the built-in screen and the launcher keep working.\n\n**HDMI desktop**\n- Starts automatically when HDMI is plugged in (can be switched off), or from the app.\n- Runs as your user, without LightDM and without root. LightDM's login screen starts a second audio server that takes the sound card from the launcher and can freeze it; Desk Mode avoids that.\n- Nothing runs while HDMI is unplugged. Close the desktop from the app (frees ~55 MB of RAM), or let Battery Saver close it 1 min after HDMI is unplugged (its default).\n\n**Built-in keyboard on the HDMI display**\n- Each time HDMI is plugged in, the built-in screen lights up and asks whether the keyboard should go to the HDMI display (or set it to always / never).\n- Symbols typed with Sym come out right on the desktop (the keyboard sends non-standard codes for them; Desk Mode translates).\n- Ctrl+Alt+Esc gives the keyboard back to the Cardputer. Unplugging HDMI or closing the desktop does too, and the built-in screen wakes up.\n- While the keyboard is on the HDMI display, the built-in screen turns off to save power.\n\nKeys: F/X move, Enter change, I info, Esc back.",
+  "locales": {
+    "zh-CN": {
+      "title": "桌面模式",
+      "summary": "插上 HDMI 就有树莓派桌面，用 Cardputer 自带键盘打字"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/InstantComet/cz-desk-mode",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": true
+  },
+  "share_code": "DESK",
+  "author": {
+    "github": "InstantComet",
+    "display_name": "InstantComet"
+  },
+  "published_at": "2026-11-17T20:00:33+00:00",
+  "updated_at": "2026-11-17T20:00:33+00:00"
+}
