@@ -1,7 +1,7 @@
 {
   "title": "CardputerSDR",
   "summary": "SDR Platform based on Cardputer.",
-  "description": "支持通过web转发SDR设备采样数据，也支持在Cardputer Zero上计算并显示。",
+  "description": "支持通过web转发SDR设备采样数据，也支持在Cardputer Zero上计算并显示。\r\n\r\n交流QQ群号：423629503",
   "categories": [
     "Radio & Comms"
   ],
@@ -23,9 +23,10 @@
   },
   "screenshots": [
     "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png"
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
   ],
   "icon": "cardputersdr_icon.png",
   "published_at": "2026-11-15T23:06:54+00:00",
-  "updated_at": "2026-11-15T23:06:54+00:00"
+  "updated_at": "2026-11-17T04:51:27+00:00"
 }
