@@ -8,7 +8,8 @@ import subprocess
 import tempfile
 import threading
 import unittest
-from urllib.parse import unquote, urlsplit
+from urllib.parse import parse_qs, unquote, urlsplit
+from xml.sax.saxutils import escape
 
 
 SCRIPT = Path(__file__).with_name("sync-apt-repo.sh")
@@ -60,7 +61,28 @@ class ObjectHandler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         key = self.object_key()
-        if self.server.stat_status:
+        if urlsplit(self.path).path == "/test-bucket/":
+            if self.server.list_status:
+                self.error(self.server.list_status, "AccessDenied")
+                return
+            query = parse_qs(urlsplit(self.path).query)
+            prefix = query.get("prefix", [""])[0]
+            marker = query.get("marker", [""])[0]
+            keys = sorted(k for k in self.server.objects if k.startswith(prefix) and k > marker)
+            page = keys[:self.server.page_size]
+            truncated = len(page) < len(keys)
+            contents = "".join(f"<Contents><Key>{escape(k)}</Key><Size>{len(self.server.objects[k])}</Size>"
+                               "<LastModified>2026-01-01T00:00:00.000Z</LastModified>"
+                               "<StorageClass>Standard</StorageClass></Contents>" for k in page)
+            body = (f"<ListBucketResult><Name>test-bucket</Name><Prefix>{escape(prefix)}</Prefix>"
+                    f"<Marker>{escape(marker)}</Marker><NextMarker>{escape(page[-1] if truncated else '')}</NextMarker>"
+                    f"<IsTruncated>{str(truncated).lower()}</IsTruncated>{contents}</ListBucketResult>").encode()
+            self.server.list_requests += 1
+            self.send_response(200)
+            self.send_header("Content-Length", str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+        elif self.server.stat_status:
             self.error(self.server.stat_status, "AccessDenied")
         elif key not in self.server.objects:
             self.error(404, "NoSuchKey")
@@ -74,6 +96,17 @@ class ObjectHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
         else:
             self.error(400, "InvalidArgument")
+
+    def do_DELETE(self):
+        key = self.object_key()
+        if self.server.delete_status:
+            self.error(self.server.delete_status, "AccessDenied")
+            return
+        self.server.objects.pop(key, None)
+        self.server.deletes.append(key)
+        self.send_response(204)
+        self.send_header("Content-Length", "0")
+        self.end_headers()
 
     def do_PUT(self):
         key = self.object_key()
@@ -124,6 +157,11 @@ class SyncTests(unittest.TestCase):
         self.server.without_crc = set()
         self.server.stat_status = None
         self.server.fail_after = None
+        self.server.list_status = None
+        self.server.delete_status = None
+        self.server.deletes = []
+        self.server.page_size = 1000
+        self.server.list_requests = 0
         thread = threading.Thread(target=self.server.serve_forever, daemon=True)
         thread.start()
         self.addCleanup(self.server.server_close)
@@ -247,6 +285,61 @@ class SyncTests(unittest.TestCase):
         self.env["OSS_SYNC_ENABLED"] = "false"
         self.run_sync()
         self.assertEqual(self.server.objects, {})
+
+    def test_withdrawal_removes_only_stale_pool_objects_without_reupload(self):
+        self.run_sync()
+        self.server.uploads.clear()
+        self.server.objects["os-list.json"] = b"outside repository"
+        self.server.objects["packages/pool-backup/keep.deb"] = b"outside managed pool"
+        self.server.objects["packages/other-repository/keep.deb"] = b"outside managed pool"
+        stale = "packages/pool/main/retired/old with space.deb"
+        self.server.objects[stale] = b"withdrawn"
+        self.run_sync()
+        self.assertEqual(self.server.deletes, [stale])
+        self.assertEqual(self.server.uploads, [])
+        self.assertIn("os-list.json", self.server.objects)
+        self.assertIn("packages/pool-backup/keep.deb", self.server.objects)
+        self.assertIn("packages/other-repository/keep.deb", self.server.objects)
+
+    def test_empty_pool_clears_managed_objects_only(self):
+        self.run_sync()
+        self.server.objects["os-list.json"] = b"keep"
+        shutil.rmtree(self.source / "pool")
+        self.server.uploads.clear()
+        self.run_sync()
+        self.assertFalse(any(k.startswith("packages/pool/") for k in self.server.objects))
+        self.assertEqual(self.server.uploads, [])
+        self.assertIn("os-list.json", self.server.objects)
+
+    def test_listing_failure_stops_before_upload_or_delete(self):
+        self.server.list_status = 403
+        self.run_sync(success=False)
+        self.assertEqual(self.server.uploads, [])
+        self.assertEqual(self.server.deletes, [])
+
+    def test_deletion_failure_stops_before_catalog_publication_and_can_retry(self):
+        stale = "packages/pool/main/retired/old.deb"
+        self.server.objects[stale] = b"withdrawn"
+        self.server.delete_status = 403
+        self.run_sync(success=False)
+        self.assertEqual(self.server.uploads, [])
+        self.assertIn(stale, self.server.objects)
+        self.server.delete_status = None
+        self.run_sync()
+        self.assertNotIn(stale, self.server.objects)
+        self.assertEqual(len(self.server.uploads), 5)
+
+    def test_paginated_listing_keeps_current_and_removes_stale_objects(self):
+        self.run_sync()
+        self.server.uploads.clear()
+        stale = [f"packages/pool/main/retired/{i}.deb" for i in range(3)]
+        self.server.objects.update(dict.fromkeys(stale, b"withdrawn"))
+        self.server.page_size = 2
+        self.server.list_requests = 0
+        self.run_sync()
+        self.assertCountEqual(self.server.deletes, stale)
+        self.assertEqual(self.server.uploads, [])
+        self.assertEqual(self.server.list_requests, 3)
 
     def test_cn_filter_preserves_source_and_excludes_blocked_package(self):
         self.env["OSS_ENDPOINT"] = "https://oss-cn-shenzhen.aliyuncs.com"

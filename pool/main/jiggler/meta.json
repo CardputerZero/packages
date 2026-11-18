@@ -1,0 +1,32 @@
+{
+  "title": "Jiggler",
+  "summary": "Keeps a connected computer awake by simulating mouse or keyboard activity over U",
+  "description": "Jiggler turns your CardputerZero into a tiny USB mouse/keyboard that keeps a connected computer from going idle, sleeping or locking. No software or drivers are needed on the computer. It works with Windows and macOS.                                                                                                                                      \r\n                                                                                                                                                                                                                                                                                                                                                                 How to use                                                                                                                                                                                                                                                                                                                                                     \r\n  1. Set the USB switch to Device.                                                                                                                                                                                                                                                                                                                               \r\n  2. Plug the right-side USB-C port into the computer (it charges the Cardputer at the same time).                                                                                                                                                                                                                                                               \r\n  3. Open Jiggler and press 4 to start.                                                                                                                                                                                                                                                                                                                          \r\n\r\nControls (the five keys under the screen)\r\n  4  Start / stop\r\n  5  Mode: Mouse → Keyboard → Mouse + Keyboard\r\n  6 / 7  Shorter / longer interval\r\n  8  Info\r\n  ESC (hold)  Exit\r\n\r\nDetails\r\n  - Mouse mode nudges the pointer a few pixels and moves it straight back, so it never drifts away.\r\n  - Keyboard mode only taps Shift, so nothing is ever typed.\r\n  - Moves happen at random times inside a window you set (default 5–15 s) instead of a fixed beat.\r\n  - While jiggling, the screen turns off after 30 s to save battery and heat. Any key wakes it without triggering an action.\r\n  - Your mode and interval are remembered between sessions.\r\n  - Light and dark themes.\r\n\r\nInstalls a small boot-time service (jiggler-hid-gadget) that sets up the USB keyboard/mouse. It runs without root and does nothing else.",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "WAKE",
+  "source_repo": "https://github.com/intGus/jiggler",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "intGus",
+    "github": "intGus"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "jiggler_icon.png",
+  "published_at": "2026-11-16T20:28:16+00:00",
+  "updated_at": "2026-11-16T20:28:16+00:00"
+}

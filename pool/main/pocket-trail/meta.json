@@ -1,0 +1,35 @@
+{
+  "title": "Trail Recorder",
+  "summary": "Record GPS trails as GPX: speed, distance, map, elevation (Cap LoRa-1262)",
+  "description": "Trail Recorder logs where you go using the GPS in the Cap LoRa-1262 and saves each trip as a standard GPX file (opens in Google Earth, Strava, Komoot, CalTopo...). Live dashboard with speed, pace, distance and time; a map of your path with waypoints and distance back to start; an elevation profile with climb and descent; and a satellite / accuracy view. Recording is crash-safe and survives the battery dying. Miles or kilometres (U). Enter starts/pauses, S saves, W marks a waypoint. Requires the Cap LoRa-1262.",
+  "categories": [
+    "Hardware & IoT",
+    "Lifestyle"
+  ],
+  "license": "MIT",
+  "share_code": "TRAL",
+  "source_repo": "https://github.com/duanesweazy1/pocket-trail",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Duane Sweazy",
+    "github": "duanesweazy1"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "pocket-trail_icon.png",
+  "published_at": "2026-11-16T03:56:21+00:00",
+  "updated_at": "2026-11-16T17:48:10+00:00"
+}

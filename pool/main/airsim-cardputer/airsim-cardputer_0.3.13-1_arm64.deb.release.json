@@ -1,0 +1,11 @@
+{
+  "filename": "airsim-cardputer_0.3.13-1_arm64.deb",
+  "url": "https://github.com/kai-wu-cortex/packages/releases/download/czdev-buffer/airsim-cardputer_0.3.13-1_arm64.deb",
+  "sha256": "d22fc47e8516eb0bed33d9f12e7e270a7a0261c104a148597dc4cca835467030",
+  "size": 72656,
+  "package": "airsim-cardputer",
+  "version": "0.3.13-1",
+  "architecture": "arm64",
+  "uploaded_by": "kai-wu-cortex",
+  "uploader_email": "kai-wu-cortex@users.noreply.github.com"
+}

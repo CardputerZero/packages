@@ -1,0 +1,11 @@
+{
+  "filename": "flagpi_0.2-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RealOuO__flagpi_0.2-1_arm64.deb",
+  "sha256": "be9a8b0528465103fe2bc825f5bf037a013e15269d1a7a0d892cf7d600e25254",
+  "size": 19544,
+  "package": "flagpi",
+  "version": "0.2-1",
+  "architecture": "arm64",
+  "uploaded_by": "RealOuO",
+  "uploader_email": "realouo@users.noreply.github.com"
+}

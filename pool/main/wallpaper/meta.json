@@ -1,7 +1,7 @@
 {
   "title": "Wallpaper",
   "summary": "替换默认开机画面、开机音效与锁屏画面",
-  "description": "可通过Web上传图片图片与音频，替换默认开机画面、开机音效与锁屏画面。\r\n操作过程中，不可避免地需要root权限，考虑到系统安全性，密码需要从键盘输入，不经过Web传输。",
+  "description": "可通过Web上传图片图片与音频，替换默认开机画面、开机音效与锁屏画面。\r\n操作过程中，不可避免地需要root权限，考虑到系统安全性，密码需要从键盘输入，不经过Web传输。\r\n\r\n交流QQ群号：423629503",
   "categories": [
     "System Tools"
   ],
@@ -22,9 +22,10 @@
     "github": "RiviaRammer"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
   ],
   "icon": "wallpaper_icon.png",
   "published_at": "2026-11-15T21:48:14+00:00",
-  "updated_at": "2026-11-15T21:48:14+00:00"
+  "updated_at": "2026-11-17T04:50:00+00:00"
 }

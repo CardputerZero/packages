@@ -1,0 +1,11 @@
+{
+  "filename": "zeroamp_1.8.2_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kakashi2018__zeroamp_1.8.2_all.deb",
+  "sha256": "9fb4afa6fa6fd9307e1f172637bffce262e724d496feb3e60f5d5ab4838f3728",
+  "size": 26516,
+  "package": "zeroamp",
+  "version": "1.8.2",
+  "architecture": "all",
+  "uploaded_by": "kakashi2018",
+  "uploader_email": "kakashi2018@users.noreply.github.com"
+}

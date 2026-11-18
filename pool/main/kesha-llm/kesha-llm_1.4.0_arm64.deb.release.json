@@ -1,0 +1,11 @@
+{
+  "filename": "kesha-llm_1.4.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/EduardoMoraton__kesha-llm_1.4.0_arm64.deb",
+  "sha256": "fc43a69f04b8b71b10eb9ac3f23ef08e6dfed57f4d95d9e15117908e6c76e105",
+  "size": 19360412,
+  "package": "kesha-llm",
+  "version": "1.4.0",
+  "architecture": "arm64",
+  "uploaded_by": "EduardoMoraton",
+  "uploader_email": "eduardomoraton@users.noreply.github.com"
+}

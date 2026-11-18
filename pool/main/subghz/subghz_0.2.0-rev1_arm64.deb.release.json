@@ -1,0 +1,11 @@
+{
+  "filename": "subghz_0.2.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/bfayers__subghz_0.2.0-rev1_arm64.deb",
+  "sha256": "377ddfcde4a4ffa93eb2e6c09cacb4ac908b7ac6eb3d9b379035b79ea458d739",
+  "size": 2105014,
+  "package": "subghz",
+  "version": "0.2.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "bfayers",
+  "uploader_email": "bfayers@users.noreply.github.com"
+}

@@ -22,9 +22,13 @@
     "github": "tcchen2026"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
   ],
   "icon": "r86_icon.png",
   "published_at": "2026-11-08T17:35:15+00:00",
-  "updated_at": "2026-11-08T17:35:15+00:00"
+  "updated_at": "2026-11-18T04:55:56+00:00",
+  "source_repo": "https://github.com/tcchen2026/r86"
 }

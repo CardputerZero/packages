@@ -44,9 +44,18 @@ changed contents and objects without a CRC64 header are uploaded. A retry checks
 the objects already uploaded by the previous attempt and skips matching contents.
 
 The configured credentials need `oss:GetObject` and `oss:GetObjectAcl` for the
-metadata queries made by ossutil 1.7.7, in addition to `oss:PutObject`. A missing
-object is uploaded; other metadata query errors stop the sync. Remote objects
-outside the generated tree are retained.
+metadata queries made by ossutil 1.7.7, in addition to `oss:PutObject`.
+A missing object is uploaded; other metadata query errors stop the sync.
+
+Before uploading, `prune-pool.py` lists the managed `pool/` prefix and removes
+objects absent from the local pool, preserving version withdrawals and region
+exclusions. Listing requires `oss:ListObjects`, and cleanup requires
+`oss:DeleteObject`, as the previous `ossutil sync --delete` did. All listing
+pages are validated before deleting anything. A listing or deletion failure
+stops deployment before publishing a new catalog. An empty pool clears the
+managed prefix. Objects outside `pool/`, including OS images and other
+repositories, are retained. The remaining pool objects use the same CRC64
+comparison as the indexes, so cleanup does not re-upload unchanged packages.
 
 ## Tests
 
@@ -62,7 +71,9 @@ OSSUTIL_TEST_BINARY=/path/to/ossutil python3 -m unittest discover -s oss -p 'tes
 
 The suite covers repeated uploads after modification-time changes, same-size
 content changes, missing objects, interrupted uploads, metadata failures, empty
-files, the default destination prefix, and the China region filter.
+files, the default destination prefix, the China region filter, withdrawals,
+empty pools, paginated listings, and listing/deletion failures. These tests run
+in the Test Store Pipeline workflow without production OSS credentials.
 
 ## Enable It
 

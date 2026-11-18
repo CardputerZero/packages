@@ -1,0 +1,11 @@
+{
+  "filename": "pocket-sysmon_1.1.5_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/duanesweazy1__pocket-sysmon_1.1.5_arm64.deb",
+  "sha256": "ead5ea5d6c21562fd72abbc59fad6ad1ff5deae03308b5a77ecb80a9d14417d2",
+  "size": 20812,
+  "package": "pocket-sysmon",
+  "version": "1.1.5",
+  "architecture": "arm64",
+  "uploaded_by": "duanesweazy1",
+  "uploader_email": "duanesweazy1@users.noreply.github.com"
+}

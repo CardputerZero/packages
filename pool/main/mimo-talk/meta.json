@@ -1,7 +1,7 @@
 {
   "title": "MiMo Talk",
   "summary": "MiMo大模型语音对话",
-  "description": "需在 ~/mimo_talk/config.json 中填写MiMo API key",
+  "description": "需在 ~/mimo_talk/config.json 中填写MiMo API key\r\n\r\n交流QQ群号：423629503",
   "categories": [
     "AI"
   ],
@@ -22,9 +22,10 @@
     "github": "RiviaRammer"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
   ],
   "icon": "mimo-talk_icon.png",
   "published_at": "2026-11-15T19:41:24+00:00",
-  "updated_at": "2026-11-15T19:41:24+00:00"
+  "updated_at": "2026-11-17T04:51:24+00:00"
 }

@@ -1,0 +1,33 @@
+{
+  "title": "Zero SSH",
+  "summary": "CardputerZero多会话SSH",
+  "description": "Zero SSH 是为 CardputerZero 设计的掌上 SSH 客户端。支持键盘操作、多会话切换、密码登录和局域网 Web 管理。可在网页导入私钥，自定义终端主题和界面语言，并选择退出后是否保留会话。\r\n\r\nZero SSH is a keyboard-first SSH client for CardputerZero. Switch between sessions, sign in with a password, and manage hosts or import private keys from a browser on your local network. Choose your terminal theme, interface language, and whether sessions stay active after you exit.",
+  "categories": [
+    "System Tools",
+    "Development"
+  ],
+  "license": "MIT",
+  "share_code": "ZSSH",
+  "source_repo": "https://github.com/tongfei11/ZeroSSH",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "tongfei11",
+    "github": "tongfei11"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "zero-ssh_icon.png",
+  "published_at": "2026-11-16T08:26:30+00:00",
+  "updated_at": "2026-11-17T11:23:18+00:00"
+}

@@ -111,17 +111,15 @@ for meta_path in sorted(root.glob("*/meta.json")):
         print(meta_path.parent.name)
 PY
 
-  blocked_packages=()
+  blocked_count=0
   while IFS= read -r pkg; do
-    [[ -n "$pkg" ]] && blocked_packages+=("$pkg")
-  done < "$blocked_file"
-
-  for pkg in "${blocked_packages[@]}"; do
+    [[ -n "$pkg" ]] || continue
     echo "Skipping ${pkg}: meta.json region.CN=false for ${endpoint_host}"
     rm -rf "$sync_dir/pool/main/$pkg"
-  done
+    blocked_count=$((blocked_count + 1))
+  done < "$blocked_file"
 
-  if ((${#blocked_packages[@]} > 0)); then
+  if ((blocked_count > 0)); then
     apt_dir="$sync_dir/dists/stable/main/binary-arm64"
     mkdir -p "$apt_dir"
     (cd "$sync_dir" && dpkg-scanpackages --multiversion pool/ > dists/stable/main/binary-arm64/Packages)
@@ -149,6 +147,11 @@ dest_base="oss://${bucket}"
 if [[ -n "$prefix" ]]; then
   dest_base="${dest_base}/${prefix}"
 fi
+
+# Reconcile deletions separately: ossutil 1.7.7 sync would upload unchanged
+# packages again after a fresh checkout/download. Only pool/ is managed here.
+mkdir -p "$sync_dir/pool"
+python3 "$script_dir/prune-pool.py" "$sync_dir/pool" "${dest_base}/pool/"
 
 uploaded=0
 skipped=0

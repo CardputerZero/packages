@@ -1,0 +1,11 @@
+{
+  "filename": "pocket-trail_1.0.4_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/duanesweazy1__pocket-trail_1.0.4_arm64.deb",
+  "sha256": "1fd4e93a86e80041ef50a11dc1ef6dba836660bafb816a0085c8017222cc0515",
+  "size": 19298,
+  "package": "pocket-trail",
+  "version": "1.0.4",
+  "architecture": "arm64",
+  "uploaded_by": "duanesweazy1",
+  "uploader_email": "duanesweazy1@users.noreply.github.com"
+}

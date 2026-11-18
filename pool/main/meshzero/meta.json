@@ -1,0 +1,35 @@
+{
+  "title": "MeshZero",
+  "summary": "A fully-featured Meshtastic client",
+  "description": "MeshZero is a fully-featured Meshtastic client for use with your Cap LoRa 1262 module. It implements all the features of meshtasticd, including remote management via the mobile app or other apps like Meshmonitor. It features a background service which keeps your meshtastic node working even when you're in order apps.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "MSH0",
+  "source_repo": "https://github.com/s0liton/MeshZero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": true,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Soliton",
+    "github": "s0liton"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "meshzero_icon.png",
+  "published_at": "2026-11-16T03:59:17+00:00",
+  "updated_at": "2026-11-17T22:43:00+00:00"
+}
