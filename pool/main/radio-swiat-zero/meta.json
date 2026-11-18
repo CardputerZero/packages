@@ -1,0 +1,35 @@
+{
+  "title": "World Radio",
+  "summary": "Find and play internet radio stations worldwide on your CardputerZero.",
+  "description": "World Radio lets you discover and listen to internet radio stations from around the world on your CardputerZero.\r\n\r\nBrowse popular stations from Radio Browser or search by name, country, city, or music genre. Save your favorites for quick access, or add a station using its stream URL.\r\n\r\nThe player shows the station’s logo, country flag, and live song titles or other on-air information when available. Press S or D to adjust the volume, or A to mute the radio. Hold Tab for three seconds to turn off the screen while the radio keeps playing, then tap Tab to wake it.\r\n\r\nChoose from five color themes and switch between English and Polish. World Radio remembers your preferences and shows a keyboard guide each time it opens.",
+  "categories": [
+    "Radio & Comms",
+    "Media"
+  ],
+  "license": "Proprietary",
+  "share_code": "WRIO",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Ryszard",
+    "github": "Ricardopoland"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "radio-swiat-zero_icon.png",
+  "published_at": "2026-11-18T17:03:16+00:00",
+  "updated_at": "2026-11-18T17:03:16+00:00"
+}

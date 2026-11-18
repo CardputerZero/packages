@@ -1,0 +1,11 @@
+{
+  "filename": "radio-swiat-zero_0.1.7_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Ricardopoland__radio-swiat-zero_0.1.7_arm64.deb",
+  "sha256": "d3c969748990aba6139394fd9beb572fef755cc15bb42c315ad59d41dfb399f4",
+  "size": 24960,
+  "package": "radio-swiat-zero",
+  "version": "0.1.7",
+  "architecture": "arm64",
+  "uploaded_by": "Ricardopoland",
+  "uploader_email": "ricardopoland@users.noreply.github.com"
+}
