@@ -1,0 +1,31 @@
+{
+  "title": "WiFi USB",
+  "summary": "Cyberpunk-styled  utility for M5Stack CardputerZero to manage Wi-Fi adapters",
+  "description": "CardputerZero Wi-Fi USB Manager (WiFi USB in APPLaunch) provides a native, fast 320 × 170 graphical interface designed specifically for the CardputerZero's physical TCA8418 keyboard and MIPI/ST7789 LCD (/dev/fb_lcd) so you can:\r\n\r\nAuto-detect & prioritize USB Wi-Fi adapters ([USB] vs [INT] badges, reading real USB vendor/product strings and kernel drivers via sysfs).\r\nSwitch interfaces on the fly (wlan1 ↔ wlan0) and inspect per-adapter state, active SSID, and IPv4 address.\r\nScan 2.4 GHz & 5 GHz networks on the selected adapter with live signal bars, security badges (OPN / LCK), channel info, and circular marquee scrolling for long SSIDs and adapter names.\r\nConnect with per-adapter NetworkManager profiles (<ifname>-<ssid>) so your USB adapter and built-in Wi-Fi can connect independently to the same or different networks without colliding.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "WFUB",
+  "source_repo": "https://github.com/adrianomoraes/CardputerZero-WiFiManager",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Adriano Moraes",
+    "github": "adrianomoraes"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "wifi-manager_icon.png",
+  "published_at": "2026-11-16T21:23:57+00:00",
+  "updated_at": "2026-11-16T21:23:57+00:00"
+}
