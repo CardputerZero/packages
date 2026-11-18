@@ -1,0 +1,33 @@
+{
+  "title": "Plai",
+  "summary": "Standalone Meshtastic messaging and mesh tools for Cardputer Zero",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/menu.png",
+    "screenshots/nodes.png",
+    "screenshots/channels.png",
+    "screenshots/stats.png",
+    "screenshots/monitor.png"
+  ],
+  "description": "Turn Cardputer Zero into a standalone Meshtastic node with a compatible SX1262 LoRa CAP. Exchange channel and direct messages, browse mesh nodes, inspect radio packets, and check device and network statistics.\n\nPlai includes local message history, channel and radio settings, traceroute tools, node maps, and compass navigation. Optional spoken notifications use an installed TalkToMe package.\n\nLoRa messaging does not require an internet connection. Downloading map tiles requires internet access; downloaded tiles are cached locally. GPS and compass features depend on available hardware. Configure the radio region and frequency for your location before transmitting.",
+  "license": "GPL-3.0-or-later",
+  "icon": "plai_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "PLAI",
+  "author": {
+    "github": "d4rkmen",
+    "display_name": "d4rkmen"
+  },
+  "published_at": "2026-11-17T11:48:47+00:00",
+  "updated_at": "2026-11-17T11:48:47+00:00"
+}
