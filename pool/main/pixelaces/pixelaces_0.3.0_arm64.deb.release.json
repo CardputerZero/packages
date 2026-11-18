@@ -1,0 +1,11 @@
+{
+  "filename": "pixelaces_0.3.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jiawud__pixelaces_0.3.0_arm64.deb",
+  "sha256": "fb2d8c3d677633ad14a91bc6313f5307dca63e994c8965a9c09a6e6d29ea75ce",
+  "size": 531152,
+  "package": "pixelaces",
+  "version": "0.3.0",
+  "architecture": "arm64",
+  "uploaded_by": "jiawud",
+  "uploader_email": "jiawud@users.noreply.github.com"
+}
