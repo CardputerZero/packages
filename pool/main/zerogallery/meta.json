@@ -1,0 +1,31 @@
+{
+  "title": "ZeroGallery",
+  "summary": "Browse folders and view photos and videos with the arrow keys",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/folders.png",
+    "screenshots/photo.png"
+  ],
+  "description": "Pick a folder and flip through its photos and videos full screen with the arrow keys (F/X/Z/C work with or without Fn). JPEG photos open natively with EXIF rotation; every other image format, animated GIFs and all videos are decoded by the system ffmpeg, with sound through PipeWire. In a video the arrows skip 10 or 30 seconds back and forth. Turn the device and the photo or video turns with it. ESC goes back, hold ESC to exit.",
+  "license": "MIT",
+  "source_repo": "https://github.com/baltamir1978/ZeroGallery",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZGAL",
+  "author": {
+    "github": "baltamir1978",
+    "display_name": "baltamir1978"
+  },
+  "published_at": "2026-11-16T22:16:28+00:00",
+  "updated_at": "2026-11-16T22:16:28+00:00"
+}
