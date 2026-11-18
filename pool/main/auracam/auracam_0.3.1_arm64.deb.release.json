@@ -1,0 +1,11 @@
+{
+  "filename": "auracam_0.3.1_arm64.deb",
+  "url": "https://github.com/jrdntnnr/packages/releases/download/czdev-buffer/auracam_0.3.1_arm64.deb",
+  "sha256": "99a7db7d6c82257302966fba090547a21f3a6df83e9fb4a41f2d92f154e3ccc2",
+  "size": 415164,
+  "package": "auracam",
+  "version": "0.3.1",
+  "architecture": "arm64",
+  "uploaded_by": "jrdntnnr",
+  "uploader_email": "jrdntnnr@users.noreply.github.com"
+}
