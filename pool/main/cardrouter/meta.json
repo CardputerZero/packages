@@ -1,0 +1,33 @@
+{
+  "title": "CardRouter",
+  "summary": "把CardputerZero 变成一台口袋卡片路由器：开热点、共享上网、管理设备。",
+  "description": "Card Router 把你的 CardputerZero 变成一台小巧的卡片路由器。插上网线，或无线中继家里的 Wi-Fi，它就能开出热点，让手机、电脑共享上网，并提供一套完整的路由管理功能。\r\n主要功能：\r\n· 开机引导向导：首次使用一步步配好语言、上网方式、热点名称密码、局域网网段，几分钟即可上手。\r\n· 状态首页：实时显示运行状态、上联地址、路由地址、上下行速率曲线和在线客户端数。\r\n· 客户端管理：查看已连接设备，给它起备注名，一键拉黑，按需查看信号强度。\r\n· 路由设置：名称、密码、网段、DHCP 范围、上行方式，点哪项直接改哪项，无需重走向导。\r\n· 端口转发：把外部端口映射到内网设备（TCP/UDP）。\r\n· DNS 覆盖：自定义域名解析，把域名指向指定 IP（如内网 NAS），或屏蔽广告域名。\r\n· 设备黑名单：从已连接设备里直接选择拉黑，不用手输 MAC。\r\n· 静态租约：给指定设备固定 IP，同样从已连接设备选择。\r\n· QoS 限速：选择档位限制带宽（关闭/2/5/10/20/50 Mbps）。\r\n· WireGuard：放入配置即可一键连接 VPN。\r\n· 无线中继：单射频以 wlan1 连接上级 Wi-Fi、热点跟随同信道；也支持有线上行。\r\n· 开放热点：密码留空即为无密码开放网络。\r\n· 中英文界面随时切换。\r\n快捷键：\r\n· 首页：F/X 上下移动，M 总菜单，T 启动/停止（需输入设备密码确认），S 路由设置，C 客户端，A 高级功能，W 配置向导，ESC 退出。\r\n· 客户端页：R 改名，B 拉黑，S 查看信号。\r\n· 规则页（转发/DNS/黑名单/租约）：Enter 添加，DEL 删除。\r\n· 向导/编辑：Enter 下一步或保存，ESC 返回。\r\n· Ctrl+L：切换中英文。\r\n说明：无线中继与热点共用一块射频，速率约为单独使用的一半，热点信道会跟随上级路由。路由由系统服务托管，退出应用后仍继续运行；按 T 停止后设备自身仍可联网。\r\n\r\nCard Router turns your CardputerZero into a compact card-sized router. Plug in Ethernet, or wirelessly relay your home Wi-Fi, and it opens a hotspot so phones and computers can share the connection — with a full set of router management tools.\r\nFeatures:\r\n· First-boot wizard: step-by-step setup of language, uplink, hotspot name/password, and LAN subnet.\r\n· Live dashboard: running state, uplink/router addresses, real-time up/down rate chart, and online client count.\r\n· Client management: see connected devices, add note names, block with one tap, view signal on demand.\r\n· Router settings: edit name, password, subnet, DHCP range, or uplink directly — jump straight to the item you want.\r\n· Port forwarding: map external ports to LAN devices (TCP/UDP).\r\n· DNS overrides: custom domain-to-IP mapping (e.g. a LAN NAS) or ad-domain blocking.\r\n· Device blocklist: pick a connected device to block — no manual MAC entry.\r\n· Static leases: assign a fixed IP to a chosen device.\r\n· QoS limit: pick a bandwidth tier (Off/2/5/10/20/50 Mbps).\r\n· WireGuard: drop in a config and connect with one tap.\r\n· Wireless repeater: a single radio joins the upstream Wi-Fi via wlan1 with the hotspot on the same channel; wired uplink also supported.\r\n· Open hotspot: leave the password blank for an open network.\r\n· Chinese/English UI switching.\r\nShortcuts:\r\n· Home: F/X move, M menu, T start/stop (device password required), S router settings, C clients, A advanced, W wizard, ESC exit.\r\n· Clients: R rename, B block, S signal.\r\n· Rule pages: Enter add, DEL delete.\r\n· Wizard/edit: Enter next/save, ESC back.\r\n· Ctrl+L: toggle language.\r\nNote: wireless repeater and hotspot share one radio (about half throughput); the hotspot follows the upstream channel. Routing is hosted by system services and keeps running after you exit the app; after T-stop the device itself stays online.",
+  "categories": [
+    "System Tools",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "CRTR",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "ddddd",
+    "github": "jiawud"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardrouter_icon.png",
+  "published_at": "2026-11-16T15:24:00+00:00",
+  "updated_at": "2026-11-16T15:24:00+00:00"
+}
