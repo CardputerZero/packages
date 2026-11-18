@@ -1,0 +1,47 @@
+{
+  "title": "Flight Club",
+  "summary": "驾驶战机穿越虫洞，从地表飞向宇宙",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/free-flight.png",
+    "screenshots/portal.png",
+    "screenshots/race.png",
+    "screenshots/combat.png",
+    "screenshots/space-cockpit.png",
+    "screenshots/moon-approach.png"
+  ],
+  "description": "驾驶战机穿越虫洞，到达世界的另一端，从地表飞向宇宙，再驶向星球降落。自由探索、竞速、金币冲刺与空战，支持 Cardputer Zero 体感操控。\n创意来源：https://remix.ui8.ai/fly\n\nPilot a fighter through wormholes to the other side of the world. Fly from the surface into space, then head toward a planet and land. Explore freely, race, collect coins, and fight aerial battles with Cardputer Zero motion controls.\nCreative inspiration: https://remix.ui8.ai/fly",
+  "locales": {
+    "zh-CN": {
+      "title": "Flight Club",
+      "summary": "驾驶战机穿越虫洞，从地表飞向宇宙",
+      "description": "驾驶战机穿越虫洞，到达世界的另一端，从地表飞向宇宙，再驶向星球降落。自由探索、竞速、金币冲刺与空战，支持 Cardputer Zero 体感操控。\n创意来源：https://remix.ui8.ai/fly"
+    },
+    "en": {
+      "title": "Flight Club",
+      "summary": "Fly through portals and seamlessly into space",
+      "description": "Pilot a fighter through wormholes to the other side of the world. Fly from the surface into space, then head toward a planet and land. Explore freely, race, collect coins, and fight aerial battles with Cardputer Zero motion controls.\nCreative inspiration: https://remix.ui8.ai/fly"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/journey-ad/M5CardputerZero-FlightClub",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FLYT",
+  "author": {
+    "github": "journey-ad",
+    "display_name": "journey-ad"
+  },
+  "published_at": "2026-11-18T09:42:57+00:00",
+  "updated_at": "2026-11-18T09:42:57+00:00"
+}
