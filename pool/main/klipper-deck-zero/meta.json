@@ -1,0 +1,47 @@
+{
+  "title": "KlipperDeckZero",
+  "summary": "Check and control a Klipper 3D printer from the CardputerZero keyboard.",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/screen-status-printing.png",
+    "screenshots/screen-status-printing-dark.png",
+    "screenshots/screen-temperature.png",
+    "screenshots/screen-files-detail.png",
+    "screenshots/screen-control.png",
+    "screenshots/screen-move.png"
+  ],
+  "description": "Shows print progress, temperatures and a thumbnail of the file being printed. You can set heater targets, extrude or retract filament, jog and home the axes, start a print from the file list, and pause, resume, cancel or emergency-stop a print. Connects to Moonraker running on the CardputerZero itself (Unix socket) or on another machine on your network (WebSocket).",
+  "locales": {
+    "ja": {
+      "title": "KlipperDeckZero",
+      "summary": "Klipper の 3D プリンターを CardputerZero のキーボードで確認・操作します。",
+      "description": "印刷の進み具合、温度、印刷中のファイルのサムネイルを表示します。ヒーターの温度設定、フィラメントの押し出しと引き戻し、軸の移動とホーミング、ファイルを選んでの印刷開始、一時停止・再開・中止・非常停止ができます。接続先は、CardputerZero 自体で動く Moonraker(Unix ソケット)か、ネットワーク上の別の機械の Moonraker(WebSocket)です。"
+    },
+    "zh-CN": {
+      "title": "KlipperDeckZero",
+      "summary": "用 CardputerZero 的键盘查看和操作 Klipper 3D 打印机。",
+      "description": "显示打印进度、温度和正在打印的文件的缩略图。可以设置加热目标温度、挤出和回抽耗材、移动各轴和归零、从文件列表开始打印，以及暂停、继续、取消和紧急停止打印。可以连接运行在 CardputerZero 本机上的 Moonraker（Unix 套接字），也可以连接局域网中其他设备上的 Moonraker（WebSocket）。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/denchi-45/KlipperDeckZero",
+  "icon": "klipperdeck_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "KDZ0",
+  "author": {
+    "github": "denchi-45",
+    "display_name": "denchi-45"
+  },
+  "published_at": "2026-11-17T17:20:02+00:00",
+  "updated_at": "2026-11-17T17:20:02+00:00"
+}

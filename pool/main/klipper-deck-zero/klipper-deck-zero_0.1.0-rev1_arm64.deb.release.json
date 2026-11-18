@@ -1,0 +1,11 @@
+{
+  "filename": "klipper-deck-zero_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/denchi-45/packages/releases/download/czdev-buffer/klipper-deck-zero_0.1.0-rev1_arm64.deb",
+  "sha256": "79d76d7ecb910a2755be28f955916aef6d2052f6cdac9ef5d421e208486f509f",
+  "size": 2362924,
+  "package": "klipper-deck-zero",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "denchi-45",
+  "uploader_email": "denchi-45@users.noreply.github.com"
+}
