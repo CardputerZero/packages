@@ -1,0 +1,35 @@
+{
+  "title": "WireZero",
+  "summary": "WireGuard VPN client: import by file or QR code, connect from the keyboard",
+  "description": "Import a WireGuard tunnel from a .conf file or by scanning its QR code with the camera, then connect with one key. Shows tunnel address, DNS and traffic, and can connect at boot. Never runs as root; private keys stay root-only. Adding or deleting tunnels asks for your password. Needs NetworkManager (default on the official image). WireGuard is a registered trademark of Jason A. Donenfeld.",
+  "categories": [
+    "System Tools",
+    "Security"
+  ],
+  "license": "MIT",
+  "share_code": "WGZ0",
+  "source_repo": "https://github.com/r-morato/wirezero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Roger Morato",
+    "github": "r-morato"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "wirezero_icon.png",
+  "published_at": "2026-11-16T23:28:25+00:00",
+  "updated_at": "2026-11-16T23:28:25+00:00"
+}
