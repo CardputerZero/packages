@@ -1,0 +1,36 @@
+{
+  "title": "Desktop",
+  "summary": "See the CardputerZero's hidden Pi desktop on its built-in screen",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/main.png"
+  ],
+  "description": "The CardputerZero runs a full Raspberry Pi desktop that normally stays hidden behind the launcher. Desktop brings it onto the 320x170 LCD in real time, scaled and letterboxed so nothing is stretched, so you can glance at the panel, tray and open windows without plugging in a monitor. It is a view-only window: pair it with any VNC client when you actually want to click around. Lightweight, no configuration. Key 4 (or Esc) returns to the launcher; key 8 shows or hides the on-screen key bar.",
+  "locales": {
+    "zh-CN": {
+      "title": "桌面",
+      "summary": "在 CardputerZero 自带的屏幕上看它隐藏的树莓派桌面",
+      "description": "CardputerZero 本身跑着一个完整的树莓派桌面，平时被启动器挡在后面看不到。「桌面」把它实时搬到 320x170 的 LCD 上，按比例缩放加黑边、不拉伸，不用外接显示器就能瞄一眼面板、托盘和打开的窗口。它是只读的查看窗口——真要操作就配一个 VNC 客户端。轻量、免配置。按键 4（或 Esc）回到启动器，按键 8 显示/隐藏屏幕上的按键条。"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "WDSK",
+  "author": {
+    "github": "datianda",
+    "display_name": "WanWuLab"
+  },
+  "published_at": "2026-11-18T00:55:50+00:00",
+  "updated_at": "2026-11-18T00:55:50+00:00"
+}
