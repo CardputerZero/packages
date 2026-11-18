@@ -1,0 +1,36 @@
+{
+  "title": "ZSynth",
+  "summary": "Pocket groovebox: synths, mic sampler, drums, patterns and songs",
+  "description": "ZSynth turns the Cardputer Zero into a pocket groovebox.\r\n\r\nFour tracks: a lead synth, a bass synth, a mic sampler and a drum kit. Each song has eight patterns, from 1 to 32 steps in any time signature (4/4, 3/4, 7/8, 6/8...), and a chain that plays them in order.\r\n\r\n- Play live: arm recording and play along while the loop runs, with a metronome.\r\n- Step editing: a drum-machine grid with accents, and a piano roll for writing notes and chords step by step.\r\n- Sound design: shape each track on the Sound screen (wave, filter, envelope, detune), and hear changes as you play.\r\n- Instrument library: 23 starter instruments. Browse them while your loop plays to hear each one in context, and save your own.\r\n- Sampler: record up to 5 seconds from the built-in mic, or use the 18 starter samples (FM piano, harpsichord, marimba, kalimba, tenor sax, harmonica, gong and more) from the CC0 Versilian Community Sample Library, tuned to play across the keyboard.\r\n- Comes with a demo song, night-shift: 87 seconds of dance-punk at 118 BPM.\r\n\r\nEverything is saved as you go. Press Fn+H in the app for the key guide.",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "ZSYN",
+  "source_repo": "https://github.com/calanjoyce/zsynth",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": false
+  },
+  "author": {
+    "display_name": "calanjoyce",
+    "github": "calanjoyce"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "zsynth_icon.png",
+  "published_at": "2026-11-18T21:00:26+00:00",
+  "updated_at": "2026-11-18T21:00:26+00:00"
+}
