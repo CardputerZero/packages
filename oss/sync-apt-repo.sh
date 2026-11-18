@@ -148,18 +148,35 @@ if [[ -n "$prefix" ]]; then
   dest_base="${dest_base}/${prefix}"
 fi
 
-count=0
-# Only pool/ is an exact mirror. Never --delete at the bucket root: it can
-# contain OS images and other repositories. Empty catalogs intentionally clear
-# the managed pool too. A failed listing/delete must fail the deployment.
+# Reconcile deletions separately: ossutil 1.7.7 sync would upload unchanged
+# packages again after a fresh checkout/download. Only pool/ is managed here.
 mkdir -p "$sync_dir/pool"
-ossutil sync "$sync_dir/pool/" "${dest_base}/pool/" --delete -f
+python3 "$script_dir/prune-pool.py" "$sync_dir/pool" "${dest_base}/pool/"
+
+uploaded=0
+skipped=0
 while IFS= read -r -d '' file; do
   rel="${file#"$sync_dir"/}"
-  [[ "$rel" == pool/* ]] && continue
-  echo "Uploading ${rel} -> ${dest_base}/${rel}"
-  ossutil cp -f "$file" "${dest_base}/${rel}"
-  count=$((count + 1))
+  destination="${dest_base}/${rel}"
+  if remote_stat=$(ossutil stat "$destination" 2>&1); then
+    remote_crc=$(awk -F ': *' 'tolower($1) ~ /^x-oss-hash-crc64ecma[[:space:]]*$/ {print $2}' <<< "$remote_stat")
+    if [[ -n "$remote_crc" ]]; then
+      local_hash=$(ossutil hash "$file" --type=crc64)
+      local_crc=$(awk -F ': *' '$1 ~ /^CRC64-ECMA[[:space:]]*$/ {print $2}' <<< "$local_hash")
+      if [[ -n "$local_crc" && "$local_crc" == "$remote_crc" ]]; then
+        echo "Unchanged: ${rel}"
+        skipped=$((skipped + 1))
+        continue
+      fi
+    fi
+  elif [[ "$remote_stat" != *"StatusCode=404,"* ]]; then
+    printf '%s\n' "$remote_stat" >&2
+    exit 1
+  fi
+
+  echo "Uploading ${rel} -> ${destination}"
+  ossutil cp -f "$file" "$destination"
+  uploaded=$((uploaded + 1))
 done < <(find "$sync_dir" -type f -print0)
 
-echo "OSS sync complete: ${count} files uploaded to ${dest_base}/"
+echo "OSS sync complete: ${uploaded} files uploaded, ${skipped} unchanged at ${dest_base}/"

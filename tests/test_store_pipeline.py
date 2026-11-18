@@ -282,13 +282,17 @@ class OssSyncTests(unittest.TestCase):
                 sys.exit(7)
             state = Path(os.environ['FAKE_STATE'])
             objects = json.loads(state.read_text())
-            if args[0] == 'sync':
-                source, destination = Path(args[1]), args[2]
-                assert args[3:] == ['--delete', '-f']
+            if args[0] == 'ls':
+                destination = args[1]
+                assert args[2:] == ['--short-format']
                 assert destination.endswith('/pool/')
-                objects = [o for o in objects if not o.startswith(destination)]
-                objects += [destination + p.relative_to(source).as_posix()
-                            for p in source.rglob('*') if p.is_file()]
+                listed = [o for o in objects if o.startswith(destination)]
+                for obj in listed:
+                    print(obj)
+                print('Object Number is: ' + str(len(listed)))
+            elif args[0] == 'rm':
+                assert args[1] == '-f'
+                objects.remove(args[2])
             elif args[0] == 'cp':
                 objects.append(args[-1])
             state.write_text(json.dumps(objects))
@@ -323,7 +327,7 @@ class OssSyncTests(unittest.TestCase):
         result, objects, calls = self.sync(fail=True)
         self.assertNotEqual(result.returncode, 0)
         self.assertEqual(len(calls), 1)
-        self.assertEqual(calls[0][0], 'sync')
+        self.assertEqual(calls[0][0], 'ls')
 
 
 if __name__ == '__main__':

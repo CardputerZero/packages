@@ -18,3 +18,14 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Check shell syntax
         run: bash -n oss/sync-apt-repo.sh .github/scripts/package_owner.sh
+      - name: Install ossutil 1.7.7 for local OSS regression tests
+        run: |
+          curl --fail --location --retry 3 --max-time 300 \
+            https://gosspublic.alicdn.com/ossutil/1.7.7/ossutil64 \
+            --output "$RUNNER_TEMP/ossutil"
+          chmod +x "$RUNNER_TEMP/ossutil"
+          "$RUNNER_TEMP/ossutil" --version
+      - name: Test incremental uploads and withdrawal cleanup with real ossutil
+        env:
+          OSSUTIL_TEST_BINARY: ${{ runner.temp }}/ossutil
+        run: python3 -m unittest discover -s oss -p 'test_*.py' -v
