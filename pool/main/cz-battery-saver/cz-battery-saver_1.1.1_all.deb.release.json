@@ -1,0 +1,11 @@
+{
+  "filename": "cz-battery-saver_1.1.1_all.deb",
+  "url": "https://github.com/InstantComet/packages/releases/download/czdev-buffer/cz-battery-saver_1.1.1_all.deb",
+  "sha256": "9057d65c16e2718ee9c1da946ca99f2c301e41a4664514bc187734fdb89cfec8",
+  "size": 17348,
+  "package": "cz-battery-saver",
+  "version": "1.1.1",
+  "architecture": "all",
+  "uploaded_by": "InstantComet",
+  "uploader_email": "InstantComet@users.noreply.github.com"
+}
