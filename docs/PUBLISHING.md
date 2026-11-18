@@ -7,6 +7,7 @@ changes architecture. Listing assets belong to the app and survive an update.
 | Stage | czdev CLI | Web upload |
 | --- | --- | --- |
 | Upload | Contributor's fork `czdev-buffer`, or official repo for maintainers | Official `staging` Release with login-prefixed names |
+| Upload limit | CLI permits up to 2 GiB per Release asset | Worker defaults to 80 MB, configurable by `MAX_SIZE_MB` |
 | Submit | PR based on current upstream main, with metadata and a release manifest | Worker dispatches `web-submission`; trusted workflow creates the PR |
 | Validate | Read-only fork PR checks; policies read from PR base | Trusted workflow validates downloaded `.deb` and store metadata |
 | Identity | PR author must match `uploaded_by` and own the app | Authenticated Worker login; admin override is supported |
