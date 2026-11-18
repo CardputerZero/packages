@@ -1,0 +1,11 @@
+{
+  "filename": "sparrow_1.1.0-rev1_arm64.deb",
+  "url": "https://github.com/gabe-harris-modernfold/packages/releases/download/czdev-buffer/sparrow_1.1.0-rev1_arm64.deb",
+  "sha256": "5736c2226944d93105ee799f579b39149267c95507bd7254a6766c88fd0e7855",
+  "size": 88687762,
+  "package": "sparrow",
+  "version": "1.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "gabe-harris-modernfold",
+  "uploader_email": "gabe.harris@dormakaba.com"
+}
