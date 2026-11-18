@@ -1,0 +1,11 @@
+{
+  "filename": "r86_2026.11.18+gita807f0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/tcchen2026__r86_2026.11.18%2Bgita807f0_arm64.deb",
+  "sha256": "18c33456e8859856b864d0f0952f7a3070a0bea93339636142162b57f6b58579",
+  "size": 22840652,
+  "package": "r86",
+  "version": "2026.11.18+gita807f0",
+  "architecture": "arm64",
+  "uploaded_by": "tcchen2026",
+  "uploader_email": "tcchen2026@users.noreply.github.com"
+}
