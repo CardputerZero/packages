@@ -1,0 +1,11 @@
+{
+  "filename": "cardflash_0.1.4-1_all.deb",
+  "url": "https://github.com/ScarletPachydermDev/packages/releases/download/czdev-buffer/cardflash_0.1.4-1_all.deb",
+  "sha256": "6985b8b2da645306e262ac97ad218418b22985dce6b2feed3b6daff1b0e83171",
+  "size": 66592,
+  "package": "cardflash",
+  "version": "0.1.4-1",
+  "architecture": "all",
+  "uploaded_by": "ScarletPachydermDev",
+  "uploader_email": "5504686+ScarletPachydermDev@users.noreply.github.com"
+}
