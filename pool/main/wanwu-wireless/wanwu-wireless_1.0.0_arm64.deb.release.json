@@ -1,0 +1,11 @@
+{
+  "filename": "wanwu-wireless_1.0.0_arm64.deb",
+  "url": "https://github.com/datianda/packages/releases/download/czdev-buffer/wanwu-wireless_1.0.0_arm64.deb",
+  "sha256": "64f8b412f0d64e7457ac9e31568f01b1fd2be8ec8301dac5d0fa4ac2dbbbc23d",
+  "size": 52036,
+  "package": "wanwu-wireless",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "datianda",
+  "uploader_email": "datianda@users.noreply.github.com"
+}
