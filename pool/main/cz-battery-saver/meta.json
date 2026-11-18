@@ -1,0 +1,37 @@
+{
+  "title": "Battery Saver",
+  "summary": "Longer battery life: USB autosuspend, screen-off idle, low-battery shutdown",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/info.png"
+  ],
+  "description": "Battery Saver cuts the CardputerZero's battery drain by about a quarter with the screen on and about 40% with it off, so the 1750 mAh cell lasts roughly 5.6 h instead of 4.2 h on screen, and 7.5 h instead of 4.4 h off screen.\n\n**Always on**\n- Lets the internal USB Ethernet chip autosuspend. The kernel keeps it awake, which keeps the whole USB bus busy at ~8000 interrupts/s (~105 mA). USB devices and Ethernet cables still work when plugged in.\n- Optional: silence the launcher's key sounds so the sound card can sleep (~35 mA).\n\n**While the screen is off**\n- Parks the launcher's audio stream so the sound card sleeps (~40 mA).\n- Pauses the launcher, which keeps redrawing the LCD with the backlight off (~30 mA).\n- Any key wakes everything up instantly.\n\n**Low battery**\n- Shuts down cleanly at 8% (5–20% or never).\n\nWiFi, SSH and Tailscale keep working. Each measure can be switched off in the app, which also shows the live battery current. The service runs as the desktop user, not root.\n\nKeys: F/X move, Z/C or Enter change, I info, Esc back.",
+  "locales": {
+    "zh-CN": {
+      "title": "省电助手",
+      "summary": "延长续航：USB 自动休眠、熄屏深度空闲、低电量自动关机"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/InstantComet/cz-battery-saver",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "BATT",
+  "author": {
+    "github": "InstantComet",
+    "display_name": "InstantComet"
+  },
+  "published_at": "2026-11-17T13:47:10+00:00",
+  "updated_at": "2026-11-17T13:47:10+00:00"
+}
