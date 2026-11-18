@@ -1,0 +1,31 @@
+{
+  "title": "CardMesh",
+  "summary": "Pocket client for Meshtastic and MeshCore LoRa Mesh and MeshMonitor remotely.",
+  "description": "CardMesh is a keyboard-first pocket client for Meshtastic and MeshCore LoRa mesh networks, and MeshMonitor remotely -- the first CardputerZero app for Meshtastic and MeshCore. It talks directly to Meshtastic and MeshCore over the onboard LoRa hat (one at a time -- they share the single physical radio, switched with a tap), and to MeshMonitor over REST. An icon-grid Home screen gets you into any of the three; each has its own channel picker and chat view.",
+  "categories": [
+    "Hardware & IoT",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "CMSH",
+  "source_repo": "https://github.com/maxhayim/CardMesh",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Max Hayim",
+    "github": "maxhayim"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "cardmesh_icon.png",
+  "published_at": "2026-11-17T04:15:57+00:00",
+  "updated_at": "2026-11-17T04:15:57+00:00"
+}
