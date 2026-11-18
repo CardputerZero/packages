@@ -1,0 +1,39 @@
+{
+  "title": "Peers",
+  "summary": "Peers for Tailscale (unofficial): QR login, device list, one-key SSH, copy IPs",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/list.png",
+    "screenshots/login.png",
+    "screenshots/menu.png",
+    "screenshots/ssh.png"
+  ],
+  "description": "Peers is an unofficial Tailscale companion for the CardputerZero, like the device list of the desktop app.\n\n**Log in with your phone**\n- Not logged in yet? Press Enter: a QR code appears on the screen. Scan it with your phone and log in there; the Cardputer joins your tailnet by itself. The link is shown too, to open on any other device.\n- Log out from the This Cardputer page (m, then o).\n- Tailscale not installed? Press Enter to install it with the official script (needs sudo and internet).\n\n**Devices**\n- Every device on your tailnet: online first, with its Tailscale IP and how you reach it (direct, DERP relay, or when it was last seen). The exit node in use is marked EXIT.\n- Type / to filter by name, IP or OS.\n\n**Per device** (Enter)\n- SSH: asks for the user and port once per device, then runs ssh right in the launcher's built-in terminal; when the session ends you are back in the list.\n- Copy the IPv4, IPv6 or DNS name. There is no system clipboard, so the copy is kept for the ts-clip command: ssh pi@$(ts-clip) in the CLI app.\n- Shell here: bash with $IP and $HOST set to that device.\n- tailscale ping (shows direct or DERP and the latency), details (owner, OS, traffic, key expiry, tags), use as exit node.\n\n**This Cardputer** (m)\n- IPs, MagicDNS name, account, key expiry (warns 14 days ahead), health warnings.\n- Connect / disconnect (t), choose an exit node and LAN access (e), log out (o).\n\nRuns inside the launcher's terminal and talks to tailscaled directly; nothing runs in the background. Installing lets the desktop user change Tailscale settings (tailscale set --operator); if Tailscale is installed later, the app offers to do that when a change is refused.\n\nKeys: F/X move, C (or Enter) actions, Z back, s ssh, y copy, p ping, i details, m this device, l log in, ? help, Esc quits.\n\nUnofficial app, not affiliated with or endorsed by Tailscale Inc. Tailscale is a registered trademark of Tailscale Inc.",
+  "locales": {
+    "zh-CN": {
+      "title": "Peers",
+      "summary": "Peers for Tailscale（非官方）：扫码登录、设备列表、一键 SSH、复制 IP"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/InstantComet/cz-peers",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TSNT",
+  "author": {
+    "github": "InstantComet",
+    "display_name": "InstantComet"
+  },
+  "published_at": "2026-11-18T15:25:11+00:00",
+  "updated_at": "2026-11-18T15:25:11+00:00"
+}
