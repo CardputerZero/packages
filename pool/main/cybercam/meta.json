@@ -1,0 +1,32 @@
+{
+  "title": "CyberCam",
+  "summary": "Transform your Cardputer Zero into a retro camera with 8MP, GIFs & timelapse!",
+  "description": "CyberCam is an open-source camera app for Cardputer Zero by Cybern0mads. It supports 8MP photo capture, animated GIFs, MP4 video, timelapse with automatic MP4 export, stop-motion capture, boomerang clips, Wi-Fi gallery and downloads, and multiple retro / cyberpunk visual filters. It is designed for handheld use with a simple keyboard-driven interface and a visible on-device gallery.",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "CYN0",
+  "source_repo": "https://github.com/cybern0mads/CyberCam",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": false
+  },
+  "author": {
+    "display_name": "CyberN0mads",
+    "github": "cybern0mads"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "cybercam_icon.png",
+  "published_at": "2026-11-18T18:18:47+00:00",
+  "updated_at": "2026-11-18T18:18:47+00:00"
+}

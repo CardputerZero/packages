@@ -1,0 +1,11 @@
+{
+  "filename": "cybercam_0.5.2_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/cybern0mads__cybercam_0.5.2_all.deb",
+  "sha256": "41429c3f7d64c10aa9ba5c7242eb82fbf5eef260dddd00417fd58ec2755cbd74",
+  "size": 56420,
+  "package": "cybercam",
+  "version": "0.5.2",
+  "architecture": "all",
+  "uploaded_by": "cybern0mads",
+  "uploader_email": "cybern0mads@users.noreply.github.com"
+}
