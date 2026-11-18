@@ -7,6 +7,7 @@ import shutil
 import subprocess
 import tempfile
 import threading
+import time
 import unittest
 from urllib.parse import parse_qs, unquote, urlsplit
 from xml.sax.saxutils import escape
@@ -43,9 +44,20 @@ class ObjectHandler(BaseHTTPRequestHandler):
             self.wfile.write(body)
 
     def do_HEAD(self):
+        with self.server.head_lock:
+            self.server.active_heads += 1
+            self.server.max_heads = max(self.server.max_heads, self.server.active_heads)
+        try:
+            time.sleep(self.server.head_delay)
+            self.head_object()
+        finally:
+            with self.server.head_lock:
+                self.server.active_heads -= 1
+
+    def head_object(self):
         key = self.object_key()
-        if self.server.stat_status:
-            self.error(self.server.stat_status, "AccessDenied")
+        if self.server.stat_status or key in self.server.fail_keys:
+            self.error(self.server.stat_status or 403, "AccessDenied")
             return
         if key not in self.server.objects:
             self.error(404, "NoSuchKey")
@@ -156,6 +168,11 @@ class SyncTests(unittest.TestCase):
         self.server.uploads = []
         self.server.without_crc = set()
         self.server.stat_status = None
+        self.server.fail_keys = set()
+        self.server.head_lock = threading.Lock()
+        self.server.active_heads = 0
+        self.server.max_heads = 0
+        self.server.head_delay = 0
         self.server.fail_after = None
         self.server.list_status = None
         self.server.delete_status = None
@@ -213,6 +230,35 @@ class SyncTests(unittest.TestCase):
         else:
             self.assertNotEqual(result.returncode, 0, result.stdout)
         return result
+
+    def test_parallel_checks_respect_worker_limit_and_publish_metadata_last(self):
+        for i in range(8):
+            self.write(f"pool/main/example/extra-{i}.png", b"image")
+        for path in self.source.rglob("*"):
+            if path.is_file():
+                self.server.objects["packages/" + path.relative_to(self.source).as_posix()] = b"previous content"
+        self.server.head_delay = 0.05
+        self.env["OSS_SYNC_WORKERS"] = "3"
+        self.run_sync()
+        self.assertGreater(self.server.max_heads, 1)
+        self.assertLessEqual(self.server.max_heads, 3)
+        uploads = self.server.uploads
+        pool_positions = [i for i, key in enumerate(uploads) if "/pool/" in key]
+        metadata_positions = [i for i, key in enumerate(uploads) if "/pool/" not in key]
+        self.assertLess(max(pool_positions), min(metadata_positions))
+        self.assertLess(uploads.index("packages/dists/stable/main/binary-arm64/Packages"),
+                        uploads.index("packages/dists/stable/Release"))
+
+    def test_one_pool_failure_prevents_all_catalog_publication(self):
+        self.server.objects["packages/pool/main/example/meta.json"] = b"previous content"
+        self.server.fail_keys.add("packages/pool/main/example/meta.json")
+        self.run_sync(success=False)
+        self.assertFalse(any("/pool/" not in key for key in self.server.uploads))
+
+    def test_invalid_worker_limit_uploads_nothing(self):
+        self.env["OSS_SYNC_WORKERS"] = "0"
+        self.run_sync(success=False)
+        self.assertEqual(self.server.uploads, [])
 
     def test_unchanged_content_is_skipped_after_mtime_changes(self):
         self.assertEqual(crc64(b"123456789"), 0x995DC9BBDF1939FA)

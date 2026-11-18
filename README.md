@@ -93,6 +93,14 @@ Upload downloads retry transient network/Release-CDN failures for up to ten
 minutes using increasing delays. Downloads are written atomically, screenshots
 and icons use the same retry helper, and integrity failures remain blocking.
 
+Deployment restores a SHA256-keyed package cache and verifies every cached file
+against its active manifest. Missing or corrupt entries download with four workers;
+new promotions reuse those same bytes for indexing and OSS staging. Portal staging
+URLs keep their author prefix. An absent optional source falls back immediately,
+while transient network failures retain bounded retries. Only active manifests
+enter the output and the next saved cache, so cached withdrawn packages cannot
+reappear in the catalog.
+
 Run regression checks with `python3 -m unittest discover -s tests -v` (Python
 3.10+ and Node.js). They use temporary repositories and mocked downloads, and
 never delete remote assets.

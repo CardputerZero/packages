@@ -8,6 +8,7 @@ on:
       - 'oss/**'
       - '.github/scripts/catalog_cleanup.py'
       - '.github/scripts/download.py'
+      - '.github/scripts/collect_packages.py'
       - '.github/workflows/update-index.yml'
 
   workflow_dispatch:
@@ -71,75 +72,26 @@ jobs:
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y dpkg-dev rsync jq
 
-      - name: Promote pending .deb manifests into the apt-pool release
+      - name: Restore verified package cache
+        id: package-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/package-debs
+          key: ${{ runner.os }}-package-debs-v1-${{ hashFiles('pool/**/*.deb.release.json') }}
+          restore-keys: |
+            ${{ runner.os }}-package-debs-v1-
+
+      - name: Promote and collect manifested packages
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          # Existing assets in the pool release (by name).
-          gh release view "$POOL_TAG" --json assets --jq '.assets[].name' 2>/dev/null | sort > /tmp/pool-assets.txt || : > /tmp/pool-assets.txt
+        run: python3 .github/scripts/collect_packages.py --workers 4
 
-          # Each manifest declares the canonical filename + source URL + sha256.
-          shopt -s nullglob globstar
-          for manifest in pool/main/**/*.deb.release.json; do
-            name=$(jq -r '.filename' "$manifest")
-            url=$(jq -r '.url' "$manifest")
-            want_sha=$(jq -r '.sha256' "$manifest")
-            if [ -z "$name" ] || [ "$name" = "null" ]; then
-              echo "::error::manifest $manifest missing .filename"; exit 1
-            fi
-            if grep -qxF "$name" /tmp/pool-assets.txt; then
-              echo "already in pool: $name"
-              continue
-            fi
-            # The release asset name is the uploaded file's basename, so the temp
-            # file MUST be named exactly $name (a "promote-$name" temp path would
-            # upload the asset as "promote-<name>", which the Collect step below
-            # then fails to find).
-            mkdir -p /tmp/promote
-            tmp="/tmp/promote/$name"
-            # Prefer the org-controlled staging mirror (populated by
-            # capture-to-staging.yml when the publish PR was opened); fall back
-            # to the manifest url (e.g. a contributor fork) if staging misses
-            # or its content does not match the manifest sha256.
-            fetched=""
-            for src in "https://github.com/${GITHUB_REPOSITORY}/releases/download/staging/$name" "$url"; do
-              rm -f "$tmp"
-              echo "promoting $name from $src"
-              python3 .github/scripts/download.py "$src" "$tmp" || continue
-              got_sha=$(sha256sum "$tmp" | awk '{print $1}')
-              if [ -n "$want_sha" ] && [ "$want_sha" != "null" ] && [ "$got_sha" != "$want_sha" ]; then
-                echo "::warning::sha256 mismatch for $name from $src (want $want_sha got $got_sha)"; continue
-              fi
-              fetched=1; break
-            done
-            if [ -z "$fetched" ]; then
-              echo "::error::could not fetch $name with a matching sha256 from staging or $url"; exit 1
-            fi
-            gh release upload "$POOL_TAG" "$tmp" --clobber
-            rm -f "$tmp"
-          done
-
-      - name: Collect manifested .deb from the apt-pool release
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -euo pipefail
-          # Manifests in git are the source of truth for the catalog: only the
-          # .deb referenced by a manifest is indexed, so deleting a manifest
-          # (e.g. `czdev unpublish`) drops the package on the next build. The
-          # completion job then revokes the old release download links too.
-          mkdir -p release-debs
-          shopt -s nullglob globstar
-          count=0
-          for manifest in pool/main/**/*.deb.release.json; do
-            name=$(jq -r '.filename' "$manifest")
-            if ! gh release download "$POOL_TAG" -D release-debs --pattern "$name" --clobber; then
-              echo "::error::asset '$name' (from $manifest) not found in the $POOL_TAG release"; exit 1
-            fi
-            count=$((count+1))
-          done
-          echo "collected $count .deb from manifests"
+      - name: Save verified package cache
+        if: steps.package-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/package-debs
+          key: ${{ steps.package-cache.outputs.cache-primary-key }}
 
       - name: Build APT repository (Pages metadata only; .deb served from Releases)
         run: |

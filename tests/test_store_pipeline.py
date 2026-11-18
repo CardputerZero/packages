@@ -6,6 +6,7 @@ import io
 import json
 import os
 import re
+import runpy
 from pathlib import Path
 import subprocess
 import sys
@@ -70,6 +71,24 @@ class DownloadTests(unittest.TestCase):
         with patch.object(download.urllib.request, 'urlopen', side_effect=error) as request, self.assertRaises(urllib.error.HTTPError):
             download.download('https://example.test', self.output)
         self.assertEqual(request.call_count, 1)
+
+    def test_optional_mirror_404_is_not_retried(self):
+        error = urllib.error.HTTPError('https://example.test', 404, '', {}, None)
+        with patch.object(download.urllib.request, 'urlopen', side_effect=error) as request, \
+             patch.object(download.time, 'sleep') as sleep, self.assertRaises(urllib.error.HTTPError):
+            download.download('https://example.test', self.output, retry_not_found=False)
+        self.assertEqual(request.call_count, 1)
+        sleep.assert_not_called()
+
+    def test_cli_downloads_once_and_accepts_sha256(self):
+        sha = hashlib.sha256(b'valid').hexdigest()
+        with patch('urllib.request.urlopen', return_value=Response(b'valid')) as request, \
+             patch.object(sys, 'argv', ['download.py', 'https://example.test', str(self.output), '--sha256', sha]), \
+             self.assertRaises(SystemExit) as stopped:
+            runpy.run_path(str(ROOT / '.github/scripts/download.py'), run_name='__main__')
+        self.assertEqual(stopped.exception.code, 0)
+        self.assertEqual(request.call_count, 1)
+        self.assertEqual(self.output.read_bytes(), b'valid')
 
     def test_retry_exhaustion_keeps_existing_file_intact(self):
         self.output.write_bytes(b'previous complete file')
@@ -302,7 +321,7 @@ class OssSyncTests(unittest.TestCase):
                'OSS_SYNC_ENABLED': 'true', 'OSS_BUCKET': 'bucket', 'OSS_PREFIX': 'packages',
                'OSS_PUBLIC_DIR': str(public), 'OSS_ENDPOINT': 'oss-cn-shenzhen.aliyuncs.com',
                'FAKE_LOG': str(root / 'commands.jsonl'), 'FAKE_STATE': str(state),
-               'FAKE_FAIL': str(fail).lower()}
+               'FAKE_FAIL': str(fail).lower(), 'OSS_SYNC_WORKERS': '1'}
         result = subprocess.run(['bash', str(ROOT / 'oss/sync-apt-repo.sh')], env=env, text=True, capture_output=True)
         self.assertTrue((root / 'commands.jsonl').exists(), result.stdout + result.stderr)
         calls = [json.loads(line) for line in (root / 'commands.jsonl').read_text().splitlines()]
