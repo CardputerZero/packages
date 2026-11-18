@@ -1,0 +1,39 @@
+{
+  "title": "Zero Watt",
+  "summary": "Battery power monitor for Cardputer Zero with a live watt curve and history",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/device-compact-home.png",
+    "screenshots/device-h-help.png",
+    "screenshots/device-history.png",
+    "screenshots/device-settings.png"
+  ],
+  "description": "Reads BQ27220 voltage, current, capacity and temperature every second, showing signed charge/discharge watts, net average, a 60-second live curve and a zoomable full-screen history.",
+  "locales": {
+    "zh-CN": {
+      "summary": "适用于 Cardputer Zero 的电池功率监视器，带实时功率曲线和全屏历史页",
+      "description": "每秒读取 BQ27220 的电压、电流、电量和温度，显示带符号的充放电功率、净平均值、60 秒实时曲线和可缩放的全屏历史页。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/hhzzzyy/zero-watt",
+  "icon": "zero-watt.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "ZWAT",
+  "author": {
+    "github": "hhzzzyy",
+    "display_name": "hhzzzyy"
+  },
+  "published_at": "2026-11-17T12:00:16+00:00",
+  "updated_at": "2026-11-17T12:00:16+00:00"
+}
