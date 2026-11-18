@@ -1,0 +1,34 @@
+{
+  "title": "Sat Tracker",
+  "summary": "When the ISS and satellites fly over, where to look, and if you can see them",
+  "description": "Sat Tracker predicts satellite passes over your location for the next 24 hours: when each one rises, how high it gets, which direction it travels, and whether you can see it with your own eyes (a star marks passes where the satellite is sunlit while your sky is dark). Open a pass to see its path on a sky chart, a countdown, rise/peak/set times with compass directions, and its live position while it is overhead. The Sky page shows every tracked satellite above the horizon right now.\r\n\r\nGroups: space stations (ISS, Tiangong), the brightest satellites, amateur radio satellites and weather satellites. Orbit data comes from CelesTrak over Wi-Fi (cached, refreshed at most every 2 hours); the SGP4 orbit model is built in. Your location comes from the Cap LoRa-1262's GPS, or type it in; it is only stored on the device.\r\n\r\nKeys: F / X move, Z / C change pages, Enter opens a pass, V shows naked-eye passes only, U updates orbit data, L types your location.",
+  "categories": [
+    "Radio & Comms",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "SATS",
+  "source_repo": "https://github.com/duanesweazy1/pocket-sattrack",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Duane Sweazy",
+    "github": "duanesweazy1"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "pocket-sattrack_icon.png",
+  "published_at": "2026-11-17T04:24:35+00:00",
+  "updated_at": "2026-11-17T04:24:35+00:00"
+}
