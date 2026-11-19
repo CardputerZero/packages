@@ -1,0 +1,32 @@
+{
+  "title": "Ziiro",
+  "summary": "Browse your amiibo catalog and local backups on Cardputer Zero.",
+  "description": "Browse amiibo by series, game franchise, or console and see their recorded in-game effects. Download the catalog once to browse offline, and add your own backups to build a local library. Artwork downloads are optional. Presenting a saved backup over NFC requires the U219 CC1101 + NFC Cap.",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "ZIRO",
+  "source_repo": "https://github.com/marcinsz89/ziiro",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Marcin Szydłowski",
+    "github": "marcinsz89"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "ziiro_icon.png",
+  "published_at": "2026-11-19T13:10:33+00:00",
+  "updated_at": "2026-11-19T13:10:33+00:00"
+}
