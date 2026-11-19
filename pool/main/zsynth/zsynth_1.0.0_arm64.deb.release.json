@@ -1,0 +1,11 @@
+{
+  "filename": "zsynth_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/calanjoyce__zsynth_1.0.0_arm64.deb",
+  "sha256": "0841e556f5173aea823812e2f7c5528e90ebb01fdd57b3f62ac6d8eba3354314",
+  "size": 3460396,
+  "package": "zsynth",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "calanjoyce",
+  "uploader_email": "calanjoyce@users.noreply.github.com"
+}
