@@ -1,0 +1,11 @@
+{
+  "filename": "lan-proxy_0.1.3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/tongfei11__lan-proxy_0.1.3_arm64.deb",
+  "sha256": "44969ac29f69a40644e5cc3639f1420f4d4665d5ab75fd5bc430cc4fc985fc6f",
+  "size": 17472,
+  "package": "lan-proxy",
+  "version": "0.1.3",
+  "architecture": "arm64",
+  "uploaded_by": "tongfei11",
+  "uploader_email": "tongfei11@users.noreply.github.com"
+}
