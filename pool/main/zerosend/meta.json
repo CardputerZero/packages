@@ -1,0 +1,39 @@
+{
+  "title": "ZeroSend",
+  "summary": "ZeroSend: share files and text with LocalSend apps nearby (unofficial client)",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/incoming.png",
+    "screenshots/transfer.png",
+    "screenshots/browser.png"
+  ],
+  "description": "ZeroSend is a file sharing app for the CardputerZero that speaks the open LocalSend protocol, so it works with the free LocalSend app on Android, iOS, Windows, macOS and Linux. No cloud, no account: files go straight over your Wi-Fi, encrypted (HTTPS).\n\n**Receive**\n- Open ZeroSend and it shows up in LocalSend on your phone or computer under the Cardputer's name.\n- When someone sends files, ZeroSend shows who is sending, the file names and sizes; Y accepts, N declines. Or set it to accept everything.\n- Files and folders are saved to ~/Downloads, with progress and speed on screen.\n- Text messages from LocalSend pop up on the screen; S saves one as a file.\n\n**Send**\n- Nearby devices running LocalSend appear in the list. Pick one, then send files and folders (Space marks several) or type a text message.\n- A adds a device by IP address or name, for networks without multicast, such as Tailscale. Added devices are remembered.\n\n**Setup** (S): the name other devices see, ask first or accept all, address and certificate fingerprint.\n\nZeroSend only runs while it is open: close it and nothing listens on the network.\n\nKeys: F/X move, Enter send/open, Space mark, Y send marked, A add IP, R rescan, S setup, Esc back.\n\nUnofficial: ZeroSend is an independent implementation of the LocalSend protocol and is not affiliated with or endorsed by the LocalSend project.",
+  "locales": {
+    "zh-CN": {
+      "title": "ZeroSend",
+      "summary": "ZeroSend：与附近的 LocalSend 应用互传文件和文字（非官方客户端）"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/InstantComet/zerosend",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZSND",
+  "author": {
+    "github": "InstantComet",
+    "display_name": "InstantComet"
+  },
+  "published_at": "2026-11-19T12:22:35+00:00",
+  "updated_at": "2026-11-19T12:22:35+00:00"
+}
