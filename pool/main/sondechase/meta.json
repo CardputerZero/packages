@@ -1,36 +1,42 @@
 {
   "title": "SondeChase",
   "summary": "Receive, decode and chase RS41 weather balloons with an RTL-SDR and GPS",
-  "description": "SondeChase turns the CardputerZero into a handheld radiosonde tracker. Plug in an RTL-SDR and it sweeps 400-406 MHz like an SDR app: tune with the arrow keys, listen to the channel (NFM, AM, USB, LSB), and press Enter to decode the Vaisala RS41 there. While chasing it shows distance, bearing and elevation to the balloon on a compass, its track on an OpenStreetMap map, a Skew-T log-P diagram of the sounding, and the landing point predicted from the wind profile measured during ascent. It alerts when the balloon bursts and beeps faster as you get within 10 km. The RS41 decoders are included; a GPS receiver (gpsd) is needed for distance, bearing and the beeper.",
+  "description": "SondeChase turns the CardputerZero into a handheld radiosonde tracker. Plug in an RTL-SDR and it opens on the radio like an SDR app: tune with the arrow keys, listen to the channel (NFM, AM, USB, LSB, broadcast FM) and press Enter to decode the Vaisala RS41 there, or press S to scan 400-406 MHz and lock onto the first RS41 it finds. While chasing it shows distance, bearing and elevation to the balloon on a compass, its track on an OpenStreetMap map, a Skew-T log-P diagram of the sounding, and the landing point predicted from the wind profile measured during ascent. Each frame ticks and blinks the LED, it alerts when the balloon bursts, beeps faster as you get within 10 km, and logs every sonde in radiosonde_auto_rx's format. The RS41 decoders are included; a GPS receiver (gpsd) is needed for distance, bearing and the beeper.",
   "categories": [
-    "Hardware & IoT",
-    "Radio & Comms"
+    "Radio & Comms",
+    "Hardware & IoT"
   ],
   "license": "GPL-3.0-or-later",
   "share_code": "SNDE",
   "source_repo": "https://github.com/hieuha/CardputerZero-Sondechase",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": true,
     "additional_hardware": true,
     "background_service": false,
-    "camera": false,
-    "external_display": false,
-    "imu": true,
-    "microphone": false,
-    "network": true
+    "external_display": false
   },
   "author": {
     "display_name": "hieuha",
     "github": "hieuha"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png",
-    "screenshots/screenshot-3.png",
-    "screenshots/screenshot-4.png",
-    "screenshots/screenshot-5.png"
+    "screenshots/01_track.png",
+    "screenshots/02_map.png",
+    "screenshots/04_radio_decode.png",
+    "screenshots/03_graph_skewt.png",
+    "screenshots/03_graph_flight.png",
+    "screenshots/07_burst.png"
   ],
-  "icon": "sondechase_icon.png",
+  "icon": "sondechase_256.png",
   "published_at": "2026-11-19T04:15:47+00:00",
-  "updated_at": "2026-11-19T13:29:43+00:00"
+  "updated_at": "2026-11-19T17:34:19+00:00",
+  "locales": {
+    "vi": {
+      "title": "SondeChase",
+      "summary": "Thu, giải mã và bám theo bóng thám không RS41 bằng RTL-SDR và GPS"
+    }
+  }
 }
