@@ -1,0 +1,11 @@
+{
+  "filename": "cz-peers_1.2.1_all.deb",
+  "url": "https://github.com/InstantComet/packages/releases/download/czdev-buffer/cz-peers_1.2.1_all.deb",
+  "sha256": "99e0d0699ca9a9bfb64df0527b99717e87c2cabaa703bd4a0756b4bdf233aa91",
+  "size": 31696,
+  "package": "cz-peers",
+  "version": "1.2.1",
+  "architecture": "all",
+  "uploaded_by": "InstantComet",
+  "uploader_email": "InstantComet@users.noreply.github.com"
+}
