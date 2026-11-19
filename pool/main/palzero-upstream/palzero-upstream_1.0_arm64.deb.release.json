@@ -1,0 +1,11 @@
+{
+  "filename": "palzero-upstream_1.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/n1zjqo__palzero-upstream_1.0_arm64.deb",
+  "sha256": "3bcbb0b630d35a816a733252eaf66a1bac6f6ac46a481387f5899fa71819b1eb",
+  "size": 2336222,
+  "package": "palzero-upstream",
+  "version": "1.0",
+  "architecture": "arm64",
+  "uploaded_by": "n1zjqo",
+  "uploader_email": "n1zjqo@gmail.com"
+}

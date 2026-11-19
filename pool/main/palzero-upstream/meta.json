@@ -1,0 +1,31 @@
+{
+  "title": "仙剑1· Zero",
+  "summary": "本应用不含游戏数据，需自行导入。演示所用的单屏 Linux 资源包来自 B 站 UP 主「大光圈先森」。",
+  "description": "为 CardputerZero 适配的非官方 SDLPAL 移植版。应用不包含游戏数据；可从应用内导入你合法持有的单屏 Linux 资源 ZIP，无需提前解压。对应源码：https://github.com/n1zjqo/pal1-zero-source",
+  "categories": [
+    "Games"
+  ],
+  "license": "GPL-3.0-only",
+  "share_code": "PZRO",
+  "source_repo": "https://github.com/n1zjqo/pal1-zero-source",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "奋腾的茄子",
+    "github": "n1zjqo"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "palzero-upstream_icon.png",
+  "published_at": "2026-11-19T10:27:56+00:00",
+  "updated_at": "2026-11-19T10:27:56+00:00"
+}
