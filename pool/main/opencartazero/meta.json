@@ -1,0 +1,44 @@
+{
+  "title": "OpenCartaZero",
+  "summary": "Focus V Carta Sport & Carta 2 BLE controller for Cardputer Zero",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/connect.png",
+    "screenshots/home.png",
+    "screenshots/curves.png",
+    "screenshots/device.png"
+  ],
+  "description": "Native Focus V Carta Sport and Carta 2 Bluetooth LE controller for the M5Stack Cardputer Zero. Renders to the 320x170 framebuffer with evdev keyboard controls and BlueZ D-Bus GATT: BLE discovery, live rig dashboard, temperature curve studio, presets, and device settings.",
+  "locales": {
+    "de": {
+      "summary": "Focus V Carta Sport & Carta 2 BLE-Controller für Cardputer Zero"
+    },
+    "ja": {
+      "summary": "CardputerZero用のFocus V Carta Sport / Carta 2 BLEコントローラー"
+    },
+    "zh-CN": {
+      "summary": "CardputerZero 的 Focus V Carta Sport / Carta 2 蓝牙控制器"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "source_repo": "https://github.com/stefexec/OpenCartaZero",
+  "icon": "opencartazero.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "OCZ0",
+  "author": {
+    "github": "stefexec",
+    "display_name": "Stefan"
+  },
+  "published_at": "2026-11-19T23:58:54+00:00",
+  "updated_at": "2026-11-19T23:58:54+00:00"
+}
