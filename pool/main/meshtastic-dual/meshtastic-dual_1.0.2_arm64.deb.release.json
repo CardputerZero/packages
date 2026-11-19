@@ -1,0 +1,11 @@
+{
+  "filename": "meshtastic-dual_1.0.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kakashi2018__meshtastic-dual_1.0.2_arm64.deb",
+  "sha256": "d9495eeb3658628ac300d68d1b0b4f3068901f3a8572e17869fdab3b25119e0b",
+  "size": 2790864,
+  "package": "meshtastic-dual",
+  "version": "1.0.2",
+  "architecture": "arm64",
+  "uploaded_by": "kakashi2018",
+  "uploader_email": "kakashi2018@users.noreply.github.com"
+}

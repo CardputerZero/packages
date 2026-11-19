@@ -1,0 +1,31 @@
+{
+  "title": "Meshtastic",
+  "summary": "Meshtastic app reference from meshzero project",
+  "description": "This Meshtastic app is referenced from MeshZero app. I have added the bluetooth capability to MeshZero and minor enhancements like clear chat history, maintaining chat history on sd card, channels are dependent on the node selected. Now meshtastic can toggle between lora cap attached and if any meshtastic node is connected through bluetooth. Make sure wifi is turned off for bluetooth to work properly",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "Unlicense",
+  "share_code": "MESH",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Ramchand",
+    "github": "kakashi2018"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "meshtastic-dual_icon.png",
+  "published_at": "2026-11-19T18:57:54+00:00",
+  "updated_at": "2026-11-19T18:57:54+00:00"
+}
