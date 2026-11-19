@@ -1,0 +1,11 @@
+{
+  "filename": "ai-wars_1.0.0-rev3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/randombits0110__ai-wars_1.0.0-rev3_arm64.deb",
+  "sha256": "5c5059f1250b64b67465719e2b701d3ed0cafdcc2dbd99bded1767319ea87da2",
+  "size": 18796888,
+  "package": "ai-wars",
+  "version": "1.0.0-rev3",
+  "architecture": "arm64",
+  "uploaded_by": "randombits0110",
+  "uploader_email": "randombits0110@users.noreply.github.com"
+}
