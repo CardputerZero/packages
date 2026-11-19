@@ -15,7 +15,7 @@ RETRY_STATUS = {404, 408, 409, 425, 429, 500, 502, 503, 504}
 DELAYS = (15, 30, 60, 120, 180)
 
 
-def download(url, output, sha256=None, *, budget=600, delays=DELAYS):
+def download(url, output, sha256=None, *, budget=600, delays=DELAYS, retry_not_found=True):
     """Never expose a partial file, or retry a checksum/policy failure."""
     output = Path(output)
     output.parent.mkdir(parents=True, exist_ok=True)
@@ -49,6 +49,8 @@ def download(url, output, sha256=None, *, budget=600, delays=DELAYS):
             os.replace(temporary, output)
             return output
         except (urllib.error.URLError, TimeoutError, ConnectionError, http.client.HTTPException) as exc:
+            if isinstance(exc, urllib.error.HTTPError) and exc.code == 404 and not retry_not_found:
+                raise
             if isinstance(exc, urllib.error.HTTPError) and exc.code not in RETRY_STATUS:
                 raise
             if attempt == len(delays) or time.monotonic() + delays[attempt] >= deadline:
@@ -67,25 +69,15 @@ def download(url, output, sha256=None, *, budget=600, delays=DELAYS):
                 temporary.unlink(missing_ok=True)
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("url")
-    parser.add_argument("output", type=Path)
-    args = parser.parse_args()
-    try:
-        download(args.url, args.output)
-    except (OSError, ValueError, http.client.HTTPException) as exc:
-        parser.exit(1, f"download temporarily unavailable: {exc}\n")
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("url")
     parser.add_argument("output", type=Path)
     parser.add_argument("--sha256")
+    parser.add_argument("--fail-fast-404", action="store_true", help="Immediately try another source when an optional mirror is missing")
     args = parser.parse_args()
     try:
-        download(args.url, args.output, args.sha256)
+        download(args.url, args.output, args.sha256, retry_not_found=not args.fail_fast_404)
     except ValueError as exc:
         print(str(exc))
         return 2

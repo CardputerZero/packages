@@ -9,3 +9,5 @@ release-debs/
 *.deb
 *.DS_Store
 __pycache__/
+
+.cache/package-debs/

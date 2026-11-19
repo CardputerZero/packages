@@ -42,6 +42,10 @@ Each file is compared with the destination object's CRC64-ECMA checksum using
 a fresh checkout or download changes the local modification time. New files,
 changed contents and objects without a CRC64 header are uploaded. A retry checks
 the objects already uploaded by the previous attempt and skips matching contents.
+Pool files are checked and uploaded with eight workers (configurable through
+`OSS_SYNC_WORKERS`, from 1 to 32). A pool failure blocks all catalog publication.
+Once all pool operations succeed, repository metadata is updated sequentially:
+Packages before Release, and the CN registry last.
 
 The configured credentials need `oss:GetObject` and `oss:GetObjectAcl` for the
 metadata queries made by ossutil 1.7.7, in addition to `oss:PutObject`.
