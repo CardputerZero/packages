@@ -3,6 +3,7 @@
   "summary": "Receive, decode and chase RS41 weather balloons with an RTL-SDR and GPS",
   "description": "SondeChase turns the CardputerZero into a handheld radiosonde tracker. Plug in an RTL-SDR and it sweeps 400-406 MHz like an SDR app: tune with the arrow keys, listen to the channel (NFM, AM, USB, LSB), and press Enter to decode the Vaisala RS41 there. While chasing it shows distance, bearing and elevation to the balloon on a compass, its track on an OpenStreetMap map, a Skew-T log-P diagram of the sounding, and the landing point predicted from the wind profile measured during ascent. It alerts when the balloon bursts and beeps faster as you get within 10 km. The RS41 decoders are included; a GPS receiver (gpsd) is needed for distance, bearing and the beeper.",
   "categories": [
+    "Hardware & IoT",
     "Radio & Comms"
   ],
   "license": "GPL-3.0-or-later",
@@ -31,5 +32,5 @@
   ],
   "icon": "sondechase_icon.png",
   "published_at": "2026-11-19T04:15:47+00:00",
-  "updated_at": "2026-11-19T04:15:47+00:00"
+  "updated_at": "2026-11-19T13:29:43+00:00"
 }
