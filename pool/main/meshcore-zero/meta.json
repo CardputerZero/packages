@@ -1,0 +1,32 @@
+{
+  "title": "MeshCore",
+  "summary": "Standalone mesh messaging on your Cardputer Zero. No companion needed.",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/inbox.png",
+    "screenshots/chat.png"
+  ],
+  "description": "Channels and direct messages in one simple inbox, with previews, unread counts and saved history. Join hashtag channels, discover nodes, and select US or EU radio presets. Uses the attached SX1262 LoRa CAP directly. Offline color emoji, radio echo indicators, and in-app GitHub updates. Early access; US peer messaging tested, EU radio validation pending.",
+  "license": "MIT",
+  "source_repo": "https://github.com/unagisan69/meshcore-zero",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "MCZR",
+  "author": {
+    "github": "unagisan69",
+    "display_name": "unagisan69"
+  },
+  "published_at": "2026-11-19T01:08:48+00:00",
+  "updated_at": "2026-11-19T01:08:48+00:00"
+}
