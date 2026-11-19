@@ -1,0 +1,32 @@
+{
+  "title": "kvxputerzero",
+  "summary": "kvxputerzero is a port of kvxputer, now on the zero!",
+  "description": "kvxputer Zero is a port of kvxputer to the M5Stack Cardputer Zero. It brings the same pocket toolkit for wireless research, network analysis and hardware experimentation to M5Stack’s Linux-based keyboard handheld. The Wii-style channel menu, on-device customization (remappable shortcuts, SD themes, boot animations, UI and brightness options, configurable startup app) and the modular tool layout all carry over from the original firmware.",
+  "categories": [
+    "System Tools",
+    "Security"
+  ],
+  "license": "AGPL-3.0",
+  "share_code": "KVXP",
+  "source_repo": "https://github.com/kvx17/kvxputer",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "kvx17",
+    "github": "kvx17"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "kvxputerzero_icon.png",
+  "published_at": "2026-11-18T15:15:31+00:00",
+  "updated_at": "2026-11-18T15:15:31+00:00"
+}
