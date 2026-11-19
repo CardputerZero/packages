@@ -1,0 +1,43 @@
+{
+  "title": "便携OCR",
+  "summary": "离线拍照取字，中英文识别，结果直接存成 TXT",
+  "categories": [
+    "System Tools",
+    "Creative & Office"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/result.png",
+    "screenshots/paging.png"
+  ],
+  "description": "便携OCR 用 CardputerZero 自带摄像头拍下文字，离线识别中文与英文，结果直接在 320×170 屏幕上分页查看，并可保存为 TXT 文件。\n\n特点：\n• 全程离线，不联网、不上传任何图片\n• 拍照前自动检查亮度与对比度，太暗或过曝会提示重拍，避免拍出一堆噪点\n• 自动做光照归一化，页面有阴影、手影或轻微失焦时依然能认得清\n• 识别前统一缩放到 800px 宽，低分辨率下的字也尽量认得出\n• 识别结果按页显示，实体键盘翻页\n• 一键保存 TXT，方便直接发到电脑或微信\n\n适合场景：随手拍下书页、说明书、包装、纸条、笔记上的文字，把内容变成可复制、可搜索的文本。",
+  "locales": {
+    "zh-CN": {
+      "title": "便携OCR",
+      "summary": "离线拍照取字，中英文识别，结果直接存成 TXT"
+    },
+    "en": {
+      "title": "Pocket OCR",
+      "summary": "Offline camera OCR for Chinese and English, export to TXT"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/tghost/hf-tool",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "MOCR",
+  "author": {
+    "github": "tghost",
+    "display_name": "Hao Fan"
+  },
+  "published_at": "2026-11-19T23:57:22+00:00",
+  "updated_at": "2026-11-19T23:57:22+00:00"
+}
