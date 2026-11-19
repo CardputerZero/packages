@@ -7,7 +7,7 @@
     "Development"
   ],
   "license": "Apache-2.0",
-  "share_code": "REA1",
+  "share_code": "REMO",
   "permissions": {
     "additional_hardware": false,
     "background_service": false,
@@ -27,5 +27,5 @@
   ],
   "icon": "cardputer-remote_icon.png",
   "published_at": "2026-11-18T06:07:39+00:00",
-  "updated_at": "2026-11-18T14:41:16+00:00"
+  "updated_at": "2026-11-19T17:10:17+00:00"
 }
