@@ -1,0 +1,44 @@
+{
+  "title": "Ultimate Flasher",
+  "summary": "Flash LAB5 Gear and supported M5Stack devices directly over USB.",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/main-menu.png",
+    "screenshots/lab5-gear.png",
+    "screenshots/device-confirmation.png",
+    "screenshots/flashing.png",
+    "screenshots/serial-console.png"
+  ],
+  "description": "Turn your Cardputer Zero into a portable flashing station for LAB5 Gear and supported M5Stack devices.\n\nFlash LAB5 hardware and compatible platforms from the Tab5, Cardputer, Cardputer ADV, and CoreS3 families—without using a computer. Ultimate Flasher detects the connected device, checks chip compatibility, downloads and caches firmware, writes the correct images and offsets, and verifies the result.\n\nThe app also includes Flipper Zero .fap installation and a live serial console. Targets without a verified flashing configuration remain safely locked.\n\nInternet access, USB Host mode, and a data-capable cable are required. Some devices may need external power or a powered USB hub.",
+  "locales": {
+    "ja": {
+      "summary": "LAB5 GearとM5StackデバイスをUSBで直接フラッシュ。"
+    },
+    "zh-CN": {
+      "summary": "通过 USB 直接为 LAB5 Gear 和 M5Stack 设备烧录固件。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/C5Lab/Ultimate-Flasher",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "LAB5",
+  "author": {
+    "github": "D3h420",
+    "display_name": "D3h420",
+    "website": "https://github.com/D3h420"
+  },
+  "published_at": "2026-11-18T15:08:04+00:00",
+  "updated_at": "2026-11-18T15:08:04+00:00"
+}
