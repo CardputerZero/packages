@@ -1,0 +1,31 @@
+{
+  "title": "Coinflip",
+  "summary": "抛硬币，帮你做决定 Flip a coin, make your decision",
+  "description": "相信很多人会遇到难以抉择的时候，这款软件能帮你做出选择，跟纠结说拜拜！\r\nWe all run into moments when choosing feels impossible. This app makes the call for you — say goodbye to second-guessing!",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "DZ01",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "dave2enith",
+    "github": "dave2enith"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "coinflip_icon.png",
+  "published_at": "2026-11-19T04:54:23+00:00",
+  "updated_at": "2026-11-19T04:54:23+00:00"
+}

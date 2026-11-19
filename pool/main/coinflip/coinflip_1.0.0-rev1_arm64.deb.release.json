@@ -1,0 +1,11 @@
+{
+  "filename": "coinflip_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/dave2enith__coinflip_1.0.0-rev1_arm64.deb",
+  "sha256": "0014ee9e3de7bd03561efd040cd2ad0ebcc45bb240fd65c9ebd0852e4a290ad3",
+  "size": 2003766,
+  "package": "coinflip",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "dave2enith",
+  "uploader_email": "dave2enith@users.noreply.github.com"
+}
