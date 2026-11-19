@@ -1,0 +1,11 @@
+{
+  "filename": "sondechase_0.4.1-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/hieuha__sondechase_0.4.1-rev1_arm64.deb",
+  "sha256": "74d24348cafa657a149fc2b49515df0f90e5af0cfb52f812475ad8939161d339",
+  "size": 949302,
+  "package": "sondechase",
+  "version": "0.4.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "hieuha",
+  "uploader_email": "hieuha@users.noreply.github.com"
+}
