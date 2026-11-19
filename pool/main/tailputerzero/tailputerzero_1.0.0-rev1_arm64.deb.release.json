@@ -1,0 +1,11 @@
+{
+  "filename": "tailputerzero_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/ashpas__tailputerzero_1.0.0-rev1_arm64.deb",
+  "sha256": "41c2d539e7397f2e44f5ba1c3cac5c0f6a8699b1710301fe562042df1f48cf95",
+  "size": 2018458,
+  "package": "tailputerzero",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "ashpas",
+  "uploader_email": "ashpas@users.noreply.github.com"
+}
