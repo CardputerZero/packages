@@ -1,0 +1,11 @@
+{
+  "filename": "zerosend_1.0.0_all.deb",
+  "url": "https://github.com/InstantComet/packages/releases/download/czdev-buffer/zerosend_1.0.0_all.deb",
+  "sha256": "4216fb43fcbfd12d6eb54c107f15b61e313f073dd1d0789ff54c25e8c2e55ccb",
+  "size": 30816,
+  "package": "zerosend",
+  "version": "1.0.0",
+  "architecture": "all",
+  "uploaded_by": "InstantComet",
+  "uploader_email": "InstantComet@users.noreply.github.com"
+}
