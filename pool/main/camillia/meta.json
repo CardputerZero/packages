@@ -1,0 +1,40 @@
+{
+  "title": "Camillia for Meshtastic",
+  "summary": "Meshtastic chat, DMs, nodes and GPS over the Cap LoRa-1262",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/1-home.png"
+  ],
+  "description": "Camillia brings the Camillia-MT Meshtastic firmware to the CardputerZero. Chat on channels, send encrypted direct messages, browse nodes and their positions, and manage channels and radio settings, all from the keyboard. Talks to any Meshtastic network. Requires the M5Stack Cap LoRa-1262 (SX1262 + GPS). Uses the device's Wi-Fi for the clock, weather and an optional web config on port 18765. The radio runs while the app is open.",
+  "locales": {
+    "zh-CN": {
+      "title": "Camillia for Meshtastic",
+      "summary": "通过 Cap LoRa-1262 使用 Meshtastic 聊天、私信、节点与 GPS"
+    },
+    "ja": {
+      "title": "Camillia for Meshtastic",
+      "summary": "Cap LoRa-1262 で Meshtastic のチャット、DM、ノード、GPS"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "source_repo": "https://github.com/oumike/camillia-mt",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CMLA",
+  "author": {
+    "github": "oumike",
+    "display_name": "oumike"
+  },
+  "published_at": "2026-11-18T02:09:02+00:00",
+  "updated_at": "2026-11-18T02:09:02+00:00"
+}
