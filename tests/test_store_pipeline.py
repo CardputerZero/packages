@@ -137,11 +137,132 @@ class WithdrawalTests(unittest.TestCase):
         self.assertEqual(cleanup.historical_manifest(str(self.old))['uploaded_by'], 'owner')
 
     def test_republished_filename_is_never_deleted(self):
-        self.old.unlink()
-        self.commit('unpublish old version')
-        self.manifest('sample', '1.0')
+        self.current.unlink()
+        self.commit('unpublish latest version')
+        self.manifest('sample', '2.0')
         self.commit('republish intentionally')
-        self.assertEqual(cleanup.plan()['withdrawn'], [])
+        self.assertNotIn('2.0', [m['version'] for m in cleanup.plan()['withdrawn']])
+
+    def test_plan_keeps_latest_and_stages_legacy_versions_without_committing(self):
+        data = cleanup.plan()
+        self.assertEqual([m['version'] for m in data['active']], ['2.0'])
+        self.assertEqual([m['version'] for m in data['superseded']], ['1.0'])
+        sha = self.git('rev-parse', 'HEAD')
+        cleanup.stage_superseded(data)
+        self.assertFalse(self.old.exists())
+        self.assertTrue(self.current.exists())
+        self.assertEqual(self.git('rev-parse', 'HEAD'), sha)
+        self.assertIn(str(self.old), self.git('ls-tree', '-r', 'HEAD', '--name-only'))
+
+    def test_debian_order_epochs_prereleases_revisions_and_architecture_changes(self):
+        for version in ('1.9', '1.10~rc1', '1.10', '1.10-2', '1.10-10', '1:0.1'):
+            self.manifest('ordering', version)
+        # Version policy is per app, including an arm64 -> all transition.
+        arm = self.manifest('ordering', '1:0.1')
+        item = json.loads(arm.read_text())
+        all_path = arm.with_name(arm.name.replace('_arm64.', '_all.'))
+        item['filename'] = all_path.name.removesuffix('.release.json')
+        all_path.write_text(json.dumps(item))
+        data = cleanup.plan()
+        kept = [m for m in data['active'] if m['package'] == 'ordering']
+        self.assertEqual(len(kept), 2)
+        self.assertEqual({m['version'] for m in kept}, {'1:0.1'})
+
+    def test_publish_supersedes_only_older_versions_and_preserves_listing(self):
+        future = self.manifest('sample', '3.0')
+        other = self.manifest('another', '1.0')
+        listing = self.old.parent / 'meta.json'
+        listing.write_text('{"title":"keep"}')
+        cleanup.supersede('sample', '2.0')
+        self.assertFalse(self.old.exists())
+        for path in (self.current, future, other, listing):
+            self.assertTrue(path.exists())
+
+    def test_missing_replacement_or_changed_plan_cannot_remove_old_versions(self):
+        with self.assertRaisesRegex(ValueError, 'replacement'):
+            cleanup.supersede('sample', '3.0')
+        data = cleanup.plan()
+        self.old.write_text(self.old.read_text().replace('owner', 'changed'))
+        with self.assertRaisesRegex(ValueError, 'changed'):
+            cleanup.stage_superseded(data)
+        self.assertTrue(self.old.exists())
+
+    def origin(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        remote = Path(temporary.name) / 'remote.git'
+        self.git('init', '-q', '--bare', str(remote))
+        self.git('remote', 'add', 'origin', str(remote))
+        self.git('push', '-q', 'origin', 'HEAD:refs/heads/main')
+        return remote
+
+    def test_successful_retirement_commits_deletions_and_is_idempotent(self):
+        remote = self.origin()
+        data = cleanup.plan()
+        cleanup.retire_superseded(data)
+        self.assertFalse(self.old.exists())
+        self.assertTrue(self.current.exists())
+        head = self.git('rev-parse', 'HEAD')
+        self.assertEqual(self.git('--git-dir=' + str(remote), 'rev-parse', 'main'), head)
+        cleanup.retire_superseded(data)
+        self.assertEqual(self.git('rev-parse', 'HEAD'), head)
+        self.assertEqual([m['version'] for m in cleanup.plan()['withdrawn']], ['1.0'])
+
+    def test_concurrent_rollback_keeps_the_old_version_and_download(self):
+        self.origin()
+        data = cleanup.plan()
+        self.current.unlink()
+        self.commit('withdraw replacement while deployment is running')
+        self.git('push', '-q', 'origin', 'HEAD:refs/heads/main')
+        cleanup.retire_superseded(data)
+        self.assertTrue(self.old.exists())
+
+    def test_concurrent_push_retries_without_overwriting_new_main(self):
+        remote = self.origin()
+        data = cleanup.plan()
+        concurrent = Path(self.tmp.name) / 'concurrent'
+        self.git('clone', '-q', '-b', 'main', str(remote), str(concurrent))
+        self.git('-C', str(concurrent), 'config', 'user.name', 'Concurrent')
+        self.git('-C', str(concurrent), 'config', 'user.email', 'concurrent@example.test')
+        self.git('-C', str(concurrent), 'config', 'commit.gpgsign', 'false')
+        (concurrent / 'unrelated.txt').write_text('keep concurrent update')
+        self.git('-C', str(concurrent), 'add', 'unrelated.txt')
+        self.git('-C', str(concurrent), 'commit', '-qm', 'concurrent publish')
+        real_run = subprocess.run
+        raced = False
+        def run(args, **kwargs):
+            nonlocal raced
+            if args[:3] == ['git', 'push', 'origin'] and not raced:
+                raced = True
+                self.git('-C', str(concurrent), 'push', '-q', 'origin', 'HEAD:main')
+            return real_run(args, **kwargs)
+        with patch.object(cleanup.subprocess, 'run', side_effect=run):
+            cleanup.retire_superseded(data)
+        self.assertTrue(raced)
+        self.assertFalse(self.old.exists())
+        self.assertEqual(Path('unrelated.txt').read_text(), 'keep concurrent update')
+
+    def test_failed_retirement_push_leaves_remote_manifests_untouched(self):
+        remote = self.origin()
+        data = cleanup.plan()
+        real_run = subprocess.run
+        def run(args, **kwargs):
+            if args[:3] == ['git', 'push', 'origin']:
+                return subprocess.CompletedProcess(args, 1)
+            return real_run(args, **kwargs)
+        with patch.object(cleanup.subprocess, 'run', side_effect=run), \
+             self.assertRaisesRegex(RuntimeError, 'retry deployment'):
+            cleanup.retire_superseded(data)
+        tree = self.git('--git-dir=' + str(remote), 'ls-tree', '-r', 'main', '--name-only')
+        self.assertIn(str(self.old), tree)
+        self.assertIn(str(self.current), tree)
+
+    def test_registry_must_contain_replacement_before_binaries_can_be_removed(self):
+        data = cleanup.plan()
+        empty = json.dumps({'apps': []}).encode()
+        with patch.object(cleanup.urllib.request, 'urlopen', side_effect=lambda *a, **k: Response(empty)), \
+             contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(ValueError, 'did not complete'):
+            cleanup.verify_registries(data, ['https://global.test', 'https://cn.test'], attempts=1)
 
     def test_unknown_version_is_not_treated_as_already_removed(self):
         self.assertIsNone(cleanup.historical_manifest('pool/main/unknown/unknown_1_arm64.deb.release.json'))

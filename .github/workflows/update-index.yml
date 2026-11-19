@@ -62,6 +62,9 @@ jobs:
         run: |
           echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           python3 .github/scripts/catalog_cleanup.py plan > /tmp/withdrawals.json
+          # Old clients and concurrently merged PRs can leave multiple versions.
+          # Deploy only the highest Debian version, regardless of upload path.
+          python3 .github/scripts/catalog_cleanup.py stage-superseded /tmp/withdrawals.json
           echo "withdrawals=$(python3 -c 'import json; print(str(bool(json.load(open("/tmp/withdrawals.json"))["withdrawn"])).lower())')" >> "$GITHUB_OUTPUT"
 
       - uses: actions/upload-artifact@v4
@@ -258,6 +261,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: ${{ needs.build-and-deploy.outputs.sha }}
+          fetch-depth: 0
 
       - uses: actions/download-artifact@v4
         with:
@@ -272,6 +276,11 @@ jobs:
           python3 .github/scripts/catalog_cleanup.py verify-registries /tmp/withdrawals.json \
             https://cardputerzero.github.io/generated/registry.json \
             "${OSS_BASE%/}/${OSS_PREFIX#/}/cn/registry.json"
+
+      # Keep main unchanged if promotion, deployment or registry verification
+      # fails. A token-authenticated push does not recursively trigger this job.
+      - name: Retire superseded manifests on current main
+        run: python3 .github/scripts/catalog_cleanup.py retire-superseded /tmp/withdrawals.json
 
       - name: Delete withdrawn binaries from all package releases
         env:

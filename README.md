@@ -69,6 +69,27 @@ CI then:
    manifest URL into the official `apt-pool` release, rebuilds the index, deploys
    Pages, and syncs OSS.
 
+### Automatic replacement of old versions
+
+An app keeps only its **highest Debian version** in the store, across `arm64`
+and `all` builds. A version update from either `czdev publish` or the portal
+includes removal of older manifests in the same PR. Metadata-only updates do
+not remove versions. Ordering uses Debian rules, including epochs, `~`
+prereleases and numeric revisions; it never relies on upload time or filenames.
+
+Deployment also selects the highest version from merged main, covering older
+clients, historical multi-version apps and concurrently merged submissions.
+Only that version is promoted and indexed. Older binaries are revoked after
+both store registries exclude the retired versions **and contain the replacement**.
+Any remaining superseded manifests are then removed from current main with a
+non-forced push; concurrent changes and an intentional withdrawal of the
+replacement are rechecked. Failed deployment or registry verification leaves
+those fallback manifest deletions uncommitted and old Release assets intact.
+Retry the deployment to resume an incomplete cleanup. Contributor-owned fork
+releases remain under the contributor's control.
+
+See [publishing lifecycle and channel comparison](docs/PUBLISHING.md).
+
 If a PR is rejected, the project stored nothing — the binary only ever lived in
 the contributor's own fork release.
 

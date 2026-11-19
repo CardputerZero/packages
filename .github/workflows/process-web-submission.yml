@@ -449,6 +449,9 @@ jobs:
                 --arg by "$SUBMITTER" --arg em "$UPLOADER_EMAIL" \
                 '{filename:$f,url:$u,sha256:$s,size:$z,package:$p,version:$v,architecture:$a,uploaded_by:$by,uploader_email:$em}' \
                 > "pool/main/$PKG/$ASSET_NAME.release.json"
+          # Match czdev: the publish PR replaces older versions of this app.
+          # Binaries are revoked only after the replacement is deployed.
+          python3 .github/scripts/catalog_cleanup.py supersede "$PKG" "$VER"
           # '~' and ':' are legal in a Debian version but not in a git ref.
           BRANCH="publish/${PKG}-${VER//[\~:]/_}-web-${{ github.run_id }}"
           git config user.name "cardputerzero-bot"
@@ -461,6 +464,7 @@ jobs:
           # sees size, installed size and binaries whichever way it arrived.
           {
             printf 'Submitted by @%s via the developer portal.\n\n' "$SUBMITTER"
+            printf 'This update replaces older versions automatically after deployment.\n\n'
             python3 .github/scripts/deb_summary.py /tmp/pkg.deb "$PREV"
             printf '| SHA-256 | `%s` |\n' "$WANT_SHA"
             printf '| Binary | [%s](%s) |\n' "$ASSET_NAME" "$DEB_URL"
