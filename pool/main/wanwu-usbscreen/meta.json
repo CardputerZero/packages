@@ -1,0 +1,36 @@
+{
+  "title": "USB Screen",
+  "summary": "Turn a tiny MSU2 USB screen into a live dashboard for your CardputerZero",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/main.png"
+  ],
+  "description": "Plug a small MSU2 / MSU2_MINI USB screen (160x80) into the CardputerZero and this app turns it into an always-on dashboard. A background service keeps it updated; the on-device settings app (open it from the launcher) picks what it shows and previews each page live on the built-in LCD.\n\nPages you can switch on: system stats (CPU, memory, temperature), a clock, network/WiFi status, home BLE sensors (reads the Wireless Toolbox sensor cache if you run it), your own custom text, the output of a shell command, an image, a live mirror of the CardputerZero's own screen, any program on its own virtual screen (via cage), and the Raspberry Pi desktop. Tap the screen's touch button to flip pages, or auto-rotate them. Brightness, 180-degree flip and frame rate are all adjustable.\n\nThe background service runs as you (never root) and only ever talks to its own CH32X035 screen by USB id, so it never grabs other USB serial gadgets.",
+  "locales": {
+    "zh-CN": {
+      "title": "USB 小屏",
+      "summary": "把一块 MSU2 USB 小屏变成 CardputerZero 的实时仪表盘",
+      "description": "给 CardputerZero 插上一块 MSU2 / MSU2_MINI USB 小屏(160x80),这个 app 就把它变成一块常亮的仪表盘。后台服务持续刷新小屏;机上的设置 app(从启动器打开)用来选显示哪些页面,并在内置 LCD 上实时预览每一页。\n\n可开关的页面:系统状态(CPU、内存、温度)、时钟、网络/WiFi 状态、家里 BLE 传感器(装了「无线工具箱」时会读它的传感器缓存)、自定义文字、某条 shell 命令的输出、图片、本机屏幕实时镜像、在独立虚拟屏上运行的任意程序(用 cage)、以及树莓派桌面。点一下小屏上的触摸按钮翻页,也可以自动轮播。亮度、画面 180 度倒转、帧率都能调。\n\n后台服务以你的身份运行(绝不用 root),而且只按 USB id 认自己那块 CH32X035 小屏,绝不会去抢占别的 USB 串口设备。"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "WUSB",
+  "author": {
+    "github": "datianda",
+    "display_name": "WanWuLab"
+  },
+  "published_at": "2026-11-19T12:28:27+00:00",
+  "updated_at": "2026-11-19T12:28:27+00:00"
+}
