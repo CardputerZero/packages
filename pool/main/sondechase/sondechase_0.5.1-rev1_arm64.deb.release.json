@@ -1,0 +1,11 @@
+{
+  "filename": "sondechase_0.5.1-rev1_arm64.deb",
+  "url": "https://github.com/hieuha/packages/releases/download/czdev-buffer/sondechase_0.5.1-rev1_arm64.deb",
+  "sha256": "b593d6b694f5835595949007bc1c04fef3e9234196ea6eb69bcb7fbadebefa1f",
+  "size": 948948,
+  "package": "sondechase",
+  "version": "0.5.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "hieuha",
+  "uploader_email": "hieuha@users.noreply.github.com"
+}
