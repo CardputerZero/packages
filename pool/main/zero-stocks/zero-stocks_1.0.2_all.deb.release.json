@@ -1,0 +1,11 @@
+{
+  "filename": "zero-stocks_1.0.2_all.deb",
+  "url": "https://github.com/ChrisOr-Dev/packages/releases/download/czdev-buffer/zero-stocks_1.0.2_all.deb",
+  "sha256": "1ba4e7f760673cf34a689fc8e4b476894f4c362ec1923d59e9fdff18593414b1",
+  "size": 16048,
+  "package": "zero-stocks",
+  "version": "1.0.2",
+  "architecture": "all",
+  "uploaded_by": "ChrisOr-Dev",
+  "uploader_email": "ChrisOr-Dev@users.noreply.github.com"
+}
