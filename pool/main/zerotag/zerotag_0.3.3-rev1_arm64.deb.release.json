@@ -1,0 +1,11 @@
+{
+  "filename": "zerotag_0.3.3-rev1_arm64.deb",
+  "url": "https://github.com/sukoshi1507/packages/releases/download/czdev-buffer/zerotag_0.3.3-rev1_arm64.deb",
+  "sha256": "6f2e5d748746bac7a50752c6b7f717899a54bf32f6e154a5e416936f5029276d",
+  "size": 15393704,
+  "package": "zerotag",
+  "version": "0.3.3-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "sukoshi1507",
+  "uploader_email": "sukoshi1507@users.noreply.github.com"
+}
