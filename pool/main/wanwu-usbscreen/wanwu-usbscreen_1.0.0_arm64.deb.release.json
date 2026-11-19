@@ -1,0 +1,11 @@
+{
+  "filename": "wanwu-usbscreen_1.0.0_arm64.deb",
+  "url": "https://github.com/datianda/packages/releases/download/czdev-buffer/wanwu-usbscreen_1.0.0_arm64.deb",
+  "sha256": "a3c611597e294b324c298bfbd91e15e2850d4eacc61f9d327826651e913896cd",
+  "size": 18752,
+  "package": "wanwu-usbscreen",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "datianda",
+  "uploader_email": "datianda@users.noreply.github.com"
+}
