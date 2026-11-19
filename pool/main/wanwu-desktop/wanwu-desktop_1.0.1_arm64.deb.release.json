@@ -1,0 +1,11 @@
+{
+  "filename": "wanwu-desktop_1.0.1_arm64.deb",
+  "url": "https://github.com/datianda/packages/releases/download/czdev-buffer/wanwu-desktop_1.0.1_arm64.deb",
+  "sha256": "e8f6cfe9ea438f44138aecc2d8183649b67e33fd1903806a1ad8cd53872171a5",
+  "size": 13220,
+  "package": "wanwu-desktop",
+  "version": "1.0.1",
+  "architecture": "arm64",
+  "uploaded_by": "datianda",
+  "uploader_email": "datianda@users.noreply.github.com"
+}
