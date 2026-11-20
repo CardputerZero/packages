@@ -1,0 +1,11 @@
+{
+  "filename": "rubiks2x2x2-autosolver_0.2.1-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/SlendyGamer__rubiks2x2x2-autosolver_0.2.1-rev1_arm64.deb",
+  "sha256": "f4a9cdb3a8b5e79b319b59ae839312f5b1e029bde406e540f9dc0b4d679fc236",
+  "size": 1964732,
+  "package": "rubiks2x2x2-autosolver",
+  "version": "0.2.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "SlendyGamer",
+  "uploader_email": "slendygamer@users.noreply.github.com"
+}
