@@ -1,0 +1,11 @@
+{
+  "filename": "opencartazero_1.1.0_arm64.deb",
+  "url": "https://github.com/stefexec/packages/releases/download/czdev-buffer/opencartazero_1.1.0_arm64.deb",
+  "sha256": "927d08570b5af7eb87652b06480b0c5cb509d4db3ad14ad76434d6f638b148fd",
+  "size": 36812,
+  "package": "opencartazero",
+  "version": "1.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "stefexec",
+  "uploader_email": "stefexec@users.noreply.github.com"
+}
