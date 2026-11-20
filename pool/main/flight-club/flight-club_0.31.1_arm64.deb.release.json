@@ -1,0 +1,11 @@
+{
+  "filename": "flight-club_0.31.1_arm64.deb",
+  "url": "https://github.com/journey-ad/packages/releases/download/czdev-buffer/flight-club_0.31.1_arm64.deb",
+  "sha256": "884d558c137cf5da57dd45c1b4a6b7f39103787caabb3791f6371f2808122581",
+  "size": 844568,
+  "package": "flight-club",
+  "version": "0.31.1",
+  "architecture": "arm64",
+  "uploaded_by": "journey-ad",
+  "uploader_email": "i@nocilol.me"
+}
