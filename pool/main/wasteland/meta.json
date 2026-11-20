@@ -1,0 +1,33 @@
+{
+  "title": "Wasteland",
+  "summary": "Host a co-op wasteland hex crawl for up to five phones on your Wi-Fi.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/wasteland-join.png",
+    "screenshots/wasteland-road.png",
+    "screenshots/wasteland-stash.png",
+    "screenshots/wasteland-odds.png",
+    "screenshots/wasteland-admired.png"
+  ],
+  "description": "Wasteland turns the CardputerZero into the server for a co-op survival crawl across a hex map of ruins, ash dunes, rust forests and glass fields. Up to five players join from their own phones: each opens the address shown on the screen in a phone browser, claims a survivor and plays from there. No app to install on the phones and no account.\n\nThe survivors scavenge, trade, craft and keep each other alive against hunger, thirst, radiation, weather and a threat clock that runs down every day. Encounters, caravans, quakes, floods and the Creeping Doom come and go while the day turns.\n\nThe CardputerZero's own screen is the table: it shows each of the game's six pages (Road, Chronicle, Stash, Odds, Waste, Admired) at full size, and beside it a column with the day, the weather, the threat clock and a dog tag with a life bar for every seated player. While nobody is seated it shows the address to join.\n\nKeys follow the signs printed on the keyboard: C (or Enter, Space, PG DN) goes to the next page, A, S and D set the speaker volume, F and X move between a page's picture and its text, V zooms, K goes home, H shows the address and the keys, and ESC held saves and quits.\n\nThe game is served over your local network on port 80 (8080 if 80 cannot be opened), so the CardputerZero and the phones must be on the same network. The world is saved on the device. Nothing is sent to the internet.",
+  "license": "MIT",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "WSTL",
+  "author": {
+    "github": "gabe-harris-modernfold",
+    "display_name": "G. Harris"
+  },
+  "published_at": "2026-11-19T22:36:47+00:00",
+  "updated_at": "2026-11-19T22:36:47+00:00"
+}
