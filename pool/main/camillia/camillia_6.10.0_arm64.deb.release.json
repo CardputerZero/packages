@@ -1,0 +1,11 @@
+{
+  "filename": "camillia_6.10.0_arm64.deb",
+  "url": "https://github.com/oumike/packages/releases/download/czdev-buffer/camillia_6.10.0_arm64.deb",
+  "sha256": "6bf0a8ef9a74561f0b697989f12a7358b8d7707f7582485d9187979d11ccc26e",
+  "size": 38234556,
+  "package": "camillia",
+  "version": "6.10.0",
+  "architecture": "arm64",
+  "uploaded_by": "oumike",
+  "uploader_email": "michael.cojocari@gmail.com"
+}
