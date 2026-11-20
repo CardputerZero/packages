@@ -1,0 +1,35 @@
+{
+  "title": "RF Heatmap",
+  "summary": "CC1101 Sub-GHz thermal waterfall, RSSI scope, OOK decoder and .sub studio",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/heatmap.png",
+    "screenshots/pulse.png",
+    "screenshots/decode.png",
+    "screenshots/saved.png",
+    "screenshots/help.png"
+  ],
+  "description": "RF Heatmap turns your CardputerZero with Cap CC1101 into a fast, intuitive Sub-GHz spectrum lab. Sweep 315, 433, 868, 915 MHz or all ISM bands with a live peak-hold bar graph and Inferno thermal waterfall, lock onto active bursts with one key, inspect pulses with an adjustable squelch oscilloscope, decode Princeton/CAME/Linear OOK frames, and manage Flipper-compatible .sub captures.",
+  "license": "MIT",
+  "source_repo": "https://github.com/igenexxx/rf-heatmap",
+  "icon": "rf-heatmap-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "RFHM",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-19T23:21:16+00:00",
+  "updated_at": "2026-11-19T23:21:16+00:00"
+}
