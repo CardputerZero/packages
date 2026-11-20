@@ -1,0 +1,11 @@
+{
+  "filename": "zerodesk_0.2.8-1_arm64.deb",
+  "url": "https://github.com/richardhxwang/packages/releases/download/czdev-buffer/zerodesk_0.2.8-1_arm64.deb",
+  "sha256": "31d7bdd626db57a58f764e08b22ac474dd6c84a7d3a9be6ad577331ba3357dbc",
+  "size": 5719850,
+  "package": "zerodesk",
+  "version": "0.2.8-1",
+  "architecture": "arm64",
+  "uploaded_by": "richardhxwang",
+  "uploader_email": "richardhxwang@users.noreply.github.com"
+}
