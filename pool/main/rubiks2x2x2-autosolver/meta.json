@@ -1,0 +1,34 @@
+{
+  "title": "Rubiks 2x2x2",
+  "summary": "Interactive 3D Rubik's cube 2x2x2 with BFS (optimal) and DFS auto-solver",
+  "description": "Play with a 2x2x2 Rubik's cube rendered in 3D on the CardputerZero screen. Turn the faces with the keyboard, orbit the camera by holding the arrow keys, scramble it and let the app find the shortest solution (breadth-first search, at most 14 moves) or any solution with a depth-first search. Press S to watch the solution being played step by step, and H to hide the interface and see the cube alone. A port from my university project: https://github.com/SlendyGamer/Rubiks2x2Solver",
+  "categories": [
+    "Games",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "RBK2",
+  "source_repo": "https://github.com/SlendyGamer/rubiks2x2x2-autosolver-M5StackCardputerZero.git",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "SlendyGamer",
+    "github": "SlendyGamer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "rubiks2x2x2-autosolver_icon.png",
+  "published_at": "2026-11-20T02:45:01+00:00",
+  "updated_at": "2026-11-20T02:45:01+00:00"
+}
