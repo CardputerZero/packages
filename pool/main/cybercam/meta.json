@@ -1,0 +1,34 @@
+{
+  "title": "CyberCam",
+  "summary": "8MP retro camera with GIFs, MP4, timelapse, stop-motion & Wi-Fi gallery",
+  "description": "CyberCam is an open-source camera application for the M5Stack Cardputer Zero, developed by Cybern0mads.\r\n\r\nTransform your Cardputer Zero into a creative handheld camera featuring full-resolution 8MP photography, retro filters, animated GIFs, and MP4 video recording.\r\n\r\nFeatures:\r\n\r\n8MP Photography: Capture full-resolution JPEG images.\r\n\r\n16 Retro & Cyberpunk Filters: Game Boy-inspired, VHS, C64, neon, pixel-art, and other creative looks.\r\n\r\nGIF & Boomerang: Create animated clips directly on your device.\r\n\r\nMP4 Video: Record videos using the Cardputer Zero camera.\r\n\r\nTimelapse: Capture images automatically and export them to MP4.\r\n\r\nStop Motion: Create animations with onion-skin preview and GIF/MP4 export.\r\n\r\nOn-Device Gallery: Browse and view captured media.\r\n\r\nWi-Fi Gallery: Access and download your creations through a token-protected browser interface.\r\n\r\nKeyboard Controls: Designed for the Cardputer Zero's compact display and keyboard.\r\n\r\nNew in v0.5.3: Improved timelapse export reliability, encoding progress, and Gallery access after recording.\r\n\r\nCyberCam is an independent community project by Cybern0mads.\r\n\r\nSource: https://github.com/cybern0mads/CyberCam",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "CYND",
+  "source_repo": "https://github.com/cybern0mads/CyberCam",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": true,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": false
+  },
+  "author": {
+    "display_name": "CyberN0mads",
+    "github": "cybern0mads"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cybercam_icon.png",
+  "published_at": "2026-11-20T12:47:07+00:00",
+  "updated_at": "2026-11-20T12:47:07+00:00"
+}
