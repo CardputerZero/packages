@@ -1,0 +1,44 @@
+{
+  "title": "HamLog",
+  "summary": "Ham Radio Log for Cardputer Zero",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/1.png",
+    "screenshots/2.png",
+    "screenshots/3.png",
+    "screenshots/4.png"
+  ],
+  "description": "Portable Ham Radio QSO logger for Cardputer Zero with ADIF export, band statistics, multi-language UI, country flags, and HamDB/QRZ callsign lookup.",
+  "locales": {
+    "de": {
+      "summary": "Amateurfunk-Logger mit ADIF-Export und Rufzeichenabfrage"
+    },
+    "ja": {
+      "summary": "CardputerZero用のアマチュア無線ロガー"
+    },
+    "zh-CN": {
+      "summary": "CardputerZero 的业余无线电日志应用"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/stefexec/CardputerHamLog",
+  "icon": "hamlog.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "HAML",
+  "author": {
+    "github": "stefexec",
+    "display_name": "Stefan"
+  },
+  "published_at": "2026-11-19T23:54:06+00:00",
+  "updated_at": "2026-11-19T23:54:06+00:00"
+}
