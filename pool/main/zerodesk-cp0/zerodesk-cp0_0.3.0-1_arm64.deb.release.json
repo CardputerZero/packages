@@ -1,0 +1,11 @@
+{
+  "filename": "zerodesk-cp0_0.3.0-1_arm64.deb",
+  "url": "https://github.com/richardhxwang/packages/releases/download/czdev-buffer/zerodesk-cp0_0.3.0-1_arm64.deb",
+  "sha256": "ef8aeb32355bf6b92485aa94f693ee18b9bc4427dbdda1ca910e9b0082e05796",
+  "size": 5721290,
+  "package": "zerodesk-cp0",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "richardhxwang",
+  "uploader_email": "richardhxwang@users.noreply.github.com"
+}
