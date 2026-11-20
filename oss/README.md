@@ -79,6 +79,18 @@ files, the default destination prefix, the China region filter, withdrawals,
 empty pools, paginated listings, and listing/deletion failures. These tests run
 in the Test Store Pipeline workflow without production OSS credentials.
 
+Deployments cache object identities already verified by CRC64. On the next
+deployment, an authoritative long listing supplies size, ETag and last-modified
+time; an object can skip its individual stat only if that entire identity and
+the local SHA-256 still match the previous verification. Missing, changed or
+unrecognized identities fall back to the original CRC comparison. The cache is
+scoped to the endpoint and repository prefix and saved only after successful
+synchronization. No ETag is treated as a content checksum.
+
+Each ossutil command has a bounded timeout and at most one retry for transient
+failures. Slow operations, retries and completed uploads are logged; the
+publication workflow also bounds the OSS step to six minutes.
+
 ## Enable It
 
 Manual run:

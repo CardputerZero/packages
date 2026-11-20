@@ -45,6 +45,7 @@ class ObjectHandler(BaseHTTPRequestHandler):
 
     def do_HEAD(self):
         with self.server.head_lock:
+            self.server.head_requests += 1
             self.server.active_heads += 1
             self.server.max_heads = max(self.server.max_heads, self.server.active_heads)
         try:
@@ -84,6 +85,7 @@ class ObjectHandler(BaseHTTPRequestHandler):
             page = keys[:self.server.page_size]
             truncated = len(page) < len(keys)
             contents = "".join(f"<Contents><Key>{escape(k)}</Key><Size>{len(self.server.objects[k])}</Size>"
+                               f'<ETag>"{hashlib.md5(self.server.objects[k]).hexdigest().upper()}"</ETag>'
                                "<LastModified>2026-01-01T00:00:00.000Z</LastModified>"
                                "<StorageClass>Standard</StorageClass></Contents>" for k in page)
             body = (f"<ListBucketResult><Name>test-bucket</Name><Prefix>{escape(prefix)}</Prefix>"
@@ -171,6 +173,7 @@ class SyncTests(unittest.TestCase):
         self.server.fail_keys = set()
         self.server.head_lock = threading.Lock()
         self.server.active_heads = 0
+        self.server.head_requests = 0
         self.server.max_heads = 0
         self.server.head_delay = 0
         self.server.fail_after = None
@@ -279,6 +282,25 @@ class SyncTests(unittest.TestCase):
         key = "packages/pool/main/example/example_1.0_arm64.deb"
         self.assertEqual(self.server.uploads, [key])
         self.assertEqual(self.server.objects[key], b"package-v2")
+
+    def test_verified_inventory_avoids_pool_head_requests_and_detects_remote_drift(self):
+        self.env["OSS_SYNC_STATE"] = str(self.root / "cache.json")
+        self.run_sync()  # upload
+        self.run_sync()  # CRC-verify newly uploaded objects
+        self.server.uploads.clear()
+        self.server.head_requests = 0
+        result = self.run_sync()
+        self.assertIn("OSS pool verified cache hits: 3/3", result.stdout)
+        self.assertEqual(self.server.head_requests, 2)  # only catalog metadata
+        self.assertEqual(self.server.uploads, [])
+
+        key = "packages/pool/main/example/example_1.0_arm64.deb"
+        self.server.objects[key] = b"package-X"  # same size, different ETag
+        self.server.head_requests = 0
+        self.run_sync()
+        self.assertEqual(self.server.uploads, [key])
+        self.assertEqual(self.server.objects[key], b"package-v1")
+        self.assertGreater(self.server.head_requests, 2)
 
     def test_new_file_and_missing_remote_object_are_uploaded(self):
         self.run_sync()

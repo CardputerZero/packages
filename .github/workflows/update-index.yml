@@ -9,6 +9,7 @@ on:
       - '.github/scripts/catalog_cleanup.py'
       - '.github/scripts/download.py'
       - '.github/scripts/collect_packages.py'
+      - '.github/scripts/wait_pages_artifact.py'
       - '.github/workflows/update-index.yml'
 
   workflow_dispatch:
@@ -27,6 +28,7 @@ permissions:
   contents: write      # promote .deb assets into the apt-pool release
   pages: write
   id-token: write
+  actions: read
 
 concurrency:
   group: pages
@@ -46,6 +48,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       sha: ${{ steps.snapshot.outputs.sha }}
+      index_sha256: ${{ steps.package-index.outputs.sha256 }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -165,6 +168,20 @@ jobs:
                 f"across {len(owners)} packages")
           PY
 
+      - name: Record published Packages checksum
+        id: package-index
+        run: echo "sha256=$(sha256sum public/dists/stable/main/binary-arm64/Packages | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      # Upload early, so artifact metadata can propagate during the OSS sync.
+      - name: Upload Pages artifact
+        id: pages-upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+
       - name: Stage OSS tree (China mirror serves .deb locally with relative paths)
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
         run: |
@@ -219,8 +236,19 @@ jobs:
           access-key-id: ${{ secrets.OSS_ACCESS_KEY_ID }}
           access-key-secret: ${{ secrets.OSS_ACCESS_KEY_SECRET }}
 
+      - name: Restore verified OSS object identities
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
+        uses: actions/cache/restore@v4
+        continue-on-error: true
+        with:
+          path: .cache/oss-verified
+          key: ${{ runner.os }}-oss-verified-v1-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            ${{ runner.os }}-oss-verified-v1-
+
       - name: Sync APT repository to Aliyun OSS
         if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
+        timeout-minutes: 6
         env:
           OSS_SYNC_ENABLED: 'true'
           OSS_PUBLIC_DIR: oss-public
@@ -228,15 +256,22 @@ jobs:
           OSS_BUCKET: ${{ vars.PACKAGES_OSS_BUCKET || 'cardputer-zero-repo' }}
           OSS_PREFIX: ${{ inputs.oss_prefix || vars.PACKAGES_OSS_PREFIX || 'packages' }}
           OSS_PUBLIC_BASE_URL: ${{ vars.PACKAGES_OSS_PUBLIC_BASE_URL }}
+          OSS_SYNC_STATE: .cache/oss-verified/state.json
         run: oss/sync-apt-repo.sh
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
+      - name: Save verified OSS object identities
+        if: ${{ vars.PACKAGES_OSS_SYNC_ENABLED == 'true' || inputs.sync_oss == true || steps.snapshot.outputs.withdrawals == 'true' }}
+        uses: actions/cache/save@v4
+        continue-on-error: true
         with:
-          path: public
+          path: .cache/oss-verified
+          key: ${{ runner.os }}-oss-verified-v1-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Wait for the Pages artifact to become visible
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PAGES_ARTIFACT_ID: ${{ steps.pages-upload.outputs.artifact_id }}
+        run: python3 .github/scripts/wait_pages_artifact.py
 
       - name: Deploy to GitHub Pages
         id: deployment
@@ -252,11 +287,12 @@ jobs:
           token: ${{ secrets.DISPATCH_TOKEN }}
           repository: CardputerZero/cardputerzero.github.io
           event-type: packages-updated
+          client-payload: '{"packages_sha":"${{ needs.build-and-deploy.outputs.sha }}","index_sha256":"${{ needs.build-and-deploy.outputs.index_sha256 }}"}'
 
   complete-withdrawals:
     needs: [build-and-deploy, notify-registry]
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 6
     steps:
       - uses: actions/checkout@v4
         with:

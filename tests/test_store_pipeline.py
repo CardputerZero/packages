@@ -348,6 +348,22 @@ class WithdrawalTests(unittest.TestCase):
              contextlib.redirect_stdout(io.StringIO()), self.assertRaisesRegex(ValueError, 'did not complete'):
             cleanup.verify_registries(data, ['https://global.test', 'https://cn.test'], attempts=1)
 
+    def test_registry_verification_checks_every_active_app_and_cn_opt_out(self):
+        data = {'withdrawn': [], 'active': [{'package': 'sample', 'version': '2.0'},
+                                          {'package': 'region-only', 'version': '1.0'}],
+                'cn_excluded': ['region-only']}
+        sample = {'version': '2.0', 'download': {'package': 'sample'}}
+        excluded = {'version': '1.0', 'download': {'package': 'region-only'}}
+        def response(apps):
+            return Response(json.dumps({'apps': apps}).encode())
+        with patch.object(cleanup.urllib.request, 'urlopen',
+                          side_effect=[response([sample, excluded]), response([sample])]):
+            cleanup.verify_registries(data, ['https://global.test', 'https://cn.test'], attempts=1)
+        with patch.object(cleanup.urllib.request, 'urlopen',
+                          side_effect=[response([sample]), response([sample])]), \
+             self.assertRaisesRegex(ValueError, 'did not complete'):
+            cleanup.verify_registries(data, ['https://global.test', 'https://cn.test'], attempts=1)
+
 
 class ManifestDiffTests(unittest.TestCase):
     workflow = (ROOT / '.github/workflows/validate-pr.yml').read_text()
