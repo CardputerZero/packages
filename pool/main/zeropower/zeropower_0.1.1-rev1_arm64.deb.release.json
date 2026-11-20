@@ -1,0 +1,11 @@
+{
+  "filename": "zeropower_0.1.1-rev1_arm64.deb",
+  "url": "https://github.com/baltamir1978/packages/releases/download/czdev-buffer/zeropower_0.1.1-rev1_arm64.deb",
+  "sha256": "25c01b46c28dfca1aae0c1206ce3590ff9023463cde06daee89eae5fb0dba248",
+  "size": 1035740,
+  "package": "zeropower",
+  "version": "0.1.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "baltamir1978",
+  "uploader_email": "baltamir1978@users.noreply.github.com"
+}
