@@ -1,0 +1,11 @@
+{
+  "filename": "meshzero_0.2.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/s0liton__meshzero_0.2.1_arm64.deb",
+  "sha256": "ffb17e8cc94d654dea3adfe64295863cb2bd630431390e81a7de66dc85ba3eb6",
+  "size": 3506014,
+  "package": "meshzero",
+  "version": "0.2.1",
+  "architecture": "arm64",
+  "uploaded_by": "s0liton",
+  "uploader_email": "s0liton@users.noreply.github.com"
+}
