@@ -1,0 +1,11 @@
+{
+  "filename": "chainled_1.0.0-2_arm64.deb",
+  "url": "https://github.com/yutacar/packages/releases/download/czdev-buffer/chainled_1.0.0-2_arm64.deb",
+  "sha256": "64ca1d92f51994aa33a125bca282a53c383fee4588c7329823a6387e44a22767",
+  "size": 790548,
+  "package": "chainled",
+  "version": "1.0.0-2",
+  "architecture": "arm64",
+  "uploaded_by": "yutacar",
+  "uploader_email": "yutacar@users.noreply.github.com"
+}
