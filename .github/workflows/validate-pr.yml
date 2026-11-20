@@ -59,7 +59,9 @@ jobs:
           # A submission may only touch its own pool entry. Anything else — a
           # workflow, a script, another package — would be merged by the
           # auto-merge below without a human reading it, so it is refused here.
-          OUTSIDE=$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" | grep -v '^pool/main/' || true)
+          # Compare paths, not Git's inferred renames. A version replacement is
+          # a new manifest plus an old manifest deletion; both must be checked.
+          OUTSIDE=$(git diff --no-renames --name-only "$BASE_SHA".."$HEAD_SHA" | grep -v '^pool/main/' || true)
           if [ -n "$OUTSIDE" ]; then
             ERRORS="${ERRORS}- ❌ Submissions may only change files under \`pool/main/\`; found:\n$(echo "$OUTSIDE" | sed 's/^/    /')\n"
           fi
@@ -76,7 +78,7 @@ jobs:
           # A PR may only touch package directories its author owns (or brand
           # new ones). Without this, a fork could rewrite another package's
           # meta.json or screenshots and the auto-merge would ship it.
-          TOUCHED_PKGS=$(git diff --name-only "$BASE_SHA".."$HEAD_SHA" | grep '^pool/main/' | cut -d/ -f3 | sort -u)
+          TOUCHED_PKGS=$(git diff --no-renames --name-only "$BASE_SHA".."$HEAD_SHA" | grep '^pool/main/' | cut -d/ -f3 | sort -u)
           for tp in $TOUCHED_PKGS; do
             tp_manifest=""
             tp_ver=""
@@ -94,7 +96,7 @@ jobs:
           done
 
           # Reject raw .deb committed to git (must use the release-manifest flow).
-          if git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep -q '\.deb$'; then
+          if git diff --no-renames --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb$' > /dev/null; then
             ERRORS="${ERRORS}- ❌ Raw \`.deb\` files must not be committed to git. Upload the binary to a Release in your fork and submit a \`*.deb.release.json\` manifest (use \`czdev publish\`).\n"
           fi
 
@@ -103,12 +105,12 @@ jobs:
           # would describe a file nobody downloads. This is also how a version
           # whose asset name collides with a published one (1.0~rc1 vs
           # 1.0.rc1) shows up.
-          for m in $(git diff --name-only --diff-filter=MR "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true); do
+          for m in $(git diff --no-renames --name-only --diff-filter=M "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true); do
             ERRORS="${ERRORS}- ❌ \`$m\` is already published and cannot be changed; publish a new version instead (versions that differ only in '~' / '.' / ':' share one file name)\n"
           done
 
           SUMMARIES=""
-          ADDED_MANIFESTS=$(git diff --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+          ADDED_MANIFESTS=$(git diff --no-renames --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
 
           for manifest in $ADDED_MANIFESTS; do
             echo "=== $manifest ==="
@@ -122,6 +124,9 @@ jobs:
             if [[ -z "$url" || -z "$sha" || -z "$fname" ]]; then
               ERRORS="${ERRORS}- ❌ \`$manifest\` must contain \`url\`, \`sha256\`, \`filename\`\n"; continue
             fi
+            if [[ "$fname" == */* || "$manifest" != "pool/main/$dir_pkg/$fname.release.json" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` must be named after its declared .deb filename\n"; continue
+            fi
 
             deb="/tmp/$fname"
             if ! python3 /tmp/download.py "$url" "$deb"; then
@@ -134,6 +139,7 @@ jobs:
 
             ctrl_pkg=$(dpkg-deb -f "$deb" Package 2>/dev/null || echo "")
             new_ver=$(dpkg-deb -f "$deb" Version 2>/dev/null || echo "")
+            ctrl_arch=$(dpkg-deb -f "$deb" Architecture 2>/dev/null || echo "")
             if [[ -z "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ \`$fname\` is not a valid .deb\n"; continue
             fi
@@ -143,13 +149,20 @@ jobs:
             if [[ "$dir_pkg" != "$ctrl_pkg" ]]; then
               ERRORS="${ERRORS}- ❌ Directory '$dir_pkg' != Package field '$ctrl_pkg'\n"
             fi
+            # Manifest identity is determined by the binary, not its Git path
+            # or an inferred rename. The catalog uses these identity fields.
+            if [[ "$(jq -r '.package // empty' "$manifest")" != "$ctrl_pkg" ||
+                  "$(jq -r '.version // empty' "$manifest")" != "$new_ver" ||
+                  "$(jq -r '.architecture // empty' "$manifest")" != "$ctrl_arch" ]]; then
+              ERRORS="${ERRORS}- ❌ \`$manifest\` package, version and architecture must match the .deb control fields\n"
+            fi
             # A name that was taken down stays reserved (takedown.yml).
             if git show "$BASE_SHA:policy/takedowns.json" 2>/dev/null | jq -e --arg p "$dir_pkg" 'has($p)' >/dev/null 2>&1; then
               ERRORS="${ERRORS}- ❌ package name '$dir_pkg' was taken down and is reserved; contact a maintainer\n"
             fi
-            case "$(dpkg-deb -f "$deb" Architecture 2>/dev/null)" in
+            case "$ctrl_arch" in
               arm64|all) ;;
-              *) ERRORS="${ERRORS}- ❌ \`$fname\` architecture must be arm64/all, got '$(dpkg-deb -f "$deb" Architecture 2>/dev/null)'\n" ;;
+              *) ERRORS="${ERRORS}- ❌ \`$fname\` architecture must be arm64/all, got '$ctrl_arch'\n" ;;
             esac
             # Write to a file first: `dpkg-deb -c | grep -q` makes grep close the
             # pipe on first match, so dpkg-deb dies with SIGPIPE and pipefail
@@ -226,7 +239,7 @@ jobs:
             if ! echo "$ctrl_pkg" | grep -qP '^[a-z0-9][a-z0-9.+\-]+$'; then
               ERRORS="${ERRORS}- ❌ Invalid package name: '$ctrl_pkg'\n"
             fi
-            expected_name="${ctrl_pkg}_${new_ver}_$(dpkg-deb -f "$deb" Architecture).deb"
+            expected_name="${ctrl_pkg}_${new_ver}_${ctrl_arch}.deb"
             # GitHub release assets sanitize '~' and ':' to '.'; allow either form.
             if [[ "$fname" != "$expected_name" && "$fname" != "${expected_name//[\~:]/.}" ]]; then
               ERRORS="${ERRORS}- ❌ filename '$fname' should be '$expected_name'\n"
@@ -314,7 +327,7 @@ jobs:
 
           # Ownership check for deleted manifests: only the recorded uploader
           # (or, for legacy manifests, the Maintainer-noreply login) may remove.
-          DELETED=$(git diff --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+          DELETED=$(git diff --no-renames --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
           for manifest in $DELETED; do
             owner_login=$(git show "$BASE_SHA:$manifest" | jq -r '.uploaded_by // empty' 2>/dev/null | tr '[:upper:]' '[:lower:]' || true)
             if [[ -z "$owner_login" ]]; then

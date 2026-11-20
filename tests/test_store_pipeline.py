@@ -349,12 +349,108 @@ class WithdrawalTests(unittest.TestCase):
             cleanup.verify_registries(data, ['https://global.test', 'https://cn.test'], attempts=1)
 
 
+class ManifestDiffTests(unittest.TestCase):
+    workflow = (ROOT / '.github/workflows/validate-pr.yml').read_text()
+
+    def setUp(self):
+        temporary = tempfile.TemporaryDirectory()
+        self.addCleanup(temporary.cleanup)
+        self.root = Path(temporary.name)
+        self.git('init', '-q')
+        self.git('config', 'user.email', 'tests@example.test')
+        self.git('config', 'user.name', 'Tests')
+        self.git('config', 'commit.gpgsign', 'false')
+        self.git('config', 'diff.renames', 'true')
+        self.old = self.manifest('sample', '1.0', 'a')
+        self.commit('publish old version')
+
+    def git(self, *args):
+        return subprocess.check_output(['git', *args], cwd=self.root, text=True).strip()
+
+    def commit(self, message):
+        self.git('add', '-A')
+        self.git('commit', '-qm', message)
+
+    def manifest(self, package, version, checksum):
+        filename = f'{package}_{version}_arm64.deb'
+        path = Path(f'pool/main/{package}/{filename}.release.json')
+        (self.root / path).parent.mkdir(parents=True, exist_ok=True)
+        data = dict(filename=filename, package=package, version=version, architecture='arm64',
+                    uploaded_by='example-application-developer',
+                    uploader_email='example-application-developer@users.noreply.github.com',
+                    url=f'https://example.test/releases/download/czdev-buffer/{filename}',
+                    sha256=checksum * 64, size=1024)
+        (self.root / path).write_text(json.dumps(data, indent=2) + '\n')
+        return str(path)
+
+    def shell(self, source, **env):
+        return subprocess.check_output(['bash', '-c', 'set -uo pipefail\n' + source], cwd=self.root,
+                                       env={**os.environ, **env}, text=True)
+
+    def classify(self):
+        # Exercise the actual workflow's path selection, rather than a copy of
+        # the git logic that would continue to pass if the workflow regressed.
+        def assignment(name):
+            return re.search(r'^\s*(' + name + r'=.*)$', self.workflow, re.M)[1]
+        immutable = re.search(r'for m in \$\(git diff[^\n]+\n[^\n]+\n\s+done', self.workflow)[0]
+        source = '\n'.join(['ERRORS=""', assignment('OUTSIDE'), assignment('TOUCHED_PKGS'),
+                            immutable, assignment('ADDED_MANIFESTS'), assignment('DELETED'),
+                            'printf "%s\\0" "$OUTSIDE" "$TOUCHED_PKGS" "$ERRORS" "$ADDED_MANIFESTS" "$DELETED"'])
+        return self.shell(source, BASE_SHA='HEAD^', HEAD_SHA='HEAD').split('\0')[:-1]
+
+    def test_git_detected_rename_is_a_checked_version_replacement_and_withdrawal(self):
+        (self.root / self.old).unlink()
+        new = self.manifest('sample', '2.0', 'b')
+        self.commit('replace old version')
+        self.assertRegex(self.git('diff', '--find-renames', '--name-status', 'HEAD^', 'HEAD'), r'^R\d+\t')
+        self.assertEqual(self.classify(), ['', 'sample', '', new, self.old])
+        command = [sys.executable, str(ROOT / '.github/scripts/catalog_cleanup.py')]
+        plan = json.loads(subprocess.check_output(command + ['plan'], cwd=self.root, text=True))
+        self.assertEqual([m['version'] for m in plan['active']], ['2.0'])
+        self.assertEqual([m['version'] for m in plan['withdrawn']], ['1.0'])
+        historical = json.loads(subprocess.check_output(command + ['lookup', self.old], cwd=self.root, text=True))
+        self.assertEqual(historical['version'], '1.0')
+
+    def test_published_manifest_edit_remains_rejected(self):
+        self.manifest('sample', '1.0', 'b')
+        self.commit('edit published manifest')
+        outside, touched, errors, added, deleted = self.classify()
+        self.assertEqual((outside, touched, added, deleted), ('', 'sample', '', ''))
+        self.assertIn(self.old, errors)
+        self.assertIn('already published and cannot be changed', errors)
+
+    def test_manifest_path_must_match_the_declared_filename(self):
+        renamed = Path(self.old).with_name('sample_1.0-copy_arm64.deb.release.json')
+        (self.root / self.old).rename(self.root / renamed)
+        self.commit('rename manifest without changing the binary')
+        self.assertEqual(self.classify(), ['', 'sample', '', str(renamed), self.old])
+        guard = re.search(r'if \[\[ "\$fname" == \*/\*[^\n]+\n[^\n]+\n\s+fi', self.workflow)[0]
+        source = '\n'.join(['ERRORS=""', 'for manifest in "$MANIFEST"; do',
+                            'fname=$(jq -r .filename "$manifest")', 'dir_pkg=sample', guard,
+                            'done', 'printf "%s" "$ERRORS"'])
+        self.assertIn('must be named after its declared .deb filename', self.shell(source, MANIFEST=str(renamed)))
+
+    def test_manifest_identity_matches_binary_and_version_must_increase(self):
+        guard = re.search(r'if \[\[ "\$\(jq -r \'\.package // empty\'[^\n]+\n.*?\n\s+fi',
+                          self.workflow, re.S)[0]
+        source = 'ERRORS=""\n' + guard + '\nprintf "%s" "$ERRORS"'
+        self.assertEqual(self.shell(source, manifest=self.old, ctrl_pkg='sample', new_ver='1.0', ctrl_arch='arm64'), '')
+        self.assertIn('must match the .deb control fields',
+                      self.shell(source, manifest=self.old, ctrl_pkg='sample', new_ver='2.0', ctrl_arch='arm64'))
+        monotonic = re.search(r'if \[\[ -n "\$existing_ver" \]\] && dpkg --compare-versions[^\n]+\n[^\n]+\n\s+fi',
+                              self.workflow)[0]
+        source = 'ERRORS=""\n' + monotonic + '\nprintf "%s" "$ERRORS"'
+        self.assertIn('is not newer than existing', self.shell(source, existing_ver='1.0', new_ver='1.0'))
+        self.assertEqual(self.shell(source, existing_ver='1.0', new_ver='2.0'), '')
+
+
 class ReleaseGateTests(unittest.TestCase):
-    def classify(self, paths, truncated=False):
+    def classify(self, paths, truncated=False, changed=None):
         text = (ROOT / '.github/workflows/validate-pr-comment.yml').read_text()
         source = text.split('          script: |\n', 1)[1].split('\n      - name: Post comment', 1)[0]
         source = textwrap.dedent(source)
-        payload = {'source': source, 'paths': paths, 'truncated': truncated}
+        payload = {'source': source, 'paths': paths, 'truncated': truncated,
+                   'changed': changed if changed is not None else [{'filename': 'pool/main/sample/sample_2.0_arm64.deb.release.json'}]}
         runner = r'''
 const fs = require('fs');
 const input = JSON.parse(fs.readFileSync(0, 'utf8'));
@@ -368,7 +464,7 @@ const github = {rest: {pulls: {
 }, git: {getTree: async (args) => {
   if (args.tree_sha !== 'immutable-base' || args.recursive !== 'true') throw Error('wrong base tree');
   return {data: {truncated: input.truncated, tree: input.paths.map(path => ({type: 'blob', path}))}};
-}}}, paginate: async () => [{filename: 'pool/main/sample/sample_2.0_arm64.deb.release.json'}]};
+}}}, paginate: async () => input.changed};
 const AsyncFunction = Object.getPrototypeOf(async function() {}).constructor;
 new AsyncFunction('github', 'context', 'core', input.source)(github, context, core)
   .then(() => process.stdout.write(JSON.stringify(outputs)))
@@ -385,6 +481,13 @@ new AsyncFunction('github', 'context', 'core', input.source)(github, context, co
         result = self.classify(['pool/main/sample/meta.json', 'pool/main/sample/icon.png'])
         self.assertEqual(result.returncode, 0, result.stderr)
         self.assertEqual(json.loads(result.stdout)['new_pkgs'], 'sample')
+
+    def test_new_package_id_requires_first_release_review_even_if_git_reports_a_rename(self):
+        old = 'pool/main/sample/sample_1.0_arm64.deb.release.json'
+        new = 'pool/main/renamed/renamed_1.0_arm64.deb.release.json'
+        result = self.classify([old], changed=[{'status': 'renamed', 'filename': new, 'previous_filename': old}])
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(json.loads(result.stdout)['new_pkgs'], 'renamed')
 
     def test_truncated_tree_cannot_auto_merge(self):
         result = self.classify([], truncated=True)

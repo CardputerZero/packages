@@ -22,7 +22,7 @@ def git(*args):
 
 def historical_manifest(path):
     """A deletion in main's first-parent history is an approved withdrawal."""
-    commit = git("log", "--first-parent", "-1", "--diff-filter=D", "--format=%H", "HEAD", "--", path)
+    commit = git("log", "--first-parent", "--no-renames", "-1", "--diff-filter=D", "--format=%H", "HEAD", "--", path)
     if not commit:
         return None
     return json.loads(git("show", f"{commit}^:{path}"))
@@ -127,7 +127,9 @@ def plan():
     if git("rev-parse", "--is-shallow-repository") != "false":
         raise ValueError("full main history is required for withdrawal cleanup")
     active, superseded = split_latest(current_manifests())
-    deleted = git("log", "--first-parent", "--format=", "--name-only", "--diff-filter=D", "HEAD", "--", "pool/main")
+    # Version replacements must expose the old path as a deletion even when
+    # Git considers the two manifests similar enough to be a rename.
+    deleted = git("log", "--first-parent", "--no-renames", "--format=", "--name-only", "--diff-filter=D", "HEAD", "--", "pool/main")
     withdrawn = []
     for path in sorted(set(deleted.splitlines())):
         match = MANIFEST.fullmatch(path)
