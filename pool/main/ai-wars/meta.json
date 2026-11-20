@@ -1,0 +1,35 @@
+{
+  "title": "AI Wars",
+  "summary": "AI Wars is a single-player trading strategy game for the M5Stack Cardputer Zero.",
+  "description": "AI Wars is a single-player trading strategy game for the M5Stack Cardputer Zero. You start in Silicon Valley with $3,000 and a black leather jacket. Stock it with AI hardware, data, and speculative assets, then fly between eight cities and see how much you can make in 30 in-game days.\r\n\r\n Some additional game features:\r\n\r\n- 19 commodities to trade (GPUs, H100's, B200's scraped Reddit data and more!).\r\n- 8 cities with unique pricing and trading opportunities.\r\n- many different event types that occur between traveling (mugging, secret stashes, Ram Altman encounters...)\r\n- over 100 news humorous headlines to (hopefully) make you laugh about the current AI industry.\r\n- dozens of quirky family mixups (for good or for worse).\r\n- many different endings entirely based on the success you achieve in the game!\r\n- jacket upgrades, 0day exploits and more to help protect your investments and achieve success!\r\n- auto-save so you can turn off your CP0 whenever you want. Your game will be waiting to continue when you are!",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "1234",
+  "source_repo": "https://github.com/randombits0110/cardputer-zero-ai-warz",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "randombits0110",
+    "github": "randombits0110"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "ai-wars_icon.png",
+  "published_at": "2026-11-19T23:00:55+00:00",
+  "updated_at": "2026-11-19T23:00:55+00:00"
+}
