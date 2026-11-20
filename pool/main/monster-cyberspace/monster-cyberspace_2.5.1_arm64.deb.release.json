@@ -1,0 +1,11 @@
+{
+  "filename": "monster-cyberspace_2.5.1_arm64.deb",
+  "url": "https://github.com/oumike/packages/releases/download/czdev-buffer/monster-cyberspace_2.5.1_arm64.deb",
+  "sha256": "868341ba44bd679f77f5665d6ce1b5b1398fbe4c10e1dc83a7dac9a43e6d830f",
+  "size": 2021726,
+  "package": "monster-cyberspace",
+  "version": "2.5.1",
+  "architecture": "arm64",
+  "uploaded_by": "oumike",
+  "uploader_email": "michael.cojocari@gmail.com"
+}
