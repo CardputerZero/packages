@@ -1,0 +1,11 @@
+{
+  "filename": "wasteland_0.1.1_arm64.deb",
+  "url": "https://github.com/gabe-harris-modernfold/packages/releases/download/czdev-buffer/wasteland_0.1.1_arm64.deb",
+  "sha256": "08fe264523fe5f3a90e05fd32ef9498b6e515cb05d94b2594f6b155796601d0d",
+  "size": 8896930,
+  "package": "wasteland",
+  "version": "0.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "gabe-harris-modernfold",
+  "uploader_email": "gabe.harris@dormakaba.com"
+}
