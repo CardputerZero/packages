@@ -1,0 +1,11 @@
+{
+  "filename": "plai_3.0.1-1_arm64.deb",
+  "url": "https://github.com/d4rkmen/packages/releases/download/czdev-buffer/plai_3.0.1-1_arm64.deb",
+  "sha256": "c88a56f9328e500e3c3dda58f3e5071e1e9620ebd7ec4a91cc81ef59254053f4",
+  "size": 6143984,
+  "package": "plai",
+  "version": "3.0.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "d4rkmen",
+  "uploader_email": "d4rkmen@users.noreply.github.com"
+}
