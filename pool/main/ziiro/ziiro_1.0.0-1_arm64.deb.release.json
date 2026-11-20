@@ -1,0 +1,11 @@
+{
+  "filename": "ziiro_1.0.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/marcinsz89__ziiro_1.0.0-1_arm64.deb",
+  "sha256": "5d25cd18b48314d54f72a3563964d06b55d6e2743fc1d8f556fc1ac1642c438d",
+  "size": 4063570,
+  "package": "ziiro",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "marcinsz89",
+  "uploader_email": "marcinsz89@users.noreply.github.com"
+}
