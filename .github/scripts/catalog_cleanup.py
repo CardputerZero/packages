@@ -139,8 +139,18 @@ def plan():
         if not data or data["filename"] != match[2] or data["package"] != match[1]:
             raise ValueError(f"invalid withdrawn manifest: {path}")
         withdrawn.append(data)
+    cn_excluded = []
+    for package in sorted({m["package"] for m in active.values()}):
+        meta = Path("pool/main") / package / "meta.json"
+        if meta.is_file():
+            region = json.loads(meta.read_text()).get("region")
+            if isinstance(region, dict):
+                value = region.get("CN")
+                if value is False or (isinstance(value, str) and value.lower() == "false"):
+                    cn_excluded.append(package)
     return {"sha": git("rev-parse", "HEAD"), "active": list(active.values()),
-            "superseded": list(superseded.values()), "withdrawn": withdrawn + list(superseded.values())}
+            "superseded": list(superseded.values()), "withdrawn": withdrawn + list(superseded.values()),
+            "cn_excluded": cn_excluded}
 
 
 def prune_tree(root):
@@ -194,20 +204,23 @@ def release_cleanup(data, dry_run=False):
                 subprocess.run(["gh", "api", "--method", "DELETE", f"repos/{repo}/releases/assets/{asset['id']}"], check=True)
 
 
-def verify_registries(data, urls, attempts=20):
+def verify_registries(data, urls, attempts=20, max_wait=180, interval=10):
     withdrawn = {(m["package"], m["version"]) for m in data["withdrawn"]}
     active = {(m["package"], m["version"]) for m in data["active"]}
     withdrawn -= active
-    replaced = {m["package"] for m in data["withdrawn"]}
-    replacements = {(pkg, ver) for pkg, ver in active if pkg in replaced}
+    cn_excluded = set(data.get("cn_excluded", []))
+    deadline = time.monotonic() + max_wait
     for attempt in range(attempts):
         errors = []
-        for url in urls:
+        for position, url in enumerate(urls):
             try:
+                remaining_time = deadline - time.monotonic()
+                if remaining_time <= 0:
+                    raise TimeoutError("verification deadline reached")
                 separator = "&" if "?" in url else "?"
                 req = urllib.request.Request(url + separator + "withdrawal_check=" + str(time.time_ns()),
                                              headers={"Cache-Control": "no-cache", "User-Agent": "cz-withdrawal-check"})
-                with urllib.request.urlopen(req, timeout=30) as response:
+                with urllib.request.urlopen(req, timeout=min(15, remaining_time)) as response:
                     registry = json.load(response)
                 if not isinstance(registry.get("apps"), list):
                     raise ValueError("invalid registry schema")
@@ -215,17 +228,23 @@ def verify_registries(data, urls, attempts=20):
                 remaining = versions & withdrawn
                 if remaining:
                     errors.append(f"{url}: withdrawn versions still listed: {sorted(remaining)}")
-                missing = replacements - versions
+                expected = active if position == 0 else {(p, v) for p, v in active if p not in cn_excluded}
+                missing = expected - versions
                 if missing:
-                    errors.append(f"{url}: replacement versions missing: {sorted(missing)}")
-            except (OSError, ValueError) as exc:
+                    errors.append(f"{url}: published versions missing: {sorted(missing)}")
+                unexpected = versions - expected
+                if unexpected:
+                    errors.append(f"{url}: unexpected versions: {sorted(unexpected)}")
+            except (OSError, ValueError, AttributeError, TypeError) as exc:
                 errors.append(f"{url}: {exc}")
         if not errors:
             print("Both store registries exclude withdrawn versions and contain replacements")
             return
-        print("; ".join(errors), flush=True)
-        if attempt + 1 < attempts:
-            time.sleep(30)
+        print(f"Registry verification attempt {attempt + 1}: " + "; ".join(errors), flush=True)
+        remaining_time = deadline - time.monotonic()
+        if attempt + 1 >= attempts or remaining_time <= 0:
+            break
+        time.sleep(min(interval, remaining_time))
     raise ValueError("registry withdrawal verification did not complete")
 
 

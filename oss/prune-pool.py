@@ -1,7 +1,6 @@
 """Delete withdrawn pool objects without re-uploading the remaining packages."""
 from pathlib import Path
 import re
-import subprocess
 import sys
 
 
@@ -30,15 +29,16 @@ def stale_objects(root, destination, listing):
 
 
 def main():
+    from oss_command import command
+
     root = Path(sys.argv[1])
     destination = sys.argv[2]
     if not root.is_dir():
         raise ValueError("Local pool directory does not exist")
-    result = subprocess.run(["ossutil", "ls", destination, "--short-format"],
-                            check=True, text=True, stdout=subprocess.PIPE)
-    for obj in stale_objects(root, destination, result.stdout):
+    listing = command("ls", destination, "--short-format")
+    for obj in stale_objects(root, destination, listing):
         print(f"Removing withdrawn object: {obj}", flush=True)
-        subprocess.run(["ossutil", "rm", "-f", obj], check=True)
+        command("rm", "-f", obj)
 
 
 if __name__ == "__main__":

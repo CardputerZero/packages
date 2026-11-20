@@ -207,7 +207,7 @@ jobs:
           set -uo pipefail
           ERR=""
           if [ -n "$SOURCE_REPO" ]; then
-            git clone --depth=1 "$SOURCE_REPO" /tmp/src 2>/dev/null || ERR="- ❌ could not clone source repo\n"
+            python3 .github/scripts/clone_source_repo.py "$SOURCE_REPO" /tmp/src --skip-if-web-metadata || ERR="- ❌ could not clone source repo (use a repository URL or GitHub /tree/<branch-or-tag> URL)\n"
           fi
           if [ -z "$ERR" ]; then
             python3 - <<'EOF' || ERR="- ❌ $(cat /tmp/meta-error.txt 2>/dev/null || echo metadata collection failed)\n"
