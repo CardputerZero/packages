@@ -1,0 +1,46 @@
+{
+  "title": "ZeroTag",
+  "summary": "Amiibo library and emulator for the CardputerZero with the NFC Cap",
+  "categories": [
+    "Emulators",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/library.png",
+    "screenshots/catalogue.png",
+    "screenshots/detail.png",
+    "screenshots/emulation.png",
+    "screenshots/settings-fr.png",
+    "screenshots/settings-ja.png"
+  ],
+  "description": "ZeroTag turns the CardputerZero and its Cap CC1101 (ST25R3916) into an amiibo library and emulator.\n\n- Library of your own 540-byte backups (put them in ~/amiibo), recognised automatically, with signature check.\n- Catalogue of 954 characters: create blank, correctly signed amiibo.\n- NTAG215 emulation, verified with a Flipper Zero and a Nintendo Switch 2. What the game writes is saved to the file (autosave), signatures stay valid.\n- Optional UID rotation after each read, keeping the data.\n- Famicom-style interface in French, English and Japanese, with in-app help (Fn+H).\n\nSetup: copy your own key_retail.bin to ~/.zerotag/. After each boot the app offers to enable the Cap (it loads the SPI overlay with sudo: type your password on the keyboard, it is never stored); you can also run sudo /usr/lib/zerotag/cap-setup yourself. Amiibo thumbnails (artwork owned by Nintendo, from AmiiboAPI) are included for display only; your key_retail.bin is not.",
+  "locales": {
+    "fr": {
+      "title": "ZeroTag",
+      "summary": "Bibliothèque et émulateur d'amiibo pour le CardputerZero avec le Cap NFC"
+    },
+    "ja": {
+      "title": "ZeroTag",
+      "summary": "CardputerZero用amiiboライブラリ＆エミュレーター(NFC Cap対応)"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/sukoshi1507/zerotag",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZTAG",
+  "author": {
+    "github": "sukoshi1507",
+    "display_name": "sukoshi1507"
+  },
+  "published_at": "2026-11-19T13:51:34+00:00",
+  "updated_at": "2026-11-19T13:51:34+00:00"
+}
