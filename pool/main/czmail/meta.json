@@ -1,0 +1,34 @@
+{
+  "title": "Email",
+  "summary": "Read and send email from your Cardputer Zero. Works with Gmail, Outlook and more",
+  "description": "Check your inbox, read, reply, forward, and write new emails right on the Cardputer.\r\n\r\nWorks with any IMAP account. Gmail, Outlook, Yahoo, iCloud, and Fastmail settings fill in by themselves when you type your address. Gmail and most big providers need an app password.\r\n\r\nWhat it can do:\r\n- Inbox, folders, and search\\n- Reply, reply all, forward\r\n- Contact suggestions from people you've emailed\r\n- Text only or full view with pictures\r\n- Save attachments and pictures to Downloads\r\n- Open links in a simple text browser, or as a QR code for your phone\r\n- Optional voice typing that works offline\r\n\r\nPress Fn+H on any screen for the keys.",
+  "categories": [
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "MAIL",
+  "source_repo": "https://github.com/H4W9/CardputerZero_Mail",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "H4W9",
+    "github": "H4W9"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "czmail_icon.png",
+  "published_at": "2026-11-19T19:57:03+00:00",
+  "updated_at": "2026-11-19T19:57:03+00:00"
+}
