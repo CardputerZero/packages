@@ -27,5 +27,19 @@
     "display_name": "baltamir1978"
   },
   "published_at": "2026-11-16T22:16:56+00:00",
-  "updated_at": "2026-11-16T22:16:56+00:00"
+  "updated_at": "2026-11-20T07:34:41+00:00",
+  "locales": {
+    "es": {
+      "title": "ZeroTVBGone",
+      "summary": "Apaga casi cualquier tele: envía por infrarrojos todos los códigos de apagado"
+    },
+    "zh-CN": {
+      "title": "ZeroTVBGone",
+      "summary": "关闭几乎任何电视：通过红外发送所有已知的关机码"
+    },
+    "ja": {
+      "title": "ZeroTVBGone",
+      "summary": "ほぼすべてのテレビを消す：既知の電源オフコードを赤外線で送信"
+    }
+  }
 }
