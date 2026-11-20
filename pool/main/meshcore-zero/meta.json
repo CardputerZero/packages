@@ -9,7 +9,7 @@
     "screenshots/inbox.png",
     "screenshots/chat.png"
   ],
-  "description": "Channels and direct messages in one simple inbox, with previews, unread counts and saved history. Join hashtag channels, discover nodes, and select regional radio presets including experimental Japan. Uses the attached SX1262 LoRa CAP directly. Offline color emoji, radio echo indicators, and in-app GitHub updates. Early access; supports legacy and current SX1262 CAPs; regional field testing pending outside the US.",
+  "description": "Channels and direct messages in one simple inbox, with previews, unread counts and saved history. Join hashtag channels, discover nodes, and select regional radio presets including Slovakia and experimental Japan. Uses the attached SX1262 LoRa CAP directly. Offline color emoji, radio echo indicators, optional message chimes, and display sleep following system DarkTime. Checks for GitHub updates at startup and offers Update or Later. Early access; supports legacy and current SX1262 CAPs; regional field testing pending outside the US.",
   "license": "MIT",
   "source_repo": "https://github.com/unagisan69/meshcore-zero",
   "icon": "icon.png",
@@ -28,5 +28,5 @@
     "display_name": "unagisan69"
   },
   "published_at": "2026-11-19T07:43:18+00:00",
-  "updated_at": "2026-11-19T16:24:30+00:00"
+  "updated_at": "2026-11-20T03:16:55+00:00"
 }
