@@ -27,5 +27,19 @@
     "display_name": "baltamir1978"
   },
   "published_at": "2026-11-16T22:16:28+00:00",
-  "updated_at": "2026-11-16T22:16:28+00:00"
+  "updated_at": "2026-11-20T07:34:20+00:00",
+  "locales": {
+    "es": {
+      "title": "ZeroGallery",
+      "summary": "Recorre carpetas y mira fotos y vídeos con las flechas"
+    },
+    "zh-CN": {
+      "title": "ZeroGallery",
+      "summary": "浏览文件夹，用方向键查看照片和视频"
+    },
+    "ja": {
+      "title": "ZeroGallery",
+      "summary": "フォルダを開き、矢印キーで写真と動画を見る"
+    }
+  }
 }
