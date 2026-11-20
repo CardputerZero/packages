@@ -1,0 +1,11 @@
+{
+  "filename": "meshcore-zero_0.1.23_arm64.deb",
+  "url": "https://github.com/unagisan69/packages/releases/download/czdev-buffer/meshcore-zero_0.1.23_arm64.deb",
+  "sha256": "1992c06f9a8762acca2eaa4174282f9cab7e3bc9bfeefc0d16828dfe7e6499ed",
+  "size": 14844836,
+  "package": "meshcore-zero",
+  "version": "0.1.23",
+  "architecture": "arm64",
+  "uploaded_by": "unagisan69",
+  "uploader_email": "unagisan69@users.noreply.github.com"
+}

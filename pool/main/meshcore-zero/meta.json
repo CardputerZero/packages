@@ -9,7 +9,7 @@
     "screenshots/inbox.png",
     "screenshots/chat.png"
   ],
-  "description": "Channels and direct messages in one simple inbox, with previews, unread counts and saved history. Join or leave hashtag channels, import/export firmware-compatible private keys, discover nodes, and select regional radio presets including Scotland / ScotMesh (sco scope, 3-byte paths), Slovakia and experimental Japan. Uses the attached SX1262 LoRa CAP directly. One flood advert after startup checks, instant Tab navigation, authenticated repeater status with optional locally saved passwords, offline color emoji, radio echo indicators, optional message chimes, and display sleep following system DarkTime. Checks for GitHub updates at startup and offers Update or Later, with staged download progress and timing logs. Early access; supports legacy and current SX1262 CAPs; regional field testing pending outside the US.",
+  "description": "Channels and direct messages in one simple inbox, with previews, unread counts and saved history. Offline GPS-centred radar map with node distances, bearings and optional GPS location sharing. Channel options for muting, scope overrides, clearing history and leaving; password-encrypted full backup and restore. Join hashtag channels, import/export firmware-compatible private keys, discover nodes, and select regional radio presets including Scotland / ScotMesh (sco scope, 3-byte paths), Slovakia and experimental Japan. Uses the attached SX1262 LoRa CAP directly. One flood advert after startup checks, instant Tab navigation, authenticated repeater status with optional locally saved passwords, offline color emoji, radio echo indicators, optional message chimes, and display sleep following system DarkTime. Checks for GitHub updates at startup and offers Update or Later, with staged download progress and timing logs. Early access; supports legacy and current SX1262 CAPs; regional field testing pending outside the US.",
   "license": "MIT",
   "source_repo": "https://github.com/unagisan69/meshcore-zero",
   "icon": "icon.png",
@@ -28,5 +28,5 @@
     "display_name": "unagisan69"
   },
   "published_at": "2026-11-19T07:43:18+00:00",
-  "updated_at": "2026-11-20T18:47:14+00:00"
+  "updated_at": "2026-11-20T22:12:04+00:00"
 }
