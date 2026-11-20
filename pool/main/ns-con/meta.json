@@ -1,0 +1,34 @@
+{
+  "title": "NS-Con",
+  "summary": "Nintendo Switch手柄模拟器",
+  "description": "# NS-Con\r\n\r\nNS-Con 通过 Cardputer Zero 的 USB-C2 接口模拟 HORI Pokkén Tournament DX Pro Pad 有线手柄，产品名为 `POKKEN CONTROLLER`，VID:PID 为 `0F0D:0092`。\r\n\r\n1. 将机身左侧的 USB Host/Slave 拨码开关切到 `Slave`。\r\n2. 从 APPLaunch 打开 NS-Con，每次开机首次使用时，在 LCD 上按 Enter 启用 USB。也可在网页点击「请求启用 USB」，再回到板上按 **Enter** 确认。\r\n3. 在 Switch 上打开「手柄 → 更改握法／顺序」。 LCD 显示 `USB READY` 后，在板上同时按 `L` 和 `R`，再按 `A`。网页「虚拟键盘」也提供「L + R」和「A 确认」按钮。\r\n\r\n## 网页与宏\r\n\r\n从 APPLaunch 启动时，网页服务默认开启，端口为 8080。",
+  "categories": [
+    "Games",
+    "Emulators"
+  ],
+  "license": "MIT",
+  "share_code": "JOYC",
+  "source_repo": "https://github.com/RiviaRammer/CardputerZeroApps",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "RiviaRammer",
+    "github": "RiviaRammer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "ns-con_icon.png",
+  "published_at": "2026-11-20T09:03:30+00:00",
+  "updated_at": "2026-11-20T09:03:30+00:00"
+}

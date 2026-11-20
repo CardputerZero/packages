@@ -1,0 +1,11 @@
+{
+  "filename": "ns-con_0.2.6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RiviaRammer__ns-con_0.2.6_arm64.deb",
+  "sha256": "60c425f7a6921ebf8a6b76af263888d9d0c1e48877167ceeec95e3ee5b4d9d4b",
+  "size": 21624,
+  "package": "ns-con",
+  "version": "0.2.6",
+  "architecture": "arm64",
+  "uploaded_by": "RiviaRammer",
+  "uploader_email": "riviarammer@users.noreply.github.com"
+}
