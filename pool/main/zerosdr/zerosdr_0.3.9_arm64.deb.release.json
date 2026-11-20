@@ -1,0 +1,11 @@
+{
+  "filename": "zerosdr_0.3.9_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/nullbeing__zerosdr_0.3.9_arm64.deb",
+  "sha256": "f444b644e2543d51d060e2142ed3fea960b9643beaef57104d4d1c6e44dd9494",
+  "size": 506068,
+  "package": "zerosdr",
+  "version": "0.3.9",
+  "architecture": "arm64",
+  "uploaded_by": "nullbeing",
+  "uploader_email": "nullbeing@users.noreply.github.com"
+}
