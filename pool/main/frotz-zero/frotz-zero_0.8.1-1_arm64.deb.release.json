@@ -1,0 +1,11 @@
+{
+  "filename": "frotz-zero_0.8.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Ahazii__frotz-zero_0.8.1-1_arm64.deb",
+  "sha256": "1f04058e9268c6b479d1a4943a105fa1793f02adc6e66c15c64842c4849dd995",
+  "size": 433068,
+  "package": "frotz-zero",
+  "version": "0.8.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "Ahazii",
+  "uploader_email": "jbanner@btinternet.com"
+}
