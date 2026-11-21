@@ -1,0 +1,11 @@
+{
+  "filename": "ipdoit-for-cardputer-zero_0.2.9_arm64.deb",
+  "url": "https://github.com/Sudrien/packages/releases/download/czdev-buffer/ipdoit-for-cardputer-zero_0.2.9_arm64.deb",
+  "sha256": "ee64c02be55a0909bc8df7d29607ff128de998882270409ea29723d15765f3ec",
+  "size": 2262782,
+  "package": "ipdoit-for-cardputer-zero",
+  "version": "0.2.9",
+  "architecture": "arm64",
+  "uploaded_by": "Sudrien",
+  "uploader_email": "Sudrien@users.noreply.github.com"
+}

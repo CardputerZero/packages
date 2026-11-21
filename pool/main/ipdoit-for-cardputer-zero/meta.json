@@ -1,0 +1,47 @@
+{
+  "title": "Ipdoit",
+  "summary": "An Uncomplicated Firewall (UFW) Helper",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/ipdoit-launcher-mockup.png",
+    "screenshots/ipdoit-status.png",
+    "screenshots/ipdoit-rules.png",
+    "screenshots/ipdoit-ports.png",
+    "screenshots/ipdoit-networks.png",
+    "screenshots/ipdoit-form.png"
+  ],
+  "description": "Uncomplicated Firewall (UFW) improves your security by controlling which ports accept incoming connections, and from which networks. Ipdoit helps you set it up on the device: turn the firewall on, add rules, and limit services like SSH to networks you trust.",
+  "locales": {
+    "zh-CN": {
+      "title": "Ipdoit",
+      "summary": "简单防火墙（UFW）配置助手",
+      "description": "简单防火墙（UFW）通过控制哪些端口接受传入连接、以及接受来自哪些网络的连接来提升安全性。Ipdoit 帮你在设备上完成设置：开启防火墙、添加规则，并将 SSH 等服务限制在你信任的网络中。"
+    },
+    "ja": {
+      "title": "Ipdoit",
+      "summary": "Uncomplicated Firewall（UFW）設定ヘルパー",
+      "description": "Uncomplicated Firewall（UFW）は、どのポートが外部からの接続を受け付けるか、どのネットワークからの接続を許可するかを制御して、セキュリティを高めます。Ipdoit はデバイス上での設定を手助けします。ファイアウォールの有効化、ルールの追加、SSH などのサービスを信頼できるネットワークだけに限定することができます。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/Sudrien/ipdoit-for-cardputer-zero",
+  "icon": "ipdoit-store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "IPDO",
+  "author": {
+    "github": "Sudrien",
+    "display_name": "Sudrien"
+  },
+  "published_at": "2026-11-21T02:47:48+00:00",
+  "updated_at": "2026-11-21T02:47:48+00:00"
+}
