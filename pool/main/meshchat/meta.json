@@ -1,0 +1,36 @@
+{
+  "summary": "Meshtastic USB chat with private messages and scrollable saved history.",
+  "description": "A keyboard-first graphical Meshtastic client for CardputerZero. Connect a Meshtastic radio (tested with Heltec V3) over USB serial. Send public and direct messages, switch conversations, and browse all locally saved history with arrow keys, Page Up/Down, Home and End. Messages are stored locally in SQLite and survive restarts. Incoming messages keep your reading position when browsing older messages. Radio firmware, channel settings and encryption keys must already be configured on the radio. Default port: /dev/ttyUSB0; override with MESHCHAT_PORT. This release targets Raspberry Pi OS/Debian with Python 3.13 and runs as the logged-in desktop user.",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/main.png",
+    "screenshots/history.png"
+  ],
+  "icon": "icon.png",
+  "license": "GPL-3.0-only",
+  "source_repo": "https://github.com/N1mos3q/meshchat-cardputer-zero",
+  "author": {
+    "github": "N1mos3q",
+    "display_name": "N1mos3q"
+  },
+  "share_code": "MCHT",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "locales": {
+    "pl": {
+      "title": "MeshChat",
+      "summary": "Czat Meshtastic przez USB z przewijaniem zapisanej historii."
+    }
+  },
+  "title": "MeshChat"
+}
