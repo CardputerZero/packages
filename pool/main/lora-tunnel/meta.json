@@ -1,0 +1,46 @@
+{
+  "title": "LORA Tunnel",
+  "summary": "All-in-one LoRa + Wi-Fi/BLE wardriver: full mesh decode, WiGLE logs, Recon",
+  "categories": [
+    "Radio & Comms",
+    "Security"
+  ],
+  "screenshots": [
+    "screenshots/wardrive-live.png",
+    "screenshots/recon-live.png",
+    "screenshots/node-mesh.png",
+    "screenshots/packet-traceroute.png",
+    "screenshots/messages.png",
+    "screenshots/home.png"
+  ],
+  "description": "LORA Tunnel turns the CardputerZero and Cap LoRa-1262 into an all-in-one LoRa, Wi-Fi and Bluetooth wardriver. One press starts all three. It listens for Meshtastic and MeshCore on every preset in your region and decrypts the default channels and any keys you add. It decodes text, positions, node info, all telemetry, traceroutes with per-hop SNR, neighbor lists, map reports, waypoints, MeshCore adverts, group messages, traces and discovery, and maps every node it hears. Every Wi-Fi network and BLE device is logged with GPS into a WiGLE-ready CSV. Recon flags ALPR and Flock cameras, body cameras, Ring and other cameras, trackers like AirTag and SmartTag, Remote ID drones and more, warns you, and tells you if something seems to follow you. Messages lets you chat on Meshtastic and MeshCore channels. Transmit is off until you turn it on, and it keeps to your region's limits. Logs are LoRaTAP PCAP (Wireshark), JSONL and SQLite, with CSV and Google Earth KML export. Same channel plan as Kismet's LoRaPipe. MIT open source.",
+  "locales": {
+    "zh-CN": {
+      "title": "LORA Tunnel",
+      "summary": "LoRa+Wi-Fi/BLE 一体化扫描：Mesh 全解码、WiGLE 记录、侦察"
+    },
+    "ja": {
+      "title": "LORA Tunnel",
+      "summary": "LoRa+Wi-Fi/BLE統合ウォードライブ：メッシュ完全解読、WiGLE記録、偵察"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/valleytechsolutions/LORA-Tunnel",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "LORA",
+  "author": {
+    "github": "valleytechsolutions",
+    "display_name": "Valleytech Solutions"
+  },
+  "published_at": "2026-11-21T20:52:04+00:00",
+  "updated_at": "2026-11-21T20:52:04+00:00"
+}
