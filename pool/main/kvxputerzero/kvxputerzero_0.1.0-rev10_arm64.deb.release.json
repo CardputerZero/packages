@@ -1,0 +1,11 @@
+{
+  "filename": "kvxputerzero_0.1.0-rev10_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kvx17__kvxputerzero_0.1.0-rev10_arm64.deb",
+  "sha256": "e74bed621916488b106c968e9f5d79a3ca9b11b6ac8a96c32b1804fadc684329",
+  "size": 5038402,
+  "package": "kvxputerzero",
+  "version": "0.1.0-rev10",
+  "architecture": "arm64",
+  "uploaded_by": "kvx17",
+  "uploader_email": "kvx17@users.noreply.github.com"
+}
