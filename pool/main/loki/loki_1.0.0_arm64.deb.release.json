@@ -1,0 +1,11 @@
+{
+  "filename": "loki_1.0.0_arm64.deb",
+  "url": "https://github.com/brainphreak/packages/releases/download/czdev-buffer/loki_1.0.0_arm64.deb",
+  "sha256": "b5fcb508872f268d19d00ed8f3d96a87b0eb0d74fcea4743335181cc437f2170",
+  "size": 23857276,
+  "package": "loki",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "brainphreak",
+  "uploader_email": "brainphreak@brainphreak.net"
+}
