@@ -1,0 +1,31 @@
+{
+  "title": "MeshTandem",
+  "summary": "This is Meshtastic client that works on both bluetooth and the lora cap",
+  "description": "Thanks to soliton for the meshzero app, I have referenced from this original app and remade this meshtandem to support the bluetooth client. the original project can be found here https://github.com/s0liton/MeshZero. With this app we can toggle between lora cap and bluetooth node if it is already connected, have the ability to save the chat in sd card and be able to clear the chat.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "Unlicense",
+  "share_code": "MESH",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Ramchand",
+    "github": "kakashi2018"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "meshtandem_icon.png",
+  "published_at": "2026-11-20T13:15:42+00:00",
+  "updated_at": "2026-11-20T13:15:42+00:00"
+}
