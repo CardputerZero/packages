@@ -1,0 +1,11 @@
+{
+  "filename": "hf-tool_1.0.0-m5stack1_arm64.deb",
+  "url": "https://github.com/tghost/packages/releases/download/czdev-buffer/hf-tool_1.0.0-m5stack1_arm64.deb",
+  "sha256": "c8fc22ee20cfac29aaae7837b6ed080c448c3bdae4a0c3514ca0a007520f72b9",
+  "size": 9940532,
+  "package": "hf-tool",
+  "version": "1.0.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "tghost",
+  "uploader_email": "wang.h.fan@outlook.com"
+}
