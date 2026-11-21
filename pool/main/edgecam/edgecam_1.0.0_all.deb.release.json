@@ -1,0 +1,11 @@
+{
+  "filename": "edgecam_1.0.0_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Apeadv__edgecam_1.0.0_all.deb",
+  "sha256": "79bb7a8d653f015041a63badaad56f32f041f9a24ccc2d012f8f0e3275fe4e5d",
+  "size": 27188,
+  "package": "edgecam",
+  "version": "1.0.0",
+  "architecture": "all",
+  "uploaded_by": "Apeadv",
+  "uploader_email": "apeadv@users.noreply.github.com"
+}
