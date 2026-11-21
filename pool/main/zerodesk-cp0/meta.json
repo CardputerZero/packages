@@ -1,0 +1,45 @@
+{
+  "title": "ZeroDesk CP0",
+  "summary": "Your CardputerZero on a big screen: a desktop and App Store in any browser",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/01-desktop.png",
+    "screenshots/02-appstore.png",
+    "screenshots/03-phone.png",
+    "screenshots/04-install.png",
+    "screenshots/05-hardware.png",
+    "screenshots/06-status.png"
+  ],
+  "description": "Your CardputerZero, on a big screen.\n\nOpen it in your laptop's browser and you get a full desktop: windows, a Dock, Finder and Terminal. On your phone it becomes a home screen that sits right next to your other apps.\n\nEvery app in the store is one click away. Install it, update it, done.\n\nCompass, GPS, camera, IR, LoRa and NFC run in their own windows, live.\n\nScan the code on the Zero's screen and you're in. Nothing to install on your computer or phone.\n\nBuilding an app? Give it a ZeroDesk window: github.com/richardhxwang/ZeroDesk",
+  "locales": {
+    "zh-CN": {
+      "summary": "电脑、手机打开浏览器，就能操作你的 CardputerZero",
+      "description": "小屏幕不够用？ZeroDesk 把 CardputerZero 搬到电脑和手机上。\n\n在电脑上，浏览器里就是一整套桌面，拖窗口、翻文件、开终端都行。手机上添加到主屏幕，用起来和普通 App 一样。\n\n商店里的 App 点一下就装好，出了新版本也是一键更新。\n\n指南针、GPS、摄像头、红外、LoRa、NFC 都能在大屏上直接用，数据实时刷新。\n\n扫一下 Zero 屏幕上的二维码就能登录，电脑和手机都不用装软件。\n\n开发者想让自己的 App 在 ZeroDesk 里用窗口打开，可以看 github.com/richardhxwang/ZeroDesk"
+    },
+    "ja": {
+      "summary": "CardputerZero を大きな画面で。ブラウザで使えるデスクトップと App Store",
+      "description": "CardputerZero を、大きな画面で。\n\nパソコンのブラウザで開けば、ウインドウ、Dock、Finder、ターミナルがそろったデスクトップに。スマートフォンでは、ほかのアプリと並べて置けるホーム画面になります。\n\nStore のアプリは、クリックひとつでインストール。アップデートもワンクリック。\n\nコンパス、GPS、カメラ、赤外線、LoRa、NFC を、ウインドウの中でリアルタイムに操作できます。\n\nZero の画面のコードを読み取るだけでつながります。パソコンにもスマートフォンにも、何もインストールしなくて大丈夫。\n\nアプリを作っている方へ：ZeroDesk のウインドウに対応できます。github.com/richardhxwang/ZeroDesk"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/richardhxwang/ZeroDesk",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": true,
+    "microphone": true,
+    "imu": true,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "ZDCP",
+  "author": {
+    "display_name": "richardhxwang",
+    "github": "richardhxwang"
+  },
+  "published_at": "2026-11-20T11:43:25+00:00",
+  "updated_at": "2026-11-20T11:43:25+00:00"
+}
