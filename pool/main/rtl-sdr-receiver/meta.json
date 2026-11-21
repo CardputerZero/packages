@@ -1,0 +1,49 @@
+{
+  "title": "RTL SDR",
+  "summary": "Listen to FM, airband, shortwave and ham radio with an RTL-SDR dongle.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/rtl-sdr-receiver.png",
+    "screenshots/rtl-sdr-frequency.png",
+    "screenshots/rtl-sdr-help.png",
+    "screenshots/rtl-sdr-receiver-light.png",
+    "screenshots/rtl-sdr-frequency-light.png",
+    "screenshots/rtl-sdr-help-light.png"
+  ],
+  "description": "RTL SDR turns your Cardputer Zero into a pocket radio receiver. You'll need an RTL-SDR USB dongle (plugged into the USB port) and an antenna, as the Cardputer can't pick up radio on its own. It only receives, it never transmits.\n\nTune broadcast FM, AM and shortwave, airband and military airband, marine and ham bands from 2 m to 23 cm, and anything else from 0.1 MHz to 1.7 GHz. Pick a band, mode (FMW, FMN, AM, USB, LSB, CW), filter width and step, or type an exact frequency. There's a live spectrum and waterfall, an S meter, squelch, an auto notch to zap whistles, and RIT. Press H any time for a key guide.",
+  "locales": {
+    "ja": {
+      "summary": "RTL-SDR ドングルで FM、航空無線、短波、アマチュア無線を受信。",
+      "description": "Cardputer Zero を RTL-SDR USB ドングルと組み合わせた受信専用ラジオにします。USB ドングルとアンテナが必要です。送信はできません。FM 放送、AM、短波、航空無線、アマチュア無線など 0.1 MHz〜1.7 GHz を受信でき、周波数の直接入力、スペクトラムとウォーターフォール、S メーター、オートノッチ、RIT に対応。H キーで操作一覧を表示します。"
+    },
+    "zh-CN": {
+      "summary": "使用 RTL-SDR 接收器收听 FM、航空、短波和业余无线电。",
+      "description": "将 Cardputer Zero 变成仅接收的口袋收音机，需要 RTL-SDR USB 接收器和天线，不支持发射。支持 0.1 MHz 至 1.7 GHz，包括 FM 广播、AM、短波、航空和业余频段，可直接输入频率，带频谱瀑布图、S 表、自动陷波和 RIT。按 H 查看按键说明。"
+    },
+    "es": {
+      "summary": "Escucha FM, aviación, onda corta y radioaficionados con un RTL-SDR.",
+      "description": "Convierte tu Cardputer Zero en un receptor de radio de bolsillo. Necesitas un dongle USB RTL-SDR y una antena. Solo recibe, nunca transmite. Cubre de 0,1 MHz a 1,7 GHz: FM, AM, onda corta, aviación y bandas de aficionado. Escribe una frecuencia exacta, con espectro y cascada, S-meter, notch automático y RIT. Pulsa H para ver las teclas."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/MrJoshMurray/rtl-sdr-receiver",
+  "icon": "rtl-sdr-receiver.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "RSDR",
+  "author": {
+    "github": "MrJoshMurray",
+    "display_name": "MrJoshua"
+  },
+  "published_at": "2026-11-21T16:54:59+00:00",
+  "updated_at": "2026-11-21T16:54:59+00:00"
+}
