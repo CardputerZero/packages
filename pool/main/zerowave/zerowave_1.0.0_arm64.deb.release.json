@@ -1,0 +1,11 @@
+{
+  "filename": "zerowave_1.0.0_arm64.deb",
+  "url": "https://github.com/stefexec/packages/releases/download/czdev-buffer/zerowave_1.0.0_arm64.deb",
+  "sha256": "e4b4ba38525dbc997f4dfd43f24670c6244a5f3cddc418ca1c1b9def64a4a91d",
+  "size": 598600,
+  "package": "zerowave",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "stefexec",
+  "uploader_email": "stefan@gurk.dev"
+}
