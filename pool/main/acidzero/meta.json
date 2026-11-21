@@ -1,0 +1,31 @@
+{
+  "title": "AcidZero",
+  "summary": "Acid bass synth with a 16-step sequencer and MIDI CC control",
+  "description": "AcidZero is an acid bass synthesizer for the Cardputer Zero. Enter notes on the keyboard, set slide, accent and rests per step, and shape the sound with cutoff, resonance, envelope mod, decay and accent. Press P for settings: MIDI input with channel selection, CC learn for every knob, MIDI notes and start/stop, and output volume.",
+  "categories": [
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "ACID",
+  "source_repo": "https://github.com/kurogedelic/AcidZero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "kurogedelic",
+    "github": "kurogedelic"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "acidzero_icon.png",
+  "published_at": "2026-11-16T01:22:22+00:00",
+  "updated_at": "2026-11-16T01:22:22+00:00"
+}
