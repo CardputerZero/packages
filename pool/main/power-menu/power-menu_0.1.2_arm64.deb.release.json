@@ -1,0 +1,11 @@
+{
+  "filename": "power-menu_0.1.2_arm64.deb",
+  "url": "https://github.com/Liptoon/packages/releases/download/czdev-buffer/power-menu_0.1.2_arm64.deb",
+  "sha256": "5d6cd72081d0b7117ed3f1425b401c39566511b65fd3d1951d8b2c539555b7b5",
+  "size": 1066272,
+  "package": "power-menu",
+  "version": "0.1.2",
+  "architecture": "arm64",
+  "uploaded_by": "Liptoon",
+  "uploader_email": "Liptoon@users.noreply.github.com"
+}
