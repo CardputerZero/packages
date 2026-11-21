@@ -1,0 +1,11 @@
+{
+  "filename": "zerogps_0.5.0-rev1_arm64.deb",
+  "url": "https://github.com/baltamir1978/packages/releases/download/czdev-buffer/zerogps_0.5.0-rev1_arm64.deb",
+  "sha256": "536e2c431859d6ae95b0c65fcfd903db7e2ae5f32989ca734de5024b73a6d1e2",
+  "size": 9375904,
+  "package": "zerogps",
+  "version": "0.5.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "baltamir1978",
+  "uploader_email": "baltamir1978@users.noreply.github.com"
+}

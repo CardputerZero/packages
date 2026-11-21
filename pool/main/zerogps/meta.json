@@ -1,0 +1,50 @@
+{
+  "title": "IGN GPS",
+  "summary": "GPS with Spain's IGN maps: live position, satellites, GPX tracks, offline",
+  "categories": [
+    "Hardware & IoT",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/map.png",
+    "screenshots/satellite.png",
+    "screenshots/sky.png",
+    "screenshots/download.png",
+    "screenshots/tracks.png",
+    "screenshots/home.png"
+  ],
+  "description": "For the Cap LoRa-1262 (LoRa + GNSS). Spain only: the maps come from Spain's Instituto Geográfico Nacional (IGN), and the interface is in Spanish.\n\n- Map: your position on the IGN topographic map, PNOA aerial imagery or IGN Base (key M), with the track you are recording and any track you open. Q/A zoom, arrows pan, ENTER centres on you. It remembers where you were and shows your last known position while the GNSS gets a fix (~13 s).\n- Satellites: sky plot with every satellite by constellation (GPS, Galileo, GLONASS, BeiDou, QZSS, SBAS), fix type, latitude, longitude, altitude, approximate accuracy, HDOP/VDOP and UTC time.\n- Tracks: record GPX (keeps recording on other screens), list, open on the map, delete.\n- Offline maps: download an area (radius or ready-made mountain ranges) for the three maps at once, with tile count, size and free space shown before starting. Online mode (key O) fetches only the missing tiles over Wi-Fi.\n\nBattery friendly: the GNSS is only powered while the map or the satellites are open (or while recording), and the map refresh rate depends on the zoom. Ships with Sierra de Guadarrama tiles.\n\nMap data © Instituto Geográfico Nacional de España (CC-BY 4.0).",
+  "locales": {
+    "es": {
+      "title": "IGN GPS",
+      "summary": "GPS con mapas del IGN: posición, satélites, tracks GPX y mapas offline"
+    },
+    "zh-CN": {
+      "title": "IGN GPS",
+      "summary": "西班牙 IGN 地图 GPS：实时位置、卫星、GPX 轨迹、离线地图"
+    },
+    "ja": {
+      "title": "IGN GPS",
+      "summary": "スペインIGN地図のGPS：現在地・衛星・GPXトラック・オフライン地図"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/baltamir1978/ZeroGPS",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZGPS",
+  "author": {
+    "github": "baltamir1978",
+    "display_name": "baltamir1978"
+  },
+  "published_at": "2026-11-20T16:44:53+00:00",
+  "updated_at": "2026-11-20T16:44:53+00:00"
+}
