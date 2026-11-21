@@ -1,0 +1,11 @@
+{
+  "filename": "updoit-for-cardputer-zero_0.2.8_arm64.deb",
+  "url": "https://github.com/Sudrien/packages/releases/download/czdev-buffer/updoit-for-cardputer-zero_0.2.8_arm64.deb",
+  "sha256": "01b28fcb1040222c1e4f3bc7f5991e90c66196e29d7349109bcd5cfb0a237e60",
+  "size": 2270560,
+  "package": "updoit-for-cardputer-zero",
+  "version": "0.2.8",
+  "architecture": "arm64",
+  "uploaded_by": "Sudrien",
+  "uploader_email": "Sudrien@users.noreply.github.com"
+}
