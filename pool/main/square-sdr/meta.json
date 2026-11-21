@@ -1,0 +1,49 @@
+{
+  "title": "Square SDR",
+  "summary": "A pocket-sized amateur-radio transceiver controller for Square SDR 2.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/square-sdr-receiver.png",
+    "screenshots/square-sdr-settings.png",
+    "screenshots/square-sdr-help.png",
+    "screenshots/square-sdr-receiver-light.png",
+    "screenshots/square-sdr-settings-light.png",
+    "screenshots/square-sdr-help-light.png"
+  ],
+  "description": "Put a real amateur-radio station in your pocket. Square SDR turns Cardputer Zero into a compact controller for the Square SDR 2 from Wide Servis, with live IQ reception, USB/LSB/AM/CW, a moving panadapter and waterfall, LED-style S meter, auto notch and RIT. Hold Tab or Space to transmit voice (built-in or USB microphone) or CW, with a mic level meter, adjustable drive, mic gain and low cut. Transmit is limited to UK amateur allocations, drops after 3 minutes or on retune, and has SWR protection. Tune 0 to 30 MHz. Direct Ethernet to the radio is the only tested connection; always test transmit on a dummy load and only transmit if you hold the appropriate licence.",
+  "locales": {
+    "ja": {
+      "summary": "Square SDR 2 用の送受信対応 SDR 操作アプリ。",
+      "description": "Cardputer Zero から Ethernet 経由で Square SDR 2 を操作します。ライブ受信、USB/LSB/AM/CW、パナアダプター、Sメーター、オートノッチ、RIT、音声/CW送信に対応します。送信は英国のアマチュア割り当て内に制限され、ダミーロードでの試験を推奨します。"
+    },
+    "zh-CN": {
+      "summary": "用于 Square SDR 2 的收发 SDR 控制应用。",
+      "description": "通过以太网在 Cardputer Zero 上控制 Square SDR 2。支持实时接收、USB/LSB/AM/CW、频谱瀑布图、S 表、自动陷波、RIT 以及语音/CW 发射。发射仅限英国业余频段，建议先使用假负载测试。"
+    },
+    "es": {
+      "summary": "Controlador SDR de recepción y transmisión para Square SDR 2.",
+      "description": "Controla un Square SDR 2 por Ethernet desde Cardputer Zero. Recepción en directo, USB/LSB/AM/CW, panadapter y cascada, S-meter, filtro notch automático, RIT y transmisión de voz/CW. La transmisión se limita a las bandas de aficionado del Reino Unido; prueba primero con una carga ficticia."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/MrJoshMurray/square-sdr",
+  "icon": "square-sdr.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SQSD",
+  "author": {
+    "github": "MrJoshMurray",
+    "display_name": "MrJoshua"
+  },
+  "published_at": "2026-11-21T14:56:01+00:00",
+  "updated_at": "2026-11-21T14:56:01+00:00"
+}

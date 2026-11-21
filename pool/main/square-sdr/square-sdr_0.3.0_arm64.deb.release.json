@@ -1,0 +1,11 @@
+{
+  "filename": "square-sdr_0.3.0_arm64.deb",
+  "url": "https://github.com/MrJoshMurray/packages/releases/download/czdev-buffer/square-sdr_0.3.0_arm64.deb",
+  "sha256": "a2c8def04431e1279e5c27381dd1af7dca6a81a1285d70cfa068273ba91f7cc8",
+  "size": 2196314,
+  "package": "square-sdr",
+  "version": "0.3.0",
+  "architecture": "arm64",
+  "uploaded_by": "MrJoshMurray",
+  "uploader_email": "MrJoshMurray@users.noreply.github.com"
+}
