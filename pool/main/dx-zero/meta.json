@@ -1,0 +1,35 @@
+{
+  "title": "DX Zero",
+  "summary": "6-Operator DX7 FM Synthesizer & 4-Track Groovebox Sequencer for CardputerZero",
+  "description": "CardputerZero DX Zero turns the pocket-sized M5Stack CardputerZero (320×170 IPS display, 56-key matrix keyboard, ARM64 Linux) into a standalone Yamaha DX7-compatible 6-operator FM synthesizer and 4-track groovebox.\r\n\r\nPlay it 100% standalone right out of your pocket using the CardputerZero's built-in speaker/headphones and keyboard, or expand it into a full studio rig by plugging in any class-compliant USB MIDI controller and/or any USB audio interface.",
+  "categories": [
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "DXZ0",
+  "source_repo": "https://github.com/adrianomoraes/CardputerZero-DXZero_release",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Adriano Moraes",
+    "github": "adrianomoraes"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "dx-zero_icon.png",
+  "published_at": "2026-11-21T22:36:55+00:00",
+  "updated_at": "2026-11-21T22:36:55+00:00"
+}
