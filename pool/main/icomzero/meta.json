@@ -1,23 +1,24 @@
 {
   "title": "ICOMzero",
-  "summary": "Listen, tune, and view a live IC-7300MK2 waterfall over LAN.",
+  "summary": "Direct Icom and Kenwood network audio, tuning, and live waterfall.",
   "categories": [
     "Radio & Comms"
   ],
   "screenshots": [
     "screenshots/waterfall.png",
     "screenshots/bands.png",
-    "screenshots/help.png"
+    "screenshots/help.png",
+    "screenshots/setup.png"
   ],
-  "description": "Connect a Cardputer Zero to an Icom IC-7300MK2 on the same LAN for receive audio, a live spectrum and waterfall, and 1 kHz tuning. Select amateur-band presets with automatic LSB/USB mode selection, toggle noise reduction, adjust or mute volume, and start the antenna tuner. Requires a network-enabled IC-7300MK2 and its LAN account. T starts the antenna tuner and briefly transmits a tuning carrier. Radio credentials and volume settings are stored locally with user-only file permissions.",
+  "description": "Connect directly to supported network radios from a Cardputer Zero for receive audio, live spectrum and waterfall, and tuning. Icom profiles cover IC-705, IC-7300MK2, IC-7610, IC-7760, IC-7850/7851, IC-905, IC-9700 and IC-R8600. Kenwood TS-890S uses native KNS TCP/RTP. Select the radio in Setup; band presets and controls follow model capabilities. Noise reduction and antenna tuning are available where supported. T starts the antenna tuner and briefly transmits. Requires a radio network account. IC-7300MK2 is hardware-tested; added models have protocol/emulator coverage and await physical validation. Credentials and volume settings are stored locally with user-only permissions.",
   "locales": {
     "ja": {
       "title": "ICOMzero",
-      "summary": "IC-7300MK2 の LAN 音声受信、周波数調整、ウォーターフォール表示。"
+      "summary": "Icom・Kenwood 無線機の直接ネットワーク受信、周波数調整、瀑布表示。"
     },
     "zh-CN": {
       "title": "ICOMzero",
-      "summary": "通过局域网收听 IC-7300MK2，调节频率并查看实时瀑布图。"
+      "summary": "直连 Icom 和 Kenwood 网络电台，收听音频、调谐并查看实时瀑布图。"
     }
   },
   "license": "GPL-3.0-only",
@@ -38,5 +39,5 @@
     "display_name": "unagisan69"
   },
   "published_at": "2026-11-18T18:40:23+00:00",
-  "updated_at": "2026-11-18T18:49:54+00:00"
+  "updated_at": "2026-11-21T04:24:25+00:00"
 }
