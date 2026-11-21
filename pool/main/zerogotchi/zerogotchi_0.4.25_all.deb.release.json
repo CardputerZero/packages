@@ -1,0 +1,11 @@
+{
+  "filename": "zerogotchi_0.4.25_all.deb",
+  "url": "https://github.com/unagisan69/packages/releases/download/czdev-buffer/zerogotchi_0.4.25_all.deb",
+  "sha256": "2113b4a90c643e9e8af883785a888710e77ff29e2668ed545215854c29ad4ac9",
+  "size": 656616,
+  "package": "zerogotchi",
+  "version": "0.4.25",
+  "architecture": "all",
+  "uploaded_by": "unagisan69",
+  "uploader_email": "unagisan69@users.noreply.github.com"
+}
