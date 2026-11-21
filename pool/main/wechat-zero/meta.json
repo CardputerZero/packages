@@ -1,0 +1,33 @@
+{
+  "title": "WeChat Zero",
+  "summary": "Cardputer Zero 上的微信 iLink 客户端：扫码登录、离线拼音输入、好友扫码后可直接聊天。",
+  "description": "WeChat Zero 是把微信 iLink 带到 M5Stack Cardputer Zero 的原生客户端。装上后，这台 320×170 的掌上电脑就能直接收发微信文字消息，不需要电脑中转。\r\n\r\n主要功能\r\n· 扫码登录：设备屏幕直接显示二维码，用自己的微信扫码确认即可。\r\n· 好友扫码添加：按 F2 生成邀请二维码，好友用他的微信扫码确认后，设备会建立一条专属通道，你可以立刻主动给他发消息，不用等他先开口。\r\n· 离线拼音输入：7.7 万词条本地词库，输入拼音后按 Tab 转成汉字，1/2/3 选词、0 翻页，不联网、不耗 token。\r\n· 多好友：每个好友独立会话、未读红点、中文备注名，聊天记录和登录状态自动保存。\r\n· 为小屏设计：320×170 界面、46 键键盘操作，Esc 返回、Enter 发送、方向键翻看历史。\r\n\r\n使用提示\r\n1. 第一次打开，用自己的微信扫登录二维码。\r\n2. 按 F2 生成邀请二维码，让好友用他的手机扫；不要用自己的微信扫邀请码，一个微信只能绑定一条机器人通道。\r\n3. 输入拼音，按 Tab 选汉字，Enter 发送。\r\n\r\n说明\r\n· 只支持微信文字消息，图片/语音/文件暂不解析。\r\n· 好友需要先扫码授权；普通联系人需要先给机器人发一条消息才能回复。\r\n· 所有登录凭证只保存在设备本地，应用只连接微信官方 iLink 接口。\r\n· 开源 MIT，源码与问题反馈见 GitHub。",
+  "categories": [
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "WEXI",
+  "source_repo": "https://github.com/Apeadv/Wechat-for-cardputer-zero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Apead",
+    "github": "Apeadv"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "wechat-zero_icon.png",
+  "published_at": "2026-11-21T11:26:09+00:00",
+  "updated_at": "2026-11-21T11:26:09+00:00"
+}
