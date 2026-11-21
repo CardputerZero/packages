@@ -1,0 +1,11 @@
+{
+  "filename": "wechat-zero_1.1.0_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Apeadv__wechat-zero_1.1.0_all.deb",
+  "sha256": "df0528b00a073bb2c1387fbaa7d5e54e65fa5596e7c8990ad3ae4ed7e3bb28af",
+  "size": 1904160,
+  "package": "wechat-zero",
+  "version": "1.1.0",
+  "architecture": "all",
+  "uploaded_by": "Apeadv",
+  "uploader_email": "apeadv@users.noreply.github.com"
+}
