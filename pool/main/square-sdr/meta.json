@@ -1,0 +1,49 @@
+{
+  "title": "Square SDR",
+  "summary": "Tune, listen and transmit with a Square SDR 2 or Hermes-Lite 2 radio.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/square-sdr-receiver.png",
+    "screenshots/square-sdr-settings.png",
+    "screenshots/square-sdr-help.png",
+    "screenshots/square-sdr-receiver-light.png",
+    "screenshots/square-sdr-settings-light.png",
+    "screenshots/square-sdr-help-light.png"
+  ],
+  "description": "Square SDR turns your Cardputer Zero into a pocket controller for a Square SDR 2 (or other Hermes-Lite 2 style) radio. You'll need the radio, connected to the Cardputer by Ethernet, as this app doesn't pick up signals on its own.\n\nListen from 0 to 30 MHz in USB, LSB, AM or CW, with a live spectrum and waterfall, an S meter, an auto notch to zap whistles, and RIT to nudge the receive pitch. Hold Tab or Space to talk (built-in or USB mic) or send CW. Press H any time for a key guide.\n\nYou need an amateur radio licence to transmit. Transmit is kept to UK amateur bands, cuts out after 3 minutes or if you retune, and backs off on high SWR. Please test on a dummy load first.",
+  "locales": {
+    "ja": {
+      "summary": "Square SDR 2 / Hermes-Lite 2 系の無線機を操作するアプリ。",
+      "description": "Cardputer Zero から Ethernet 経由で無線機を操作します。使用には Square SDR 2 などの Hermes-Lite 2 系無線機が必要です。ライブ受信、USB/LSB/AM/CW、スペクトラムとウォーターフォール、Sメーター、オートノッチ、RIT、音声/CW送信に対応。送信にはアマチュア無線の免許が必要です。送信は英国のアマチュア帯に制限されます。ダミーロードで試験し、免許をお持ちの場合のみ送信してください。"
+    },
+    "zh-CN": {
+      "summary": "用于 Square SDR 2 / Hermes-Lite 2 电台的控制应用。",
+      "description": "通过以太网在 Cardputer Zero 上控制电台。需要 Square SDR 2 或其他 Hermes-Lite 2 类电台。支持实时接收、USB/LSB/AM/CW、频谱瀑布图、S 表、自动陷波、RIT 以及语音/CW 发射。发射需要业余无线电执照。发射仅限英国业余频段；请先用假负载测试，并仅在持有业余执照时发射。"
+    },
+    "es": {
+      "summary": "Controla una radio Square SDR 2 / Hermes-Lite 2 desde tu Cardputer.",
+      "description": "Controla tu radio por Ethernet desde Cardputer Zero. Necesitas un Square SDR 2 u otra radio tipo Hermes-Lite 2. Recepción en directo, USB/LSB/AM/CW, espectro y cascada, S-meter, notch automático, RIT y transmisión de voz/CW. Necesitas licencia de radioaficionado para transmitir. La transmisión se limita a las bandas de aficionado del Reino Unido; prueba antes con una carga ficticia y transmite solo con licencia."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/MrJoshMurray/square-sdr",
+  "icon": "square-sdr.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SQSD",
+  "author": {
+    "github": "MrJoshMurray",
+    "display_name": "MrJoshua"
+  },
+  "published_at": "2026-11-21T17:00:05+00:00",
+  "updated_at": "2026-11-21T17:00:05+00:00"
+}
