@@ -5,21 +5,21 @@
     "Media"
   ],
   "screenshots": [
-    "screenshots/app-simulator-dark-darwin.png",
-    "screenshots/app-simulator-light-darwin.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
   ],
-  "description": "Browse and play tracker modules in your Music folder or its subfolders. Supports the formats reported by the installed libopenmpt build, including classic MOD, S3M, XM, and IT modules. Skip tracks, seek, adjust volume or mute, and switch between spectrum, oscilloscope, and waterfall visualizers. No music is bundled.",
+  "description": "Browse and play tracker modules in your Music folder or its subfolders. \r\n\r\nSupports the formats reported by the installed libopenmpt build, including classic MOD, S3M, XM, and IT modules. \r\n\r\nSkip tracks, seek, adjust volume or mute, and switch between spectrum, oscilloscope, and waterfall visualisers. \r\n\r\nNo music is bundled, but you can legally download loads here:  https://modarchive.org",
   "license": "MIT",
   "source_repo": "https://github.com/MrJoshMurray/mod-player",
-  "icon": "mod-player-store.png",
+  "icon": "mod-player_icon.png",
   "permissions": {
-    "camera": false,
-    "microphone": false,
-    "imu": false,
-    "network": false,
     "additional_hardware": false,
     "background_service": false,
-    "external_display": false
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
   },
   "share_code": "MODP",
   "author": {
@@ -27,7 +27,7 @@
     "display_name": "MrJoshua"
   },
   "published_at": "2026-11-16T19:40:04+00:00",
-  "updated_at": "2026-11-21T17:09:20+00:00",
+  "updated_at": "2026-11-21T17:50:43+00:00",
   "locales": {
     "ja": {
       "title": "Mod Player",
