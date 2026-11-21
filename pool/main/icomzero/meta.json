@@ -12,7 +12,7 @@
     "screenshots/help.png",
     "screenshots/setup.png"
   ],
-  "description": "Choose Radio for network listening, waterfall and receive tuning, or FT8 for silent local decoding and explicitly initiated contacts. FT8 starts on 40m, shows CQ calls and your own conversations with estimated dB reports, and supports line selection with F/X or Fn+F/Fn+X. Enter answers the selected CQ. Tab opens Bands, Call CQ, station Settings, Stop Transmit, Logging and Help. Standard contacts use RRR and are saved locally before independent Wavelog/QRZ uploads. Requires configured callsign/grid, a synchronized device clock and radio network TX permission. QRZ API subscription may be required. FT8 automatically starts antenna tuning on entry and band changes, briefly transmitting a carrier. Configurable nominal RF watts, live SWR/power, TX-armed status and local TX rows are included. SWR above 2.0, excessive ALC or missing telemetry stop TX with a latched warning. Radio mode includes noise reduction and antenna tuning where supported; T briefly transmits a tuning carrier. Direct Icom profiles cover IC-705, IC-7300MK2, IC-7610, IC-7760, IC-7850/7851, IC-905, IC-9700 and IC-R8600 (receive only). TS-890S uses native KNS. IC-7300MK2 is hardware-tested; other radio models have protocol/emulator coverage and await physical validation. Credentials and station settings are stored privately on the device.",
+  "description": "Choose Radio for direct network audio, waterfall and receive tuning, or FT8 for silent decoding and explicitly initiated contacts. FT8 starts on 40m and shows CQ calls, your conversations and local TX records after their 15-second period ends. F/X selects lines; Enter or the selected-decode menu continues a contact from its current grid/report/acknowledgment stage. Auto audio frequency follows the selected station and replies use the opposite UTC period. Settings also allow a fixed audio frequency and nominal RF power. Tab includes Bands, Call CQ, Settings, Record QSO, Logging, antenna tuning and warning recovery. Record QSO reviews exchanged reports for an explicitly confirmed manual log. Completed contacts use RRR, save locally and upload independently to Wavelog/QRZ; a green popup confirms local saving. QRZ may require an API subscription. FT8 automatically starts antenna tuning on entry and band changes, briefly transmitting a carrier. SWR above 2.0, excessive ALC or missing active-TX telemetry stop TX with a latched warning. Requires configured callsign/grid, synchronized device time and radio TX permission. Direct Icom profiles cover IC-705, IC-7300MK2, IC-7610, IC-7760, IC-7850/7851, IC-905, IC-9700 and IC-R8600 (RX only). TS-890S uses native KNS. IC-7300MK2 is hardware-tested; other models await physical validation. Credentials stay private on the device.",
   "locales": {
     "ja": {
       "title": "ICOMzero",
@@ -41,5 +41,5 @@
     "display_name": "unagisan69"
   },
   "published_at": "2026-11-18T18:40:23+00:00",
-  "updated_at": "2026-11-21T09:15:52+00:00"
+  "updated_at": "2026-11-21T18:41:27+00:00"
 }
