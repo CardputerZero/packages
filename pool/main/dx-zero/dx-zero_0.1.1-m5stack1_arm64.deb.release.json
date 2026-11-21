@@ -1,0 +1,11 @@
+{
+  "filename": "dx-zero_0.1.1-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/adrianomoraes__dx-zero_0.1.1-m5stack1_arm64.deb",
+  "sha256": "753d0b71bf52660592335970d94fce82d0c0c35bd1c2f06dc708bbe7c22c3f0c",
+  "size": 695792,
+  "package": "dx-zero",
+  "version": "0.1.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "adrianomoraes",
+  "uploader_email": "adrianomoraes@users.noreply.github.com"
+}
