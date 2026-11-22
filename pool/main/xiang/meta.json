@@ -1,0 +1,30 @@
+{
+  "title": "XIANG",
+  "summary": "中国象棋 · 三档开源 AI 与六位码联机 / Chinese chess with AI and LAN play",
+  "description": "在 Cardputer Zero 下中国象棋。支持三档离线人机、同机双人和局域网联机。局域网对局使用 6 位数字房间码，网页与 Zero 可以互相建房和加入。配对需要联网，走棋通过 WebRTC 直连。简体中文和英文界面可切换，按 Esc 或 Backspace 取消选棋。\r\n\r\nPlay Chinese chess on Cardputer Zero against the offline engine, with a friend on one device, or over LAN. Pair over the internet with a six-digit code, then play directly over WebRTC. Supports Simplified Chinese and English.\r\n\r\n联机网页 / Web app: https://xiangzero.vercel.app/\r\n源码 / Source: https://github.com/xu-c/XIANG\r\n许可证 / License: GPL-3.0-or-later. Bundled XQWLight by Morning Yellow (xqbase) is GPL-2.0-or-later, with its original source, copyright notices and license included. https://github.com/xqbase/xqwlight",
+  "categories": [
+    "Games"
+  ],
+  "license": "GPL-3.0-or-later",
+  "share_code": "ZGXQ",
+  "source_repo": "https://github.com/xu-c/XIANG",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "xu-c",
+    "github": "xu-c"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "xiang_icon.png",
+  "published_at": "2026-11-22T10:04:53+00:00",
+  "updated_at": "2026-11-22T10:04:53+00:00"
+}
