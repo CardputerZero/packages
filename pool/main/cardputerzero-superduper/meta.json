@@ -1,0 +1,32 @@
+{
+  "title": "Superduper",
+  "summary": "Drift, boost and battle through eight offline racing circuits.",
+  "description": "Race three rivals over two laps, or take the same grid through an eight-round tournament. Dodge tractors in Rolling Pastures, chase the beat through Neon Borough and steer around elephants on Savanna Crossing. Drifts build boost, pickups arm your car, and race points change your finish time. Designed for the built-in keyboard, screen and speaker.",
+  "categories": [
+    "Games"
+  ],
+  "license": "LicenseRef-Proprietary",
+  "share_code": "SDPR",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "strax-hacks",
+    "github": "strax-hacks"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardputerzero-superduper_icon.png",
+  "published_at": "2026-11-22T19:01:30+00:00",
+  "updated_at": "2026-11-22T19:01:30+00:00"
+}
