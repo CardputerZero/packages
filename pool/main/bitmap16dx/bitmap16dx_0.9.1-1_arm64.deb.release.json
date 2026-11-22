@@ -1,0 +1,11 @@
+{
+  "filename": "bitmap16dx_0.9.1-1_arm64.deb",
+  "url": "https://github.com/bradmcnally/packages/releases/download/czdev-buffer/bitmap16dx_0.9.1-1_arm64.deb",
+  "sha256": "bf5ed01b15f7039a73a92eb8fffe33c8932a904e8c6aa1fcb899a843c4284c07",
+  "size": 229796,
+  "package": "bitmap16dx",
+  "version": "0.9.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "bradmcnally",
+  "uploader_email": "bradmcnally@users.noreply.github.com"
+}
