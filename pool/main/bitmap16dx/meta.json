@@ -1,35 +1,35 @@
 {
   "title": "BitMap16 DX",
-  "summary": "A tiny pixel art sketchbook",
-  "description": "BitMap16 DX is a tiny pixel-art sketchbook for Cardputer ADV and Cardputer Zero, channeling the vibe of 2000s handheld game consoles. \r\n\r\nCreate pixel art on 8×8, 16×16, or 32×32 canvases. Draw, erase, and fill, with zoom, a pixel-accurate minimap, and 16-step undo and redo. Choose built-in palettes, swap colors, or browse the daily Lospec feed and import by name or URL. Preview your sketches in a slideshow, and export PNGs at 128×128 or their original size.",
+  "summary": "Draw tiny pixel art, collect palettes, and export your sketches.",
+  "description": "BitMap16 DX is a tiny pixel-art sketchbook for Cardputer ADV and Cardputer Zero, channeling the vibe of 2000s handheld game consoles.\n\nCreate pixel art on 8×8, 16×16, or 32×32 canvases. Draw, erase, and fill, with zoom, a pixel-accurate minimap, and 16-step undo and redo. Choose built-in palettes, swap colors, or browse the daily Lospec feed and import by name or URL. Preview your sketches in a slideshow, and export PNGs at 128×128 or their original size.",
   "categories": [
     "Creative & Office"
   ],
   "license": "MIT",
   "share_code": "16DX",
-  "source_repo": "https://github.com/bradmcnally/bitmap16dx/",
+  "source_repo": "https://github.com/bradmcnally/bitmap16dx",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": true,
     "additional_hardware": false,
     "background_service": false,
-    "camera": false,
-    "external_display": false,
-    "imu": true,
-    "microphone": false,
-    "network": true
+    "external_display": false
   },
   "author": {
     "display_name": "beepbot",
     "github": "bradmcnally"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png",
-    "screenshots/screenshot-3.png",
-    "screenshots/screenshot-4.png",
-    "screenshots/screenshot-5.png"
+    "screenshots/Cardputer_2026-11-19_21-40-59_1831.png",
+    "screenshots/Cardputer_2026-11-19_21-43-12_EC11.png",
+    "screenshots/Cardputer_2026-11-19_21-41-53_C5EB.png",
+    "screenshots/Cardputer_2026-11-19_21-17-35_CFD8.png",
+    "screenshots/Cardputer_2026-11-19_21-42-26_2360.png",
+    "screenshots/Cardputer_2026-11-19_21-17-25_F906.png"
   ],
-  "icon": "bitmap16dx_icon.png",
+  "icon": "icon.png",
   "published_at": "2026-11-20T06:09:15+00:00",
-  "updated_at": "2026-11-20T06:09:15+00:00"
+  "updated_at": "2026-11-22T05:57:42+00:00"
 }
