@@ -1,0 +1,35 @@
+{
+  "title": "CWTrainerZero",
+  "summary": "Offline Morse code practice for Cardputer Zero.",
+  "description": "Listen to a short Morse group, type what you heard and check your answer character by character. Start with K and M, work through 25 letter lessons or jump to all of A–Z. Separate Numbers and Punctuation sets give you more to practise, with groups of one to four characters.\r\n\r\nReplay any prompt or preview the newest letter. Characters play at 18 WPM, with adjustable Farnsworth spacing so you can practise at a slower overall pace without stretching the dots and dashes. Your settings and scores stay on the device. No account or internet connection is required.\r\n\r\nDeveloped for Tartanleaf.com by Greg Weir VA1GW",
+  "categories": [
+    "Radio & Comms",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "CWTZ",
+  "source_repo": "https://github.com/gregweir/CWTrainerZero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Greg Weir VA1GW",
+    "github": "gregweir"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "cwtrainerzero_icon.png",
+  "published_at": "2026-11-22T23:45:38+00:00",
+  "updated_at": "2026-11-22T23:45:38+00:00"
+}
