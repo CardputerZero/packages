@@ -1,0 +1,47 @@
+{
+  "title": "ZeroPower",
+  "summary": "Battery saver: live power draw, turn off Ethernet, HDMI, BT, services",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/battery.png",
+    "screenshots/hardware.png",
+    "screenshots/saving.png",
+    "screenshots/home.png"
+  ],
+  "description": "Make the Cardputer Zero last longer. See the live power draw from the battery gauge, then turn off for good what a handheld does not need, and undo it just as easily.\n\n- Battery: average draw over the last 30 s, charge, voltage and time left, with the last minute as bars. R restarts the average, so you can see what each setting saves.\n- Hardware: internal USB Ethernet (On / Auto-suspend / Off, ~90 mA less), Wi-Fi, Bluetooth, the HDMI desktop (lightdm) and the GPU memory split (16 MB is enough for the built-in screen: 48 MB more RAM).\n- Services: Tailscale, background extras (NFS, rpcbind, avahi, apt timers) and system logs in RAM.\n- Power saving (zeropowerd, a service running as the device user, not root): screen off pauses the launcher and parks its audio (a key wakes it), quiet launcher (no key sounds), a clean power-off at low battery, and a screen timeout that turns the screen off after a few minutes without a key, as a safety net for when the launcher or an app leaves it on.\n\nSettings stay in the system itself and survive reboots. Uninstalling ZeroPower puts every changed setting back. System changes go through a small helper that accepts a fixed list of settings, run with the device user's passwordless sudo (as set up by Raspberry Pi Imager); no sudoers file is installed.\n\nMeasured on a Cardputer Zero with the screen off: 301 mA -> 209 mA just with Ethernet auto-suspend. Ideas and first measurements from cz-battery-saver by InstantComet (MIT).",
+  "locales": {
+    "es": {
+      "title": "ZeroPower",
+      "summary": "Ahorro de batería: consumo en vivo, apaga Ethernet, HDMI, BT y servicios"
+    },
+    "zh-CN": {
+      "title": "ZeroPower",
+      "summary": "省电：实时功耗，关闭以太网、HDMI、蓝牙和服务"
+    },
+    "ja": {
+      "title": "ZeroPower",
+      "summary": "省電力：消費電流を表示、Ethernet・HDMI・BT・サービスをオフ"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/baltamir1978/ZeroPower",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "ZPWR",
+  "author": {
+    "github": "baltamir1978",
+    "display_name": "baltamir1978"
+  },
+  "published_at": "2026-11-22T19:16:36+00:00",
+  "updated_at": "2026-11-22T19:16:36+00:00"
+}
