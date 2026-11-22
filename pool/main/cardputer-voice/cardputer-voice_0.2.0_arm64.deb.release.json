@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-voice_0.2.0_arm64.deb",
+  "url": "https://github.com/hellomsg/packages/releases/download/czdev-buffer/cardputer-voice_0.2.0_arm64.deb",
+  "sha256": "b3877bf0dbf3eeed631765c493e314e59540920f5fbe34e96444ecd0e896fde7",
+  "size": 2006420,
+  "package": "cardputer-voice",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "hellomsg",
+  "uploader_email": "hellomsg@users.noreply.github.com"
+}

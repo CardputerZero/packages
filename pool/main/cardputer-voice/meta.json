@@ -1,0 +1,37 @@
+{
+  "title": "Cardputer Voice Input",
+  "summary": "Press Fn + V to transcribe speech into supported apps.",
+  "categories": [
+    "AI",
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/settings.png"
+  ],
+  "description": "Use Fn + V to start and stop recording, then insert the transcribed text into the focused input field. Choose DeepSeek or OpenAI (English) and switch configured providers with Shift + Fn + V. The settings app provides API key management, service controls and a shortcut guide. REC and ASR badges show progress; recording is canceled if the input target changes. Compatible with supported APPLaunch, ZClaw and CLI/ST builds; other apps may require adaptation. Requires an API key and network access. Audio is sent to the selected provider, whose pricing and data policies apply.",
+  "locales": {
+    "en-US": {
+      "title": "Cardputer Voice Input",
+      "summary": "Press Fn + V to transcribe speech into supported apps."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/hellomsg/cardputer-zero-voice-input",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "CV09",
+  "author": {
+    "github": "hellomsg",
+    "display_name": "HELLOMSG"
+  },
+  "published_at": "2026-11-22T17:48:11+00:00",
+  "updated_at": "2026-11-22T17:48:11+00:00"
+}
