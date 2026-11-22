@@ -28,5 +28,15 @@
     "display_name": "Phil Portman"
   },
   "published_at": "2026-11-22T03:04:12+00:00",
-  "updated_at": "2026-11-22T03:04:12+00:00"
+  "updated_at": "2026-11-22T03:04:12+00:00",
+  "locales": {
+    "zh-CN": {
+      "title": "TV",
+      "summary": "用任意 M3U 播放列表看直播，可在卡片自带屏幕上播放，也可接电视。"
+    },
+    "ja": {
+      "title": "TV",
+      "summary": "任意の M3U プレイリストでライブ TV。本体画面でも、テレビでも再生。"
+    }
+  }
 }
