@@ -1,0 +1,36 @@
+{
+  "title": "MatrixZero",
+  "summary": "Encrypted Matrix chat: rooms, DMs, photos, voice messages, emoji verify",
+  "categories": [
+    "Radio & Comms",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/1-rooms.png",
+    "screenshots/2-chat.png",
+    "screenshots/3-react.png",
+    "screenshots/4-voice.png",
+    "screenshots/5-verify.png",
+    "screenshots/6-settings.png"
+  ],
+  "description": "MatrixZero is a full Matrix client for the Cardputer Zero. Sign in to matrix.org or your own homeserver and chat straight from the keyboard.\n\nWhat it can do:\n- Rooms, direct messages and invites, with unread counts, pinning and search\n- End-to-end encryption, the same as Element and FluffyChat\n- Verify this device from your phone by comparing emoji\n- Unlock older encrypted messages with your recovery key\n- Reply, edit, delete and react\n- Take a photo with the camera and send it, and view images full screen\n- Record and send voice messages, and play audio in the chat\n- File names on photos, audio and documents\n- Emoji in names and messages\n- Rooms and messages are saved, so it opens fast\n\nKeys: 4 Menu, 5 React (Pin on the room list), 6 Reply (Find on the room list), 7 Help, 8 Settings. f z x c move around. Fn+H shows every key. Hold Esc to quit.\n\nYour session and keys stay on the device in ~/.local/share/matrixzero.",
+  "license": "GPL-3.0-only",
+  "source_repo": "https://github.com/Z3R0C1PH3R/MatrixZero",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": true,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "MTRX",
+  "author": {
+    "display_name": "z3r0c1ph3r",
+    "github": "Z3R0C1PH3R"
+  },
+  "published_at": "2026-11-22T15:41:14+00:00",
+  "updated_at": "2026-11-22T15:41:14+00:00"
+}
