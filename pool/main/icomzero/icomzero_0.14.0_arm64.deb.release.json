@@ -1,0 +1,11 @@
+{
+  "filename": "icomzero_0.14.0_arm64.deb",
+  "url": "https://github.com/unagisan69/packages/releases/download/czdev-buffer/icomzero_0.14.0_arm64.deb",
+  "sha256": "1363c374fd4e2e4a5cadd657303a8ed71f35573b1e7720705db28e4036c1698a",
+  "size": 1735820,
+  "package": "icomzero",
+  "version": "0.14.0",
+  "architecture": "arm64",
+  "uploaded_by": "unagisan69",
+  "uploader_email": "unagisan69@users.noreply.github.com"
+}
