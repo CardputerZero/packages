@@ -1,0 +1,11 @@
+{
+  "filename": "rtl-sdr-receiver_0.1.3_arm64.deb",
+  "url": "https://github.com/MrJoshMurray/packages/releases/download/czdev-buffer/rtl-sdr-receiver_0.1.3_arm64.deb",
+  "sha256": "991364544d569feeb32b255e22422de6471c8513670d92d016a5887835c72d36",
+  "size": 2331172,
+  "package": "rtl-sdr-receiver",
+  "version": "0.1.3",
+  "architecture": "arm64",
+  "uploaded_by": "MrJoshMurray",
+  "uploader_email": "MrJoshMurray@users.noreply.github.com"
+}
