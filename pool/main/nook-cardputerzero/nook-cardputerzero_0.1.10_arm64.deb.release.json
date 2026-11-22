@@ -1,0 +1,11 @@
+{
+  "filename": "nook-cardputerzero_0.1.10_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/delikely__nook-cardputerzero_0.1.10_arm64.deb",
+  "sha256": "93472a18903270b77d76997a054ca1e4f83927cfdac019b21a9cbae593cd32ed",
+  "size": 4746610,
+  "package": "nook-cardputerzero",
+  "version": "0.1.10",
+  "architecture": "arm64",
+  "uploaded_by": "delikely",
+  "uploader_email": "delikely@users.noreply.github.com"
+}
