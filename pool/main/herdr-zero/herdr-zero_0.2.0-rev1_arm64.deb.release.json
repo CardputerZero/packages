@@ -1,0 +1,11 @@
+{
+  "filename": "herdr-zero_0.2.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/cdpath__herdr-zero_0.2.0-rev1_arm64.deb",
+  "sha256": "6a6f67a2ba934d1722a53dff3f48ae1f81dc05fa5eeaf1f3ceebc632814d6769",
+  "size": 27960670,
+  "package": "herdr-zero",
+  "version": "0.2.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "cdpath",
+  "uploader_email": "cdpath@users.noreply.github.com"
+}
