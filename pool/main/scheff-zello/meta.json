@@ -1,0 +1,30 @@
+{
+  "title": "Scheff Zello",
+  "summary": "Zello push-to-talk: hold Space to talk on your Zello channels",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/main.png"
+  ],
+  "description": "A Zello push-to-talk client. Sign in to zello.io or a Zello Work network, pick a channel, and hold Space to talk; incoming voice plays as it arrives, and channel text messages can be read and sent. Set it up on the device or from a browser on the same network (port 8960). Uses the system's default audio devices, so a USB headset with a microphone works and can be plugged in while it runs. fn+S/D sets the volume, fn+U/I the brightness; hold Esc for 3 seconds to quit.",
+  "license": "GPL-3.0-only",
+  "source_repo": "https://github.com/oumike/scheff-zello",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SCZE",
+  "author": {
+    "github": "oumike",
+    "display_name": "oumike"
+  },
+  "published_at": "2026-11-22T02:50:59+00:00",
+  "updated_at": "2026-11-22T02:50:59+00:00"
+}
