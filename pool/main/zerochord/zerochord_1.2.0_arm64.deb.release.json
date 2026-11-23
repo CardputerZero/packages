@@ -1,0 +1,11 @@
+{
+  "filename": "zerochord_1.2.0_arm64.deb",
+  "url": "https://github.com/momo20261121/packages/releases/download/czdev-buffer/zerochord_1.2.0_arm64.deb",
+  "sha256": "0268cad6bf624b4a69e55486200923150ca1687385c70cb0d37aa89ba68b48ec",
+  "size": 723192,
+  "package": "zerochord",
+  "version": "1.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "momo20261121",
+  "uploader_email": "momo20261121@users.noreply.github.com"
+}
