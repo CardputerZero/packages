@@ -1,0 +1,11 @@
+{
+  "filename": "zero-cellular_1.0.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/hexbyte42-bot__zero-cellular_1.0.0-1_arm64.deb",
+  "sha256": "35e8bdcf9f1b8da416ff37507e38393285dfc38430464ef5aeea9396b0bf2517",
+  "size": 1503024,
+  "package": "zero-cellular",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "hexbyte42-bot",
+  "uploader_email": "hexbyte42-bot@users.noreply.github.com"
+}
