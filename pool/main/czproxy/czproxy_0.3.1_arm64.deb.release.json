@@ -1,0 +1,11 @@
+{
+  "filename": "czproxy_0.3.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/2001261__czproxy_0.3.1_arm64.deb",
+  "sha256": "e35e9d2ecd4b9f84981f905fd2f86ada0425994d6800e0671efe6d175543c5f7",
+  "size": 24630974,
+  "package": "czproxy",
+  "version": "0.3.1",
+  "architecture": "arm64",
+  "uploaded_by": "2001261",
+  "uploader_email": "2001261@users.noreply.github.com"
+}
