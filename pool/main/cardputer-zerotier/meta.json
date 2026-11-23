@@ -1,0 +1,32 @@
+{
+  "title": "ZeroTier",
+  "summary": "Join ZeroTier networks on the Cardputer Zero: node, IP and status.",
+  "description": "ZeroTier client for the Cardputer Zero. See every network you have joined, whether it is up, and the IP this node got, then switch networks without a laptop.\r\n\r\nFeatures\r\n- Node online state and 10 character node ID in the top bar\r\n- One card per network: name, state (OK / OFF / REQ), assigned IP and network ID\r\n- ENTER connects the selected network, D disconnects it after a confirmation, N joins a new network by typing its 16 digit ID\r\n- Disconnecting keeps the network in the list, so reconnecting later is one key press and no ID retyping\r\n- 16 cell progress meter while typing a network ID\r\n- Hold ESC for 3 seconds to leave the app, release to cancel\r\n- Runs as a normal user; the only privileged command is zerotier-cli\r\n\r\nOne time setup (the app shows a hint until this is done)\r\n1) sudo apt install zerotier-one    (then join your network on the PC side or from this app)\r\n2) echo 'ALL ALL=(root) NOPASSWD: /usr/sbin/zerotier-cli' | sudo tee /etc/sudoers.d/cardputer-zerotier\r\n   sudo chmod 440 /etc/sudoers.d/cardputer-zerotier\r\n\r\nPermissions: network only. No camera, microphone, IMU, extra hardware, background service or external display.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "Unlicense",
+  "share_code": "ZT01",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "simonartt",
+    "github": "simonartt"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardputer-zerotier_icon.png",
+  "published_at": "2026-11-23T06:13:19+00:00",
+  "updated_at": "2026-11-23T06:13:19+00:00"
+}
