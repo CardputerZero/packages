@@ -1,0 +1,11 @@
+{
+  "filename": "lora-tunnel_1.2.0_all.deb",
+  "url": "https://github.com/valleytechsolutions/packages/releases/download/czdev-buffer/lora-tunnel_1.2.0_all.deb",
+  "sha256": "0d9b66628c03e9fcf0214962d43100e78738a2e82f3a31164cb550d107bd6c47",
+  "size": 835756,
+  "package": "lora-tunnel",
+  "version": "1.2.0",
+  "architecture": "all",
+  "uploaded_by": "valleytechsolutions",
+  "uploader_email": "valleytechsolutions@users.noreply.github.com"
+}
