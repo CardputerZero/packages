@@ -1,0 +1,11 @@
+{
+  "filename": "nfc-studio_0.3.9-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/nfc-studio_0.3.9-1_arm64.deb",
+  "sha256": "64130bd29625c8b88c41d07471b658d7af9401b56a48e5f027733cd9c26cd000",
+  "size": 2473508,
+  "package": "nfc-studio",
+  "version": "0.3.9-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
