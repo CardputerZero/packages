@@ -1,0 +1,34 @@
+{
+  "title": "Beamhound",
+  "summary": "Sniffs out your IR remote from one button press and becomes it.",
+  "description": "Point a remote at the Cardputer and press Power.\r\nBeamhound decodes the signal and finds every remote in the Flipper-IRDB database with that power code.\r\nRemotes with identical codes count as one answer, so it only asks questions that actually separate the remaining code sets. Each turn it picks the cheapest useful question: press another button on your remote, pick the device type, pick the brand, or did your device react to this test signal?\r\nOnce matched, the profile is saved and you get a remote-control screen.",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "BEAM",
+  "source_repo": "https://github.com/bfeller/beamhound",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "bfeller",
+    "github": "bfeller"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "beamhound_icon.png",
+  "published_at": "2026-11-23T01:36:08+00:00",
+  "updated_at": "2026-11-23T01:36:08+00:00"
+}
