@@ -1,0 +1,11 @@
+{
+  "filename": "strawberry-video-player_2.7.10_all.deb",
+  "url": "https://github.com/dave-taylor-7654/packages/releases/download/czdev-buffer/strawberry-video-player_2.7.10_all.deb",
+  "sha256": "150ee85d8d67e4df5277c55d9fd0cabc102d851287e93284ee1439c0cc3b7c1d",
+  "size": 133948,
+  "package": "strawberry-video-player",
+  "version": "2.7.10",
+  "architecture": "all",
+  "uploaded_by": "dave-taylor-7654",
+  "uploader_email": "dave-taylor-7654@users.noreply.github.com"
+}
