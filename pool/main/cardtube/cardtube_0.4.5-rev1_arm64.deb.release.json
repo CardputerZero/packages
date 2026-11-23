@@ -1,0 +1,11 @@
+{
+  "filename": "cardtube_0.4.5-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Lore-Bul__cardtube_0.4.5-rev1_arm64.deb",
+  "sha256": "52093fd34e297045c991bd5b445eac4da3fbfb59577e2372b3cc46036d6fa6be",
+  "size": 1134160,
+  "package": "cardtube",
+  "version": "0.4.5-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "Lore-Bul",
+  "uploader_email": "lore-bul@users.noreply.github.com"
+}

@@ -1,0 +1,34 @@
+{
+  "title": "CardTube",
+  "summary": "A pocket version of YouTube in your Cardputer Zero!",
+  "description": "This is a local Youtube media player that works 100% on your CardputerZero, no api needed, just internet connection, it features bluetooth connectivity for audio streaming and a video player for the Youtube vids, also it offer a video/audio queue",
+  "categories": [
+    "Media",
+    "Lifestyle"
+  ],
+  "license": "MIT",
+  "share_code": "CTUB",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "LoreBul",
+    "github": "Lore-Bul"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "cardtube_icon.png",
+  "published_at": "2026-11-20T14:26:06+00:00",
+  "updated_at": "2026-11-20T14:26:06+00:00"
+}
