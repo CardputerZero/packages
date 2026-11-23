@@ -1,0 +1,31 @@
+{
+  "title": "zread",
+  "summary": "A lightweight, distraction-free TUI e-reader written in Rust",
+  "description": "A lightweight, distraction-free TUI e-reader written in Rust (ratatui + crossterm) for the M5Stack Cardputer Zero (aarch64 Linux, 320×170 display) and other small-screen handhelds.",
+  "categories": [
+    "Media",
+    "Other"
+  ],
+  "license": "MIT",
+  "share_code": "ZRED",
+  "source_repo": "https://github.com/JazzplayerL9/zread",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "JazzplayerL9",
+    "github": "JazzplayerL9"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "zread_icon.png",
+  "published_at": "2026-11-22T03:39:42+00:00",
+  "updated_at": "2026-11-22T03:39:42+00:00"
+}
