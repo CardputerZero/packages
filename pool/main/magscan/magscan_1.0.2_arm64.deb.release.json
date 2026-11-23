@@ -1,0 +1,11 @@
+{
+  "filename": "magscan_1.0.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/nerdosity__magscan_1.0.2_arm64.deb",
+  "sha256": "388ac5538c185c6de3a9ab679e4fb19074a8dca32491cf70edc07e1e96a96881",
+  "size": 63362,
+  "package": "magscan",
+  "version": "1.0.2",
+  "architecture": "arm64",
+  "uploaded_by": "nerdosity",
+  "uploader_email": "nerdosity@users.noreply.github.com"
+}
