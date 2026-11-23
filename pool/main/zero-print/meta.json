@@ -1,0 +1,31 @@
+{
+  "title": "Zero Print",
+  "summary": "Zero Print captures images using the camera of the CardputerZero and prints them",
+  "description": "Zero Print is a CardputerZero app that captures photos and prints them on thermal printers. It uses the built-in IMX219 camera, offers a live preview, and converts captured frames to monochrome with Floyd-Steinberg, Atkinson, or threshold dithering.",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "ZPRT",
+  "source_repo": "https://github.com/der-test/zero-print",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "der-test",
+    "github": "der-test"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "zero-print_icon.png",
+  "published_at": "2026-11-23T18:52:31+00:00",
+  "updated_at": "2026-11-23T18:52:31+00:00"
+}

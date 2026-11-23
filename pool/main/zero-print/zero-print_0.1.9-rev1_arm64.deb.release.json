@@ -1,0 +1,11 @@
+{
+  "filename": "zero-print_0.1.9-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/der-test__zero-print_0.1.9-rev1_arm64.deb",
+  "sha256": "82427d2eff4a459d30915fd003f73637dd14a9ba026187c1a01f65465da6557a",
+  "size": 1957758,
+  "package": "zero-print",
+  "version": "0.1.9-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "der-test",
+  "uploader_email": "der-test@users.noreply.github.com"
+}
