@@ -1,0 +1,11 @@
+{
+  "filename": "stickzero_0.1.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/TacoDelPaco__stickzero_0.1.1_arm64.deb",
+  "sha256": "df8d226c54edb2bb74615346e5d4f7ccb235a7477be5e97a9bc5e00e74ecf450",
+  "size": 328132,
+  "package": "stickzero",
+  "version": "0.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "TacoDelPaco",
+  "uploader_email": "gfg.hax@gmail.com"
+}
