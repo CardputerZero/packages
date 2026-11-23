@@ -1,0 +1,11 @@
+{
+  "filename": "cardputerzero-superduper_1.1.0-10_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/strax-hacks__cardputerzero-superduper_1.1.0-10_arm64.deb",
+  "sha256": "18a8088754cac40c9dd3932638914ba68258e991ba3b6d9380d24e64f6c82d0f",
+  "size": 6924686,
+  "package": "cardputerzero-superduper",
+  "version": "1.1.0-10",
+  "architecture": "arm64",
+  "uploaded_by": "strax-hacks",
+  "uploader_email": "strax-hacks@users.noreply.github.com"
+}
