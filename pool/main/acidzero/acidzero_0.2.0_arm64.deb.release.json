@@ -1,0 +1,11 @@
+{
+  "filename": "acidzero_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kurogedelic__acidzero_0.2.0_arm64.deb",
+  "sha256": "e17716a8d0087332ddeb09029f22d995a7f3e89dde929996247c4f24c1195996",
+  "size": 58940,
+  "package": "acidzero",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "kurogedelic",
+  "uploader_email": "kurogedelic@users.noreply.github.com"
+}
