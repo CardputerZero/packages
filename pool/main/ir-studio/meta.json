@@ -1,0 +1,36 @@
+{
+  "title": "IR Studio",
+  "summary": "38 kHz IR studio with PulseNet-IR ML, Smart AC, universal probe & .ir lab",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/read.png",
+    "screenshots/remote.png",
+    "screenshots/ac.png",
+    "screenshots/probe.png",
+    "screenshots/rx.png"
+  ],
+  "description": "IR Studio is a pure-Go 38 kHz Infrared lab for CardputerZero (/dev/lirc*). Capture and decode NEC, Samsung32, RC5, RC6, SIRC, Kaseikyo and RAW frames; classify 24 real IR protocols and match remotes via 32D SupCon k-NN with embedded INT8 PulseNet-IR; rescue noisy/AGC-stretched signals with 1D K-Means and neural 1D-UNet denoising; control 6 AC brands with checksummed state frames; run TV-B-Gone/TV-Service probes, macros, Pronto Hex import/export, PWM flicker/RPM optical lab tools, and an opt-in stdio MCP server.",
+  "license": "MIT",
+  "source_repo": "https://github.com/igenexxx/ir-studio",
+  "icon": "ir-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "IRST",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-23T20:42:46+00:00",
+  "updated_at": "2026-11-23T20:42:46+00:00"
+}
