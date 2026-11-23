@@ -12,19 +12,19 @@
     "screenshots/screenshot-4.png",
     "screenshots/screenshot-5.png"
   ],
-  "description": "RTL SDR turns your Cardputer Zero into a pocket radio receiver. \r\n\r\nYou'll need an RTL-SDR USB dongle (plugged into the USB port) and an antenna, as the Cardputer can't pick up radio on its own. \r\n\r\nTune broadcast FM, medium wave and shortwave AM, airband and military airband, marine and ham bands from 160m up to 23cm, and anything else from 0.1 MHz to 1.7 GHz. \r\n\r\nPick a band, mode (FMW, FMN, AM, USB, LSB, CW), filter width and step, or type an exact frequency. \r\n\r\nThere's a live spectrum and waterfall, an uncalibrated S meter, squelch, an auto notch filter, and RIT. \r\n\r\nPress H any time for a key guide.\r\n\r\nConfirmed working with the RTL-SDR Blog V3 and Nooelec NESDR SMArt v5. Fixed startup on systems requiring PulseAudio audio output.",
+  "description": "RTL SDR turns your Cardputer Zero into a pocket radio receiver. \r\n\r\nYou'll need an RTL-SDR USB dongle (plugged into the USB port) and an antenna, as the Cardputer can't pick up radio on its own. \r\n\r\nTune broadcast FM, medium wave and shortwave AM, airband and military airband, marine and ham bands from 160m up to 23cm, and anything else from 0.1 MHz to 1.7 GHz. \r\n\r\nPick a band, mode (FMW, FMN, AM, USB, LSB, CW), filter width and step, or type an exact frequency. \r\n\r\nThere's a live spectrum and waterfall, a relative SNR estimate, dB squelch, an auto notch filter, and RIT. \r\n\r\nPress H any time for a key guide.\r\n\r\nConfirmed working with the RTL-SDR Blog V3 and Nooelec NESDR SMArt v5. Fixed startup on systems requiring PulseAudio audio output.\r\n\r\n0.1.5 fixes steady stations dropping to S0 and muting with squelch enabled. SNR and squelch use an independent noise estimate; the 0.1.5 trial was tested with the RTL-SDR Blog V3.",
   "locales": {
     "ja": {
       "summary": "RTL-SDR ドングルで FM、航空無線、短波、アマチュア無線を受信。",
-      "description": "Cardputer Zero を RTL-SDR USB ドングルと組み合わせた受信専用ラジオにします。USB ドングルとアンテナが必要です。送信はできません。FM 放送、AM、短波、航空無線、アマチュア無線など 0.1 MHz〜1.7 GHz を受信でき、周波数の直接入力、スペクトラムとウォーターフォール、S メーター、オートノッチ、RIT に対応。H キーで操作一覧を表示します。"
+      "description": "Cardputer Zero を RTL-SDR USB ドングルと組み合わせた受信専用ラジオにします。USB ドングルとアンテナが必要です。送信はできません。FM 放送、AM、短波、航空無線、アマチュア無線など 0.1 MHz〜1.7 GHz を受信でき、周波数の直接入力、スペクトラムとウォーターフォール、相対 SNR 表示と dB スケルチ、オートノッチ、RIT に対応。H キーで操作一覧を表示します。"
     },
     "zh-CN": {
       "summary": "使用 RTL-SDR 接收器收听 FM、航空、短波和业余无线电。",
-      "description": "将 Cardputer Zero 变成仅接收的口袋收音机，需要 RTL-SDR USB 接收器和天线，不支持发射。支持 0.1 MHz 至 1.7 GHz，包括 FM 广播、AM、短波、航空和业余频段，可直接输入频率，带频谱瀑布图、S 表、自动陷波和 RIT。按 H 查看按键说明。"
+      "description": "将 Cardputer Zero 变成仅接收的口袋收音机，需要 RTL-SDR USB 接收器和天线，不支持发射。支持 0.1 MHz 至 1.7 GHz，包括 FM 广播、AM、短波、航空和业余频段，可直接输入频率，带频谱瀑布图、相对信噪比显示和 dB 静噪、自动陷波和 RIT。按 H 查看按键说明。"
     },
     "es": {
       "summary": "Escucha FM, aviación, onda corta y radioaficionados con un RTL-SDR.",
-      "description": "Convierte tu Cardputer Zero en un receptor de radio de bolsillo. Necesitas un dongle USB RTL-SDR y una antena. Solo recibe, nunca transmite. Cubre de 0,1 MHz a 1,7 GHz: FM, AM, onda corta, aviación y bandas de aficionado. Escribe una frecuencia exacta, con espectro y cascada, S-meter, notch automático y RIT. Pulsa H para ver las teclas."
+      "description": "Convierte tu Cardputer Zero en un receptor de radio de bolsillo. Necesitas un dongle USB RTL-SDR y una antena. Solo recibe, nunca transmite. Cubre de 0,1 MHz a 1,7 GHz: FM, AM, onda corta, aviación y bandas de aficionado. Escribe una frecuencia exacta, con espectro y cascada, estimación relativa de SNR y squelch en dB, notch automático y RIT. Pulsa H para ver las teclas."
     }
   },
   "license": "MIT",
@@ -45,5 +45,5 @@
     "display_name": "MrJoshua"
   },
   "published_at": "2026-11-21T16:54:59+00:00",
-  "updated_at": "2026-11-23T16:34:53+00:00"
+  "updated_at": "2026-11-23T17:14:28+00:00"
 }
