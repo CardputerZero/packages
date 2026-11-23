@@ -1,0 +1,11 @@
+{
+  "filename": "cp0-ir-remote_1.1.2_arm64.deb",
+  "url": "https://github.com/RealOuO/packages/releases/download/czdev-buffer/cp0-ir-remote_1.1.2_arm64.deb",
+  "sha256": "ffa19cc97cb43f073487407f95aaf6429830593ed22d6bc2658e97d9b2c3bea0",
+  "size": 42560,
+  "package": "cp0-ir-remote",
+  "version": "1.1.2",
+  "architecture": "arm64",
+  "uploaded_by": "RealOuO",
+  "uploader_email": "RealOuO@users.noreply.github.com"
+}
