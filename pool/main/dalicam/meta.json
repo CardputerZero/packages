@@ -1,0 +1,31 @@
+{
+  "title": "DaliCam",
+  "summary": "Gemini/OpenAI powered capture, gallery, edit/generate with preset artist",
+  "description": "DaliCam is a device-first CardputerZero app for capturing photos, uploading test \r\n images, browsing galleries, and generating new images with Gemini and OpenAI     \r\n image models. It includes an on-device prompt workflow, a browser-based WebUI on \r\n port 8080, remote capture, day-grouped galleries, per-image management tools,    \r\n and a custom preset workflow for testing and everyday use. To access the WebUI   \r\n from a PC or phone on the same network, open a browser and go to                 \r\n http://<device-ip>:8080, replacing <device-ip> with the CardputerZero’s local IP \r\n address. Found in IP PANEL.",
+  "categories": [
+    "AI",
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "DLCM",
+  "source_repo": "https://github.com/Coreymillia/DaliCam",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "coreymillia",
+    "github": "Coreymillia"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "dalicam_icon.png",
+  "published_at": "2026-11-23T08:44:38+00:00",
+  "updated_at": "2026-11-23T08:44:38+00:00"
+}

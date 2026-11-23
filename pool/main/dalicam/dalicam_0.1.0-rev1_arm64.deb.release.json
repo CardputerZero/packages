@@ -1,0 +1,11 @@
+{
+  "filename": "dalicam_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Coreymillia__dalicam_0.1.0-rev1_arm64.deb",
+  "sha256": "75f8b032a1e2d3814c7385b4870f2ff87443f681de8adc9599f18da21cacaeaa",
+  "size": 1798020,
+  "package": "dalicam",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "Coreymillia",
+  "uploader_email": "coreymillia@gmail.com"
+}
