@@ -1,0 +1,41 @@
+{
+  "title": "FPV Toolkit",
+  "summary": "FPV pilot toolkit: checklists, LiPo charging, channels, props, battery log",
+  "categories": [
+    "Lifestyle",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/menu.png",
+    "screenshots/checklist.png",
+    "screenshots/battery-charge.png",
+    "screenshots/channels.png",
+    "screenshots/props.png",
+    "screenshots/battery-log.png"
+  ],
+  "description": "Pocket field tool for FPV pilots. Checklists: bench, field, post-flight and crash inspection. Battery: charger settings for LiPo / LiHV / Li-ion (end voltage, current at 0.5-2C), per-cell voltage check with charge estimate and land/storage status, voltage reference. Channels: 5.8 GHz spectrum of analog bands, DJI V1/Avatar, O3, O4 and HDZero with overlap view, group presets for 2-6 pilots and IMD check. Props: 31 mm to 20 inch in millimetres with typical motor, KV and battery. Battery log: pack IDs matching your labels, cycle counter and condition. Offline, keyboard only, English and Ukrainian. Reference data from Oscar Liang (oscarliang.com) and the DJI O4 manual.",
+  "locales": {
+    "uk": {
+      "summary": "Помічник FPV-пілота: чеклісти, зарядка, канали, пропи, журнал батарей"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/DOKUA/fpv-checklist",
+  "icon": "fpv-checklist_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FPVC",
+  "author": {
+    "github": "DOKUA",
+    "display_name": "Andrusevych"
+  },
+  "published_at": "2026-11-23T22:29:33+00:00",
+  "updated_at": "2026-11-23T22:29:33+00:00"
+}
