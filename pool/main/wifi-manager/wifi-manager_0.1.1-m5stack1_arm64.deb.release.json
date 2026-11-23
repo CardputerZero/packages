@@ -1,0 +1,11 @@
+{
+  "filename": "wifi-manager_0.1.1-m5stack1_arm64.deb",
+  "url": "https://github.com/adrianomoraes/CardputerZero-WiFiManager/releases/download/v0.1.1/wifi-manager_0.1.1-m5stack1_arm64.deb",
+  "sha256": "d016ee6edd81f510a592835824eb1b8fc15cf9cb40f4349dd8681d2f05821440",
+  "size": 583464,
+  "package": "wifi-manager",
+  "version": "0.1.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "adrianomoraes",
+  "uploader_email": "adrianomoraes@users.noreply.github.com"
+}
