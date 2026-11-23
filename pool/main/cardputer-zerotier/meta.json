@@ -1,0 +1,38 @@
+{
+  "title": "ZeroTier",
+  "summary": "Join ZeroTier networks on the Cardputer Zero: node, IP and status.",
+  "description": "ZeroTier client for the Cardputer Zero. See every network you have joined, whether it is up, and the IP this node got, then switch networks without a laptop.\r\n\r\nFeatures\r\n- Node online state and 10 character node ID in the top bar\r\n- One card per network: name, status (OK / OFF / REQ), assigned IP and network ID\r\n- ENTER connects the selected network, D disconnects it after a confirmation, N joins a new network by entering its 16 digit ID\r\n- Disconnect keeps the network in the list, so reconnecting later is one key press and no ID retyping\r\n- 16 cell progress meter while typing a network ID\r\n- Hold ESC for 3 seconds to leave the app, release to cancel\r\n- Runs as a normal user; the only privileged command is zerotier-cli\r\n\r\nRequirements\r\n- The zerotier-one daemon must be installed (apt install zerotier-one) and online\r\n- This package installs /etc/sudoers.d/cardputer-zerotier, which allows users to run exactly one command without a password: /usr/sbin/zerotier-cli\r\n- Needs python3-pil and python3-numpy (declared as dependencies)",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "Unlicense",
+  "share_code": "ZT01",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "display_name": "simonartt",
+    "github": "simonartt"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "cardputer-zerotier_icon.png",
+  "published_at": "2026-11-23T05:00:00+00:00",
+  "updated_at": "2026-11-23T05:00:00+00:00",
+  "locales": {
+    "zh-CN": {
+      "title": "ZeroTier",
+      "summary": "在 Cardputer Zero 上加入 ZeroTier 网络，查看节点、IP 与连接状态"
+    }
+  }
+}

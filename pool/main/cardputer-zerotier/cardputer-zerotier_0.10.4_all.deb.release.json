@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-zerotier_0.10.4_all.deb",
+  "url": "https://github.com/simonartt/packages/releases/download/czdev-buffer/cardputer-zerotier_0.10.4_all.deb",
+  "sha256": "b6d954459160890c0d13083407c27c5e9f3fc36b7103886517ce7d0b3acaa303",
+  "size": 10478,
+  "package": "cardputer-zerotier",
+  "version": "0.10.4",
+  "architecture": "all",
+  "uploaded_by": "simonartt",
+  "uploader_email": "simonartt@users.noreply.github.com"
+}
