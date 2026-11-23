@@ -9,7 +9,7 @@
     "screenshots/auto-acidburn.png",
     "screenshots/wardriving-zero-cool.png"
   ],
-  "description": "Use Auto WiFi Attack or Manual WiFi Attack for authorized lab auditing with a compatible USB Wi-Fi adapter. Save WPA capture results locally or submit usable hashes to OnlineHashCrack. Wardriving uses a GNSS HAT for GPS-tagged Wi-Fi and Bluetooth LE observations, with optional WiGLE or WDG Wars upload. Meshmapping listens for MeshCore advertisements through the SX1262 cap and can export mapped nodes to WDG Wars. Sub-Ghz supports CC1101 RSSI monitoring and raw OOK recording, saved transmissions, and confirmed single-shot or repeated replay; third-party hats require the documented kernel SPI setup. The optional Sub-Ghz Library imports compatible raw OOK files from GitHub after user consent, with visible progress, cancellation, and an SSH-manageable folder browser. No third-party signal files are bundled. The foreground app opens from the stock launcher. Privileged radio access requires the Cardputer user's password.",
+  "description": "Use Auto WiFi Attack or Manual WiFi Attack for authorized lab auditing with a compatible USB Wi-Fi adapter. Save WPA capture results locally or submit usable hashes to OnlineHashCrack. Wardriving uses a GNSS HAT or M5Stack GPS/BDS Unit v1.1 on Grove for GPS-tagged Wi-Fi and Bluetooth LE observations, with optional WiGLE or WDG Wars upload. Meshmapping listens for MeshCore advertisements through the SX1262 cap and can export mapped nodes to WDG Wars. Sub-Ghz supports CC1101 RSSI monitoring and raw OOK recording, saved transmissions, and confirmed single-shot or repeated replay; third-party hats require the documented kernel SPI setup. The optional Sub-Ghz Library imports compatible raw OOK files from GitHub after user consent, with visible progress, cancellation, and an SSH-manageable folder browser. No third-party signal files are bundled. The foreground app opens from the stock launcher. Privileged radio access requires the Cardputer user's password.",
   "locales": {
     "zh-CN": {
       "title": "Zerogotchi",
@@ -38,5 +38,5 @@
     "display_name": "unagisan69"
   },
   "published_at": "2026-11-18T03:55:03+00:00",
-  "updated_at": "2026-11-21T01:16:38+00:00"
+  "updated_at": "2026-11-23T05:56:56+00:00"
 }
