@@ -13,7 +13,7 @@
     "screenshots/phone-setup.png",
     "screenshots/recon.png"
   ],
-  "description": "Quartermaster turns the CardputerZero into a complete Wi-Fi and Bluetooth wardriver. Plug in any USB Wi-Fi adapter, single, dual or tri-band, and it is recognised by itself. Every adapter scans at once across 2.4, 5 and 6 GHz, next to the built-in radio and Bluetooth, and it still wardrives with no adapter at all. GPS comes from a USB receiver, the Cap LoRa-1262 or a Grove GPS unit. Each network and device is counted once, and both its strongest and its weakest sighting are written with their positions. Logs are WigleWifi-1.6 CSV files, and finished logs are sent by themselves to WiGLE, WDGWars and Wardrift whenever the Cardputer is online. Add your keys by scanning a QR code with your phone or by typing them on the keyboard, and test each one from the device. Recon is a separate mode that watches for ALPR and Flock cameras, body cameras, doorbell and security cameras, camera glasses, trackers such as AirTag and SmartTag, Remote ID drones and more. It grades the evidence, warns you, tells you if a device seems to follow you, and has a signal finder to walk it down. Recon and a wardrive never run at the same time. Large live counters, a log browser with the upload state of every site, hardware checks that warn when an adapter is not starting, and a full settings screen. MIT open source.",
+  "description": "Quartermaster turns the CardputerZero into a complete Wi-Fi and Bluetooth wardriver. Plug in any USB Wi-Fi adapter, single, dual or tri-band, and it is recognised by itself. Every adapter scans at once across 2.4, 5 and 6 GHz, next to the built-in radio and Bluetooth, and it still wardrives with no adapter at all. GPS comes from a USB receiver, the Cap LoRa-1262 or a Grove GPS unit. Each network and device is counted once, and by default only its strongest and its weakest sighting are written, each with its position. Logs are WigleWifi-1.6 CSV files, and finished logs are sent by themselves to WiGLE, WDGWars and Wardrift whenever the Cardputer is online. Add your keys by scanning a QR code with your phone or by typing them on the keyboard, and test each one from the device. Recon is a separate mode that watches for ALPR and Flock cameras, body cameras, doorbell and security cameras, camera glasses, trackers such as AirTag and SmartTag, Remote ID drones and more. It grades the evidence, warns you, tells you if a device seems to follow you, and has a signal finder to walk it down. Recon and a wardrive never run at the same time. Large live counters, a log browser with the upload state of every site, hardware checks that warn when an adapter is not starting, and a full settings screen. MIT open source.",
   "locales": {
     "zh-CN": {
       "title": "Quartermaster",
@@ -42,5 +42,5 @@
     "display_name": "Valleytech Solutions"
   },
   "published_at": "2026-11-22T15:32:35+00:00",
-  "updated_at": "2026-11-22T15:32:35+00:00"
+  "updated_at": "2026-11-23T15:09:04+00:00"
 }
