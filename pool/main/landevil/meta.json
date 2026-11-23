@@ -13,6 +13,7 @@
   ],
   "description": "LAN Devil turns the CardputerZero's Ethernet port into a pocket network ID tool. Plug into any switch port and the home screen shows link speed and flaps, your DHCP lease and the switch's name, port, VLAN, voice VLAN, PoE class/wattage and management IP from LLDP/CDP, with an alert on speed/duplex mismatch. Tabs: DHCP probe that flags rogue servers; trunk VLAN discovery with one-key join (DHCP on the VLAN, then every tool runs there); ping with a live latency graph; ARP sweep with MAC vendors; a TCP port grid; and a CSV log of every port you plug into, with notes. DHCP probe, ARP sweep and port scan send traffic; use them only on networks you are authorized to test.",
   "license": "MIT",
+  "source_repo": "https://github.com/x22j/landevil-cardputer-zero",
   "icon": "icon.png",
   "permissions": {
     "camera": false,
