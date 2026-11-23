@@ -1,0 +1,11 @@
+{
+  "filename": "hass-zero_1.0.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/nerdosity__hass-zero_1.0.1_arm64.deb",
+  "sha256": "2a25e5e4bf98706b400e031dcb78d5692f9dec159d00c23906c1dd34b1f9350a",
+  "size": 1062350,
+  "package": "hass-zero",
+  "version": "1.0.1",
+  "architecture": "arm64",
+  "uploaded_by": "nerdosity",
+  "uploader_email": "nerdosity@users.noreply.github.com"
+}
