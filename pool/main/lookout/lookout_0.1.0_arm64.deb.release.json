@@ -1,0 +1,11 @@
+{
+  "filename": "lookout_0.1.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/bfeller__lookout_0.1.0_arm64.deb",
+  "sha256": "c335242ce4188e52e90e38bcb0f01bd6f1f98799aa75a8136d5d06a087909375",
+  "size": 594016,
+  "package": "lookout",
+  "version": "0.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "bfeller",
+  "uploader_email": "bfeller@users.noreply.github.com"
+}
