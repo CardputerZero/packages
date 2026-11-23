@@ -1,0 +1,30 @@
+{
+  "title": "czshare",
+  "summary": "同一个局域网下面，扫码可以上传文件和下载文件，省得插U盘了",
+  "description": "CardputerZero 是个随身小电脑，拍照、存文件都在它自己的 SD 卡上。想把照片或文件 拿到手机上，通常要拔卡、找读卡器、再插电脑。CZ Share 把这件事变成：\r\n\r\n在启动器里打开 CZ Share；\r\n手机扫码；\r\n手机上直接点文件下载，或者整个文件夹打包下载。\r\n电脑和手机都不需要装任何东西，全部在本地局域网内完成。",
+  "categories": [
+    "System Tools",
+    "Development"
+  ],
+  "license": "MIT",
+  "share_code": "CZSH",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "wensang",
+    "github": "zjg622"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "czshare_icon.png",
+  "published_at": "2026-11-23T13:42:49+00:00",
+  "updated_at": "2026-11-23T13:42:49+00:00"
+}
