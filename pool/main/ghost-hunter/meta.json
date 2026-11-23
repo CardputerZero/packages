@@ -1,0 +1,32 @@
+{
+  "title": "Ghost Hunter",
+  "summary": "Sweep a Cap CC1101 and follow the IMU to hunt radio ghosts.",
+  "categories": [
+    "Games",
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/scan.png",
+    "screenshots/map.png"
+  ],
+  "description": "Ghost Hunter turns the M5Stack Cap CC1101 and the CardputerZero IMU into a two-screen ghost radar. SCAN shows a live band spectrum and a smoothed threat level. GHOST MAP records signal strength as you turn and marks the strongest heading. The antenna is not directional: the bearing is a sweep, and remotes, sensors, and appliance noise show up too. Needs the Cap CC1101. Without it, press S to play in simulation.",
+  "license": "MIT",
+  "source_repo": "https://github.com/HarryYGit/zgame-ghost-hunter",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "GHNT",
+  "author": {
+    "github": "HarryYGit",
+    "display_name": "Haoran Yan"
+  },
+  "published_at": "2026-11-22T08:40:29+00:00",
+  "updated_at": "2026-11-22T08:40:29+00:00"
+}
