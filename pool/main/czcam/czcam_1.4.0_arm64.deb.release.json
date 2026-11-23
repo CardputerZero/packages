@@ -1,0 +1,11 @@
+{
+  "filename": "czcam_1.4.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/zjg622__czcam_1.4.0_arm64.deb",
+  "sha256": "74f3fff69d1ac9c6f0dc7d4d50edd083132732b60801c769c25c45de51d9be54",
+  "size": 45682,
+  "package": "czcam",
+  "version": "1.4.0",
+  "architecture": "arm64",
+  "uploaded_by": "zjg622",
+  "uploader_email": "zjg622@users.noreply.github.com"
+}
