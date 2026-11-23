@@ -1,0 +1,11 @@
+{
+  "filename": "czweather_1.2.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/zjg622__czweather_1.2.1_arm64.deb",
+  "sha256": "e6fd863e3fa753ff064d9eeabd6ab76c36d807dae472bc95245feb4a9687a905",
+  "size": 131852,
+  "package": "czweather",
+  "version": "1.2.1",
+  "architecture": "arm64",
+  "uploaded_by": "zjg622",
+  "uploader_email": "zjg622@users.noreply.github.com"
+}
