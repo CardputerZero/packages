@@ -1,0 +1,35 @@
+{
+  "title": "Hass Zero",
+  "summary": "Control your Home Assistant favourites from the CardputerZero",
+  "description": "Hass Zero is an unofficial Home Assistant client: your favourite entities with live state, one key to toggle lights and switches, run scenes and scripts, open and close covers, lock and unlock, play and pause media; a detail screen to set brightness, target temperature, cover position and volume; and a searchable list of every entity grouped by domain and area. Sign in by scanning one QR with your Home Assistant URL and a long-lived access token (tools/ha2qr.py makes it offline on your PC). Italian and English.",
+  "categories": [
+    "Hardware & IoT",
+    "Lifestyle"
+  ],
+  "license": "CC0-1.0",
+  "share_code": "HAS0",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "nerdosity",
+    "github": "nerdosity"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "hass-zero_icon.png",
+  "published_at": "2026-11-23T00:52:05+00:00",
+  "updated_at": "2026-11-23T00:52:05+00:00"
+}
