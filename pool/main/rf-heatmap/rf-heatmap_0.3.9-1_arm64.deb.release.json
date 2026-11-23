@@ -1,0 +1,11 @@
+{
+  "filename": "rf-heatmap_0.3.9-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/rf-heatmap_0.3.9-1_arm64.deb",
+  "sha256": "ccf2564f822c18b68a806f53a8ad470d8f38997dd95dcd94509f9d72b3748e11",
+  "size": 2617154,
+  "package": "rf-heatmap",
+  "version": "0.3.9-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
