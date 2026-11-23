@@ -1,0 +1,11 @@
+{
+  "filename": "dualradio_1.4.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/RIAL0__dualradio_1.4.0_arm64.deb",
+  "sha256": "037e492a0f59e72e4a13ce2e8a7ea3d0b441da09f55954e0ec3e0a1f3a1f1477",
+  "size": 261754,
+  "package": "dualradio",
+  "version": "1.4.0",
+  "architecture": "arm64",
+  "uploaded_by": "RIAL0",
+  "uploader_email": "rial0@users.noreply.github.com"
+}
