@@ -1,0 +1,11 @@
+{
+  "filename": "ir-studio_0.3.9-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/ir-studio_0.3.9-1_arm64.deb",
+  "sha256": "63abc4aac4860f3f60ca26460222ee9774adb8d961af8fb3d6fa65ddd8fd0d12",
+  "size": 2568214,
+  "package": "ir-studio",
+  "version": "0.3.9-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
