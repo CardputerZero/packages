@@ -6,11 +6,12 @@
     "Hardware & IoT"
   ],
   "screenshots": [
+    "screenshots/home.png",
+    "screenshots/read.png",
     "screenshots/heatmap.png",
-    "screenshots/pulse.png",
-    "screenshots/decode.png",
     "screenshots/saved.png",
-    "screenshots/help.png"
+    "screenshots/sensors.png",
+    "screenshots/probe.png"
   ],
   "description": "RF Heatmap turns your CardputerZero with Cap CC1101 into an on-device Sub-GHz spectrum and ML lab. Sweep 315/433/868/915 MHz with an Inferno thermal waterfall, EMI room diff, and real-time SpectrumNet-2D scene/RollJam alerts; classify 28 RF protocols and 32D transmitter fingerprints with Pure-Go INT8 PulseNet-RF; rescue distorted captures with 3-pass OOK + 1D-UNet AGC denoising; decode fixed/rolling codes, TPMS and weather sensors; run Foxhunt Geiger mode, RAW Trimmer, Auto-Probe, DB sync, and an opt-in stdio MCP server.",
   "license": "MIT",
@@ -31,5 +32,5 @@
     "github": "igenexxx"
   },
   "published_at": "2026-11-19T23:21:16+00:00",
-  "updated_at": "2026-11-22T23:03:45+00:00"
+  "updated_at": "2026-11-23T20:39:11+00:00"
 }
