@@ -1,0 +1,11 @@
+{
+  "filename": "xiang_1.0.3-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/xu-c__xiang_1.0.3-1_arm64.deb",
+  "sha256": "f2b575e3025e8e20ea3e62873b73477da801b59213dd153377d3eb7a4d95e3a0",
+  "size": 175722,
+  "package": "xiang",
+  "version": "1.0.3-1",
+  "architecture": "arm64",
+  "uploaded_by": "xu-c",
+  "uploader_email": "xu-c@users.noreply.github.com"
+}
