@@ -1,0 +1,36 @@
+{
+  "title": "NFC Studio",
+  "summary": "ST25R3916 NFC scanner, InductiveNet & DumpNet ML, NDEF/EMV & .nfc studio",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/read.png",
+    "screenshots/saved.png",
+    "screenshots/emu.png",
+    "screenshots/scan.png",
+    "screenshots/dump.png"
+  ],
+  "description": "NFC Studio unlocks the ST25R3916 13.56 MHz transceiver on CardputerZero Cap CC1101 & NFC. Scan ISO14443-A/B/F/V tags, inspect hex dumps and NDEF/EMV records, classify 10 card ecosystems and 32D fingerprints with Pure-Go INT8 NFC-DumpNet, detect metals and dielectric moisture with NFC-InductiveNet, emulate 4B/7B UIDs with Reader IAT auto-pause, program battery-free Waveshare NFC e-Paper badges, sync .nfc databases, and expose 28 tools via opt-in stdio MCP.",
+  "license": "MIT",
+  "source_repo": "https://github.com/igenexxx/nfc-studio",
+  "icon": "nfc-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "NFCS",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-23T20:39:28+00:00",
+  "updated_at": "2026-11-23T20:39:28+00:00"
+}
