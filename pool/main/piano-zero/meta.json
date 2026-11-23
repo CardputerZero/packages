@@ -1,7 +1,7 @@
 {
   "title": "Piano Zero",
-  "summary": "DFD 700MB Sampled Grand & Electric Piano Workstation for CardputerZero",
-  "description": "CardputerZero Piano Zero transforms the M5Stack CardputerZero (320x170 IPS display, 56-key matrix keyboard, ARM64 Linux) into a studio-grade sampled grand piano & electric piano workstation inspired by exxpiano.\r\n\r\nFeatures a custom C++17 Direct-From-Disk (DFD) SoundFont 2 streaming engine that plays 700 MB+ 14-velocity-layer concert grands inside ~80 MB RAM with zero underruns, real piano mechanics (hammer/damper noise, sympathetic string resonance, pedal noise), smooth Freeverb stereo hall reverb, built-in SMF MIDI player, in-app Wi-Fi Sound Bank Downloader (Salamander Full/Lite, Nice Steinway v3.8, Rhodes EPs Plus, Abbey Steinway D), USB audio auto-selection, and Universal Configurable USB MIDI Learn.",
+  "summary": "Grand & Electric Piano Workstation for CardputerZero",
+  "description": "CardputerZero Piano Zero transforms the M5Stack CardputerZero (320x170 IPS display, 56-key matrix keyboard, ARM64 Linux) into a studio-grade sampled grand piano & electric piano workstation inspired by exxpiano.\r\n\r\nFeatures a custom C++17 Direct-From-Disk (DFD) SoundFont 2 streaming engine that plays 700 MB+ (among other 4 different sound bank options) 14-velocity-layer concert grands inside ~80 MB RAM with zero underruns, real piano mechanics (hammer/damper noise, sympathetic string resonance, pedal noise), smooth Freeverb stereo hall reverb, built-in SMF MIDI player, in-app Wi-Fi Sound Bank Downloader (Salamander Full/Lite, Nice Steinway v3.8, Rhodes EPs Plus, Abbey Steinway D), USB audio auto-selection, and Universal Configurable USB MIDI Learn.",
   "categories": [
     "Creative & Office"
   ],
