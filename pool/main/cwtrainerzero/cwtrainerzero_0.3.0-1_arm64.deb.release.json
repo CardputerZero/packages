@@ -1,0 +1,11 @@
+{
+  "filename": "cwtrainerzero_0.3.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/gregweir__cwtrainerzero_0.3.0-1_arm64.deb",
+  "sha256": "eef6b0bf3ab25831f9fd4d80b86a7b43896f597f988528ac20efad284ee965b5",
+  "size": 710696,
+  "package": "cwtrainerzero",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "gregweir",
+  "uploader_email": "gregweir@users.noreply.github.com"
+}
