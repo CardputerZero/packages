@@ -1,0 +1,33 @@
+{
+  "title": "BitaxeZero",
+  "summary": "Bitaxe miner farm monitor for Cardputer Zero.",
+  "description": "Watch a small Bitaxe farm from your pocket. The dashboard hero shows the farm-wide total hash rate, and every card on the list carries its miner's own rate with chip and VR temperatures, fan speed and power draw. Scan your network to find miners that announce themselves over mDNS, or add one by IP address when your firmware version stays quiet. No cloud service, account or analytics. BitaxeZero discovers miners on your local network and makes read-only requests to addresses you add. Use it on a trusted network.\r\n\r\nOpen any device for a read-only detail page: its pool, shares accepted and rejected, best session difficulty, uptime and firmware version. Miners that stop answering dim to an offline card that remembers how long it has been dark, next to the ones still hashing. Your devices and their last-seen times are saved on the device, so everything is back the way you left it the next time you open the app.\r\n\r\nDeveloped for Tartanleaf.com by Greg Weir VA1GW",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "BTX0",
+  "source_repo": "https://github.com/gregweir/BitaxeZero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Greg Weir VA1GW",
+    "github": "gregweir"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "bitaxezero_icon.png",
+  "published_at": "2026-11-23T22:51:18+00:00",
+  "updated_at": "2026-11-23T22:51:18+00:00"
+}

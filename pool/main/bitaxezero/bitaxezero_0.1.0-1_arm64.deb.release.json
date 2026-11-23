@@ -1,0 +1,11 @@
+{
+  "filename": "bitaxezero_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/gregweir__bitaxezero_0.1.0-1_arm64.deb",
+  "sha256": "d3ea0c486a21131cfbade52d52763aac7c9f6f2cf9fe9c7d7d4b5453da606f1a",
+  "size": 694126,
+  "package": "bitaxezero",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "gregweir",
+  "uploader_email": "gregweir@users.noreply.github.com"
+}
