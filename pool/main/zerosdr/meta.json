@@ -1,7 +1,7 @@
 {
   "title": "ZeroSDR",
   "summary": "ZeroSDR turns the Cardputer Zero into a pocket SDR receiver.",
-  "description": "FEATURES\r\n- Real-time spectrum and waterfall on the 320x170 display\r\n- FM / NFM / AM / USB / LSB demodulation with squelch, audio AGC and\r\n  FM de-emphasis (50/75 us)\r\n- Adjustable tuning step, display zoom, FFT size and sample rate\r\n- On-screen key reference and settings panel (press H)\r\n- ADSB aircraft page: sortable list, detail view with a PFD, and a radar\r\n  view with a fading sweep, range rings and a large callsign plate\r\n- Runs as the normal user through the librtlsdr udev rule - no root,\r\n  no background service\r\n\r\nREQUIRED EXTRA HARDWARE\r\n- An RTL-SDR USB dongle (tested with RTL-SDR Blog V4 / RTL2832U).\r\n  The app has no built-in radio, so a dongle is mandatory.\r\n- An antenna: any VHF/UHF antenna for the SDR page; a 1090 MHz antenna\r\n  for the ADSB page.\r\n- The dongle plugs into the Cardputer Zero USB-A port and is powered by\r\n  the device.\r\n\r\nNOTES\r\n- ADSB decoding is done by the external \"readsb\" program, which must be\r\n  installed separately (a build with the RTL-SDR backend). Without it the\r\n  ADSB list stays empty; the SDR page still works.\r\n- Audio plays through the built-in speaker or the 3.5 mm jack.",
+  "description": "Features\r\n- Real-time spectrum and waterfall on the 320×170 display\r\n- FM / NFM / AM / USB / LSB audio with squelch, AGC and de-emphasis\r\n- Wideband swept spectrum page (custom range, pan/zoom, max hold)\r\n- RFI survey: compare HF noise with equipment on/off (10m–80m)\r\n- ADSB: nearest-first list, PFD detail view and map radar\r\n- AIS: list, map with CPA guard ring, porthole ship dossier, NMEA UDP output\r\n- ACARS: aircraft message list and wrapped detail view\r\n- Fn+P screenshot on every page; Fn+D/Fn+S system volume\r\n- Runs as a normal user; no root, no background service\r\n\r\nRequirements\r\n\r\n- RTL-SDR USB dongle (tested with RTL-SDR Blog V4)\r\n- VHF/UHF antenna for SDR and AIS; 1090 MHz antenna for ADSB",
   "categories": [
     "System Tools",
     "Radio & Comms"
@@ -31,6 +31,6 @@
   ],
   "icon": "zerosdr_icon.png",
   "published_at": "2026-11-10T02:37:56+00:00",
-  "updated_at": "2026-11-22T08:07:22+00:00",
+  "updated_at": "2026-11-23T04:03:41+00:00",
   "source_repo": "https://github.com/nullbeing/zerosdr"
 }
