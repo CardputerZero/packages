@@ -1,0 +1,11 @@
+{
+  "filename": "scheff-zello_3.0.0_arm64.deb",
+  "url": "https://github.com/oumike/packages/releases/download/czdev-buffer/scheff-zello_3.0.0_arm64.deb",
+  "sha256": "94037d1c6fa538c63475faa3e206272a839662aec92f17f3d9166fc1fc6afd40",
+  "size": 599988,
+  "package": "scheff-zello",
+  "version": "3.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "oumike",
+  "uploader_email": "michael.cojocari@gmail.com"
+}
