@@ -1,0 +1,11 @@
+{
+  "filename": "ethernet-tester_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/LBreda/packages/releases/download/czdev-buffer/ethernet-tester_1.0.0-rev1_arm64.deb",
+  "sha256": "c0ab648347281aefd7fa3f59cebe6f53eee564a5dc158bcfbfdeaedea0520812",
+  "size": 2093314,
+  "package": "ethernet-tester",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "LBreda",
+  "uploader_email": "lorenzo@lbreda.com"
+}
