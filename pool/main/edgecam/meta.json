@@ -1,0 +1,35 @@
+{
+  "title": "EDGECAM",
+  "summary": "掌上 DV 取景相机：冷调/胶片双滤镜、1–3× 平滑变焦、拍照与录像。  Pocket DV camera for CardputerZero: cool/f",
+  "description": "EDGECAM 把 CardputerZero 变成一台掌上 DV 取景相机。全屏 320×170 HUD 显示 REC/时间码、电量、实时曝光和变焦条，按 I 可以一键隐藏全部界面，只留干净画面。\r\n\r\nNORMAL 是冷色调（蓝青高光、冷阴影），KARAX 是暖调胶片（颗粒、暗角、成片泛光）。1.0–3.0× 数码变焦带缓动，按住 9/0 可以连续变焦；拍照为 1640×1232，按下快门的瞬间定格当前画面，没有进度条；R 录制带滤镜的 320×170 H.264 视频。\r\n\r\n基于 IMX219 定焦镜头（约 1 米），完全离线：不联网、无账号、无遥测，照片和视频只保存在本机。\r\n\r\n\r\nEDGECAM turns the CardputerZero into a tiny DV viewfinder camera. A full-screen 320×170 HUD shows REC/timecode, battery, live exposure and a zoom bar; press I to hide the whole overlay and keep a clean frame.\r\n\r\nNORMAL is a cool blue-teal grade, KARAX is a warm film look with grain, vignette and halation in stills. Digital zoom ranges from 1.0× to 3.0× with smooth easing — hold 9/0 to keep zooming. Snapshots are 1640×1232 and freeze the exact frame at the moment you press the shutter, with no progress bar. R records the filtered viewfinder to a 320×170 H.264 clip.\r\n\r\nBuilt around the fixed-focus IMX219 (~1 m), fully offline: no accounts, no network, no telemetry; photos and clips stay on the device.",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "CAMS",
+  "source_repo": "https://github.com/Apeadv/Edgecam-For-Cardputer-Zero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Apead",
+    "github": "Apeadv"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "edgecam_icon.png",
+  "published_at": "2026-11-19T13:02:58+00:00",
+  "updated_at": "2026-11-19T13:02:58+00:00"
+}
