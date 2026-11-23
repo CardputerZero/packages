@@ -1,0 +1,30 @@
+{
+  "title": "ZeroChord",
+  "summary": "A pocket chord-and-harp instrument for CardputerZero.",
+  "description": "Make music with your CardputerZero keyboard. Play chords, pick individual notes, strum, or add rhythmic arpeggios. Explore nine editable presets with separate Front, Chord, and Pad sounds, adjustable envelopes, tempo, and patterns. Customize key mappings, shape your sound with three-band EQ, and import SoundFont packs from a TF card.\r\n\r\nInspired by minichord and Omnichord. Open source: https://github.com/momo20261121/ZeroChord",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "CHRD",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "momo",
+    "github": "momo20261121"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "zerochord_icon.png",
+  "published_at": "2026-11-22T04:36:49+00:00",
+  "updated_at": "2026-11-22T04:36:49+00:00"
+}

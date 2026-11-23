@@ -1,0 +1,11 @@
+{
+  "filename": "zerochord_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/momo20261121__zerochord_1.0.0_arm64.deb",
+  "sha256": "de2d9795097b85b4cd0be0a461a7597f64df14f767dc7648b32979e5e3f89d1a",
+  "size": 784212,
+  "package": "zerochord",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "momo20261121",
+  "uploader_email": "momo20261121@users.noreply.github.com"
+}
