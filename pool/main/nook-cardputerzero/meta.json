@@ -1,0 +1,35 @@
+{
+  "title": "Nook",
+  "summary": "Lightweight web console for embedded Linux device management and IoT security.",
+  "description": "Nook is a lightweight management and security console for embedded Linux, integrating system administration, file management, terminal access, network discovery, Wi-Fi, Bluetooth/BLE, hardware management, and security tools such as BadUSB and Wardriving. Accessible directly through a web browser, Nook simplifies device management and IoT security testing.",
+  "categories": [
+    "System Tools",
+    "Security"
+  ],
+  "license": "MIT",
+  "share_code": "HACK",
+  "source_repo": "https://github.com/delikely/Nook",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Delikely",
+    "github": "delikely"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "nook-cardputerzero_icon.png",
+  "published_at": "2026-11-22T14:39:56+00:00",
+  "updated_at": "2026-11-22T14:39:56+00:00"
+}
