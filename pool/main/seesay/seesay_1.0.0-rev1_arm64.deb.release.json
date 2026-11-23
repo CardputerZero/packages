@@ -1,0 +1,11 @@
+{
+  "filename": "seesay_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/xnppnx/packages/releases/download/czdev-buffer/seesay_1.0.0-rev1_arm64.deb",
+  "sha256": "4029b9ae158a51765affbd6f5719182bd30c367a0824fa696f03dfb5b6f26bfc",
+  "size": 175495978,
+  "package": "seesay",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "xnppnx",
+  "uploader_email": "xnppnx@users.noreply.github.com"
+}

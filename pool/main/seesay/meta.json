@@ -1,0 +1,34 @@
+{
+  "title": "SeeSay",
+  "summary": "Point, shoot, hear what's around you",
+  "categories": [
+    "AI",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/seesay-main.png",
+    "screenshots/seesay-result.png",
+    "screenshots/seesay-keys.png"
+  ],
+  "description": "SeeSay is a completely offline visual assistant for blind and low-vision users. Point the camera, press one button, and hear what is in front of you plus any text you are facing. No account, no internet, no recording. Just point, shoot, and listen.",
+  "license": "Apache-2.0",
+  "source_repo": "https://github.com/xnppnx/seesay",
+  "icon": "seesay.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SEES",
+  "author": {
+    "github": "xnppnx",
+    "display_name": "xnppnx",
+    "email": "xnppnx@126.com"
+  },
+  "published_at": "2026-11-21T11:54:55+00:00",
+  "updated_at": "2026-11-21T11:54:55+00:00"
+}
