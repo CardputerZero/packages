@@ -1,0 +1,34 @@
+{
+  "title": "PocketFish",
+  "summary": "A quiet pocket aquarium for CardputerZero (beta).",
+  "categories": [
+    "Games",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/1-tank.png",
+    "screenshots/2-myfish.png",
+    "screenshots/3-congratulations.png",
+    "screenshots/4-customize.png",
+    "screenshots/5-all-fishes.png"
+  ],
+  "description": "A quiet pocket aquarium. One fish, a little water, and you.\n\nTap a key to drop a crumb at the matching spot in the water:\n\n    4 5 6 7 8\n    E R T Y U\n    D F G H J\n    Z X C V B\n\nYour fish takes a moment to notice, then swims over to eat.\nFeed your fish at least once a week! Otherwise...\n\nPress tab to meet your fish in MyFish and look around.\nThe longer you stay, the more you'll find :).\n\nPocketFish is in beta, still growing, like your fish.\nThings may change, and your fish and days are kept along the way.",
+  "license": "Proprietary",
+  "icon": "pocketfish-source.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "FISH",
+  "author": {
+    "github": "momo20261121",
+    "display_name": "momo"
+  },
+  "published_at": "2026-11-23T11:12:25+00:00",
+  "updated_at": "2026-11-23T11:12:25+00:00"
+}
