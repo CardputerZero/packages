@@ -1,0 +1,34 @@
+{
+  "title": "Updoit",
+  "summary": "Reminder to update your Raspberry Pi OS packages",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/updoit-launcher-mockup.png",
+    "screenshots/updoit-menu.png",
+    "screenshots/updoit-confirm.png",
+    "screenshots/updoit-download.png",
+    "screenshots/updoit-done.png"
+  ],
+  "description": "A reminder to update your Raspberry Pi OS packages, an helpers to do so. Can also configure your system for daily package update checks.",
+  "license": "MIT",
+  "source_repo": "https://github.com/Sudrien/updoit-for-cardputer-zero",
+  "icon": "updoit-store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "UPDO",
+  "author": {
+    "github": "Sudrien",
+    "display_name": "Sudrien"
+  },
+  "published_at": "2026-11-21T01:00:20+00:00",
+  "updated_at": "2026-11-21T01:00:20+00:00"
+}
