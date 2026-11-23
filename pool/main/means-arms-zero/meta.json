@@ -1,0 +1,32 @@
+{
+  "title": "Means Arms",
+  "summary": "Reloading Loadbook, cost & savings calculator",
+  "description": "Means Arms Ammo is a native 320×170 reloading loadbook and ballistics companion built for the CardputerZero's screen and 46-key keyboard (no Fn key needed for navigation).\r\n Features:\r\n• Caliber Tabs: Browse one caliber at a time with quick horizontal tab switching (Z / C), showing bullet weight, powder charge, powder name, velocity badge, and cost per round in the list view.\r\n• Sort & Search: Sort by Bullet Weight (S:Wt, default) or Load Name (S:Name), or search live across load names, calibers, powders, and bullets (/).\r\n• 4-Tab Load Detail & Inline Editor:\r\n1. Specs: Load name, caliber, Cartridge/Shotshell toggle, Imperial/Metric units,powder charge, COAL, case trim, and bullet/powder/primer/case descriptions.\r\n2. Costs & Savings: Per-round cost breakdown (bullet, powder, primer, case with reuse\r\ncount), color-coded cost bar, loads per lb/kg, retail comparison, and a 20–1,000 round savings table.\r\n3. Ballistics: Muzzle velocity (fps / m/s), SD, ES, BC (G1/G7), muzzle energy (ft-lbs), and a 100–500 yd drop table (drop in inches, MOA, MIL, and remaining velocity).\r\n4. Notes: View and edit load notes inline.\r\n• Backup Compatibility: Imports and exports the exact JSON backup format",
+  "categories": [
+    "Education",
+    "Lifestyle"
+  ],
+  "license": "Proprietary",
+  "share_code": "AMMO",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Jaren Means",
+    "github": "jmm701"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "means-arms-zero_icon.png",
+  "published_at": "2026-11-23T01:51:50+00:00",
+  "updated_at": "2026-11-23T01:51:50+00:00"
+}

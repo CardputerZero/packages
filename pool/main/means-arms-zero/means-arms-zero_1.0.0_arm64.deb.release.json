@@ -1,0 +1,11 @@
+{
+  "filename": "means-arms-zero_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jmm701__means-arms-zero_1.0.0_arm64.deb",
+  "sha256": "7ac0014773146c88b061552a1a832cd5339a507b761b2111e8e45d7ed5bba761",
+  "size": 109408,
+  "package": "means-arms-zero",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "jmm701",
+  "uploader_email": "jmm701@users.noreply.github.com"
+}
