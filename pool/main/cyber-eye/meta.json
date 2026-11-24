@@ -1,0 +1,40 @@
+{
+  "title": "Cyber Eye",
+  "summary": "Live camera as Matrix rain, ASCII, GameBoy, pseudo-thermal & night vision",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/matrix.png",
+    "screenshots/thermal.png",
+    "screenshots/gameboy.png",
+    "screenshots/nvg.png",
+    "screenshots/ascii.png",
+    "screenshots/edges.png"
+  ],
+  "description": "Turns the CardputerZero 8 MP camera into a real-time cyberpunk viewfinder. Styles: Matrix code rain built from live luminance, classic ASCII, GameBoy Camera 4-shade dither, 1-bit dither, Predator-style pseudo-thermal (brightness mapped to a heat palette, not a real thermal sensor) with HUD telemetry, night-vision green and neon edges. Freeze frame, contrast control and animated GIF recording. Keyboard only, English and Ukrainian.",
+  "locales": {
+    "uk": {
+      "summary": "Камера наживо: дощ Matrix, ASCII, GameBoy, псевдо-тепловізор, нічне бачення"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/DOKUA/cyber-eye",
+  "icon": "cyber-eye_256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CEYE",
+  "author": {
+    "github": "DOKUA",
+    "display_name": "Andrusevych"
+  },
+  "published_at": "2026-11-24T20:26:31+00:00",
+  "updated_at": "2026-11-24T20:26:31+00:00"
+}

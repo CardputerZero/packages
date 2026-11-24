@@ -1,0 +1,11 @@
+{
+  "filename": "cyber-eye_0.1.1-rev1_arm64.deb",
+  "url": "https://github.com/DOKUA/packages/releases/download/czdev-buffer/cyber-eye_0.1.1-rev1_arm64.deb",
+  "sha256": "3308788410d2a7df04842e52ad59c9898c33c54ac2b87483a5d83564be3799da",
+  "size": 1933058,
+  "package": "cyber-eye",
+  "version": "0.1.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "DOKUA",
+  "uploader_email": "DOKUA@users.noreply.github.com"
+}
