@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-mdx_0.2.4-1_arm64.deb",
+  "url": "https://github.com/Keitark/packages/releases/download/czdev-buffer/cardputer-mdx_0.2.4-1_arm64.deb",
+  "sha256": "90bb30a628fecae4abdfbbc776384d2b72bac123ea7f2c0e49ae5b0bb81dcbfa",
+  "size": 57828,
+  "package": "cardputer-mdx",
+  "version": "0.2.4-1",
+  "architecture": "arm64",
+  "uploaded_by": "Keitark",
+  "uploader_email": "Keitark@users.noreply.github.com"
+}
