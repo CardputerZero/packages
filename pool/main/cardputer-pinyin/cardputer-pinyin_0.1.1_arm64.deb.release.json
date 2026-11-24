@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-pinyin_0.1.1_arm64.deb",
+  "url": "https://github.com/Lililiuliu/packages/releases/download/czdev-buffer/cardputer-pinyin_0.1.1_arm64.deb",
+  "sha256": "b6caacaae17d8ea1ea153d789fc5326f5b44a470068e2040091dac1f3d25083a",
+  "size": 544218,
+  "package": "cardputer-pinyin",
+  "version": "0.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "Lililiuliu",
+  "uploader_email": "Lililiuliu@users.noreply.github.com"
+}
