@@ -1,0 +1,11 @@
+{
+  "filename": "zeroremote_0.4.3-rev1_arm64.deb",
+  "url": "https://github.com/baltamir1978/packages/releases/download/czdev-buffer/zeroremote_0.4.3-rev1_arm64.deb",
+  "sha256": "1bd5a9eb866225d0f5eb4e3c0b8ad2e32b9e7fdaca29b18e9dfc04c1ebecf4a4",
+  "size": 1112306,
+  "package": "zeroremote",
+  "version": "0.4.3-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "baltamir1978",
+  "uploader_email": "baltamir1978@users.noreply.github.com"
+}
