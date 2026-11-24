@@ -23,9 +23,10 @@
     "github": "fa1247"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
   ],
   "icon": "tailzero_icon.png",
   "published_at": "2026-11-12T14:45:45+00:00",
-  "updated_at": "2026-11-12T14:45:45+00:00"
+  "updated_at": "2026-11-24T09:32:23+00:00"
 }
