@@ -1,0 +1,11 @@
+{
+  "filename": "cardterm_1.0.0_arm64.deb",
+  "url": "https://github.com/fsender/packages/releases/download/czdev-buffer/cardterm_1.0.0_arm64.deb",
+  "sha256": "98663afbfa9f71099c5fc3b4107fa9321a38c0131420e40a6fa9b5fd621d4d15",
+  "size": 1846940,
+  "package": "cardterm",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "fsender",
+  "uploader_email": "fsender@users.noreply.github.com"
+}
