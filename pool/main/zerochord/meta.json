@@ -1,7 +1,7 @@
 {
   "title": "ZeroChord",
-  "summary": "A pocket chord-and-harp instrument for CardputerZero.",
-  "description": "Make music with your CardputerZero keyboard. Play a chord with one hand and pick or strum its notes with the other. Combine Chord, Arp, and Pad backing layers, or play Front only. Nine editable presets let you choose sounds for Front, Chord/Arp, and Pad and adjust envelopes, tempo, and patterns. Customize key mappings, shape the mix with three-band EQ and Echo, or import SoundFont packs from a TF card.\n\nMake your first sound\n1. Press 8 for a C major chord. The app starts silently until you play.\n2. Play Z X C V B N M to pick its notes. L strums up. K strums down.\n3. Try 8 → 5 → T → 4 for C → G → Am → F in the default key of C.\n4. Press O to choose backing layers (Chord, Arp, Pad, or none for Front only). I toggles Hold.\n5. Press Space to stop sound. Hold Esc to return to the launcher.\n\nInspired by minichord (https://minichord.com/) and the Suzuki Omnichord (https://www.suzuki-music.co.jp/special/omnichord_om-108/en/).\nUser guide (https://github.com/momo20261121/ZeroChord/blob/main/docs/USER_GUIDE.md)\nSource on GitHub (https://github.com/momo20261121/ZeroChord)",
+  "summary": "Play chords and strum on your CardputerZero.",
+  "description": "Inspired by minichord and the Suzuki Omnichord, ZeroChord turns your CardputerZero keyboard into a pocket instrument. Choose a chord with one hand and pick or strum its notes with the other.\n\nPlay solo or add backing layers. Nine editable presets give you different sounds and rhythms to start with.\n\nTry it\n1. Press 8 for C major.\n2. Pick notes with Z, X, C, V, B, N or M. Press K or L to strum.\n\nUser guide (https://github.com/momo20261121/ZeroChord/blob/main/docs/USER_GUIDE.md)",
   "categories": [
     "Creative & Office",
     "Media"
@@ -18,7 +18,7 @@
     "network": false
   },
   "author": {
-    "display_name": "momo",
+    "display_name": "ZeroChord",
     "github": "momo20261121"
   },
   "screenshots": [
@@ -30,6 +30,6 @@
   ],
   "icon": "zerochord_icon.png",
   "published_at": "2026-11-22T04:36:49+00:00",
-  "updated_at": "2026-11-23T11:53:13+00:00",
+  "updated_at": "2026-11-24T08:17:31+00:00",
   "source_repo": "https://github.com/momo20261121/ZeroChord"
 }
