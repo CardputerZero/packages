@@ -1,0 +1,11 @@
+{
+  "filename": "voice-input_0.2.1_arm64.deb",
+  "url": "https://github.com/hellomsg/packages/releases/download/czdev-buffer/voice-input_0.2.1_arm64.deb",
+  "sha256": "0a94636dd234fe90be5bb9d95c2c5ba9138cfa9a317d589831af78c23a9c4023",
+  "size": 2008018,
+  "package": "voice-input",
+  "version": "0.2.1",
+  "architecture": "arm64",
+  "uploaded_by": "hellomsg",
+  "uploader_email": "hellomsg@users.noreply.github.com"
+}
