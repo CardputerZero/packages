@@ -1,0 +1,41 @@
+{
+  "title": "MDX Player for CardputerZero",
+  "summary": "Play Sharp X68000 MDX music with live FM and PCM meters.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/player.png",
+    "screenshots/filer.png"
+  ],
+  "description": "Play Sharp X68000 MDX music with the RetroFM playback core from the FM-1 MDX player. The app supports PDX sample banks, a note spectrum, and individual FM and PCM meters. Browse folders, save favorites, and choose repeat or continuous playback. Auto follows the active audio output, mixing to mono for the built-in speaker and using stereo for wired headphones and stereo Bluetooth outputs. Press M to select Auto, Mono, or Stereo. Copy your MDX files and any matching PDX banks to Music/MDX Library in your home folder.",
+  "locales": {
+    "ja": {
+      "title": "CardputerZero用 MDXプレーヤー",
+      "summary": "X68000のMDX音楽を、FM・PCMメーターの表示付きで再生できます。"
+    },
+    "zh-CN": {
+      "title": "CardputerZero MDX 播放器",
+      "summary": "播放 Sharp X68000 的 MDX 音乐，实时显示 FM 和 PCM 音量。"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "source_repo": "https://github.com/Keitark/cardputer-mdx",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CZMX",
+  "author": {
+    "display_name": "Keitark",
+    "github": "Keitark"
+  },
+  "published_at": "2026-11-24T00:04:25+00:00",
+  "updated_at": "2026-11-24T00:04:25+00:00"
+}
