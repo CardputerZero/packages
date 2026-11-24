@@ -1,7 +1,7 @@
 {
   "title": "StickZero",
   "summary": "Tinywhoop drone simulator.",
-  "description": "I ported StickTime Lua to Rust for the CardputerZero which runs surprisingly well I figured I should share the experience if anyone else is wanting to practice with their flying with their CardputerZero! \r\nMainly built around using a BetaFPV Air75 II & Meteor75 Pro II with Lava II 580mAh/680mAh batteries and a RadioMaster Pocket or EdgeTX radio controller over USB as Bluetooth is currently too slow. It has some realism built in like prop wash, battery sag, etc.\r\nI also added sounds, an analog video filter and tried my best to make it as stable as possible but feel free to let me know any issues, pull request or fork it on GitHub.",
+  "description": "I ported StickTime Lua to Rust for the CardputerZero which runs surprisingly well I figured I should share the experience if anyone else is wanting to practice with their flying with their CardputerZero! \r\nMainly built around using a BetaFPV Air75 II & Meteor75 Pro II with Lava II 580mAh/680mAh batteries and a RadioMaster Pocket or EdgeTX radio controller over USB/Bluetooth. It has some realism built in like prop wash, battery sag, etc. that is customizable. \r\nI also added sounds, an analog video filter and tried my best to make it as stable as possible but feel free to let me know any issues, pull request or fork it on GitHub.",
   "categories": [
     "Games"
   ],
@@ -29,5 +29,5 @@
   ],
   "icon": "stickzero_icon.png",
   "published_at": "2026-11-23T11:17:58+00:00",
-  "updated_at": "2026-11-23T13:14:48+00:00"
+  "updated_at": "2026-11-24T12:16:36+00:00"
 }
