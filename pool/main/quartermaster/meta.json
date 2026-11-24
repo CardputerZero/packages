@@ -1,30 +1,30 @@
 {
   "title": "Quartermaster",
-  "summary": "Tri-band Wi-Fi + Bluetooth wardriver: WiGLE logs, auto uploads and Recon",
+  "summary": "Wi-Fi, Bluetooth, aircraft and LoRa mesh wardriver: WiGLE logs, auto uploads",
   "categories": [
     "Radio & Comms",
     "Security"
   ],
   "screenshots": [
-    "screenshots/wardrive.png",
+    "screenshots/wardrive-mesh.png",
     "screenshots/home.png",
-    "screenshots/hardware.png",
-    "screenshots/logs.png",
-    "screenshots/phone-setup.png",
+    "screenshots/hardware-mesh.png",
+    "screenshots/nodes.png",
+    "screenshots/logs-mesh.png",
     "screenshots/recon.png"
   ],
-  "description": "Quartermaster turns the CardputerZero into a complete Wi-Fi and Bluetooth wardriver. Plug in any USB Wi-Fi adapter, single, dual or tri-band, and it is recognised by itself. Every adapter scans at once across 2.4, 5 and 6 GHz, next to the built-in radio and Bluetooth, and it still wardrives with no adapter at all. GPS comes from a USB receiver, the Cap LoRa-1262 or a Grove GPS unit. Each network and device is counted once, and by default only its strongest and its weakest sighting are written, each with its position. Logs are WigleWifi-1.6 CSV files, and finished logs are sent by themselves to WiGLE, WDGWars and Wardrift whenever the Cardputer is online. Add your keys by scanning a QR code with your phone or by typing them on the keyboard, and test each one from the device. Recon is a separate mode that watches for ALPR and Flock cameras, body cameras, doorbell and security cameras, camera glasses, trackers such as AirTag and SmartTag, Remote ID drones and more. It grades the evidence, warns you, tells you if a device seems to follow you, and has a signal finder to walk it down. Recon and a wardrive never run at the same time. Large live counters, a log browser with the upload state of every site, hardware checks that warn when an adapter is not starting, and a full settings screen. MIT open source.",
+  "description": "Quartermaster turns the CardputerZero into a wardriver for every supported radio you plug in. Every supported USB Wi-Fi adapter scans at once across 2.4, 5 and 6 GHz, next to the built-in radio and Bluetooth, and it still wardrives with no adapter at all. Add ESP32-C5 boards as Quartermaster Nodes, on USB or wireless through one hub node, and the channels are shared out between them. Flash a node from the Cardputer itself. With an RTL-SDR stick it logs the aircraft around you, and with the Cap LoRa-1262 it logs the Meshtastic and MeshCore nodes it hears. It only listens. GPS comes from a USB receiver, the Cap LoRa-1262, a Grove GPS unit or gpsd, found by itself. Each device is counted once, with only its closest and its furthest sighting. Logs are WigleWifi-1.6 CSV files, and finished logs go by themselves to WiGLE, WDGWars and Wardrift whenever the Cardputer is online. Aircraft and mesh nodes go to WDGWars and Wardrift only. Add your keys by scanning a QR code with your phone or by typing them, and test each one from the device. While you wardrive, Drive Alerts can warn you with a banner and a tone of your choice about Flock cameras, body cameras, camera glasses and the other kinds you pick, from what the scan already hears and without slowing it, and a Dragon Detector on USB adds its own detections. Recon is a separate mode that watches for ALPR and Flock cameras, body cameras, doorbell and security cameras, camera glasses, trackers such as AirTag and SmartTag, Remote ID drones and more, warns you, tells you if a device seems to follow you, and has a signal finder. Deep scan, off by default, lets a spare USB adapter listen in monitor mode during a wardrive or Recon: it only listens, adds every network it hears to the log, and finds Flock cameras from their probes, disconnect floods and evil twins. Large live counters, a log browser with the upload state of every site, a hardware screen for every radio, and Check for updates. GPL-3.0 open source.",
   "locales": {
     "zh-CN": {
       "title": "Quartermaster",
-      "summary": "三频 Wi-Fi + 蓝牙战争驾驶：WiGLE 日志、自动上传、侦察"
+      "summary": "Wi-Fi、蓝牙、飞机和 LoRa Mesh 战争驾驶：WiGLE 日志、自动上传"
     },
     "ja": {
       "title": "Quartermaster",
-      "summary": "トライバンドWi-Fi＋Bluetoothウォードライブ：WiGLEログ、自動アップロード、偵察"
+      "summary": "Wi-Fi・Bluetooth・航空機・LoRaメッシュのウォードライブ：WiGLEログ、自動アップロード"
     }
   },
-  "license": "MIT",
+  "license": "GPL-3.0-only",
   "source_repo": "https://github.com/valleytechsolutions/Quartermaster",
   "icon": "icon.png",
   "permissions": {
@@ -33,7 +33,7 @@
     "imu": false,
     "network": true,
     "additional_hardware": true,
-    "background_service": false,
+    "background_service": true,
     "external_display": false
   },
   "share_code": "WARD",
@@ -42,5 +42,5 @@
     "display_name": "Valleytech Solutions"
   },
   "published_at": "2026-11-22T15:32:35+00:00",
-  "updated_at": "2026-11-23T15:09:04+00:00"
+  "updated_at": "2026-11-24T05:07:32+00:00"
 }
