@@ -1,0 +1,11 @@
+{
+  "filename": "scheff-echolink_3.1.0_arm64.deb",
+  "url": "https://github.com/oumike/packages/releases/download/czdev-buffer/scheff-echolink_3.1.0_arm64.deb",
+  "sha256": "47b493d28f373af92ff5122478de9cc053d742880aaa9a23988d38747170aca9",
+  "size": 526134,
+  "package": "scheff-echolink",
+  "version": "3.1.0",
+  "architecture": "arm64",
+  "uploaded_by": "oumike",
+  "uploader_email": "michael.cojocari@gmail.com"
+}
