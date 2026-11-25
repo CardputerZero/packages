@@ -5,13 +5,14 @@
     "Games"
   ],
   "screenshots": [
-    "screenshots/wasteland-join.png",
-    "screenshots/wasteland-road.png",
-    "screenshots/wasteland-stash.png",
-    "screenshots/wasteland-odds.png",
-    "screenshots/wasteland-admired.png"
+    "screenshots/wasteland-kane.png",
+    "screenshots/wasteland-death.png",
+    "screenshots/wasteland-fire.png",
+    "screenshots/wasteland-trap.png",
+    "screenshots/wasteland-caravan.png",
+    "screenshots/wasteland-join.png"
   ],
-  "description": "Wasteland turns the CardputerZero into the server for a co-op survival crawl across a hex map of ruins, ash dunes, rust forests and glass fields. Up to five players join from their own phones: each opens the address shown on the screen in a phone browser, claims a survivor and plays from there. No app to install on the phones and no account.\n\nThe survivors scavenge, trade, craft and keep each other alive against hunger, thirst, radiation, weather and a threat clock that runs down every day. Encounters, caravans, quakes, floods and the Creeping Doom come and go while the day turns.\n\nThe CardputerZero's own screen is the table: it shows each of the game's six pages (Road, Chronicle, Stash, Odds, Waste, Admired) at full size, and beside it a column with the day, the weather, the threat clock and a dog tag with a life bar for every seated player. While nobody is seated it shows the address to join.\n\nKeys follow the signs printed on the keyboard: C (or Enter, Space, PG DN) goes to the next page, A, S and D set the speaker volume, F and X move between a page's picture and its text, V zooms, K goes home, H shows the address and the keys, and ESC held saves and quits.\n\nThe game is served over your local network on port 80 (8080 if 80 cannot be opened), so the CardputerZero and the phones must be on the same network. The world is saved on the device. Nothing is sent to the internet.",
+  "description": "Wasteland turns the CardputerZero into the server for a co-op survival crawl across a hex map of ruins, ash dunes, rust forests and glass fields. Up to five players join from their own phones: each opens the address shown on the screen in a phone browser, claims a survivor and plays from there. No app to install on the phones and no account.\n\nThe survivors scavenge, trade, craft and keep each other alive against hunger, thirst, radiation, weather and a threat clock that runs down every day. Encounters, trading caravans, wildfires, booby traps, quakes, floods and the Creeping Doom come and go while the day turns.\n\nThe main quest is the Meridian Engine. Everyone says the war broke the world, but that is not the whole of it: a prewar research complex built a planetary resonator, and during the exchange its control system fired every node at once and sealed this region into a loop, with its radiation, its weather, its radio echoes and pieces of its people caught inside. Reactivating the Engine is the only way out. Nobody agrees on what it is: a machine, a ritual, a prison, or a mirror that shows you what you already believe. One of its sites is the Null Camp, where eleven cots stand round the floor of an observation gallery with no gallery around it, the kettle is still warm, and the roster has eleven names but you keep counting twelve.\n\nOn the open ground, Machine Gun Kane drives a rusted army jeep with a machine gun on the windshield. He shoots at anyone caught out in the open, and he always asks a question first. You cannot fight him, only get out of his way; the camps he leaves each dawn tell his story in five chapters.\n\nOut in the scrub, Jack the Romper sits by a crashed helicopter in a very pink romper, trying not to cry. Bring back the Intimidating Mask he left at the fungus-ridden gas station and he builds you a Motorbike out of the wreck. Later he turns up in a settlement running Jack's Friend Chicken, a fryer over a burning tyre with a queue of eleven survivors and a goat. Ride up on the bike he built and regulars don't wait.\n\nThe CardputerZero's own screen is the table: it shows each of the game's six pages (Road, Chronicle, Stash, Odds, Waste, Admired) at full size, and beside it a column with the day, the weather, the threat clock and a dog tag with a life bar for every seated player. Traps, ghouls and deaths take the whole screen while they play: the jaws snap shut, and when a survivor goes down the Doom laughs. While nobody is seated it shows the address to join.\n\nKeys follow the signs printed on the keyboard: C (or Enter, Space, PG DN) goes to the next page, A, S and D set the speaker volume, F and X move between a page's picture and its text, V zooms, K goes home, H shows the address and the keys, and ESC held saves and quits.\n\nThe game is served over your local network on port 80 (8080 if 80 cannot be opened), so the CardputerZero and the phones must be on the same network. The world is saved on the device. Nothing is sent to the internet.",
   "license": "MIT",
   "icon": "icon.png",
   "permissions": {
@@ -29,5 +30,5 @@
     "display_name": "G. Harris"
   },
   "published_at": "2026-11-19T22:36:47+00:00",
-  "updated_at": "2026-11-20T18:17:10+00:00"
+  "updated_at": "2026-11-25T12:41:49+00:00"
 }
