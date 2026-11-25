@@ -1,0 +1,11 @@
+{
+  "filename": "piano-zero_0.4.0-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/adrianomoraes__piano-zero_0.4.0-m5stack1_arm64.deb",
+  "sha256": "b61cfb9f3e4cbb77aa92844107a921999ebfc398e11f246c1086817031b48e66",
+  "size": 754404,
+  "package": "piano-zero",
+  "version": "0.4.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "adrianomoraes",
+  "uploader_email": "adrianomoraes@users.noreply.github.com"
+}
