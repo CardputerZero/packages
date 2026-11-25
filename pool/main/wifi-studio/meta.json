@@ -1,0 +1,49 @@
+{
+  "title": "WiFi Studio",
+  "summary": "2.4 GHz Wi-Fi Bell-Curve planner, IE Grade A-F, Evil-Twin WIDS & 3-Model ML",
+  "categories": [
+    "Radio & Comms",
+    "Security"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/spectrum.png",
+    "screenshots/ie_forensics.png",
+    "screenshots/wids.png",
+    "screenshots/motion.png",
+    "screenshots/heatmap.png"
+  ],
+  "description": "WiFi Studio is a non-root 2.4 GHz Wi-Fi engineering, WIDS & EDC sensing lab for CardputerZero: 6 Guided Quick Missions, parabolic 22 MHz Bell-Curve channel planner, 802.11 Beacon IE Forensics & Security Grade A-F, SHA-256 Evil-Twin WIDS, Through-Wall Wi-Fi Motion Tripwire, Crowd Pulse, Hidden Camera Sweep, Room Heatmap, Wake-on-LAN, 3 embedded Pure-Go INT8 neural models (WiFiAPNet-1D, WiFiMotionNet-1D, WiFiThreatAE), RadioTap PCAP export, and opt-in 24-tool MCP.",
+  "locales": {
+    "en": {
+      "title": "WiFi Studio",
+      "summary": "2.4 GHz Wi-Fi Bell-Curve planner, IE Grade A-F, Evil-Twin WIDS & 3-Model ML"
+    },
+    "ru": {
+      "title": "WiFi Studio",
+      "summary": "Анализатор Wi-Fi 2.4 ГГц, каналы, аудит IE A-F, Evil-Twin WIDS и 3 ML-модели"
+    },
+    "zh-CN": {
+      "title": "WiFi Studio",
+      "summary": "2.4 GHz Wi-Fi 信道规划、IE 安全评级 A-F、伪热点 WIDS 与 3 模型端侧 ML"
+    }
+  },
+  "license": "MIT",
+  "icon": "wifi-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "WF24",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-25T20:47:58+00:00",
+  "updated_at": "2026-11-25T20:47:58+00:00"
+}

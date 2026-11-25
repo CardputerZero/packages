@@ -1,0 +1,11 @@
+{
+  "filename": "wifi-studio_0.1.0-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/wifi-studio_0.1.0-1_arm64.deb",
+  "sha256": "29e6af60e025a31d2fbf80fcca63bfdb5534051cb884284be63f790c3c415c16",
+  "size": 2673358,
+  "package": "wifi-studio",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
