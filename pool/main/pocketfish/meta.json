@@ -6,29 +6,29 @@
     "Lifestyle"
   ],
   "screenshots": [
-    "screenshots/1-tank.png",
-    "screenshots/2-myfish.png",
-    "screenshots/3-congratulations.png",
-    "screenshots/4-customize.png",
-    "screenshots/5-all-fishes.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
   ],
-  "description": "A quiet pocket aquarium. One fish, a little water, and you.\n\nTap a key to drop a crumb at the matching spot in the water:\n\n    4 5 6 7 8\n    E R T Y U\n    D F G H J\n    Z X C V B\n\nYour fish takes a moment to notice, then swims over to eat.\nFeed your fish at least every 5 days! Otherwise...\n\nPress tab to meet your fish in MyFish and look around.\nThe longer you stay, the more you'll find :).",
+  "description": "A quiet pocket aquarium. One fish, a little water, and you.\r\n\r\nTap a key to drop a crumb at the matching spot in the water:\r\n\r\n    4 5 6 7 8\r\n    E R T Y U\r\n    D F G H J\r\n    Z X C V B\r\n\r\nYour fish takes a moment to notice, then swims over to eat.\r\nFeed your fish at least every 5 days! Otherwise...\r\n\r\nPress tab to meet your fish in MyFish and look around.\r\nThe longer you stay, the more you'll find :).",
   "license": "Proprietary",
-  "icon": "pocketfish-source.png",
+  "icon": "pocketfish_icon.png",
   "permissions": {
-    "camera": false,
-    "microphone": false,
-    "imu": false,
-    "network": true,
     "additional_hardware": false,
     "background_service": false,
-    "external_display": false
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
   },
   "share_code": "FISH",
   "author": {
     "github": "momo20261121",
-    "display_name": "momo"
+    "display_name": "PocketFish"
   },
   "published_at": "2026-11-23T11:52:29+00:00",
-  "updated_at": "2026-11-25T12:46:32+00:00"
+  "updated_at": "2026-11-25T12:53:37+00:00"
 }
