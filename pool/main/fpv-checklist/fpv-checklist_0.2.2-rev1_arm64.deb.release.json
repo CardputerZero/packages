@@ -1,0 +1,11 @@
+{
+  "filename": "fpv-checklist_0.2.2-rev1_arm64.deb",
+  "url": "https://github.com/DOKUA/packages/releases/download/czdev-buffer/fpv-checklist_0.2.2-rev1_arm64.deb",
+  "sha256": "c6bdf2cff812ba6658fdc7a9112278afab7a24826adbdb6d3d2737349ba8fd9d",
+  "size": 1946684,
+  "package": "fpv-checklist",
+  "version": "0.2.2-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "DOKUA",
+  "uploader_email": "DOKUA@users.noreply.github.com"
+}
