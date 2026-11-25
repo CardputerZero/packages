@@ -1,0 +1,11 @@
+{
+  "filename": "cardputeradv_0.1.5-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/czdev-buffer/cardputeradv_0.1.5-m5stack1_arm64.deb",
+  "sha256": "de9d1b454eecfab1eacec981abf8ba5e82501650da56630a3aec9bfbffac15b4",
+  "size": 45235668,
+  "package": "cardputeradv",
+  "version": "0.1.5-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "zhuzhe1983",
+  "uploader_email": "zhuzhe1983@gmail.com"
+}
