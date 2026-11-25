@@ -1,0 +1,33 @@
+{
+  "title": "Colibri",
+  "summary": "支持中文输入、离线语音、MCP 与技能的 Cardputer Zero 口袋 AI 助手。",
+  "description": "Colibri 是面向 Cardputer Zero 的口袋 AI 助手。\r\n\r\n支持中文整句拼音、英文输入和本机离线中英语音转写，识别结果可编辑后发送。支持 OpenAI 兼容模型服务、图片理解和搜索 API，以及标准 MCP 和本地技能。\r\n\r\n支持长期记忆、历史恢复、自动上下文压缩、/compact 和 /clear，配有小屏幕 Markdown、消息卡片和状态动效，并沿用系统自动熄屏。提供终端 REPL、可选后台网关及微信通道。\r\n\r\n首次使用请配置自己的模型服务。语音在掌机本地转写，对话和搜索使用你配置的网络服务。应用具有当前 Linux 用户的文件读写和命令执行能力，危险操作由 Agent 请求确认。\r\n\r\n存储占用说明：安装包及安装后的存储占用主要来自随包提供的离线语音识别模型，用于在掌机本地完成语音转写，不依赖在线语音服务。",
+  "categories": [
+    "Development",
+    "AI"
+  ],
+  "license": "MIT",
+  "share_code": "COLI",
+  "source_repo": "https://github.com/yunbudong11114/colibri",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "卧东",
+    "github": "yunbudong11114"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "colibri_icon.png",
+  "published_at": "2026-11-25T07:23:27+00:00",
+  "updated_at": "2026-11-25T07:23:27+00:00"
+}
