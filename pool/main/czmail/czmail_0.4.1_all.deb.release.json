@@ -1,0 +1,11 @@
+{
+  "filename": "czmail_0.4.1_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/H4W9__czmail_0.4.1_all.deb",
+  "sha256": "5acbe7ee3a5a0a53497a67bed514e3afbe2da22af1db9b59f1ad6fc615a9df58",
+  "size": 56246,
+  "package": "czmail",
+  "version": "0.4.1",
+  "architecture": "all",
+  "uploaded_by": "H4W9",
+  "uploader_email": "h4w9@users.noreply.github.com"
+}
