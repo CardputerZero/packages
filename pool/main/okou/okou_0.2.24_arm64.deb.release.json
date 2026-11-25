@@ -1,0 +1,11 @@
+{
+  "filename": "okou_0.2.24_arm64.deb",
+  "url": "https://github.com/e7h4n/packages/releases/download/czdev-buffer/okou_0.2.24_arm64.deb",
+  "sha256": "e67fb591e4fc7632c4e504d8e06e173ed13e00fdf47488134d3176ed40538df0",
+  "size": 898890,
+  "package": "okou",
+  "version": "0.2.24",
+  "architecture": "arm64",
+  "uploaded_by": "e7h4n",
+  "uploader_email": "813596+e7h4n@users.noreply.github.com"
+}

@@ -1,0 +1,14 @@
+{
+  "title": "Okou",
+  "summary": "Talk to your personal AI assistant from your Cardputer Zero.",
+  "categories": ["AI"],
+  "description": "Sign in to your Okou account and choose a workspace. Hold Enter to record a voice message and release to send it. Read responses on the handheld, scroll through longer replies, or revisit earlier messages with the arrow keys. This edition receives updates through the Cardputer Zero AppStore.",
+  "locales": {"zh-CN": {"title": "Okou", "summary": "按住回车说话，在 Cardputer Zero 上使用你的个人 AI 助手。"}},
+  "screenshots": ["screenshots/chat.png", "screenshots/recording.png", "screenshots/history.png"],
+  "icon": "icon.png",
+  "license": "MIT",
+  "source_repo": "https://github.com/e7h4n/okou-zero",
+  "author": {"github": "e7h4n", "display_name": "Okou"},
+  "share_code": "OKOU",
+  "permissions": {"camera": false, "microphone": true, "imu": false, "network": true, "additional_hardware": false, "background_service": false, "external_display": false}
+}
