@@ -1,0 +1,11 @@
+{
+  "filename": "audio-studio_0.2.0-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/audio-studio_0.2.0-1_arm64.deb",
+  "sha256": "17d0209fc22be256f260c6ef592be9dfc42c91e7971291d7a2226525852b9168",
+  "size": 1485660,
+  "package": "audio-studio",
+  "version": "0.2.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}

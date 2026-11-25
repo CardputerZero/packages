@@ -1,0 +1,50 @@
+{
+  "title": "Audio Studio",
+  "summary": "96 kHz acoustic spectrum, 3D belt tuner, anomaly watch & SoundNet-2D ML",
+  "categories": [
+    "Media",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/listen.png",
+    "screenshots/spectrum.png",
+    "screenshots/belt.png",
+    "screenshots/anomaly.png",
+    "screenshots/ultra.png"
+  ],
+  "description": "Audio Studio turns CardputerZero's ES8389 Hi-Fi audio codec into a pocket 96 kHz spectrum analyzer, ultrasonic detector (18-48 kHz), oscilloscope & YIN chromatic tuner, pre-trigger anomaly recorder, and on-device INT8 ML acoustics lab. Includes SoundNet-2D (28 sound classes + 32D Few-Shot custom sound enrollment), AnomalyAE-2D (DCASE convolutional autoencoder with 32-band fault heatmap), DTMF/mains-hum/T3 alarm decoders, speaker signal generator, WAV library, and opt-in stdio MCP server.",
+  "locales": {
+    "en": {
+      "title": "Audio Studio",
+      "summary": "96 kHz acoustic spectrum, anomaly watch, SoundNet-2D ML & ultrasonic lab"
+    },
+    "ru": {
+      "title": "Audio Studio",
+      "summary": "Анализатор звука 96 кГц, спектрограмма, ультразвук, ML и детектор аномалий"
+    },
+    "zh-CN": {
+      "title": "Audio Studio",
+      "summary": "96 kHz 声学频谱、超声波、异常监测与端侧 ML 音频实验室"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/igenexxx/audio-studio",
+  "icon": "audio-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "AUST",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-25T20:47:01+00:00",
+  "updated_at": "2026-11-25T20:47:01+00:00"
+}
