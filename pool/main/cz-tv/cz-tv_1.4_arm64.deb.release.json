@@ -1,0 +1,11 @@
+{
+  "filename": "cz-tv_1.4_arm64.deb",
+  "url": "https://github.com/argosautomation/packages/releases/download/czdev-buffer/cz-tv_1.4_arm64.deb",
+  "sha256": "2fb4b3eef381826067f7616cc9bd3869ea64e06bb9c7e35e3174867643cde231",
+  "size": 274440,
+  "package": "cz-tv",
+  "version": "1.4",
+  "architecture": "arm64",
+  "uploaded_by": "argosautomation",
+  "uploader_email": "argosautomation@users.noreply.github.com"
+}
