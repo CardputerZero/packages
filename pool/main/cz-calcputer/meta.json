@@ -1,0 +1,42 @@
+{
+  "title": "CalcPuter",
+  "summary": "Engineering calculator: functions, variables, calculus and graphs",
+  "categories": [
+    "System Tools",
+    "Education"
+  ],
+  "screenshots": [
+    "screenshots/calc.png",
+    "screenshots/graph.png",
+    "screenshots/trace.png",
+    "screenshots/functions.png",
+    "screenshots/history.png",
+    "screenshots/help.png"
+  ],
+  "description": "CalcPuter is a keyboard-first engineering calculator for the CardputerZero.\n\n- Expressions with implicit multiplication (2pi, 3(x+1)), hex/binary literals, n!, DEG/RAD trig, logs, gcd/lcm, nCr/nPr and more\n- Variables and your own functions: r = 4.7e3, f(x) = x^3 - 2x\n- Calculus: der(f(x), 2), integ(sin(x), 0, pi), solve(x^2-2, 1), sum(1/x^2, 1, 100)\n- Fast input: Space completes names (sq -> sqrt()), automatic paired parentheses, a leading operator continues from ans\n- Graphs of up to four functions with pan/zoom, trace with y and y', root and min/max search\n- AUTO/SCI/ENG number formats, dark and light theme; history, variables, functions and plots are kept between runs\n\nTab switches CALC / Y= / GRAPH, Fn+H shows help for the current page.",
+  "locales": {
+    "uk": {
+      "title": "CalcPuter",
+      "summary": "Інженерний калькулятор: функції, змінні, похідні, інтеграли та графіки"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/heartpolik/cardputer-zero-tools",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CALC",
+  "author": {
+    "github": "heartpolik",
+    "display_name": "heartpolik"
+  },
+  "published_at": "2026-11-25T07:32:39+00:00",
+  "updated_at": "2026-11-25T07:32:39+00:00"
+}

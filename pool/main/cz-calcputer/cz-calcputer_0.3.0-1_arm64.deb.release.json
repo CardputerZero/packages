@@ -1,0 +1,11 @@
+{
+  "filename": "cz-calcputer_0.3.0-1_arm64.deb",
+  "url": "https://github.com/heartpolik/packages/releases/download/czdev-buffer/cz-calcputer_0.3.0-1_arm64.deb",
+  "sha256": "db6cd013bd63887898c4827f070fa8a793bfa8f74d21910efe4b4424d8fb169d",
+  "size": 1252538,
+  "package": "cz-calcputer",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "heartpolik",
+  "uploader_email": "heart.polik@gmail.com"
+}
