@@ -1,0 +1,11 @@
+{
+  "filename": "meshscan_1.0.0_all.deb",
+  "url": "https://github.com/mfiumara/packages/releases/download/czdev-buffer/meshscan_1.0.0_all.deb",
+  "sha256": "b98ea801b560b2899810bd38aa70df6f0f020f350e1b5d3d4fa7883274644040",
+  "size": 771496,
+  "package": "meshscan",
+  "version": "1.0.0",
+  "architecture": "all",
+  "uploaded_by": "mfiumara",
+  "uploader_email": "mfiumara@users.noreply.github.com"
+}

@@ -1,0 +1,39 @@
+{
+  "title": "Mesh Map",
+  "summary": "See the LoRa mesh around you: live map, MeshCore chat and a browser dashboard",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/map.png",
+    "screenshots/node.png",
+    "screenshots/chat.png",
+    "screenshots/dashboard-qr.png"
+  ],
+  "description": "Mesh Map turns your CardputerZero and Cap LoRa-1262 into a window on the LoRa mesh around you.\n\n• Map: nodes at the positions they advertise, on a dark offline-cached map. Recently heard nodes glow; repeaters are diamonds.\n• Scan mode: listens to MeshCore, Meshtastic and LoRaWAN presets in turn and decodes adverts, positions, telemetry and public channels. It never transmits.\n• Chat mode: a MeshCore node for the Public channel and your own channels, from the Cardputer keyboard or your phone. It only transmits the messages you send.\n• Dashboard: open http://<cardputer>.local:8080 on your phone or laptop for the live packet feed, map, node list and chat. A PIN protects sending and settings.\n• Shares the radio: press P to pause, and other LoRa apps such as MeshTerm or MeshCore can use the Cap. If another app holds the radio, Mesh Map says so and waits.\n\nFirst run: open the dashboard and pick a name, region (Netherlands, EU/UK or USA/Canada) and PIN. Until then the radio only listens.\nKeys: arrows pan, +/- zoom, Tab selects a node, C opens chat, P pauses the radio, Shift+Q shows the dashboard QR code.",
+  "locales": {
+    "nl": {
+      "title": "Mesh Map",
+      "summary": "Zie het LoRa-mesh om je heen: live kaart, MeshCore-chat en een browserdashboard"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "source_repo": "https://github.com/mfiumara/meshscan-zero",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "MSCN",
+  "author": {
+    "github": "mfiumara",
+    "display_name": "Mattia Fiumara"
+  },
+  "published_at": "2026-11-25T14:33:47+00:00",
+  "updated_at": "2026-11-25T14:33:47+00:00"
+}
