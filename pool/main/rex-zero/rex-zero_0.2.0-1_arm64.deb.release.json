@@ -1,0 +1,11 @@
+{
+  "filename": "rex-zero_0.2.0-1_arm64.deb",
+  "url": "https://github.com/catoncat/rex-zero/releases/download/v0.2.0/rex-zero_0.2.0-1_arm64.deb",
+  "sha256": "f4b2e06a32504d33c979eeed8a0e993c52b671bcf06dd2e432032c7649d5677b",
+  "size": 11388048,
+  "package": "rex-zero",
+  "version": "0.2.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "catoncat",
+  "uploader_email": "catoncat@users.noreply.github.com"
+}

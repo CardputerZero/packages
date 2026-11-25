@@ -1,0 +1,46 @@
+{
+  "title": "Rex Zero",
+  "summary": "Native Superlogical Rex client: fleet inbox, Ghostty VT, Tailscale & Rime",
+  "description": "Rex Zero turns the M5Stack CardputerZero into a 30fps pocket mission control for Superlogical Rex across your local Zero and remote Mac/Linux machines.\n\nKey features:\n- Fleet Priority Inbox & Accordion Hosts: real-time OSC 7501 Program Status events surface blocked approvals, errors, and finished agent runs across all hosts with audio chimes, MRU quick switching, and instant 1-4 jump.\n- Dual Real-Time Modes: read AI coding sessions (Antigravity, Codex, Claude Code) in a clean high-contrast CJK reader with 1-key approvals and 16px/14px/12px global font scaling, or press m for a direct-input libghostty-vt ANSI terminal.\n- Built-in Userspace Tailscale (tsnet) & SSH: scan an on-screen QR code to join your tailnet without root or TUN conflicts alongside existing proxies, or connect via SSH dial-stdio with zero open ports.\n- Tri-Modal Input & QR Pairing: 46-key hardware typing with a 2-4 line cursor editor, offline Rime Simplified/Double Pinyin (Tab), streaming voice dictation (v / Alt+V), and a 5-minute LAN/Tailnet QR web pairing page to import SSH or ASR keys safely.",
+  "locales": {
+    "zh-CN": {
+      "title": "Rex Zero",
+      "summary": "原生 Rex 掌上总控台：跨机 Agent 收件箱、Ghostty 终端、内置 Tailscale 与拼音语音"
+    },
+    "ja": {
+      "title": "Rex Zero",
+      "summary": "Superlogical Rex ネイティブ端末：Agent 受信箱、Ghostty VT、内蔵 Tailscale"
+    }
+  },
+  "icon": "icon.png",
+  "screenshots": [
+    "screenshots/01-inbox.png",
+    "screenshots/02-hosts.png",
+    "screenshots/03-approval.png",
+    "screenshots/04-terminal.png",
+    "screenshots/05-voice-asr.png",
+    "screenshots/06-tailnet-pair.png"
+  ],
+  "categories": [
+    "Development",
+    "AI"
+  ],
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "display_name": "catoncat",
+    "github": "catoncat"
+  },
+  "source_repo": "https://github.com/catoncat/rex-zero",
+  "license": "MIT",
+  "share_code": "REXZ",
+  "published_at": "2026-11-25T04:43:51Z",
+  "updated_at": "2026-11-25T04:43:51Z"
+}
