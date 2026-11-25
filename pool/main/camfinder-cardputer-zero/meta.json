@@ -1,0 +1,31 @@
+{
+  "title": "camfinder",
+  "summary": "Experimental SDR-assisted camera leakage detector.",
+  "description": "Experimental SDR-assisted camera leakage detection for Cardputer Zero. Scans for weak electromagnetic leakage near crystal-clock harmonics, fits a shared offset model, and tracks persistent candidates. Practical detection relies heavily on an external low-noise amplifier (LNA): the original experiments used a 20 dB external LNA, and neither an Airspy Mini nor a USRP B210 captured the leakage effectively without one. The default package includes the Airspy backend; optional builds support SoapySDR.",
+  "categories": [
+    "Radio & Comms",
+    "Other"
+  ],
+  "license": "WTFPL",
+  "share_code": "CMFD",
+  "source_repo": "https://github.com/leommxj/camfinder",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "leommxj",
+    "github": "leommxj"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "camfinder-cardputer-zero_icon.png",
+  "published_at": "2026-11-25T18:21:20+00:00",
+  "updated_at": "2026-11-25T18:21:20+00:00"
+}

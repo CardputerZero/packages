@@ -1,0 +1,11 @@
+{
+  "filename": "camfinder-cardputer-zero_0.1.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/leommxj__camfinder-cardputer-zero_0.1.1-1_arm64.deb",
+  "sha256": "956c23b25900ea02ecf7868b2f6cf3049718d61e1a46aeef0a99b4c6adfaee3a",
+  "size": 1107598,
+  "package": "camfinder-cardputer-zero",
+  "version": "0.1.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "leommxj",
+  "uploader_email": "leommxj@users.noreply.github.com"
+}
