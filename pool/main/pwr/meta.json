@@ -1,0 +1,32 @@
+{
+  "title": "PWR",
+  "summary": "Shut down or restart your Cardputer Zero",
+  "description": "A small APPLaunch app for Cardputer Zero: Restart or Shut down with confirmation.\r\n\r\nIt runs the usual systemctl reboot / systemctl poweroff path so in a sense, it is just a bloated launcher wrapper. the power button should shut the system first, but sometimes we need that feeling that it is done the right way.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "POWR",
+  "source_repo": "https://github.com/mohamedation/pwr",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "mohamedation",
+    "github": "mohamedation"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "pwr_icon.png",
+  "published_at": "2026-11-25T11:47:03+00:00",
+  "updated_at": "2026-11-25T11:47:03+00:00"
+}

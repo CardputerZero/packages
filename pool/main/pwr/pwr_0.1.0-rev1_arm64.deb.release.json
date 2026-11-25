@@ -1,0 +1,11 @@
+{
+  "filename": "pwr_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/mohamedation__pwr_0.1.0-rev1_arm64.deb",
+  "sha256": "125d709841fc8484e27a6fce2f6d09bec1fc44d63d8260fc90d71c4698e446f2",
+  "size": 790598,
+  "package": "pwr",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "mohamedation",
+  "uploader_email": "mohamedation@users.noreply.github.com"
+}
