@@ -1,0 +1,11 @@
+{
+  "filename": "ripple_0.1.0-rev10_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/wangweijia__ripple_0.1.0-rev10_arm64.deb",
+  "sha256": "de80dd2afa2fd732e3d2a5b3262b03b42992c234f47908bc1af0cfe759e3d920",
+  "size": 1206308,
+  "package": "ripple",
+  "version": "0.1.0-rev10",
+  "architecture": "arm64",
+  "uploaded_by": "wangweijia",
+  "uploader_email": "wangweijia@users.noreply.github.com"
+}

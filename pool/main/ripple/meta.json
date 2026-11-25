@@ -1,0 +1,32 @@
+{
+  "title": "Ripple",
+  "summary": "rss 订阅阅读工具",
+  "description": "简单的 rss 订阅阅读工具。",
+  "categories": [
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "JIA1",
+  "source_repo": "https://forgejo.wqyhomes.com/wwj/Ripple",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "jiajia",
+    "github": "wangweijia"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "ripple_icon.png",
+  "published_at": "2026-11-25T07:02:14+00:00",
+  "updated_at": "2026-11-25T07:02:14+00:00"
+}
