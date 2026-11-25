@@ -1,0 +1,11 @@
+{
+  "filename": "lokictl_0.1.2-1_arm64.deb",
+  "url": "https://github.com/weeknds/packages/releases/download/czdev-buffer/lokictl_0.1.2-1_arm64.deb",
+  "sha256": "0b9472647c9629ff8fac510e85237d94537f0b918bd2bdf2f8f8de4ca1e78746",
+  "size": 3693806,
+  "package": "lokictl",
+  "version": "0.1.2-1",
+  "architecture": "arm64",
+  "uploaded_by": "weeknds",
+  "uploader_email": "weeknds@users.noreply.github.com"
+}
