@@ -1,0 +1,49 @@
+{
+  "title": "IMU Studio",
+  "summary": "9-DoF 3D Cube, Tap X-Ray, BCG/Tremor, Magic Wand, Shaper, FFT & 6-Model ML",
+  "categories": [
+    "Hardware & IoT",
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/horizon_cube.png",
+    "screenshots/shaper_dual.png",
+    "screenshots/tap_inspect.png",
+    "screenshots/bio_sense.png",
+    "screenshots/gesture_wand.png"
+  ],
+  "description": "IMU Studio turns CardputerZero's BMI270 + BMM150 9-DoF sensors into an engineering & EDC lab: Smart Auto-Baseline, 8 Guided Missions, Madgwick Quaternion 3D Horizon/Cube, 3D Tilt-Compensated Compass, Magnetic Metal/Stud Finder, 100 Hz Vibration FFT & ISO 10816 Grade A-F, Klipper/K1C Dual-Axis X+Y Input Shaper, STA/LTA Tamper Guard, Black-Box Replay, Wall/Tank Tap X-Ray (IMUTapNet-1D), Non-Medical BCG Pulse/Tremor (IMUBioNet-1D), 3D Air Magic Wand (IMUGestureNet-1D), 6 embedded INT8 models (32.6 KiB, 0 allocs), and opt-in 30-tool MCP.",
+  "locales": {
+    "en": {
+      "title": "IMU Studio",
+      "summary": "9-DoF 3D Cube, Tap X-Ray, BCG/Tremor, Magic Wand, Shaper, FFT & 6-Model ML"
+    },
+    "ru": {
+      "title": "IMU Studio",
+      "summary": "9-DoF куб, Tap X-Ray, БКГ/тремор, 3D-жесты, Klipper Shaper, FFT и 6 ML-моделей"
+    },
+    "zh-CN": {
+      "title": "IMU Studio",
+      "summary": "九轴姿态立方、敲击探测、非接触脉搏/手抖、3D 魔杖手势、共振整形与 6 模型 ML"
+    }
+  },
+  "license": "MIT",
+  "icon": "imu-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "IM9D",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-25T20:48:15+00:00",
+  "updated_at": "2026-11-25T20:48:15+00:00"
+}

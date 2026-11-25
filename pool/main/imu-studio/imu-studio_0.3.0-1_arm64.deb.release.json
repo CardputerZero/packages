@@ -1,0 +1,11 @@
+{
+  "filename": "imu-studio_0.3.0-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/imu-studio_0.3.0-1_arm64.deb",
+  "sha256": "3b35fed848d47d402f637bf3435ae918ae795f174fb6a7d122bc5bd1b8ef62d6",
+  "size": 2577968,
+  "package": "imu-studio",
+  "version": "0.3.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
