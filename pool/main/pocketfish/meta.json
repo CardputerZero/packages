@@ -6,23 +6,24 @@
     "Lifestyle"
   ],
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png",
-    "screenshots/screenshot-3.png",
-    "screenshots/screenshot-4.png"
+    "screenshots/1-tank.png",
+    "screenshots/6-ocean-moonlight.png",
+    "screenshots/2-myfish.png",
+    "screenshots/4-customize.png",
+    "screenshots/5-all-fishes.png",
+    "screenshots/7-background-music.png"
   ],
   "description": "A quiet pocket aquarium. One fish, a little water, and you.\r\n\r\nTap a key to drop a crumb at the matching spot in the water:\r\n\r\n    4 5 6 7 8\r\n    E R T Y U\r\n    D F G H J\r\n    Z X C V B\r\n\r\nYour fish takes a moment to notice, then swims over to eat.\r\nFeed your fish at least every 5 days! Otherwise...\r\n\r\nPress tab to meet your fish in MyFish and look around.\r\nThe longer you stay, the more you'll find :).",
   "license": "Proprietary",
   "icon": "pocketfish_icon.png",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
     "additional_hardware": false,
     "background_service": false,
-    "camera": false,
-    "external_display": false,
-    "imu": false,
-    "microphone": false,
-    "network": true
+    "external_display": false
   },
   "share_code": "FISH",
   "author": {
@@ -30,5 +31,5 @@
     "display_name": "PocketFish"
   },
   "published_at": "2026-11-23T11:52:29+00:00",
-  "updated_at": "2026-11-25T12:53:37+00:00"
+  "updated_at": "2026-11-25T13:12:32+00:00"
 }
