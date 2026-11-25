@@ -1,0 +1,36 @@
+{
+  "title": "MagScan",
+  "summary": "Metal detector for CardputerZero C154/C154-B (needs the BMM150 magnetometer)",
+  "description": "MagScan turns the CardputerZero's BMM150 magnetometer into a metal detector. It tracks deviations of the local magnetic field, shows live field strength and warns about AC interference.\r\n\r\nHardware: works only on the CardputerZero Kickstarter edition (SKU C154 / C154-B), the only model with the BMM150 magnetometer. CardputerZero-Lite (C155 / C155-B) and CardputerZero v1.0 (C154-V1) have no magnetometer: on those the app only shows a \"sensor not found\" screen.",
+  "categories": [
+    "Lifestyle",
+    "Other"
+  ],
+  "license": "CC-BY-NC-ND-4.0",
+  "share_code": "MAGS",
+  "source_repo": "https://github.com/nerdosity/magscan",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": true,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "nerdosity",
+    "github": "nerdosity"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "magscan_icon.png",
+  "published_at": "2026-11-23T22:22:08+00:00",
+  "updated_at": "2026-11-23T22:22:08+00:00"
+}
