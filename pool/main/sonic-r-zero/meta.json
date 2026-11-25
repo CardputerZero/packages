@@ -1,0 +1,35 @@
+{
+  "title": "Sonic R Port",
+  "summary": "Native 30 FPS racing on Cardputer Zero using your PC copy of Sonic R.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/01-resort-island.png",
+    "screenshots/02-radical-city.png",
+    "screenshots/03-regal-ruin.png",
+    "screenshots/04-reactive-factory.png",
+    "screenshots/05-course-select.png",
+    "screenshots/06-character-select.png"
+  ],
+  "description": "Play the PC edition of Sonic R on the Cardputer Zero with native 320×170 VC4 graphics, keyboard controls, and local saves. First-launch setup imports your installed 1998 PC game from internal storage, SD, or USB. Supply the original SONICR.EXE and game folders. The app prepares the native runtime on the Zero.",
+  "license": "LicenseRef-Sonic-R-Engine",
+  "source_repo": "https://github.com/RetroBreeze/sonic-r-cardputer-zero",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SONR",
+  "author": {
+    "github": "RetroBreeze",
+    "display_name": "RetroBreeze"
+  },
+  "published_at": "2026-11-25T21:20:46+00:00",
+  "updated_at": "2026-11-25T21:20:46+00:00"
+}
