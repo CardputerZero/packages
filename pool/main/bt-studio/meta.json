@@ -1,0 +1,49 @@
+{
+  "title": "BT Studio",
+  "summary": "BLE 5.2 & Classic radar, GATT Grade A-F, Honeypot, BTSnoop & 4-Model ML",
+  "categories": [
+    "Radio & Comms",
+    "Security"
+  ],
+  "screenshots": [
+    "screenshots/home.png",
+    "screenshots/radar.png",
+    "screenshots/tracker.png",
+    "screenshots/gatt_audit.png",
+    "screenshots/honeypot.png",
+    "screenshots/classic_sdp.png"
+  ],
+  "description": "BT Studio is a non-root Bluetooth 5.2 BLE & Classic engineering lab for CardputerZero: live radar with Tap-to-Select, Learn My Room (NEW ONLY) baseline, anti-stalking RPA Tracker Guard, Kalman Foxhunt, passive IoT sensors (BTHome/Xiaomi/Ruuvi/Govee), GATT Explorer & Security Grade (A-F), live Notify Byte-Diff, GATT Honeypot clone, BLE NUS & Classic SPP terminal, Wireshark BTSnoop export, 4 embedded Pure-Go INT8 neural models (BTDeviceNet v2, BLEPayloadNet-1D, BTSeqNet-1D, BTAnomalyAE), and opt-in 31-tool MCP.",
+  "locales": {
+    "en": {
+      "title": "BT Studio",
+      "summary": "BLE 5.2 & Classic radar, GATT Grade A-F, Honeypot, BTSnoop & 4-Model ML"
+    },
+    "ru": {
+      "title": "BT Studio",
+      "summary": "Радар BLE 5.2/Classic, аудит GATT A-F, детектор трекеров, BTSnoop и 4 ML-модели"
+    },
+    "zh-CN": {
+      "title": "BT Studio",
+      "summary": "蓝牙 5.2/经典雷达、GATT 安全评级 A-F、蜜罐、BTSnoop 与 4 模型端侧 ML"
+    }
+  },
+  "license": "MIT",
+  "icon": "bt-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "BT52",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-25T20:47:42+00:00",
+  "updated_at": "2026-11-25T20:47:42+00:00"
+}

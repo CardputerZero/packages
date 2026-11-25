@@ -1,0 +1,11 @@
+{
+  "filename": "bt-studio_0.4.0-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/bt-studio_0.4.0-1_arm64.deb",
+  "sha256": "0c7a1d9e32a69f146238560c0dfa2004337683531f2f6845fbb62481e4b8e2df",
+  "size": 1923854,
+  "package": "bt-studio",
+  "version": "0.4.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}
