@@ -1,0 +1,32 @@
+{
+  "title": "QSO-Zero",
+  "summary": "QRP digital modes interface in your pocket.",
+  "description": "A pocket FT8 / FT4 / JS8 / WSPR station for the M5Stack Cardputer Zero, built for QRP operators in the field. It's plain C with no desktop: it draws straight to the Cardputer's screen, controls the radio through Hamlib, and decodes and transmits on its own. Please visit github.com/CzarD0mn/QSO-Zero for installation instructions as dependancies must be installed before this app can install properly.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "GPL-3.0",
+  "share_code": "QSOZ",
+  "source_repo": "https://www.github.com/CzarD0mn/QSO-Zero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": true,
+    "imu": false,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "CzarD0mn",
+    "github": "CzarD0mn"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "qso-zero_icon.png",
+  "published_at": "2026-11-23T02:54:22+00:00",
+  "updated_at": "2026-11-23T02:54:22+00:00"
+}

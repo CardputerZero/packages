@@ -1,0 +1,11 @@
+{
+  "filename": "qso-zero_0.2.6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/CzarD0mn__qso-zero_0.2.6_arm64.deb",
+  "sha256": "058e5ace8cbe87ff965ccbc477a25bae4081a4fd1b8ed25fd72c5417ed3905a4",
+  "size": 1864320,
+  "package": "qso-zero",
+  "version": "0.2.6",
+  "architecture": "arm64",
+  "uploaded_by": "CzarD0mn",
+  "uploader_email": "czard0mn@users.noreply.github.com"
+}
