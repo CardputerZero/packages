@@ -1,0 +1,32 @@
+{
+  "title": "2048",
+  "summary": "Classic 2048 puzzle game tuned for the CardputerZero keyboard.",
+  "description": "Merge matching tiles on a 4 x 4 board and reach 2048. Built for the CardputerZero 320 x 170 display, with a live score, tile sounds, restart confirmation and continued play after reaching the goal.\r\n\r\nControls: F/Z/X/C or W/A/S/D move the tiles; arrow keys are also supported. Press R, then R again to restart; Esc cancels the restart prompt. M toggles sound. Hold Esc or press Q to quit.\r\n\r\nRuns offline using the built-in keyboard, display and speaker. No additional hardware is required.",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "2048",
+  "source_repo": "https://github.com/zhuzhe1983/cp0-2048",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Zhu Zhe",
+    "github": "zhuzhe1983"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "2048_icon.png",
+  "published_at": "2026-11-25T12:28:27+00:00",
+  "updated_at": "2026-11-25T12:28:27+00:00"
+}
