@@ -8,7 +8,7 @@
   ],
   "license": "MIT",
   "share_code": "DMOD",
-  "source_repo": "https://github.com/H4W9/CardputerZero_DisplayMOD",
+  "source_repo": "https://github.com/H4W9/CardputerZero_Mail",
   "permissions": {
     "additional_hardware": true,
     "background_service": true,
@@ -31,5 +31,5 @@
   ],
   "icon": "displaymod_icon.png",
   "published_at": "2026-11-23T21:24:47+00:00",
-  "updated_at": "2026-11-23T21:24:47+00:00"
+  "updated_at": "2026-11-25T19:07:59+00:00"
 }
