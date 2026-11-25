@@ -1,0 +1,11 @@
+{
+  "filename": "nettest_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/maximvd__nettest_0.1.0-rev1_arm64.deb",
+  "sha256": "f679e94f991aacbf25cd0ef8307288669094f397b40720608ae2c741d58f0f45",
+  "size": 1986646,
+  "package": "nettest",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "maximvd",
+  "uploader_email": "maximvd@users.noreply.github.com"
+}

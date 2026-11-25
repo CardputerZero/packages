@@ -1,0 +1,30 @@
+{
+  "title": "NetTest",
+  "summary": "Network tester: link status, switch & port via LLDP/CDP, ping and DNS checks",
+  "description": "NetTest turns the CardputerZero into a pocket network tester. The Ethernet page shows link state, speed and duplex, IPv4/IPv6 address, gateway, DNS and MAC, plus the switch name, port, VLAN and management IP the switch advertises over LLDP or CDP, so you can find out where a wall jack goes. The Wi-Fi page shows SSID, signal strength and addresses. The Tests page pings the gateway and 1.1.1.1, queries every configured DNS server directly, and checks internet access over TCP 443, with a one-line verdict. Use the 4/5/6 keys for the Ethernet, Wi-Fi and Tests pages, Up/Down to switch interfaces, 7 to re-run the checks and 8 for light/dark mode. Vibecoded with Claude Code.",
+  "categories": [
+    "System Tools"
+  ],
+  "license": "MIT",
+  "share_code": "NTST",
+  "source_repo": "https://github.com/maximvd/NetTest",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "maximvd",
+    "github": "maximvd"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "nettest_icon.png",
+  "published_at": "2026-11-25T17:11:16+00:00",
+  "updated_at": "2026-11-25T17:11:16+00:00"
+}
