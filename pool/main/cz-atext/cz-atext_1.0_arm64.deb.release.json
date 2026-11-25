@@ -1,0 +1,11 @@
+{
+  "filename": "cz-atext_1.0_arm64.deb",
+  "url": "https://github.com/argosautomation/packages/releases/download/czdev-buffer/cz-atext_1.0_arm64.deb",
+  "sha256": "1873b7f415ae5dd28f66b7b7a92eea5c53049ebcb0f201958cbb6cf629d1eed5",
+  "size": 15404,
+  "package": "cz-atext",
+  "version": "1.0",
+  "architecture": "arm64",
+  "uploaded_by": "argosautomation",
+  "uploader_email": "argosautomation@users.noreply.github.com"
+}
