@@ -1,0 +1,33 @@
+{
+  "title": "Radio Field Kit Zero",
+  "summary": "Antenna cuts, Maidenhead paths and HF conditions for Cardputer Zero.",
+  "description": "Radio Field Kit Zero puts a few useful amateur radio tools in your pocket. Get starting dimensions for dipoles, inverted-Vs, end-fed half-waves, loops, verticals, linked dipoles, J-poles and Slim Jims. Switch between metres and feet. Treat the results as starting cuts, then trim and check the antenna before use.\r\n\r\nEnter two Maidenhead grids to see the short-path distance and initial true bearing. Enter your starting grid by hand or use a compatible GNSS cap to fill it on request. The app doesn’t transmit over LoRa or send your coordinates anywhere.\r\n\r\nCheck UTC and estimated daylight at your starting grid. With internet access, refresh NOAA solar flux and estimated Kp. The last readings stay available offline with their source times shown. Antenna and grid calculations work without internet or a cap.\r\n\r\nDeveloped for Tartanleaf.com by Greg Weir VA1GW.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "RFK0",
+  "source_repo": "https://github.com/gregweir/RadioFieldKitZero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Greg Weir VA1GW",
+    "github": "gregweir"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "radiofieldkitzero_icon.png",
+  "published_at": "2026-11-25T20:50:49+00:00",
+  "updated_at": "2026-11-25T20:50:49+00:00"
+}
