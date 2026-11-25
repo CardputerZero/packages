@@ -1,0 +1,11 @@
+{
+  "filename": "cardmesh_0.3.5_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/maxhayim__cardmesh_0.3.5_arm64.deb",
+  "sha256": "467db31f5d32c11c9956f203b01789594151790644d49157cdcb31ef99a6cb3e",
+  "size": 11270188,
+  "package": "cardmesh",
+  "version": "0.3.5",
+  "architecture": "arm64",
+  "uploaded_by": "maxhayim",
+  "uploader_email": "maxhayim@users.noreply.github.com"
+}
