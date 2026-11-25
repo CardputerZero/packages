@@ -11,7 +11,7 @@
   "source_repo": "https://github.com/cybern0mads/CyberCam",
   "permissions": {
     "additional_hardware": false,
-    "background_service": true,
+    "background_service": false,
     "camera": true,
     "external_display": false,
     "imu": false,
