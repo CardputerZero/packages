@@ -1,0 +1,11 @@
+{
+  "filename": "zerodaw_1.2.10-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb__zerodaw_1.2.10-1_arm64.deb",
+  "sha256": "6349e36674a3a58f4e0c1c91e233a56ca11947acb6f29ccdff13406033afb60a",
+  "size": 116964,
+  "package": "zerodaw",
+  "version": "1.2.10-1",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}
