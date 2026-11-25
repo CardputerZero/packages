@@ -7,7 +7,7 @@
   "screenshots": [
     "screenshots/setup.png"
   ],
-  "description": "Browse Emby and Jellyfin media libraries, search titles, play music and watch server-transcoded 320x170 video on the CardputerZero LCD. Supports English, Simplified Chinese and Japanese, local speaker/headphone audio and optional already-configured Bluetooth audio. This reduced store edition runs as the launcher user and includes no root services, sudo configuration, boot/CMA or Wi-Fi changes, or PackageKit/LightDM control. HDMI video/photo output and automatic hardware-decoder setup are unavailable. LCD video uses software H.264 decoding; a server capable of transcoding to the LCD profile is required. Performance depends on the server, network and available RAM. Enter opens or plays, Space pauses, Z/C seek, short Esc returns and holding Esc exits. Configure your own Emby/Jellyfin server and account inside the app.",
+  "description": "Browse Emby and Jellyfin media libraries, search titles, play music and watch server-transcoded 320x170 video on the CardputerZero LCD. Supports English, Simplified Chinese and Japanese, local speaker/headphone audio and optional already-configured Bluetooth audio. This reduced store edition runs as the launcher user and includes no root services, sudo configuration, boot/CMA or Wi-Fi changes, or PackageKit/LightDM control. HDMI video/photo output and automatic hardware-decoder setup are unavailable. LCD video uses software H.264 decoding; a server capable of transcoding to the LCD profile is required. Performance depends on the server, network and available RAM. Enter opens or plays, Space pauses, Z/C seek, short Esc returns and holding Esc exits. Configure your own Emby/Jellyfin server and account inside the app.\n\nSource of the store edition: https://github.com/zhuzhe1983/cp0-StreamPlayer/tree/store-compliant-20261125.",
   "locales": {
     "zh-CN": {
       "title": "StreamPlayer",
@@ -33,5 +33,5 @@
     "github": "zhuzhe1983"
   },
   "published_at": "2026-11-25T15:39:44+00:00",
-  "updated_at": "2026-11-25T15:39:44+00:00"
+  "updated_at": "2026-11-25T16:06:41+00:00"
 }
