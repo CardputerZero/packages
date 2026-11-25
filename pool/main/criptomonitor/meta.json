@@ -1,0 +1,36 @@
+{
+  "title": "CriptoMonitor",
+  "summary": "CriptoMonitor is a crypto market monitor for the M5Stack CardputerZero (Debian,",
+  "description": "CriptoMonitor tracks the cryptocurrency market on the CardputerZero: it features a dashboard of major coins, a search function by ticker symbol, and charts ranging from 1 hour to 1 year. The interface opens in English; press L to switch to Portuguese, and M to view prices in Brazilian reais.",
+  "categories": [
+    "Creative & Office",
+    "Lifestyle"
+  ],
+  "license": "MIT",
+  "share_code": "CMCP",
+  "source_repo": "https://github.com/phor3nsic/criptomonitor-cardputerzero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "ph0r3nsic",
+    "github": "phor3nsic"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "criptomonitor_icon.png",
+  "published_at": "2026-11-25T20:10:23+00:00",
+  "updated_at": "2026-11-25T20:10:23+00:00"
+}
