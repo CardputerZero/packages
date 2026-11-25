@@ -1,0 +1,11 @@
+{
+  "filename": "landevil_0.3.0_all.deb",
+  "url": "https://github.com/x22j/packages/releases/download/czdev-buffer/landevil_0.3.0_all.deb",
+  "sha256": "c6a83230e05e916a02bd08618306bf148fb57065c5633df57a93e02b26d404f9",
+  "size": 74068,
+  "package": "landevil",
+  "version": "0.3.0",
+  "architecture": "all",
+  "uploaded_by": "x22j",
+  "uploader_email": "x22j@users.noreply.github.com"
+}
