@@ -1,0 +1,11 @@
+{
+  "filename": "aprszero_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/gregweir__aprszero_0.1.0-1_arm64.deb",
+  "sha256": "8444fdd6bdf2d8d9af08ae33ae4e2af7c8ee622608e5a49d100b0b4ced277d1d",
+  "size": 737982,
+  "package": "aprszero",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "gregweir",
+  "uploader_email": "gregweir@users.noreply.github.com"
+}
