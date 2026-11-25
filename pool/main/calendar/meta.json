@@ -1,0 +1,42 @@
+{
+  "title": "Calendar",
+  "summary": "Compact calendar with ICS sync, lunar dates, regional holidays, and almanac.",
+  "categories": [
+    "System Tools",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/calendar-status-320x170.png",
+    "screenshots/calendar-subscriptions-zh-320x170.png",
+    "screenshots/calendar-source-edit-zh-320x170.png",
+    "screenshots/calendar-status-20260825-055239-320x170.png"
+  ],
+  "description": "Calendar for CardputerZero with a compact month view, online ICS subscriptions, lunar dates, regional holidays, almanac and weather feeds. Manage optional subscriptions and choose English, Simplified Chinese or Japanese. Use F/Z/X/C to move through dates, Enter to open management and Esc to return; hold Esc to exit. Network access is used only for enabled online calendar feeds; cached data remains available offline.",
+  "locales": {
+    "zh-CN": {
+      "title": "日历",
+      "summary": "支持 ICS 订阅、农历、各地节假日、黄历和天气的便携日历。",
+      "description": "在 CardputerZero 上查看月历、农历和订阅日程；节假日、黄历和天气可按需启用。提供中、英、日界面，支持离线缓存。使用 F/Z/X/C 移动日期，Enter 打开管理，短按 Esc 返回，长按 Esc 退出。联网仅用于已启用的在线订阅。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/CardputerZero/Calendar",
+  "icon": "calendar.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CALE",
+  "uuid": "ff2ee91e-c334-5a5d-8b91-725c59c08294",
+  "published_at": "2026-05-14T23:16:38+08:00",
+  "author": {
+    "display_name": "Zhu Zhe",
+    "github": "zhuzhe1983"
+  },
+  "updated_at": "2026-11-25T15:03:35+00:00"
+}

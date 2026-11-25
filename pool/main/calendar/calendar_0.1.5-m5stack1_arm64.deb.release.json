@@ -1,0 +1,11 @@
+{
+  "filename": "calendar_0.1.5-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/czdev-buffer/calendar_0.1.5-m5stack1_arm64.deb",
+  "sha256": "f41f053a16903408d234f7cb8508a73b1d1feb7acf8a068de050e5431d46998a",
+  "size": 721336,
+  "package": "calendar",
+  "version": "0.1.5-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "zhuzhe1983",
+  "uploader_email": "zhuzhe1983@gmail.com"
+}
