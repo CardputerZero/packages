@@ -1,0 +1,11 @@
+{
+  "filename": "bus-studio_0.2.0-1_arm64.deb",
+  "url": "https://github.com/igenexxx/packages/releases/download/czdev-buffer/bus-studio_0.2.0-1_arm64.deb",
+  "sha256": "7173c1f01e7ed3415745ee629e8310396334fbc7f4edcb4f63f1a36ec01aeb23",
+  "size": 1519972,
+  "package": "bus-studio",
+  "version": "0.2.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "igenexxx",
+  "uploader_email": "igenexxx@users.noreply.github.com"
+}

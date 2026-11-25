@@ -1,0 +1,49 @@
+{
+  "title": "Bus Studio",
+  "summary": "I2C/SPI/UART/Logic, ESP32-S3 Companion Lab, Power Scope & 6-Model INT8 ML",
+  "categories": [
+    "Hardware & IoT",
+    "Development"
+  ],
+  "screenshots": [
+    "screenshots/wiring_ref.png",
+    "screenshots/i2c_radar.png",
+    "screenshots/logic_waves.png",
+    "screenshots/power_scope.png",
+    "screenshots/esp_chip_audit.png",
+    "screenshots/esp_crash_heap.png"
+  ],
+  "description": "Bus Studio is a non-root hardware bus, logic analyzer, power profiler & ESP32-S3 Companion Lab for CardputerZero: 16x8 I2C Bus Radar (140+ WHO_AM_I chips) & live register plotter, Read-Only SPI NOR Flash JEDEC 0x9F + entropy scanner, Auto-Baud Smart UART Console, 4-CH kernel-timestamped Logic Analyzer with IEEE .vcd export, bq27220 Battery & 5-CH m5ioe1 ADC Oscillograph, 4-CH Hardware PWM & Safe Rails, interactive CardputerZero visual wire maps (press W), Pure-Go ESP32-S3 SLIP ROM / eFuse / NVS / CrashDoctor / HeapTracker lab, 6 embedded INT8 neural models (33.3 KiB, 0 allocs), and opt-in 38-tool MCP.",
+  "locales": {
+    "en": {
+      "title": "Bus Studio",
+      "summary": "I2C/SPI/UART/Logic, ESP32-S3 Companion Lab, Power Scope & 6-Model INT8 ML"
+    },
+    "ru": {
+      "title": "Bus Studio",
+      "summary": "I2C/SPI/UART/логический анализатор, ESP32-S3 лаб, осциллограф питания и 6 ML"
+    },
+    "zh-CN": {
+      "title": "Bus Studio",
+      "summary": "I2C/SPI/UART/四通道逻辑分析仪、ESP32-S3 伴侣实验室、电源示波与 6 模型 ML"
+    }
+  },
+  "license": "MIT",
+  "icon": "bus-studio-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "BS42",
+  "author": {
+    "display_name": "Zhenya",
+    "github": "igenexxx"
+  },
+  "published_at": "2026-11-25T20:48:31+00:00",
+  "updated_at": "2026-11-25T20:48:31+00:00"
+}
