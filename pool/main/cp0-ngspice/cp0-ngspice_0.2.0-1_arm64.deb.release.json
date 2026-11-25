@@ -1,8 +1,8 @@
 {
   "filename": "cp0-ngspice_0.2.0-1_arm64.deb",
   "url": "https://github.com/LilMonsterOvO/packages/releases/download/czdev-buffer/cp0-ngspice_0.2.0-1_arm64.deb",
-  "sha256": "74a9480512d9bb26e4f3053819f4d17c09136ad04e5f3fff618bc5934d888cfa",
-  "size": 213132,
+  "sha256": "894dd50a864bbba41126369198c2f725970824beb4a61a43c1dfab5c72d12340",
+  "size": 161804,
   "package": "cp0-ngspice",
   "version": "0.2.0-1",
   "architecture": "arm64",
