@@ -1,0 +1,11 @@
+{
+  "filename": "cz-discputer_0.2.0-1_arm64.deb",
+  "url": "https://github.com/heartpolik/packages/releases/download/czdev-buffer/cz-discputer_0.2.0-1_arm64.deb",
+  "sha256": "d1a4f445f3b59f13399374c9883b6a1633876089dabea516af5632216159e0a4",
+  "size": 1217872,
+  "package": "cz-discputer",
+  "version": "0.2.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "heartpolik",
+  "uploader_email": "heart.polik@gmail.com"
+}
