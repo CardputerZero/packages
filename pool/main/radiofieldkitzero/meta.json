@@ -15,7 +15,7 @@
     "external_display": false,
     "imu": false,
     "microphone": false,
-    "network": false
+    "network": true
   },
   "author": {
     "display_name": "Greg Weir VA1GW",
@@ -29,5 +29,5 @@
   ],
   "icon": "radiofieldkitzero_icon.png",
   "published_at": "2026-11-25T20:50:49+00:00",
-  "updated_at": "2026-11-25T20:50:49+00:00"
+  "updated_at": "2026-11-26T13:21:20+00:00"
 }
