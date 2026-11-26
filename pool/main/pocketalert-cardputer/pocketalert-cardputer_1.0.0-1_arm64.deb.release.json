@@ -1,0 +1,11 @@
+{
+  "filename": "pocketalert-cardputer_1.0.0-1_arm64.deb",
+  "url": "https://github.com/Akellacom/packages/releases/download/czdev-buffer/pocketalert-cardputer_1.0.0-1_arm64.deb",
+  "sha256": "c304bfe0672027a1fe3cbdc2e80bae2c4832d734ed55a0f19f756ab48a64f8c2",
+  "size": 2344458,
+  "package": "pocketalert-cardputer",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "Akellacom",
+  "uploader_email": "Akellacom@users.noreply.github.com"
+}
