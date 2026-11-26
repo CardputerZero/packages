@@ -1,0 +1,33 @@
+{
+  "title": "Dronage 0",
+  "summary": "Four-voice drone synthesizer with deep modulation and effects",
+  "categories": [
+    "Media",
+    "Creative & Office"
+  ],
+  "screenshots": [
+    "screenshots/1-splash.png",
+    "screenshots/2-lab.png",
+    "screenshots/3-lfo.png",
+    "screenshots/4-osc.png"
+  ],
+  "description": "Dronage 0 is a drone workstation for the CardputerZero.\n\nFour macro oscillator voices with 32 synthesis engines each, eight LFOs, a modulation matrix, a five-track modulation sequencer, a macro control, euclidean gates, delay, reverb, tape dirt and a compressor. Eight scenes per project, undo and redo, microtonal scales, twenty colour themes, WAV recording, and a page of full-screen visualizers.\n\nKeys: 4 to 8 pick a screen, F Z X C move the cursor, K N and M B change a value, Q W E R start and stop the four voices, H shows the key list, Esc opens the menu. Projects are kept in ~/Dronage.",
+  "license": "Proprietary",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "DRNG",
+  "author": {
+    "display_name": "boorch",
+    "github": "boorch"
+  },
+  "published_at": "2026-11-24T20:40:43+00:00",
+  "updated_at": "2026-11-24T20:40:43+00:00"
+}

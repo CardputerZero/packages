@@ -1,0 +1,11 @@
+{
+  "filename": "dronage-zero_3.4.0-1_arm64.deb",
+  "url": "https://github.com/boorch/packages/releases/download/czdev-buffer/dronage-zero_3.4.0-1_arm64.deb",
+  "sha256": "a6177be20141c6dd04a39f16a11f33429481e4f4045df89103d32484a2add7ba",
+  "size": 23544836,
+  "package": "dronage-zero",
+  "version": "3.4.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "boorch",
+  "uploader_email": "boorch@users.noreply.github.com"
+}
