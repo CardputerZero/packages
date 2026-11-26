@@ -1,0 +1,33 @@
+{
+  "title": "ZeroTube",
+  "summary": "A small, fast YouTube player: search, your feeds, one key to watch",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/results.png",
+    "screenshots/search.png",
+    "screenshots/player.png",
+    "screenshots/account.png"
+  ],
+  "description": "An unofficial YouTube client sized for the 320x170 screen. Three tabs (For you, Subs, Account), search, compact lists with tiny thumbnails, and one key to start watching. Plays 240p H.264 with sound in software via FFmpeg, seeks with the arrow keys. Search and playback work signed out; to see your own feeds, send a cookies.txt from a phone or computer to the QR-code page on the Account tab. Uses yt-dlp, which the app installs into its own folder on first launch (about 60 MB, needs internet) and can update with U. Not made by or affiliated with Google or YouTube.",
+  "license": "MIT",
+  "source_repo": "https://github.com/shrimpapplepro/zerotube",
+  "icon": "zerotube.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZTUB",
+  "author": {
+    "github": "shrimpapplepro",
+    "display_name": "shrimpapplepro"
+  },
+  "published_at": "2026-11-26T13:16:25+00:00",
+  "updated_at": "2026-11-26T13:16:25+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "zerotube_0.1.1-m5stack1_arm64.deb",
+  "url": "https://github.com/shrimpapplepro/packages/releases/download/czdev-buffer/zerotube_0.1.1-m5stack1_arm64.deb",
+  "sha256": "5aec8408d6f167c95858084973de1ed0fae38f7ce7f89ae4d566b4c4b89d5eda",
+  "size": 2750046,
+  "package": "zerotube",
+  "version": "0.1.1-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "shrimpapplepro",
+  "uploader_email": "shrimpapplepro@users.noreply.github.com"
+}
