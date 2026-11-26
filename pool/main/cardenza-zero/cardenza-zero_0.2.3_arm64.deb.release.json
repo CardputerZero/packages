@@ -1,0 +1,11 @@
+{
+  "filename": "cardenza-zero_0.2.3_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/jszsj__cardenza-zero_0.2.3_arm64.deb",
+  "sha256": "b523c7d6cd0fee441495610fd8d5438fd281338d46167d03ee10076036e08265",
+  "size": 1135720,
+  "package": "cardenza-zero",
+  "version": "0.2.3",
+  "architecture": "arm64",
+  "uploaded_by": "jszsj",
+  "uploader_email": "jszsj@users.noreply.github.com"
+}
