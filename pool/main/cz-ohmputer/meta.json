@@ -1,0 +1,42 @@
+{
+  "title": "OhmPuter",
+  "summary": "Electronics calc: SMD codes, colour bands, Ohm's law, dividers, LED, RC, battery",
+  "categories": [
+    "System Tools",
+    "Education"
+  ],
+  "screenshots": [
+    "screenshots/mark.png",
+    "screenshots/mark-cap.png",
+    "screenshots/bands.png",
+    "screenshots/value-bands.png",
+    "screenshots/divider.png",
+    "screenshots/battery.png"
+  ],
+  "description": "OhmPuter is a keyboard-first electronics helper for the CardputerZero.\n\n- MARK: read printed codes - SMD resistors (103, 4992, 4R7, EIA-96 01C), capacitors (104, 4n7, 104K, 2A104J with voltage and tolerance), tantalum (A106), inductors (101, 4R7) and common diode / transistor codes (M7, T4, 1AM...). Every plausible reading is listed; resistors also show their colour code\n- BANDS: type the colours as digits (4 7 2 G) to get value, tolerance and tempco for 3-6 band resistors, or a value to get its 4- and 5-band code\n- TOOLS: Ohm's law, voltage divider with the best E-series resistor pair, LED series resistor with power rating, RC time constant / cut-off, LC resonance, battery runtime\n- E6/E12/E24/E48/E96 preferred values, SI input (4k7, 2u2, 10m)\n\nTab switches MARK / BANDS / TOOLS, F1 shows help.",
+  "locales": {
+    "uk": {
+      "title": "OhmPuter",
+      "summary": "Калькулятор електроніка: SMD-коди, кольорові смуги, закон Ома, подільники, LED, RC, батареї"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/heartpolik/cardputer-zero-tools",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "OHMS",
+  "author": {
+    "github": "heartpolik",
+    "display_name": "heartpolik"
+  },
+  "published_at": "2026-11-25T07:33:39+00:00",
+  "updated_at": "2026-11-25T07:33:39+00:00"
+}
