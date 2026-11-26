@@ -1,0 +1,48 @@
+{
+  "title": "ZeroTier",
+  "summary": "Manage your ZeroTier networks from the CardputerZero keyboard",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/list-en.png",
+    "screenshots/list-fr.png",
+    "screenshots/list-ja.png",
+    "screenshots/list-zh.png",
+    "screenshots/setup-fr.png"
+  ],
+  "description": "ZeroTier for the CardputerZero shows the node and its networks (status and managed IP) and lets you join a network by its 16-digit ID, connect, disconnect (the network stays joined) or leave it, all from the keyboard.\n\nThe app is a front end for the zerotier-one service. At the first start it offers to set everything up: it adds the official ZeroTier apt repository (download.zerotier.com), installs zerotier-one, starts it and copies the service token to your home folder (mode 600). You type your sudo password on the device keyboard; it is never stored or logged. No sudoers rule and no zerotier-cli process: the app talks to the local service API (127.0.0.1:9993).\n\nThe list refreshes every 5 seconds. Interface in French, English, Japanese and Simplified Chinese (F2). Statically linked Rust build.",
+  "locales": {
+    "fr": {
+      "title": "ZeroTier",
+      "summary": "Gérez vos réseaux ZeroTier depuis le clavier du CardputerZero"
+    },
+    "ja": {
+      "title": "ZeroTier",
+      "summary": "CardputerZeroのキーボードでZeroTierネットワークを管理"
+    },
+    "zh-CN": {
+      "title": "ZeroTier",
+      "summary": "用 CardputerZero 键盘管理 ZeroTier 网络"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/sukoshi1507/zerotier",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZTCP",
+  "author": {
+    "github": "sukoshi1507",
+    "display_name": "sukoshi1507"
+  },
+  "published_at": "2026-11-26T15:28:30+00:00",
+  "updated_at": "2026-11-26T15:28:30+00:00"
+}

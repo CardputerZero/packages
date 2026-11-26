@@ -1,0 +1,11 @@
+{
+  "filename": "zerotier-cardputer_1.0.1-rev1_arm64.deb",
+  "url": "https://github.com/sukoshi1507/packages/releases/download/czdev-buffer/zerotier-cardputer_1.0.1-rev1_arm64.deb",
+  "sha256": "62455bd264fd4a5a37c85bb573b61518f0a8ef8b0cc58617a42ac66ff6528b27",
+  "size": 605540,
+  "package": "zerotier-cardputer",
+  "version": "1.0.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "sukoshi1507",
+  "uploader_email": "sukoshi1507@users.noreply.github.com"
+}
