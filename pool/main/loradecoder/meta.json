@@ -30,5 +30,28 @@
     "display_name": "MarcS7 - IS0LTD"
   },
   "published_at": "2026-11-26T23:54:29+00:00",
-  "updated_at": "2026-11-26T23:54:29+00:00"
+  "updated_at": "2026-11-26T23:54:29+00:00",
+  "locales": {
+    "it": {
+      "title": "LoRa Decoder",
+      "summary": "Scansiona le bande LoRa e decodifica pacchetti Meshtastic e LoRaWAN con il Cap LoRa-1262",
+      "description": "Strumento LoRa di sola ricezione per il Cap LoRa-1262 (SX1262) sul CardputerZero. Spettro: sweep RSSI della banda con picco o waterfall e cursore di sintonia. Hunt: scorre i canali LoRaWAN e i preset Meshtastic, usa il Channel Activity Detection su ogni spreading factor e decodifica ciò che riceve. Ascolto: ricezione continua con frequenza, SF, banda, coding rate, sync word e IQ regolabili. Decodifica Meshtastic con decifratura AES-CTR (chiave di default o PSK personali): testo, posizione, info nodo, telemetria, traceroute, waypoint, vicini, map report. LoRaWAN: tipo messaggio, DevAddr/NetID, FCnt, FPort, join request. Cattura PCAP (LoRaTAP, si apre in Wireshark). Piani: EU868, US915, AU915, AS923, KR920, IN865, EU433. La radio non trasmette mai."
+    },
+    "zh-CN": {
+      "title": "LoRa 解码器",
+      "summary": "使用 Cap LoRa-1262 扫描 LoRa 频段并解码 Meshtastic 与 LoRaWAN 数据包（仅接收）"
+    },
+    "ja": {
+      "title": "LoRa デコーダー",
+      "summary": "Cap LoRa-1262 で LoRa 帯域をスキャンし、Meshtastic と LoRaWAN のパケットを解析（受信専用）"
+    },
+    "es": {
+      "title": "LoRa Decoder",
+      "summary": "Escanea bandas LoRa y decodifica paquetes Meshtastic y LoRaWAN con el Cap LoRa-1262 (solo recepción)"
+    },
+    "de": {
+      "title": "LoRa Decoder",
+      "summary": "LoRa-Bänder scannen und Meshtastic- und LoRaWAN-Pakete mit dem Cap LoRa-1262 dekodieren (nur Empfang)"
+    }
+  }
 }
