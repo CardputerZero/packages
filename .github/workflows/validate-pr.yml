@@ -52,6 +52,17 @@ jobs:
             exit 0
           fi
 
+          # Only changes introduced by this PR belong to the submitter.
+          # Comparing the two tips also includes unrelated updates on main.
+          # Keep BASE_SHA for trusted policy, ownership and version lookups.
+          if ! DIFF_BASE_SHA=$(git merge-base "$BASE_SHA" "$HEAD_SHA"); then
+            { echo "## ❌ Package Validation Failed"; echo;
+              echo "Unable to determine the PR merge base; validation cannot continue."; } > /tmp/out/result.md
+            echo "status=failure" >> "$GITHUB_OUTPUT"
+            cat /tmp/out/result.md
+            exit 0
+          fi
+
           # Ownership is first-come-first-served by GitHub login. On a fork PR the
           # PR author login is trusted, so it is the authoritative uploader key.
           author_lc=$(printf '%s' "$PR_AUTHOR" | tr '[:upper:]' '[:lower:]')
@@ -61,7 +72,7 @@ jobs:
           # auto-merge below without a human reading it, so it is refused here.
           # Compare paths, not Git's inferred renames. A version replacement is
           # a new manifest plus an old manifest deletion; both must be checked.
-          OUTSIDE=$(git diff --no-renames --name-only "$BASE_SHA".."$HEAD_SHA" | grep -v '^pool/main/' || true)
+          OUTSIDE=$(git diff --no-renames --name-only "$DIFF_BASE_SHA".."$HEAD_SHA" | grep -v '^pool/main/' || true)
           if [ -n "$OUTSIDE" ]; then
             ERRORS="${ERRORS}- ❌ Submissions may only change files under \`pool/main/\`; found:\n$(echo "$OUTSIDE" | sed 's/^/    /')\n"
           fi
@@ -78,7 +89,7 @@ jobs:
           # A PR may only touch package directories its author owns (or brand
           # new ones). Without this, a fork could rewrite another package's
           # meta.json or screenshots and the auto-merge would ship it.
-          TOUCHED_PKGS=$(git diff --no-renames --name-only "$BASE_SHA".."$HEAD_SHA" | grep '^pool/main/' | cut -d/ -f3 | sort -u)
+          TOUCHED_PKGS=$(git diff --no-renames --name-only "$DIFF_BASE_SHA".."$HEAD_SHA" | grep '^pool/main/' | cut -d/ -f3 | sort -u)
           for tp in $TOUCHED_PKGS; do
             tp_manifest=""
             tp_ver=""
@@ -96,7 +107,7 @@ jobs:
           done
 
           # Reject raw .deb committed to git (must use the release-manifest flow).
-          if git diff --no-renames --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb$' > /dev/null; then
+          if git diff --no-renames --name-only --diff-filter=A "$DIFF_BASE_SHA".."$HEAD_SHA" | grep '\.deb$' > /dev/null; then
             ERRORS="${ERRORS}- ❌ Raw \`.deb\` files must not be committed to git. Upload the binary to a Release in your fork and submit a \`*.deb.release.json\` manifest (use \`czdev publish\`).\n"
           fi
 
@@ -105,12 +116,12 @@ jobs:
           # would describe a file nobody downloads. This is also how a version
           # whose asset name collides with a published one (1.0~rc1 vs
           # 1.0.rc1) shows up.
-          for m in $(git diff --no-renames --name-only --diff-filter=M "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true); do
+          for m in $(git diff --no-renames --name-only --diff-filter=M "$DIFF_BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true); do
             ERRORS="${ERRORS}- ❌ \`$m\` is already published and cannot be changed; publish a new version instead (versions that differ only in '~' / '.' / ':' share one file name)\n"
           done
 
           SUMMARIES=""
-          ADDED_MANIFESTS=$(git diff --no-renames --name-only --diff-filter=A "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+          ADDED_MANIFESTS=$(git diff --no-renames --name-only --diff-filter=A "$DIFF_BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
 
           for manifest in $ADDED_MANIFESTS; do
             echo "=== $manifest ==="
@@ -327,7 +338,7 @@ jobs:
 
           # Ownership check for deleted manifests: only the recorded uploader
           # (or, for legacy manifests, the Maintainer-noreply login) may remove.
-          DELETED=$(git diff --no-renames --name-only --diff-filter=D "$BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
+          DELETED=$(git diff --no-renames --name-only --diff-filter=D "$DIFF_BASE_SHA".."$HEAD_SHA" | grep '\.deb\.release\.json$' || true)
           for manifest in $DELETED; do
             owner_login=$(git show "$BASE_SHA:$manifest" | jq -r '.uploaded_by // empty' 2>/dev/null | tr '[:upper:]' '[:lower:]' || true)
             if [[ -z "$owner_login" ]]; then

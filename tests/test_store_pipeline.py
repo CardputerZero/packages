@@ -408,8 +408,9 @@ class ManifestDiffTests(unittest.TestCase):
         # the git logic that would continue to pass if the workflow regressed.
         def assignment(name):
             return re.search(r'^\s*(' + name + r'=.*)$', self.workflow, re.M)[1]
+        diff_base = re.search(r'if ! (DIFF_BASE_SHA=.*); then', self.workflow)[1]
         immutable = re.search(r'for m in \$\(git diff[^\n]+\n[^\n]+\n\s+done', self.workflow)[0]
-        source = '\n'.join(['ERRORS=""', assignment('OUTSIDE'), assignment('TOUCHED_PKGS'),
+        source = '\n'.join(['ERRORS=""', diff_base, assignment('OUTSIDE'), assignment('TOUCHED_PKGS'),
                             immutable, assignment('ADDED_MANIFESTS'), assignment('DELETED'),
                             'printf "%s\\0" "$OUTSIDE" "$TOUCHED_PKGS" "$ERRORS" "$ADDED_MANIFESTS" "$DELETED"'])
         return self.shell(source, BASE_SHA='HEAD^', HEAD_SHA='HEAD').split('\0')[:-1]
