@@ -1,7 +1,7 @@
 {
   "title": "ZeroSDR",
   "summary": "ZeroSDR turns the Cardputer Zero into a pocket SDR receiver.",
-  "description": "Features\r\n- Real-time spectrum and waterfall on the 320×170 display\r\n- FM / NFM / AM / USB / LSB audio with squelch, AGC and de-emphasis\r\n- Wideband swept spectrum page (custom range, pan/zoom, max hold)\r\n- RFI survey: compare HF noise with equipment on/off (10m–80m)\r\n- ADSB: nearest-first list, PFD detail view and map radar\r\n- AIS: list, map with CPA guard ring, porthole ship dossier, NMEA UDP output\r\n- ACARS: aircraft message list and wrapped detail view\r\n- Fn+P screenshot on every page; Fn+D/Fn+S system volume\r\n- Runs as a normal user; no root, no background service\r\n\r\nRequirements\r\n\r\n- RTL-SDR USB dongle (tested with RTL-SDR Blog V4)\r\n- VHF/UHF antenna for SDR and AIS; 1090 MHz antenna for ADSB",
+  "description": "Features\r\n- FM / NFM / AM / USB / LSB audio with squelch, AGC and de-emphasis\r\n- Wideband swept spectrum analyzer (custom range, pan/zoom, max hold)\r\n- RFI survey: compare HF noise with equipment on/off (10m–80m)\r\n- ADSB: nearest-first list, PFD detail view and map radar\r\n- AIS: list, map with CPA guard ring, porthole ship dossier, NMEA UDP output\r\n- ACARS: aircraft message list and wrapped detail view\r\n- Runs as a normal user; no root, no background service\r\n\r\nRequirements\r\n\r\n- RTL-SDR USB dongle\r\n- VHF/UHF antenna for SDR and AIS; 1090 MHz antenna for ADSB",
   "categories": [
     "System Tools",
     "Radio & Comms"
@@ -31,6 +31,6 @@
   ],
   "icon": "zerosdr_icon.png",
   "published_at": "2026-11-10T02:37:56+00:00",
-  "updated_at": "2026-11-25T13:07:27+00:00",
+  "updated_at": "2026-11-26T01:53:47+00:00",
   "source_repo": "https://github.com/nullbeing/zerosdr"
 }
