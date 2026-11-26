@@ -1,0 +1,11 @@
+{
+  "filename": "zerocart_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/sukoshi1507/packages/releases/download/czdev-buffer/zerocart_1.0.0-rev1_arm64.deb",
+  "sha256": "efccb892e64ec7a770532b917321370b41dbbd88c88b2b2056d754b71431fefc",
+  "size": 2306676,
+  "package": "zerocart",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "sukoshi1507",
+  "uploader_email": "sukoshi1507@users.noreply.github.com"
+}
