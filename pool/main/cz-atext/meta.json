@@ -1,0 +1,42 @@
+{
+  "title": "Android Texter",
+  "summary": "Your phone's SMS on the card. Pair by scanning a QR.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/01-conversations.png",
+    "screenshots/02-thread.png",
+    "screenshots/03-new-message.png",
+    "screenshots/04-keys.png"
+  ],
+  "description": "A head for Android Texter: your own Android handset stays the modem, the card reads and sends. Conversations, threads, replies and new messages, all over the Android Texter API, refreshed every 20 seconds. Pairing is one scan of a QR code with the 8MP camera, so the API key is never typed on the keypad and never stored anywhere but the card. N starts a new message; numbers are checked against the North American plan before anything is sent, and a short number is refused rather than guessed into a stranger's phone. Needs an Android phone running the free Android Texter app and the two on the same network or the open internet; no SIM, no modem and no extra hardware on the card itself.",
+  "locales": {
+    "zh-CN": {
+      "title": "Android Texter",
+      "summary": "在卡片上收发手机短信，扫描二维码即可配对。"
+    },
+    "ja": {
+      "title": "Android Texter",
+      "summary": "スマホのSMSをカードで送受信。QRコードを読むだけでペアリング。"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ATXT",
+  "author": {
+    "github": "argosautomation",
+    "display_name": "Phil Portman"
+  },
+  "published_at": "2026-11-25T02:10:29+00:00",
+  "updated_at": "2026-11-25T02:10:29+00:00"
+}
