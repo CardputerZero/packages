@@ -1,0 +1,33 @@
+{
+  "title": "Optic Suite",
+  "summary": "A full shell for your CardputerZero: terminal, browser, music, camera and more.",
+  "categories": [
+    "System Tools",
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/1-home.png",
+    "screenshots/2-music.png",
+    "screenshots/4-apps.png"
+  ],
+  "description": "Optic Suite turns the CardputerZero's small screen into a complete, keyboard-driven workspace. Everything is one app, drawn for 320x170 and usable without a mouse.\n\n- Terminal: a real Linux shell with a font sized for the screen.\n- Browser: a fast text browser with search; pages are reflowed to fit.\n- Music: play your own files with cover art, search and play YouTube, and save songs to ~/Music. The volume keys (fn+S, fn+D) work while music plays.\n- Camera: a viewfinder that opens in under a second, and a gallery for your shots.\n- Sensors and Network: what the device sees, and Wi-Fi at a glance.\n- HDMI: with the optional Optic DE package, start and stop a desktop on an HDMI screen from the app and see its mode and refresh rate.\n- System: brightness, volume and the settings your device can actually change.\n\nOptional tools are fetched or used when present: yt-dlp is downloaded the first time you search for music; ffmpeg, curl and NetworkManager are used if installed.",
+  "license": "MIT",
+  "source_repo": "https://github.com/zedward856-spec/optic-cardputerzero",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": true,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": true
+  },
+  "share_code": "OPTC",
+  "author": {
+    "github": "zedward856-spec",
+    "display_name": "sl01220"
+  },
+  "published_at": "2026-11-25T13:08:04+00:00",
+  "updated_at": "2026-11-25T13:08:04+00:00"
+}
