@@ -1,0 +1,11 @@
+{
+  "filename": "zerofin_0.3.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/serginator__zerofin_0.3.0_arm64.deb",
+  "sha256": "f49ca29bd3ddba0afefd83f283b1ba1101b38813100f296d614d0d1ba59b3729",
+  "size": 1615866,
+  "package": "zerofin",
+  "version": "0.3.0",
+  "architecture": "arm64",
+  "uploaded_by": "serginator",
+  "uploader_email": "serginator@users.noreply.github.com"
+}
