@@ -1,0 +1,36 @@
+{
+  "title": "Pinyin Input",
+  "summary": "Offline pinyin input with a compact top candidate strip.",
+  "categories": [
+    "System Tools",
+    "Creative & Office"
+  ],
+  "screenshots": [
+    "screenshots/typing.png"
+  ],
+  "description": "Offline Simplified Chinese pinyin input. Starts in English; Ctrl+Space toggles pinyin. A top candidate strip supports arrow navigation, Space/Enter confirmation and numbered selection. Tested with APPLaunch 0.6.111 and its bundled ZClaw and CLI/ST terminal; other app or firmware builds require a matching adapter. Restart APPLaunch after installation. The optional typing-practice field does not accept Sym symbols; Sym input works in the tested terminal.",
+  "locales": {
+    "zh-CN": {
+      "summary": "Ctrl+Space 切换中英文，顶部候选栏，完全离线拼音输入。",
+      "description": "默认英文，Ctrl+Space 切换拼音；顶部候选栏支持方向键选词、空格或 Enter 确认、数字直选。已在 APPLaunch 0.6.111 及其内置的 ZClaw、CLI/ST 终端验证，其他应用或固件版本需单独适配。安装后重启启动器。试输入页暂不支持 Sym 符号，已测试的终端可正常输入符号。"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "PY01",
+  "author": {
+    "display_name": "Wang Zhen",
+    "github": "Lililiuliu"
+  },
+  "published_at": "2026-11-24T04:04:53+00:00",
+  "updated_at": "2026-11-24T04:12:26+00:00"
+}
