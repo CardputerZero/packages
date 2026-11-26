@@ -1,0 +1,33 @@
+{
+  "title": "APRSZero",
+  "summary": "APRS beacon, station list and messaging over LoRa for Cardputer Zero.",
+  "description": "APRSZero is a pocket LoRa APRS tool for the Linux-based M5Stack Cardputer Zero with a Cap LoRa-1262. Beacon your position from a live GNSS fix or a saved Maidenhead grid. See stations heard on your channel, with distance and bearing when a position is available. Compose messages and see whether they’re still awaiting an acknowledgment.\r\n\r\nSet your callsign, channel, position source and beacon interval on the device. The app runs only while open and does not connect to the internet. Use a channel and settings permitted by your licence. This release has been tested on the Cardputer Zero; two-station over-the-air interoperability has not yet been verified.\r\n\r\nDeveloped for Tartanleaf.com by Greg Weir VA1GW.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "APRZ",
+  "source_repo": "https://github.com/gregweir/APRSZero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "Greg Weir VA1GW",
+    "github": "gregweir"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "aprszero_icon.png",
+  "published_at": "2026-11-25T20:37:03+00:00",
+  "updated_at": "2026-11-25T20:37:03+00:00"
+}
