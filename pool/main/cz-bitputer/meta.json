@@ -1,0 +1,42 @@
+{
+  "title": "BitPuter",
+  "summary": "Programmer's calculator: HEX/DEC/BIN, bit grid, floats, Unix time, CRCs",
+  "categories": [
+    "System Tools",
+    "Education"
+  ],
+  "screenshots": [
+    "screenshots/bits.png",
+    "screenshots/grid.png",
+    "screenshots/float.png",
+    "screenshots/signed.png",
+    "screenshots/orders.png",
+    "screenshots/crc.png"
+  ],
+  "description": "BitPuter is a keyboard-first programmer's calculator for the CardputerZero.\n\n- 8/16/32/64-bit words, unsigned or signed; every operation wraps like a register\n- One value in HEX, DEC, OCT and an editable bit grid (flip, set, invert bits), popcount and MSB\n- C operators | ^ & << >> >>> ~ ** with C precedence; input in DEC, HEX, BIN or OCT\n- Literals 0xFF 0b101 'RIFF' 4K f32(1.5); variables, ans and history\n- popcnt clz ctz bswap rev rol ror mask field set/clr/tgl sext align isqrt log2 and more\n- The same bits as ASCII, IEEE-754 float/double or Unix time\n- Byte orders side by side: ABCD / DCBA / BADC / CDAB with decimal and float (Modbus word swap)\n- CRC page: CRC-16/MODBUS, CRC-32, CRC-32C, CCITT, XMODEM, KERMIT, ARC, CRC-8, 1-Wire, Sensirion, NMEA XOR, SUM8 with wire byte order\n\nTab switches BITS / CRC, F1 shows help.",
+  "locales": {
+    "uk": {
+      "title": "BitPuter",
+      "summary": "Калькулятор програміста: системи числення, біти, float, Unix-час, CRC"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/heartpolik/cardputer-zero-tools",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "BITS",
+  "author": {
+    "github": "heartpolik",
+    "display_name": "heartpolik"
+  },
+  "published_at": "2026-11-25T07:33:21+00:00",
+  "updated_at": "2026-11-25T07:33:21+00:00"
+}

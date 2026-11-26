@@ -1,0 +1,47 @@
+{
+  "title": "CardShot",
+  "summary": "Capture screenshots and record the screen anytime, with gallery and web access",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/01-home.png",
+    "screenshots/02-gallery.png",
+    "screenshots/03-preview.png",
+    "screenshots/04-settings.png"
+  ],
+  "description": "Capture the current screen from any app without interrupting it. Record video with sound, keep captures in a gallery, and manage them from a browser.",
+  "locales": {
+    "en": {
+      "title": "CardShot",
+      "summary": "Capture screenshots and record the screen anytime, with gallery and web access"
+    },
+    "zh-CN": {
+      "title": "CardShot",
+      "summary": "随时截图与录屏，支持相册和网页管理"
+    },
+    "ja": {
+      "title": "CardShot",
+      "summary": "いつでもスクリーンショットと画面録画、ギャラリーとWeb管理に対応"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/journey-ad/M5CardputerZero-CardShot",
+  "icon": "cardshot_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "SHOT",
+  "author": {
+    "github": "journey-ad",
+    "display_name": "journey-ad"
+  },
+  "published_at": "2026-11-25T05:44:12+00:00",
+  "updated_at": "2026-11-25T05:44:12+00:00"
+}

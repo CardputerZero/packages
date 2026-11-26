@@ -1,0 +1,11 @@
+{
+  "filename": "cardbili_0.2.5_arm64.deb",
+  "url": "https://github.com/journey-ad/packages/releases/download/czdev-buffer/cardbili_0.2.5_arm64.deb",
+  "sha256": "9bf9cef29a02714d69895dd5e9390bcee45447540f41e0c18f0718adcd357a3f",
+  "size": 6870472,
+  "package": "cardbili",
+  "version": "0.2.5",
+  "architecture": "arm64",
+  "uploaded_by": "journey-ad",
+  "uploader_email": "i@nocilol.me"
+}

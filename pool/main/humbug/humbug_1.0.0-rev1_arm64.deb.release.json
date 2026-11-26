@@ -1,0 +1,11 @@
+{
+  "filename": "humbug_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/workeffortwaste/packages/releases/download/czdev-buffer/humbug_1.0.0-rev1_arm64.deb",
+  "sha256": "345fbf4ebc452de6ebcec32bf87220f3bbf76d1472136e2716fbf6c7155be658",
+  "size": 1957998,
+  "package": "humbug",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "workeffortwaste",
+  "uploader_email": "workeffortwaste@users.noreply.github.com"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "displaymod_3.1.7_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/H4W9__displaymod_3.1.7_arm64.deb",
+  "sha256": "74af649000eeefe40e2c7d467da3556987489b640b6ed0b481f7c9d4fc823e6e",
+  "size": 636690,
+  "package": "displaymod",
+  "version": "3.1.7",
+  "architecture": "arm64",
+  "uploaded_by": "H4W9",
+  "uploader_email": "h4w9@users.noreply.github.com"
+}

@@ -1,0 +1,42 @@
+{
+  "title": "FilmBox",
+  "summary": "Film camera for Cardputer Zero: 18 film looks, 8MP, zoom and QR Wi-Fi export",
+  "categories": [
+    "Media",
+    "Creative & Office"
+  ],
+  "screenshots": [
+    "screenshots/01-viewfinder.png",
+    "screenshots/02-still-portra.png",
+    "screenshots/03-city-acros.png",
+    "screenshots/04-clean.png",
+    "screenshots/05-looks.png",
+    "screenshots/06-gallery.png"
+  ],
+  "description": "FilmBox turns the Cardputer Zero into a pocket film camera. 8 MP photos on the full IMX219 sensor, 18 switchable film looks (Provia, Velvia, Classic Chrome, ACROS, Portra, Ektar, Ektachrome, HP5 and more), 1x/1.5x/2x/3x zoom, GIF, silent 720p video, timelapse and stop-motion. A full-bleed viewfinder with a see-through side panel, or a slim pure-framing mode. Press W to start a token-protected Wi-Fi gallery and scan the QR code: photos open in any phone browser. Photos are saved with the film look baked in, plus halation and grain. Film copies render on the GPU (EGL/GLES2) in about 1.6 s for a full 8 MP frame. Screenshots are rendered from the app's own drawing code; no photograph is bundled.",
+  "locales": {
+    "zh-CN": {
+      "title": "FilmBox 胶片盒子",
+      "summary": "给 Cardputer Zero 的胶片相机：18 支胶片 LUT、8MP、变焦、扫码取图"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/DD-HIBIKI/filmbox",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CYBK",
+  "author": {
+    "github": "DD-HIBIKI",
+    "display_name": "HIBIKI"
+  },
+  "published_at": "2026-11-25T04:50:20+00:00",
+  "updated_at": "2026-11-25T04:50:20+00:00"
+}

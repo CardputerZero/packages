@@ -1,0 +1,11 @@
+{
+  "filename": "2048_0.1.0-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/zhuzhe1983__2048_0.1.0-m5stack1_arm64.deb",
+  "sha256": "0f149404f483c6789fa0b156947a9cc0493d6f2d534475e247c5177e49945906",
+  "size": 356748,
+  "package": "2048",
+  "version": "0.1.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "zhuzhe1983",
+  "uploader_email": "zhuzhe1983@users.noreply.github.com"
+}

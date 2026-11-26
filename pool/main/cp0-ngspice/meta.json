@@ -1,0 +1,42 @@
+{
+  "title": "PocketSpice",
+  "summary": "Pocket NGSPICE circuit & power-electronics simulator with 320x170 scope",
+  "categories": [
+    "Development",
+    "Education"
+  ],
+  "screenshots": [
+    "screenshots/02c_scope_5level_zh.png",
+    "screenshots/01_circuits_zh.png",
+    "screenshots/02_scope_buck.png",
+    "screenshots/02d_scope_bode.png",
+    "screenshots/04_netlist.png",
+    "screenshots/05_manual_zh.png"
+  ],
+  "description": "Full-flexibility NGSPICE (.tran/.ac/.dc/.op) circuit and power-electronics simulator for CardputerZero. Includes a 5-level switched-capacitor inverter (IEEE TPEL 2026), Buck/Boost converters, in-app netlist editor, bilingual user/AI manuals, ZClaw workspace auto-discovery, and 512MB RAM guardrails.",
+  "locales": {
+    "zh-CN": {
+      "title": "PocketSpice",
+      "summary": "掌上全功能 NGSPICE 电路与电力电子仿真器（含五电平逆变器与示波器）",
+      "description": "面向 CardputerZero 的全功能 NGSPICE（.tran/.ac/.dc/.op）电路与电力电子仿真平台。内置五电平开关电容逆变器（IEEE TPEL 2026）、Buck/Boost 变换器、网表行编辑器、中英双语用户与本地 AI 手册、ZClaw 工作区自动发现及 512MB 内存安全防线。"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SPIC",
+  "author": {
+    "display_name": "Zhifeng Dou",
+    "github": "LilMonsterOvO"
+  },
+  "published_at": "2026-11-25T05:31:16+00:00",
+  "updated_at": "2026-11-25T05:31:16+00:00"
+}
