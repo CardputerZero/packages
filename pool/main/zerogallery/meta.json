@@ -8,7 +8,7 @@
     "screenshots/folders.png",
     "screenshots/photo.png"
   ],
-  "description": "Pick a folder and flip through its photos and videos full screen with the arrow keys (F/X/Z/C work with or without Fn). JPEG photos open natively with EXIF rotation; every other image format, animated GIFs and all videos are decoded by the system ffmpeg, with sound through PipeWire. In a video the arrows skip 10 or 30 seconds back and forth. Turn the device and the photo or video turns with it. ESC goes back, hold ESC to exit.",
+  "description": "Pick a folder and flip through its photos and videos full screen with the arrow keys (F/X/Z/C work with or without Fn). JPEG photos open natively with EXIF rotation; every other image format, animated GIFs and all videos are decoded by the system ffmpeg, with sound through PipeWire. In a video the arrows skip 10 or 30 seconds back and forth. Turn the device and the photo or video turns with it. Press V to send what you are viewing to a smart TV over DLNA (LG, Samsung, Sony, Hisense…) or to a Chromecast, Google TV or Nest Hub over Google Cast (the TV plays the original file at full quality), or to a screen plugged into the HDMI port (with its sound, or press A to choose speaker, headphones or HDMI), and the arrows, pause and next / previous keep working on the TV. ESC goes back, hold ESC to exit.",
   "license": "MIT",
   "source_repo": "https://github.com/baltamir1978/ZeroGallery",
   "icon": "icon.png",
@@ -16,7 +16,7 @@
     "camera": false,
     "microphone": false,
     "imu": true,
-    "network": false,
+    "network": true,
     "additional_hardware": false,
     "background_service": false,
     "external_display": false
@@ -27,7 +27,7 @@
     "display_name": "baltamir1978"
   },
   "published_at": "2026-11-16T22:16:28+00:00",
-  "updated_at": "2026-11-20T07:34:20+00:00",
+  "updated_at": "2026-11-26T08:48:19+00:00",
   "locales": {
     "es": {
       "title": "ZeroGallery",
