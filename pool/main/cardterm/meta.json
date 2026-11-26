@@ -1,6 +1,6 @@
 {
   "title": "cardterm",
-  "summary": "功能丰富的全屏终端模拟器：高性能和低内存占用、多窗口、后台会话、xterm/TUI 兼容、自定义外观和背景图",
+  "summary": "更好的CLI终端模拟器，高性能和低内存占用、多窗口、后台会话、xterm/TUI 兼容、自定义主题和背景图",
   "categories": [
     "System Tools",
     "Development"
@@ -10,15 +10,15 @@
     "screenshots/2-fastfetch-4x7.png",
     "screenshots/3-cmatrix-8x14.png"
   ],
-  "description": "cardterm 是 M5Stack CardputerZero（320×170）上的全屏终端模拟器：运行 bash/ssh/codex 等任意程序，是设备上的命令行工作台。\n\n功能亮点：\n· 极高性能和极低内存占用：稳态约 6MB，12 窗口多开会话可控，直驱 /dev/fb0，秒启动，字符渲染更快速；\n· 自定义终端主题颜色和 PNG/JPG 背景图；\n· TUI 兼容性：codex / opencode / crush / vim / htop / nano 等 TUI 实测渲染与交互正常，备用屏、滚动域、重绘节拍良好；\n· 复杂协议支持：kitty 键盘协议 (KKP)、DA1/DA2/DECXCPR/DSR/DECRQM、DECSCUSR、DECSTR/RIS、OSC 4/10/11/12/52/110-112；\n· USB/蓝牙外接键盘接管：板载 + 最多 4 个外接并行、标准 US 键位、热插拔；\n· 多窗口（Ctrl+Alt+F1~F12）、回滚/翻页、三档终端大小（80×24 / 53×17 / 40×12）、toast 事件通知；\n· 支持将会话和程序挂载至后台运行，退出 cardterm 后可恢复。\n· 单 config.ini 配置文件，可用于配置主题配色方案、初始命令和工作目录、回滚行数、窗口数、启动横幅文本等多个配置项。",
+  "description": "cardterm 是 M5Stack CardputerZero（320×170）上的全屏终端模拟器：运行 bash/ssh/codex 等任意程序，是设备上的命令行工作台。\n\n比 APPLaunch 的 CLI 更强性能、更低内存和更多功能。对于依赖 CLI 和终端会话的用户，请尝试 cardterm 终端模拟器，而不是 APPLaunch 的 CLI。\nStronger performance, lower memory and more features than the stock APPLaunch CLI. If your work depends on the CLI and terminal sessions, try the cardterm terminal emulator instead of the APPLaunch CLI.\n\n功能亮点：\n· 极高性能和极低内存占用：稳态约 6MB，12 窗口多开会话可控，直驱 /dev/fb0，秒启动，字符渲染更快速；\n· 自定义终端主题颜色和 PNG/JPG 背景图；\n· TUI 兼容性：codex / opencode / crush / vim / htop / nano 等 TUI 实测渲染与交互正常，备用屏、滚动域、重绘节拍良好；\n· 复杂协议支持：kitty 键盘协议 (KKP)、DA1/DA2/DECXCPR/DSR/DECRQM、DECSCUSR、DECSTR/RIS、OSC 4/10/11/12/52/110-112；\n· USB/蓝牙外接键盘接管：板载 + 最多 4 个外接并行、标准 US 键位、热插拔；\n· 多窗口（Ctrl+Alt+F1~F12）、回滚/翻页、三档终端大小（80×24 / 53×17 / 40×12）、toast 事件通知；\n· 支持将会话和程序挂载至后台运行，退出 cardterm 后可恢复。\n· 单 config.ini 配置文件，可用于配置主题配色方案、初始命令和工作目录、回滚行数、窗口数、启动横幅文本等多个配置项。",
   "locales": {
     "zh-CN": {
       "title": "cardterm",
-      "summary": "功能丰富的全屏终端模拟器：高性能和低内存占用、多窗口、后台会话、xterm/TUI 兼容、自定义外观和背景图"
+      "summary": "更好的CLI终端模拟器，高性能和低内存占用、多窗口、后台会话、xterm/TUI 兼容、自定义主题和背景图"
     },
     "en": {
       "title": "cardterm",
-      "summary": "Feature-rich fullscreen terminal emulator: high performance and low memory, multi-window, background sessions, xterm/TUI compatible, customizable theme and wallpaper"
+      "summary": "A better CLI terminal emulator: high performance and low memory, multi-window, background sessions, xterm/TUI compatible, customizable theme and wallpaper"
     }
   },
   "license": "MIT (source code); GPL-2.0 (binary bundles WenQuanYi Bitmap Song font data)",
@@ -39,5 +39,5 @@
     "display_name": "fsender"
   },
   "published_at": "2026-11-24T15:13:30+00:00",
-  "updated_at": "2026-11-26T13:23:36+00:00"
+  "updated_at": "2026-11-26T14:52:34+00:00"
 }
