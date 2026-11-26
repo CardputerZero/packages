@@ -1,0 +1,11 @@
+{
+  "filename": "card-pi_0.0.6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Moeyuuko__card-pi_0.0.6_arm64.deb",
+  "sha256": "95d0efae14ef48cc64079ea66938c4fb23cc1f88e24824d686ed0abcb5a479b2",
+  "size": 40372,
+  "package": "card-pi",
+  "version": "0.0.6",
+  "architecture": "arm64",
+  "uploaded_by": "Moeyuuko",
+  "uploader_email": "moeyuuko@users.noreply.github.com"
+}
