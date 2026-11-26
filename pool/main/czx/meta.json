@@ -1,0 +1,43 @@
+{
+  "title": "CZX",
+  "summary": "Retro computer multi-emulator (Apple II, C64, PC-88/98, MSX, MZ, FM-7, X68k)",
+  "description": "CZX is a lightweight C++20 multi-emulator frontend tailored for the M5Stack Cardputer Zero (320x170 SPI LCD and TCA8418 I2C keyboard, plus automatic fullscreen GLES2 HDMI output when connected).\n\nSupported targets:\n- Apple II (applewin)\n- Commodore 64 (VICE x64sc / x64, PAL/NTSC selectable)\n- NEC PC-8801 (QUASI88)\n- NEC PC-9801 (NP2kai)\n- MSX / MSX2 / MSX2+ (blueMSX with bundled open-source C-BIOS)\n- SHARP PC-G850 / G815 / E200 (g800 with built-in compat BASIC)\n- SHARP MZ-700 (EmuZ-700)\n- Fujitsu FM-7 / FM77AV / FM77AV40 (eFM7)\n- SHARP X68000 (msx68k, GLES2 VICON GPU compositor, CZ-6BM1 MIDI)\n\nKey features:\n- Startup carousel launcher with pixel-art hardware icons and Alt+4..8 quick controls\n- 1:1 Pan, Axis Fit, Aspect Fit scaling plus PAR / 4:3 CRT / Full HDMI aspect selection\n- Zero-dependency Linux evdev USB gamepad support (hotplug + menu/launcher navigation)\n- Built-in background-threaded munt Roland MT-32 / CM-32L synthesizer (bring your own ROMs in ~/czx/roms/mt32/)\n- Pitch-preserving audio sync pacing with HUD FPS% readout\n- No copyrighted ROMs bundled (put optional/required dumps under ~/czx/roms/)",
+  "categories": [
+    "Emulators",
+    "Games"
+  ],
+  "license": "GPL-3.0-or-later",
+  "share_code": "CZX0",
+  "source_repo": "https://github.com/toyoshim-i/czx",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": true
+  },
+  "author": {
+    "github": "toyoshim",
+    "display_name": "Takashi Toyoshima"
+  },
+  "locales": {
+    "en": {
+      "title": "CZX",
+      "summary": "Retro computer multi-emulator (Apple II, C64, PC-88/98, MSX, MZ, FM-7, X68k)"
+    },
+    "ja": {
+      "title": "CZX",
+      "summary": "レトロPCマルチエミュレータ (Apple II/C64/PC-88/PC-98/MSX/MZ-700/FM-7/X68000)"
+    }
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "czx_icon.png",
+  "published_at": "2026-11-25T16:40:00+00:00",
+  "updated_at": "2026-11-25T16:40:00+00:00"
+}
