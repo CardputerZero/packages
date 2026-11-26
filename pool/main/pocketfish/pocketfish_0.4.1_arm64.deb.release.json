@@ -1,0 +1,11 @@
+{
+  "filename": "pocketfish_0.4.1_arm64.deb",
+  "url": "https://github.com/momo20261121/packages/releases/download/czdev-buffer/pocketfish_0.4.1_arm64.deb",
+  "sha256": "9f66317a66f050b500112cb2c7d73630227af682f427e375cb30178a5d847d0b",
+  "size": 597576,
+  "package": "pocketfish",
+  "version": "0.4.1",
+  "architecture": "arm64",
+  "uploaded_by": "momo20261121",
+  "uploader_email": "momo20261121@users.noreply.github.com"
+}
