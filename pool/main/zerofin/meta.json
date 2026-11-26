@@ -1,7 +1,7 @@
 {
   "title": "ZeroFin",
   "summary": "Browse and play video from your Jellyfin server on the Cardputer Zero.",
-  "description": "ZeroFin is a non-official Jellyfin client made for the 320x170 screen.\r\n\r\nSign in with Quick Connect or with your user and passwords. Browse movies, series and collections with posters. Continue what you started and see the next episode. Search your libraries. Play video with hardware decode, choose audio and subtitle tracks, and jump to the next episode.\r\n\r\nZeroFin needs a Jellyfin server on your network. It does not store or share your media. Jellyfin is a trademark of its owners. ZeroFin is not made or endorsed by the Jellyfin project.",
+  "description": "ZeroFin is a non-official Jellyfin client made for the 320x170 screen.\r\n\r\nSign in with Quick Connect or with your user and password. Browse movies, series and collections with posters. Continue what you started and see the next episode. Search your libraries. Play video with hardware decode, choose audio and subtitle tracks, and jump to the next episode.\r\n\r\nZeroFin needs a Jellyfin server on your network. It does not store or share your media. Jellyfin is a trademark of its owners. ZeroFin is not made or endorsed by the Jellyfin project.",
   "categories": [
     "Media"
   ],
@@ -26,9 +26,10 @@
     "screenshots/screenshot-1.png",
     "screenshots/screenshot-2.png",
     "screenshots/screenshot-3.png",
-    "screenshots/screenshot-4.png"
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
   ],
   "icon": "zerofin_icon.png",
   "published_at": "2026-11-25T20:09:23+00:00",
-  "updated_at": "2026-11-25T20:09:23+00:00"
+  "updated_at": "2026-11-26T17:20:40+00:00"
 }
