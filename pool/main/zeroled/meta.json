@@ -1,0 +1,32 @@
+{
+  "title": "ZeroLED",
+  "summary": "Discover and control WLED lights on your network",
+  "description": "ZeroLED finds every WLED controller on your network automatically (mDNS, WLED node broadcasts and peer lists) and lets you control them from the keyboard: power, brightness, colour, effect, speed and intensity, plus UDP sync send/receive. An info page shows firmware version, LED count, current draw, Wi-Fi signal, uptime and more. Devices on networks that block multicast can be added by IP.",
+  "categories": [
+    "Creative & Office"
+  ],
+  "license": "MIT",
+  "share_code": "0LED",
+  "source_repo": "https://github.com/matqua/zeroled",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "matqua",
+    "github": "matqua"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "zeroled_icon.png",
+  "published_at": "2026-11-25T11:36:03+00:00",
+  "updated_at": "2026-11-25T11:36:03+00:00"
+}
