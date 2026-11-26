@@ -1,0 +1,35 @@
+{
+  "title": "DAW Zero",
+  "summary": "Lightweight Multitrack Audio & MIDI Pocket DAW for M5Stack CardputerZero",
+  "description": "CardputerZero DAW Zero turns the pocket-sized M5Stack CardputerZero (320×170 IPS display, 46-key matrix keyboard, ARM64 Linux) into a real-time 8-track Audio & MIDI Pocket DAW (6 Audio + 2 MIDI tracks, 4 stacked subtracks C1–C4 each) built on LVGL 9.5 Neon UI.\r\n\r\nRecord external instruments over USB audio interfaces (e.g., M-Audio M-Track Duo / PCM2900C) or the built-in ES8389 codec, host PianoZero and DXZero headlessly over a virtual PipeWire INST BUS with live parameter control inside MID → 2:INST, edit clips with 16-step Ctrl+Z/Ctrl+Y Undo & Redo, stack modular .so DSP effects, and export Ardour-compatible WAV/MIDI stems and stereo mixdowns.",
+  "categories": [
+    "Creative & Office"
+  ],
+  "license": "Proprietary",
+  "share_code": "DAW0",
+  "source_repo": "https://github.com/adrianomoraes/CardputerZero-DAWZero_release",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Adriano Moraes",
+    "github": "adrianomoraes"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "daw-zero_icon.png",
+  "published_at": "2026-11-25T15:32:07+00:00",
+  "updated_at": "2026-11-25T15:32:07+00:00"
+}
