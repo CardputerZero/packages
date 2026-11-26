@@ -1,0 +1,31 @@
+{
+  "title": "Metronome",
+  "summary": "A keyboard-driven metronome for CardputerZero.",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "METR",
+  "source_repo": "https://github.com/nofacer/cardputer-zero-metronome",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "nofacer",
+    "github": "nofacer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "metronome_icon.png",
+  "published_at": "2026-11-26T00:24:16+00:00",
+  "updated_at": "2026-11-26T00:24:16+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "metronome_0.2.1-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/nofacer__metronome_0.2.1-rev1_arm64.deb",
+  "sha256": "3636bd3204ff9eafb4f8605688bbc6c9c75a0779809eaea2b0fc7d7ccca5dcb2",
+  "size": 1963552,
+  "package": "metronome",
+  "version": "0.2.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "nofacer",
+  "uploader_email": "nofacer@users.noreply.github.com"
+}
