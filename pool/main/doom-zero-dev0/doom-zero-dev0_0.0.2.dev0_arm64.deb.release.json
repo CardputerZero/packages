@@ -1,0 +1,11 @@
+{
+  "filename": "doom-zero-dev0_0.0.2.dev0_arm64.deb",
+  "url": "https://github.com/KiloGramowy/packages/releases/download/czdev-buffer/doom-zero-dev0_0.0.2.dev0_arm64.deb",
+  "sha256": "9e8e24f79e10e222ca78660e087247f62875feea6ad84e8d909286d17750bc28",
+  "size": 14647336,
+  "package": "doom-zero-dev0",
+  "version": "0.0.2~dev0",
+  "architecture": "arm64",
+  "uploaded_by": "KiloGramowy",
+  "uploader_email": "KiloGramowy@users.noreply.github.com"
+}
