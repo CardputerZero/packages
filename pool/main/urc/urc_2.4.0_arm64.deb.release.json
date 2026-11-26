@@ -1,0 +1,11 @@
+{
+  "filename": "urc_2.4.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/rwr0N1N__urc_2.4.0_arm64.deb",
+  "sha256": "27c86947d6555e872487eb77d6a858bf89feac0ec83983f5555465f5b5b4d982",
+  "size": 31048,
+  "package": "urc",
+  "version": "2.4.0",
+  "architecture": "arm64",
+  "uploaded_by": "rwr0N1N",
+  "uploader_email": "rwr0n1n@users.noreply.github.com"
+}
