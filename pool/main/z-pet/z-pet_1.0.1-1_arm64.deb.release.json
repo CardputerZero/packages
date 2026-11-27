@@ -1,0 +1,11 @@
+{
+  "filename": "z-pet_1.0.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Delos23-650506cb-7fc0-4dfa-963d-6d24608a9bfe__z-pet_1.0.1-1_arm64.deb",
+  "sha256": "cae92e1237b5eaca002edbf251481f426e4618369adf4dc684be474d42623fa0",
+  "size": 310472,
+  "package": "z-pet",
+  "version": "1.0.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "Delos23",
+  "uploader_email": "delos23@users.noreply.github.com"
+}
