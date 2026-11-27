@@ -1,0 +1,46 @@
+{
+  "title": "Avalanche Forecast",
+  "summary": "Avalanche forecasts for Canada, the US and Europe: danger, problems and advice.",
+  "categories": [
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/avalanche-forecast-light.png",
+    "screenshots/avalanche-forecast-problems.png",
+    "screenshots/avalanche-forecast-details.png",
+    "screenshots/avalanche-forecast-dark.png",
+    "screenshots/avalanche-forecast-location.png"
+  ],
+  "description": "Avalanche Forecast downloads the avalanche forecast for a location you choose and shows it on the CardputerZero. It covers Avalanche Canada (44 places, English or French), every avalanche.org forecast zone in the United States, and about 570 regions of the European EAWS warning services in 16 countries, with the forecast text in the language you pick. See danger ratings by elevation band, each avalanche problem with an aspect and elevation rose, and the forecaster's summaries and advice. Your location is saved, the last forecast is kept for offline use, and it is flagged when it is out of date.",
+  "locales": {
+    "fr": {
+      "title": "Prévisions d'avalanche",
+      "summary": "Prévisions d'avalanche pour le Canada, les États-Unis et l'Europe.",
+      "description": "Avalanche Forecast télécharge la prévision d'avalanche de l'endroit choisi et l'affiche sur le CardputerZero : Avalanche Canada (44 lieux, en français ou en anglais), toutes les zones d'avalanche.org aux États-Unis et environ 570 régions des services européens de l'EAWS dans 16 pays. Le texte des bulletins s'affiche dans la langue choisie lorsque le service la propose ; l'interface est en anglais. Consultez les degrés de danger par tranche d'altitude, chaque problème d'avalanche avec sa rose des expositions et des altitudes, ainsi que les résumés et conseils des prévisionnistes. L'emplacement est enregistré, la dernière prévision reste disponible hors ligne et un avertissement s'affiche lorsqu'elle n'est plus à jour."
+    },
+    "de": {
+      "title": "Lawinenlagebericht",
+      "summary": "Lawinenlageberichte für Kanada, die USA und Europa: Gefahrenstufen und mehr.",
+      "description": "Avalanche Forecast lädt den Lawinenlagebericht für einen gewählten Ort und zeigt ihn auf dem CardputerZero: Avalanche Canada (44 Orte, Englisch oder Französisch), alle Vorhersagezonen von avalanche.org in den USA und rund 570 Regionen der europäischen EAWS-Lawinenwarndienste in 16 Ländern. Der Text der Berichte erscheint in der gewählten Sprache, sofern der Warndienst sie anbietet; die Bedienoberfläche ist auf Englisch. Zu sehen sind die Gefahrenstufen nach Höhenlage, jedes Lawinenproblem mit Expositions- und Höhenrose sowie die Zusammenfassungen und Empfehlungen der Lawinenwarndienste. Der Ort wird gespeichert, der letzte Bericht bleibt offline verfügbar und wird markiert, wenn er nicht mehr aktuell ist."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/rprouse/cardputer-avcan",
+  "icon": "avalanche-forecast.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "AVIF",
+  "author": {
+    "github": "rprouse",
+    "display_name": "Rob Prouse"
+  },
+  "published_at": "2026-11-27T23:27:46+00:00",
+  "updated_at": "2026-11-27T23:27:46+00:00"
+}
