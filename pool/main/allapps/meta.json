@@ -1,0 +1,32 @@
+{
+  "title": "All Apps",
+  "summary": "Every app in one list: run hidden apps, show or hide them on home",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/listing-1.png",
+    "screenshots/listing-2.png",
+    "screenshots/listing-3.png"
+  ],
+  "description": "All Apps lists every app on your CardputerZero, including the ones switched off in Settings > Launcher, the launcher's own pages (Calculator, Snake, Python...) and apps from the Store.\n\nEnter runs the selected app and brings you back to the list when it closes. Space shows or hides an app on the home carousel (applied when you quit, the launcher restarts once). Labels show where each app comes from: built-in, store app or always on.\n\nKeys: F/X move, Z/C page, Enter run, Space show/hide, hold ESC to quit.\n\nNote: the stock launcher always shows apps installed from the Store, so All Apps can run those but not hide them.",
+  "license": "MIT",
+  "source_repo": "https://github.com/wearewatchingyouclosely/allapps",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "APPS",
+  "author": {
+    "github": "wearewatchingyouclosely",
+    "display_name": "WAWYC"
+  },
+  "published_at": "2026-11-27T20:52:07+00:00",
+  "updated_at": "2026-11-27T20:52:07+00:00"
+}
