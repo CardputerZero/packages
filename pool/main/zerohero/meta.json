@@ -1,0 +1,32 @@
+{
+  "title": "0Hero",
+  "summary": "Update every installed store app in one tap",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/list.png",
+    "screenshots/running.png",
+    "screenshots/done.png"
+  ],
+  "description": "0Hero checks every app you installed from the CardputerZero App Store against the official registry and installs all available updates in one tap. It uses the Store's own verified prepare, install and finalize steps, so the Store's records stay correct. Apps you install later show up automatically. Enter updates everything, R checks again, Esc exits (locked while an install runs). If one app fails, the rest still update. Also includes a zerohero command for SSH: zerohero lists updates, zerohero --apply installs them. Needs Wi-Fi and the default passwordless sudo.",
+  "license": "MIT",
+  "source_repo": "https://github.com/Irak4t0n/zerohero",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "0HRO",
+  "author": {
+    "github": "Irak4t0n",
+    "display_name": "Irak4t0n"
+  },
+  "published_at": "2026-11-25T20:58:07+00:00",
+  "updated_at": "2026-11-25T20:58:07+00:00"
+}
