@@ -1,0 +1,11 @@
+{
+  "filename": "cp0-screen-cast_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/patdelphi__cp0-screen-cast_0.2.0_arm64.deb",
+  "sha256": "900a5eefa9eeba0786370ff6af91d185656884191be96cf13cbd0b76b52358ad",
+  "size": 137522,
+  "package": "cp0-screen-cast",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "patdelphi",
+  "uploader_email": "patdelphi@users.noreply.github.com"
+}
