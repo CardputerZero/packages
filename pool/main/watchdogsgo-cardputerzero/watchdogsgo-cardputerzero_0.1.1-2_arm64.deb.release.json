@@ -1,0 +1,11 @@
+{
+  "filename": "watchdogsgo-cardputerzero_0.1.1-2_arm64.deb",
+  "url": "https://github.com/codemonkeybr/packages/releases/download/czdev-buffer/watchdogsgo-cardputerzero_0.1.1-2_arm64.deb",
+  "sha256": "4f664d8d83079f2cb0b53c77b753afceb87a3f20ea3fca88fb2d0fddedca3362",
+  "size": 10963328,
+  "package": "watchdogsgo-cardputerzero",
+  "version": "0.1.1-2",
+  "architecture": "arm64",
+  "uploaded_by": "codemonkeybr",
+  "uploader_email": "codemonkeybr@users.noreply.github.com"
+}
