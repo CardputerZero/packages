@@ -1,0 +1,11 @@
+{
+  "filename": "zeroled_0.1.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/matqua__zeroled_0.1.1-1_arm64.deb",
+  "sha256": "0a9cb3b8a8ab4a36de08d86079af7518e6b3c7d078a33499c86f18d61f633db5",
+  "size": 2172972,
+  "package": "zeroled",
+  "version": "0.1.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "matqua",
+  "uploader_email": "matqua@users.noreply.github.com"
+}
