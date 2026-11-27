@@ -1,0 +1,45 @@
+{
+  "title": "CardputerAdv",
+  "summary": "Experimental Cardputer-Adv emulator; slow and noticeably laggy.",
+  "categories": [
+    "Emulators",
+    "Development"
+  ],
+  "screenshots": [
+    "screenshots/library.png",
+    "screenshots/wordle.png",
+    "screenshots/cache.png",
+    "screenshots/settings.png"
+  ],
+  "description": "Experimental app: currently slow and noticeably laggy, including FAST mode. Expect delays in firmware startup, screen updates and keyboard response. This release is for experimentation and compatibility testing, not smooth real-time use.\n\nAn experimental native Cardputer-Adv firmware emulator for the CardputerZero LCD. Includes the official M5Stack UserDemo, Wordle and UIFlow2 images with their license notices, persistent local flash, firmware cache and APPLaunch shortcuts. Optional network access browses and downloads the official firmware library. Use F/X to select, Enter to run, short Esc to pause or go back, and hold Esc to exit. Accurate mode is substantially slower than the real device. FAST is an explicit timing approximation for menus and games; it disables live microphone input and physical HAT I/O. Hardware support is partial: selected I2C/SPI/GPIO bridges and local audio are implemented, IMU is modeled, and UART, microSD, IR and radio bridges are unavailable. Firmware compatibility and audio/microphone behavior vary; this release does not promise real-time execution or full hardware compatibility.",
+  "locales": {
+    "zh-CN": {
+      "title": "CardputerAdv",
+      "summary": "实验性 Cardputer-Adv 模拟器，目前运行明显卡顿。",
+      "description": "实验性应用：目前运行明显卡顿，包括 FAST 模式。固件启动、画面更新和按键响应可能有明显延迟；当前版本用于体验与兼容性验证，不保证流畅运行或达到真实硬件速度。\n\n实验性的原生 Cardputer-Adv 模拟器，内置官方 UserDemo、Wordle 和 UIFlow2 固件及许可说明，支持本地存档、固件缓存和启动器快捷项，可选联网访问官方固件库。F/X 选择，Enter 运行，短按 Esc 暂停或返回，长按 Esc 退出。准确模式明显慢于真机；FAST 是面向菜单和游戏的近似计时模式，会禁用实时麦克风和外接 HAT 读写。硬件与固件兼容范围有限，不保证实时速度或完整硬件兼容。"
+    },
+    "ja": {
+      "title": "CardputerAdv",
+      "summary": "実験的な Cardputer-Adv エミュレーター。動作は重く、カクつきます。",
+      "description": "実験的なアプリです。FAST モードを含め、動作が重く、カクつきます。ファームウェアの起動、画面更新、キー入力に遅延があります。体験と互換性検証のためのアプリであり、滑らかなリアルタイム動作や実機と同等の速度を保証しません。"
+    }
+  },
+  "license": "MIT",
+  "icon": "cardputeradv.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CADV",
+  "author": {
+    "display_name": "Zhu Zhe",
+    "github": "zhuzhe1983"
+  },
+  "published_at": "2026-11-25T15:06:14+00:00",
+  "updated_at": "2026-11-26T03:18:13+00:00"
+}
