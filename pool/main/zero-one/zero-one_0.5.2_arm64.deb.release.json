@@ -1,0 +1,11 @@
+{
+  "filename": "zero-one_0.5.2_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/AverageCatUser-5c7b911b-7736-4bb4-a5ef-771e7a29069b__zero-one_0.5.2_arm64.deb",
+  "sha256": "950499e7083a124d99debc899f73e7e6f3b1515e2328b826fbda92b73764eec5",
+  "size": 64236,
+  "package": "zero-one",
+  "version": "0.5.2",
+  "architecture": "arm64",
+  "uploaded_by": "AverageCatUser",
+  "uploader_email": "averagecatuser@users.noreply.github.com"
+}
