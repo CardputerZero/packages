@@ -1,0 +1,50 @@
+{
+  "title": "ZeroCart",
+  "summary": "Read and flash Game Boy, GBA and Mega Drive cartridges from the CardputerZero",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/11-systeme-gb.png",
+    "screenshots/14-lecteurs.png",
+    "screenshots/2-actions.png",
+    "screenshots/3-progression.png",
+    "screenshots/6-outils.png",
+    "screenshots/7-english-actions.png"
+  ],
+  "description": "ZeroCart turns the CardputerZero into an all-in-one cartridge reader and flasher.\n\n- Systems: Game Boy, Game Boy Color, Game Boy Advance and Mega Drive. The first screen sets the mode and the voltage.\n- Readers, found automatically over USB (one at a time):\n  - GBFlash / GBxCart RW: Game Boy, Game Boy Color and Game Boy Advance (ROM and save read, ROM flash, save write). Sets 5 V / 3.3 V itself.\n  - Chisflash (original firmware): Game Boy, Game Boy Color and Game Boy Advance. It cannot cut the power, so its saves are marked \"not verified\". Flashing a GBA ROM is slow on some chips (about 40 minutes for 2 MiB).\n  - MD Flasher (Krikzz FlashKit MD): Mega Drive.\n- Read ROMs (checked against the FlashGBX database or the header checksum) and saves; a Game Boy read that comes back wrong is put right on its own.\n- Flash a ROM on rewritable cartridges (Game Boy MBC5, GBA, Mega Drive) and write saves. Everything that changes a cartridge asks for a file and a confirmation, backs up what it overwrites from two agreeing reads, and reads the result back. Files received with ZeroSend land in ~/zerocart, where the flash screens look.\n- Built-in ZeroSend: LocalSend file sharing to send dumps and saves to a phone or a computer, or receive files, with an accept/decline on screen.\n- Famicom-style interface in French, English, Japanese and Simplified Chinese.\n\nYou need one of the readers above plugged into the USB port. The Game Boy and GBA protocol and chip databases come from FlashGBX by Lesserkuma.",
+  "locales": {
+    "fr": {
+      "title": "ZeroCart",
+      "summary": "Lecteur et flasher de cartouches Game Boy, GBA et Mega Drive pour le CardputerZero"
+    },
+    "ja": {
+      "title": "ZeroCart",
+      "summary": "CardputerZero用 ゲームボーイ/GBA/メガドライブ カートリッジのリーダー＆フラッシャー"
+    },
+    "zh-CN": {
+      "title": "ZeroCart",
+      "summary": "CardputerZero 的 Game Boy / GBA / Mega Drive 卡带读取与烧录工具"
+    }
+  },
+  "license": "GPL-3.0-or-later",
+  "source_repo": "https://github.com/sukoshi1507/zerocart",
+  "icon": "zerocart_store.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZCRT",
+  "author": {
+    "github": "sukoshi1507",
+    "display_name": "sukoshi1507"
+  },
+  "published_at": "2026-11-26T23:08:29+00:00",
+  "updated_at": "2026-11-26T23:08:29+00:00"
+}
