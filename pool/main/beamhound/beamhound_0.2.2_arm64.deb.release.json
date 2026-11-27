@@ -1,0 +1,11 @@
+{
+  "filename": "beamhound_0.2.2_arm64.deb",
+  "url": "https://github.com/bfeller/packages/releases/download/czdev-buffer/beamhound_0.2.2_arm64.deb",
+  "sha256": "51a81765fc0d1f12fe9aa972a75dadc9b99de36f05be407bbebde6ecb54d4824",
+  "size": 671720,
+  "package": "beamhound",
+  "version": "0.2.2",
+  "architecture": "arm64",
+  "uploaded_by": "bfeller",
+  "uploader_email": "bfeller@users.noreply.github.com"
+}
