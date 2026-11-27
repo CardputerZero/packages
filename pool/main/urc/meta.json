@@ -1,0 +1,32 @@
+{
+  "title": "URC",
+  "summary": "Chat rooms and private messages on the URC relay server",
+  "description": "URC (Universal Relay Chat) is a chat client made for the 320x170 screen and the 46-key keyboard of the CardputerZero. Join public rooms, send private messages, see unread counts for every room, and get a sound and LED alert when a new message arrives. A built-in settings menu lets you change the notification sound, screen dimming, LED, timestamps and language (English or Português), and shows keyboard shortcuts and chat commands. Menus can be navigated without holding Fn. The screen dims when idle to save battery, and the battery level is always visible. It talks to the same relay server as the URC clients for the original Cardputer, Cardputer ADV, PicoCalc and T-Deck. Requires Wi-Fi.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "URCC",
+  "source_repo": "https://github.com/rwr0N1N/urc-cpz",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "rwR0n1n",
+    "github": "rwr0N1N"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "urc_icon.png",
+  "published_at": "2026-11-26T18:05:18+00:00",
+  "updated_at": "2026-11-26T18:05:18+00:00"
+}
