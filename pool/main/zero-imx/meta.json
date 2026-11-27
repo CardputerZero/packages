@@ -1,0 +1,33 @@
+{
+  "title": "Zero IMX",
+  "summary": "Photo network for CardputerZero: shoot, edit, post, follow and message.",
+  "categories": [
+    "Media",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/1-feed.png",
+    "screenshots/2-profile.png",
+    "screenshots/3-chat.png",
+    "screenshots/4-badges.png"
+  ],
+  "description": "Zero IMX is a photo-sharing app made only for the CardputerZero. Every photo on it was taken with the device's own IMX219 camera.\n\n- Camera: a fast viewfinder with a timer, then an editor with brightness, contrast, colour, warmth and ready-made looks (cyberpunk, landscape, portrait, night, mono, vintage, vivid).\n- Feed: flip through photos with left and right, open the details, like, comment, zoom.\n- People: search, follow, and see only the people you follow if you want.\n- Messages: private messages with people who follow you. Block and report are built in.\n- Codes: show your own QR code to add a friend, or scan one. Scan the code on the website to sign in there without typing a key.\n- Badges and name colours, including badges for Kickstarter units.\n\nThere is also a website for looking at the feed from a phone or PC. Posting is only possible from a CardputerZero.\n\nZero IMX is run by one person as a hobby project. Photos are checked against the rules in the app, and anything reported is reviewed. The app needs a network connection and uses curl.",
+  "license": "MIT",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": true,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZIMX",
+  "author": {
+    "github": "zedward856-spec",
+    "display_name": "sl01220"
+  },
+  "published_at": "2026-11-26T23:01:33+00:00",
+  "updated_at": "2026-11-26T23:01:33+00:00"
+}
