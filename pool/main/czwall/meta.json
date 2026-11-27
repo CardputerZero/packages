@@ -1,0 +1,55 @@
+{
+  "title": "Wallpaper Picker",
+  "summary": "Your own images as lock-screen wallpaper and start-up logo, or a random one",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/listing-1.png",
+    "screenshots/listing-2.png",
+    "screenshots/listing-3.png",
+    "screenshots/listing-4.png"
+  ],
+  "description": "Wallpaper Picker sets the lock-screen wallpaper and the start-up logo from your own pictures. Put PNG or JPG files in ~/Wallpapers (copy them over SSH or from a USB stick); four public-domain sample photos are added on first run. Any size works: each picture is cropped and scaled to fit the screen.\n\nEnter sets the selected picture as the lock-screen wallpaper, L sets it as the start-up logo, P shows a full-screen preview. Random shows a different picture each time the launcher starts. Stock brings back the original image. Changes apply when you quit (the launcher restarts once).\n\nKeys: F/X move, Z/C page, Enter lock screen, L logo, P preview, hold ESC to quit.\n\nHow it works: on install, the launcher's lockscreen.png and logo_lcd.png are moved aside with dpkg-divert and replaced by links to /var/lib/czwall, so choosing a picture needs no root. Uninstalling restores the originals.",
+  "locales": {
+    "zh-CN": {
+      "title": "壁纸选择器",
+      "summary": "用你自己的图片作为锁屏壁纸和开机画面，也可随机切换",
+      "description": "壁纸选择器可以用你自己的图片设置锁屏壁纸和开机画面。把 PNG 或 JPG 图片放进 ~/Wallpapers（通过 SSH 或 U 盘复制）；首次运行时会附带四张公有领域的示例照片。任何尺寸都可以，每张图片都会自动裁剪并缩放以适应屏幕。\n\nEnter 将选中的图片设为锁屏壁纸，L 设为开机画面，P 全屏预览。“Random”会在每次启动器启动时换一张图片；“Stock”恢复原始图片。退出时生效（启动器会重启一次）。\n\n按键：F/X 移动，Z/C 翻页，Enter 锁屏壁纸，L 开机画面，P 预览，长按 ESC 退出。\n\n工作原理：安装时，启动器的 lockscreen.png 和 logo_lcd.png 会通过 dpkg-divert 移到一旁，并替换为指向 /var/lib/czwall 的链接，因此选择图片无需 root 权限。卸载后会恢复原始图片。"
+    },
+    "ja": {
+      "title": "壁紙ピッカー",
+      "summary": "自分の画像をロック画面の壁紙と起動ロゴに。ランダム表示もできます",
+      "description": "壁紙ピッカーは、自分の画像でロック画面の壁紙と起動ロゴを設定します。PNG または JPG を ~/Wallpapers に入れてください（SSH や USB メモリでコピー）。初回起動時にパブリックドメインのサンプル写真が4枚追加されます。サイズは問いません。画像は画面に合わせて自動でトリミング・縮小されます。\n\nEnter で選んだ画像をロック画面の壁紙に、L で起動ロゴに設定し、P で全画面プレビューします。「Random」はランチャーが起動するたびに別の画像を表示し、「Stock」は元の画像に戻します。変更は終了時に反映されます（ランチャーが一度再起動します）。\n\nキー：F/X 移動、Z/C ページ送り、Enter ロック画面、L ロゴ、P プレビュー、ESC 長押しで終了。\n\nしくみ：インストール時に、ランチャーの lockscreen.png と logo_lcd.png を dpkg-divert で退避し、/var/lib/czwall へのリンクに置き換えます。そのため画像の選択に root 権限は不要です。アンインストールすると元に戻ります。"
+    },
+    "es": {
+      "title": "Selector de fondos",
+      "summary": "Tus imágenes como fondo de bloqueo y logo de inicio, o una al azar",
+      "description": "Selector de fondos pone tus propias imágenes como fondo de la pantalla de bloqueo y como logo de inicio. Copia archivos PNG o JPG en ~/Wallpapers (por SSH o desde una memoria USB); la primera vez se añaden cuatro fotos de ejemplo de dominio público. Sirve cualquier tamaño: cada imagen se recorta y escala para llenar la pantalla.\n\nEnter usa la imagen elegida como fondo de bloqueo, L como logo de inicio y P muestra una vista previa a pantalla completa. «Random» muestra una imagen distinta cada vez que arranca el lanzador; «Stock» recupera la imagen original. Los cambios se aplican al salir (el lanzador se reinicia una vez).\n\nTeclas: F/X mover, Z/C pasar página, Enter fondo de bloqueo, L logo, P vista previa, mantener ESC para salir.\n\nCómo funciona: al instalar, lockscreen.png y logo_lcd.png del lanzador se apartan con dpkg-divert y se sustituyen por enlaces a /var/lib/czwall, así que elegir una imagen no necesita root. Al desinstalar se restauran los originales."
+    },
+    "de": {
+      "title": "Hintergrundbild-Auswahl",
+      "summary": "Eigene Bilder als Sperrbildschirm und Startlogo, auch zufällig wechselnd",
+      "description": "Hintergrundbild-Auswahl setzt eigene Bilder als Hintergrund des Sperrbildschirms und als Startlogo. Lege PNG- oder JPG-Dateien in ~/Wallpapers (per SSH oder vom USB-Stick); beim ersten Start kommen vier gemeinfreie Beispielfotos dazu. Jede Größe passt: Jedes Bild wird automatisch zugeschnitten und skaliert.\n\nEnter setzt das gewählte Bild als Sperrbildschirm, L als Startlogo, P zeigt eine Vollbild-Vorschau. „Random“ zeigt bei jedem Start des Launchers ein anderes Bild, „Stock“ stellt das Original wieder her. Änderungen gelten beim Beenden (der Launcher startet einmal neu).\n\nTasten: F/X bewegen, Z/C blättern, Enter Sperrbildschirm, L Logo, P Vorschau, ESC gedrückt halten zum Beenden.\n\nSo funktioniert es: Bei der Installation werden lockscreen.png und logo_lcd.png des Launchers per dpkg-divert beiseitegelegt und durch Links nach /var/lib/czwall ersetzt. Zum Auswählen sind daher keine Root-Rechte nötig. Beim Deinstallieren werden die Originale wiederhergestellt."
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/wearewatchingyouclosely/czwall",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "WPIK",
+  "author": {
+    "github": "wearewatchingyouclosely",
+    "display_name": "WAWYC"
+  },
+  "published_at": "2026-11-27T23:11:46+00:00",
+  "updated_at": "2026-11-27T23:11:46+00:00"
+}
