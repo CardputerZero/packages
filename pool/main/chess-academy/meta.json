@@ -1,0 +1,34 @@
+{
+  "title": "Chess Academy",
+  "summary": "Interactive chess coach from beginner to expert tactics with a 600-2100 ELO AI o",
+  "description": "Chess Academy is a complete offline chess teaching program built for the M5Stack Cardputer Zero (320x170 display & 46-key keyboard). Follow a structured 8-chapter, 43-lesson curriculum from piece basics and opening principles through famous opening tactics (Fried Liver Attack, Legal's Mate, Petrov's Trap, Damiano Refutation, Center Fork Trick, Queen's Gambit Trap, Caro-Kann Smothered Mate, Scandinavian Fork), core tactics, combinations, advanced sacrifices, and essential endgames. Features 4 board themes, visual hint arrows, a live evaluation bar, real-time opening book detection & move coaching, 3-star mastery, and a 6-tier PVS/LMR chess engine (600-2100 ELO).",
+  "categories": [
+    "Games",
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "CHSS",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": true,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "LForss",
+    "github": "lintz"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "chess-academy_icon.png",
+  "published_at": "2026-11-27T17:14:44+00:00",
+  "updated_at": "2026-11-27T17:14:44+00:00"
+}
