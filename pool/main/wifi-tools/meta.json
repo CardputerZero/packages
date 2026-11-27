@@ -1,0 +1,33 @@
+{
+  "title": "WiFi Tools",
+  "summary": "See how crowded each WiFi channel is, on 2.4 GHz and 5 GHz.",
+  "categories": [
+    "System Tools",
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/wifi-tools-light.png",
+    "screenshots/wifi-tools-networks.png",
+    "screenshots/wifi-tools-dark.png"
+  ],
+  "description": "WiFi Tools scans nearby networks every few seconds and shows a bar per channel with how many networks use it, the strongest signal, overlapping 2.4 GHz networks, and the channel load that access points advertise. It recommends the least congested channel for your own access point and marks the channel you are connected to. A network list shows every access point with its signal, channel and security, flags open and weak networks, and can be sorted and filtered by channel.",
+  "license": "MIT",
+  "source_repo": "https://github.com/rprouse/cardputer-wifi-tools",
+  "icon": "wifi-tools.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "WIFI",
+  "author": {
+    "github": "rprouse",
+    "display_name": "Rob Prouse"
+  },
+  "published_at": "2026-11-27T15:56:44+00:00",
+  "updated_at": "2026-11-27T15:56:44+00:00"
+}
