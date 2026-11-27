@@ -1,0 +1,11 @@
+{
+  "filename": "teevee_1.5.1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/FuzzyDweeb-cad313d3-5f4a-48c7-a5fb-8e9b12f70b36__teevee_1.5.1_arm64.deb",
+  "sha256": "41946fc5e76a7ec5a3cf3d2cc34c8869228f85351a8c39a3276d0007a4a7f45a",
+  "size": 2379574,
+  "package": "teevee",
+  "version": "1.5.1",
+  "architecture": "arm64",
+  "uploaded_by": "FuzzyDweeb",
+  "uploader_email": "fuzzydweeb@users.noreply.github.com"
+}
