@@ -1,0 +1,11 @@
+{
+  "filename": "filmbox_0.9.1_all.deb",
+  "url": "https://github.com/DD-HIBIKI/packages/releases/download/czdev-buffer/filmbox_0.9.1_all.deb",
+  "sha256": "dd004baf02ffe0a0b7ec57e3e3b0fe47bf7adb37e35bbfcaccfa5a0950f861e6",
+  "size": 1685496,
+  "package": "filmbox",
+  "version": "0.9.1",
+  "architecture": "all",
+  "uploaded_by": "DD-HIBIKI",
+  "uploader_email": "DD-HIBIKI@users.noreply.github.com"
+}
