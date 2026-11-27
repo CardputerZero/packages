@@ -1,0 +1,11 @@
+{
+  "filename": "okou_0.3.0_arm64.deb",
+  "url": "https://github.com/e7h4n/okou-zero/releases/download/v0.3.0/okou_0.3.0_arm64.deb",
+  "sha256": "ac3b2cd9cce6727f33e591b8e00d41e1dab4395bab321ae77c0da6288a954323",
+  "size": 1188136,
+  "package": "okou",
+  "version": "0.3.0",
+  "architecture": "arm64",
+  "uploaded_by": "e7h4n",
+  "uploader_email": "813596+e7h4n@users.noreply.github.com"
+}
