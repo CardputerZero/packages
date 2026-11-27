@@ -1,32 +1,43 @@
 {
   "title": "QSO-Zero",
-  "summary": "QRP digital modes interface in your pocket.",
-  "description": "A pocket FT8 / FT4 / JS8 / WSPR station for the M5Stack Cardputer Zero, built for QRP operators in the field. It's plain C with no desktop: it draws straight to the Cardputer's screen, controls the radio through Hamlib, and decodes and transmits on its own. Please visit github.com/CzarD0mn/QSO-Zero for installation instructions as dependancies must be installed before this app can install properly.",
+  "summary": "FT8, FT4, JS8 and WSPR for QRP radios, with rig control and GPS time",
+  "description": "A weak-signal digital-mode station in your pocket. FT8 and FT4 with automatic QSO sequencing, a CQ-only filter and ADIF logging; a native JS8 implementation that interoperates with JS8Call (all speeds, directed messages, free text, optional auto-replies); WSPR beacon and receive with wsprnet upload when online. Controls QRP Labs QMX/QMX+, Xiegu G90/X6100/X6200 and Yaesu FT-891 through Hamlib (USB or Digirig), takes UTC and your grid from the LoRa/GPS Cap, and switches to a large layout on an HDMI monitor. Retro-synth look, keyboard driven. Requires an amateur radio licence to transmit. Hold ESC to exit.",
   "categories": [
     "Radio & Comms"
   ],
-  "license": "GPL-3.0",
+  "license": "GPL-3.0-or-later",
   "share_code": "QSOZ",
-  "source_repo": "https://www.github.com/CzarD0mn/QSO-Zero",
+  "source_repo": "https://github.com/CzarD0mn/QSO-Zero",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
     "additional_hardware": true,
     "background_service": false,
-    "camera": false,
-    "external_display": true,
-    "imu": false,
-    "microphone": true,
-    "network": true
+    "external_display": true
   },
   "author": {
     "display_name": "CzarD0mn",
     "github": "CzarD0mn"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png"
+    "screenshots/screenshot-ft8.png",
+    "screenshots/screenshot-js8.png",
+    "screenshots/screenshot-wspr.png",
+    "screenshots/screenshot-setup.png"
   ],
-  "icon": "qso-zero_icon.png",
+  "icon": "icon-256.png",
   "published_at": "2026-11-23T02:54:22+00:00",
-  "updated_at": "2026-11-23T02:54:22+00:00"
+  "updated_at": "2026-11-27T14:22:59+00:00",
+  "locales": {
+    "zh-CN": {
+      "title": "QSO-Zero",
+      "summary": "适用于QRP电台的FT8、JS8和WSPR，支持电台控制与GPS授时"
+    },
+    "ja": {
+      "title": "QSO-Zero",
+      "summary": "QRP無線機向けのFT8・JS8・WSPR。リグ制御とGPS時刻同期に対応"
+    }
+  }
 }

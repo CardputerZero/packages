@@ -1,0 +1,11 @@
+{
+  "filename": "qso-zero_0.2.8_arm64.deb",
+  "url": "https://github.com/CzarD0mn/packages/releases/download/czdev-buffer/qso-zero_0.2.8_arm64.deb",
+  "sha256": "0018dd3056ea5b39d51531023aa654f698cffdc038cd0c159f19afa3e1561dd8",
+  "size": 1866524,
+  "package": "qso-zero",
+  "version": "0.2.8",
+  "architecture": "arm64",
+  "uploaded_by": "CzarD0mn",
+  "uploader_email": "CzarD0mn@users.noreply.github.com"
+}
