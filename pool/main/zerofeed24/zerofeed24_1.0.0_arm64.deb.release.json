@@ -1,0 +1,11 @@
+{
+  "filename": "zerofeed24_1.0.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/wirpool__zerofeed24_1.0.0_arm64.deb",
+  "sha256": "adc2ceffa3ca78e75b66aa5b719bbae2843a5bf60420b39acbe46d005dd821b1",
+  "size": 3398706,
+  "package": "zerofeed24",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "wirpool",
+  "uploader_email": "wirpool@users.noreply.github.com"
+}
