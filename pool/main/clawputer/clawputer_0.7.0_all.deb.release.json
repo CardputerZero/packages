@@ -1,0 +1,11 @@
+{
+  "filename": "clawputer_0.7.0_all.deb",
+  "url": "https://github.com/RubberDingyRapids/packages/releases/download/czdev-buffer/clawputer_0.7.0_all.deb",
+  "sha256": "e7e9a5c914d06dcd3d28fa1107b0c4e340e123bb97facfc9010d9a03e8a08d5a",
+  "size": 64616,
+  "package": "clawputer",
+  "version": "0.7.0",
+  "architecture": "all",
+  "uploaded_by": "RubberDingyRapids",
+  "uploader_email": "RubberDingyRapids@users.noreply.github.com"
+}
