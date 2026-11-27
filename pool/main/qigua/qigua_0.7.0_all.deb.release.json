@@ -1,0 +1,11 @@
+{
+  "filename": "qigua_0.7.0_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/BrathonBai__qigua_0.7.0_all.deb",
+  "sha256": "4f38d904ebf9a688a38a22a1df5c5db79c147a73bf794d12eeb5ef69d748b2b3",
+  "size": 48682,
+  "package": "qigua",
+  "version": "0.7.0",
+  "architecture": "all",
+  "uploaded_by": "BrathonBai",
+  "uploader_email": "brathonbai@users.noreply.github.com"
+}
