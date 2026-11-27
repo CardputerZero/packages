@@ -1,0 +1,11 @@
+{
+  "filename": "ntfyzero_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/matqua__ntfyzero_0.1.0-rev1_arm64.deb",
+  "sha256": "608cf81e4156265352d9d1ee7f264c4458176b3155b5b70f6dceab8c2cc27548",
+  "size": 1879718,
+  "package": "ntfyzero",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "matqua",
+  "uploader_email": "matqua@users.noreply.github.com"
+}

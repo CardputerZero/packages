@@ -1,0 +1,14 @@
+{
+  "title": "Okou",
+  "summary": "A cloud personal agent for email, document writing, and scheduling.",
+  "categories": ["AI"],
+  "description": "Okou is a cloud personal agent that helps you manage email, write documents, and organize your schedule. Sign in to your Okou account and choose a workspace. Tap Enter to record, tap it again to send, or press Esc to cancel. While sending, the waveform of the entire recording turns from gray to green. Read responses on the handheld, scroll through longer replies, or revisit earlier messages with the arrow keys. Pocket Orbit follows your voice while you record and settles into a bookmark when you read. This edition receives updates through the Cardputer Zero AppStore.",
+  "locales": {"zh-CN": {"title": "Okou", "summary": "Okou 是你的云端个人智能体，帮你处理邮件、编写文档、安排日程。", "description": "Okou 是你的云端个人智能体，帮你处理邮件、编写文档、安排日程。 登录 Okou 并选择工作区后，轻按回车开始录音，再按一次发送，按 Esc 取消。发送时，整段录音的波形从左到右逐渐变绿。用方向键翻阅回复。录音时，头像旁的轨道随声音变化；阅读时，轨道收成页边的书签。商店版通过 Cardputer Zero 应用商店更新。"}},
+  "screenshots": ["screenshots/welcome.png", "screenshots/recording.png", "screenshots/sending.png", "screenshots/chat.png"],
+  "icon": "icon.png",
+  "license": "MIT",
+  "source_repo": "https://github.com/e7h4n/okou-zero",
+  "author": {"github": "e7h4n", "display_name": "Okou"},
+  "share_code": "OKOU",
+  "permissions": {"camera": false, "microphone": true, "imu": false, "network": true, "additional_hardware": false, "background_service": false, "external_display": false}
+}

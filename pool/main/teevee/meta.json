@@ -1,0 +1,35 @@
+{
+  "title": "TeeVee",
+  "summary": "Free live TV and radio stations in your pocket.",
+  "description": "Turn your CardputerZero into a pocket TV and radio. TeeVee plays free live TV channels and radio stations from around the world, with no account and no subscription.\r\n\r\nWatch 24-hour news, business and documentary channels on the built-in screen. Plug in an HDMI monitor and the picture goes full screen on the big screen, with the controls on the CardputerZero. Flip channels with the arrow keys or jump straight to one with the number keys.\r\n\r\nListen to the BBC's national radio stations, from Radio 1 to the World Service, or search a worldwide directory of thousands of stations by name or genre: pop, rock, dance, jazz, classical, chillout, chiptune and more.\r\n\r\nA live spectrum visualiser dances to the music, and the song title shows when the station sends it. Radio keeps playing while you browse.\r\n\r\nFeatures\r\n\r\n- Free live TV channels, streamed in a quality chosen for the screen in use.\r\n- BBC national radio, plus a searchable worldwide station directory.\r\n- Favourites for channels and stations.\r\n- Full-screen video on HDMI, with the controls on the CardputerZero.\r\n- Sound through the built-in speaker, or through the HDMI screen when one is plugged in.\r\n- Automatic channel check: channels that are off air or blocked where you are are hidden.\r\n- Keyboard and mouse control.\r\n- Add your own free streams with a simple M3U file.\r\n\r\nRequires a Wi-Fi connection. Channel availability depends on the broadcasters and on your country. TeeVee is not affiliated with any broadcaster.\r\n\r\n(c) 2026 Software Amusements. www.softwareamusements.com",
+  "categories": [
+    "Media",
+    "Lifestyle"
+  ],
+  "license": "Proprietary",
+  "share_code": "TVEE",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": true,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Software Amusements",
+    "github": "FuzzyDweeb"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "teevee_icon.png",
+  "published_at": "2026-11-27T08:55:30+00:00",
+  "updated_at": "2026-11-27T10:49:31+00:00"
+}

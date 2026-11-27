@@ -1,0 +1,32 @@
+{
+  "title": "ZeroFeed24",
+  "summary": "Flightradar24 feeder for Cardputer Zero.",
+  "description": "The main purpose of this app is to be an on-the-go ADS-B feeder. The app uses the LoRa cap for gps fix, and external RTS-SDR for receive signals from aircrafts, then send them to the services (only flightradar24.com now) using the respective official repo. You can insert your sharing key or submit a request for a new one directly in the app for all the suppoorted feeder. This app is not affiliated or sponsored by flightradar24.com, planefinder.net or airnavradar.com.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "ZF24",
+  "source_repo": "https://github.com/wirpool/zerofeed24",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Wirpool",
+    "github": "wirpool"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "zerofeed24_icon.png",
+  "published_at": "2026-11-26T22:50:44+00:00",
+  "updated_at": "2026-11-27T10:16:28+00:00"
+}
