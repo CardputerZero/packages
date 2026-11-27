@@ -1,0 +1,11 @@
+{
+  "filename": "rush-hour_1.0.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/lintz-030990b0-f5d4-4d0a-b8ce-1e6ce11aef0a__rush-hour_1.0.0-1_arm64.deb",
+  "sha256": "96c73de602175fa9e2445c2b2e713f73ae552c2a6884b34c11eb0280a5d25f13",
+  "size": 77902,
+  "package": "rush-hour",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "lintz",
+  "uploader_email": "lintz@users.noreply.github.com"
+}
