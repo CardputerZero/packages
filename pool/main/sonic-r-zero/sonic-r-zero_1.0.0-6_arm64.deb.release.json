@@ -1,0 +1,11 @@
+{
+  "filename": "sonic-r-zero_1.0.0-6_arm64.deb",
+  "url": "https://github.com/RetroBreeze/packages/releases/download/czdev-buffer/sonic-r-zero_1.0.0-6_arm64.deb",
+  "sha256": "b2a245549b0f6edd99d4d8a5e0e8e1b94d659408e4dc2dfee09900940fa0a52c",
+  "size": 393256,
+  "package": "sonic-r-zero",
+  "version": "1.0.0-6",
+  "architecture": "arm64",
+  "uploaded_by": "RetroBreeze",
+  "uploader_email": "RetroBreeze@users.noreply.github.com"
+}
