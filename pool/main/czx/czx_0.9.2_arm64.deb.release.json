@@ -1,0 +1,11 @@
+{
+  "filename": "czx_0.9.2_arm64.deb",
+  "url": "https://github.com/toyoshim/packages/releases/download/czdev-buffer/czx_0.9.2_arm64.deb",
+  "sha256": "a43af1c5b37379779717e22c9907b2b8dce6539c4f31c6ac20098b0fd8d6e3eb",
+  "size": 7521072,
+  "package": "czx",
+  "version": "0.9.2",
+  "architecture": "arm64",
+  "uploaded_by": "toyoshim",
+  "uploader_email": "toyoshim@gmail.com"
+}
