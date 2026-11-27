@@ -1,0 +1,38 @@
+{
+  "title": "StreamPlayer",
+  "summary": "Emby/Jellyfin music and LCD/HDMI video player for CardputerZero.",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/setup.png",
+    "screenshots/hdmi-controls.png"
+  ],
+  "description": "Browse and search Emby/Jellyfin media libraries. Play music and video on the built-in LCD or a connected HDMI desktop. With HDMI connected, video starts on the external screen and the small screen keeps the controls; Tab switches output, Space pauses, short Esc returns and holding Esc exits. HDMI requests H.264/AAC up to 720p24 / 8 Mbps video with ordinary-user DMA-BUF on the supported Raspberry Pi image, and retains the current display mode. LCD video uses the 320x170 server-transcoded profile. An existing Wayland desktop and mpv are required for HDMI; video performance depends on the server, network and device. Runs as the launcher user, with no root services, sudo configuration, boot/CMA or Wi-Fi changes, or PackageKit/LightDM control. Includes the refreshed-image keyboard symbol fix. Photo playback is not enabled. Configure your own server and account in the app.\n\nSource: https://github.com/zhuzhe1983/cp0-StreamPlayer/tree/store-compliant-20261125.",
+  "locales": {
+    "zh-CN": {
+      "title": "StreamPlayer",
+      "summary": "面向 CardputerZero 的 Emby/Jellyfin 音乐、小屏及 HDMI 外屏播放器。",
+      "description": "浏览、搜索自己的 Emby/Jellyfin 媒体库，播放音乐、小屏视频及 HDMI 外屏视频。连接外屏时优先外屏播放，小屏保留控制；Tab 切屏，空格暂停，短按 Esc 返回，长按 Esc 退出。外屏请求最高 720p24、8 Mbps 视频的 H.264/AAC 转码，在支持的树莓派镜像上自动使用普通用户 DMA-BUF，保持现有显示模式；小屏使用 320×170 转码。外屏需要现有 Wayland 桌面和 mpv，实际播放效果取决于服务器、网络和设备。以前台普通用户运行，不安装 root 服务或 sudo 配置，不修改启动内存、Wi-Fi，不控制 PackageKit 或 LightDM。保留新镜像的键盘符号修复，暂不启用图片播放。"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/zhuzhe1983/cp0-StreamPlayer",
+  "icon": "stream-player.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": true
+  },
+  "share_code": "STRP",
+  "author": {
+    "display_name": "Zhu Zhe",
+    "github": "zhuzhe1983"
+  },
+  "published_at": "2026-11-27T15:40:46+00:00",
+  "updated_at": "2026-11-27T15:40:46+00:00"
+}
