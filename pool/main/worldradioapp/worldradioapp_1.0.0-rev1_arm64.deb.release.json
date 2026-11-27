@@ -1,0 +1,11 @@
+{
+  "filename": "worldradioapp_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kowloonet-fee76e92-01ac-4f2e-bb7c-67afaed44a8d__worldradioapp_1.0.0-rev1_arm64.deb",
+  "sha256": "e4a09a8a4a9eb57b8af2b5fc73ea793483799a841884fdf7a72232e368b63a5c",
+  "size": 1499346,
+  "package": "worldradioapp",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "kowloonet",
+  "uploader_email": "kowloonet@users.noreply.github.com"
+}
