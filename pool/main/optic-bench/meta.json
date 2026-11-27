@@ -1,0 +1,32 @@
+{
+  "title": "Optic Bench",
+  "summary": "Benchmark CPU, RAM, storage, 2D and GPU, and compare on a shared board.",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/1-home.png",
+    "screenshots/2-running.png",
+    "screenshots/3-result.png",
+    "screenshots/4-board.png"
+  ],
+  "description": "Optic Bench measures how fast your CardputerZero is and gives it a score you can compare.\n\n- CPU: six tests on one thread and on all four (compression, SHA-256, sorting, Mandelbrot, n-body, pointer chasing).\n- RAM: fill, copy and random-read latency.\n- Storage: sequential read and write and random 4K reads on your card.\n- 2D: LVGL drawing off-screen and on the device's own panel.\n- GPU: an OpenGL ES 2 scene through the VC4 driver, when the driver is present.\n\nA score of 1000 means as fast as the reference CardputerZero. Each result keeps the temperature, load and throttling state it was measured in, so you can tell a fair run from a hot one. Past results are kept on the device.\n\nYou can share a result to the public board under a name you choose and see how other units did. Sharing is optional; a run takes about 100 seconds and nothing is sent unless you share. Sharing uses curl.",
+  "license": "MIT",
+  "icon": "icon-256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "BNCH",
+  "author": {
+    "github": "zedward856-spec",
+    "display_name": "sl01220"
+  },
+  "published_at": "2026-11-26T23:01:51+00:00",
+  "updated_at": "2026-11-26T23:01:51+00:00"
+}

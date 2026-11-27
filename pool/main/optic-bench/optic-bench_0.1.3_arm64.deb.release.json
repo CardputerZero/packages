@@ -1,0 +1,11 @@
+{
+  "filename": "optic-bench_0.1.3_arm64.deb",
+  "url": "https://github.com/zedward856-spec/packages/releases/download/czdev-buffer/optic-bench_0.1.3_arm64.deb",
+  "sha256": "9205dad6c35f7c3bea69636bdbeca30a78501dc6f36be5966829281b71b2ed6c",
+  "size": 634784,
+  "package": "optic-bench",
+  "version": "0.1.3",
+  "architecture": "arm64",
+  "uploaded_by": "zedward856-spec",
+  "uploader_email": "zedward856-spec@users.noreply.github.com"
+}
