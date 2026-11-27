@@ -1,0 +1,11 @@
+{
+  "filename": "daw-zero_0.5.0-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/adrianomoraes-94531a90-f4c9-4038-986b-87df7f694b8c__daw-zero_0.5.0-m5stack1_arm64.deb",
+  "sha256": "deb3002483ce9930efa40072bf4da926be883fb5e35892f12e58eca5a2101dd1",
+  "size": 816196,
+  "package": "daw-zero",
+  "version": "0.5.0-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "adrianomoraes",
+  "uploader_email": "adrianomoraes@users.noreply.github.com"
+}
