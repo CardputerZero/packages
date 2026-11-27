@@ -1,0 +1,11 @@
+{
+  "filename": "zerocast_0.1.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/J0s3f__zerocast_0.1.0-rev1_arm64.deb",
+  "sha256": "729fef6db285082e5aeeae91b205eb31c8604f33ea9ef45ce5d06ad53252417f",
+  "size": 2141332,
+  "package": "zerocast",
+  "version": "0.1.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "J0s3f",
+  "uploader_email": "github.com@netpage.dk"
+}
