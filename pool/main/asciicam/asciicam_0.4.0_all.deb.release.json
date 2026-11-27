@@ -1,0 +1,11 @@
+{
+  "filename": "asciicam_0.4.0_all.deb",
+  "url": "https://github.com/ErnestG4/packages/releases/download/czdev-buffer/asciicam_0.4.0_all.deb",
+  "sha256": "d9251fe86ef28e1f57ec81a41fb7b664b5c0e8aa95ec00c61364986e87b9c73e",
+  "size": 25996,
+  "package": "asciicam",
+  "version": "0.4.0",
+  "architecture": "all",
+  "uploaded_by": "ErnestG4",
+  "uploader_email": "ErnestG4@users.noreply.github.com"
+}
