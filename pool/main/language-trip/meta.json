@@ -1,0 +1,31 @@
+{
+  "title": "Language Trip",
+  "summary": "Spaced repetition language learning app with 60000+ words",
+  "description": "Language Trip is a fully offline language-learning app built for CardputerZero (320×170 LVGL + physical keyboard)\r\n\r\nWhat It Has (Offline Content)\r\n3 Study Languages in a local SQLite database (sprakverkstad-content.sqlite, 102.32 MiB, 201,191 total vocabulary entries):\r\nEnglish: 78,447 words + 45 irregular verbs (90 conjugation items)\r\nSpanish: 61,372 words, 92 grammar lessons, CEFR A1–C2 placement test, and verb conjugation drills\r\nJapanese: 61,372 words, 176 grammar lessons, 400 kanji (with Swedish/English glosses and Genki/JFZ/RTK alignment), hiragana/katakana drills, and verb conjugations\r\n18 structured course stages and full-text (FTS5) offline dictionary search.\r\n3 UI Languages: English, Swedish, and Spanish (configurable independently from the study language).",
+  "categories": [
+    "Education"
+  ],
+  "license": "MIT",
+  "share_code": "LTRP",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "LForss",
+    "github": "lintz"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "language-trip_icon.png",
+  "published_at": "2026-11-27T15:57:18+00:00",
+  "updated_at": "2026-11-27T15:57:18+00:00"
+}
