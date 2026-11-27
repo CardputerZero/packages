@@ -5,12 +5,13 @@
     "System Tools"
   ],
   "screenshots": [
-    "screenshots/device-compact-home.png",
-    "screenshots/device-h-help.png",
-    "screenshots/device-history.png",
-    "screenshots/device-settings.png"
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
   ],
-  "description": "Reads BQ27220 voltage, current, capacity and temperature every second, showing signed charge/discharge watts, net average, a 60-second live curve and a zoomable full-screen history.",
+  "description": "Reads real BQ27220 battery data at configurable 100–60000 ms intervals. Includes live power curves, cursor-centered history zoom, A/B range energy analysis, independent measurement sessions, and page-specific keyboard help.",
   "locales": {
     "zh-CN": {
       "summary": "适用于 Cardputer Zero 的电池功率监视器，带实时功率曲线和全屏历史页",
@@ -19,15 +20,15 @@
   },
   "license": "MIT",
   "source_repo": "https://github.com/hhzzzyy/zero-watt",
-  "icon": "zero-watt.png",
+  "icon": "zero-watt_icon.png",
   "permissions": {
-    "camera": false,
-    "microphone": false,
-    "imu": false,
-    "network": false,
     "additional_hardware": false,
     "background_service": true,
-    "external_display": false
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
   },
   "share_code": "ZWAT",
   "author": {
@@ -35,5 +36,5 @@
     "display_name": "hhzzzyy"
   },
   "published_at": "2026-11-17T12:00:16+00:00",
-  "updated_at": "2026-11-17T12:00:16+00:00"
+  "updated_at": "2026-11-27T03:51:40+00:00"
 }

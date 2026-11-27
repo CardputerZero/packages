@@ -1,0 +1,11 @@
+{
+  "filename": "zero-watt_0.2.0-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/hhzzzyy__zero-watt_0.2.0-rev1_arm64.deb",
+  "sha256": "5a5060e7efa8cf2f74205e099bbe6166bc6710bddeaa6118b7f2c8758b5f5751",
+  "size": 562150,
+  "package": "zero-watt",
+  "version": "0.2.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "hhzzzyy",
+  "uploader_email": "hhzzzyy@users.noreply.github.com"
+}
