@@ -1,0 +1,11 @@
+{
+  "filename": "czwall_0.2.1-rev1_arm64.deb",
+  "url": "https://github.com/wearewatchingyouclosely/packages/releases/download/czdev-buffer/czwall_0.2.1-rev1_arm64.deb",
+  "sha256": "f49706e788475b4c674616d5dddb6d2502925a79916955f8ad49637ffb5ac2c4",
+  "size": 1236250,
+  "package": "czwall",
+  "version": "0.2.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "wearewatchingyouclosely",
+  "uploader_email": "wearewatchingyouclosely@users.noreply.github.com"
+}
