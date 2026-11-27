@@ -1,0 +1,11 @@
+{
+  "filename": "beamhound_0.2.0_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/bfeller__beamhound_0.2.0_arm64.deb",
+  "sha256": "d5bccfec8e20edfe5ca454200d364806e51f15cea82394103c415816f9931f16",
+  "size": 666588,
+  "package": "beamhound",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "bfeller",
+  "uploader_email": "bfeller@users.noreply.github.com"
+}
