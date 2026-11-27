@@ -20,6 +20,11 @@ on:
   repository_dispatch:
     types: [web-submission, web-listing-update]
 
+# Both dispatches carry the package name; validation below binds it to the .deb.
+concurrency:
+  group: portal-submission-${{ github.event.client_payload.package }}
+  queue: max
+
 permissions:
   contents: write
   issues: write
@@ -36,6 +41,32 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Check for an outstanding or superseded submission
+        id: guard
+        env:
+          PKG: ${{ github.event.client_payload.package }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          [[ "$PKG" =~ ^[a-z0-9][a-z0-9.+-]+$ ]] || { echo "::error::invalid package name"; exit 1; }
+          pending=$(node --input-type=module <<'JS'
+          import { pendingPortalPR } from './.github/scripts/pending-portal-pr.mjs';
+          const { GITHUB_REPOSITORY, PKG, GH_TOKEN } = process.env;
+          console.log(await pendingPortalPR(GITHUB_REPOSITORY, PKG, GH_TOKEN) ?? '');
+          JS
+          )
+          if [[ -n "$pending" ]]; then
+            echo "reason=Wait for #$pending to merge or close, then refresh the package and resubmit. 请等待 #$pending 合并或关闭后刷新并重新提交。" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          # A preceding PR may already have merged while this run was queued.
+          git fetch --no-tags --depth=1 origin refs/heads/main
+          if ! git diff --quiet HEAD FETCH_HEAD -- "pool/main/$PKG"; then
+            echo "reason=This package changed after submission. Refresh its listing and resubmit. 应用资料已更新，请刷新后重新提交。" >> "$GITHUB_OUTPUT"
+            exit 1
+          fi
+          git switch --detach FETCH_HEAD
+
       - name: Install tools
         run: sudo apt-get update && sudo apt-get install -y dpkg-dev jq zstd
 
@@ -46,6 +77,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           DEB_URL: ${{ github.event.client_payload.binary.url }}
           WANT_SHA: ${{ github.event.client_payload.binary.sha256 }}
+          DECLARED_PKG: ${{ github.event.client_payload.package }}
           SUBMITTER: ${{ github.event.client_payload.login }}
           # JSON array of the submitter's verified emails (from the Worker,
           # which read them via the user's OAuth token — trusted).
@@ -59,6 +91,7 @@ jobs:
             GOT=$(sha256sum /tmp/pkg.deb | awk '{print $1}')
             [ "$GOT" = "$WANT_SHA" ] || ERR="${ERR}- ❌ sha256 mismatch\n"
             PKG=$(dpkg-deb -f /tmp/pkg.deb Package 2>/dev/null || true)
+            [[ "$PKG" == "$DECLARED_PKG" ]] || ERR="${ERR}- ❌ .deb Package differs from the submitted package name\n"
             VER=$(dpkg-deb -f /tmp/pkg.deb Version 2>/dev/null || true)
             ARCH=$(dpkg-deb -f /tmp/pkg.deb Architecture 2>/dev/null || true)
             MAINT=$(dpkg-deb -f /tmp/pkg.deb Maintainer 2>/dev/null || true)
@@ -527,12 +560,18 @@ jobs:
           SUBMITTER: ${{ github.event.client_payload.login }}
           FILENAME: ${{ github.event.client_payload.filename || format('{0} store listing', github.event.client_payload.package) }}
           ERR0: ${{ steps.listing.outputs.errors }}
+          GUARD_REASON: ${{ steps.guard.outputs.reason }}
           ERR1: ${{ steps.validate.outputs.errors }}
           ERR2: ${{ steps.meta.outputs.errors }}
           ERR3: ${{ steps.metacheck.outputs.errors }}
           PATH_HELP: ${{ steps.validate.outputs.path_help }}
           META_HELP: ${{ steps.metacheck.outputs.meta_help }}
         run: |
+          if [[ -n "$GUARD_REASON" ]]; then
+            printf '@%s\n\n%s\n' "$SUBMITTER" "$GUARD_REASON" > /tmp/issue.md
+            gh issue create --title "Portal submission pending or out of date: $FILENAME" --body-file /tmp/issue.md
+            exit 0
+          fi
           {
             echo "@$SUBMITTER your portal submission of \`$FILENAME\` failed validation:"
             echo
