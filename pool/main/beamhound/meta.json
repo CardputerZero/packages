@@ -1,34 +1,45 @@
 {
   "title": "Beamhound",
   "summary": "Sniffs out your IR remote from one button press and becomes it.",
-  "description": "Point a remote at the Cardputer and press Power.\r\nBeamhound decodes the signal and finds every remote in the Flipper-IRDB database with that power code.\r\nRemotes with identical codes count as one answer, so it only asks questions that actually separate the remaining code sets. Each turn it picks the cheapest useful question: press another button on your remote, pick the device type, pick the brand, or did your device react to this test signal?\r\nOnce matched, the profile is saved and you get a remote-control screen.",
+  "description": "Point any infrared remote at the Cardputer Zero and press Power. Beamhound decodes the signal (NEC, Samsung, RC5/RC6, Sony SIRC, Panasonic/Kaseikyo, RCA, Pioneer and more), finds every matching remote in the community Flipper-IRDB database, then asks only the questions that matter - press another button, pick the brand or device type, or watch whether your TV reacts to a test signal - until it knows your device. Usually one or two questions, often none.\n\nLost the remote? Search for the brand instead: Beamhound fires that brand's power codes one at a time, most common first, while you press Space; press Enter when the device switches off, and a few quick test signals pin down the exact model.\n\nThen it becomes the remote: power, volume, channels, input, menu, arrows, OK, playback and number keys are mapped to the keyboard (F/Z/X/C arrows, Fn media keys work too), and every other button the remote has is one list away. Matches are saved so your remotes are always on the home screen.\n\nTVs, projectors, AV receivers, soundbars, cable and streaming boxes, disc players, fans and lights are supported (air conditioners are not yet). On first run the app downloads the Flipper-IRDB database (about 17 MB) over Wi-Fi and indexes it on the device.",
   "categories": [
-    "System Tools",
-    "Hardware & IoT"
+    "Hardware & IoT",
+    "System Tools"
   ],
   "license": "MIT",
   "share_code": "BEAM",
   "source_repo": "https://github.com/bfeller/beamhound",
   "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
     "additional_hardware": false,
     "background_service": false,
-    "camera": false,
-    "external_display": false,
-    "imu": false,
-    "microphone": false,
-    "network": true
+    "external_display": false
   },
   "author": {
-    "display_name": "bfeller",
+    "display_name": "Bryan Feller",
     "github": "bfeller"
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png",
-    "screenshots/screenshot-3.png"
+    "screenshots/1-sniff.png",
+    "screenshots/2-questions.png",
+    "screenshots/3-found.png",
+    "screenshots/4-remote.png",
+    "screenshots/5-code-search.png"
   ],
-  "icon": "beamhound_icon.png",
+  "icon": "beamhound_256.png",
   "published_at": "2026-11-23T01:36:08+00:00",
-  "updated_at": "2026-11-27T03:11:15+00:00"
+  "updated_at": "2026-11-27T03:42:29+00:00",
+  "locales": {
+    "zh-CN": {
+      "title": "Beamhound",
+      "summary": "按一下遥控器，就能识别它并把 Cardputer 变成同款遥控器。"
+    },
+    "ja": {
+      "title": "Beamhound",
+      "summary": "リモコンのボタンを一度押すだけで識別し、Cardputer をそのリモコンにします。"
+    }
+  }
 }
