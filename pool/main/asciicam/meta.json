@@ -1,0 +1,32 @@
+{
+  "title": "AsciiCam",
+  "summary": "Live camera feed as ASCII art in the terminal, with colour and edge modes",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "description": "AsciiCam renders the camera feed as live ASCII art. On the device it draws straight to the LCD framebuffer for full-speed colour; over SSH it renders in any terminal, following the terminal size. Cycle through four character ramps, toggle colour, edge detection, flipping and inversion, and tune gamma. Snapshot a moment with s (plain text, coloured ANSI, a rendered PNG of the art, and the raw photo as JPEG, saved to ~/Pictures/asciicam) or record ASCII video with v as an asciinema .cast, renderable to MP4 on-device with --render. Works with the built-in CSI camera via picamera2, any V4L2/USB webcam via OpenCV, or a synthetic test pattern (--source test).",
+  "license": "MIT",
+  "source_repo": "https://github.com/ErnestG4/asciicam",
+  "icon": "asciicam_icon.png",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "share_code": "ASCI",
+  "author": {
+    "display_name": "ErnestG4",
+    "github": "ErnestG4"
+  },
+  "published_at": "2026-11-27T01:25:40+00:00",
+  "updated_at": "2026-11-27T01:25:40+00:00"
+}
