@@ -13,7 +13,7 @@
     "camera": false,
     "microphone": false,
     "imu": false,
-    "network": false,
+    "network": true,
     "additional_hardware": false,
     "background_service": false,
     "external_display": true
@@ -33,11 +33,11 @@
     }
   },
   "screenshots": [
-    "screenshots/screenshot-0.png",
-    "screenshots/screenshot-1.png",
-    "screenshots/screenshot-2.png"
+    "screenshots/01-launcher.png",
+    "screenshots/02-g800-hud.png",
+    "screenshots/03-menu.png"
   ],
-  "icon": "czx_icon.png",
+  "icon": "icon.png",
   "published_at": "2026-11-25T16:40:00+00:00",
-  "updated_at": "2026-11-26T13:35:48+00:00"
+  "updated_at": "2026-11-27T16:31:25+00:00"
 }
