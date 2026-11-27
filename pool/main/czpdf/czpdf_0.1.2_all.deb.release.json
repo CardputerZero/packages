@@ -1,0 +1,11 @@
+{
+  "filename": "czpdf_0.1.2_all.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/H4W9__czpdf_0.1.2_all.deb",
+  "sha256": "ddff1962673773f26c0b07db89b03052f960551f21270067857ce951d6800a0a",
+  "size": 34466,
+  "package": "czpdf",
+  "version": "0.1.2",
+  "architecture": "all",
+  "uploaded_by": "H4W9",
+  "uploader_email": "h4w9@users.noreply.github.com"
+}
