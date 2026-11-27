@@ -1,0 +1,11 @@
+{
+  "filename": "zeroduino_0.0.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/mnvmnico-644d2ae0-bc0a-4b3b-9c1a-4e16527a83ba__zeroduino_0.0.1-1_arm64.deb",
+  "sha256": "a206550f5c3df2c7bd038ca2e72a3c3c9966a9763ee42e79db0067eb597402d1",
+  "size": 15341508,
+  "package": "zeroduino",
+  "version": "0.0.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "mnvmnico",
+  "uploader_email": "mnvmnico@users.noreply.github.com"
+}
