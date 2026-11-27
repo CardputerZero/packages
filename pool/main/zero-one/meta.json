@@ -1,0 +1,34 @@
+{
+  "title": "Zero-One",
+  "summary": "Flipper One on Cardputer Zero",
+  "description": "Run the Flipper One ui on Cardputer Zero, ITS NOT DONE, FLIPPER DEVICES ONLY RELEASED A DEMO I JUST PORTED DEMO TO CARDPUTER ZERO",
+  "categories": [
+    "Security",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "FL01",
+  "source_repo": "https://github.com/AverageCatUser/zero-one",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": true,
+    "network": true
+  },
+  "author": {
+    "display_name": "CyberMeow -Treeouy",
+    "github": "AverageCatUser"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "zero-one_icon.png",
+  "published_at": "2026-11-27T23:08:39+00:00",
+  "updated_at": "2026-11-27T23:08:39+00:00"
+}
