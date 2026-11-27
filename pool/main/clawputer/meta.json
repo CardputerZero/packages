@@ -13,7 +13,7 @@
     "screenshots/5-history.png",
     "screenshots/6-signin.png"
   ],
-  "description": "Clawputer is a pocket chat app for Anthropic's Claude Code, built for the CardputerZero's 320x170 screen and keyboard.\n\n- Clean chat view: tool calls squashed to one line, command output and code in tidy boxes\n- Permission prompts (y / n / always) and Claude's multiple-choice questions\n- Help (F1), settings (F2): model, effort, permissions, font size and more; chat history (F3)\n- Drafts autosave, messages queue while Claude is busy\n- Easy first-run setup: installs Claude Code with Anthropic's official installer, then sign in by scanning a QR code with your phone, no typing long codes\n- Remote mode: run Claude on your PC over SSH (works with Tailscale) and use the Cardputer as the screen, fast and with no RAM limits. Set up with one short command on the PC\n- Optional RAM boost: pauses background services while Claude runs on the Cardputer\n- Terminal mode for the full Claude Code interface\n\nNeeds a Claude subscription (Pro/Max) or an Anthropic Console account. Not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic.",
+  "description": "Clawputer is a pocket chat app for Anthropic's Claude Code, built for the CardputerZero's 320x170 screen and keyboard.\n\n- Clean chat view: tool calls squashed to one line, command output and code in tidy boxes\n- Permission prompts (y / n / always) and Claude's multiple-choice questions\n- Help (F1), settings (F2): model, effort, permissions, font size and more; chat history (F3)\n- Drafts autosave, messages queue while Claude is busy\n- Easy first-run setup: installs Claude Code with Anthropic's official installer, then sign in by scanning a QR code with your phone, no typing long codes\n- Remote mode: run Claude on your PC over SSH (works with Tailscale) and use the Cardputer as the screen, fast and with no RAM limits. Set up with one short command on the PC\n- Optional RAM boost: pauses background services while Claude runs on the Cardputer\n- Minimise with Ctrl+H: Claude keeps working and chimes when it's done or needs you\n- Status bar with a context meter, model, network (wifi / phone tethering / offline) and battery\n- Optional bubbles chat style with proper markdown (bold, headings, bullets)\n- Live 'thinking 12s · 340 tokens' progress, sudo password popups, and an optional web UI to use the chat from your phone\n\nNeeds a Claude subscription (Pro/Max) or an Anthropic Console account. Not affiliated with or endorsed by Anthropic. Claude and Claude Code are trademarks of Anthropic.",
   "locales": {
     "en": {
       "title": "Clawputer",
@@ -46,5 +46,5 @@
     "display_name": "RubberDingyRapids"
   },
   "published_at": "2026-11-25T21:50:29+00:00",
-  "updated_at": "2026-11-25T21:50:29+00:00"
+  "updated_at": "2026-11-27T21:52:35+00:00"
 }
