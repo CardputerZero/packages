@@ -1,0 +1,41 @@
+{
+  "title": "DiscPuter",
+  "summary": "USB CD-ROM emulator: carry OS installer ISOs, boot a computer from them",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/drive.png",
+    "screenshots/list.png",
+    "screenshots/disk.png",
+    "screenshots/copy.png",
+    "screenshots/setup.png",
+    "screenshots/connect.png"
+  ],
+  "description": "DiscPuter turns the CardputerZero into a USB optical drive. Keep installer images on the SD card, plug the CardputerZero into a computer and it sees a CD-ROM with the disc you picked on the CardputerZero's own screen.\n\n- CD-ROM mode for ISO 9660 / UDF images (installers, live CDs), read-only USB disk mode for .img files and hybrid Linux ISOs; AUTO picks one from what is in the image\n- Images are recognised: volume label, bootable (El Torito), hybrid, MBR / GPT\n- Insert, eject and swap discs; the computer is reconnected so it notices the new disc\n- Copy images in over USB: the CardputerZero becomes a flash drive DISCPUTER; copy .iso files onto it, eject it, and they move into the image list by themselves\n- Keys 4-8 under the screen: eject, reconnect, mode, stop, insert\n\nHow to connect: Host/Slave switch on Slave, cable on the RIGHT USB-C (in Slave the USB hub, Ethernet and USB-A are off).\n\nRoot: the USB gadget needs it. The package installs a small helper (/usr/lib/cz-discputer/dp-gadget) that only accepts images in ~/discputer/images, /media or /mnt. On the first run the app asks for your user's password once and adds a sudo rule for that helper only (/etc/sudoers.d/cz-discputer, checked with visudo); removing the package removes the rule.\n\nNot yet: BIN/CUE and CD audio (planned). Inspired by USBODE (danifunker), GPL-3.0.",
+  "locales": {
+    "uk": {
+      "title": "DiscPuter",
+      "summary": "Емулятор USB CD-ROM: інсталятори ОС з ISO-образів"
+    }
+  },
+  "license": "GPL-3.0",
+  "source_repo": "https://github.com/heartpolik/cz-diskputer",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "DISC",
+  "author": {
+    "github": "heartpolik",
+    "display_name": "heartpolik"
+  },
+  "published_at": "2026-11-27T14:47:31+00:00",
+  "updated_at": "2026-11-27T14:47:31+00:00"
+}
