@@ -1,0 +1,32 @@
+{
+  "title": "Bunny Hop",
+  "summary": "Platform jumping game",
+  "description": "Bunny Hop is a native embedded vertical platformer for CardputerZero. Features squash & stretch physics, Landscape and Portrait orientation support (via Pause -> Settings), 8-bit chiptune BGM and SFX, Classic and toddler-friendly Kids Mode (2x platform width, no bats), Shield and Rocket power-ups, 16 unlockable skins, F/Z/X/C controls, and 3-second ESC hold-to-exit countdown.",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "BHOP",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "LForss",
+    "github": "lintz"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "bunny-hop_icon.png",
+  "published_at": "2026-11-27T16:59:59+00:00",
+  "updated_at": "2026-11-27T16:59:59+00:00"
+}
