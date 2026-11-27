@@ -1,0 +1,11 @@
+{
+  "filename": "cp0-amadeus_0.2.0-1_arm64.deb",
+  "url": "https://github.com/LilMonsterOvO/packages/releases/download/czdev-buffer/cp0-amadeus_0.2.0-1_arm64.deb",
+  "sha256": "f49e64194545193c69e9f5f8b7679977d927de9948e1c70a2d98397f3b835f41",
+  "size": 260216,
+  "package": "cp0-amadeus",
+  "version": "0.2.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "LilMonsterOvO",
+  "uploader_email": "LilMonsterOvO@users.noreply.github.com"
+}

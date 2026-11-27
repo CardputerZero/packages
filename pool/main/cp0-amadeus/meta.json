@@ -1,0 +1,43 @@
+{
+  "title": "Amadeus Zero",
+  "summary": "Steins;Gate 0 Amadeus AI companion with voice, 4-bucket memory & bilingual UI",
+  "categories": [
+    "AI",
+    "Lifestyle"
+  ],
+  "screenshots": [
+    "screenshots/01_call.png",
+    "screenshots/01_call_en.png",
+    "screenshots/02_chat.png",
+    "screenshots/03_mem.png",
+    "screenshots/04_sleep.png",
+    "screenshots/05_sys_en.png"
+  ],
+  "description": "Handheld port of kirina77/Amadeus-mobile for CardputerZero. Features a 320x170 Steins;Gate 0 call stage with blink and lip-sync, SQLite WAL+FTS5 4-bucket memory with 12h emotional continuity, single-key Alibaba Cloud DashScope (qwen-plus + qwen3-asr-flash + qwen3-tts-flash / qwen3-tts-vc voice cloning), DeepSeek SSE, Push-to-Talk STT, built-in Pinyin IME, LAN phone Web input, and instant zh/en UI switching (press L).",
+  "locales": {
+    "zh-CN": {
+      "title": "Amadeus Zero",
+      "summary": "命运石之门0 Amadeus 掌上AI伙伴（千问/DeepSeek语音对话 + 四桶记忆 + 中英双语）",
+      "description": "基于开源项目 kirina77/Amadeus-mobile 移植重构的 CardputerZero 掌上 AI 伙伴。支持 320×170 通话舞台、口型情绪差分、SQLite 四桶记忆与 12 小时情绪连续性、阿里云百炼单 Key（对话+识别+声音复刻）与 DeepSeek 流式对话、按住说话 PTT、离线拼音候选条、局域网手机辅助输入，按 L 键实时切换简体中文与 English 界面。"
+    }
+  },
+  "license": "AGPL-3.0",
+  "source_repo": "https://github.com/LilMonsterOvO/CardputerZero-Amadeus",
+  "icon": "icon_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "AMAD",
+  "author": {
+    "github": "LilMonsterOvO",
+    "display_name": "Haoran Liu"
+  },
+  "published_at": "2026-11-26T19:58:24+00:00",
+  "updated_at": "2026-11-26T19:58:24+00:00"
+}
