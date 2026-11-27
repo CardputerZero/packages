@@ -1,0 +1,32 @@
+{
+  "title": "CardStar",
+  "summary": "Unofficial AllStar (IAX2) client: push-to-talk and DTMF for your node",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/launcher.png",
+    "screenshots/setup.png",
+    "screenshots/connection-failed.png"
+  ],
+  "description": "Connect to your own AllStar node over IAX2. Needs an IAX2 login on a server you are allowed to use. The secret is stored as plain text in a private file. Stop transmitting and quit with q: holding Esc/Home force-quits and can leave the node transmitting until the server times out. A valid amateur radio license is required to transmit. Not affiliated with AllStarLink.",
+  "license": "GPL-2.0-only",
+  "source_repo": "https://github.com/hammwl55-creator/cardstar",
+  "icon": "icon_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CSTR",
+  "author": {
+    "display_name": "TheBeardedHamm",
+    "github": "hammwl55-creator"
+  },
+  "published_at": "2026-11-26T04:35:24+00:00",
+  "updated_at": "2026-11-26T04:35:24+00:00"
+}
