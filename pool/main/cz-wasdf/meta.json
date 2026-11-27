@@ -1,0 +1,35 @@
+{
+  "title": "WASDF",
+  "summary": "A fast, thumb-driven file manager with WASD and HJKL controls",
+  "description": "A file manager designed for the Cardputer Zero’s compact keyboard, with wasd and hjkl controls.\\n\\nUse wasd to navigate the file list on the left and hjkl to control the function panel on the right. With wasd under your left thumb and hjkl under your right, you can manage and preview files without changing your grip on the Cardputer Zero.\\\\nFiler ops: Copy, move, rename, and create files, or use the command builder.\\nSearch: Quickly find files with incremental search and filtering.\\nPreviews: View documents with syntax highlighting and images(Kitty graphics).\\nTerminal: Shell access with basic terminal multiplexing.\\nMore: Bookmarks, CJK support, display themes, and a settings menu.",
+  "categories": [
+    "System Tools",
+    "Creative & Office"
+  ],
+  "license": "Apache-2.0",
+  "share_code": "WASD",
+  "source_repo": "https://github.com/szk/cz-wasdf",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "szk",
+    "github": "szk"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png"
+  ],
+  "icon": "cz-wasdf_icon.png",
+  "published_at": "2026-11-27T18:31:49+00:00",
+  "updated_at": "2026-11-27T18:31:49+00:00"
+}

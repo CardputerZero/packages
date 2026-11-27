@@ -1,0 +1,11 @@
+{
+  "filename": "cz-wasdf_0.2.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/szk-ccc95d98-1764-4141-9035-a447d399e5ab__cz-wasdf_0.2.1-1_arm64.deb",
+  "sha256": "9e0f266bd307ea6c1eb7fa837ac01d43804de4c2fdbf9e51bef77c7106beca33",
+  "size": 3627912,
+  "package": "cz-wasdf",
+  "version": "0.2.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "szk",
+  "uploader_email": "szk@users.noreply.github.com"
+}
