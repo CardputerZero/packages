@@ -1,0 +1,37 @@
+{
+  "summary": "Tilt to fly a pixel jet over islands in overhead, chase and cockpit views.",
+  "description": "Fly mirui’s Pixel Flight on the built-in display. Bank and climb with the BMI270 or use the keyboard. Switch between three cameras, change your formation and fly from day into night to a looping 8-bit soundtrack.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/chase.png",
+    "screenshots/exit.png"
+  ],
+  "icon": "icon.png",
+  "license": "MIT",
+  "source_repo": "https://github.com/zzxzzk115/cardputer-zero-pixel-flight",
+  "author": {
+    "github": "zzxzzk115",
+    "display_name": "zzxzzk115"
+  },
+  "share_code": "PFLT",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "locales": {
+    "zh-CN": {
+      "title": "Pixel Flight 像素飞行",
+      "summary": "倾斜掌机，驾驶像素战机掠过群岛，在俯视、追尾和座舱视角间切换。"
+    }
+  },
+  "title": "Pixel Flight",
+  "published_at": "2026-11-27T19:23:23+00:00",
+  "updated_at": "2026-11-27T19:23:23+00:00"
+}
