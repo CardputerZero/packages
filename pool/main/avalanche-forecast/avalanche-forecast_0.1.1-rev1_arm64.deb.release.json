@@ -1,0 +1,11 @@
+{
+  "filename": "avalanche-forecast_0.1.1-rev1_arm64.deb",
+  "url": "https://github.com/rprouse/packages/releases/download/czdev-buffer/avalanche-forecast_0.1.1-rev1_arm64.deb",
+  "sha256": "33181ac24b5e4488a54ad827ce384bfbd16f9ef5b272bc69a0b2cb73d4dbbb8e",
+  "size": 2473238,
+  "package": "avalanche-forecast",
+  "version": "0.1.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "rprouse",
+  "uploader_email": "rob@prouse.org"
+}
