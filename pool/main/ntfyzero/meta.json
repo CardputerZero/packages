@@ -1,0 +1,36 @@
+{
+  "title": "ntfyzero",
+  "summary": "Unofficial ntfy client: push notifications with per-topic alerts",
+  "description": "ntfyzero is an unofficial, keyboard-driven client for ntfy, on ntfy.sh or your own server. Subscribe to topics on several servers, then read messages with their priority, tags, links (shown as text and a QR code) and image attachments, run HTTP actions, and publish messages. Alerts play a tone, show a banner and can repeat until you press a key, with global and per-topic settings for sound, volume, minimum priority, mute and quiet hours. Messages and alerts arrive while the app is open; when you open it again, it catches up from the server's message cache.",
+  "categories": [
+    "System Tools",
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "NTFY",
+  "source_repo": "https://github.com/matqua/ntfyzero",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "matqua",
+    "github": "matqua"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "ntfyzero_icon.png",
+  "published_at": "2026-11-27T04:49:54+00:00",
+  "updated_at": "2026-11-27T04:49:54+00:00"
+}
