@@ -1,0 +1,11 @@
+{
+  "filename": "quartermaster_1.2.12_all.deb",
+  "url": "https://github.com/valleytechsolutions/packages/releases/download/czdev-buffer/quartermaster_1.2.12_all.deb",
+  "sha256": "5e042cc40d170019a37fee296df363bb29c919b883d5b8b70d8b8f5cd29ccd68",
+  "size": 1523164,
+  "package": "quartermaster",
+  "version": "1.2.12",
+  "architecture": "all",
+  "uploaded_by": "valleytechsolutions",
+  "uploader_email": "valleytechsolutions@users.noreply.github.com"
+}
