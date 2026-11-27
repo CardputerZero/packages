@@ -1,0 +1,11 @@
+{
+  "filename": "meshtandem_1.6_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/kakashi2018__meshtandem_1.6_arm64.deb",
+  "sha256": "c72e3015bd317afccf94ee020e0462d3681413a762c1d8e77b8d6414c9cec764",
+  "size": 2739644,
+  "package": "meshtandem",
+  "version": "1.6",
+  "architecture": "arm64",
+  "uploaded_by": "kakashi2018",
+  "uploader_email": "kakashi2018@users.noreply.github.com"
+}
