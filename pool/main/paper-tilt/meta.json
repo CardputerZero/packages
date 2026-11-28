@@ -1,0 +1,29 @@
+{
+  "title": "Paper Tilt",
+  "summary": "Draw a maze on paper, photograph it, and tilt your CardputerZero to play.",
+  "description": "Turn pencil lines into walls, bullseyes into goals, and triangles into traps. Collect every goal or draw a Plinko board and steer the falling marble. Photo processing and gameplay run offline.",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "TILT",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": true,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "sparkadium",
+    "github": "Sparkadium"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "paper-tilt_icon.png",
+  "published_at": "2026-11-28T04:29:50+00:00",
+  "updated_at": "2026-11-28T04:29:50+00:00"
+}
