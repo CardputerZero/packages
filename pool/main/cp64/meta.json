@@ -1,0 +1,42 @@
+{
+  "title": "CP64",
+  "summary": "C64 emulator made for the small screen: game menu, disk swap, USB joystick",
+  "categories": [
+    "Emulators",
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/01-help.png",
+    "screenshots/02-menu.png",
+    "screenshots/03-change-disk.png",
+    "screenshots/04-basic.png"
+  ],
+  "description": "CP64 is a C64 emulator built for the CardputerZero, with a small frontend of its own around the VICE core. Copy your .d64, .prg, .crt or .tap files to ~/cp64/games and pick one from the menu, or name one autostart.d64 to start it right away. Disks can be changed while a game runs (Alt+D). The built-in keys work as joystick and keyboard; a USB joystick or gamepad is recognised when plugged in and then the keyboard types normally. The joystick port is remembered per game. Sound over the built-in speaker; the emulation runs at full PAL speed and draws straight to the 320x170 display. Tested on the device with several classic games, including a multi-disk game. No games are included, only a one-line BASIC maze demo to try it out. The package contains the VICE core with its built-in system ROMs, which belong to their respective owners.",
+  "locales": {
+    "ja": {
+      "summary": "小さな画面向けの C64 エミュレーター:ゲームメニュー、ディスク交換、USB ジョイスティック"
+    },
+    "zh-CN": {
+      "summary": "为小屏幕打造的 C64 模拟器:游戏菜单、换盘、USB 摇杆"
+    }
+  },
+  "license": "GPL-2.0-or-later (emulator); bundled C64 system ROMs belong to their owners",
+  "source_repo": "https://github.com/FPVZaphod/CP64",
+  "icon": "store-icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "CP64",
+  "author": {
+    "display_name": "FPVZaphod",
+    "github": "FPVZaphod"
+  },
+  "published_at": "2026-11-28T17:10:31+00:00",
+  "updated_at": "2026-11-28T17:10:31+00:00"
+}

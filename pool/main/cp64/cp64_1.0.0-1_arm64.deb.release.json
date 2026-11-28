@@ -1,0 +1,11 @@
+{
+  "filename": "cp64_1.0.0-1_arm64.deb",
+  "url": "https://github.com/FPVZaphod/packages/releases/download/czdev-buffer/cp64_1.0.0-1_arm64.deb",
+  "sha256": "996e76fb7fa55781520399b925f0566a7c014c1c1a9f2fd8550cbcf033f4b6b4",
+  "size": 1352356,
+  "package": "cp64",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "FPVZaphod",
+  "uploader_email": "FPVZaphod@users.noreply.github.com"
+}
