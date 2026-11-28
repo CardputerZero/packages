@@ -1,0 +1,11 @@
+{
+  "filename": "optic-cardputerzero_2.1.17_arm64.deb",
+  "url": "https://github.com/zedward856-spec/packages/releases/download/czdev-buffer/optic-cardputerzero_2.1.17_arm64.deb",
+  "sha256": "c2e85bed37cb3789aa353abf8e70da1f7563bac31ea0a091a98977aa461182f8",
+  "size": 1760648,
+  "package": "optic-cardputerzero",
+  "version": "2.1.17",
+  "architecture": "arm64",
+  "uploaded_by": "zedward856-spec",
+  "uploader_email": "zedward856-spec@users.noreply.github.com"
+}
