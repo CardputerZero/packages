@@ -1,0 +1,11 @@
+{
+  "filename": "zeroterrarium_0.1.1_arm64.deb",
+  "url": "https://github.com/shrimpapplepro/packages/releases/download/czdev-buffer/zeroterrarium_0.1.1_arm64.deb",
+  "sha256": "b999f2fb60b5a45121d6d2d6065526cce6cfe71b0b45655ee0ab0327b4ebb0ad",
+  "size": 168054,
+  "package": "zeroterrarium",
+  "version": "0.1.1",
+  "architecture": "arm64",
+  "uploaded_by": "shrimpapplepro",
+  "uploader_email": "shrimpapplepro@users.noreply.github.com"
+}
