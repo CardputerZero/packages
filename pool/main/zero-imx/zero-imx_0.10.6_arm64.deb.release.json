@@ -1,0 +1,11 @@
+{
+  "filename": "zero-imx_0.10.6_arm64.deb",
+  "url": "https://github.com/zedward856-spec/packages/releases/download/czdev-buffer/zero-imx_0.10.6_arm64.deb",
+  "sha256": "9d4d15c6cca6ed7b633eb920abda1a9b8c0b1e411b0503e4fa8b5596e78dcf5a",
+  "size": 1250180,
+  "package": "zero-imx",
+  "version": "0.10.6",
+  "architecture": "arm64",
+  "uploaded_by": "zedward856-spec",
+  "uploader_email": "zedward856-spec@users.noreply.github.com"
+}
