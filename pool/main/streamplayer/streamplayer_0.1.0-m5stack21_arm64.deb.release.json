@@ -1,0 +1,11 @@
+{
+  "filename": "streamplayer_0.1.0-m5stack21_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/czdev-buffer/streamplayer_0.1.0-m5stack21_arm64.deb",
+  "sha256": "8817f8bfc7b8ecaef28eb6adfcda507eac6b0df83d313a4872df0f64a8dcf2be",
+  "size": 5578340,
+  "package": "streamplayer",
+  "version": "0.1.0-m5stack21",
+  "architecture": "arm64",
+  "uploaded_by": "zhuzhe1983",
+  "uploader_email": "zhuzhe1983@gmail.com"
+}
