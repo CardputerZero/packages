@@ -1,7 +1,7 @@
 {
   "title": "QSO-Zero",
   "summary": "FT8, FT4, JS8 and WSPR for QRP radios, with rig control and GPS time",
-  "description": "A weak-signal digital-mode station in your pocket. FT8 and FT4 with automatic QSO sequencing, a CQ-only filter and ADIF logging; a native JS8 implementation that interoperates with JS8Call (all speeds, directed messages, free text, optional auto-replies); WSPR beacon and receive with wsprnet upload when online. Controls QRP Labs QMX/QMX+, Xiegu G90/X6100/X6200 and Yaesu FT-891 through Hamlib (USB or Digirig), takes UTC and your grid from the LoRa/GPS Cap, and switches to a large layout on an HDMI monitor. Retro-synth look, keyboard driven. Requires an amateur radio licence to transmit. Hold ESC to exit.",
+  "description": "A weak-signal digital-mode station in your pocket. FT8 and FT4 with automatic QSO sequencing, a CQ-only filter and ADIF logging, with optional uploads to QRZ Logbook and Wavelog; a native JS8 implementation that interoperates with JS8Call (all speeds, directed messages, free text, optional auto-replies); WSPR beacon and receive with wsprnet upload when online. Controls QRP Labs QMX/QMX+, Xiegu G90/X6100/X6200, Yaesu FT-891 and Icom IC-705 through Hamlib (USB, Digirig or Digirig DR-891), takes UTC and your grid from the LoRa/GPS Cap, and switches to a large layout on an HDMI monitor. Retro-synth look, keyboard driven. Requires an amateur radio licence to transmit. Hold ESC to exit.",
   "categories": [
     "Radio & Comms"
   ],
@@ -29,7 +29,7 @@
   ],
   "icon": "icon-256.png",
   "published_at": "2026-11-23T02:54:22+00:00",
-  "updated_at": "2026-11-27T14:22:59+00:00",
+  "updated_at": "2026-11-28T03:25:28+00:00",
   "locales": {
     "zh-CN": {
       "title": "QSO-Zero",
