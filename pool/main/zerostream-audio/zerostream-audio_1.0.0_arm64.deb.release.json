@@ -1,0 +1,11 @@
+{
+  "filename": "zerostream-audio_1.0.0_arm64.deb",
+  "url": "https://github.com/Smudio/packages/releases/download/czdev-buffer/zerostream-audio_1.0.0_arm64.deb",
+  "sha256": "bc1ed3bbe42cf7cd098471bbe1c7a158c2011ed5e7fb4cba2cea7f8a50dfa0dc",
+  "size": 40652,
+  "package": "zerostream-audio",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "Smudio",
+  "uploader_email": "Smudio@users.noreply.github.com"
+}

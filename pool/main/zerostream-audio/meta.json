@@ -1,0 +1,47 @@
+{
+  "title": "ZeroStream Audio",
+  "summary": "Stream via AirPlay, DLNA or Bluetooth to a USB audio interface or AUX out",
+  "categories": [
+    "Media"
+  ],
+  "screenshots": [
+    "screenshots/01_player_airplay.png",
+    "screenshots/02_bluetooth.png",
+    "screenshots/03_aux_output.png",
+    "screenshots/04_settings.png",
+    "screenshots/05_connect.png"
+  ],
+  "description": "Turns your CardputerZero into a wireless audio receiver for your music.\n\nSources\n- AirPlay: iPhone, iPad, Mac, iTunes / Apple Music on Windows\n- DLNA / UPnP: Windows \"Cast to Device\", Android apps such as BubbleUPnP, foobar2000, MusicBee\n- Bluetooth: pair any phone or PC (press K in the app to become visible for 3 minutes)\n- Spotify Connect: used automatically when librespot is installed\n\nOutputs\n- any class-compliant USB audio interface (Focusrite Scarlett / Clarett / Vocaster and others); plug it in and running streams move over instantly\n- the 3.5 mm AUX jack or the built-in speaker of the CardputerZero\n- Bluetooth speakers that are connected to the CardputerZero\n\nThe app shows source, title and artist, sample rate and volume, controls play/pause and next/previous track, has a left/right test tone and keeps playing in the background after you leave it. English and German UI. Command line control over SSH: zerostream-audio status.",
+  "locales": {
+    "de": {
+      "title": "ZeroStream Audio",
+      "summary": "Musik per AirPlay, DLNA oder Bluetooth auf USB-Audio-Interface oder AUX"
+    },
+    "zh-CN": {
+      "title": "ZeroStream Audio",
+      "summary": "通过 AirPlay、DLNA 或蓝牙串流音乐到 USB 音频接口或 AUX 输出"
+    },
+    "ja": {
+      "title": "ZeroStream Audio",
+      "summary": "AirPlay・DLNA・Bluetooth で USB オーディオインターフェースや AUX に音楽をストリーミング"
+    }
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": true,
+    "external_display": false
+  },
+  "share_code": "ZSAU",
+  "author": {
+    "github": "Smudio",
+    "display_name": "Smudio"
+  },
+  "published_at": "2026-11-28T11:09:56+00:00",
+  "updated_at": "2026-11-28T11:09:56+00:00"
+}
