@@ -1,0 +1,11 @@
+{
+  "filename": "zero-net-mon_0.1.12_arm64.deb",
+  "url": "https://github.com/zedward856-spec/packages/releases/download/czdev-buffer/zero-net-mon_0.1.12_arm64.deb",
+  "sha256": "f51487de4dc057bbeecd114a60ae7b49f5f53c9abb2cb5fa0855024a088140c0",
+  "size": 924088,
+  "package": "zero-net-mon",
+  "version": "0.1.12",
+  "architecture": "arm64",
+  "uploaded_by": "zedward856-spec",
+  "uploader_email": "zedward856-spec@users.noreply.github.com"
+}
