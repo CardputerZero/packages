@@ -1,0 +1,45 @@
+{
+  "title": "Rakazo",
+  "summary": "Rakazo AI client with SSE chat, voice STT/TTS, inline images, and PC bridge.",
+  "description": "Native 320x170 LVGL 9.5 client for self-hosted and cloud Rakazo AI teammates on CardputerZero. Sign in with Email + Password or 6-digit email code (OTP), browse organizations, spaces, agents, and group chats, stream live replies over SSE with tool activity display, view inline artifact and web images, and pair CardputerZero automatically as a host computer bridge for bots. Supports bidirectional voice (microphone STT with ES8389 AMIC auto-gain and TTS reply playback), mid-run follow-ups, stop/retry, approval and choice cards, and bot routines. Controls: Up/Down (or F/X) to navigate or scroll, Left/Right (or Z/C) to switch agents in Chat or spaces in Roster, 4/5/6/7/8 for bottom quick actions, Space/V for voice input, P to read aloud, Enter to open or compose, short Esc to go back, and hold Esc to exit. Supports English, Simplified Chinese, and Japanese.",
+  "categories": [
+    "AI",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "icon": "rakazo.png",
+  "screenshots": [
+    "screenshots/rakazo-roster-320x170.png",
+    "screenshots/rakazo-chat-320x170.png",
+    "screenshots/rakazo-approval-320x170.png",
+    "screenshots/rakazo-settings-320x170.png",
+    "screenshots/rakazo-login-320x170.png"
+  ],
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "author": {
+    "display_name": "Zhu Zhe",
+    "github": "zhuzhe1983"
+  },
+  "source_repo": "https://github.com/zhuzhe1983/cp0-rakazo",
+  "share_code": "RKZO",
+  "locales": {
+    "zh-CN": {
+      "title": "Rakazo",
+      "summary": "Rakazo AI 队友客户端，支持流式对话、双向语音、图片显示与自动允许电脑控制。",
+      "description": "面向 CardputerZero（320x170）的原生 LVGL 9.5 Rakazo 客户端。支持自托管或云端服务器的密码与 6 位邮箱验证码登录，浏览组织、空间、智能体与群聊；默认开启流式回复、工具活动展示、聊天内网络与附件图片显示，并支持自动配对并允许 Bot 使用本机电脑（WebSocket 设备桥接）。内置双向语音（ES8389 AMIC 麦克风自动增益语音输入 STT 与回复语音朗读 TTS）、运行中追问、停止/重试、审批与选择卡片及例程管理。按键操作：上下键（或 F/X）选择或滚动消息，左右键（或 Z/C）在聊天页快速切换 Agent、在列表页切换空间，4/5/6/7/8 对应底部快捷栏，Space/V 语音输入，P 朗读最新回复，短按 Esc 返回，长按 Esc 退出。支持中/英/日三语界面。"
+    },
+    "ja": {
+      "title": "Rakazo",
+      "summary": "SSEチャット・双方向音声・画像表示・PC連携対応の Rakazo クライアント。",
+      "description": "CardputerZero (320x170) 向けのネイティブ LVGL 9.5 Rakazo クライアント。パスワードまたはメール認証コードでサインインし、組織・スペース・エージェント・グループチャットを閲覧できます。SSE ストリーミング返信、ツール活動表示、画像インライン表示、ボット向けローカルPC連携、双方向音声（STT/TTS）、承認カード、ルーチン管理に対応。チャット画面では左右キーでエージェントを素早く切り替えられます。"
+    }
+  }
+}
