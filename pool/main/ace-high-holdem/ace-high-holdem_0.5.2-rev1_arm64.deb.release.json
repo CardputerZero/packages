@@ -1,0 +1,11 @@
+{
+  "filename": "ace-high-holdem_0.5.2-rev1_arm64.deb",
+  "url": "https://github.com/MrGJones/packages/releases/download/czdev-buffer/ace-high-holdem_0.5.2-rev1_arm64.deb",
+  "sha256": "1666ff29dc83d2d6b92a209b765228869d3dc73baeaf1c1b745647dcdd22a35b",
+  "size": 3211944,
+  "package": "ace-high-holdem",
+  "version": "0.5.2-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "MrGJones",
+  "uploader_email": "MrGJones@users.noreply.github.com"
+}
