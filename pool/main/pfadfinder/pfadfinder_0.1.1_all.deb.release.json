@@ -1,0 +1,11 @@
+{
+  "filename": "pfadfinder_0.1.1_all.deb",
+  "url": "https://github.com/pfefferle/packages/releases/download/czdev-buffer/pfadfinder_0.1.1_all.deb",
+  "sha256": "88c2b8766b49f1c8bc6c8343b0f45eb9c7885c47aebdf0f9a5b46cad4a877b5e",
+  "size": 1895088,
+  "package": "pfadfinder",
+  "version": "0.1.1",
+  "architecture": "all",
+  "uploaded_by": "pfefferle",
+  "uploader_email": "pfefferle@users.noreply.github.com"
+}
