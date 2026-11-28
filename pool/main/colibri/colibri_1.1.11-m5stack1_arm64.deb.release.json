@@ -1,0 +1,11 @@
+{
+  "filename": "colibri_1.1.11-m5stack1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/yunbudong11114-1bfffe2c-c5ff-4a6b-8d1f-37cd7f0f7d61__colibri_1.1.11-m5stack1_arm64.deb",
+  "sha256": "858b7129b8b632790619b130489fc279d0106356e14021f9834d12375e2e3282",
+  "size": 6569198,
+  "package": "colibri",
+  "version": "1.1.11-m5stack1",
+  "architecture": "arm64",
+  "uploaded_by": "yunbudong11114",
+  "uploader_email": "yunbudong11114@users.noreply.github.com"
+}
