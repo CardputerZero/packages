@@ -6,9 +6,11 @@
     "Development"
   ],
   "screenshots": [
-    "screenshots/1-initial-bash.png",
-    "screenshots/2-fastfetch-4x7.png",
-    "screenshots/3-cmatrix-8x14.png"
+    "screenshots/screenshot-20261129-041505.png",
+    "screenshots/screenshot-20261129-040235.png",
+    "screenshots/screenshot-20261129-035533.png",
+    "screenshots/screenshot-20261129-040149.png",
+    "screenshots/screenshot-20261129-035009.png"
   ],
   "description": "Cardterm is a high-performance CLI terminal emulator for CardputerZero: it can run any command-line program such as bash, ssh, codex, etc.\n\nCompared with APPLaunch CLI, it offers more features at lower resident memory usage. Performance varies by workload but is generally better than APPLaunch CLI. If you rely on the command line and terminal sessions, give cardterm a try.\n\nFeature highlights:\n\n- High performance, low memory footprint: steady state of about 6MB (measured baseline on real hardware: 5.4~6.4MB; enabling Chinese input adds ~16MB for the rime engine); multi-window and concurrent sessions remain manageable; written in C++, driving /dev/fb0 directly via FrameBuffer; starts up in seconds with faster character rendering.\n- Multiple windows (Ctrl+Alt+F1~F12), scrollback/paging, three terminal sizes (80×24 / 53×17 / 40×12), and toast event notifications.\n- Detachable sessions (Fn + A) : sessions and programs can be detached to keep running in the background; you can exit cardterm and reattach later (re-attached text is limited to 4MB).\n- Rime-based Chinese Pinyin input method support — not a hard dependency, Press Fn + space to enable; requires manually installing the IME dependencies with: sudo apt install librime1t64 rime-data-luna-pinyin rime-prelude.\n- Custom terminal theme colors and PNG/JPG background images; optional transparent message toast box and Chinese candidate-word box.\n- TUI compatibility: codex / opencode / crush / vim / htop / nano and other TUIs have been verified to render and interact correctly in practice.\n- Complex protocol support: kitty keyboard protocol (KKP), DA1/DA2/DECXCPR/DSR/DECRQM, DECSCUSR, DECSTR/RIS, OSC 4/10/11/12/52/110~112 (OSC 110/111/112 reset the default foreground/background/cursor colors, respectively).\n- USB/Bluetooth external keyboard takeover: onboard keyboard plus up to 4 external keyboards in parallel, standard US layout, hot-plug supported.\n- Single config.ini for configuring theme color schemes, transparent effects, initial command and working directory, scrollback line count, number of windows, startup banner text, etc.",
   "locales": {
@@ -36,5 +38,5 @@
     "display_name": "fsender"
   },
   "published_at": "2026-11-24T15:13:30+00:00",
-  "updated_at": "2026-11-28T19:39:26+00:00"
+  "updated_at": "2026-11-28T20:23:07+00:00"
 }
