@@ -1,0 +1,36 @@
+{
+  "title": "GlitchCam",
+  "summary": "Glitch camera: bend the sensor's wires live, shoot glitched stills and clips",
+  "description": "GlitchCam takes the camera's raw sensor data and decodes it wrong on purpose. BEND works like a circuit-bending box with sixteen wires on the number row and Q-U: connect them, hold them, give each its own strength, and watch bits short, clocks slip and colours wrap. Other modes tear the stride, read the wrong bit depth, swap the Bayer order, flip JPEG bytes and datamosh H.264. Modes stack. SPACE takes a still, V records a clip, both saved to ~/Pictures/GlitchCam. SENSOR mode (experimental, arm with Y) writes IMX219 registers over I2C.",
+  "categories": [
+    "Creative & Office",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "GLCM",
+  "source_repo": "https://github.com/Eppy-xDYS/glitchcam",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": true,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "EppyXDYS",
+    "github": "Eppy-xDYS"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png",
+    "screenshots/screenshot-4.png",
+    "screenshots/screenshot-5.png"
+  ],
+  "icon": "glitchcam_icon.png",
+  "published_at": "2026-11-28T16:07:58+00:00",
+  "updated_at": "2026-11-28T16:07:58+00:00"
+}
