@@ -1,0 +1,30 @@
+{
+  "title": "ZeroDuino",
+  "summary": "Portable Arduino IDE to edit, compile, and upload sketches directly from Cardput",
+  "description": "ZeroDuino is a lightweight, portable Arduino IDE designed specifically for the CardputerZero's 320x170 display and compact keyboard. Write, compile, and upload Arduino sketches on the go without needing a PC or manual terminal setup.\r\n\r\nKey Features:\r\n- Ready to use out of the box: Includes arduino-cli bundled inside the app and automatically downloads the required board core (such as arduino:avr) on first use over Wi-Fi.\r\n- Sketch management: Create, edit, save, open, and delete .ino projects organized in ~/ZeroDuino/, including built-in starter templates like Blink.\r\n- Board & port tools: Choose from common boards (Arduino Uno, Nano, Mega, ESP32 Dev) and detect connected USB serial ports automatically.\r\n- Direct compile & upload: Verify your code and flash it directly to your Arduino board via USB.\r\n- Keyboard-friendly menus: Navigate quickly using function shortcuts: fn+3 (Program: Compile/Upload), fn+4 (File), fn+5 (Edit), fn+7 (Tools), and fn+8 (Help).\r\n\r\nUsage Notes:\r\n- Make sure Wi-Fi is connected the first time you compile so ZeroDuino can automatically install the board core.\r\n- To upload sketches to an Arduino board, set the side USB-SW switch to Host mode and connect your board to the USB-A or USB-C1 port.",
+  "categories": [
+    "Development"
+  ],
+  "license": "MIT",
+  "share_code": "ZINO",
+  "source_repo": "https://github.com/mnvmnico/zeroduino",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Circuito Sincronizado",
+    "github": "mnvmnico"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png"
+  ],
+  "icon": "zeroduino_icon.png",
+  "published_at": "2026-11-27T18:25:28+00:00",
+  "updated_at": "2026-11-27T18:25:28+00:00"
+}
