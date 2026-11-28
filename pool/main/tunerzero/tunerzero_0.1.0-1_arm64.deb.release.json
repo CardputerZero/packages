@@ -1,0 +1,11 @@
+{
+  "filename": "tunerzero_0.1.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/gregweir-7a9aa7bd-e3fb-49b8-b5c8-e457ce9686e8__tunerzero_0.1.0-1_arm64.deb",
+  "sha256": "d744c25e9df4e0ee0692a6ba589af4a0768a2c1b2dcb91d4041dc76a80cd349c",
+  "size": 729738,
+  "package": "tunerzero",
+  "version": "0.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "gregweir",
+  "uploader_email": "gregweir@users.noreply.github.com"
+}
