@@ -1,0 +1,11 @@
+{
+  "filename": "chess-academy_1.0.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/lintz-7a1e445d-2e65-47d9-8f41-c45c0fb7ae3f__chess-academy_1.0.0-1_arm64.deb",
+  "sha256": "565bf45576a82b9b74a888c4eb0f2fa67e73b121fde7b2be7410cbb66a257b88",
+  "size": 251346,
+  "package": "chess-academy",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "lintz",
+  "uploader_email": "lintz@users.noreply.github.com"
+}
