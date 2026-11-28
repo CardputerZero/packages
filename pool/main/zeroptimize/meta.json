@@ -1,0 +1,48 @@
+{
+  "title": "ZeroOptimize",
+  "summary": "Free some RAM and save power, with a way back to stock for every change",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/list-en.png",
+    "screenshots/list-fr.png",
+    "screenshots/list-ja.png",
+    "screenshots/list-zh.png",
+    "screenshots/applied-fr.png"
+  ],
+  "description": "ZeroOptimize shows the device's RAM, swap, load, clock and temperature live, and applies a few tweaks one at a time: smaller graphics memory (gpu_mem, needs a reboot), a higher swappiness for the compressed swap, a short allow-list of idle services (avahi, rpcbind, nfs-blkmap, automatic apt updates, man-db) and sleep for the USB network adapter. After each change it measures the gain in available RAM.\n\nEvery tweak records the original value first and can be put back to stock from the same screen, one by one (Enter on an ON tweak) or all at once (R). Your own services are never touched. Changes run through sudo: you type your sudo password on the device keyboard; it is never stored or logged.\n\nInterface in French, English, Japanese and Simplified Chinese (F2). Statically linked Rust build. Ideas inspired by cardputer-optimize; no code copied.",
+  "locales": {
+    "fr": {
+      "title": "ZeroOptimize",
+      "summary": "Libérez de la RAM et économisez l'énergie, avec retour à l'état d'origine"
+    },
+    "ja": {
+      "title": "ZeroOptimize",
+      "summary": "RAMを空けて省電力に。すべての変更を元に戻せます"
+    },
+    "zh-CN": {
+      "title": "ZeroOptimize",
+      "summary": "释放内存、节省电量,每项更改都可还原"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/sukoshi1507/zeroptimize",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "ZOPT",
+  "author": {
+    "github": "sukoshi1507",
+    "display_name": "sukoshi1507"
+  },
+  "published_at": "2026-11-28T13:35:05+00:00",
+  "updated_at": "2026-11-28T13:35:05+00:00"
+}
