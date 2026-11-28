@@ -1,6 +1,6 @@
 {
   "title": "cardterm",
-  "summary": "A better terminal emulator: high performance and low memory, multi-window, background sessions, Pinyin input.",
+  "summary": "A better terminal emulator: multi-window, background sessions.",
   "categories": [
     "System Tools",
     "Development"
@@ -37,5 +37,5 @@
     "display_name": "fsender"
   },
   "published_at": "2026-11-24T15:13:30+00:00",
-  "updated_at": "2026-11-28T05:07:25+00:00"
+  "updated_at": "2026-11-28T05:30:50+00:00"
 }
