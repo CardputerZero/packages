@@ -1,0 +1,32 @@
+{
+  "title": "Rush Hour",
+  "summary": "Sliding-block puzzle with 180 verified 6x6 levels and BFS hints",
+  "description": "Classic Rush Hour sliding-block puzzle built natively for CardputerZero (320x170) with automatic HDMI External Monitor Desktop Mode. Includes 180 unique, mathematically verified 6x6 levels across Easy, Medium, Hard, and Expert tiers, a real-time optimal BFS hint solver, undo stack, star ratings, mouse drag support in Desktop Mode, primary F/Z/X/C movement + 4-8 soft-key controls, and a 3-second hold-ESC exit countdown.",
+  "categories": [
+    "Games"
+  ],
+  "license": "MIT",
+  "share_code": "RUSH",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "LForss",
+    "github": "lintz"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "rush-hour_icon.png",
+  "published_at": "2026-11-27T17:09:27+00:00",
+  "updated_at": "2026-11-27T17:09:27+00:00"
+}
