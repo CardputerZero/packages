@@ -1,0 +1,31 @@
+{
+  "title": "ZeroAirFeeder",
+  "summary": "ADS-B multi-feeder for Cardputer Zero.",
+  "description": "ZeroAirFeeder turns the CardputerZero into an ADS-B feeder for Flightradar24, Plane Finder and AirNav RadarBox. Plug an RTL-SDR dongle with a 1090 MHz antenna into the USB-A port, fit the Cap LoRa-1262 with GPS, connect to Wi-Fi and start feeding.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "ZAFD",
+  "source_repo": "https://github.com/wirpool/zeroairfeeder",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Wirpool",
+    "github": "wirpool"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png"
+  ],
+  "icon": "zeroairfeeder_icon.png",
+  "published_at": "2026-11-27T13:15:36+00:00",
+  "updated_at": "2026-11-27T13:15:36+00:00"
+}
