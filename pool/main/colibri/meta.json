@@ -1,7 +1,7 @@
 {
   "title": "Colibri",
   "summary": "支持中文输入、离线语音、MCP 与技能的 Cardputer Zero 口袋 AI 助手。",
-  "description": "Colibri 是面向 Cardputer Zero 的口袋 AI 助手，支持中文拼音、离线中英语音转写、小屏 Markdown、长期记忆、上下文压缩、MCP、技能与终端 REPL。对话使用你配置的模型服务。安装包的存储占用主要来自离线语音识别模型，排除离线模型实际大小5～6MB。\r\n\r\n微信通道使用方法\r\n1. 在 Colibri 的「设置 → 配置 → 模型」保存模型连接。\r\n2. 打开掌机自带的 CLI，运行 colibri auth weixin，用手机微信扫码并确认。\r\n3. 运行 colibri gateway start 启动网关，再用 colibri gateway status 查看连接状态。网关已启动时，扫码后运行 colibri gateway restart。\r\n4. 在微信里给已连接的机器人发消息。掌机联网且网关运行时，关闭 Colibri 图形界面也能收发消息。",
+  "description": "Colibri 是面向 Cardputer Zero 的口袋 AI 助手，支持中文拼音、离线中英语音转写（可选项）、小屏 Markdown、长期记忆、上下文压缩、MCP、技能与终端 REPL。对话使用你配置的模型服务。安装包的存储占用主要来自离线语音识别模型，排除离线模型实际大小5～6MB。\r\n\r\n微信通道使用方法\r\n1. 在 Colibri 的「设置 → 配置 → 模型」保存模型连接。\r\n2. 打开掌机自带的 CLI，运行 colibri auth weixin，用手机微信扫码并确认。\r\n3. 运行 colibri gateway start 启动网关，再用 colibri gateway status 查看连接状态。网关已启动时，扫码后运行 colibri gateway restart。\r\n4. 在微信里给已连接的机器人发消息。掌机联网且网关运行时，关闭 Colibri 图形界面也能收发消息。",
   "categories": [
     "Development",
     "AI"
@@ -31,5 +31,5 @@
   ],
   "icon": "colibri_icon.png",
   "published_at": "2026-11-25T07:23:27+00:00",
-  "updated_at": "2026-11-28T04:18:41+00:00"
+  "updated_at": "2026-11-28T14:34:49+00:00"
 }
