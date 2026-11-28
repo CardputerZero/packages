@@ -1,0 +1,11 @@
+{
+  "filename": "battleship_1.1.0-1_arm64.deb",
+  "url": "https://github.com/yutacar/packages/releases/download/czdev-buffer/battleship_1.1.0-1_arm64.deb",
+  "sha256": "8ffbfd7f3a0dea7f55d48b0bcea4ec89d9f328bd0c74c2814193532207c938f2",
+  "size": 1011028,
+  "package": "battleship",
+  "version": "1.1.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "yutacar",
+  "uploader_email": "yutacar@users.noreply.github.com"
+}
