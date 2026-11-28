@@ -1,0 +1,32 @@
+{
+  "title": "Freedoom Zero",
+  "summary": "Complete Doom shooter, 68 levels, no game files needed - install and play.",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/01_title.png",
+    "screenshots/02_action.png",
+    "screenshots/03_controls.png"
+  ],
+  "description": "Freedoom Zero is a full Doom-engine first-person shooter that is ready to play the moment it installs. There is nothing to supply and nothing to hunt down: all 68 levels, along with every monster, weapon, texture and music track, ship inside the app.\n\nIt runs natively on the CardputerZero's 320x170 display with widescreen rendering matched to the panel, sound and music through the built-in speaker, and saves kept on the device. No desktop, no X server and no network connection are involved.\n\nCONTROLS\nF / X - move forward and back\nZ / C - turn left and right\nD / G - strafe left and right\nSpace - fire\nE - use, open doors\nM - jump\nShift - run (hold)\nAlt - strafe (hold)\n1 to 7 - select weapon\n, and . - cycle weapons\nTab - automap\nEsc - menu\nP - pause\nK - screenshot\nH - on-screen control list\n\nPress H at any time for the full control list, and again for licence details.\n\nWHAT IS FREEDOOM?\nFreedoom is a free, open-source game built for the Doom engine. It is not a copy of id Software's Doom and contains none of its data: it is an original set of levels, art and sound released under a BSD licence. No commercial game files are included or required.\n\nEngine: Crispy Doom, GPL-2.0-or-later. Game data: Freedoom 0.13.0, BSD-3-Clause. Full licence texts install alongside the app.",
+  "license": "GPL-2.0-or-later",
+  "source_repo": "https://github.com/wearewatchingyouclosely/0freedoom",
+  "icon": "store_icon_256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "DOOM",
+  "author": {
+    "display_name": "WAWYC",
+    "github": "wearewatchingyouclosely"
+  },
+  "published_at": "2026-11-28T03:17:45+00:00",
+  "updated_at": "2026-11-28T03:17:45+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "filename": "0freedoom_0.1.7_arm64.deb",
+  "url": "https://github.com/wearewatchingyouclosely/packages/releases/download/czdev-buffer/0freedoom_0.1.7_arm64.deb",
+  "sha256": "b045d91e9aa02398ba5ddec044c12abd0ce1540a70340a21732b7192bdcc2469",
+  "size": 11132776,
+  "package": "0freedoom",
+  "version": "0.1.7",
+  "architecture": "arm64",
+  "uploaded_by": "wearewatchingyouclosely",
+  "uploader_email": "wearewatchingyouclosely@users.noreply.github.com"
+}
