@@ -1,0 +1,34 @@
+{
+  "title": "ZeroMesh",
+  "summary": "Meshtastic messenger for the M5Stack CardputerZero Cap LoRa-1262",
+  "description": "Off-grid Meshtastic messenger for the M5Stack CardputerZero with the Cap LoRa-1262. It runs full screen on the Zero's 320×170 display, uses its keyboard, and talks to meshtasticd on the device. No phone and no internet needed.",
+  "categories": [
+    "Hardware & IoT",
+    "Radio & Comms"
+  ],
+  "license": "MIT",
+  "share_code": "ZERM",
+  "source_repo": "https://github.com/y4c0m457er/meshzero",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": true,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "Yacomaster",
+    "github": "y4c0m457er"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "zeromesh_icon.png",
+  "published_at": "2026-11-28T17:24:34+00:00",
+  "updated_at": "2026-11-28T17:24:34+00:00"
+}
