@@ -1,0 +1,11 @@
+{
+  "filename": "card-hy2_0.0.4_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/Moeyuuko-3aaa6d90-9676-4e7d-9443-debfc08400eb__card-hy2_0.0.4_arm64.deb",
+  "sha256": "5a3844b131866e66fb038e712670ef7eb49c9b3851d3317dc2fa9662cd9aee28",
+  "size": 8371908,
+  "package": "card-hy2",
+  "version": "0.0.4",
+  "architecture": "arm64",
+  "uploaded_by": "Moeyuuko",
+  "uploader_email": "moeyuuko@users.noreply.github.com"
+}
