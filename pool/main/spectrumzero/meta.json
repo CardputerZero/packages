@@ -1,0 +1,44 @@
+{
+  "title": "Spectrum",
+  "summary": "Spectrum + waterfall from the mic, the LoRa-1262 or the CC1101 cap",
+  "categories": [
+    "Radio & Comms",
+    "Hardware & IoT"
+  ],
+  "screenshots": [
+    "screenshots/mic-waterfall.png",
+    "screenshots/mic-spectrum.png",
+    "screenshots/mic-octave-bands.png",
+    "screenshots/keys.png"
+  ],
+  "description": "Spectrum is a small, fast spectrum analyser and waterfall for three sources in one app. MIC: a 4096-point FFT of the built-in microphone with peak frequency and note name, views from 30 Hz to 24 kHz (log, linear, voice, bass, ultrasonic), zoom, and third-octave bands with an A-weighted level. RADIO: a receive-only RSSI sweep with whichever cap is attached, detected automatically: LoRa-1262 (868 SRD, 869 mesh, 915 US, 850-930 MHz) or CC1101 (433 ISM, 868 SRD, 915 US, 315 band and wide views). A signal list collects everything that rises above the noise with frequency, level, hits and last seen, and names the likely allocation (LPD433 remotes, wM-Bus, Meshtastic EU, ...). Display modes: split, spectrum, waterfall, signal list or octave bars. Peak hold, auto level with adjustable range, three colour maps, waterfall speed, freeze, and G saves a PNG screenshot plus CSV to ~/Pictures/spectrumzero. It never transmits, and it waits politely while another radio app (Camillia, LoRa Scanner, ...) owns the cap. Plain C, no dependencies beyond pw-record, about 30 fps on the Zero.",
+  "locales": {
+    "zh-CN": {
+      "title": "Spectrum 频谱仪",
+      "summary": "麦克风、LoRa-1262 或 CC1101 帽的频谱与瀑布图，只接收"
+    },
+    "ja": {
+      "title": "Spectrum",
+      "summary": "マイク・LoRa-1262・CC1101 キャップのスペクトラムとウォーターフォール（受信のみ）"
+    }
+  },
+  "license": "GPL-2.0-or-later",
+  "source_repo": "https://github.com/w3z315/spectrumzero",
+  "icon": "spectrumzero-256.png",
+  "permissions": {
+    "camera": false,
+    "microphone": true,
+    "imu": false,
+    "network": false,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "SPEC",
+  "author": {
+    "github": "w3z315",
+    "display_name": "w3z315"
+  },
+  "published_at": "2026-11-28T16:51:01+00:00",
+  "updated_at": "2026-11-28T16:51:01+00:00"
+}
