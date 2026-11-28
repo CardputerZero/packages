@@ -1,0 +1,11 @@
+{
+  "filename": "darksec-chat_1.0.0_arm64.deb",
+  "url": "https://github.com/sinXne0/darksec-chat-cardputer-zero/releases/download/v1.0.0/darksec-chat_1.0.0_arm64.deb",
+  "sha256": "3b4996d3f23fc47c576c19d8a61a95d91caf10dd521807c49a075e4daf2ecec7",
+  "size": 11604,
+  "package": "darksec-chat",
+  "version": "1.0.0",
+  "architecture": "arm64",
+  "uploaded_by": "sinXne0",
+  "uploader_email": "sinXne0@users.noreply.github.com"
+}

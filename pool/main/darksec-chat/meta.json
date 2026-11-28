@@ -1,0 +1,32 @@
+{
+  "summary": "Join darksec.uk/chat from your Cardputer Zero keyboard.",
+  "description": "A lightweight native client for the public DarkSec chat room. Read the same conversation as darksec.uk/chat, choose a saved handle, send messages and scroll history. Designed for the 320x170 display with keyboard controls. HTTPS connections, automatic reconnect and drafts restored on send failure. No browser, root service, camera or microphone. Messages and handles are public. Screenshots marked DEMO show sample messages. Requires Wi-Fi and access to darksec.uk; the public service can change independently of this app.",
+  "categories": [
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/chat.png",
+    "screenshots/join.png"
+  ],
+  "icon": "darksec-chat.png",
+  "license": "MIT",
+  "source_repo": "https://github.com/sinXne0/darksec-chat-cardputer-zero",
+  "author": {
+    "github": "sinXne0",
+    "display_name": "sinXne0 (DarkSec)"
+  },
+  "share_code": "DSCH",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "locales": {},
+  "title": "DarkSec Chat",
+  "published_at": "2026-11-27T19:30:24+00:00",
+  "updated_at": "2026-11-27T19:30:24+00:00"
+}
