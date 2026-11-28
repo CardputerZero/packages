@@ -1,0 +1,32 @@
+{
+  "title": "UART",
+  "summary": "UART terminal with baud controls, text/hex tools and RX captures.",
+  "description": "UART is a serial debugging terminal for Cardputer Zero, with a black interface, neon-red controls and configurable terminal text colors.\r\n\r\nConnect through the top CAP header using G14 (TX), G15 (RX) and GND, or use a supported USB serial adapter. Includes baud and framing settings, RX-only mode, ANSI terminal display, text/hex sending, raw RX captures and scrollback.\r\n\r\nOperate the app with keys 4–8 or F/X/Z/C navigation. Enter selects actions or starts terminal typing. Tap Esc to return to controls; hold Esc to exit.\r\n\r\nUART signals are fixed at 3.3V TTL. Separate header and Grove 5V power outputs require confirmation before enabling. Hardware and drivers determine supported serial speeds and formats.",
+  "categories": [
+    "Hardware & IoT"
+  ],
+  "license": "MIT",
+  "share_code": "UART",
+  "source_repo": "https://github.com/InnerFireZ/UART",
+  "permissions": {
+    "additional_hardware": true,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": false
+  },
+  "author": {
+    "display_name": "InnerfireZ",
+    "github": "InnerFireZ"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png"
+  ],
+  "icon": "cardputer-uart_icon.png",
+  "published_at": "2026-11-28T14:34:32+00:00",
+  "updated_at": "2026-11-28T14:34:32+00:00"
+}
