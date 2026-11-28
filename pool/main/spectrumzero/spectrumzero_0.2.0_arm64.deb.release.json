@@ -1,0 +1,11 @@
+{
+  "filename": "spectrumzero_0.2.0_arm64.deb",
+  "url": "https://github.com/w3z315/packages/releases/download/czdev-buffer/spectrumzero_0.2.0_arm64.deb",
+  "sha256": "5ae37a7bf8b55199e97ddadedce6429103ad34128e01d4661fb95efd3f593481",
+  "size": 31584,
+  "package": "spectrumzero",
+  "version": "0.2.0",
+  "architecture": "arm64",
+  "uploaded_by": "w3z315",
+  "uploader_email": "w3z315@users.noreply.github.com"
+}
