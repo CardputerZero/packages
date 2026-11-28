@@ -7,7 +7,7 @@
   "screenshots": [
     "screenshots/library.png",
     "screenshots/lcd-movie.png",
-    "screenshots/hdmi-controls.png",
+    "screenshots/hdmi-movie-controls.png",
     "screenshots/setup.png"
   ],
   "description": "Browse and search Emby/Jellyfin media libraries. Play music and video on the built-in LCD or a connected HDMI desktop. With HDMI connected, video starts on the external screen and the small screen keeps the controls; Tab switches output, Space pauses, short Esc returns and holding Esc exits. HDMI requests H.264/AAC up to 720p24 / 8 Mbps video with ordinary-user DMA-BUF on the supported Raspberry Pi image, and retains the current display mode. LCD video uses the 320x170 server-transcoded profile. An existing Wayland desktop and mpv are required for HDMI; video performance depends on the server, network and device. Runs as the launcher user, with no root services, sudo configuration, boot/CMA or Wi-Fi changes, or PackageKit/LightDM control. Includes the refreshed-image keyboard symbol fix. Photo playback is not enabled. Configure your own server and account in the app.\n\nSource: https://github.com/zhuzhe1983/cp0-StreamPlayer/tree/store-compliant-20261125.",
@@ -36,5 +36,5 @@
     "github": "zhuzhe1983"
   },
   "published_at": "2026-11-25T15:39:44+00:00",
-  "updated_at": "2026-11-28T02:49:25+00:00"
+  "updated_at": "2026-11-28T02:55:56+00:00"
 }
