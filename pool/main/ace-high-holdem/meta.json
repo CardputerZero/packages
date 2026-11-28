@@ -1,0 +1,46 @@
+{
+  "title": "Ace High Hold'em",
+  "summary": "No-Limit Hold'em: career mode, smart bots, Wi-Fi and LoRa multiplayer",
+  "categories": [
+    "Games",
+    "Radio & Comms"
+  ],
+  "screenshots": [
+    "screenshots/menu.png",
+    "screenshots/table.png",
+    "screenshots/career.png",
+    "screenshots/showdown.png",
+    "screenshots/results.png",
+    "screenshots/wifi-qr.png"
+  ],
+  "description": "Proper No-Limit Texas Hold'em in your pocket. Start a career with 500 chips and work your way up through six venues, from a friendly game in The Back Room to the World Final. Finish in the top two to unlock the next table, and keep an eye on your bankroll, because if it runs dry you start again. Fancy a quick hand instead? Sit down with up to five computer players, each with their own style, at easy, normal or hard. Playing with friends? Host a table over Wi-Fi and they can join by scanning the QR code on your screen with their camera, or play over LoRa radio with the Cap LoRa-1262.",
+  "locales": {
+    "zh-CN": {
+      "title": "王牌德州扑克",
+      "summary": "无限注德州扑克：生涯模式、聪明的电脑对手、Wi-Fi 与 LoRa 联机对战"
+    },
+    "ja": {
+      "title": "エースハイ・ホールデム",
+      "summary": "ノーリミット・ホールデム：キャリアモード、賢いボット、Wi-Fi・LoRa 対戦"
+    }
+  },
+  "license": "MIT",
+  "source_repo": "https://github.com/MrGJones/ace-high-holdem",
+  "icon": "ace-high-holdem_store.png",
+  "permissions": {
+    "camera": true,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": true,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "POKR",
+  "author": {
+    "github": "MrGJones",
+    "display_name": "Glenn Jones"
+  },
+  "published_at": "2026-11-28T14:21:03+00:00",
+  "updated_at": "2026-11-28T14:21:03+00:00"
+}
