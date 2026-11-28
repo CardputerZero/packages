@@ -1,0 +1,11 @@
+{
+  "filename": "language-trip_0.2.1-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/lintz-98c2022a-6e86-4d14-9090-973653b88c6c__language-trip_0.2.1-1_arm64.deb",
+  "sha256": "704c6bfbf7c373b9ff65640c3c716766eea7073888a9c1b16f7de43947f58848",
+  "size": 44787326,
+  "package": "language-trip",
+  "version": "0.2.1-1",
+  "architecture": "arm64",
+  "uploaded_by": "lintz",
+  "uploader_email": "lintz@users.noreply.github.com"
+}
