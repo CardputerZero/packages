@@ -1,0 +1,33 @@
+{
+  "title": "Terrarium",
+  "summary": "A small sealed terrarium that keeps living, even while the app is closed",
+  "categories": [
+    "Games"
+  ],
+  "screenshots": [
+    "screenshots/tank.png",
+    "screenshots/night.png",
+    "screenshots/mist.png",
+    "screenshots/summary.png"
+  ],
+  "description": "A fish-tank-sized sealed terrarium: moss, ferns, fittonia, pilea, peperomia, baby tears and creeping fig, with springtails, isopods, fungus gnats, aphids, ladybugs and a jumping spider going about their day. The grow light follows your local time, and the tank keeps living while the app is closed: the next time you open it, the time away plays back as a short time-lapse (G skips it). Mist, seed, prune or switch off the light; knock the device and the bugs startle. Summary and Journal pages track every species over the days. Smooth 30 fps with anti-aliased graphics on all four cores; no network access needed. A port of the Cardputer ADV terrarium firmware.",
+  "license": "MIT",
+  "source_repo": "https://github.com/shrimpapplepro/zeroterrarium",
+  "icon": "zeroterrarium.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": true,
+    "network": false,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "TERR",
+  "author": {
+    "github": "shrimpapplepro",
+    "display_name": "shrimpapplepro"
+  },
+  "published_at": "2026-11-28T13:11:45+00:00",
+  "updated_at": "2026-11-28T13:11:45+00:00"
+}
