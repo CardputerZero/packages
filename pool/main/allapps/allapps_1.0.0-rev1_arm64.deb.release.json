@@ -1,0 +1,11 @@
+{
+  "filename": "allapps_1.0.0-rev1_arm64.deb",
+  "url": "https://github.com/wearewatchingyouclosely/packages/releases/download/czdev-buffer/allapps_1.0.0-rev1_arm64.deb",
+  "sha256": "91841cfb00991aee38db735a71ad7297d88f8bcf6f572e6fde5dfcabafb1b2c9",
+  "size": 809404,
+  "package": "allapps",
+  "version": "1.0.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "wearewatchingyouclosely",
+  "uploader_email": "wearewatchingyouclosely@users.noreply.github.com"
+}
