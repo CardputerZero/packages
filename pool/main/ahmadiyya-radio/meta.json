@@ -1,0 +1,33 @@
+{
+  "title": "Ahmadiyya Radio",
+  "summary": "Live Ahmadiyya radio, Friday Sermons & more.",
+  "description": "Ahmadiyya Radio is a small radio player for the CardputerZero.\r\n\r\nListen to Voice of Islam live, stream the Urdu Friday Sermon podcast on demand, or switch to BBC World Service and Radio Ahmadiyya. Playback starts within a couple of seconds and keeps running while you browse the episode list.\r\n\r\nChannels: 4 VOI Radio (live), 5 Khutba (Urdu Friday Sermon podcast, latest 100 sermons with dates), 6 R.Ahm (Radio Ahmadiyya, 1500+ episodes), 7 Themes (Light, Dark, Dim, Amber), 8 BBC (World Service, live).\r\n\r\nControls: Q play/pause, W/E previous/next channel, S/D volume, A mute, F/X move through a list, hold ESC to quit.\r\n\r\nFeatures: live two-column VU meter driven by the real audio level; the chosen theme is remembered between sessions; the screen dims after 200 seconds without a key press and wakes on the next key.\r\n\r\nAll audio is decoded on the device with miniaudio; no extra codec packages are required. A Wi-Fi connection is needed (network permission).",
+  "categories": [
+    "Radio & Comms",
+    "Media"
+  ],
+  "license": "MIT",
+  "share_code": "AMJA",
+  "permissions": {
+    "additional_hardware": false,
+    "background_service": false,
+    "camera": false,
+    "external_display": false,
+    "imu": false,
+    "microphone": false,
+    "network": true
+  },
+  "author": {
+    "display_name": "N. Ahmad",
+    "github": "leonaseer"
+  },
+  "screenshots": [
+    "screenshots/screenshot-0.png",
+    "screenshots/screenshot-1.png",
+    "screenshots/screenshot-2.png",
+    "screenshots/screenshot-3.png"
+  ],
+  "icon": "ahmadiyya-radio_icon.png",
+  "published_at": "2026-11-27T19:30:53+00:00",
+  "updated_at": "2026-11-27T19:30:53+00:00"
+}

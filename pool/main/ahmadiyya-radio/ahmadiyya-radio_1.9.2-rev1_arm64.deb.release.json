@@ -1,0 +1,11 @@
+{
+  "filename": "ahmadiyya-radio_1.9.2-rev1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/leonaseer-37a9a93d-0d44-4bbc-acb3-2e029370a9ef__ahmadiyya-radio_1.9.2-rev1_arm64.deb",
+  "sha256": "461a69bfb9c522e3efe6622b6f24b9bd90d8b622364789a533848ae0209238e8",
+  "size": 2263488,
+  "package": "ahmadiyya-radio",
+  "version": "1.9.2-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "leonaseer",
+  "uploader_email": "leonaseer@users.noreply.github.com"
+}
