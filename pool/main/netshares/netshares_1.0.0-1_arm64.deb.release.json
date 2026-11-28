@@ -1,0 +1,11 @@
+{
+  "filename": "netshares_1.0.0-1_arm64.deb",
+  "url": "https://github.com/ms4sman/packages/releases/download/czdev-buffer/netshares_1.0.0-1_arm64.deb",
+  "sha256": "3099f1ea2bcb3eef80a6fb6afe88b6cdc50853a5e7123086aeee6ec6142b5640",
+  "size": 1112514,
+  "package": "netshares",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "ms4sman",
+  "uploader_email": "ms4sman@users.noreply.github.com"
+}

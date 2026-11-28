@@ -1,0 +1,33 @@
+{
+  "title": "NetShares",
+  "summary": "Browse your NAS and SMB shares, then download or upload files",
+  "categories": [
+    "System Tools"
+  ],
+  "screenshots": [
+    "screenshots/servers.png",
+    "screenshots/browse.png",
+    "screenshots/transfer.png",
+    "screenshots/upload.png"
+  ],
+  "description": "NetShares connects the CardputerZero to SMB file shares on a NAS, Unraid or TrueNAS server, or a Windows or macOS computer. Save your servers, browse shares and folders, download files and whole folders to the device, upload files from the device, and create, rename or delete files on the share. Supports SMB 2 and 3, including encrypted SMB 3 connections, with a user login or guest access. Runs entirely as your user: nothing is mounted and no root access is needed. Heads up: this app is almost entirely vibe coded (written with an AI coding assistant). I built it for myself and am sharing it in case it's useful; see the source repository for details.",
+  "license": "MIT",
+  "source_repo": "https://github.com/ms4sman/cardputerzero-netshares",
+  "icon": "icon.png",
+  "permissions": {
+    "camera": false,
+    "microphone": false,
+    "imu": false,
+    "network": true,
+    "additional_hardware": false,
+    "background_service": false,
+    "external_display": false
+  },
+  "share_code": "NSHR",
+  "author": {
+    "github": "ms4sman",
+    "display_name": "ms4sman"
+  },
+  "published_at": "2026-11-28T06:19:04+00:00",
+  "updated_at": "2026-11-28T06:19:04+00:00"
+}
