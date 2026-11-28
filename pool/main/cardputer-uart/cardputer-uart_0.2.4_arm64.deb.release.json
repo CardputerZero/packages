@@ -1,0 +1,11 @@
+{
+  "filename": "cardputer-uart_0.2.4_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/InnerFireZ-a19ba066-ea0c-4e77-bba3-c846b48e5aba__cardputer-uart_0.2.4_arm64.deb",
+  "sha256": "af0e50cd21a6738e730b9682c699b82f5f58eaa03349a37169cc04eea065d1b3",
+  "size": 454712,
+  "package": "cardputer-uart",
+  "version": "0.2.4",
+  "architecture": "arm64",
+  "uploaded_by": "InnerFireZ",
+  "uploader_email": "innerfirez@users.noreply.github.com"
+}
