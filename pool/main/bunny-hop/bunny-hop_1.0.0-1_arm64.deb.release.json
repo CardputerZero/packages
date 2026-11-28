@@ -1,0 +1,11 @@
+{
+  "filename": "bunny-hop_1.0.0-1_arm64.deb",
+  "url": "https://github.com/CardputerZero/packages/releases/download/staging/lintz-f7a8bdb1-798c-473e-a958-ce7dac1709bd__bunny-hop_1.0.0-1_arm64.deb",
+  "sha256": "10bd0eba8e3a820f2c2a2ee227dc1fabc4054d8304be52ca407715eb74b2fa22",
+  "size": 488292,
+  "package": "bunny-hop",
+  "version": "1.0.0-1",
+  "architecture": "arm64",
+  "uploaded_by": "lintz",
+  "uploader_email": "lintz@users.noreply.github.com"
+}
