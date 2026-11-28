@@ -1,0 +1,11 @@
+{
+  "filename": "wifi-tools_0.2.0-rev1_arm64.deb",
+  "url": "https://github.com/rprouse/packages/releases/download/czdev-buffer/wifi-tools_0.2.0-rev1_arm64.deb",
+  "sha256": "210b07d512cdc91fe076a0b4b7f7c5b1f0579283e8f93b254821cc3bf0337fd7",
+  "size": 2244312,
+  "package": "wifi-tools",
+  "version": "0.2.0-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "rprouse",
+  "uploader_email": "rob@prouse.org"
+}
