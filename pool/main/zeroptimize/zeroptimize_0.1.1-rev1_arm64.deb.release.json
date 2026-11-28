@@ -1,0 +1,11 @@
+{
+  "filename": "zeroptimize_0.1.1-rev1_arm64.deb",
+  "url": "https://github.com/sukoshi1507/packages/releases/download/czdev-buffer/zeroptimize_0.1.1-rev1_arm64.deb",
+  "sha256": "b27d3482a863d95a70271b664e2499407fb5f2b73cd0eb8b9cdc53bbc52c1a41",
+  "size": 599020,
+  "package": "zeroptimize",
+  "version": "0.1.1-rev1",
+  "architecture": "arm64",
+  "uploaded_by": "sukoshi1507",
+  "uploader_email": "sukoshi1507@users.noreply.github.com"
+}
